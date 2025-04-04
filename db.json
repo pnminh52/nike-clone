@@ -1,0 +1,13 @@
+{
+  "products": [
+    {
+      "id": "dee0",
+      "name": "AHAHHA",
+      "price": "12121212",
+      "price_sale": "11111111",
+      "category": "1dfdfdfdf",
+      "des": "ssdsds",
+      "img": "https://picsum.photos/200/300"
+    }
+  ]
+}
