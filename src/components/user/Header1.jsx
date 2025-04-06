@@ -4,7 +4,7 @@ const header = () => {
     return (
         <div className=" ">
             <div className="bg-gray-100 hidden sm:block">
-                <div className="container mx-auto px-8 max-w-screen-xl flex justify-between items-center py-1">
+                <div className="container mx-auto px-4 max-w-screen-xl flex justify-between items-center py-1">
                     <svg
                         aria-hidden="true"
                         focusable="false"
@@ -21,11 +21,11 @@ const header = () => {
                             clip-rule="evenodd"
                         ></path>
                     </svg>
-                    <div className="flex gap-2 items-center text-xs inter ">
-                        <p className="cursor-pointer">Find a Store</p> | <p className="cursor-pointer">Help</p>|
-                        <div className="flex gap-1 items-center cursor-pointer">
-                            <p>Hi, User</p>
-                            <svg
+                    <div className="flex gap-2 items-center text-xs  font-thin ">
+                        <p className="cursor-pointer inter">Find a Store</p> | <p className="cursor-pointer inter">Help</p>| <p className="cursor-pointer inter">Join Us</p>|
+                        <div className="flex gap-1 items-center inter cursor-pointer">
+                            <p>Sign In</p>
+                            {/* <svg
                                 aria-hidden="true"
                                 focusable="false"
                                 viewBox="0 0 24 24"
@@ -40,12 +40,12 @@ const header = () => {
                                     stroke-width="2"
                                     d="M3.75 21v-3a3.75 3.75 0 013.75-3.75h9A3.75 3.75 0 0120.25 18v3m-4.5-13.5a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z"
                                 ></path>
-                            </svg>
+                            </svg> */}
                         </div>
                     </div>
                 </div>
             </div>
-        
+
         </div>
     );
 };

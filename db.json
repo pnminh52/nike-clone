@@ -9,5 +9,140 @@
       "des": "ssdsds",
       "img": "https://picsum.photos/200/300"
     }
+  ],
+  "categories": [
+    {
+      "id": "edd2",
+      "name": "Featured",
+      "imageUrl": "https://picsum.photos/id/237/200/300",
+      "parentId": null,
+      "page": "new-featured"
+    },
+    {
+      "id": "0ee8",
+      "name": "Trending",
+      "imageUrl": "https://picsum.photos/id/237/200/300",
+      "parentId": null,
+      "page": "new-featured"
+    },
+    {
+      "id": "c7b6",
+      "name": "Shop Icons",
+      "imageUrl": "https://picsum.photos/id/237/200/300",
+      "parentId": null,
+      "page": "new-featured"
+    },
+    {
+      "id": "06c6",
+      "name": "Shop By Sport",
+      "imageUrl": "https://picsum.photos/id/237/200/300",
+      "parentId": null,
+      "page": "new-featured"
+    },
+    {
+      "id": "97cd",
+      "name": "New & Upcoming Drops",
+      "imageUrl": "https://picsum.photos/id/237/200/300",
+      "parentId": "edd2",
+      "page": "new-featured"
+    },
+    {
+      "id": "985c",
+      "name": "New Arrivals",
+      "imageUrl": "https://picsum.photos/id/237/200/300",
+      "parentId": "edd2",
+      "page": "new-featured"
+    },
+    {
+      "id": "124",
+      "name": "Bestsellers",
+      "imageUrl": "https://picsum.photos/id/237/200/300",
+      "parentId": "edd2",
+      "page": "new-featured"
+    },
+    {
+      "id": "223",
+      "name": "Member Exclusive",
+      "imageUrl": "https://picsum.photos/id/237/200/300",
+      "parentId": "edd2",
+      "page": "new-featured"
+    },
+    {
+      "id": "4545f",
+      "name": "Customise with Nike By You",
+      "imageUrl": "https://picsum.photos/id/237/200/300",
+      "parentId": "edd2",
+      "page": "new-featured"
+    },
+    {
+      "id": "1231d",
+      "name": "What's Trending",
+      "imageUrl": "https://picsum.photos/id/237/200/300",
+      "parentId": "edd2",
+      "page": "new-featured"
+    },
+    {
+      "id": "121zzx",
+      "name": "Jordan",
+      "imageUrl": "https://picsum.photos/id/237/200/300",
+      "parentId": "edd2",
+      "page": "new-featured"
+    },
+    {
+      "id": "121aaw",
+      "name": "Air Max Dn8",
+      "imageUrl": "https://picsum.photos/id/237/200/300",
+      "parentId": "0ee8",
+      "page": "Trending"
+    },
+    {
+      "id": "12vf",
+      "name": "What's Trending",
+      "imageUrl": "https://picsum.photos/id/237/200/300",
+      "parentId": "0ee8",
+      "page": "Trending"
+    },
+    {
+      "id": "76k",
+      "name": "Nike 24.7",
+      "imageUrl": "https://picsum.photos/id/237/200/300",
+      "parentId": "0ee8",
+      "page": "Trending"
+    },
+    {
+      "id": "23f",
+      "name": "Trending Now: Espresso",
+      "imageUrl": "https://picsum.photos/id/237/200/300",
+      "parentId": "0ee8",
+      "page": "Trending"
+    },
+    {
+      "id": "fbj2",
+      "name": "Retro Running",
+      "imageUrl": "https://picsum.photos/id/237/200/300",
+      "parentId": "0ee8",
+      "page": "Trending"
+    },
+    {
+      "id": "21gf",
+      "name": "Running Shoe Finder",
+      "imageUrl": "https://picsum.photos/id/237/200/300",
+      "parentId": "0ee8",
+      "page": "Trending"
+    },
+    {
+      "id": "36d6",
+      "name": "Lifestyle",
+      "imageUrl": "https://picsum.photos/id/237/200/300",
+      "parentId": "c7b6",
+      "page": "new-featured"
+    },
+    {
+      "id": "f88e",
+      "name": "Running",
+      "imageUrl": "https://picsum.photos/id/237/200/300",
+      "parentId": "06c6",
+      "page": "new-featured"
+    }
   ]
 }

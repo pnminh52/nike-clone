@@ -2,7 +2,7 @@ import React from 'react'
 import Header1 from '../components/user/Header1'
 import Header2 from './../components/user/Header2';
 import Header3 from './../components/user/Header3';
-import Homepage from '../pages/user/homepage';
+import Homepage from '../pages/user/Homepage';
 const UserLayout = () => {
   return (
     <div>
