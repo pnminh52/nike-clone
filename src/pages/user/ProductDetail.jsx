@@ -12,7 +12,9 @@ const ProductDetail = () => {
 
   const [mainImage, setMainImage] = useState('');
   const [selectedSize, setSelectedSize] = useState(null);
-
+  const formatPrice = (price) => {
+    return Number(price).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  };
   useEffect(() => {
     if (selectedProduct) {
       setMainImage(selectedProduct.img);
@@ -80,9 +82,12 @@ const ProductDetail = () => {
 
         </div>
         <div className='mt-2'>
-          <p className="text-black inter">{selectedProduct.price_sale} $</p>
+        <p className="text-black ">
+       <span className='inter'> {formatPrice(selectedProduct.price_sale)} </span>
+        <span className='text-sm font-medium'>₫</span>
+</p>
         </div>
-        <div className="grid grid-cols-5 gap-2 py-4">
+        <div className="grid grid-cols-5 gap-2 py-8">
           {products.map((product, idx) => (
             <div
               key={product.id}
@@ -124,13 +129,13 @@ const ProductDetail = () => {
                 key={size}
                 disabled={!isAvailable}
                 onClick={() => isAvailable && setSelectedSize(size)}
-                className={`px-4 py-3 cursor-pointer flex items-center justify-center border rounded-md text-sm transition
+                className={`px-4 py-3 cursor-pointer flex items-center justify-center border rounded-md text-lg transition
           ${isSelected ? "ring-2 ring-black" : ""}
           ${isAvailable
                     ? "border-gray-400 hover:border-black hover:text-black"
                     : "border-gray-200 text-gray-400 cursor-not-allowed opacity-50"}
             
-            ${!isAvailable ? 'line-through bg-gray-200' : ''}`}
+            ${!isAvailable ? 'line-through bg-gray-200 border-gray-400' : ''}`}
               >
                 EU {size}
               </button>

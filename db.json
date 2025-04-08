@@ -3,8 +3,8 @@
     {
       "id": "dffs",
       "name": "Nike Air Max Dn8",
-      "price": "190",
-      "price_sale": "200",
+      "price": "6000000",
+      "price_sale": "5598000",
       "des": "qqqqq",
       "img": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/56553951-1d16-4e28-9624-2de76aa82d41/W+AIR+MAX+DN8.png",
       "page": "New & Featured",
@@ -35,8 +35,8 @@
     {
       "id": "8fe9",
       "name": "Nike Air Max Dn8",
-      "price": "190",
-      "price_sale": "200",
+      "price": "6000000",
+      "price_sale": "5598000",
       "des": "qqqqq",
       "img": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/f5dda49c-dcc6-4d0d-b189-1df9d21bb0f0/W+AIR+MAX+DN8.png",
       "sizes": [
@@ -65,8 +65,8 @@
     {
       "id": "53a9",
       "name": "Nike Air Max Dn8",
-      "price": "190",
-      "price_sale": "200",
+      "price": "6000000",
+      "price_sale": "5598000",
       "des": "qqqqq",
       "img": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/b6ae54f3-7f93-45f2-b116-b8bfb9548b0e/W+AIR+MAX+DN8.png",
       "sizes": [
@@ -92,6 +92,34 @@
         "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/45af29ae-942d-420f-9ba2-77438c4c76a6/W+AIR+MAX+DN8.png",
         "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/45af29ae-942d-420f-9ba2-77438c4c76a6/W+AIR+MAX+DN8.png",
         "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/abd8a097-7531-4a1a-ab49-397104ffade2/W+AIR+MAX+DN8.png"
+      ]
+    },
+    {
+      "id": "bda8",
+      "name": "Nike Air Max Dn8",
+      "price": "6000000",
+      "price_sale": "5598000",
+      "des": "qqqqq",
+      "img": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/084ccffe-0c51-4441-b6c3-04f36daf244b/W+AIR+MAX+DN8.png",
+      "page": "New & Featured",
+      "category": "New & Upcoming Drops",
+      "status": "Coming Soon",
+      "customer": "Women",
+      "sizes": [
+        "32",
+        "33",
+        "34"
+      ],
+      "gender": "Women",
+      "additionalImages": [
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/2f913fc0-8574-4171-8fa9-554d8cdb12da/W+AIR+MAX+DN8.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/c04da348-86ab-424d-b700-dd6bc04144cb/W+AIR+MAX+DN8.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/e4233627-d1ee-47f7-af91-82887e696bb2/W+AIR+MAX+DN8.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/310a2e70-fb72-4a9b-a0ee-f8d1f0a826f2/W+AIR+MAX+DN8.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/537df6d8-a297-4f26-91f2-acd2fb032484/W+AIR+MAX+DN8.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/c49eedfa-4d38-4720-8920-3e8bd97ce0c5/W+AIR+MAX+DN8.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/24105ba9-1a41-4093-b4a8-559aa7e5ee03/W+AIR+MAX+DN8.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/160983bb-3b47-4059-a58b-d1382e359970/W+AIR+MAX+DN8.png"
       ]
     }
   ],

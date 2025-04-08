@@ -27,7 +27,13 @@ const AddProduct = () => {
     // Gửi dữ liệu lên server
     handleAddProduct(e);
   };
-
+  const colors = [
+    "Red", "White", "Black", "Blue", "Green", "Yellow", "Pink", "Purple",
+    "Orange", "Gray", "Brown", "Beige", "Navy", "Teal", "Cyan", "Magenta",
+    "Lime", "Olive", "Maroon", "Gold", "Silver", "Coral", "Indigo", "Turquoise",
+    "Mint", "Lavender"
+  ];
+  
   return (
     <div>
       <form onSubmit={handleSubmit}>
@@ -292,16 +298,13 @@ const AddProduct = () => {
         )}
 
         {/* Colors Available */}
-        <select
-          name="color"
-          value={inputValue.color || ""}
-          onChange={handleDataChange}
-        >
-          <option value="">Select color</option>
-          <option value="Red">Red</option>
-          <option value="White">White</option>
-          <option value="Black">Black</option>
-        </select>
+        <select className="border rounded p-2">
+  <option value="">Select color</option>
+  {colors.map((color) => (
+    <option key={color} value={color}>{color}</option>
+  ))}
+</select>
+
 
         {/* Sizes Available (multiple select) */}
         <select
