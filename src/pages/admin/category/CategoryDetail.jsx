@@ -4,7 +4,7 @@ import useCategories from '../../../hooks/useCategories';
 import { Link } from 'react-router-dom'; // Hook để lấy dữ liệu category
 
 const CategoryDetail = () => {
-  const { categories } = useCategories(); // Lấy dữ liệu category từ hook
+  const { categories, handleDeleteCategory } = useCategories(); // Lấy dữ liệu category từ hook
   const { id } = useParams(); // Lấy id của category cha từ URL
   const [childCategories, setChildCategories] = useState([]); // Dữ liệu category con
 
@@ -42,7 +42,7 @@ const CategoryDetail = () => {
                   <button className="bg-yellow-500 text-white px-4 py-2 rounded-md hover:bg-yellow-600">
                     Edit
                   </button></Link>
-                  <button className="bg-red-500 text-white px-4 py-2 rounded-md hover:bg-red-600">
+                  <button onClick={()=>handleDeleteCategory(category.id)} className="bg-red-500 text-white px-4 py-2 rounded-md hover:bg-red-600">
                     Delete
                   </button>
                 </td>

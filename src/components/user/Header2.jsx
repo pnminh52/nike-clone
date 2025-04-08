@@ -1,5 +1,7 @@
-import React, { useState } from 'react'
-import useCategories from '../../hooks/useCategories';
+import React, { useState } from "react";
+import useCategories from "../../hooks/useCategories";
+import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Header2 = () => {
     const { categories } = useCategories();
@@ -8,39 +10,33 @@ const Header2 = () => {
     const [isHovered2, setIsHovered2] = useState(false);
     const [isHovered3, setIsHovered3] = useState(false);
     const [isHovered4, setIsHovered4] = useState(false);
+    const navigate= useNavigate();
+    
     return (
-        <div className='bg-white'>
-
+        <div className="bg-white">
             <div className="container h-16  mx-auto px-4 max-w-screen-xl flex justify-between items-center sticky top-0 z-10 bg-white  ">
-                <svg
-                    className=''
-                    aria-hidden="true"
-                    class="swoosh-svg"
-                    focusable="false"
-                    viewBox="0 0 24 24"
-                    role="img"
-                    width="80px"
-                    height="80px"
-                    fill="none"
-                >
-                    <path
-                        fill="currentColor"
-                        fill-rule="evenodd"
-                        d="M21 8.719L7.836 14.303C6.74 14.768 5.818 15 5.075 15c-.836 0-1.445-.295-1.819-.884-.485-.76-.273-1.982.559-3.272.494-.754 1.122-1.446 1.734-2.108-.144.234-1.415 2.349-.025 3.345.275.2.666.298 1.147.298.386 0 .829-.063 1.316-.19L21 8.719z"
-                        clip-rule="evenodd"
-                    ></path>
-                </svg>
-                <div className='px-2'></div>
+               <Link to={'/'}>
+               <svg
+  viewBox="0 0 24 24"
+  fill="none"
+  width="80px"
+  height="80px"
+>
+  <path
+    fill="currentColor"
+    d="M21 8.719L7.836 14.303C6.74 14.768 5.818 15 5.075 15c-.836 0-1.445-.295-1.819-.884-.485-.76-.273-1.982.559-3.272.494-.754 1.122-1.446 1.734-2.108-.144.234-1.415 2.349-.025 3.345.275.2.666.298 1.147.298.386 0 .829-.063 1.316-.19L21 8.719z"
+    style={{ transform: "scale(1.2)", transformOrigin: "center" }}
+  />
+</svg>
+</Link>
+                <div className="px-2"></div>
 
                 <div className="hidden sm:block">
-                    <ul
-
-                        className="flex gap-7  h-14 items-center inter">
-                        <li className="relative group h-full flex items-center cursor-pointer text-[16px]
-             after:absolute after:h-[2.5px] after:bg-black after:w-0 after:left-0 
-             after:bottom-[14px] hover:after:w-full after:transition-all after:duration-300"
-                        >Collection</li>
+                    <ul className="flex gap-7  h-14 items-center inter">
+                      
+                       
                         <li
+                        
                             onMouseEnter={() => setIsHovered0(true)}
                             onMouseLeave={() => setIsHovered0(false)}
                             className="relative group h-full flex items-center cursor-pointer text-[16px]
@@ -50,25 +46,44 @@ const Header2 = () => {
                             New & Featured
                         </li>
 
-
-
-                        <li className="relative group h-full flex items-center cursor-pointer text-[16px]
+                        <li
+                          onMouseEnter={() => setIsHovered1(true)}
+                          onMouseLeave={() => setIsHovered1(false)}
+                            className="relative group h-full flex items-center cursor-pointer text-[16px]
              after:absolute after:h-[2.5px] after:bg-black after:w-0 after:left-0 
-             after:bottom-[14px] hover:after:w-full after:transition-all after:duration-300">Men</li>
-                        <li className="relative group h-full flex items-center cursor-pointer text-[16px]
+             after:bottom-[14px] hover:after:w-full after:transition-all after:duration-300"
+                        >
+                            Men
+                        </li>
+                        <li
+                          onMouseEnter={() => setIsHovered2(true)}
+                          onMouseLeave={() => setIsHovered2(false)}
+                            className="relative group h-full flex items-center cursor-pointer text-[16px]
              after:absolute after:h-[2.5px] after:bg-black after:w-0 after:left-0 
-             after:bottom-[14px] hover:after:w-full after:transition-all after:duration-300">Women</li>
-                        <li className="relative group h-full flex items-center cursor-pointer text-[16px]
+             after:bottom-[14px] hover:after:w-full after:transition-all after:duration-300"
+                        >
+                            Women
+                        </li>
+                        <li
+                          onMouseEnter={() => setIsHovered3(true)}
+                          onMouseLeave={() => setIsHovered3(false)}
+                            className="relative group h-full flex items-center cursor-pointer text-[16px]
              after:absolute after:h-[2.5px] after:bg-black after:w-0 after:left-0 
-             after:bottom-[14px] hover:after:w-full after:transition-all after:duration-300">Kids</li>
-                        <li className="relative group h-full flex items-center cursor-pointer text-[16px]
+             after:bottom-[14px] hover:after:w-full after:transition-all after:duration-300"
+                        >
+                            Kids
+                        </li>
+                        <li
+                          onMouseEnter={() => setIsHovered4(true)}
+                          onMouseLeave={() => setIsHovered4(false)}
+                            className="relative group h-full flex items-center cursor-pointer text-[16px]
              after:absolute after:h-[2.5px] after:bg-black after:w-0 after:left-0 
-             after:bottom-[14px] hover:after:w-full after:transition-all after:duration-300">Sale</li>
+             after:bottom-[14px] hover:after:w-full after:transition-all after:duration-300"
+                        >
+                            Sale
+                        </li>
                     </ul>
                 </div>
-
-
-
 
                 <div className="flex items-center gap-6 sm:gap-3">
                     <svg
@@ -111,9 +126,8 @@ const Header2 = () => {
                         />
                     </div>
 
-                    <div className='cursor-pointer '>
+                    <div className="cursor-pointer ">
                         <svg
-
                             aria-hidden="true"
                             focusable="false"
                             viewBox="0 0 24 24"
@@ -129,7 +143,7 @@ const Header2 = () => {
                             ></path>
                         </svg>
                     </div>
-                    <div className='cursor-pointer'>
+                    <div className="cursor-pointer">
                         <div className="relative  ">
                             <svg
                                 aria-hidden="true"
@@ -152,56 +166,259 @@ const Header2 = () => {
                         </div>
                     </div>
 
-                    <svg className='block sm:hidden' aria-hidden="true" focusable="false" viewBox="0 0 24 24" role="img" width="24px" height="24px" fill="none"><path stroke="currentColor" stroke-width="1.5" d="M21 5.25H3M21 12H3m18 6.75H3"></path></svg>
+                    <svg
+                        className="block sm:hidden"
+                        aria-hidden="true"
+                        focusable="false"
+                        viewBox="0 0 24 24"
+                        role="img"
+                        width="24px"
+                        height="24px"
+                        fill="none"
+                    >
+                        <path
+                            stroke="currentColor"
+                            stroke-width="1.5"
+                            d="M21 5.25H3M21 12H3m18 6.75H3"
+                        ></path>
+                    </svg>
                 </div>
             </div>
 
-
-            
             <div className="relative z-50">
-  {/* Overlay xám bắt đầu từ dưới li */}
-  {isHovered0 && (
-    <div className="absolute top-full left-0 w-full h-[calc(100vh-56px)] bg-black opacity-60 z-40 transition-opacity duration-300"></div>
-  )}
+                {/* Overlay xám bắt đầu từ dưới li */}
+                {isHovered0 && (
+                    <div className="absolute top-full left-0 w-full h-[calc(100vh-56px)] bg-black opacity-60 z-40 transition-opacity duration-300"></div>
+                )}
 
-  {/* Dropdown */}
-  <div
-    onMouseEnter={() => setIsHovered0(true)}
-    onMouseLeave={() => setIsHovered0(false)}
-    className={`absolute left-0 top-full w-full bg-white shadow-lg overflow-hidden transition-all duration-500 ease-in-out z-50 ${
-      isHovered0
-        ? 'max-h-[500px] opacity-100 translate-y-0 pointer-events-auto'
-        : 'max-h-0 opacity-0 translate-y-[-0px] pointer-events-none'
-    }`}
-  >
-    <div className="mx-auto max-w-screen-xl px-65 justify-center flex flex-col">
-      <div className="grid grid-cols-4 gap-4 mt-4 mb-10">
-        {categories
-          .filter((cat) => (cat.parentId === null || cat.parentId === "") && cat.page === "new-featured")
-          .map((parent) => (
-            <div key={parent.id}>
-              <p className="font-semibold text-sm inter mb-3 hover:text-gray-700 cursor-pointer">{parent.name}</p>
-              <ul className="text-xs inter text-gray-500 space-y-3">
-                {categories
-                  .filter((child) => child.parentId === parent.id)
-                  .map((child) => (
-                    <li key={child.id} className="cursor-pointer hover:text-black">{child.name}</li>
-                  ))}
-              </ul>
+                {/* Dropdown */}
+                <div
+                    onMouseEnter={() => setIsHovered0(true)}
+                    onMouseLeave={() => setIsHovered0(false)}
+                    className={`absolute left-0 top-full w-full bg-white shadow-lg overflow-hidden transition-all duration-500 ease-in-out z-50 ${isHovered0
+                            ? "max-h-[500px] opacity-100 translate-y-0 pointer-events-auto"
+                            : "max-h-0 opacity-0 translate-y-[-0px] pointer-events-none"
+                        }`}
+                >
+                    <div className="mx-auto max-w-screen-xl px-65 justify-center flex flex-col">
+                        <div className="grid grid-cols-4 gap-4 mt-4 mb-10">
+                            {categories
+                                .filter(
+                                    (cat) =>
+                                        (cat.parentId === null || cat.parentId === "") &&
+                                        cat.page === "New & Featured"
+                                )
+                                .map((parent) => (
+                                    <div key={parent.id} 
+                                    >
+                                        <p className="font-semibold text-sm inter mb-3 hover:text-gray-700 cursor-pointer">
+                                            {parent.name}
+                                        </p>
+                                        <ul className="text-xs inter text-gray-500 space-y-2">
+                                            {categories
+                                                .filter((child) => child.parentId === parent.id)
+                                                .map((child) => (
+                                                    <li
+                                                        key={child.id}
+                                                        onClick={() => navigate(`/category/${encodeURIComponent(child.name)}`)}
+                                                        className="cursor-pointer hover:text-black"
+                                                    >
+                                                        {child.name}
+                                                    </li>
+                                                ))}
+                                        </ul>
+                                    </div>
+                                ))}
+                        </div>
+                    </div>
+                </div>
             </div>
-          ))}
-      </div>
-    </div>
-  </div>
-</div>
+            <div className="relative z-50">
+                {/* Overlay xám bắt đầu từ dưới li */}
+                {isHovered1 && (
+                    <div className="absolute top-full left-0 w-full h-[calc(100vh-56px)] bg-black opacity-60 z-40 transition-opacity duration-300"></div>
+                )}
 
+                {/* Dropdown */}
+                <div
+                    onMouseEnter={() => setIsHovered1(true)}
+                    onMouseLeave={() => setIsHovered1(false)}
+                    className={`absolute left-0 top-full w-full bg-white shadow-lg overflow-hidden transition-all duration-500 ease-in-out z-50 ${isHovered1
+                            ? "max-h-[500px] opacity-100 translate-y-0 pointer-events-auto"
+                            : "max-h-0 opacity-0 translate-y-[-0px] pointer-events-none"
+                        }`}
+                >
+                    <div className="mx-auto max-w-screen-xl px-65 justify-center flex flex-col">
+                        <div className="grid grid-cols-5 gap-4 mt-4 mb-10">
+                            {categories
+                                .filter(
+                                    (cat) =>
+                                        (cat.parentId === null || cat.parentId === "") &&
+                                        cat.page === "Men"
+                                )
+                                .map((parent) => (
+                                    <div key={parent.id}>
+                                        <p className="font-semibold text-sm inter mb-3 hover:text-gray-700 cursor-pointer">
+                                            {parent.name}
+                                        </p>
+                                        <ul className="text-xs inter text-gray-500 space-y-2">
+                                            {categories
+                                                .filter((child) => child.parentId === parent.id)
+                                                .map((child) => (
+                                                    <li
+                                                        key={child.id}
+                                                        className="cursor-pointer hover:text-black"
+                                                    >
+                                                        {child.name}
+                                                    </li>
+                                                ))}
+                                        </ul>
+                                    </div>
+                                ))}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div className="relative z-50">
+                {/* Overlay xám bắt đầu từ dưới li */}
+                {isHovered2 && (
+                    <div className="absolute top-full left-0 w-full h-[calc(100vh-56px)] bg-black opacity-60 z-40 transition-opacity duration-300"></div>
+                )}
+
+                {/* Dropdown */}
+                <div
+                    onMouseEnter={() => setIsHovered2(true)}
+                    onMouseLeave={() => setIsHovered2(false)}
+                    className={`absolute left-0 top-full w-full bg-white shadow-lg overflow-hidden transition-all duration-500 ease-in-out z-50 ${isHovered2
+                            ? "max-h-[500px] opacity-100 translate-y-0 pointer-events-auto"
+                            : "max-h-0 opacity-0 translate-y-[-0px] pointer-events-none"
+                        }`}
+                >
+                    <div className="mx-auto max-w-screen-xl px-65 justify-center flex flex-col">
+                        <div className="grid grid-cols-4 gap-4 mt-4 mb-10">
+                            {categories
+                                .filter(
+                                    (cat) =>
+                                        (cat.parentId === null || cat.parentId === "") &&
+                                        cat.page === "Women"
+                                )
+                                .map((parent) => (
+                                    <div key={parent.id}>
+                                        <p className="font-semibold text-sm inter mb-3 hover:text-gray-700 cursor-pointer">
+                                            {parent.name}
+                                        </p>
+                                        <ul className="text-xs inter text-gray-500 space-y-2">
+                                            {categories
+                                                .filter((child) => child.parentId === parent.id)
+                                                .map((child) => (
+                                                    <li
+                                                        key={child.id}
+                                                        className="cursor-pointer hover:text-black"
+                                                    >
+                                                        {child.name}
+                                                    </li>
+                                                ))}
+                                        </ul>
+                                    </div>
+                                ))}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div className="relative z-50">
+                {/* Overlay xám bắt đầu từ dưới li */}
+                {isHovered3 && (
+                    <div className="absolute top-full left-0 w-full h-[calc(100vh-56px)] bg-black opacity-60 z-40 transition-opacity duration-300"></div>
+                )}
+
+                {/* Dropdown */}
+                <div
+                    onMouseEnter={() => setIsHovered3(true)}
+                    onMouseLeave={() => setIsHovered3(false)}
+                    className={`absolute left-0 top-full w-full bg-white shadow-lg overflow-hidden transition-all duration-500 ease-in-out z-50 ${isHovered3
+                            ? "max-h-[500px] opacity-100 translate-y-0 pointer-events-auto"
+                            : "max-h-0 opacity-0 translate-y-[-0px] pointer-events-none"
+                        }`}
+                >
+                    <div className="mx-auto max-w-screen-xl px-65 justify-center flex flex-col">
+                        <div className="grid grid-cols-4 gap-4 mt-4 mb-10">
+                            {categories
+                                .filter(
+                                    (cat) =>
+                                        (cat.parentId === null || cat.parentId === "") &&
+                                        cat.page === "Kids"
+                                )
+                                .map((parent) => (
+                                    <div key={parent.id}>
+                                        <p className="font-semibold text-sm inter mb-3 hover:text-gray-700 cursor-pointer">
+                                            {parent.name}
+                                        </p>
+                                        <ul className="text-xs inter text-gray-500 space-y-2">
+                                            {categories
+                                                .filter((child) => child.parentId === parent.id)
+                                                .map((child) => (
+                                                    <li
+                                                        key={child.id}
+                                                        className="cursor-pointer hover:text-black"
+                                                    >
+                                                        {child.name}
+                                                    </li>
+                                                ))}
+                                        </ul>
+                                    </div>
+                                ))}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div className="relative z-50">
+                {/* Overlay xám bắt đầu từ dưới li */}
+                {isHovered4 && (
+                    <div className="absolute top-full left-0 w-full h-[calc(100vh-56px)] bg-black opacity-60 z-40 transition-opacity duration-300"></div>
+                )}
+
+                {/* Dropdown */}
+                <div
+                    onMouseEnter={() => setIsHovered4(true)}
+                    onMouseLeave={() => setIsHovered4(false)}
+                    className={`absolute left-0 top-full w-full bg-white shadow-lg overflow-hidden transition-all duration-500 ease-in-out z-50 ${isHovered4
+                            ? "max-h-[500px] opacity-100 translate-y-0 pointer-events-auto"
+                            : "max-h-0 opacity-0 translate-y-[-0px] pointer-events-none"
+                        }`}
+                >
+                    <div className="mx-auto max-w-screen-xl px-65 justify-center flex flex-col">
+                        <div className="grid grid-cols-4 gap-4 mt-4 mb-10">
+                            {categories
+                                .filter(
+                                    (cat) =>
+                                        (cat.parentId === null || cat.parentId === "") &&
+                                        cat.page === "Sale"
+                                )
+                                .map((parent) => (
+                                    <div key={parent.id}>
+                                        <p className="font-semibold text-sm inter mb-3 hover:text-gray-700 cursor-pointer">
+                                            {parent.name}
+                                        </p>
+                                        <ul className="text-xs inter text-gray-500 space-y-2">
+                                            {categories
+                                                .filter((child) => child.parentId === parent.id)
+                                                .map((child) => (
+                                                    <li
+                                                        key={child.id}
+                                                        className="cursor-pointer hover:text-black"
+                                                    >
+                                                        {child.name}
+                                                    </li>
+                                                ))}
+                                        </ul>
+                                    </div>
+                                ))}
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
+    );
+};
 
-
-
-
-
-    )
-}
-
-export default Header2
+export default Header2;

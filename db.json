@@ -1,13 +1,98 @@
 {
   "products": [
     {
-      "id": "dee0",
-      "name": "AHAHHA",
-      "price": "12121212",
-      "price_sale": "11111111",
-      "category": "1dfdfdfdf",
-      "des": "ssdsds",
-      "img": "https://picsum.photos/200/300"
+      "id": "dffs",
+      "name": "Nike Air Max Dn8",
+      "price": "190",
+      "price_sale": "200",
+      "des": "qqqqq",
+      "img": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/56553951-1d16-4e28-9624-2de76aa82d41/W+AIR+MAX+DN8.png",
+      "page": "New & Featured",
+      "category": "New & Upcoming Drops",
+      "status": "Coming Soon",
+      "customer": "Women",
+      "sizes": [
+        "32",
+        "33",
+        "34",
+        "41",
+        "37",
+        "35"
+      ],
+      "gender": "Women",
+      "color": "Pink",
+      "additionalImages": [
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/d636ecdb-b6ef-4bdc-bfe6-fd21300b359e/W+AIR+MAX+DN8.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/618f8d03-17bb-4f61-898f-3a03521513c3/W+AIR+MAX+DN8.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/5abe9cb5-c6ea-4602-af88-282a5e37b904/W+AIR+MAX+DN8.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/573e3b6c-9d06-457f-b88b-b72edb5317f9/W+AIR+MAX+DN8.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/66611108-c63d-4d1c-ac2e-25ffc50c8850/W+AIR+MAX+DN8.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/54b65210-15d1-4d55-b85c-408135c4114f/W+AIR+MAX+DN8.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/54b65210-15d1-4d55-b85c-408135c4114f/W+AIR+MAX+DN8.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/18be1f18-06ad-427a-9b78-c5c54744f0a2/W+AIR+MAX+DN8.png"
+      ]
+    },
+    {
+      "id": "8fe9",
+      "name": "Nike Air Max Dn8",
+      "price": "190",
+      "price_sale": "200",
+      "des": "qqqqq",
+      "img": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/f5dda49c-dcc6-4d0d-b189-1df9d21bb0f0/W+AIR+MAX+DN8.png",
+      "sizes": [
+        "32",
+        "33",
+        "34",
+        "35"
+      ],
+      "gender": "Women",
+      "color": "Black",
+      "page": "New & Featured",
+      "category": "New & Upcoming Drops",
+      "status": "Coming Soon",
+      "customer": "Women",
+      "additionalImages": [
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/9973d09c-8203-4d7a-a0f6-0bf789bcfd46/W+AIR+MAX+DN8.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/bfaa7093-a194-4206-9fe8-3ca7cbf1a8b6/W+AIR+MAX+DN8.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/9504258c-a370-4a7a-9384-7178bef3284e/W+AIR+MAX+DN8.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/b57ef4a0-4847-4646-944c-e94fd4c23b7d/W+AIR+MAX+DN8.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/df4eb28a-f641-43fb-b8f3-b9d10b457618/W+AIR+MAX+DN8.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/74724a79-16b9-4010-ba16-9a818cf90976/W+AIR+MAX+DN8.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/e4e335df-c0de-4444-b6d4-2be5c9885821/W+AIR+MAX+DN8.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/3a09b753-0342-4e05-a999-aacae65d6e33/W+AIR+MAX+DN8.png"
+      ]
+    },
+    {
+      "id": "53a9",
+      "name": "Nike Air Max Dn8",
+      "price": "190",
+      "price_sale": "200",
+      "des": "qqqqq",
+      "img": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/b6ae54f3-7f93-45f2-b116-b8bfb9548b0e/W+AIR+MAX+DN8.png",
+      "sizes": [
+        "31",
+        "32",
+        "33",
+        "34",
+        "35"
+      ],
+      "color": "Red",
+      "gender": "Women",
+      "page": "New & Featured",
+      "category": "New & Upcoming Drops",
+      "status": "Coming Soon",
+      "customer": "Women",
+      "additionalImages": [
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/96d328b9-b574-4573-beb4-ec993a6a6842/W+AIR+MAX+DN8.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/0786aa8f-759e-4113-b382-d66f47f4b33c/W+AIR+MAX+DN8.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/19906a78-5592-4ede-9a42-54648b355f86/W+AIR+MAX+DN8.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/e19a5b79-4f36-4cff-ab77-88ca290901ed/W+AIR+MAX+DN8.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/7eab40cf-22cc-4f30-bb9e-87ca0cf730a4/W+AIR+MAX+DN8.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/b8519150-a4ff-4823-a13f-da2f60a88bca/W+AIR+MAX+DN8.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/45af29ae-942d-420f-9ba2-77438c4c76a6/W+AIR+MAX+DN8.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/45af29ae-942d-420f-9ba2-77438c4c76a6/W+AIR+MAX+DN8.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/abd8a097-7531-4a1a-ab49-397104ffade2/W+AIR+MAX+DN8.png"
+      ]
     }
   ],
   "categories": [
@@ -16,77 +101,77 @@
       "name": "Featured",
       "imageUrl": "https://picsum.photos/id/237/200/300",
       "parentId": null,
-      "page": "new-featured"
+      "page": "New & Featured"
     },
     {
       "id": "0ee8",
       "name": "Trending",
       "imageUrl": "https://picsum.photos/id/237/200/300",
       "parentId": null,
-      "page": "new-featured"
+      "page": "New & Featured"
     },
     {
       "id": "c7b6",
       "name": "Shop Icons",
       "imageUrl": "https://picsum.photos/id/237/200/300",
       "parentId": null,
-      "page": "new-featured"
+      "page": "New & Featured"
     },
     {
       "id": "06c6",
       "name": "Shop By Sport",
       "imageUrl": "https://picsum.photos/id/237/200/300",
       "parentId": null,
-      "page": "new-featured"
+      "page": "New & Featured"
     },
     {
       "id": "97cd",
       "name": "New & Upcoming Drops",
-      "imageUrl": "https://picsum.photos/id/237/200/300",
+      "imageUrl": "https://static.nike.com/a/images/w_960,c_limit/3f78a2ff-773e-430d-b312-c317e7607fa6/image.jpg",
       "parentId": "edd2",
-      "page": "new-featured"
+      "page": "New & Featured"
     },
     {
       "id": "985c",
       "name": "New Arrivals",
       "imageUrl": "https://picsum.photos/id/237/200/300",
       "parentId": "edd2",
-      "page": "new-featured"
+      "page": "New & Featured"
     },
     {
       "id": "124",
       "name": "Bestsellers",
       "imageUrl": "https://picsum.photos/id/237/200/300",
       "parentId": "edd2",
-      "page": "new-featured"
+      "page": "New & Featured"
     },
     {
       "id": "223",
       "name": "Member Exclusive",
       "imageUrl": "https://picsum.photos/id/237/200/300",
       "parentId": "edd2",
-      "page": "new-featured"
+      "page": "New & Featured"
     },
     {
       "id": "4545f",
       "name": "Customise with Nike By You",
       "imageUrl": "https://picsum.photos/id/237/200/300",
       "parentId": "edd2",
-      "page": "new-featured"
+      "page": "New & Featured"
     },
     {
       "id": "1231d",
       "name": "What's Trending",
       "imageUrl": "https://picsum.photos/id/237/200/300",
       "parentId": "edd2",
-      "page": "new-featured"
+      "page": "New & Featured"
     },
     {
       "id": "121zzx",
       "name": "Jordan",
       "imageUrl": "https://picsum.photos/id/237/200/300",
       "parentId": "edd2",
-      "page": "new-featured"
+      "page": "New & Featured"
     },
     {
       "id": "121aaw",
@@ -135,14 +220,42 @@
       "name": "Lifestyle",
       "imageUrl": "https://picsum.photos/id/237/200/300",
       "parentId": "c7b6",
-      "page": "new-featured"
+      "page": "New & Featured"
     },
     {
       "id": "f88e",
       "name": "Running",
       "imageUrl": "https://picsum.photos/id/237/200/300",
       "parentId": "06c6",
-      "page": "new-featured"
+      "page": "New & Featured"
+    },
+    {
+      "id": "e266",
+      "name": "Featured",
+      "imageUrl": "https://picsum.photos/id/237/200/300",
+      "parentId": null,
+      "page": "Men"
+    },
+    {
+      "id": "21wd",
+      "name": "New Arrivals",
+      "imageUrl": "https://picsum.photos/id/237/200/300",
+      "parentId": "e266",
+      "page": "Men"
+    },
+    {
+      "id": "3we",
+      "name": "Bestsellers",
+      "imageUrl": "https://picsum.photos/id/237/200/300",
+      "parentId": "e266",
+      "page": "Men"
+    },
+    {
+      "id": "43dwad",
+      "name": "Shop All Sale",
+      "imageUrl": "https://picsum.photos/id/237/200/300",
+      "parentId": "e266",
+      "page": "Men"
     }
   ]
 }

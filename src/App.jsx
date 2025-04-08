@@ -10,6 +10,9 @@ import CategoryList from "./pages/admin/category/CategoryList";
 import AddCategory from "./pages/admin/category/AddCategory";
 import EditCategory from "./pages/admin/category/EditCategory";
 import CategoryDetail from "./pages/admin/category/CategoryDetail";
+import CategoryPage from "./pages/user/CategoryPage";
+import ProductDetail from "./pages/user/ProductDetail";
+
 const App = () => {
   return (
     <>
@@ -28,6 +31,8 @@ const App = () => {
 
         <Route path="/" element={<UserLayout />}>
           <Route index element={<Homepage />} />
+          <Route path="/category/:name" element={<CategoryPage />} />
+          <Route path="/details/:name" element={<ProductDetail/>}/>
         </Route>
       </Routes>
       <Footer />
