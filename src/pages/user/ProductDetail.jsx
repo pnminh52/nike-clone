@@ -29,28 +29,34 @@ const ProductDetail = () => {
     <div className="mx-auto mt-6 flex max-w-screen-lg px-2 gap-0 h-1000">
       <div className="w-2/3 flex gap-2 ">
         {/* Cột ảnh phụ cuộn dọc */}
-        <div className="flex flex-col gap-2 overflow-y-auto h-[600px] hide-scrollbar">
-          <img
-            src={selectedProduct.img}
-            alt={selectedProduct.name}
-            onClick={() => setMainImage(selectedProduct.img)}
-            className={`w-20 h-20 rounded-md object-cover cursor-pointer   ${mainImage === selectedProduct.img ? " " : ""
-              }`}
-          />
-          {selectedProduct.additionalImages.map((img, idx) => (
-           <div className='relative cursor-pointer' onClick={() => setMainImage(img)}>
-             <img
-              key={idx}
-              src={img}
-              alt="additional"
-              
-              className={`w-20 h-20 rounded-md object-cover cursor-pointer  hover:border-black transition ${mainImage === img ? "" : ""
-                }`}
-            />
-           <div className="absolute inset-0 bg-black/15 rounded-md hover:bg-black/30 duration-300 ease-in-out transition  "></div>
-           </div>
-          ))}
-        </div>
+        <div className="relative h-[600px]">
+  {/* Lớp mờ trên */}
+  <div className="absolute top-0 left-0 right-0 h-10 bg-gradient-to-b from-white via-white/40 to-transparent pointer-events-none z-10"></div>
+
+  {/* Lớp mờ dưới */}
+  <div className="absolute bottom-0 left-0 right-0 h-10 bg-gradient-to-t from-white via-white/40 to-transparent pointer-events-none z-10"></div>
+
+  {/* Slider */}
+  <div className="flex flex-col gap-2 overflow-y-auto h-[600px] hide-scrollbar relative z-0">
+    <img
+      src={selectedProduct.img}
+      alt={selectedProduct.name}
+      onClick={() => setMainImage(selectedProduct.img)}
+      className={`w-20 h-20 rounded-md object-cover cursor-pointer ${mainImage === selectedProduct.img ? "" : ""}`}
+    />
+    {selectedProduct.additionalImages.map((img, idx) => (
+      <div key={idx} className="relative cursor-pointer" onClick={() => setMainImage(img)}>
+        <img
+          src={img}
+          alt="additional"
+          className="w-20 h-20 rounded-md object-cover cursor-pointer hover:border-black transition"
+        />
+        <div className="absolute inset-0 bg-black/15 rounded-md hover:bg-black/30 duration-300 ease-in-out transition"></div>
+      </div>
+    ))}
+  </div>
+</div>
+
 
         {/* Ảnh chính */}
         <div className='relative'>
