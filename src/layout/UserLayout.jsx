@@ -7,7 +7,7 @@ const UserLayout = () => {
   return (
     <div>
       <Header1 />
-      <div className="sticky top-0 z-999 ">
+      <div className=" ">
       <Header2 />
       </div>
       <Header3 />

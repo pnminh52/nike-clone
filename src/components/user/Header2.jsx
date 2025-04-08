@@ -14,7 +14,7 @@ const Header2 = () => {
     
     return (
         <div className="bg-white">
-            <div className="container h-16  mx-auto px-4 max-w-screen-xl flex justify-between items-center sticky top-0 z-10 bg-white  ">
+            <div className="container h-16  mx-auto px-4 max-w-screen-xl flex justify-between items-center  bg-white  ">
                <Link to={'/'}>
                <svg
   viewBox="0 0 24 24"
@@ -144,7 +144,7 @@ const Header2 = () => {
                         </svg>
                     </div>
                     <div className="cursor-pointer">
-                        <div className="relative  ">
+                        <div className="  ">
                             <svg
                                 aria-hidden="true"
                                 focusable="false"
@@ -160,9 +160,7 @@ const Header2 = () => {
                                     d="M8.25 8.25V6a2.25 2.25 0 012.25-2.25h3a2.25 2.25 0 110 4.5H3.75v8.25a3.75 3.75 0 003.75 3.75h9a3.75 3.75 0 003.75-3.75V8.25H17.5"
                                 ></path>
                             </svg>
-                            <p className="absolute top-[13px] left-1/2 transform -translate-y-1/2 -translate-x-1/2 text-[10px]">
-                                1
-                            </p>
+                          
                         </div>
                     </div>
 

@@ -8,6 +8,7 @@ const CategoryPage = () => {
   const [products, setProducts] = useState([]); // State to store products
   const [categories, setCategories] = useState([]); // State to store categories
   const [selectedCategory, setSelectedCategory] = useState(null);
+  const [isFilterVisible, setIsFilterVisible] = useState(false); // State to control filter visibility
 
   const [loading, setLoading] = useState(true); // State for loading status
 
@@ -48,44 +49,59 @@ const CategoryPage = () => {
 
   return (
     <div className="h-900 max-w-screen-xl px-4 mx-auto">
-      <div className="flex justify-between items-center py-6">
+      <div className="flex justify-between items-center py-6 sticky top-0 bg-white z-10">
         <p className="inter text-xl">
           {decodeURIComponent(name || '')} ({products.length})
         </p>
         <div className="flex items-center gap-4">
-          <p className='inter'>Hide Filters</p>
+        <p className='inter cursor-pointer' onClick={() => setIsFilterVisible(!isFilterVisible)}>
+  {isFilterVisible ? 'Hide Filters' : 'Show Filters'}
+</p>
+
           <p className='inter'>Sort By</p>
         </div>
       </div>
       <div className="flex gap-2">
-        <div className="w-1/5 ">
-          <p>Category Sidebar (20%)</p>
-        </div>
-        <div className="w-4/5">
-
+  {/* Sidebar */}
+  <div
+    className={`transition-all duration-300 ${
+      isFilterVisible ? 'w-1/5 opacity-100' : 'w-0 opacity-0 overflow-hidden'
+    }`}
+  >
+    <p>Category Sidebar (20%)</p>
+  </div>
 
   {/* Danh sách sản phẩm */}
-  <div className="grid grid-cols-3 gap-2">
-      {/* Ảnh của category được chọn */}
+  <div
+    className={`transition-all duration-300 ${
+      isFilterVisible ? 'w-4/5' : 'w-full'
+    }`}
+  >
+    <div className="grid grid-cols-3 gap-2 transition-all duration-300">
+      {/* Ảnh category */}
       {selectedCategory && (
-       
-         <div className='relative'>
+        <div className='relative'>
           <Link to={`/products/:name`}>
-          <img
-                      src={selectedCategory.imageUrl}
-                      alt={selectedCategory.name}
-                      className="w-[324px] h-[324px] object-cover cursor-pointer"
-                    /></Link>
-         </div>
-        
+            <img
+              src={selectedCategory.imageUrl}
+              alt={selectedCategory.name}
+              className={`object-cover cursor-pointer transition-all duration-300 ${
+                !isFilterVisible ? 'w-[434px] h-[434px]' : 'w-[324px] h-[324px]'
+              }`}
+            />
+          </Link>
+        </div>
       )}
-    {products.map((product) => (
-      <ShoesCard key={product.id} product={product} />
-    ))}
+
+      {/* Danh sách sản phẩm */}
+      {products.map((product) => (
+        <ShoesCard key={product.id} product={product} isFilterVisible={isFilterVisible} />
+      ))}
+    </div>
   </div>
 </div>
 
-      </div>
+
     </div>
   );
 };
