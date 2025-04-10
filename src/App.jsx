@@ -12,12 +12,16 @@ import EditCategory from "./pages/admin/category/EditCategory";
 import CategoryDetail from "./pages/admin/category/CategoryDetail";
 import CategoryPage from "./pages/user/CategoryPage";
 import ProductDetail from "./pages/user/ProductDetail";
-
+import Cart from "./pages/user/Cart";
+import Login from "./pages/user/Login";
+import Register from "./pages/user/Register";
+import { AuthProvider } from "./hooks/useAuth";
+import Toastify from './components/user/Toastify';
 const App = () => {
   return (
     <>
-
-      <Routes>
+<AuthProvider>
+<Routes>
         <Route path="/admin" element={<AdminLayout />}>
           <Route path="products/list" element={<ProductList />} />
           <Route path="products/add" element={<AddProduct />} />
@@ -33,9 +37,17 @@ const App = () => {
           <Route index element={<Homepage />} />
           <Route path="/category/:name" element={<CategoryPage />} />
           <Route path="/details/:name" element={<ProductDetail/>}/>
+          <Route path="/cart" element={<Cart/>}/>
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+
         </Route>
+       
       </Routes>
       <Footer />
+      <Toastify />
+</AuthProvider>
+     
     </>
   );
 };

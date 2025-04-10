@@ -1,10 +1,12 @@
 import React from "react";
-
+import { useAuth } from "../../hooks/useAuth";
+import { Link } from "react-router-dom";
 const header = () => {
+    const { user, logout } = useAuth();
     return (
         <div className=" ">
             <div className="bg-gray-100 hidden sm:block">
-                <div className="container mx-auto px-4 max-w-screen-xl flex justify-between items-center py-1">
+                <div className="container mx-auto px-15 max-w-screen-2xl flex justify-between items-center py-1">
                     <svg
                         aria-hidden="true"
                         focusable="false"
@@ -24,7 +26,14 @@ const header = () => {
                     <div className="flex gap-2 items-center text-xs  font-thin ">
                         <p className="cursor-pointer inter">Find a Store</p> | <p className="cursor-pointer inter">Help</p>| <p className="cursor-pointer inter">Join Us</p>|
                         <div className="flex gap-1 items-center inter cursor-pointer">
-                            <p>Sign In</p>
+                            {user ? (
+                                <div className="flex gap-1 items-center">
+                                    <p className="text-sm font-medium">{user.email}</p>
+                                    <button onClick={logout} className="text-xs text-blue-600 ml-2 cursor-pointer underline">Logout</button>
+                                </div>
+                            ) : (
+                                <Link to={"/login"}><p>Sign In</p></Link>
+                            )}
                             {/* <svg
                                 aria-hidden="true"
                                 focusable="false"

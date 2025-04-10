@@ -1,10 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import useProducts from '../../hooks/useProducts';
+import { useCart } from '../../hooks/useCart';
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { useAuth } from '../../hooks/useAuth';
+
 
 const ProductDetail = () => {
+  const { addToCart } = useCart();
   const { name } = useParams();
   const { getProductsByName } = useProducts();
+  const user=useAuth()
 
   const products = getProductsByName(name);
   const [selectedIndex, setSelectedIndex] = useState(0);
@@ -17,7 +24,7 @@ const ProductDetail = () => {
   const [open0, setopen0] = useState(false);
   const [open1, setopen1] = useState(false);
   const [open2, setopen2] = useState(false);
-
+ 
   const formatPrice = (price) => {
     return Number(price).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   };
@@ -67,11 +74,14 @@ const ProductDetail = () => {
 
 
             <div className='relative'>
-              <img
-                src={mainImage}
-                alt={selectedProduct.name}
-                className="w-[485px] relative h-full object-cover cursor-pointer rounded-xl"
-              />
+            {mainImage && (
+  <img
+    src={mainImage}
+    alt={selectedProduct.name}
+    className="w-[485px] relative h-full object-cover cursor-pointer rounded-xl"
+  />
+)}
+
               <button className='absolute left-4 top-4 px-4 py-2 bg-white flex items-center rounded-full cursor-pointer gap-1'>
                 <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" role="img" width="20px" height="20px" fill="none"><path fill="currentColor" fill-rule="evenodd" stroke="currentColor" stroke-width="1.5" d="M2.56 10.346l5.12 3.694-1.955 5.978c-.225.688.568 1.261 1.157.836L12 17.159l5.12 3.695c.587.425 1.381-.148 1.155-.836l-1.954-5.978 5.118-3.694c.589-.425.286-1.352-.442-1.352H14.67l-.166-.507-1.789-5.47c-.225-.69-1.205-.69-1.43 0L9.33 8.993H3.003c-.728 0-1.03.927-.442 1.352z" clip-rule="evenodd"></path></svg>
                 <span className='text-xs inter '> Highly Rated</span>
@@ -243,15 +253,33 @@ const ProductDetail = () => {
           {selectedProduct.status === "Just In" && (
             <div className='space-y-3 mt-4'>
               <button
-                disabled={selectedProduct.stock === 0}
-                className={`w-full inter text-lg rounded-full h-16 transition 
-  ${selectedProduct.stock === 0
-                    ? "bg-[#E5E5E5] text-gray-400 cursor-not-allowed"
-                    : "bg-black text-white hover:bg-gray-800 cursor-pointer"
-                  }`}
-              >
-                Add to Bag
-              </button>
+  onClick={() => {
+    if (!user) {
+      toast.warning("🛑 Vui lòng đăng nhập để thêm vào giỏ hàng!");
+      return;
+    }
+    
+    if (!selectedSize) {
+      toast.info("👟 Vui lòng chọn size trước khi thêm vào giỏ hàng!");
+      return;
+    }
+    
+    
+    
+    // 👉 Nếu tới được đây thì cả user và size đều đã hợp lệ
+    addToCart(selectedProduct, selectedSize);
+    
+  }}
+  disabled={selectedProduct.stock === 0}
+  className={`w-full inter text-lg rounded-full h-16 transition 
+    ${selectedProduct.stock === 0
+      ? "bg-[#E5E5E5] text-gray-400 cursor-not-allowed"
+      : "bg-black text-white hover:bg-gray-800 cursor-pointer"
+    }`}
+>
+  Add to Bag
+</button>
+
               <button
                 className="w-full border flex items-center gap-1 justify-center inter text-lg rounded-full bg-white text-black hover:cursor-pointer h-16 hover:text-gray-800 transition"
               >

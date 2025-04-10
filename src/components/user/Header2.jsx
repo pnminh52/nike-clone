@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import useCategories from "../../hooks/useCategories";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import { useCart } from "../../hooks/useCart";
 
 const Header2 = () => {
     const { categories } = useCategories();
@@ -14,7 +15,7 @@ const Header2 = () => {
     
     return (
         <div className="bg-white">
-            <div className="container h-16  mx-auto px-4 max-w-screen-xl flex justify-between items-center  bg-white  ">
+            <div className="container h-16  mx-auto px-15 max-w-screen-2xl flex justify-between items-center  bg-white  ">
                <Link to={'/'}>
                <svg
   viewBox="0 0 24 24"
@@ -144,8 +145,9 @@ const Header2 = () => {
                         </svg>
                     </div>
                     <div className="cursor-pointer">
-                        <div className="  ">
+                        <div className="relative  "  onClick={() => navigate("/cart")} >
                             <svg
+                            
                                 aria-hidden="true"
                                 focusable="false"
                                 viewBox="0 0 24 24"
@@ -160,26 +162,30 @@ const Header2 = () => {
                                     d="M8.25 8.25V6a2.25 2.25 0 012.25-2.25h3a2.25 2.25 0 110 4.5H3.75v8.25a3.75 3.75 0 003.75 3.75h9a3.75 3.75 0 003.75-3.75V8.25H17.5"
                                 ></path>
                             </svg>
-                          
+                            <p className="absolute top-3.5 text-[9px] text-xs left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+  {useCart().cart.length}
+</p>
                         </div>
                     </div>
 
-                    <svg
-                        className="block sm:hidden"
-                        aria-hidden="true"
-                        focusable="false"
-                        viewBox="0 0 24 24"
-                        role="img"
-                        width="24px"
-                        height="24px"
-                        fill="none"
-                    >
-                        <path
-                            stroke="currentColor"
-                            stroke-width="1.5"
-                            d="M21 5.25H3M21 12H3m18 6.75H3"
-                        ></path>
-                    </svg>
+                  
+                   <svg
+                    
+                    className="block sm:hidden"
+                    aria-hidden="true"
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                    role="img"
+                    width="24px"
+                    height="24px"
+                    fill="none"
+                >
+                    <path
+                        stroke="currentColor"
+                        stroke-width="1.5"
+                        d="M21 5.25H3M21 12H3m18 6.75H3"
+                    ></path>
+                </svg>
                 </div>
             </div>
 

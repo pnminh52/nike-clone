@@ -11,7 +11,7 @@ const Homepage = () => {
 
   return (
     <div className="h-900">
-      <div className="max-w-screen-xl mx-auto px-4 justify-center items-center">
+      <div className="max-w-screen-2xl mx-auto px-15 justify-center items-center">
         <div className="block sm:hidden mt-2">
           <img
             src="https://static.nike.com/a/images/f_auto/dpr_1.0,cs_srgb/h_586,c_limit/a4aef648-8791-47d0-a667-3e2fde99f3b6/nike-just-do-it.jpg"

@@ -48,7 +48,7 @@ const CategoryPage = () => {
   }, [name]); // Dependency on category name to refetch when it changes
 
   return (
-    <div className="h-900 max-w-screen-xl px-4 mx-auto">
+    <div className="h-900 max-w-screen-2xl px-15 mx-auto">
       <div className="flex justify-between items-center py-6 sticky top-0 bg-white z-10">
         <p className="inter text-xl">
           {decodeURIComponent(name || '')} ({products.length})
@@ -86,7 +86,7 @@ const CategoryPage = () => {
               src={selectedCategory.imageUrl}
               alt={selectedCategory.name}
               className={`object-cover cursor-pointer transition-all duration-300 ${
-                !isFilterVisible ? 'w-[434px] h-[434px]' : 'w-[324px] h-[324px]'
+                !isFilterVisible ? 'w-[470px] h-[470px]' : 'w-[324px] h-[324px]'
               }`}
             />
           </Link>

@@ -17,7 +17,7 @@ const ShoesCard = ({ product, isFilterVisible } ) => {
   src={product.img}
   alt={product.name}
   className={`object-cover cursor-pointer transition-all duration-300 ${
-    isFilterVisible ? 'w-[324px] h-[324px]' : 'w-[434px] h-[434px]'
+    isFilterVisible ? 'w-[324px] h-[324px]' : 'w-[470px] h-[470px]'
   }`}
 />
 
