@@ -16,23 +16,25 @@ const AddProduct = () => {
     newImages[index] = value;
     setAdditionalImages(newImages);
   };
+  const handleColorChange = (index, value) => {
+    const updatedColors = [...colorsInput];
+    updatedColors[index] = value;
+    setColorsInput(updatedColors);
+  };
+  const handleAddColorField = () => {
+    setColorsInput([...colorsInput, ""]);
+  };
+  
 
-  // Cập nhật state inputValue với các URL ảnh phụ trước khi gửi form
   const handleSubmit = (e) => {
-    e.preventDefault(); // Ngăn chặn reload mặc định khi submit form
-    
-    // Cập nhật lại inputValue với các URL ảnh phụ
-    inputValue.additionalImages = additionalImages; 
-    
-    // Gửi dữ liệu lên server
+    e.preventDefault();
+    inputValue.additionalImages = additionalImages;
+    inputValue.color = colorsInput; // Thêm vào đây
     handleAddProduct(e);
   };
-  const colors = [
-    "Red", "White", "Black", "Blue", "Green", "Yellow", "Pink", "Purple",
-    "Orange", "Gray", "Brown", "Beige", "Navy", "Teal", "Cyan", "Magenta",
-    "Lime", "Olive", "Maroon", "Gold", "Silver", "Coral", "Indigo", "Turquoise",
-    "Mint", "Lavender"
-  ];
+  
+  const [colorsInput, setColorsInput] = useState([""]);
+
   
   return (
     <div>
@@ -211,6 +213,21 @@ const AddProduct = () => {
           onChange={handleDataChange}
           type="number"
         />
+        <input
+          name="style"
+          value={inputValue.style || ""}
+          placeholder="style"
+          onChange={handleDataChange}
+          type="text"
+        />
+      <input
+  name="country"
+  value={inputValue.country || "Vietnam"}
+  placeholder="Country"
+  onChange={handleDataChange}
+  type="text"
+/>
+
 
         {/* Product Status */}
         <select
@@ -297,13 +314,23 @@ const AddProduct = () => {
           </select>
         )}
 
-        {/* Colors Available */}
-        <select className="border rounded p-2">
-  <option value="">Select color</option>
-  {colors.map((color) => (
-    <option key={color} value={color}>{color}</option>
+<div>
+  <label>Colors:</label>
+  {colorsInput.map((color, index) => (
+    <input
+      key={index}
+      type="text"
+      placeholder={`Color ${index + 1}`}
+      value={color}
+      onChange={(e) => handleColorChange(index, e.target.value)}
+      className="border p-2 rounded mb-2 block"
+    />
   ))}
-</select>
+  <button type="button" onClick={handleAddColorField} className="border p-1 rounded bg-blue-500 text-white">
+    Add Color
+  </button>
+</div>
+
 
 
         {/* Sizes Available (multiple select) */}

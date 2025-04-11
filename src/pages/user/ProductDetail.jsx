@@ -197,47 +197,61 @@ const ProductDetail = () => {
               </p>
             </div>
             <div className="grid grid-cols-5 gap-2 py-8">
-              {products.map((product, idx) => (
-                <div
-                  key={product.id}
-                  onClick={() => {
-                    setSelectedIndex(idx);
-                    setSelectedSize(null);
-                  }}
-                  className={`cursor-pointer rounded relative ${
-                    selectedIndex === idx
-                      ? "ring-2 rounded-md transition duration-300 ease-in-out"
-                      : ""
-                  }`}
-                >
-                  <img
-                    src={product.img}
-                    alt={product.name}
-                    className="w-20 h-20 rounded-md object-cover"
-                  />
+  {products.map((product, idx) => (
+    <div
+      key={product.id}
+      onClick={() => {
+        setSelectedIndex(idx);
+        setSelectedSize(null);
+      }}
+      className={`cursor-pointer rounded relative group ${
+        selectedIndex === idx
+          ? "ring-2 rounded-md transition duration-300 ease-in-out"
+          : ""
+      }`}
+    >
+      <img
+        src={product.img}
+        alt={product.name}
+        className="w-20 h-20 rounded-md object-cover"
+      />
 
-                  {/* SVG gạch chéo nếu hết hàng */}
-                  {product.stock === 0 && (
-                    <div className="absolute inset-0">
-                      <svg
-                        className="w-full h-full p-3 z-20 bg-gray-300/30 rounded-md"
-                        viewBox="0 0 125 125"
-                        preserveAspectRatio="none"
-                      >
-                        <line
-                          x1="125"
-                          y1="125"
-                          x2="0"
-                          y2="0"
-                          stroke="white"
-                          strokeWidth="1.5"
-                        />
-                      </svg>
-                    </div>
-                  )}
-                </div>
-              ))}
-            </div>
+      {/* SVG gạch chéo nếu hết hàng */}
+      {product.stock === 0 && (
+        <div className="absolute inset-0">
+          <svg
+            className="w-full h-full p-3 z-10 bg-gray-300/50 rounded-md"
+            viewBox="0 0 125 125"
+            preserveAspectRatio="none"
+          >
+            <line
+              x1="125"
+              y1="125"
+              x2="0"
+              y2="0"
+              stroke="white"
+              strokeWidth="1.5"
+            />
+          </svg>
+        </div>
+      )}
+
+      {/* Tooltip thông báo */}
+      {(product.stock === 0 || product.status === "Coming Soon") && (
+  <div className="absolute -top-2 left-1/2 transform -translate-x-1/2 -translate-y-full z-20 group-hover:opacity-100 opacity-0 transition">
+    <div className="bg-black whitespace-nowrap text-white inter inter px-2 py-2  rounded relative">
+      {product.stock === 0 ? "Sold Out" : "Coming Soon"}
+
+      {/* Tam giác hướng xuống */}
+      <div className="absolute left-1/2 -bottom-1.5 transform -translate-x-1/2 w-0 h-0 border-l-8 border-r-8 border-t-8 border-l-transparent border-r-transparent border-t-black" />
+    </div>
+  </div>
+)}
+
+    </div>
+  ))}
+</div>
+
 
             {selectedProduct.stock < 100 && selectedProduct.stock > 1 && (
               <div className="flex gap-1 mb-6">
@@ -261,79 +275,84 @@ const ProductDetail = () => {
                 </p>
               </div>
             )}
+{selectedProduct.stock === 0 ? (
+  <div className="w-full bg-gray-100 text-center py-8">
+    <p className="inter text-lg">Sold Out:</p>
+    <p className="inter text-lg">This colour is currently unavailable</p>
+  </div>
+) : selectedProduct.status === "Just In" ? (
+  <div>
+    <div className="flex justify-between inter">
+      <p className={`${attemptedAdd && !selectedSize ? "text-[#D30005]" : ""}`}>
+        Select Size
+      </p>
+      <div className="flex gap-2 items-center">
+        <svg
+          aria-hidden="true"
+          focusable="false"
+          viewBox="0 0 24 24"
+          role="img"
+          width="24px"
+          height="24px"
+          fill="none"
+        >
+          <path
+            stroke="currentColor"
+            strokeWidth="1.5"
+            d="M21.75 10.5v6.75a1.5 1.5 0 01-1.5 1.5H3.75a1.5 1.5 0 01-1.5-1.5V10.5m3.308-2.25h12.885"
+          ></path>
+          <path
+            stroke="currentColor"
+            strokeWidth="1.5"
+            d="M15.79 5.599l2.652 2.65-2.652 2.653M8.21 5.599l-2.652 2.65 2.652 2.653M17.25 19v-2.5M12 19v-2.5M6.75 19v-2.5"
+          ></path>
+        </svg>
+        <p>Size Guide</p>
+      </div>
+    </div>
 
-            {selectedProduct.status === "Just In" ? (
-              <div>
-                <div className="flex justify-between inter">
-                <p className={`${attemptedAdd && !selectedSize ? "text-[#D30005]" : ""}`}>
-  Select Size
-</p>
+    <div
+      className={`grid grid-cols-4 gap-2 py-4 inter ${
+        attemptedAdd && !selectedSize ? "border-[#D30005] border rounded-lg" : ""
+      }`}
+    >
+      {[31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41].map((size) => {
+        const isAvailable = selectedProduct.sizes.includes(String(size));
+        const isSelected = selectedSize === size;
 
-                  <div className="flex gap-2 items-center">
-                    <svg
-                      aria-hidden="true"
-                      focusable="false"
-                      viewBox="0 0 24 24"
-                      role="img"
-                      width="24px"
-                      height="24px"
-                      fill="none"
-                    >
-                      <path
-                        stroke="currentColor"
-                        stroke-width="1.5"
-                        d="M21.75 10.5v6.75a1.5 1.5 0 01-1.5 1.5H3.75a1.5 1.5 0 01-1.5-1.5V10.5m3.308-2.25h12.885"
-                      ></path>
-                      <path
-                        stroke="currentColor"
-                        stroke-width="1.5"
-                        d="M15.79 5.599l2.652 2.65-2.652 2.653M8.21 5.599l-2.652 2.65 2.652 2.653M17.25 19v-2.5M12 19v-2.5M6.75 19v-2.5"
-                      ></path>
-                    </svg>
-                    <p>Size Guide</p>
-                  </div>
-                </div>
-                <div className={`grid grid-cols-4 gap-2 py-4 inter  ${attemptedAdd&&!selectedSize&&("border-[#D30005] border rounded-lg")}`}>
-                  {[31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41].map((size) => {
-                    const isAvailable = selectedProduct.sizes.includes(
-                      String(size)
-                    );
-                    const isSelected = selectedSize === size;
+        return (
+          <button
+            key={size}
+            disabled={!isAvailable}
+            onClick={() => isAvailable && setSelectedSize(size)}
+            className={`px-4 py-3 cursor-pointer flex items-center justify-center border rounded-md text-lg transition
+              ${isSelected ? "ring-2 ring-black" : ""}
+              ${
+                isAvailable
+                  ? "border-gray-400 hover:border-black hover:text-black"
+                  : "border-gray-200 text-gray-400 cursor-not-allowed opacity-50 line-through bg-gray-200 "
+              }`}
+          >
+            EU {size}
+          </button>
+        );
+      })}
+    </div>
 
-                    return (
-                      <button
-                        key={size}
-                        disabled={!isAvailable}
-                        onClick={() => isAvailable && setSelectedSize(size)}
-                        className={`px-4 py-3 cursor-pointer flex items-center justify-center border rounded-md text-lg transition
-        ${isSelected ? "ring-2 ring-black" : ""}
-        ${
-          isAvailable
-            ? "border-gray-400 hover:border-black hover:text-black"
-            : "border-gray-200 text-gray-400 cursor-not-allowed opacity-50"
-        }
-          
-          ${!isAvailable ? "line-through bg-gray-200 border-gray-400" : ""}`}
-                      >
-                        EU {size}
-                      </button>
-                    );
-                  })}
-                </div>
-                {attemptedAdd && !selectedSize &&(
-                <p className="text-[#D30005] mt-4">Please select a size.</p>
+    {attemptedAdd && !selectedSize && (
+      <p className="text-[#D30005] mt-4">Please select a size.</p>
+    )}
+  </div>
+) : (
+  <div>
+    <p className="w-full bg-gray-100 text-center py-10 inter text-lg">
+      Coming Soon
+    </p>
+  </div>
+)}
 
-                )}
-              </div>
-            ) : (
-              <div>
-                <p className="w-full bg-gray-100 text-center py-10 inter text-lg ">
-                  Coming Soon
-                </p>
-              </div>
-            )}
 
-            {selectedProduct.status === "Coming Soon" && (
+            {selectedProduct.status === "Coming Soon" &&  (
               <div className="space-y-3 mt-4">
                 <button
                   className="w-full inter text-lg rounded-full h-16 transition 
@@ -345,7 +364,7 @@ const ProductDetail = () => {
               </div>
             )}
 
-            {selectedProduct.status === "Just In" && (
+            {selectedProduct.status === "Just In" && selectedProduct.stock>0&& (
               <div className="space-y-3 mt-4">
                 <button
                   onClick={() => {
@@ -366,11 +385,10 @@ const ProductDetail = () => {
                   }}
                   disabled={selectedProduct.stock === 0}
                   className={`w-full inter text-lg rounded-full h-16 transition 
-    ${
-      selectedProduct.stock === 0
-        ? "bg-[#E5E5E5] text-gray-400 cursor-not-allowed"
-        : "bg-black text-white hover:bg-gray-800 cursor-pointer"
-    }`}
+  
+       
+         bg-black text-white hover:bg-gray-800 cursor-pointer
+    `}
                 >
                   Add to Bag
                 </button>

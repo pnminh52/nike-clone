@@ -81,7 +81,7 @@
       "id": "53a9",
       "name": "Nike Air Max Dn8",
       "price": "6000000",
-      "stock": 0,
+      "stock": 20,
       "price_sale": "5598000",
       "des": "More Air, less bulk. The Dn8 takes our Dynamic Air system and condenses it into a sleek, low-profile package. Powered by eight pressurised Air tubes, it gives you a responsive sensation with every step. Enter an unreal experience of movement.",
       "img": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/b6ae54f3-7f93-45f2-b116-b8bfb9548b0e/W+AIR+MAX+DN8.png",
@@ -121,7 +121,7 @@
       "id": "bda8",
       "name": "Nike Air Max Dn8",
       "price": "6000000",
-      "stock": 0,
+      "stock": 30,
       "price_sale": "5598000",
       "des": "More Air, less bulk. The Dn8 takes our Dynamic Air system and condenses it into a sleek, low-profile package. Powered by eight pressurised Air tubes, it gives you a responsive sensation with every step. Enter an unreal experience of movement.",
       "img": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/084ccffe-0c51-4441-b6c3-04f36daf244b/W+AIR+MAX+DN8.png",
@@ -189,6 +189,46 @@
         "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/c2f79f0e-9c0b-4cec-9a2d-1360e38a21bb/W+AIR+MAX+DN8.png",
         "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/8e519359-586e-4dd0-8f15-633d56619455/W+AIR+MAX+DN8.png",
         "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/08e6a38c-900a-4a61-8c6e-acbfa812e899/W+AIR+MAX+DN8.png"
+      ]
+    },
+    {
+      "id": "1562",
+      "name": "Nike Air Max Dn8",
+      "page": "New & Featured",
+      "price": "6000000",
+      "stock": 0,
+      "price_sale": "5589000",
+      "style": "HF5509-601",
+      "des": "More Air, less bulk. The Dn8 takes our Dynamic Air system and condenses it into a sleek, low-profile package. Powered by eight pressurised Air tubes, it gives you a responsive sensation with every step. Enter an unreal experience of movement.",
+      "img": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/786e9bc5-b52c-491c-9dfb-dfcaad4e3ba2/W+AIR+MAX+DN8.png",
+      "category": "New & Upcoming Drops",
+      "status": "Just In",
+      "customer": "Women",
+      "gender": "Women",
+      "sizes": [
+        "32",
+        "33",
+        "34",
+        "35",
+        "41",
+        "40"
+      ],
+      "additionalImages": [
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/db00eef6-348f-490b-a4ed-33427ab0983d/W+AIR+MAX+DN8.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/b4d1cac1-bc35-4817-a230-99d55d2eb083/W+AIR+MAX+DN8.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/c564635c-314c-4f03-b14f-ee2936737c92/W+AIR+MAX+DN8.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/4a9da2c9-2631-456d-a153-e8d8e2b2e774/W+AIR+MAX+DN8.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/f08f8bca-b04b-482f-a3db-8fc0d8550209/W+AIR+MAX+DN8.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/8aa65766-5195-4c0c-bd82-ab0a6dfc8c8e/W+AIR+MAX+DN8.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/b36c47c5-5412-4983-9e2b-64a964d7cec2/W+AIR+MAX+DN8.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/ff0f83ea-0c61-4157-b53c-627871796757/W+AIR+MAX+DN8.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/4983f881-1ef8-4a72-b009-f7a8a0c51c83/W+AIR+MAX+DN8.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/63dfe21e-63e4-49e2-9bc4-26f0d63893bd/W+AIR+MAX+DN8.png"
+      ],
+      "color": [
+        "Laser Fuchsia",
+        "Sport Fuchsia",
+        "Black"
       ]
     }
   ],
