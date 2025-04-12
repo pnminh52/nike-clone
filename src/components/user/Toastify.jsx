@@ -14,7 +14,7 @@ const Toastify = () => {
       pauseOnFocusLoss
       draggable
       pauseOnHover
-      theme="colored" // "light", "dark", or "colored"
+      theme="white" // "light", "dark", or "colored"
     />
   );
 };

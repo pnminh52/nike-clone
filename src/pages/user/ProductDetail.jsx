@@ -276,10 +276,11 @@ const ProductDetail = () => {
               </div>
             )}
 {selectedProduct.stock === 0 ? (
-  <div className="w-full bg-gray-100 text-center py-8">
-    <p className="inter text-lg">Sold Out:</p>
-    <p className="inter text-lg">This colour is currently unavailable</p>
-  </div>
+  <div className="w-full h-24 bg-gray-100 text-center grid place-content-center">
+  <p className="inter text-lg">Sold Out:</p>
+  <p className="inter text-lg">This colour is currently unavailable</p>
+</div>
+
 ) : selectedProduct.status === "Just In" ? (
   <div>
     <div className="flex justify-between inter">
@@ -345,7 +346,7 @@ const ProductDetail = () => {
   </div>
 ) : (
   <div>
-    <p className="w-full bg-gray-100 text-center py-10 inter text-lg">
+    <p className="w-full bg-gray-100 text-center h-24 justify-center flex items-center inter text-lg">
       Coming Soon
     </p>
   </div>

@@ -16,7 +16,8 @@ import Cart from "./pages/user/Cart";
 import Login from "./pages/user/Login";
 import Register from "./pages/user/Register";
 import { AuthProvider } from "./hooks/useAuth";
-import Toastify from './components/user/Toastify';
+import Checkout from "./pages/user/Checkout";
+import { ToastContainer } from "react-toastify";
 const App = () => {
   return (
     <>
@@ -40,12 +41,13 @@ const App = () => {
           <Route path="/cart" element={<Cart/>}/>
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/checkout" element={<Checkout/>}/>
 
         </Route>
        
       </Routes>
       <Footer />
-      <Toastify />
+      <ToastContainer />
 </AuthProvider>
      
     </>

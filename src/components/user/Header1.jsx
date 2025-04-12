@@ -12,8 +12,8 @@ const header = () => {
                         focusable="false"
                         viewBox="0 0 24 24"
                         role="img"
-                        width="24px"
-                        height="24px"
+                        width="25px"
+                        height="25px"
                         fill="none"
                     >
                         <path
@@ -28,8 +28,9 @@ const header = () => {
                         <div className="flex gap-1 items-center inter cursor-pointer">
                             {user ? (
                                 <div className="flex gap-1 items-center">
-                                    <p className="text-sm font-medium">{user.email}</p>
-                                    <button onClick={logout} className="text-xs text-blue-600 ml-2 cursor-pointer underline">Logout</button>
+                                    <p>Hi!</p>
+                                    <p className="text-xs ">{user.lastname}</p>
+                                    <button onClick={logout} className="text-xs text-blue-600 ml-1 cursor-pointer underline">Logout</button>
                                 </div>
                             ) : (
                                 <Link to={"/login"}><p>Sign In</p></Link>

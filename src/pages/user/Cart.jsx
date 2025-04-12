@@ -210,13 +210,14 @@ const Cart = ({}) => {
                         <span className="text-sm underline">đ</span>
                     </p>
                 </div>
-                <button
+               <Link to={"/checkout"}>
+               <button
                     className="w-full mt-8 inter text-lg rounded-full h-16 transition 
    bg-black text-white hover:bg-gray-800 cursor-pointer
               "
                 >
                     Checkout
-                </button>
+                </button></Link>
             </div>
                 </div>
             )}

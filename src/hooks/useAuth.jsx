@@ -1,5 +1,6 @@
 import React, { createContext, useState, useEffect, useContext } from 'react';
 import axios from 'axios';
+import { toast } from 'react-toastify';
 
 const AuthContext = createContext();
 
@@ -34,24 +35,30 @@ export const AuthProvider = ({ children }) => {
   };
   
   
-  const register = async (email, password) => {
+  const register = async (formData) => {
     try {
+      const { email } = formData;
       const check = await axios.get(`http://localhost:3000/users?email=${email}`);
       if (check.data.length > 0) return false;
-
-      const newUser = { email, password, cart: [] };
-
-      const res = await axios.post("http://localhost:3000/users", newUser);
-
+  
+      const res = await axios.post("http://localhost:3000/users", {
+        ...formData,
+        cart: [],
+        orders: []
+      });
+  
       setUser(res.data);
       localStorage.setItem('user', JSON.stringify(res.data));
-      localStorage.setItem('userId', res.data.id); 
-return true;
+      localStorage.setItem('userId', res.data.id);
+  
+      return true;
     } catch (err) {
       console.error("Register failed:", err);
       return false;
     }
   };
+  
+  
 
   const logout = () => {
     setUser(null);
