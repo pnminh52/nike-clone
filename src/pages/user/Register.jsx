@@ -121,7 +121,7 @@ const Register = () => {
               onChange={(e) => setFirstname(e.target.value)}
               required
               onBlur={() => setTouched(true)}
-              className={` block h-15.5 rounded-lg p-3.5 text-lg inter w-full text-gray-900 bg-transparent border appearance-none focus:outline-none focus:ring-0 peer 
+              className={` block h-15.5 rounded-lg p-3.5 text-lg  w-full text-gray-900 bg-transparent border appearance-none focus:outline-none focus:ring-0 peer 
    `}
             />
             <label
@@ -142,7 +142,7 @@ const Register = () => {
               onChange={(e) => setLastname(e.target.value)}
               required
               onBlur={() => setTouched(true)}
-              className={`block h-15.5 rounded-lg p-3.5 text-lg inter w-full text-gray-900 bg-transparent border appearance-none focus:outline-none focus:ring-0 peer 
+              className={`block h-15.5 rounded-lg p-3.5 text-lg  w-full text-gray-900 bg-transparent border appearance-none focus:outline-none focus:ring-0 peer 
    `}
             />
             <label
@@ -164,7 +164,7 @@ const Register = () => {
             onChange={(e) => setAddress(e.target.value)}
             required
             onBlur={() => setTouched(true)}
-            className={`block h-15.5 rounded-lg p-3.5 text-lg inter w-full text-gray-900 bg-transparent border appearance-none focus:outline-none focus:ring-0 peer 
+            className={`block h-15.5 rounded-lg p-3.5 text-lg  w-full text-gray-900 bg-transparent border appearance-none focus:outline-none focus:ring-0 peer 
    `}
           />
 
@@ -185,7 +185,7 @@ const Register = () => {
       value={extraAddress}
       onChange={(e) => handleExtraAddressChange(index, e.target.value)}
       required
-      className="mt-4 block h-15.5 rounded-lg p-3.5 text-lg inter w-full text-gray-900 bg-white border border-gray-300"
+      className="mt-4 block h-15.5 rounded-lg p-3.5 text-lg  w-full text-gray-900 bg-white border border-gray-300"
     />
     <button
       type="button"
@@ -217,7 +217,7 @@ const Register = () => {
             onBlur={() => setTouched(true)}
             value={country}
             onChange={(e) => setCountry(e.target.value)}
-            className={`block h-15.5 rounded-lg p-3.5 text-lg inter w-full text-gray-900 bg-transparent border appearance-none focus:outline-none focus:ring-0 peer 
+            className={`block h-15.5 rounded-lg p-3.5 text-lg  w-full text-gray-900 bg-transparent border appearance-none focus:outline-none focus:ring-0 peer 
    `}
           />
           <label
@@ -231,7 +231,7 @@ const Register = () => {
         </div>
         <div className="relative z-0 w-full group">
           <input
-            className={` block h-15.5 rounded-lg p-3.5 text-lg inter w-full text-gray-900 bg-transparent border appearance-none focus:outline-none focus:ring-0 peer 
+            className={` block h-15.5 rounded-lg p-3.5 text-lg  w-full text-gray-900 bg-transparent border appearance-none focus:outline-none focus:ring-0 peer 
                   `}
             placeholder=""
             onBlur={() => setTouched(true)}
@@ -259,7 +259,7 @@ const Register = () => {
             onBlur={() => setTouched(true)}
             required
             placeholder=""
-            className={`block h-15.5 rounded-lg p-3.5 text-lg inter w-full text-gray-900 bg-transparent border appearance-none focus:outline-none focus:ring-0 peer 
+            className={`block h-15.5 rounded-lg p-3.5 text-lg  w-full text-gray-900 bg-transparent border appearance-none focus:outline-none focus:ring-0 peer 
   [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none
   `}
           />
@@ -276,7 +276,7 @@ const Register = () => {
         <div className="relative z-0 w-full group">
           <input
             type={show ? "text" : "password"}
-            className={` block h-15.5 rounded-lg p-3.5 text-lg inter w-full text-gray-900 bg-transparent border appearance-none focus:outline-none focus:ring-0 peer 
+            className={` block h-15.5 rounded-lg p-3.5 text-lg  w-full text-gray-900 bg-transparent border appearance-none focus:outline-none focus:ring-0 peer 
           `}
             placeholder="Mật khẩu"
             name="password"

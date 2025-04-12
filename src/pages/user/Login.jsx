@@ -107,7 +107,7 @@ const Login = () => {
   name="text"
   id="text"
   onBlur={() => setTouched(true)}
-  className={`block h-15.5 rounded-lg p-3.5 text-lg inter w-full text-gray-900 bg-transparent border appearance-none focus:outline-none focus:ring-0 peer 
+  className={`block h-15.5 rounded-lg p-3.5 text-lg  w-full text-gray-900 bg-transparent border appearance-none focus:outline-none focus:ring-0 peer 
    `
   }
   placeholder=" "
@@ -139,7 +139,7 @@ const Login = () => {
     name="password"
     onBlur={() => setTouched(true)}
     id="password"
-    className={`block h-15.5 rounded-lg p-3.5 text-lg inter w-full text-gray-900 bg-transparent border appearance-none focus:outline-none focus:ring-0 peer 
+    className={`block h-15.5 rounded-lg p-3.5 text-lg  w-full text-gray-900 bg-transparent border appearance-none focus:outline-none focus:ring-0 peer 
     `
     }    placeholder=" "
     value={password}
