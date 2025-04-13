@@ -127,7 +127,7 @@ const Header2 = () => {
                         />
                     </div>
 
-                    <div className="cursor-pointer ">
+                    <div className="cursor-pointer " onClick={()=>navigate("/wishlist")}>
                         <svg
                             aria-hidden="true"
                             focusable="false"

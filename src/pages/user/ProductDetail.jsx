@@ -5,6 +5,8 @@ import { useCart } from "../../hooks/useCart";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useAuth } from "../../hooks/useAuth";
+import { useWish } from "../../hooks/useWish";
+
 
 const ProductDetail = () => {
   const { addToCart } = useCart();
@@ -24,6 +26,8 @@ const ProductDetail = () => {
   const [open1, setopen1] = useState(false);
   const [open2, setopen2] = useState(false);
   const [attemptedAdd, setAttemptedAdd] = useState(false);
+  const { toggleWish, isInWishlist } = useWish();
+
 
 
   const formatPrice = (price) => {
@@ -33,17 +37,24 @@ const ProductDetail = () => {
   };
 
   useEffect(() => {
-    if (selectedProduct) {
+    //lưu biến thể đnag xem khi reload trang
+    const savedIndex = localStorage.getItem(`selectedIndex-${name}`);
+    const indexToUse = savedIndex !== null && !isNaN(savedIndex) ? Number(savedIndex) : 0;
+    setSelectedIndex(indexToUse);
+  
+    const product = products?.[indexToUse];
+    if (product) {
       const images = [
-        selectedProduct.img,
-        ...(selectedProduct.additionalImages || []),
+        product.img,
+        ...(product.additionalImages || []),
       ];
       setAllImages(images);
       setCurrentImageIndex(0);
       setMainImage(images[0]);
-      setAttemptedAdd(false)
+      setAttemptedAdd(false);
     }
-  }, [selectedProduct]);
+  }, [products, name]);
+  
 
   if (!selectedProduct) {
     return <div className="text-center p-4">Loading product...</div>;
@@ -203,6 +214,7 @@ const ProductDetail = () => {
       onClick={() => {
         setSelectedIndex(idx);
         setSelectedSize(null);
+        localStorage.setItem(`selectedIndex-${name}`, idx);
       }}
       className={`cursor-pointer rounded relative group ${
         selectedIndex === idx
@@ -394,24 +406,47 @@ const ProductDetail = () => {
                   Add to Bag
                 </button>
 
-                <button className="w-full border-gray-300 hover:border-black ease-in-out duration-300 border flex items-center gap-1 justify-center inter text-lg rounded-full bg-white text-black hover:cursor-pointer h-16 hover:text-gray-800 transition">
+                <button   onClick={() => toggleWish(selectedProduct)} className="w-full border-gray-300 hover:border-black ease-in-out duration-300 border flex items-center gap-1 justify-center inter text-lg rounded-full bg-white text-black hover:cursor-pointer h-16 hover:text-gray-800 transition">
                   <span>Favourite</span>
-                  <svg
-                    aria-hidden="true"
-                    focusable="false"
-                    viewBox="0 0 24 24"
-                    role="img"
-                    width="24px"
-                    height="24px"
-                    fill="none"
-                  >
-                    <path
-                      stroke="currentColor"
-                      strokeWidth="1.5"
-                      d="M16.794 3.75c1.324 0 2.568.516 3.504 1.451a4.96 4.96 0 010 7.008L12 20.508l-8.299-8.299a4.96 4.96 0 010-7.007A4.923 4.923 0 017.205 3.75c1.324 0 2.568.516 3.504 1.451l.76.76.531.531.53-.531.76-.76a4.926 4.926 0 013.504-1.451"
-                    ></path>
-                    <title>non-filled</title>
-                  </svg>
+                  {isInWishlist(selectedProduct.id) ? (
+  <svg
+    aria-hidden="true"
+    focusable="false"
+    viewBox="0 0 24 24"
+    role="img"
+    width="24px"
+    height="24px"
+    fill="black" // fill đen
+  >
+    <path
+      fill="black" // path này sẽ được đổ đen
+      d="M16.794 3.75c1.324 0 2.568.516 3.504 1.451a4.96 4.96 0 010 7.008L12 20.508l-8.299-8.299a4.96 4.96 0 010-7.007A4.923 4.923 0 017.205 3.75c1.324 0 2.568.516 3.504 1.451L12 6.492l1.29-1.291a4.926 4.926 0 013.504-1.451z"
+    />
+  </svg>
+) : (
+  <svg
+    aria-hidden="true"
+    focusable="false"
+    viewBox="0 0 24 24"
+    role="img"
+    width="24px"
+    height="24px"
+    fill="white"
+  >
+    <path
+      fill="currentColor"
+      fillRule="evenodd"
+      clipRule="evenodd"
+      d="M16.794 3.75c1.324 0 2.568.516 3.504 1.451a4.96 4.96 0 010 7.008L12 20.508l-8.299-8.299a4.96 4.96 0 010-7.007A4.923 4.923 0 017.205 3.75c1.324 0 2.568.516 3.504 1.451L12 6.492l1.29-1.291a4.926 4.926 0 013.504-1.451z"
+    />
+    <path
+      stroke="currentColor"
+      strokeWidth="1.5"
+      d="M16.794 3.75c1.324 0 2.568.516 3.504 1.451a4.96 4.96 0 010 7.008L12 20.508l-8.299-8.299a4.96 4.96 0 010-7.007A4.923 4.923 0 017.205 3.75c1.324 0 2.568.516 3.504 1.451L12 6.492l1.29-1.291a4.926 4.926 0 013.504-1.451z"
+    />
+  </svg>
+)}
+
                 </button>
               </div>
             )}
