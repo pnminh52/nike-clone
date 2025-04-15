@@ -19,6 +19,7 @@ import { AuthProvider } from "./hooks/useAuth";
 import Checkout from "./pages/user/Checkout";
 import { ToastContainer } from "react-toastify";
 import Wishlist from "./pages/user/Wishlist";
+import Profile from "./pages/user/Profile";
 const App = () => {
   return (
     <>
@@ -44,6 +45,7 @@ const App = () => {
           <Route path="/register" element={<Register />} />
           <Route path="/checkout" element={<Checkout/>}/>
           <Route path="/wishlist" element={<Wishlist/>}/>
+          <Route path="/profile/:id" element={<Profile/>}/>
 
         </Route>
        
