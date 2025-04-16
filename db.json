@@ -5,6 +5,7 @@
       "name": "Nike Air Max Dn8",
       "stock": 100,
       "type": "Shoes",
+      "class": "Shoes",
       "price": "6000000",
       "price_sale": "5598000",
       "des": "More Air, less bulk. The Dn8 takes our Dynamic Air system and condenses it into a sleek, low-profile package. Powered by eight pressurised Air tubes, it gives you a responsive sensation with every step. Enter an unreal experience of movement.",
@@ -42,7 +43,56 @@
       ]
     },
     {
+      "id": "12hb",
+      "name": "Nike Zoom Fly 6",
+      "stock": 100,
+      "class": "Shoes",
+      "type": "Road Racing Shoes",
+      "price": "5500000",
+      "price_sale": "4999000",
+      "des": "The Zoom Fly 6 is with you every step of your run. Lighter than the Zoom Fly 5, its responsive ZoomX foam adds energy return to each stride, while a carbon-fibre plate helps propel you to the finishing line.",
+      "img": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/146ef87c-ebf4-4534-835e-2f97e03856f5/W+ZOOM+FLY+6.png",
+      "page": "New & Featured",
+      "category": "New & Upcoming Drops",
+      "status": "Just In",
+      "customer": "Women",
+      "sizes": [
+        "31",
+        "32",
+        "33",
+        "34",
+        "40",
+        "37",
+        "35",
+        "36",
+        "38",
+        "39"
+      ],
+      "gender": "Women",
+      "color": [
+        "Bright Crimson",
+        "Lime Blast",
+        "Mint Foam",
+        "Cave Purple"
+      ],
+      "style": "FN8455-601",
+      "country": "Vietnam",
+      "additionalImages": [
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/b243a08d-3a77-4c58-8b09-86f485ee326f/W+ZOOM+FLY+6.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/dc04119e-ae19-4545-a5aa-e13c4d18b25a/W+ZOOM+FLY+6.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/3d06a0a8-1729-4314-b1e4-442ea074e0d9/W+ZOOM+FLY+6.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/607d35fd-6d8e-4c69-a39a-8dee37762b66/W+ZOOM+FLY+6.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/beb54158-f84a-4402-a5f4-908ed137bb8f/W+ZOOM+FLY+6.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/79b8abb1-2cfe-4f1a-89ab-b97f4f317bb3/W+ZOOM+FLY+6.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/ad60d354-8834-4d7b-9a66-21052cc59d7e/W+ZOOM+FLY+6.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/da0104a3-8cd7-43a8-b74c-70b09179884b/W+ZOOM+FLY+6.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/33bba3f7-0e52-4be5-a2b8-9a122bf08547/W+ZOOM+FLY+6.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/85776744-2566-4c86-93a9-6ef0e70d8f34/W+ZOOM+FLY+6.png"
+      ]
+    },
+    {
       "id": "73y62",
+      "class": "Slides",
       "name": "Nike ReactX Rejuven8",
       "price": "2000000",
       "stock": 100,
@@ -76,9 +126,46 @@
       ]
     },
     {
+      "id": "hdfe3",
+      "name": "Nike 24.7 ImpossiblySoft",
+      "price": "3000000",
+      "stock": 100,
+      "class": "Clothes",
+      "type": "Dri-FIT Oversized 1/2-Zip Top",
+      "price_sale": "2499000",
+      "des": "Extraordinarily soft and smooth, our ImpossiblySoft fabric feels made for all-day motion. It's a double-knit material that adds structure to this top while wicking sweat—for comfort that doesn't quit.",
+      "img": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/0c205681-e97c-4412-bd82-0f0805b64009/AS+W+NK+24.7+DF+HZ+TOP+SOFT.png",
+      "sizes": [
+        "XS",
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
+      "gender": "Women",
+      "color": [
+        "Light Orewood Brown",
+        "Light Iron Ore"
+      ],
+      "country": "China",
+      "style": "HQ8189-104",
+      "page": "New & Featured",
+      "category": "New & Upcoming Drops",
+      "status": "Just In",
+      "customer": "Women",
+      "additionalImages": [
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/0fd7b050-1ddc-4a46-b151-0a25beb3d042/AS+W+NK+24.7+DF+HZ+TOP+SOFT.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/661bd665-3a27-4877-b124-eb79370ae526/AS+W+NK+24.7+DF+HZ+TOP+SOFT.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/e2fd8c05-2c32-4333-99f3-e5c5416ac570/AS+W+NK+24.7+DF+HZ+TOP+SOFT.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/96491fa6-2686-4b7c-bf7d-09daee8172e6/AS+W+NK+24.7+DF+HZ+TOP+SOFT.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/290a005f-9804-406b-804b-cb4c38bf61a2/AS+W+NK+24.7+DF+HZ+TOP+SOFT.png"
+      ]
+    },
+    {
       "id": "8fe9",
       "name": "Nike Air Max Dn8",
       "price": "6000000",
+      "class": "Shoes",
       "stock": 30,
       "type": "Shoes",
       "price_sale": "5598000",
@@ -114,10 +201,58 @@
       ]
     },
     {
+      "id": "dhf4",
+      "name": "Nike Zoom Fly 6",
+      "stock": 100,
+      "class": "Shoes",
+      "type": "Road Racing Shoes",
+      "price": "5500000",
+      "price_sale": "4999000",
+      "des": "The Zoom Fly 6 is with you every step of your run. Lighter than the Zoom Fly 5, its responsive ZoomX foam adds energy return to each stride, while a carbon-fibre plate helps propel you to the finishing line.",
+      "img": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/5409a587-52c1-4c3f-9ab5-19ec844ce37d/W+ZOOM+FLY+6.png",
+      "page": "New & Featured",
+      "category": "New & Upcoming Drops",
+      "status": "Just In",
+      "customer": "Women",
+      "sizes": [
+        "31",
+        "32",
+        "33",
+        "34",
+        "40",
+        "37",
+        "35",
+        "36",
+        "38",
+        "39",
+        "41"
+      ],
+      "gender": "Women",
+      "color": [
+        "Ghost",
+        "Football Grey",
+        "Blue Lightning",
+        "Blue Void"
+      ],
+      "style": "FN8455-004",
+      "country": "Vietnam",
+      "additionalImages": [
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/81da99b9-d9d4-4c81-804a-66592ad68d82/W+ZOOM+FLY+6.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/41957cbd-bfc5-4bd4-b06d-96231e6dfe63/W+ZOOM+FLY+6.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/52df6f74-1ca0-479b-8e3c-478440c5105a/W+ZOOM+FLY+6.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/5be571ea-ed2b-4e70-9cf8-e1583abc5741/W+ZOOM+FLY+6.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/81fd1d66-c725-4c5b-8ffb-5ca75cd970a1/W+ZOOM+FLY+6.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/5e561b49-7128-448f-94ec-f2f61684a535/W+ZOOM+FLY+6.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/96d62b08-316b-4c83-a0fb-2e6e2b4d4ef9/W+ZOOM+FLY+6.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/84486e1d-1ec9-44b5-887c-7c459c6ac803/W+ZOOM+FLY+6.png"
+      ]
+    },
+    {
       "id": "53a9",
       "name": "Nike Air Max Dn8",
       "price": "6000000",
       "stock": 20,
+      "class": "Shoes",
       "type": "Shoes",
       "price_sale": "5598000",
       "des": "More Air, less bulk. The Dn8 takes our Dynamic Air system and condenses it into a sleek, low-profile package. Powered by eight pressurised Air tubes, it gives you a responsive sensation with every step. Enter an unreal experience of movement.",
@@ -159,6 +294,7 @@
       "name": "Nike Air Max Dn8",
       "price": "6000000",
       "stock": 30,
+      "class": "Shoes",
       "type": "Shoes",
       "price_sale": "5598000",
       "des": "More Air, less bulk. The Dn8 takes our Dynamic Air system and condenses it into a sleek, low-profile package. Powered by eight pressurised Air tubes, it gives you a responsive sensation with every step. Enter an unreal experience of movement.",
@@ -197,6 +333,7 @@
       "name": "Nike Air Max Dn8",
       "price": "6000000",
       "stock": 100,
+      "class": "Shoes",
       "type": "Shoes",
       "price_sale": "5598000",
       "des": "More Air, less bulk. The Dn8 takes our Dynamic Air system and condenses it into a sleek, low-profile package. Powered by eight pressurised Air tubes, it gives you a responsive sensation with every step. Enter an unreal experience of movement.",
@@ -236,6 +373,7 @@
       "page": "New & Featured",
       "price": "6000000",
       "stock": 0,
+      "class": "Shoes",
       "type": "Shoes",
       "price_sale": "5589000",
       "style": "HF5509-601",
@@ -446,7 +584,7 @@
       "password": "111111Aa",
       "country": "Vietnam",
       "extraAddresses": [],
-      "cart": [],
+      "cart": [ ],
       "orders": [
         {
           "id": 1744813846296,

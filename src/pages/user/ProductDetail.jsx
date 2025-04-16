@@ -7,7 +7,6 @@ import "react-toastify/dist/ReactToastify.css";
 import { useAuth } from "../../hooks/useAuth";
 import { useWish } from "../../hooks/useWish";
 import { useSearchParams } from "react-router-dom";
-import ImageZoom from "../../components/user/ImageZoom";
 
 const ProductDetail = () => {
   const { addToCart } = useCart();
@@ -120,9 +119,9 @@ const id = searchParams.get("id");
 
               <div className="relative">
               {mainImage && (
-  <ImageZoom
+  <img
+  className="w-[485px] h-[650px] cursor-pointer  rounded-2xl"
     src={mainImage}
-    zoomSrc={mainImage} // nếu bạn có ảnh độ phân giải cao riêng thì truyền vào đây
     alt={selectedProduct.name}
   />
 )}
@@ -213,7 +212,7 @@ const id = searchParams.get("id");
 
           <div className="w-[50%] pl-2 mt-6">
             <div>
-              <p className="text-xl leading-[1]">
+              <p className="text-xl leading-[1.5]">
                 {selectedProduct.name}
               </p>
               <p className="text-gray-600 leading-tight">
@@ -230,7 +229,7 @@ const id = searchParams.get("id");
               </p>
             </div>
             {products.length===1&&(
-              <div className="h-25 bg-white"></div>
+              <div className="h-10 bg-white"></div>
             )}
             {products.length > 1 && (
             <div className="grid grid-cols-5 gap-2 py-8">
@@ -351,35 +350,46 @@ const id = searchParams.get("id");
     </div>
 
     <div
-      className={`grid grid-cols-4 gap-2 py-4 inter ${
-        attemptedAdd && !selectedSize ? "border-[#D30005] border rounded-lg" : ""
-      }`}
-    >
-      {[31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41].map((size) => {
-        const isAvailable = selectedProduct.sizes.includes(String(size));
-        const isSelected = selectedSize === size;
+  className={`grid ${
+    selectedProduct.class === "Shoes" || selectedProduct.class === "Slides"
+      ? "grid-cols-4"
+      : "grid-cols-5"
+  } gap-2 py-4 inter ${
+    attemptedAdd && !selectedSize ? "border-[#D30005] border rounded-lg" : ""
+  }`}
+>
+  {(selectedProduct.class === "Shoes" || selectedProduct.class === "Slides"
+    ? [31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41]
+    : ["XS", "S", "M", "L", "XL"]
+  ).map((size) => {
+    const isAvailable = selectedProduct.sizes.includes(String(size));
+    const isSelected = selectedSize === size;
 
-        return (
-          <button
-          key={size}
-          onClick={() => setSelectedSize(size)}
-          className={`px-4 py-3 cursor-pointer flex items-center justify-center border rounded-md text-lg transition
-            ${isSelected ? "ring-2 ring-black" : ""}
-            ${
-              isAvailable
-                ? "border-gray-400 hover:border-black hover:text-black"
-                : "border-gray-200 text-gray-400 opacity-50 line-through bg-gray-200 hover:border-black hover:text-black"
-            }`}
-        >
-          EU {size}
-        </button>
-        
-        );
-      })}
-    </div>
+    return (
+      <button
+        key={size}
+        onClick={() => setSelectedSize(size)}
+        className={`px-4 py-3 cursor-pointer flex items-center justify-center border rounded-md text-lg transition
+          ${isSelected ? "ring-2 ring-black" : ""}
+          ${
+            isAvailable
+              ? "border-gray-400 hover:border-black hover:text-black"
+              : "border-gray-200 text-gray-400 opacity-50 line-through bg-gray-200 hover:border-black hover:text-black"
+          }`}
+      >
+        {selectedProduct.class === "Shoes" || selectedProduct.class === "Slides"
+          ? `EU ${size}`
+          : size}
+      </button>
+    );
+  })}
+</div>
+
+
+
 
     {attemptedAdd && !selectedSize && (
-      <p className="text-[#D30005] mt-4">Please select a size.</p>
+      <p className="text-[#D30005] mt-2">Please select a size.</p>
     )}
   </div>
 ) : (
@@ -404,32 +414,32 @@ const id = searchParams.get("id");
             )}
 
             {selectedProduct.status === "Just In" && selectedProduct.stock>0&& (
-              <div className="space-y-3 mt-4">
-                <button
-                  onClick={() => {
-                    setAttemptedAdd(true);
-                    if (!user) {
-                      toast.warning(
-                        "🛑 Vui lòng đăng nhập để thêm vào giỏ hàng!"
-                      );
-                      return;
-                    }
+              <div className="space-y-3 mt-2">
+               <button
+  onClick={() => {
+    setAttemptedAdd(true);
+    if (!user) {
+      toast.warning("🛑 Vui lòng đăng nhập để thêm vào giỏ hàng!");
+      return;
+    }
 
-                    if (!selectedSize || !selectedProduct.sizes.includes(String(selectedSize))) {
-                      return;  // Nếu size không hợp lệ (không có trong biến thể), không cho phép thêm vào giỏ
-                    }
+    if (!selectedSize || !selectedProduct.sizes.includes(String(selectedSize))) {
+      return;  // Nếu size không hợp lệ (không có trong biến thể), không cho phép thêm vào giỏ
+    }
 
-                    // 👉 Nếu tới được đây thì cả user và size đều đã hợp lệ
-                    addToCart(selectedProduct, selectedSize);
-                  }}
-                  disabled={!selectedSize || selectedProduct.stock === 0}
-                  className={`w-full inter text-lg rounded-full h-16 transition 
-                    ${!selectedSize || (selectedSize && !selectedProduct.sizes.includes(String(selectedSize)))
-                      ? "bg-gray-300 text-gray-600 cursor-not-allowed"  // When size is selected but not available in the product
-                      : "bg-black text-white hover:bg-gray-800 cursor-pointer"} // When size is selected and available in the product
-                  `}>
-                  Add to Bag
-                </button>
+    // 👉 Nếu tới được đây thì cả user và size đều đã hợp lệ
+    addToCart(selectedProduct, selectedSize);
+  }}
+  disabled={ selectedProduct.stock === 0}
+  className={`w-full inter text-lg rounded-full h-16 transition 
+    ${(selectedSize && !selectedProduct.sizes.includes(String(selectedSize)))
+      ? "bg-gray-300 text-gray-600 cursor-not-allowed"  // Khi size không hợp lệ (không có trong biến thể)
+      : "bg-black text-white hover:bg-gray-800 cursor-pointer"} // Khi size hợp lệ và có trong biến thể của sản phẩm
+  `}
+>
+  Add to Bag
+</button>
+
 
                 <button   onClick={() => toggleWish(selectedProduct)} className="w-full border-gray-300 hover:border-black ease-in-out duration-300 border flex items-center gap-1 justify-center inter text-lg rounded-full bg-white text-black hover:cursor-pointer h-16 hover:text-gray-800 transition">
                   <span>Favourite</span>
@@ -494,9 +504,16 @@ const id = searchParams.get("id");
                 <li className=" text-[17px]">
                   • Style: {selectedProduct.style}
                 </li>
-                <li className=" text-[17px]">
-                  • Country/Region of Origin: {selectedProduct.country}
-                </li>
+                <li className="text-[17px]">
+  • Country/Region of Origin:{" "}
+  {(Array.isArray(selectedProduct.country)
+    ? selectedProduct.country
+    : [selectedProduct.country]
+  )
+    .filter(Boolean)
+    .join(", ")}
+</li>
+
               </ul>
             </div>
             <button className="inter border-gray-300 hover:border-black transition ease-in-out duration-300 inline-block px-4 py-2.5 border rounded-full  cursor-pointer text-lg ">
