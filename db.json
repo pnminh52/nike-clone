@@ -42,6 +42,40 @@
       ]
     },
     {
+      "id": "73y62",
+      "name": "Nike ReactX Rejuven8",
+      "price": "2000000",
+      "stock": 100,
+      "type": "Slides",
+      "price_sale": "1759000",
+      "des": "Give your feet a rest. Made from soft and responsive ReactX foam, the Rejuven8 uses some of our best tech to create recovery slides you'll look forward to wearing.",
+      "img": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/e5febe6b-6e53-40c6-bbb8-816e7e301c7b/W+NIKE+REACTX+REJUVEN8+SLIDE.png",
+      "sizes": [
+        "31",
+        "32",
+        "33",
+        "34",
+        "35"
+      ],
+      "gender": "Women",
+      "color": [
+        "Guava Ice",
+        "Apricot Agate"
+      ],
+      "country": "Indonesia",
+      "style": "HV4484-800",
+      "page": "New & Featured",
+      "category": "New & Upcoming Drops",
+      "status": "Just In",
+      "customer": "Women",
+      "additionalImages": [
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/ff28c51b-fb1f-4e2e-871d-5db786d5f615/W+NIKE+REACTX+REJUVEN8+SLIDE.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/f32e11ad-f27a-46b0-ad4c-1bf2017de921/W+NIKE+REACTX+REJUVEN8+SLIDE.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/b5dfe2dc-4a51-4d58-8216-c721824f8d79/W+NIKE+REACTX+REJUVEN8+SLIDE.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/dc7c22dd-2752-4105-8b45-e077cd1ecbec/W+NIKE+REACTX+REJUVEN8+SLIDE.png"
+      ]
+    },
+    {
       "id": "8fe9",
       "name": "Nike Air Max Dn8",
       "price": "6000000",
@@ -412,92 +446,139 @@
       "password": "111111Aa",
       "country": "Vietnam",
       "extraAddresses": [],
-      "cart": [
+      "cart": [],
+      "orders": [
         {
-          "id": "dffs",
-          "name": "Nike Air Max Dn8",
-          "stock": 100,
-          "type": "Shoes",
-          "price": "6000000",
-          "price_sale": "5598000",
-          "des": "More Air, less bulk. The Dn8 takes our Dynamic Air system and condenses it into a sleek, low-profile package. Powered by eight pressurised Air tubes, it gives you a responsive sensation with every step. Enter an unreal experience of movement.",
-          "img": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/56553951-1d16-4e28-9624-2de76aa82d41/W+AIR+MAX+DN8.png",
-          "page": "New & Featured",
-          "category": "New & Upcoming Drops",
-          "status": "Just In",
-          "customer": "Women",
-          "sizes": [
-            "32",
-            "33",
-            "34",
-            "41",
-            "37",
-            "35"
+          "id": 1744813846296,
+          "items": [
+            {
+              "id": "dffs",
+              "name": "Nike Air Max Dn8",
+              "stock": 100,
+              "type": "Shoes",
+              "price": "6000000",
+              "price_sale": "5598000",
+              "des": "More Air, less bulk. The Dn8 takes our Dynamic Air system and condenses it into a sleek, low-profile package. Powered by eight pressurised Air tubes, it gives you a responsive sensation with every step. Enter an unreal experience of movement.",
+              "img": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/56553951-1d16-4e28-9624-2de76aa82d41/W+AIR+MAX+DN8.png",
+              "page": "New & Featured",
+              "category": "New & Upcoming Drops",
+              "status": "Just In",
+              "customer": "Women",
+              "sizes": [
+                "32",
+                "33",
+                "34",
+                "41",
+                "37",
+                "35"
+              ],
+              "gender": "Women",
+              "color": [
+                "Metallic Red Bronze",
+                "Particle Beige",
+                "Hemp",
+                "Black"
+              ],
+              "style": "HF5509-900",
+              "country": "Vietnam",
+              "additionalImages": [
+                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/d636ecdb-b6ef-4bdc-bfe6-fd21300b359e/W+AIR+MAX+DN8.png",
+                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/618f8d03-17bb-4f61-898f-3a03521513c3/W+AIR+MAX+DN8.png",
+                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/5abe9cb5-c6ea-4602-af88-282a5e37b904/W+AIR+MAX+DN8.png",
+                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/573e3b6c-9d06-457f-b88b-b72edb5317f9/W+AIR+MAX+DN8.png",
+                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/66611108-c63d-4d1c-ac2e-25ffc50c8850/W+AIR+MAX+DN8.png",
+                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/28bc5cbb-d884-4554-8443-49a92d7270f6/W+AIR+MAX+DN8.png",
+                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/54b65210-15d1-4d55-b85c-408135c4114f/W+AIR+MAX+DN8.png",
+                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/18be1f18-06ad-427a-9b78-c5c54744f0a2/W+AIR+MAX+DN8.png"
+              ],
+              "size": 41,
+              "quantity": 1
+            },
+            {
+              "id": "bda8",
+              "name": "Nike Air Max Dn8",
+              "price": "6000000",
+              "stock": 30,
+              "type": "Shoes",
+              "price_sale": "5598000",
+              "des": "More Air, less bulk. The Dn8 takes our Dynamic Air system and condenses it into a sleek, low-profile package. Powered by eight pressurised Air tubes, it gives you a responsive sensation with every step. Enter an unreal experience of movement.",
+              "img": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/084ccffe-0c51-4441-b6c3-04f36daf244b/W+AIR+MAX+DN8.png",
+              "page": "New & Featured",
+              "category": "New & Upcoming Drops",
+              "status": "Just In",
+              "customer": "Women",
+              "sizes": [
+                "32",
+                "33",
+                "34"
+              ],
+              "color": [
+                "Cobalt Tint",
+                "Psychic Blue",
+                "Light Armoury Blue",
+                "Black"
+              ],
+              "style": "HF5509-400",
+              "country": "Vietnam",
+              "gender": "Women",
+              "additionalImages": [
+                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/2f913fc0-8574-4171-8fa9-554d8cdb12da/W+AIR+MAX+DN8.png",
+                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/c04da348-86ab-424d-b700-dd6bc04144cb/W+AIR+MAX+DN8.png",
+                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/e4233627-d1ee-47f7-af91-82887e696bb2/W+AIR+MAX+DN8.png",
+                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/310a2e70-fb72-4a9b-a0ee-f8d1f0a826f2/W+AIR+MAX+DN8.png",
+                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/537df6d8-a297-4f26-91f2-acd2fb032484/W+AIR+MAX+DN8.png",
+                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/c49eedfa-4d38-4720-8920-3e8bd97ce0c5/W+AIR+MAX+DN8.png",
+                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/24105ba9-1a41-4093-b4a8-559aa7e5ee03/W+AIR+MAX+DN8.png",
+                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/160983bb-3b47-4059-a58b-d1382e359970/W+AIR+MAX+DN8.png"
+              ],
+              "size": 34,
+              "quantity": 2
+            },
+            {
+              "id": "bda8",
+              "name": "Nike Air Max Dn8",
+              "price": "6000000",
+              "stock": 30,
+              "type": "Shoes",
+              "price_sale": "5598000",
+              "des": "More Air, less bulk. The Dn8 takes our Dynamic Air system and condenses it into a sleek, low-profile package. Powered by eight pressurised Air tubes, it gives you a responsive sensation with every step. Enter an unreal experience of movement.",
+              "img": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/084ccffe-0c51-4441-b6c3-04f36daf244b/W+AIR+MAX+DN8.png",
+              "page": "New & Featured",
+              "category": "New & Upcoming Drops",
+              "status": "Just In",
+              "customer": "Women",
+              "sizes": [
+                "32",
+                "33",
+                "34"
+              ],
+              "color": [
+                "Cobalt Tint",
+                "Psychic Blue",
+                "Light Armoury Blue",
+                "Black"
+              ],
+              "style": "HF5509-400",
+              "country": "Vietnam",
+              "gender": "Women",
+              "additionalImages": [
+                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/2f913fc0-8574-4171-8fa9-554d8cdb12da/W+AIR+MAX+DN8.png",
+                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/c04da348-86ab-424d-b700-dd6bc04144cb/W+AIR+MAX+DN8.png",
+                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/e4233627-d1ee-47f7-af91-82887e696bb2/W+AIR+MAX+DN8.png",
+                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/310a2e70-fb72-4a9b-a0ee-f8d1f0a826f2/W+AIR+MAX+DN8.png",
+                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/537df6d8-a297-4f26-91f2-acd2fb032484/W+AIR+MAX+DN8.png",
+                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/c49eedfa-4d38-4720-8920-3e8bd97ce0c5/W+AIR+MAX+DN8.png",
+                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/24105ba9-1a41-4093-b4a8-559aa7e5ee03/W+AIR+MAX+DN8.png",
+                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/160983bb-3b47-4059-a58b-d1382e359970/W+AIR+MAX+DN8.png"
+              ],
+              "size": 32,
+              "quantity": 1
+            }
           ],
-          "gender": "Women",
-          "color": [
-            "Metallic Red Bronze",
-            "Particle Beige",
-            "Hemp",
-            "Black"
-          ],
-          "style": "HF5509-900",
-          "country": "Vietnam",
-          "additionalImages": [
-            "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/d636ecdb-b6ef-4bdc-bfe6-fd21300b359e/W+AIR+MAX+DN8.png",
-            "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/618f8d03-17bb-4f61-898f-3a03521513c3/W+AIR+MAX+DN8.png",
-            "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/5abe9cb5-c6ea-4602-af88-282a5e37b904/W+AIR+MAX+DN8.png",
-            "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/573e3b6c-9d06-457f-b88b-b72edb5317f9/W+AIR+MAX+DN8.png",
-            "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/66611108-c63d-4d1c-ac2e-25ffc50c8850/W+AIR+MAX+DN8.png",
-            "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/28bc5cbb-d884-4554-8443-49a92d7270f6/W+AIR+MAX+DN8.png",
-            "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/54b65210-15d1-4d55-b85c-408135c4114f/W+AIR+MAX+DN8.png",
-            "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/18be1f18-06ad-427a-9b78-c5c54744f0a2/W+AIR+MAX+DN8.png"
-          ],
-          "size": 41,
-          "quantity": 1
-        },
-        {
-          "id": "bda8",
-          "name": "Nike Air Max Dn8",
-          "price": "6000000",
-          "stock": 30,
-          "type": "Shoes",
-          "price_sale": "5598000",
-          "des": "More Air, less bulk. The Dn8 takes our Dynamic Air system and condenses it into a sleek, low-profile package. Powered by eight pressurised Air tubes, it gives you a responsive sensation with every step. Enter an unreal experience of movement.",
-          "img": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/084ccffe-0c51-4441-b6c3-04f36daf244b/W+AIR+MAX+DN8.png",
-          "page": "New & Featured",
-          "category": "New & Upcoming Drops",
-          "status": "Just In",
-          "customer": "Women",
-          "sizes": [
-            "32",
-            "33",
-            "34"
-          ],
-          "color": [
-            "Cobalt Tint",
-            "Psychic Blue",
-            "Light Armoury Blue",
-            "Black"
-          ],
-          "style": "HF5509-400",
-          "country": "Vietnam",
-          "gender": "Women",
-          "additionalImages": [
-            "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/2f913fc0-8574-4171-8fa9-554d8cdb12da/W+AIR+MAX+DN8.png",
-            "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/c04da348-86ab-424d-b700-dd6bc04144cb/W+AIR+MAX+DN8.png",
-            "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/e4233627-d1ee-47f7-af91-82887e696bb2/W+AIR+MAX+DN8.png",
-            "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/310a2e70-fb72-4a9b-a0ee-f8d1f0a826f2/W+AIR+MAX+DN8.png",
-            "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/537df6d8-a297-4f26-91f2-acd2fb032484/W+AIR+MAX+DN8.png",
-            "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/c49eedfa-4d38-4720-8920-3e8bd97ce0c5/W+AIR+MAX+DN8.png",
-            "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/24105ba9-1a41-4093-b4a8-559aa7e5ee03/W+AIR+MAX+DN8.png",
-            "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/160983bb-3b47-4059-a58b-d1382e359970/W+AIR+MAX+DN8.png"
-          ],
-          "size": 34,
-          "quantity": 1
+          "date": "2025-04-16T14:30:46.296Z",
+          "status": "Đang xử lý"
         }
       ],
-      "orders": [],
       "wishlist": []
     }
   ]

@@ -7,6 +7,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { useAuth } from "../../hooks/useAuth";
 import { useWish } from "../../hooks/useWish";
 import { useSearchParams } from "react-router-dom";
+import ImageZoom from "../../components/user/ImageZoom";
 
 const ProductDetail = () => {
   const { addToCart } = useCart();
@@ -84,39 +85,48 @@ const id = searchParams.get("id");
                 <div className="absolute bottom-0 left-0 right-0 h-10 bg-gradient-to-t from-white via-white/40 to-transparent pointer-events-none z-10"></div>
 
                 <div className="flex flex-col gap-2 overflow-y-auto h-[650px] hide-scrollbar relative z-0">
-                  <img
-                    src={selectedProduct.img}
-                    alt={selectedProduct.name}
-                    onClick={() => setMainImage(selectedProduct.img)}
-                    className={`w-18 h-18 rounded-[4px] object-cover cursor-pointer ${
-                      mainImage === selectedProduct.img ? "" : ""
-                    }`}
-                  />
-                  {selectedProduct.additionalImages.map((img, idx) => (
-                    <div
-                      key={idx}
-                      className="relative cursor-pointer"
-                      onClick={() => setMainImage(img)}
-                    >
-                      <img
-                        src={img}
-                        alt="additional"
-                        className="w-18 h-18 rounded-[4px] object-cover cursor-pointer hover:border-black transition"
-                      />
-                      <div className="absolute inset-0 bg-black/15 rounded-[4px] hover:bg-black/30 duration-300 ease-in-out transition"></div>
-                    </div>
-                  ))}
-                </div>
+  {/* Ảnh chính (có thể hover lại để xem lại ảnh chính gốc) */}
+  <div
+    className="relative cursor-pointer"
+    onMouseEnter={() => setMainImage(selectedProduct.img)}
+  >
+    <img
+      src={selectedProduct.img}
+      alt={selectedProduct.name}
+      className="w-18 h-18 rounded-[4px] object-cover cursor-pointer"
+    />
+    <div className="absolute inset-0 bg-black/15 rounded-[4px] hover:bg-black/30 duration-300 ease-in-out transition"></div>
+  </div>
+
+  {/* Ảnh phụ: hover để đổi ảnh chính */}
+  {selectedProduct.additionalImages?.length > 0 &&
+    selectedProduct.additionalImages.map((img, idx) => (
+      <div
+        key={idx}
+        className="relative cursor-pointer"
+        onMouseEnter={() => setMainImage(img)}
+      >
+        <img
+          src={img}
+          alt="additional"
+          className="w-18 h-18 rounded-[4px] object-cover cursor-pointer hover:border-black transition"
+        />
+        <div className="absolute inset-0 bg-black/15 rounded-[4px] hover:bg-black/30 duration-300 ease-in-out transition"></div>
+      </div>
+    ))}
+</div>
+
               </div>
 
               <div className="relative">
-                {mainImage && (
-                  <img
-                    src={mainImage}
-                    alt={selectedProduct.name}
-                    className="w-[485px] relative h-full object-cover cursor-pointer rounded-xl"
-                  />
-                )}
+              {mainImage && (
+  <ImageZoom
+    src={mainImage}
+    zoomSrc={mainImage} // nếu bạn có ảnh độ phân giải cao riêng thì truyền vào đây
+    alt={selectedProduct.name}
+  />
+)}
+
 
                 <button className="absolute left-4 top-4 px-4 py-2 bg-white flex items-center rounded-full cursor-pointer gap-1">
                   <svg
@@ -203,11 +213,11 @@ const id = searchParams.get("id");
 
           <div className="w-[50%] pl-2 mt-6">
             <div>
-              <p className="text-2xl inter leading-[1]">
+              <p className="text-xl leading-[1]">
                 {selectedProduct.name}
               </p>
               <p className="text-gray-600 leading-tight">
-                {selectedProduct.gender}'s Shoes
+                {selectedProduct.gender}'s {selectedProduct.type}
               </p>
             </div>
             <div className="mt-2">
@@ -219,13 +229,16 @@ const id = searchParams.get("id");
                 <span className="text-sm font-medium">₫</span>
               </p>
             </div>
+            {products.length===1&&(
+              <div className="h-25 bg-white"></div>
+            )}
+            {products.length > 1 && (
             <div className="grid grid-cols-5 gap-2 py-8">
   {products.map((product, idx) => (
     <div
       key={product.id}
       onClick={() => {
-        setSelectedIndex(idx);
-        setSelectedSize(null);
+        setSelectedIndex(idx);  // Chỉ thay đổi biến thể (index), không thay đổi selectedSize
         localStorage.setItem(`selectedIndex-${name}`, idx);
       }}
       className={`cursor-pointer rounded relative group ${
@@ -241,7 +254,7 @@ const id = searchParams.get("id");
       />
 
       {/* SVG gạch chéo nếu hết hàng */}
-      {product.stock === 0 && (
+      {(product.stock === 0 || (selectedSize && !product.sizes.includes(String(selectedSize)))) && product.status!=="Coming Soon" && (        
         <div className="absolute inset-0">
           <svg
             className="w-full h-full p-3 z-10 bg-gray-300/50 rounded-md"
@@ -275,6 +288,7 @@ const id = searchParams.get("id");
     </div>
   ))}
 </div>
+            )}
 
 
             {selectedProduct.stock < 100 && selectedProduct.stock > 1 && (
@@ -347,19 +361,19 @@ const id = searchParams.get("id");
 
         return (
           <button
-            key={size}
-            disabled={!isAvailable}
-            onClick={() => isAvailable && setSelectedSize(size)}
-            className={`px-4 py-3 cursor-pointer flex items-center justify-center border rounded-md text-lg transition
-              ${isSelected ? "ring-2 ring-black" : ""}
-              ${
-                isAvailable
-                  ? "border-gray-400 hover:border-black hover:text-black"
-                  : "border-gray-200 text-gray-400 cursor-not-allowed opacity-50 line-through bg-gray-200 "
-              }`}
-          >
-            EU {size}
-          </button>
+          key={size}
+          onClick={() => setSelectedSize(size)}
+          className={`px-4 py-3 cursor-pointer flex items-center justify-center border rounded-md text-lg transition
+            ${isSelected ? "ring-2 ring-black" : ""}
+            ${
+              isAvailable
+                ? "border-gray-400 hover:border-black hover:text-black"
+                : "border-gray-200 text-gray-400 opacity-50 line-through bg-gray-200 hover:border-black hover:text-black"
+            }`}
+        >
+          EU {size}
+        </button>
+        
         );
       })}
     </div>
@@ -401,20 +415,19 @@ const id = searchParams.get("id");
                       return;
                     }
 
-                    if (!selectedSize) {
-                      return;
+                    if (!selectedSize || !selectedProduct.sizes.includes(String(selectedSize))) {
+                      return;  // Nếu size không hợp lệ (không có trong biến thể), không cho phép thêm vào giỏ
                     }
 
                     // 👉 Nếu tới được đây thì cả user và size đều đã hợp lệ
                     addToCart(selectedProduct, selectedSize);
                   }}
-                  disabled={selectedProduct.stock === 0}
+                  disabled={!selectedSize || selectedProduct.stock === 0}
                   className={`w-full inter text-lg rounded-full h-16 transition 
-  
-       
-         bg-black text-white hover:bg-gray-800 cursor-pointer
-    `}
-                >
+                    ${!selectedSize || (selectedSize && !selectedProduct.sizes.includes(String(selectedSize)))
+                      ? "bg-gray-300 text-gray-600 cursor-not-allowed"  // When size is selected but not available in the product
+                      : "bg-black text-white hover:bg-gray-800 cursor-pointer"} // When size is selected and available in the product
+                  `}>
                   Add to Bag
                 </button>
 

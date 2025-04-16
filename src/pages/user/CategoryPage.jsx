@@ -49,7 +49,7 @@ const [isScrolled, setIsScrolled]=useState(false)
 useEffect(()=>{
   const handleScroll = () => {
     const offset = window.scrollY;
-    setIsScrolled(offset > 10); // có thể chỉnh con số này tùy ý
+    setIsScrolled(offset > 14); // có thể chỉnh con số này tùy ý
   };
 
   window.addEventListener("scroll", handleScroll);
@@ -106,22 +106,7 @@ useEffect(()=>{
     }`}
   >
     <div className="grid grid-cols-3 gap-4 transition-all duration-300">
-      {/* Ảnh category */}
-      {/* {selectedCategory && (
-        <div className='relative'>
-          <Link to={`/products/:name`}>
-            <img
-              src={selectedCategory.imageUrl}
-              alt={selectedCategory.name}
-              className={`object-cover cursor-pointer transition-all duration-300 ${
-                !isFilterVisible ? 'w-[348px] h-[348px]' : 'w-[348px] h-[348px]'
-              }`}
-            />
-          </Link>
-        </div>
-      )} */}
-
-      {/* Danh sách sản phẩm */}
+    
       {products.map((product) => (
         <ShoesCard key={product.id} product={product} isFilterVisible={isFilterVisible} />
       ))}
