@@ -6,13 +6,15 @@ import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useAuth } from "../../hooks/useAuth";
 import { useWish } from "../../hooks/useWish";
-
+import { useSearchParams } from "react-router-dom";
 
 const ProductDetail = () => {
   const { addToCart } = useCart();
   const { name } = useParams();
   const { getProductsByName } = useProducts();
   const user = useAuth();
+  const [searchParams] = useSearchParams();
+const id = searchParams.get("id");
 
   const products = getProductsByName(name);
   const [selectedIndex, setSelectedIndex] = useState(0);
@@ -27,7 +29,7 @@ const ProductDetail = () => {
   const [open2, setopen2] = useState(false);
   const [attemptedAdd, setAttemptedAdd] = useState(false);
   const { toggleWish, isInWishlist } = useWish();
-
+  const [hasInitializedIndex, setHasInitializedIndex] = useState(false);
 
 
   const formatPrice = (price) => {
@@ -36,29 +38,39 @@ const ProductDetail = () => {
       .replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   };
 
+   
   useEffect(() => {
-    //lưu biến thể đnag xem khi reload trang
-    const savedIndex = localStorage.getItem(`selectedIndex-${name}`);
-    const indexToUse = savedIndex !== null && !isNaN(savedIndex) ? Number(savedIndex) : 0;
-    setSelectedIndex(indexToUse);
+    if (!products || products.length === 0 || hasInitializedIndex) return;
   
-    const product = products?.[indexToUse];
-    if (product) {
-      const images = [
-        product.img,
-        ...(product.additionalImages || []),
-      ];
+    if (id) {
+      const indexById = products.findIndex((product) => product.id === id);
+      if (indexById !== -1) {
+        setSelectedIndex(indexById);
+      }
+    }
+  
+    setHasInitializedIndex(true); // Đảm bảo chỉ chạy một lần duy nhất
+  }, [products, id, hasInitializedIndex]);
+  
+  useEffect(() => {
+    if (selectedProduct) {
+      const images = [selectedProduct.img, ...(selectedProduct.additionalImages || [])];
       setAllImages(images);
       setCurrentImageIndex(0);
       setMainImage(images[0]);
       setAttemptedAdd(false);
     }
-  }, [products, name]);
+  }, [selectedProduct]);
   
 
   if (!selectedProduct) {
     return <div className="text-center p-4">Loading product...</div>;
   }
+
+
+
+
+
 
   return (
     <div className="h-3000">

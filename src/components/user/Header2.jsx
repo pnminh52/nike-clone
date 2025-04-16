@@ -15,7 +15,7 @@ const Header2 = () => {
     
     return (
         <div className="bg-white">
-            <div className="container h-16  mx-auto px-15 max-w-screen-2xl flex justify-between items-center  bg-white  ">
+            <div className="container h-16  mx-auto px-10 max-w-screen-2xl flex justify-between items-center  bg-white  ">
                <Link to={'/'}>
                <svg
   viewBox="0 0 24 24"

@@ -11,25 +11,26 @@ const ShoesCard = ({ product, isFilterVisible } ) => {
 
 
   return (
-    <Link to={`/details/${product.name}`} className="block">
-      <div className="inter mb-4">
+<Link to={`/details/${product.name}?id=${product.id}`} className="block">
+<div className="inter  ">
       <img
   src={product.img}
   alt={product.name}
   className={`object-cover cursor-pointer transition-all duration-300 ${
-    isFilterVisible ? 'w-[324px] h-[324px]' : 'w-[470px] h-[470px]'
+    isFilterVisible ? 'w-[340px] h-[340px]' : 'w-[460px] h-[460px]'
   }`}
 />
 
-        <p className="text-orange-600">{product.status}</p>
-        <p>{product.name}</p>
-        <p className="text-gray-500">{product.gender}'s Shoes</p>
-        {/* <p className="text-gray-500">{uniqueColorCount} colour{uniqueColorCount > 1 ? 's' : ''}</p> */}
-        <p className="text-gray-500">1 Colour</p>
-        <p className="text-black mt-1.5 ">
-       <span className='inter'> {formatPrice(product.price_sale)} </span>
-        <span className='text-sm font-medium'>₫</span>
-</p>
+       <div className='mt-2'>
+         <p className="text-orange-600">{product.status}</p>
+                <p>{product.name}</p>
+                <p className="text-gray-500">{product.gender}'s Shoes</p>
+                <p className="text-gray-500">1 Colour</p>
+                <p className="text-black mt-1.5 ">
+               <span className='inter'> {formatPrice(product.price_sale)} </span>
+                <span className='text-sm font-medium'>₫</span>
+        </p>
+       </div>
 
       </div>
     </Link>

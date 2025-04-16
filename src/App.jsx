@@ -23,37 +23,37 @@ import Profile from "./pages/user/Profile";
 const App = () => {
   return (
     <>
-<AuthProvider>
-<Routes>
-        <Route path="/admin" element={<AdminLayout />}>
-          <Route path="products/list" element={<ProductList />} />
-          <Route path="products/add" element={<AddProduct />} />
-          <Route path="products/edit/:id" element={<EditProduct />} /> 
-          <Route path="categories/list" element={<CategoryList />} />
-          <Route path="categories/add" element={<AddCategory />} />
-          <Route path="categories/edit/:id" element={<EditCategory />} /> 
-          <Route path="categories/view/:id" element={<CategoryDetail />} /> 
+      <AuthProvider>
+        <Routes>
+          <Route path="/admin" element={<AdminLayout />}>
+            <Route path="products/list" element={<ProductList />} />
+            <Route path="products/add" element={<AddProduct />} />
+            <Route path="products/edit/:id" element={<EditProduct />} />
+            <Route path="categories/list" element={<CategoryList />} />
+            <Route path="categories/add" element={<AddCategory />} />
+            <Route path="categories/edit/:id" element={<EditCategory />} />
+            <Route path="categories/view/:id" element={<CategoryDetail />} />
 
           </Route>
 
-        <Route path="/" element={<UserLayout />}>
-          <Route index element={<Homepage />} />
-          <Route path="/category/:name" element={<CategoryPage />} />
-          <Route path="/details/:name" element={<ProductDetail/>}/>
-          <Route path="/cart" element={<Cart/>}/>
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
-          <Route path="/checkout" element={<Checkout/>}/>
-          <Route path="/wishlist" element={<Wishlist/>}/>
-          <Route path="/profile/:id" element={<Profile/>}/>
+          <Route path="/" element={<UserLayout />}>
+            <Route index element={<Homepage />} />
+            <Route path="category/:name" element={<CategoryPage />} />
+            <Route path="details/:name" element={<ProductDetail />} />
+            <Route path="cart" element={<Cart />} />
+            <Route path="login" element={<Login />} />
+            <Route path="register" element={<Register />} />
+            <Route path="checkout" element={<Checkout />} />
+            <Route path="wishlist" element={<Wishlist />} />
+            <Route path="profile/:id" element={<Profile />} />
+          </Route>
 
-        </Route>
-       
-      </Routes>
-      <Footer />
-      <ToastContainer />
-</AuthProvider>
-     
+
+        </Routes>
+        <Footer />
+        <ToastContainer />
+      </AuthProvider>
+
     </>
   );
 };
