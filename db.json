@@ -290,6 +290,144 @@
       ]
     },
     {
+      "id": "gvd5",
+      "name": "Nike Zoom Fly 6",
+      "stock": 100,
+      "class": "Shoes",
+      "type": "Road Racing Shoes",
+      "price": "5500000",
+      "price_sale": "4999000",
+      "des": "The Zoom Fly 6 is with you every step of your run. Lighter than the Zoom Fly 5, its responsive ZoomX foam adds energy return to each stride, while a carbon-fibre plate helps propel you to the finishing line.",
+      "img": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/3f017ee7-337f-4377-96d8-5189e783d67b/W+ZOOM+FLY+6.png",
+      "page": "New & Featured",
+      "category": "New & Upcoming Drops",
+      "status": "Just In",
+      "customer": "Women",
+      "sizes": [
+        "31",
+        "32",
+        "33",
+        "34",
+        "40",
+        "37",
+        "35",
+        "36"
+        
+        
+      ],
+      "gender": "Women",
+      "color": [
+        "Bright Crimson",
+        "Lime Blast",
+        "Mint Foam",
+        "Cave Purple"
+      ],
+      "style": "FN8455-601",
+      "country": "Vietnam",
+      "additionalImages": [
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/e0f4ad30-2f3e-4073-a66d-97f8587a4690/W+ZOOM+FLY+6.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/a47766ba-7514-4ce1-a3d4-ba0f4ccec0f0/W+ZOOM+FLY+6.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/2ecfe61d-6a72-413d-baa4-bd1748a9a180/W+ZOOM+FLY+6.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/f3d79e92-6b3a-4b5d-9563-51a15594522a/W+ZOOM+FLY+6.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/dc7b3605-6edc-4713-83c7-e68cd406f19a/W+ZOOM+FLY+6.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/68a977f5-50e4-4deb-beae-58ff5b6300a3/W+ZOOM+FLY+6.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/969101fc-73a4-4ea9-94da-e56a7f8d104e/W+ZOOM+FLY+6.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/0cf36d43-2779-4d58-87ae-0938f265d164/W+ZOOM+FLY+6.png",
+        "",
+        ""
+      ]
+    },
+    {
+      "id": "hdf6",
+      "name": "Nike Air Max Dn8",
+      "stock": 100,
+      "class": "Shoes",
+      "type": "Road Racing Shoes",
+      "price": "5500000",
+      "price_sale": "4999000",
+      "des": "The Zoom Fly 6 is with you every step of your run. Lighter than the Zoom Fly 5, its responsive ZoomX foam adds energy return to each stride, while a carbon-fibre plate helps propel you to the finishing line.",
+      "img": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/91126387-c680-458b-9d2d-cbb6567d5120/W+AIR+MAX+DN8.png",
+      "page": "New & Featured",
+      "category": "New & Upcoming Drops",
+      "status": "Just In",
+      "customer": "Women",
+      "sizes": [
+        "31",
+        "32",
+        "33",
+        "34",
+        "40",
+        "37",
+        "35",
+        "36"
+        
+        
+      ],
+    "combo1": [
+  {
+    "productId": "hoodie123",
+    "name": "Nike Sportswear Essential",
+    "category": "Women's Oversized Long",
+    "price": "1579000",
+    "image": "https://content.stylitics.com/images/items/23107121"
+  },
+  {
+    "productId": "pants",
+    "name": "Nike Sportswear Pants",
+    "category": "Women's Sportswear",
+    "price": "1299000",
+    "image": "https://content.stylitics.com/images/items/17267829"
+  },
+  {
+    "productId": "bra",
+    "name": "Nike Sportswear Bra",
+    "category": "Women's Lingerie",
+    "price": "899000",
+    "image": "https://content.stylitics.com/images/items/24429301"
+  },
+  {
+    "productId": "socks",
+    "name": "Nike Sportswear Socks",
+    "category": "Women's Accessories",
+    "price": "499000",
+    "image": "https://content.stylitics.com/images/items/17050460"
+  },
+  {
+    "productId": "shoes",
+    "name": "Nike Air Max Dn8",
+    "category": "Women's Footwear",
+    "price": "2499000",
+    "image": "https://content.stylitics.com/images/items/25423309"
+  }
+]
+
+      ,
+      "comboId":"tsdvs3",
+      "gender": "Women",
+      "color": [
+        "Sail",
+        "Fossil",
+        "Black"
+        
+      ],
+      "style": "HF5509-101",
+      "country": "Vietnam",
+      "additionalImages": [
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/ad9650dd-fa84-4250-aa99-1d54508a4ed1/W+AIR+MAX+DN8.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/3be4397e-7a7d-45fa-b6e5-729f99af64f3/W+AIR+MAX+DN8.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/e02d1d8a-9a5c-4bf0-aa3a-fc775ec67c0e/W+AIR+MAX+DN8.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/3ffc09a5-2ccb-46d1-93a2-0d66f41811c4/W+AIR+MAX+DN8.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/d9e5a5b9-fce5-4f42-99e6-8b78a4cd5adf/W+AIR+MAX+DN8.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/21a0ae72-83c0-4cd7-9ce2-6bd8806c13ec/W+AIR+MAX+DN8.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/d8e5d0cc-7c55-429c-a6fe-4cbc5ae57bfe/W+AIR+MAX+DN8.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/68533c30-3921-4b13-879b-a9c904a2de2b/W+AIR+MAX+DN8.png"
+      ]
+    },
+
+    
+   
+
+    {
       "id": "bda8",
       "name": "Nike Air Max Dn8",
       "price": "6000000",

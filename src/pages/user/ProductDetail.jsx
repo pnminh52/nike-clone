@@ -7,6 +7,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { useAuth } from "../../hooks/useAuth";
 import { useWish } from "../../hooks/useWish";
 import { useSearchParams } from "react-router-dom";
+import ComboProduct from './../../components/user/ComboProduct';
 
 const ProductDetail = () => {
   const { addToCart } = useCart();
@@ -73,7 +74,7 @@ const id = searchParams.get("id");
 
 
   return (
-    <div className="h-3000">
+    <div className="">
       <div className="mx-auto mt-6 mb-6 flex max-w-screen-lg px-2 gap-4">
         
           <div className="w-2/3 h-400">
@@ -718,12 +719,25 @@ const id = searchParams.get("id");
        
         
       </div>
-      <div className="mx-auto max-w-screen-2xl px-15">
+      <div className="mx-auto max-w-screen-2xl px-10">
           <div className="py-4">
             <p className="inter text-3xl">How Others Are Wearing It</p>
             <p className="mb-3 mt-1">Upload your photo or mention @Nike on Instagram for a chance to be featured.</p>
             <button className="px-4 py-2 border border-gray-300 rounded-full hover:border-black transition ease-in-out duration-300 cursor-pointer">Upload Your Photo </button>
           </div>
+        </div>
+        <div>
+        {selectedProduct && (
+  <ComboProduct product={selectedProduct} />
+)}
+
+
+
+        </div>
+        <div className="py-8">
+          <p>
+            Next content
+          </p>
         </div>
     </div>
   );
