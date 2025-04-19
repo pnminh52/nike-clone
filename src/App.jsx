@@ -1,5 +1,4 @@
 import { Routes, Route } from "react-router-dom";
-import Footer from "./components/user/footer";
 import ProductList from "./pages/admin/product/ProductList";
 import AddProduct from "./pages/admin/product/AddProduct";
 import EditProduct from "./pages/admin/product/EditProduct";
@@ -50,7 +49,6 @@ const App = () => {
 
 
         </Routes>
-        <Footer />
         <ToastContainer />
       </AuthProvider>
 

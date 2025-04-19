@@ -105,7 +105,7 @@ useEffect(()=>{
       isFilterVisible ? 'w-4/5' : 'w-full'
     }`}
   >
-    <div className="grid grid-cols-5 gap-4 transition-all duration-300">
+    <div className="grid grid-cols-3 gap-4 transition-all duration-300">
     
       {products.map((product) => (
         <ShoesCard key={product.id} product={product} isFilterVisible={isFilterVisible} />

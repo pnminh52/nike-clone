@@ -21,7 +21,12 @@ const ComboProduct = ({ product }) => {
     const mainProductName = product.name.toLowerCase();
 
     return (
-        <div className="mt-10 max-w-screen-2xl px-10 mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+       <div>
+         <div className="max-w-screen-2xl px-10 mx-auto">
+                    <p className="text-2xl mt-8 mb-4">Complete the look</p>
+                </div>
+        <div className="max-w-screen-2xl px-10 mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+           
             {combos.map((combo, idx) => {
                 const mapped = combo.map((item) => ({
                     ...item,
@@ -29,10 +34,10 @@ const ComboProduct = ({ product }) => {
                 }));
 
                 return (
+              
+                        
                     <div className="" key={idx}>
-                        <div>
-                            <p className="text-2xl py-4">Complete the look</p>
-                        </div>
+                       
                         <div className="bg-[#F1F1F1] p-4 h-[500px] group relative rounded-md">
                             <div className="gap-4">
                                 {layout.map((type, index) => {
@@ -62,17 +67,32 @@ const ComboProduct = ({ product }) => {
                                                 {!isSameName && (
                                                     <div className="group/tooltip">
                                                         {/* White dot */}
-                                                        <div className="w-5 h-5 cursor-pointer rounded-full bg-white border-4 border-gray-300 absolute top-7 left-3/4 opacity-0 group-hover:opacity-100 transition duration-300"></div>
+                                                        <div className="w-5 h-5 cursor-pointer rounded-full bg-white border-4 border-gray-300 absolute top-7 left-2/4 opacity-0 group-hover:opacity-100 transition duration-300"></div>
 
                                                         {/* Tooltip with Link */}
-                                                        <Link
-                                                            to={`/product/${item.productId}`}
-                                                            className="absolute top-13 left-3/4 -translate-x-1/2 bg-white text-black text-xs px-4 py-3 rounded shadow opacity-0 group-hover/tooltip:opacity-100 transition duration-300 whitespace-nowrap z-50 "
-                                                        >
-                                                            {item.name}
-                                                            <p className="text-gray-400">{item.category}</p>
-                                                            <p>{item.price}<span className="underline">đ</span></p>
-                                                        </Link>
+                                                        <div className="absolute top-12 left-2/4 -translate-x-1/2 bg-white text-black text-xs px-0 py-3 rounded shadow opacity-0 group-hover/tooltip:opacity-100 transition duration-300 whitespace-nowrap z-0 flex items-center gap-0">
+  {/* Link with product info */}
+  <Link
+  to={`/details/${encodeURIComponent(item.name)}?id=${item.productId}`}
+  className="ml-2"
+>
+    <p className="">{item.name}</p>
+    <p className="text-gray-400">{item.category}</p>
+    <p>
+      {item.price}
+      <span className="underline">đ</span>
+    </p>
+  </Link>
+    {/* SVG icon */}
+    <svg className="cursor-pointer" fill="none" width="24" height="24" viewBox="0 0 24 24">
+      <title>right-arrow icon</title>
+      <path
+        d="M8.87499 17.125C8.72499 16.975 8.64999 16.8 8.64999 16.6C8.64999 16.4 8.72499 16.225 8.87499 16.075L12.95 12L8.87499 7.925C8.72499 7.775 8.64999 7.6 8.64999 7.4C8.64999 7.2 8.72499 7.025 8.87499 6.875C9.02499 6.725 9.19999 6.65 9.39999 6.65C9.59999 6.65 9.77499 6.725 9.92499 6.875L14.425 11.375C14.5083 11.4583 14.571 11.554 14.613 11.662C14.6543 11.7707 14.675 11.8833 14.675 12C14.675 12.1167 14.6543 12.229 14.613 12.337C14.571 12.4457 14.5083 12.5417 14.425 12.625L9.92499 17.125C9.77499 17.275 9.59999 17.35 9.39999 17.35C9.19999 17.35 9.02499 17.275 8.87499 17.125Z"
+        fill="#000000"
+      />
+    </svg>
+</div>
+
                                                     </div>
                                                 )}
                                               </>
@@ -107,9 +127,11 @@ const ComboProduct = ({ product }) => {
                             </div>
                         </div>
                     </div>
+                  
                 );
             })}
         </div>
+       </div>
     );
 };
 

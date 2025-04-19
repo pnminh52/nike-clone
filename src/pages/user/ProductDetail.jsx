@@ -8,7 +8,9 @@ import { useAuth } from "../../hooks/useAuth";
 import { useWish } from "../../hooks/useWish";
 import { useSearchParams } from "react-router-dom";
 import ComboProduct from './../../components/user/ComboProduct';
-
+import MightAlsoLike from './../../components/user/MightAlsoLike';
+import { useLocation } from "react-router-dom";
+import ProductSkeleton from './../../components/user/ProductSkeleton';
 const ProductDetail = () => {
   const { addToCart } = useCart();
   const { name } = useParams();
@@ -64,8 +66,21 @@ const id = searchParams.get("id");
   }, [selectedProduct]);
   
 
-  if (!selectedProduct) {
-    return <div className="text-center p-4">Loading product...</div>;
+  const [isLoading, setIsLoading] = useState(true); // State để kiểm tra xem sản phẩm đã tải hay chưa
+
+  useEffect(() => {
+    if (!products || products.length === 0) return;
+    setTimeout(() => {
+      setIsLoading(false); // Set trạng thái isLoading = false sau 3 giây
+    }, 2000); // 3 giây để spinner quay
+  }, [products]);
+
+  if (isLoading) {
+    return (
+      <div className="text-center p-4">
+        <ProductSkeleton />
+      </div>
+    );
   }
 
 
@@ -91,8 +106,8 @@ const id = searchParams.get("id");
     onMouseEnter={() => setMainImage(selectedProduct.img)}
   >
     <img
-      src={selectedProduct.img}
-      alt={selectedProduct.name}
+      src={selectedProduct?.img}
+      alt={selectedProduct?.name}
       className="w-18 h-18 rounded-[4px] object-cover cursor-pointer"
     />
     <div className="absolute inset-0 bg-black/15 rounded-[4px] hover:bg-black/30 duration-300 ease-in-out transition"></div>
@@ -100,32 +115,58 @@ const id = searchParams.get("id");
 
   {/* Ảnh phụ: hover để đổi ảnh chính */}
   {selectedProduct.additionalImages?.length > 0 &&
-    selectedProduct.additionalImages.map((img, idx) => (
-      <div
-        key={idx}
-        className="relative cursor-pointer"
-        onMouseEnter={() => setMainImage(img)}
-      >
+  selectedProduct.additionalImages.map((img, idx) => (
+    <div
+      key={idx}
+      className="relative cursor-pointer"
+      onMouseEnter={() => setMainImage(img)}
+    >
+      {img.endsWith(".mp4") ? (
+        <div>
+          <video
+          src={img}
+          className="w-18 relative h-18 rounded-[4px] object-cover cursor-pointer hover:border-black transition"
+          muted
+          loop
+          
+        />
+        <svg className="absolute left-1 bottom-1" aria-hidden="true" focusable="false" viewBox="0 0 24 24" role="img" width="24px" height="24px"  fill="white"><path fill="white" fill-rule="evenodd" d="M19.314 11.35L6.367 3.877a.75.75 0 00-1.125.65v14.949a.75.75 0 001.125.649l12.947-7.474a.75.75 0 000-1.3z" clip-rule="evenodd"></path><path stroke="white" stroke-width="1.5" d="M19.314 11.35L6.367 3.877a.75.75 0 00-1.125.65v14.949a.75.75 0 001.125.649l12.947-7.474a.75.75 0 000-1.3z" clip-rule="evenodd"></path></svg>
+        </div>
+      ) : (
         <img
           src={img}
           alt="additional"
           className="w-18 h-18 rounded-[4px] object-cover cursor-pointer hover:border-black transition"
         />
-        <div className="absolute inset-0 bg-black/15 rounded-[4px] hover:bg-black/30 duration-300 ease-in-out transition"></div>
-      </div>
-    ))}
+      )}
+      <div className="absolute inset-0 bg-black/15 rounded-[4px] hover:bg-black/30 duration-300 ease-in-out transition" />
+    </div>
+  ))}
+
 </div>
 
               </div>
 
               <div className="relative">
               {mainImage && (
-  <img
-  className="w-[485px] h-[650px] cursor-pointer  rounded-2xl"
-    src={mainImage}
-    alt={selectedProduct.name}
-  />
+  mainImage.endsWith(".mp4") ? (
+    <video
+      src={mainImage}
+      className="w-[485px] h-[650px] cursor-pointer rounded-2xl object-cover"
+      autoPlay
+      loop
+      muted
+      playsInline
+    />
+  ) : (
+    <img
+      src={mainImage}
+      alt={selectedProduct.name}
+      className="w-[485px] h-[650px] cursor-pointer rounded-2xl object-cover"
+    />
+  )
 )}
+
 
 
                 <button className="absolute left-4 top-4 px-4 py-2 bg-white flex items-center rounded-full cursor-pointer gap-1">
@@ -360,7 +401,7 @@ const id = searchParams.get("id");
   }`}
 >
   {(selectedProduct.class === "Shoes" || selectedProduct.class === "Slides"
-    ? [31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41]
+    ? [31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45]
     : ["XS", "S", "M", "L", "XL"]
   ).map((size) => {
     const isAvailable = selectedProduct.sizes.includes(String(size));
@@ -720,13 +761,14 @@ const id = searchParams.get("id");
         
       </div>
       <div className="mx-auto max-w-screen-2xl px-10">
-          <div className="py-4">
-            <p className="inter text-3xl">How Others Are Wearing It</p>
+          <div className="mt-4">
+            <p className=" text-3xl">How Others Are Wearing It</p>
             <p className="mb-3 mt-1">Upload your photo or mention @Nike on Instagram for a chance to be featured.</p>
             <button className="px-4 py-2 border border-gray-300 rounded-full hover:border-black transition ease-in-out duration-300 cursor-pointer">Upload Your Photo </button>
           </div>
         </div>
         <div>
+          
         {selectedProduct && (
   <ComboProduct product={selectedProduct} />
 )}
@@ -734,10 +776,8 @@ const id = searchParams.get("id");
 
 
         </div>
-        <div className="py-8">
-          <p>
-            Next content
-          </p>
+        <div className=" mx-auto max-w-screen-2xl px-10">
+            <MightAlsoLike currentProduct={selectedProduct}/>
         </div>
     </div>
   );

@@ -5,6 +5,7 @@ import Header3 from './../components/user/Header3';
 import CheckoutHeader from './../components/user/CheckoutHeader';
 import CheckoutFooter from './../components/user/CheckoutFooter';
 import { Outlet, useLocation } from 'react-router-dom';
+import Footer  from './../components/user/Footer';
 
 const UserLayout = () => {
   const location = useLocation();
@@ -36,9 +37,7 @@ const UserLayout = () => {
           {isCheckoutPage ? (
             <CheckoutFooter />
           ) : (
-            <footer>
-              {/* Footer mặc định nếu có */}
-            </footer>
+            <Footer />
           )}
         </>
       )}

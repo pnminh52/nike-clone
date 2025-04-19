@@ -60,7 +60,8 @@ const useProducts = () => {
       }));
     }
   };
-
+  
+  
   useEffect(() => {
     fetch(`http://localhost:3000/products`)
       .then((response) => response.json())
@@ -75,7 +76,8 @@ const useProducts = () => {
     handleDataChange,
     inputValue,
     setInputValue,
-    getProductsByName
+    getProductsByName,
+    getAllProducts: () => products
   };
 };
 
