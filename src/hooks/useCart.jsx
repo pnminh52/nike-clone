@@ -1,9 +1,11 @@
 import { useEffect, useState } from 'react';
 import { toast } from 'react-toastify';
 import useToast from './useToast';
+import { useAuth } from './useAuth';
 export const useCart = () => {
   const [cart, setCart] = useState([]);
   const {successToast, errorToast, warningToast} = useToast();
+  const {updateUser}=useAuth()
 
 
   // 👉 Lấy cart từ server khi component mount
@@ -105,17 +107,16 @@ export const useCart = () => {
   
       const currentOrders = user.orders || [];
   
-      // Tạo đơn hàng mới với thời gian và giỏ hàng hiện tại
       const newOrder = {
         id: Date.now(),
         items: cart,
         date: new Date().toISOString(),
-        status: "Đang xử lý"
+        status: "Pending"
       };
   
       const updatedOrders = [...currentOrders, newOrder];
   
-      // Cập nhật orders và xóa giỏ hàng
+      // Cập nhật server
       await fetch(`http://localhost:3000/users/${userId}`, {
         method: "PATCH",
         headers: {
@@ -125,6 +126,13 @@ export const useCart = () => {
           cart: [],
           orders: updatedOrders
         }),
+      });
+  
+      // Cập nhật context Auth
+      updateUser({
+        ...user,
+        cart: [],
+        orders: updatedOrders
       });
   
       setCart([]);

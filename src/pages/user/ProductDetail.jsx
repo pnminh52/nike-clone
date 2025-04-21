@@ -769,7 +769,7 @@ const id = searchParams.get("id");
         </div>
         <div>
           
-        {selectedProduct && (
+        {selectedProduct.comboId && (
   <ComboProduct product={selectedProduct} />
 )}
 

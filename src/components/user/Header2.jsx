@@ -33,14 +33,14 @@ const Header2 = () => {
                 <div className="px-2"></div>
 
                 <div className="hidden sm:block">
-                    <ul className="flex gap-7  h-14 items-center inter">
+                    <ul className="flex   h-14 items-center inter">
                       
-                       
+                        
                         <li
                         
                             onMouseEnter={() => setIsHovered0(true)}
                             onMouseLeave={() => setIsHovered0(false)}
-                            className="relative group h-full flex items-center cursor-pointer text-[16px]
+                            className="relative group px-2 h-full   flex items-center cursor-pointer text-[16px]
              after:absolute after:h-[2.5px] after:bg-black after:w-0 after:left-0 
              after:bottom-[14px] hover:after:w-full after:transition-all after:duration-300"
                         >
@@ -50,7 +50,7 @@ const Header2 = () => {
                         <li
                           onMouseEnter={() => setIsHovered1(true)}
                           onMouseLeave={() => setIsHovered1(false)}
-                            className="relative group h-full flex items-center cursor-pointer text-[16px]
+                            className="relative px-2 group h-full   flex items-center cursor-pointer text-[16px]
              after:absolute after:h-[2.5px] after:bg-black after:w-0 after:left-0 
              after:bottom-[14px] hover:after:w-full after:transition-all after:duration-300"
                         >
@@ -59,7 +59,7 @@ const Header2 = () => {
                         <li
                           onMouseEnter={() => setIsHovered2(true)}
                           onMouseLeave={() => setIsHovered2(false)}
-                            className="relative group h-full flex items-center cursor-pointer text-[16px]
+                            className="relative px-2 group h-full   flex items-center cursor-pointer text-[16px]
              after:absolute after:h-[2.5px] after:bg-black after:w-0 after:left-0 
              after:bottom-[14px] hover:after:w-full after:transition-all after:duration-300"
                         >
@@ -68,7 +68,7 @@ const Header2 = () => {
                         <li
                           onMouseEnter={() => setIsHovered3(true)}
                           onMouseLeave={() => setIsHovered3(false)}
-                            className="relative group h-full flex items-center cursor-pointer text-[16px]
+                            className="relative px-2 group h-full  flex items-center cursor-pointer text-[16px]
              after:absolute after:h-[2.5px] after:bg-black after:w-0 after:left-0 
              after:bottom-[14px] hover:after:w-full after:transition-all after:duration-300"
                         >
@@ -77,7 +77,7 @@ const Header2 = () => {
                         <li
                           onMouseEnter={() => setIsHovered4(true)}
                           onMouseLeave={() => setIsHovered4(false)}
-                            className="relative group h-full flex items-center cursor-pointer text-[16px]
+                            className="relative px-2 group h-full  flex items-center cursor-pointer text-[16px]
              after:absolute after:h-[2.5px] after:bg-black after:w-0 after:left-0 
              after:bottom-[14px] hover:after:w-full after:transition-all after:duration-300"
                         >

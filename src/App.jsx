@@ -19,6 +19,7 @@ import Checkout from "./pages/user/Checkout";
 import { ToastContainer } from "react-toastify";
 import Wishlist from "./pages/user/Wishlist";
 import Profile from "./pages/user/Profile";
+import Order from "./pages/user/Order";
 const App = () => {
   return (
     <>
@@ -45,6 +46,7 @@ const App = () => {
             <Route path="checkout" element={<Checkout />} />
             <Route path="wishlist" element={<Wishlist />} />
             <Route path="profile/:id" element={<Profile />} />
+            <Route path="orders" element={<Order/>}/>
           </Route>
 
 

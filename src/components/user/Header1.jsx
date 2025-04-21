@@ -43,7 +43,8 @@ const Header = () => {
               {user ? (
                 <div className="flex gap-1 items-center cursor-pointer inter h-10">
                   <p>Hi!</p>
-                  <p className="text-xs">{user.lastname}</p>
+                  <p className="text-xs">{user.firstname}{user.lastname}</p>
+                  <svg aria-hidden="true" class="icon-btn" focusable="false" viewBox="0 0 24 24" role="img" width="18px" height="18px" fill="none" aria-label="Profile"><path stroke="currentColor" stroke-width="2" d="M3.75 21v-3a3.75 3.75 0 013.75-3.75h9A3.75 3.75 0 0120.25 18v3m-4.5-13.5a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z"></path></svg>
                 </div>
               ) : (
                 <Link to="/login">
@@ -63,8 +64,8 @@ const Header = () => {
                   <ul className="py-4 space-y-2">
                   <li className="text-sm inter text-black px-6 cursor-pointer ">Account</li>
                     <li onClick={()=>   navigate(`/profile/${user.id}`)} className="text-sm hover:text-black cursor-pointer inter text-gray-500 px-6 ">Profile</li>
-                    <li className="text-sm hover:text-black cursor-pointer inter text-gray-500 px-6 ">Orders</li>
-                    <li className="text-sm hover:text-black cursor-pointer inter text-gray-500 px-6 ">Favourites</li>
+                    <li onClick={()=> navigate(`/orders`)} className="text-sm hover:text-black cursor-pointer inter text-gray-500 px-6 ">Orders</li>
+                    <li onClick={()=> navigate(`/wishlist`)} className="text-sm hover:text-black cursor-pointer inter text-gray-500 px-6 ">Favourites</li>
                     <li className="text-sm hover:text-black cursor-pointer inter text-gray-500 px-6 ">Inbox</li>
                     <li className="text-sm hover:text-black cursor-pointer inter text-gray-500 px-6 ">Experiences</li>
                     <li className="text-sm hover:text-black cursor-pointer inter text-gray-500 px-6 ">Account Settings</li>

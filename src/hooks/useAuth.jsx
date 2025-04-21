@@ -14,18 +14,20 @@ export const AuthProvider = ({ children }) => {
 
   const login = async (email, password) => {
     try {
-      const res = await axios.get(`http://localhost:3000/users?email=${email}&password=${password}`);
-      const foundUser = res.data[0];
+      const res = await axios.get("http://localhost:3000/users");
+      const foundUser = res.data.find(
+        (u) => u.email === email && u.password === password
+      );
   
       if (foundUser) {
         setUser(foundUser);
-        localStorage.setItem('user', JSON.stringify(foundUser));
-        localStorage.setItem('userId', foundUser.id);
+        localStorage.setItem("user", JSON.stringify(foundUser));
+        localStorage.setItem("userId", foundUser.id);
         return true;
       }
   
-      localStorage.removeItem('user');
-      localStorage.removeItem('userId');
+      localStorage.removeItem("user");
+      localStorage.removeItem("userId");
       setUser(null);
       return false;
     } catch (error) {
@@ -33,6 +35,7 @@ export const AuthProvider = ({ children }) => {
       return false;
     }
   };
+  
   
   
   const register = async (formData) => {
@@ -66,10 +69,14 @@ export const AuthProvider = ({ children }) => {
     localStorage.removeItem('userId');
     window.location.reload(); 
   };
+  const updateUser = (updatedUser) => {
+    setUser(updatedUser);
+    localStorage.setItem("user", JSON.stringify(updatedUser));
+  };
   
 
   return (
-    <AuthContext.Provider value={{ user, login, register, logout }}>
+    <AuthContext.Provider value={{ user, login, register, logout, updateUser }}>
       {children}
     </AuthContext.Provider>
   );

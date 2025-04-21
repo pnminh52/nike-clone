@@ -7,7 +7,7 @@
       "type": "Shoes",
       "class": "Shoes",
       "price": "6000000",
-      "isDefault":"true",
+      "isDefault": "true",
       "price_sale": "5598000",
       "des": "More Air, less bulk. The Dn8 takes our Dynamic Air system and condenses it into a sleek, low-profile package. Powered by eight pressurised Air tubes, it gives you a responsive sensation with every step. Enter an unreal experience of movement.",
       "img": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/56553951-1d16-4e28-9624-2de76aa82d41/W+AIR+MAX+DN8.png",
@@ -47,7 +47,7 @@
       "id": "12hb",
       "name": "Nike Zoom Fly 6",
       "stock": 100,
-      "isDefault":"true",
+      "isDefault": "true",
       "class": "Shoes",
       "type": "Road Racing Shoes",
       "price": "5500000",
@@ -174,7 +174,7 @@
       "des": "Inspired by the original that debuted in 1985, the Air Jordan 1 Low offers a clean, classic look that's familiar yet always fresh. With an iconic design that pairs perfectly with any 'fit, these kicks ensure you'll always be on point.",
       "img": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/2085e1ea-854f-457d-992d-ac4352a9652d/AIR+JORDAN+1+LOW.png",
       "sizes": [
-       "31",
+        "31",
         "32",
         "33",
         "34",
@@ -187,7 +187,6 @@
         "41",
         "42",
         "43"
-
       ],
       "gender": "Men",
       "color": [
@@ -222,7 +221,7 @@
       "des": "Inspired by the original that debuted in 1985, the Air Jordan 1 Low offers a clean, classic look that's familiar yet always fresh. With an iconic design that pairs perfectly with any 'fit, these kicks ensure you'll always be on point.",
       "img": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/247ed6b5-9687-40c5-beed-5c472a23a8d6/AIR+JORDAN+1+LOW.png",
       "sizes": [
-       "31",
+        "31",
         "32",
         "33",
         "34",
@@ -231,7 +230,6 @@
         "37",
         "38",
         "39"
-
       ],
       "gender": "Men",
       "color": [
@@ -834,184 +832,230 @@
   ],
   "users": [
     {
-      "id": "d178",
+      "id": "631b",
       "firstname": "Phạm",
       "lastname": "Minh",
       "phone": "0934557882",
-      "address": "Hà Nam1",
-      "email": "test1@gmail.com",
+      "address": "Hà Nam",
+      "email": "aaaaaaaaaa@gmail.com",
       "password": "111111Aa",
       "country": "Vietnam",
       "extraAddresses": [],
       "cart": [],
       "orders": [
         {
-          "id": 1744813846296,
+          "id": 1745225156217,
           "items": [
             {
-              "id": "dffs",
-              "name": "Nike Air Max Dn8",
+              "id": "gvd5",
+              "name": "Nike Zoom Fly 6",
               "stock": 100,
-              "type": "Shoes",
-              "price": "6000000",
-              "price_sale": "5598000",
-              "des": "More Air, less bulk. The Dn8 takes our Dynamic Air system and condenses it into a sleek, low-profile package. Powered by eight pressurised Air tubes, it gives you a responsive sensation with every step. Enter an unreal experience of movement.",
-              "img": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/56553951-1d16-4e28-9624-2de76aa82d41/W+AIR+MAX+DN8.png",
+              "class": "Shoes",
+              "type": "Road Racing Shoes",
+              "price": "5500000",
+              "price_sale": "4999000",
+              "des": "The Zoom Fly 6 is with you every step of your run. Lighter than the Zoom Fly 5, its responsive ZoomX foam adds energy return to each stride, while a carbon-fibre plate helps propel you to the finishing line.",
+              "img": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/3f017ee7-337f-4377-96d8-5189e783d67b/W+ZOOM+FLY+6.png",
               "page": "New & Featured",
               "category": "New & Upcoming Drops",
               "status": "Just In",
               "customer": "Women",
               "sizes": [
+                "31",
                 "32",
                 "33",
                 "34",
-                "41",
+                "40",
                 "37",
+                "35",
+                "36"
+              ],
+              "gender": "Women",
+              "color": [
+                "Bright Crimson",
+                "Lime Blast",
+                "Mint Foam",
+                "Cave Purple"
+              ],
+              "style": "FN8455-601",
+              "country": "Vietnam",
+              "additionalImages": [
+                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/e0f4ad30-2f3e-4073-a66d-97f8587a4690/W+ZOOM+FLY+6.png",
+                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/a47766ba-7514-4ce1-a3d4-ba0f4ccec0f0/W+ZOOM+FLY+6.png",
+                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/2ecfe61d-6a72-413d-baa4-bd1748a9a180/W+ZOOM+FLY+6.png",
+                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/f3d79e92-6b3a-4b5d-9563-51a15594522a/W+ZOOM+FLY+6.png",
+                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/dc7b3605-6edc-4713-83c7-e68cd406f19a/W+ZOOM+FLY+6.png",
+                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/68a977f5-50e4-4deb-beae-58ff5b6300a3/W+ZOOM+FLY+6.png",
+                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/969101fc-73a4-4ea9-94da-e56a7f8d104e/W+ZOOM+FLY+6.png",
+                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/0cf36d43-2779-4d58-87ae-0938f265d164/W+ZOOM+FLY+6.png",
+                "",
+                ""
+              ],
+              "size": 40,
+              "quantity": 2
+            }
+          ],
+          "date": "2025-04-21T08:45:56.217Z",
+          "status": " Pending"
+        },
+        {
+          "id": 1745225426678,
+          "items": [
+            {
+              "id": "12hb",
+              "name": "Nike Zoom Fly 6",
+              "stock": 100,
+              "isDefault": "true",
+              "class": "Shoes",
+              "type": "Road Racing Shoes",
+              "price": "5500000",
+              "price_sale": "4999000",
+              "des": "The Zoom Fly 6 is with you every step of your run. Lighter than the Zoom Fly 5, its responsive ZoomX foam adds energy return to each stride, while a carbon-fibre plate helps propel you to the finishing line.",
+              "img": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/146ef87c-ebf4-4534-835e-2f97e03856f5/W+ZOOM+FLY+6.png",
+              "page": "New & Featured",
+              "category": "New & Upcoming Drops",
+              "status": "Just In",
+              "customer": "Women",
+              "sizes": [
+                "31",
+                "32",
+                "33",
+                "34",
+                "40",
+                "37",
+                "35",
+                "36",
+                "38",
+                "39"
+              ],
+              "gender": "Women",
+              "color": [
+                "Bright Crimson",
+                "Lime Blast",
+                "Mint Foam",
+                "Cave Purple"
+              ],
+              "style": "FN8455-601",
+              "country": "Vietnam",
+              "additionalImages": [
+                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/b243a08d-3a77-4c58-8b09-86f485ee326f/W+ZOOM+FLY+6.png",
+                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/dc04119e-ae19-4545-a5aa-e13c4d18b25a/W+ZOOM+FLY+6.png",
+                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/3d06a0a8-1729-4314-b1e4-442ea074e0d9/W+ZOOM+FLY+6.png",
+                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/607d35fd-6d8e-4c69-a39a-8dee37762b66/W+ZOOM+FLY+6.png",
+                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/beb54158-f84a-4402-a5f4-908ed137bb8f/W+ZOOM+FLY+6.png",
+                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/79b8abb1-2cfe-4f1a-89ab-b97f4f317bb3/W+ZOOM+FLY+6.png",
+                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/ad60d354-8834-4d7b-9a66-21052cc59d7e/W+ZOOM+FLY+6.png",
+                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/da0104a3-8cd7-43a8-b74c-70b09179884b/W+ZOOM+FLY+6.png",
+                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/33bba3f7-0e52-4be5-a2b8-9a122bf08547/W+ZOOM+FLY+6.png",
+                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/85776744-2566-4c86-93a9-6ef0e70d8f34/W+ZOOM+FLY+6.png"
+              ],
+              "size": 36,
+              "quantity": 1
+            }
+          ],
+          "date": "2025-04-21T08:50:26.678Z",
+          "status": " Pending"
+        },
+        {
+          "id": 1745225734360,
+          "items": [
+            {
+              "id": "73y62",
+              "class": "Slides",
+              "name": "Nike ReactX Rejuven8",
+              "price": "2000000",
+              "stock": 100,
+              "type": "Slides",
+              "price_sale": "1759000",
+              "des": "Give your feet a rest. Made from soft and responsive ReactX foam, the Rejuven8 uses some of our best tech to create recovery slides you'll look forward to wearing.",
+              "img": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/e5febe6b-6e53-40c6-bbb8-816e7e301c7b/W+NIKE+REACTX+REJUVEN8+SLIDE.png",
+              "sizes": [
+                "31",
+                "32",
+                "33",
+                "34",
                 "35"
               ],
               "gender": "Women",
               "color": [
-                "Metallic Red Bronze",
-                "Particle Beige",
-                "Hemp",
-                "Black"
+                "Guava Ice",
+                "Apricot Agate"
               ],
-              "style": "HF5509-900",
-              "country": "Vietnam",
-              "additionalImages": [
-                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/d636ecdb-b6ef-4bdc-bfe6-fd21300b359e/W+AIR+MAX+DN8.png",
-                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/618f8d03-17bb-4f61-898f-3a03521513c3/W+AIR+MAX+DN8.png",
-                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/5abe9cb5-c6ea-4602-af88-282a5e37b904/W+AIR+MAX+DN8.png",
-                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/573e3b6c-9d06-457f-b88b-b72edb5317f9/W+AIR+MAX+DN8.png",
-                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/66611108-c63d-4d1c-ac2e-25ffc50c8850/W+AIR+MAX+DN8.png",
-                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/28bc5cbb-d884-4554-8443-49a92d7270f6/W+AIR+MAX+DN8.png",
-                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/54b65210-15d1-4d55-b85c-408135c4114f/W+AIR+MAX+DN8.png",
-                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/18be1f18-06ad-427a-9b78-c5c54744f0a2/W+AIR+MAX+DN8.png"
-              ],
-              "size": 41,
-              "quantity": 1
-            },
-            {
-              "id": "bda8",
-              "name": "Nike Air Max Dn8",
-              "price": "6000000",
-              "stock": 30,
-              "type": "Shoes",
-              "price_sale": "5598000",
-              "des": "More Air, less bulk. The Dn8 takes our Dynamic Air system and condenses it into a sleek, low-profile package. Powered by eight pressurised Air tubes, it gives you a responsive sensation with every step. Enter an unreal experience of movement.",
-              "img": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/084ccffe-0c51-4441-b6c3-04f36daf244b/W+AIR+MAX+DN8.png",
+              "country": "Indonesia",
+              "style": "HV4484-800",
               "page": "New & Featured",
               "category": "New & Upcoming Drops",
               "status": "Just In",
               "customer": "Women",
-              "sizes": [
-                "32",
-                "33",
-                "34"
-              ],
-              "color": [
-                "Cobalt Tint",
-                "Psychic Blue",
-                "Light Armoury Blue",
-                "Black"
-              ],
-              "style": "HF5509-400",
-              "country": "Vietnam",
-              "gender": "Women",
               "additionalImages": [
-                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/2f913fc0-8574-4171-8fa9-554d8cdb12da/W+AIR+MAX+DN8.png",
-                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/c04da348-86ab-424d-b700-dd6bc04144cb/W+AIR+MAX+DN8.png",
-                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/e4233627-d1ee-47f7-af91-82887e696bb2/W+AIR+MAX+DN8.png",
-                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/310a2e70-fb72-4a9b-a0ee-f8d1f0a826f2/W+AIR+MAX+DN8.png",
-                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/537df6d8-a297-4f26-91f2-acd2fb032484/W+AIR+MAX+DN8.png",
-                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/c49eedfa-4d38-4720-8920-3e8bd97ce0c5/W+AIR+MAX+DN8.png",
-                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/24105ba9-1a41-4093-b4a8-559aa7e5ee03/W+AIR+MAX+DN8.png",
-                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/160983bb-3b47-4059-a58b-d1382e359970/W+AIR+MAX+DN8.png"
-              ],
-              "size": 34,
-              "quantity": 2
-            },
-            {
-              "id": "bda8",
-              "name": "Nike Air Max Dn8",
-              "price": "6000000",
-              "stock": 30,
-              "type": "Shoes",
-              "price_sale": "5598000",
-              "des": "More Air, less bulk. The Dn8 takes our Dynamic Air system and condenses it into a sleek, low-profile package. Powered by eight pressurised Air tubes, it gives you a responsive sensation with every step. Enter an unreal experience of movement.",
-              "img": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/084ccffe-0c51-4441-b6c3-04f36daf244b/W+AIR+MAX+DN8.png",
-              "page": "New & Featured",
-              "category": "New & Upcoming Drops",
-              "status": "Just In",
-              "customer": "Women",
-              "sizes": [
-                "32",
-                "33",
-                "34"
-              ],
-              "color": [
-                "Cobalt Tint",
-                "Psychic Blue",
-                "Light Armoury Blue",
-                "Black"
-              ],
-              "style": "HF5509-400",
-              "country": "Vietnam",
-              "gender": "Women",
-              "additionalImages": [
-                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/2f913fc0-8574-4171-8fa9-554d8cdb12da/W+AIR+MAX+DN8.png",
-                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/c04da348-86ab-424d-b700-dd6bc04144cb/W+AIR+MAX+DN8.png",
-                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/e4233627-d1ee-47f7-af91-82887e696bb2/W+AIR+MAX+DN8.png",
-                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/310a2e70-fb72-4a9b-a0ee-f8d1f0a826f2/W+AIR+MAX+DN8.png",
-                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/537df6d8-a297-4f26-91f2-acd2fb032484/W+AIR+MAX+DN8.png",
-                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/c49eedfa-4d38-4720-8920-3e8bd97ce0c5/W+AIR+MAX+DN8.png",
-                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/24105ba9-1a41-4093-b4a8-559aa7e5ee03/W+AIR+MAX+DN8.png",
-                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/160983bb-3b47-4059-a58b-d1382e359970/W+AIR+MAX+DN8.png"
+                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/ff28c51b-fb1f-4e2e-871d-5db786d5f615/W+NIKE+REACTX+REJUVEN8+SLIDE.png",
+                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/f32e11ad-f27a-46b0-ad4c-1bf2017de921/W+NIKE+REACTX+REJUVEN8+SLIDE.png",
+                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/b5dfe2dc-4a51-4d58-8216-c721824f8d79/W+NIKE+REACTX+REJUVEN8+SLIDE.png",
+                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/dc7c22dd-2752-4105-8b45-e077cd1ecbec/W+NIKE+REACTX+REJUVEN8+SLIDE.png"
               ],
               "size": 32,
               "quantity": 1
             }
           ],
-          "date": "2025-04-16T14:30:46.296Z",
-          "status": "Đang xử lý"
-        }
-      ],
-      "wishlist": [
+          "date": "2025-04-21T08:55:34.360Z",
+          "status": " Pending"
+        },
         {
-          "id": "hdfe3",
-          "name": "Nike 24.7 ImpossiblySoft",
-          "price": "3000000",
-          "stock": 100,
-          "class": "Clothes",
-          "type": "Dri-FIT Oversized 1/2-Zip Top",
-          "price_sale": "2499000",
-          "des": "Extraordinarily soft and smooth, our ImpossiblySoft fabric feels made for all-day motion. It's a double-knit material that adds structure to this top while wicking sweat—for comfort that doesn't quit.",
-          "img": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/0c205681-e97c-4412-bd82-0f0805b64009/AS+W+NK+24.7+DF+HZ+TOP+SOFT.png",
-          "sizes": [
-            "XS",
-            "S",
-            "M",
-            "L",
-            "XL"
+          "id": 1745228482118,
+          "items": [
+            {
+              "id": "dfjd",
+              "name": "Air Jordan 1 Low",
+              "price": "4000000",
+              "stock": 100,
+              "class": "Shoes",
+              "type": "Shoes",
+              "price_sale": "3239000",
+              "des": "Inspired by the original that debuted in 1985, the Air Jordan 1 Low offers a clean, classic look that's familiar yet always fresh. With an iconic design that pairs perfectly with any 'fit, these kicks ensure you'll always be on point.",
+              "img": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/2085e1ea-854f-457d-992d-ac4352a9652d/AIR+JORDAN+1+LOW.png",
+              "sizes": [
+                "31",
+                "32",
+                "33",
+                "34",
+                "35",
+                "36",
+                "37",
+                "38",
+                "39",
+                "40",
+                "41",
+                "42",
+                "43"
+              ],
+              "gender": "Men",
+              "color": [
+                "White",
+                "Neutral Grey",
+                "Gum Medium Brown",
+                "Midnight Navy"
+              ],
+              "country": "VIetnam",
+              "style": "553558-146",
+              "page": "New & Featured",
+              "category": "New & Upcoming Drops",
+              "status": "Just In",
+              "customer": "Men",
+              "additionalImages": [
+                "https://shortformvideo.nike.com/a/videos/43e296f4-92cd-4810-a9b8-d162dda02360/video.mp4",
+                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/80b8dff8-1c32-4dfb-899a-27e90bb1b4dd/AIR+JORDAN+1+LOW.png",
+                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/936b7d0d-ea01-4603-9d5d-4b270787c5d0/AIR+JORDAN+1+LOW.png",
+                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/7b764940-8881-4514-95bf-c4633755a214/AIR+JORDAN+1+LOW.png",
+                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/562c4119-5bda-49dc-adda-0750c1dd78b8/AIR+JORDAN+1+LOW.png",
+                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/bd1ff0ce-c875-4fed-9327-41fd3c3fda80/AIR+JORDAN+1+LOW.png"
+              ],
+              "size": 40,
+              "quantity": 1
+            }
           ],
-          "gender": "Women",
-          "color": [
-            "Light Orewood Brown",
-            "Light Iron Ore"
-          ],
-          "country": "China",
-          "style": "HQ8189-104",
-          "page": "New & Featured",
-          "category": "New & Upcoming Drops",
-          "status": "Just In",
-          "customer": "Women",
-          "additionalImages": [
-            "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/0fd7b050-1ddc-4a46-b151-0a25beb3d042/AS+W+NK+24.7+DF+HZ+TOP+SOFT.png",
-            "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/661bd665-3a27-4877-b124-eb79370ae526/AS+W+NK+24.7+DF+HZ+TOP+SOFT.png",
-            "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/e2fd8c05-2c32-4333-99f3-e5c5416ac570/AS+W+NK+24.7+DF+HZ+TOP+SOFT.png",
-            "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/96491fa6-2686-4b7c-bf7d-09daee8172e6/AS+W+NK+24.7+DF+HZ+TOP+SOFT.png",
-            "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/290a005f-9804-406b-804b-cb4c38bf61a2/AS+W+NK+24.7+DF+HZ+TOP+SOFT.png"
-          ]
+          "date": "2025-04-21T09:41:22.118Z",
+          "status": "Cancelled",
+          "cancelReason": "Không nhận được hàng"
         }
       ]
     }
