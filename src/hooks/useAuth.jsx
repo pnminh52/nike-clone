@@ -1,11 +1,13 @@
 import React, { createContext, useState, useEffect, useContext } from 'react';
 import axios from 'axios';
 import { toast } from 'react-toastify';
+import { useNavigate } from 'react-router-dom';
 
 const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
+  const navigate=useNavigate()
 
   useEffect(() => {
     const storedUser = JSON.parse(localStorage.getItem('user'));
@@ -67,7 +69,7 @@ export const AuthProvider = ({ children }) => {
     setUser(null);
     localStorage.removeItem('user');
     localStorage.removeItem('userId');
-    window.location.reload(); 
+    navigate("/")
   };
   const updateUser = (updatedUser) => {
     setUser(updatedUser);

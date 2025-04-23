@@ -3,6 +3,8 @@ import useCategories from "../../hooks/useCategories";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { useCart } from "../../hooks/useCart";
+import { useAuth } from "../../hooks/useAuth";
+import useToast from "../../hooks/useToast";
 
 const Header2 = () => {
     const { categories } = useCategories();
@@ -11,6 +13,27 @@ const Header2 = () => {
     const [isHovered2, setIsHovered2] = useState(false);
     const [isHovered3, setIsHovered3] = useState(false);
     const [isHovered4, setIsHovered4] = useState(false);
+    const { warningToast } = useToast();
+    const handleClickCart=()=>{
+        const isLoggedIn = Boolean(localStorage.getItem("user")); // hoặc từ context
+
+        if (!isLoggedIn) {
+          warningToast("Vui lòng đăng nhập để xem giỏ hàng!");
+          return;
+        }
+    
+        navigate("/cart");
+    }
+    const handleClickWishlist=()=>{
+        const isLoggedIn = Boolean(localStorage.getItem("user")); // hoặc từ context
+
+        if (!isLoggedIn) {
+          warningToast("Vui lòng đăng nhập để xem Wishlist!");
+          return;
+        }
+    
+        navigate("/wishlist");
+    }
     const navigate= useNavigate();
     
     return (
@@ -127,7 +150,7 @@ const Header2 = () => {
                         />
                     </div>
 
-                    <div className="cursor-pointer " onClick={()=>navigate("/wishlist")}>
+                    <div className="cursor-pointer " onClick={()=>handleClickWishlist()}>
                         <svg
                             aria-hidden="true"
                             focusable="false"
@@ -145,7 +168,7 @@ const Header2 = () => {
                         </svg>
                     </div>
                     <div className="cursor-pointer">
-                        <div className="relative  "  onClick={() => navigate("/cart")} >
+                        <div className="relative  "  onClick={() => handleClickCart()} >
                             <svg
                             
                                 aria-hidden="true"

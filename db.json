@@ -844,163 +844,6 @@
       "cart": [],
       "orders": [
         {
-          "id": 1745225156217,
-          "items": [
-            {
-              "id": "gvd5",
-              "name": "Nike Zoom Fly 6",
-              "stock": 100,
-              "class": "Shoes",
-              "type": "Road Racing Shoes",
-              "price": "5500000",
-              "price_sale": "4999000",
-              "des": "The Zoom Fly 6 is with you every step of your run. Lighter than the Zoom Fly 5, its responsive ZoomX foam adds energy return to each stride, while a carbon-fibre plate helps propel you to the finishing line.",
-              "img": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/3f017ee7-337f-4377-96d8-5189e783d67b/W+ZOOM+FLY+6.png",
-              "page": "New & Featured",
-              "category": "New & Upcoming Drops",
-              "status": "Just In",
-              "customer": "Women",
-              "sizes": [
-                "31",
-                "32",
-                "33",
-                "34",
-                "40",
-                "37",
-                "35",
-                "36"
-              ],
-              "gender": "Women",
-              "color": [
-                "Bright Crimson",
-                "Lime Blast",
-                "Mint Foam",
-                "Cave Purple"
-              ],
-              "style": "FN8455-601",
-              "country": "Vietnam",
-              "additionalImages": [
-                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/e0f4ad30-2f3e-4073-a66d-97f8587a4690/W+ZOOM+FLY+6.png",
-                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/a47766ba-7514-4ce1-a3d4-ba0f4ccec0f0/W+ZOOM+FLY+6.png",
-                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/2ecfe61d-6a72-413d-baa4-bd1748a9a180/W+ZOOM+FLY+6.png",
-                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/f3d79e92-6b3a-4b5d-9563-51a15594522a/W+ZOOM+FLY+6.png",
-                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/dc7b3605-6edc-4713-83c7-e68cd406f19a/W+ZOOM+FLY+6.png",
-                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/68a977f5-50e4-4deb-beae-58ff5b6300a3/W+ZOOM+FLY+6.png",
-                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/969101fc-73a4-4ea9-94da-e56a7f8d104e/W+ZOOM+FLY+6.png",
-                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/0cf36d43-2779-4d58-87ae-0938f265d164/W+ZOOM+FLY+6.png",
-                "",
-                ""
-              ],
-              "size": 40,
-              "quantity": 2
-            }
-          ],
-          "date": "2025-04-21T08:45:56.217Z",
-          "status": " Pending"
-        },
-        {
-          "id": 1745225426678,
-          "items": [
-            {
-              "id": "12hb",
-              "name": "Nike Zoom Fly 6",
-              "stock": 100,
-              "isDefault": "true",
-              "class": "Shoes",
-              "type": "Road Racing Shoes",
-              "price": "5500000",
-              "price_sale": "4999000",
-              "des": "The Zoom Fly 6 is with you every step of your run. Lighter than the Zoom Fly 5, its responsive ZoomX foam adds energy return to each stride, while a carbon-fibre plate helps propel you to the finishing line.",
-              "img": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/146ef87c-ebf4-4534-835e-2f97e03856f5/W+ZOOM+FLY+6.png",
-              "page": "New & Featured",
-              "category": "New & Upcoming Drops",
-              "status": "Just In",
-              "customer": "Women",
-              "sizes": [
-                "31",
-                "32",
-                "33",
-                "34",
-                "40",
-                "37",
-                "35",
-                "36",
-                "38",
-                "39"
-              ],
-              "gender": "Women",
-              "color": [
-                "Bright Crimson",
-                "Lime Blast",
-                "Mint Foam",
-                "Cave Purple"
-              ],
-              "style": "FN8455-601",
-              "country": "Vietnam",
-              "additionalImages": [
-                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/b243a08d-3a77-4c58-8b09-86f485ee326f/W+ZOOM+FLY+6.png",
-                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/dc04119e-ae19-4545-a5aa-e13c4d18b25a/W+ZOOM+FLY+6.png",
-                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/3d06a0a8-1729-4314-b1e4-442ea074e0d9/W+ZOOM+FLY+6.png",
-                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/607d35fd-6d8e-4c69-a39a-8dee37762b66/W+ZOOM+FLY+6.png",
-                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/beb54158-f84a-4402-a5f4-908ed137bb8f/W+ZOOM+FLY+6.png",
-                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/79b8abb1-2cfe-4f1a-89ab-b97f4f317bb3/W+ZOOM+FLY+6.png",
-                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/ad60d354-8834-4d7b-9a66-21052cc59d7e/W+ZOOM+FLY+6.png",
-                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/da0104a3-8cd7-43a8-b74c-70b09179884b/W+ZOOM+FLY+6.png",
-                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/33bba3f7-0e52-4be5-a2b8-9a122bf08547/W+ZOOM+FLY+6.png",
-                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/85776744-2566-4c86-93a9-6ef0e70d8f34/W+ZOOM+FLY+6.png"
-              ],
-              "size": 36,
-              "quantity": 1
-            }
-          ],
-          "date": "2025-04-21T08:50:26.678Z",
-          "status": " Pending"
-        },
-        {
-          "id": 1745225734360,
-          "items": [
-            {
-              "id": "73y62",
-              "class": "Slides",
-              "name": "Nike ReactX Rejuven8",
-              "price": "2000000",
-              "stock": 100,
-              "type": "Slides",
-              "price_sale": "1759000",
-              "des": "Give your feet a rest. Made from soft and responsive ReactX foam, the Rejuven8 uses some of our best tech to create recovery slides you'll look forward to wearing.",
-              "img": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/e5febe6b-6e53-40c6-bbb8-816e7e301c7b/W+NIKE+REACTX+REJUVEN8+SLIDE.png",
-              "sizes": [
-                "31",
-                "32",
-                "33",
-                "34",
-                "35"
-              ],
-              "gender": "Women",
-              "color": [
-                "Guava Ice",
-                "Apricot Agate"
-              ],
-              "country": "Indonesia",
-              "style": "HV4484-800",
-              "page": "New & Featured",
-              "category": "New & Upcoming Drops",
-              "status": "Just In",
-              "customer": "Women",
-              "additionalImages": [
-                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/ff28c51b-fb1f-4e2e-871d-5db786d5f615/W+NIKE+REACTX+REJUVEN8+SLIDE.png",
-                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/f32e11ad-f27a-46b0-ad4c-1bf2017de921/W+NIKE+REACTX+REJUVEN8+SLIDE.png",
-                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/b5dfe2dc-4a51-4d58-8216-c721824f8d79/W+NIKE+REACTX+REJUVEN8+SLIDE.png",
-                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/dc7c22dd-2752-4105-8b45-e077cd1ecbec/W+NIKE+REACTX+REJUVEN8+SLIDE.png"
-              ],
-              "size": 32,
-              "quantity": 1
-            }
-          ],
-          "date": "2025-04-21T08:55:34.360Z",
-          "status": " Pending"
-        },
-        {
           "id": 1745228482118,
           "items": [
             {
@@ -1056,6 +899,51 @@
           "date": "2025-04-21T09:41:22.118Z",
           "status": "Cancelled",
           "cancelReason": "Không nhận được hàng"
+        },
+        {
+          "id": 1745229906938,
+          "items": [
+            {
+              "id": "hdfe3",
+              "name": "Nike 24.7 ImpossiblySoft",
+              "price": "3000000",
+              "stock": 100,
+              "class": "Clothes",
+              "type": "Dri-FIT Oversized 1/2-Zip Top",
+              "price_sale": "2499000",
+              "des": "Extraordinarily soft and smooth, our ImpossiblySoft fabric feels made for all-day motion. It's a double-knit material that adds structure to this top while wicking sweat—for comfort that doesn't quit.",
+              "img": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/0c205681-e97c-4412-bd82-0f0805b64009/AS+W+NK+24.7+DF+HZ+TOP+SOFT.png",
+              "sizes": [
+                "XS",
+                "S",
+                "M",
+                "L",
+                "XL"
+              ],
+              "gender": "Women",
+              "color": [
+                "Light Orewood Brown",
+                "Light Iron Ore"
+              ],
+              "country": "China",
+              "style": "HQ8189-104",
+              "page": "New & Featured",
+              "category": "New & Upcoming Drops",
+              "status": "Just In",
+              "customer": "Women",
+              "additionalImages": [
+                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/0fd7b050-1ddc-4a46-b151-0a25beb3d042/AS+W+NK+24.7+DF+HZ+TOP+SOFT.png",
+                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/661bd665-3a27-4877-b124-eb79370ae526/AS+W+NK+24.7+DF+HZ+TOP+SOFT.png",
+                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/e2fd8c05-2c32-4333-99f3-e5c5416ac570/AS+W+NK+24.7+DF+HZ+TOP+SOFT.png",
+                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/96491fa6-2686-4b7c-bf7d-09daee8172e6/AS+W+NK+24.7+DF+HZ+TOP+SOFT.png",
+                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/290a005f-9804-406b-804b-cb4c38bf61a2/AS+W+NK+24.7+DF+HZ+TOP+SOFT.png"
+              ],
+              "size": "S",
+              "quantity": 1
+            }
+          ],
+          "date": "2025-04-21T10:05:06.938Z",
+          "status": "Pending"
         }
       ]
     }
