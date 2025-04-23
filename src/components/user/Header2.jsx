@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { useCart } from "../../hooks/useCart";
 import { useAuth } from "../../hooks/useAuth";
 import useToast from "../../hooks/useToast";
+import SearchTab from "./SerachTab";
 
 const Header2 = () => {
     const { categories } = useCategories();
@@ -13,6 +14,7 @@ const Header2 = () => {
     const [isHovered2, setIsHovered2] = useState(false);
     const [isHovered3, setIsHovered3] = useState(false);
     const [isHovered4, setIsHovered4] = useState(false);
+    const [showSearchTab, setShowSearchTab] = useState(false);
     const { warningToast } = useToast();
     const handleClickCart=()=>{
         const isLoggedIn = Boolean(localStorage.getItem("user")); // hoặc từ context
@@ -38,6 +40,8 @@ const Header2 = () => {
     
     return (
         <div className="bg-white">
+                                       {showSearchTab && <SearchTab onClose={() => setShowSearchTab(false)} />}
+
             <div className="container h-16  mx-auto px-10 max-w-screen-2xl flex justify-between items-center  bg-white  ">
                <Link to={'/'}>
                <svg
@@ -145,7 +149,9 @@ const Header2 = () => {
                         </svg>
                         <input
                             type="text"
-                            className="w-full bg-gray-100 rounded-full pl-10 h-9.5  pr-0 py-2 outline-none focus:ring-2 font-semibold focus:ring-black transition duration-200"
+                            onFocus={() => setShowSearchTab(true)}
+                            onBlur={() => setTimeout(() => setShowSearchTab(true), 200)}
+                            className="w-full hover:bg-[#E5E5E5] bg-gray-100 rounded-full pl-10 h-9.5  pr-0 py-2 outline-none focus:ring-2 font-semibold focus:ring-black transition duration-200"
                             placeholder="Search"
                         />
                     </div>
