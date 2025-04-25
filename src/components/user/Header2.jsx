@@ -150,7 +150,7 @@ const Header2 = () => {
                         <input
                             type="text"
                             onFocus={() => setShowSearchTab(true)}
-                            onBlur={() => setTimeout(() => setShowSearchTab(true), 200)}
+                            onBlur={() => setTimeout(() => setShowSearchTab(true))}
                             className="w-full hover:bg-[#E5E5E5] bg-gray-100 rounded-full pl-10 h-9.5  pr-0 py-2 outline-none focus:ring-2 font-semibold focus:ring-black transition duration-200"
                             placeholder="Search"
                         />

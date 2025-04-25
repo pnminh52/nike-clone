@@ -20,6 +20,7 @@ import { ToastContainer } from "react-toastify";
 import Wishlist from "./pages/user/Wishlist";
 import Profile from "./pages/user/Profile";
 import Order from "./pages/user/Order";
+import SearchPage from "./pages/user/SearchPage";
 const App = () => {
   return (
     <>
@@ -47,7 +48,8 @@ const App = () => {
             <Route path="wishlist" element={<Wishlist />} />
             <Route path="profile/:id" element={<Profile />} />
             <Route path="orders" element={<Order/>}/>
-          </Route>
+            <Route path="search/:keyword" element={<SearchPage />} />
+            </Route>
 
 
         </Routes>
