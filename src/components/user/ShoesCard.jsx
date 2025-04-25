@@ -85,7 +85,7 @@ const ShoesCard = ({ product, isFilterVisible }) => {
               {product.gender}'s Shoes
             </p>
             <p className="text-gray-500 block group-hover:hidden transform transition-all duration-500 translate-y-0 group-hover:translate-y-6">
-              1 Colour
+              {variantImages.length} Colour
             </p>
 
             <div className="flex gap-3 mt-3">
