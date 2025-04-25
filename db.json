@@ -3,6 +3,7 @@
     {
       "id": "dffs",
       "name": "Nike Air Max Dn8",
+      "position": 1,
       "stock": 100,
       "type": "Shoes",
       "class": "Shoes",
@@ -45,6 +46,8 @@
     },
     {
       "id": "12hb",
+      "position": 1,
+
       "name": "Nike Zoom Fly 6",
       "stock": 100,
       "isDefault": "true",
@@ -95,6 +98,8 @@
     {
       "id": "73y62",
       "class": "Slides",
+      "position": 1,
+
       "name": "Nike ReactX Rejuven8",
       "price": "2000000",
       "stock": 100,
@@ -130,6 +135,8 @@
     {
       "id": "hdfe3",
       "name": "Nike 24.7 ImpossiblySoft",
+      "position": 1,
+
       "price": "3000000",
       "stock": 100,
       "class": "Clothes",
@@ -166,6 +173,8 @@
     {
       "id": "dfjd",
       "name": "Air Jordan 1 Low",
+      "position": 1,
+
       "price": "4000000",
       "stock": 100,
       "class": "Shoes",
@@ -434,8 +443,8 @@
       "stock": 100,
       "class": "Shoes",
       "type": "Road Racing Shoes",
-      "price": "5500000",
-      "price_sale": "4999000",
+      "price": "6000000",
+      "price_sale": "5598000",
       "des": "The Zoom Fly 6 is with you every step of your run. Lighter than the Zoom Fly 5, its responsive ZoomX foam adds energy return to each stride, while a carbon-fibre plate helps propel you to the finishing line.",
       "img": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/91126387-c680-458b-9d2d-cbb6567d5120/W+AIR+MAX+DN8.png",
       "page": "New & Featured",
@@ -632,7 +641,7 @@
       "stock": 0,
       "class": "Shoes",
       "type": "Shoes",
-      "price_sale": "5589000",
+      "price_sale": "5598000",
       "style": "HF5509-601",
       "des": "More Air, less bulk. The Dn8 takes our Dynamic Air system and condenses it into a sleek, low-profile package. Powered by eight pressurised Air tubes, it gives you a responsive sensation with every step. Enter an unreal experience of movement.",
       "img": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/786e9bc5-b52c-491c-9dfb-dfcaad4e3ba2/W+AIR+MAX+DN8.png",
