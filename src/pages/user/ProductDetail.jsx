@@ -11,18 +11,22 @@ import ComboProduct from './../../components/user/ComboProduct';
 import MightAlsoLike from './../../components/user/MightAlsoLike';
 import { useLocation } from "react-router-dom";
 import ProductSkeleton from './../../components/user/ProductSkeleton';
+import CommentSection from "../../components/user/CommentSection";
+import AddComment from "../../components/user/AddComment";
+import useComment from "../../hooks/useComment";
+
 const ProductDetail = () => {
   const { addToCart } = useCart();
   const { name } = useParams();
   const { getProductsByName } = useProducts();
-  const user = useAuth();
+  const {user} = useAuth();
+
   const [searchParams] = useSearchParams();
-const id = searchParams.get("id");
+  const id = searchParams.get("id");
 
   const products = getProductsByName(name);
   const [selectedIndex, setSelectedIndex] = useState(0);
   const selectedProduct = products?.[selectedIndex] ?? null;
-
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [mainImage, setMainImage] = useState("");
   const [allImages, setAllImages] = useState([]);
@@ -33,7 +37,8 @@ const id = searchParams.get("id");
   const [attemptedAdd, setAttemptedAdd] = useState(false);
   const { toggleWish, isInWishlist } = useWish();
   const [hasInitializedIndex, setHasInitializedIndex] = useState(false);
-
+  const { comments, fetchComments, addComment } = useComment();
+  const [showAddComment, setShowAddComment] = useState(false);
 
   const formatPrice = (price) => {
     return Number(price)
@@ -41,20 +46,19 @@ const id = searchParams.get("id");
       .replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   };
 
-   
   useEffect(() => {
     if (!products || products.length === 0 || hasInitializedIndex) return;
-  
+
     if (id) {
       const indexById = products.findIndex((product) => product.id === id);
       if (indexById !== -1) {
         setSelectedIndex(indexById);
       }
     }
-  
+
     setHasInitializedIndex(true); // Đảm bảo chỉ chạy một lần duy nhất
   }, [products, id, hasInitializedIndex]);
-  
+
   useEffect(() => {
     if (selectedProduct) {
       const images = [selectedProduct.img, ...(selectedProduct.additionalImages || [])];
@@ -64,7 +68,6 @@ const id = searchParams.get("id");
       setAttemptedAdd(false);
     }
   }, [selectedProduct]);
-  
 
   const [isLoading, setIsLoading] = useState(true); // State để kiểm tra xem sản phẩm đã tải hay chưa
 
@@ -75,6 +78,39 @@ const id = searchParams.get("id");
     }, 2000); // 3 giây để spinner quay
   }, [products]);
 
+  const handleAddComment = async (commentData) => {
+    if (!selectedProduct?.id) return;
+
+    // Kiểm tra xem người dùng đã đăng nhập chưa
+    if (!user?.id) {
+      window.alert("Bạn chưa đăng nhập!");
+      return; // Dừng lại nếu người dùng chưa đăng nhập
+    }
+
+    const userName =
+      user?.firstname && user?.lastname ? `${user.firstname} ${user.lastname}` : 'Người dùng vô danh';
+
+    const newComment = {
+      userId: user.id, // Gán userId từ user đã đăng nhập
+      userName,
+      rating: commentData.rating,
+      content: commentData.content,
+      images: commentData.images,
+      date: new Date().toISOString(),
+      productId: selectedProduct.id, // Gắn productId
+    };
+
+    await addComment(selectedProduct.id, newComment); // Thực hiện thêm bình luận
+    setShowAddComment(false); // Đóng popup sau khi thêm bình luận
+  };
+
+  const productId = selectedProduct?.id;
+
+  useEffect(() => {
+    if (productId) fetchComments(productId);
+  }, [productId]);
+
+
   if (isLoading) {
     return (
       <div className="text-center p-4">
@@ -82,11 +118,6 @@ const id = searchParams.get("id");
       </div>
     );
   }
-
-
-
-
-
 
   return (
     <div className="">
@@ -114,34 +145,61 @@ const id = searchParams.get("id");
   </div>
 
   {/* Ảnh phụ: hover để đổi ảnh chính */}
-  {selectedProduct.additionalImages?.length > 0 &&
-  selectedProduct.additionalImages.map((img, idx) => (
-    <div
-      key={idx}
-      className="relative cursor-pointer"
-      onMouseEnter={() => setMainImage(img)}
-    >
-      {img.endsWith(".mp4") ? (
-        <div>
-          <video
-          src={img}
-          className="w-18 relative h-18 rounded-[4px] object-cover cursor-pointer hover:border-black transition"
-          muted
-          loop
-          
-        />
-        <svg className="absolute left-1 bottom-1" aria-hidden="true" focusable="false" viewBox="0 0 24 24" role="img" width="24px" height="24px"  fill="white"><path fill="white" fill-rule="evenodd" d="M19.314 11.35L6.367 3.877a.75.75 0 00-1.125.65v14.949a.75.75 0 001.125.649l12.947-7.474a.75.75 0 000-1.3z" clip-rule="evenodd"></path><path stroke="white" stroke-width="1.5" d="M19.314 11.35L6.367 3.877a.75.75 0 00-1.125.65v14.949a.75.75 0 001.125.649l12.947-7.474a.75.75 0 000-1.3z" clip-rule="evenodd"></path></svg>
-        </div>
-      ) : (
-        <img
-          src={img}
-          alt="additional"
-          className="w-18 h-18 rounded-[4px] object-cover cursor-pointer hover:border-black transition"
-        />
-      )}
-      <div className="absolute inset-0 bg-black/15 rounded-[4px] hover:bg-black/30 duration-300 ease-in-out transition" />
-    </div>
-  ))}
+  {selectedProduct?.additionalImages?.length > 0 &&
+  selectedProduct.additionalImages
+    .filter((img) => typeof img === 'string' && img.trim() !== '') // lọc bỏ img rỗng/null
+    .map((img, idx) => (
+      <div
+        key={idx}
+        className="relative cursor-pointer"
+        onMouseEnter={() => setMainImage(img)}
+      >
+        {img.endsWith(".mp4") ? (
+          <div>
+            <video
+              src={img}
+              className="w-18 relative h-18 rounded-[4px] object-cover cursor-pointer hover:border-black transition"
+              muted
+              loop
+            />
+            <svg
+              className="absolute left-1 bottom-1"
+              aria-hidden="true"
+              focusable="false"
+              viewBox="0 0 24 24"
+              role="img"
+              width="24px"
+              height="24px"
+              fill="white"
+            >
+              <path
+                fill="white"
+                fillRule="evenodd"
+                d="M19.314 11.35L6.367 3.877a.75.75 0 00-1.125.65v14.949a.75.75 0 001.125.649l12.947-7.474a.75.75 0 000-1.3z"
+                clipRule="evenodd"
+              />
+              <path
+                stroke="white"
+                strokeWidth="1.5"
+                d="M19.314 11.35L6.367 3.877a.75.75 0 00-1.125.65v14.949a.75.75 0 001.125.649l12.947-7.474a.75.75 0 000-1.3z"
+                clipRule="evenodd"
+              />
+            </svg>
+          </div>
+        ) : (
+          <img
+            src={img}
+            alt="additional"
+            className="w-18 h-18 rounded-[4px] object-cover cursor-pointer hover:border-black transition"
+            onError={(e) => {
+              e.target.style.display = 'none'; // ẩn nếu không tải được
+            }}
+          />
+        )}
+        <div className="absolute inset-0 bg-black/15 rounded-[4px] hover:bg-black/30 duration-300 ease-in-out transition" />
+      </div>
+    ))}
+
 
 </div>
 
@@ -152,7 +210,7 @@ const id = searchParams.get("id");
   mainImage.endsWith(".mp4") ? (
     <video
       src={mainImage}
-      className="w-[485px] h-[650px] cursor-pointer rounded-2xl object-cover"
+      className="w-[485px] h-[650px] cursor-pointer rounded-xl object-cover"
       autoPlay
       loop
       muted
@@ -162,7 +220,7 @@ const id = searchParams.get("id");
     <img
       src={mainImage}
       alt={selectedProduct.name}
-      className="w-[485px] h-[650px] cursor-pointer rounded-2xl object-cover"
+      className="w-[485px] h-[650px] cursor-pointer rounded-xl object-cover"
     />
   )
 )}
@@ -456,7 +514,7 @@ const id = searchParams.get("id");
             )}
 
             {selectedProduct.status === "Just In" && selectedProduct.stock>0&& (
-              <div className="space-y-3 mt-2">
+              <div className="space-y-3 mt-2.5">
                <button
   onClick={() => {
     setAttemptedAdd(true);
@@ -630,79 +688,82 @@ const id = searchParams.get("id");
               )}
             </div>
             <div className="border-b border-gray-300 py-8">
-              <button
-                onClick={() => setopen1(!open1)}
-                className="flex items-center inter cursor-pointer justify-between w-full text-left  text-xl"
-              >
-                <span>Reviews (31)</span>
-                <div className="flex items-center gap-2">
-                  <div className="gap-0 flex items-center ">
-                    {Array.from({ length: 5 }).map((_, index) => (
-                      <svg
-                        key={index}
-                        className="w-5 h-5"
-                        aria-hidden="true"
-                        focusable="false"
-                        viewBox="0 0 24 24"
-                        role="img"
-                        fill="none"
-                      >
-                        <path
-                          fill="currentColor"
-                          fillRule="evenodd"
-                          stroke="currentColor"
-                          strokeWidth="1.5"
-                          d="M2.56 10.346l5.12 3.694-1.955 5.978c-.225.688.568 1.261 1.157.836L12 17.159l5.12 3.695c.587.425 1.381-.148 1.155-.836l-1.954-5.978 5.118-3.694c.589-.425.286-1.352-.442-1.352H14.67l-.166-.507-1.789-5.47c-.225-.69-1.205-.69-1.43 0L9.33 8.993H3.003c-.728 0-1.03.927-.442 1.352z"
-                          clipRule="evenodd"
-                        />
-                      </svg>
-                    ))}
-                  </div>
+  <button
+    onClick={() => setopen1(!open1)}
+    className="flex items-center inter cursor-pointer justify-between w-full text-left text-xl"
+  >
+    <span>Reviews ({comments.length})</span>
+    <div className="flex items-center gap-2">
+      <div className="gap-0 flex items-center">
+        {Array.from({ length: 5 }).map((_, index) => (
+          <svg
+            key={index}
+            className="w-5 h-5"
+            aria-hidden="true"
+            focusable="false"
+            viewBox="0 0 24 24"
+            role="img"
+            fill="none"
+          >
+            <path
+              fill="currentColor"
+              fillRule="evenodd"
+              stroke="currentColor"
+              strokeWidth="1.5"
+              d="M2.56 10.346l5.12 3.694-1.955 5.978c-.225.688.568 1.261 1.157.836L12 17.159l5.12 3.695c.587.425 1.381-.148 1.155-.836l-1.954-5.978 5.118-3.694c.589-.425.286-1.352-.442-1.352H14.67l-.166-.507-1.789-5.47c-.225-.69-1.205-.69-1.43 0L9.33 8.993H3.003c-.728 0-1.03.927-.442 1.352z"
+              clipRule="evenodd"
+            />
+          </svg>
+        ))}
+      </div>
+      <svg
+        aria-hidden="true"
+        className={`nds-summary-control transition-transform duration-200 ${open1 ? "rotate-180" : ""}`}
+        focusable="false"
+        viewBox="0 0 24 24"
+        role="img"
+        width="24px"
+        height="24px"
+        fill="none"
+      >
+        <path
+          stroke="currentColor"
+          strokeWidth="1.5"
+          d="M18.966 8.476L12 15.443 5.033 8.476"
+        />
+      </svg>
+    </div>
+  </button>
 
-                  {open1 ? (
-                    <svg
-                      aria-hidden="true"
-                      class="nds-summary-control rotate-180"
-                      focusable="false"
-                      viewBox="0 0 24 24"
-                      role="img"
-                      width="24px"
-                      height="24px"
-                      fill="none"
-                    >
-                      <path
-                        stroke="currentColor"
-                        stroke-width="1.5"
-                        d="M18.966 8.476L12 15.443 5.033 8.476"
-                      ></path>
-                    </svg>
-                  ) : (
-                    <svg
-                      aria-hidden="true"
-                      class="nds-summary-control"
-                      focusable="false"
-                      viewBox="0 0 24 24"
-                      role="img"
-                      width="24px"
-                      height="24px"
-                      fill="none"
-                    >
-                      <path
-                        stroke="currentColor"
-                        stroke-width="1.5"
-                        d="M18.966 8.476L12 15.443 5.033 8.476"
-                      ></path>
-                    </svg>
-                  )}
-                </div>
-              </button>
+  {open1 && (
+    <div className="py-6">
+      <button
+        onClick={() => setShowAddComment(true)} // ❗ chỉ mở popup khi bấm
+        className="text-black inter border-b-3 "
+      >
+        Write a review
+      </button>
+      <CommentSection comments={comments} />
+    </div>
+  )}
+</div>
 
-              {open1 && (
-                <div className="mt-6   space-y-2 inter">
-                  <p>Comment section in here</p>
-                </div>
-              )}
-            </div>
+{showAddComment && (
+  <>
+    {/* {console.log("User cha:", user)} */}
+    <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
+      <AddComment
+        productId={selectedProduct?.id}
+        user={user}
+        onClose={() => setShowAddComment(false)}
+        onSubmit={handleAddComment}
+      />
+    </div>
+  </>
+)}
+
+
+
             {selectedProduct.status === "Coming Soon" && (
               <div className="border-b border-gray-300 py-8">
                 <button
@@ -776,9 +837,9 @@ const id = searchParams.get("id");
 
 
         </div>
-        <div className=" mx-auto max-w-screen-2xl px-10">
+        {/* <div className=" mx-auto max-w-screen-2xl px-10">
             <MightAlsoLike currentProduct={selectedProduct}/>
-        </div>
+        </div> */}
     </div>
   );
 };

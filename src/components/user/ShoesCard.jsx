@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-const ShoesCard = ({ product, isFilterVisible }) => {
+const ShoesCard = ({ product }) => {
   const [mainImage, setMainImage] = useState(product.img);  // Lưu trữ ảnh chính
   const [variantId, setVariantId] = useState(product.id);  // Lưu trữ id của biến thể
 
@@ -43,9 +43,9 @@ const ShoesCard = ({ product, isFilterVisible }) => {
           <img
             src={mainImage}
             alt={product.name}
-            className={`object-cover cursor-pointer transition-all duration-300 ${
-              isFilterVisible ? 'w-[330px] h-[330px]' : 'w-[440px] h-[440px]'
-            }`}
+            className={`object-cover cursor-pointer transition-all duration-300 
+           w-[330px] h-[330px]
+            `}
           />
           
           {/* Display variant images below the main image only if there are variants */}
@@ -74,7 +74,7 @@ const ShoesCard = ({ product, isFilterVisible }) => {
             </div>
           )}
 
-          <div className="mt-2 transform transition-all duration-500 -translate-y-0 group-hover:translate-y-2.5">
+          <div className="mt-2 ">
             <p className="text-orange-600 ">{product.status}</p>
 
             {/* Trượt xuống khi hover vào ảnh biến thể */}
@@ -88,7 +88,7 @@ const ShoesCard = ({ product, isFilterVisible }) => {
               {variantImages.length} Colour
             </p>
 
-            <div className="flex gap-3 mt-3">
+            <div className="flex gap-3 mt-1">
               <p className="text-black">
                 <span className="inter"> {formatPrice(product.price_sale)}</span>
                 <span className="text-sm font-medium">₫</span>

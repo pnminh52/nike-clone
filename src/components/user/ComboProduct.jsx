@@ -23,9 +23,9 @@ const ComboProduct = ({ product }) => {
     return (
        <div>
          <div className="max-w-screen-2xl px-10 mx-auto">
-                    <p className="text-2xl mt-8 mb-4">Complete the look</p>
+                    <p className="text-xl mt-8 mb-4">Complete the look</p>
                 </div>
-        <div className="max-w-screen-2xl px-10 mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+        <div className="max-w-screen-xl px-10 mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
            
             {combos.map((combo, idx) => {
                 const mapped = combo.map((item) => ({

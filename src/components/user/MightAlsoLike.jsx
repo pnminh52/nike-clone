@@ -19,23 +19,12 @@ const MightAlsoLike = ({ currentProduct }) => {
     return Number(price).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   };
 
-// Lọc các sản phẩm liên quan (khác tên với currentProduct)
-const relatedProducts = allProducts.filter(
-  (product) =>
-    product.category === currentProduct.category &&
-    product.name !== currentProduct.name
-);
-
-// Gộp sản phẩm theo name, ưu tiên biến thể isDefault === true
-const groupedMap = new Map();
-for (const product of relatedProducts) {
-  const existing = groupedMap.get(product.name);
-  if (!existing || product.isDefault) {
-    groupedMap.set(product.name, product);
-  }
-}
-
-const uniqueProducts = Array.from(groupedMap.values());
+  const relatedProducts = allProducts.filter(
+    (product) =>
+      product.category === currentProduct.category &&
+      product.id !== currentProduct.id // bỏ chính biến thể đang xem
+  );
+  
 
 
   const handleSlideChange = (swiper) => {
@@ -48,6 +37,7 @@ const uniqueProducts = Array.from(groupedMap.values());
     navigate(`/details/${encodeURIComponent(product.name)}?id=${product.id}`, {
       state: { selectedProduct: product, selectedIndex: index },
     });
+    // window.location.reload();
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
@@ -104,30 +94,31 @@ const uniqueProducts = Array.from(groupedMap.values());
         onSlideChange={handleSlideChange}
         modules={[Navigation]}
       >
-        {uniqueProducts.map((product, index) => (
-          <SwiperSlide key={product.id}>
-            <div
-              onClick={() => handleProductSelect(product, index)}
-              className="rounded-md block cursor-pointer"
-            >
-              <img
-                src={product.img}
-                alt={product.name}
-                className="w-[420px] h-[420px] rounded-md object-cover mb-2"
-              />
-              <h3 className="font-medium">{product.name}</h3>
-              <p className="text-gray-500">{product.gender}'s {product.type}</p>
-              <p className="font-medium inter">
-                {formatPrice(product.price)}
-                <span className="underline text-xs">đ</span>
-              </p>
-              <p className="font-medium text-gray-500 line-through inter">
-                {formatPrice(product.price_sale)}
-                <span className="underline text-xs">đ</span>
-              </p>
-            </div>
-          </SwiperSlide>
-        ))}
+      {relatedProducts.map((product, index) => (
+  <SwiperSlide key={product.id}>
+    <div
+      onClick={() => handleProductSelect(product, index)}
+      className="rounded-md block cursor-pointer"
+    >
+      <img
+        src={product.img}
+        alt={product.name}
+        className="w-[420px] h-[420px] rounded-md object-cover mb-2"
+      />
+      <h3 className="font-medium">{product.name}</h3>
+      <p className="text-gray-500">{product.gender}'s {product.type}</p>
+      <p className="font-medium inter">
+        {formatPrice(product.price)}
+        <span className="underline text-xs">đ</span>
+      </p>
+      <p className="font-medium text-gray-500 line-through inter">
+        {formatPrice(product.price_sale)}
+        <span className="underline text-xs">đ</span>
+      </p>
+    </div>
+  </SwiperSlide>
+))}
+
       </Swiper>
     </div>
   );

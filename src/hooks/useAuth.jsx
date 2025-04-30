@@ -17,11 +17,14 @@ export const AuthProvider = ({ children }) => {
   const login = async (email, password) => {
     try {
       const res = await axios.get("http://localhost:3000/users");
-      const foundUser = res.data.find(
-        (u) => u.email === email && u.password === password
-      );
+      const foundUser = res.data.find((u) => u.email === email && u.password === password);
   
       if (foundUser) {
+        // Kiểm tra dữ liệu người dùng
+        if (!foundUser.firstname || !foundUser.lastname) {
+          console.warn("User missing firstname or lastname");
+        }
+  
         setUser(foundUser);
         localStorage.setItem("user", JSON.stringify(foundUser));
         localStorage.setItem("userId", foundUser.id);

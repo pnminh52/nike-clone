@@ -37,7 +37,9 @@ const UserLayout = () => {
           {isCheckoutPage ? (
             <CheckoutFooter />
           ) : (
-            <Footer />
+           <div className='mt-10'>
+             <Footer />
+           </div>
           )}
         </>
       )}
