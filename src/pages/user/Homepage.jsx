@@ -1,5 +1,5 @@
 import React, { useState, useRef } from "react";
-import Slider1 from "../../components/user/Slider1";
+import Slider1 from "../../components/user/homepage/Slider1";
 
 const Homepage = () => {
   const [currentVideo, setCurrentVideo] = useState(0);

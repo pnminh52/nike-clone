@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
-import StarRatingInput from "./StarRatingInput";
-import ImageUploadDraggable from './ImageUploadDraggable';
+import StarRatingInput from "../productDetail/StarRatingInput";
+import ImageUploadDraggable from "../productDetail/ImageUploadDraggable";
 
 const AddComment = ({ productId, user, onClose, onSubmit, product }) => {
   const [content, setContent] = useState("");

@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
-import ShoesCard from "../../components/user/ShoesCard";
+import ShoesCard from "../../components/user/etc/ShoesCard";
 
 const SearchPage = () => {
   const { keyword } = useParams();

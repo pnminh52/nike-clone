@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useWish } from '../../hooks/useWish';
 import { useCart } from '../../hooks/useCart';
-import PopupSize from '../../components/user/PopupSize';
+import PopupSize from '../../components/user/wishlist/PopupSize';
 const Wishlist = () => {
   const { wishlist, removeFromWishlist } = useWish(); // ✅ lấy data từ hook
   const { addToCart } = useCart(); // ✅ lấy data từ hook

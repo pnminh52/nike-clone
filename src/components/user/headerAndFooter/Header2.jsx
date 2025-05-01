@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import useCategories from "../../hooks/useCategories";
+import useCategories from "../../../hooks/useCategories";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
-import { useCart } from "../../hooks/useCart";
-import { useAuth } from "../../hooks/useAuth";
-import useToast from "../../hooks/useToast";
-import SearchTab from "./SerachTab";
+import { useCart } from "../../../hooks/useCart";
+import { useAuth } from "../../../hooks/useAuth";
+import useToast from "../../../hooks/useToast";
+import SearchTab from "../headerAndFooter/SerachTab";
 
 const Header2 = () => {
     const { categories } = useCategories();

@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import ShoesCard from '../../components/user/ShoesCard';
-import SidebarFilter from '../../components/user/SidebarFilter';
-import CategoryTopBar from '../../components/user/CategoryTopBar';
+import ShoesCard from '../../components/user/etc/ShoesCard';
+import SidebarFilter from '../../components/user/productList/SidebarFilter';
+import CategoryTopBar from '../../components/user/productList/CategoryTopBar';
 const CategoryPage = () => {
   const { name } = useParams();
   const [products, setProducts] = useState([]);

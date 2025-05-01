@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { useAuth } from "../../hooks/useAuth";
-import OrderDetails from "../../components/user/OrderDetails";
+import OrderDetails from "../../components/user/order/OrderDetails";
 import axios from "axios";
-import Pagination from "../../components/user/Pagination";
+import Pagination from "../../components/user/etc/Pagination";
 
 const Order = () => {
   const { user, setUser } = useAuth();

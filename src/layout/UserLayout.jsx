@@ -1,11 +1,11 @@
 import React from 'react';
-import Header1 from '../components/user/Header1';
-import Header2 from './../components/user/Header2';
-import Header3 from './../components/user/Header3';
-import CheckoutHeader from './../components/user/CheckoutHeader';
-import CheckoutFooter from './../components/user/CheckoutFooter';
+import Header1 from '../components/user/headerAndFooter/Header1';
+import Header2 from './../components/user/headerAndFooter/Header2';
+import Header3 from './../components/user/headerAndFooter/Header3';
+import CheckoutHeader from './../components/user/headerAndFooter/CheckoutHeader';
+import CheckoutFooter from './../components/user/headerAndFooter/CheckoutFooter';
 import { Outlet, useLocation } from 'react-router-dom';
-import Footer  from './../components/user/Footer';
+import Footer  from './../components/user/headerAndFooter/Footer';
 
 const UserLayout = () => {
   const location = useLocation();

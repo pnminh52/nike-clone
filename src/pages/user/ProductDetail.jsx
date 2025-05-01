@@ -7,12 +7,11 @@ import "react-toastify/dist/ReactToastify.css";
 import { useAuth } from "../../hooks/useAuth";
 import { useWish } from "../../hooks/useWish";
 import { useSearchParams } from "react-router-dom";
-import ComboProduct from './../../components/user/ComboProduct';
-import MightAlsoLike from './../../components/user/MightAlsoLike';
+import ComboProduct from './../../components/user/productDetail/ComboProduct';
 import { useLocation } from "react-router-dom";
-import ProductSkeleton from './../../components/user/ProductSkeleton';
-import CommentSection from "../../components/user/CommentSection";
-import AddComment from "../../components/user/AddComment";
+import ProductSkeleton from './../../components/user/etc/ProductSkeleton';
+import CommentSection from "../../components/user/productDetail/CommentSection";
+import AddComment from "../../components/user/productDetail/AddComment";
 import useComment from "../../hooks/useComment";
 
 const ProductDetail = () => {
@@ -124,7 +123,7 @@ const ProductDetail = () => {
     <div className="">
       <div className="mx-auto mt-6 mb-6 flex max-w-screen-lg px-2 gap-4">
         
-          <div className="w-2/3 h-400">
+          <div className="w-2/3 h-auto">
             <div className="sticky top-0 bg-white z-10 flex gap-2  pt-4">
               <div className="relative h-[650px]">
                 <div className="absolute top-0 left-0 right-0 h-10 bg-gradient-to-b from-white via-white/40 to-transparent pointer-events-none z-10"></div>
