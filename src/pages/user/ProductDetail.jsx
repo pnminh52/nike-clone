@@ -96,6 +96,7 @@ const ProductDetail = () => {
       rating: commentData.rating,
       content: commentData.content,
       images: commentData.images,
+      title: commentData.title,
       date: new Date().toISOString(),
       productId: selectedProduct.id, // Gắn productId
     };
@@ -748,19 +749,7 @@ const ProductDetail = () => {
   )}
 </div>
 
-{showAddComment && (
-  <>
-    {/* {console.log("User cha:", user)} */}
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
-      <AddComment
-        productId={selectedProduct?.id}
-        user={user}
-        onClose={() => setShowAddComment(false)}
-        onSubmit={handleAddComment}
-      />
-    </div>
-  </>
-)}
+
 
 
 
@@ -840,6 +829,20 @@ const ProductDetail = () => {
         {/* <div className=" mx-auto max-w-screen-2xl px-10">
             <MightAlsoLike currentProduct={selectedProduct}/>
         </div> */}
+        {showAddComment && (
+  <>
+    {/* {console.log("User cha:", user)} */}
+    <div >
+      <AddComment
+        productId={selectedProduct?.id}
+        user={user}
+        onClose={() => setShowAddComment(false)}
+        onSubmit={handleAddComment}
+        product={selectedProduct}
+      />
+    </div>
+  </>
+)}
     </div>
   );
 };

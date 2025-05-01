@@ -967,27 +967,19 @@
   ],
   "comments": [
     {
-      "id": "dd00",
-      "userId": "631b",
-      "userName": "Elyz",
-      "rating": 5,
-      "content": "sdsdsd",
-      "images": [
-        "https://res.cloudinary.com/dovbpv8ul/image/upload/v1746020623/onhmuc6uh3xgsyvrouno.webp"
-      ],
-      "date": "2025-04-30T13:43:46.239Z",
-      "productId": "12hb"
-    },
-    {
-      "id": "1769",
+      "id": "51f4",
       "userId": "631b",
       "userName": "Phạm Minh",
-      "rating": 5,
-      "content": "sdsdsd",
+      "rating": 4,
+      "content": "sdnsjd",
       "images": [
-        "https://res.cloudinary.com/dovbpv8ul/image/upload/v1746022042/mhdeuczc46ik0gq658jg.webp"
+        "https://res.cloudinary.com/dovbpv8ul/image/upload/v1746107403/ogjhxo6rf63kutvwf5tr.webp",
+        "https://res.cloudinary.com/dovbpv8ul/image/upload/v1746107402/dzwtijxe7bwynq3ayy9w.png",
+        "https://res.cloudinary.com/dovbpv8ul/image/upload/v1746107402/clogkchoapf6djg5xqrp.png",
+        "https://res.cloudinary.com/dovbpv8ul/image/upload/v1746107403/yllmv0kqrt5an3cxhpm3.png"
       ],
-      "date": "2025-04-30T14:07:25.543Z",
+      "title": "sdsjd",
+      "date": "2025-05-01T13:50:06.016Z",
       "productId": "12hb"
     }
   ]
