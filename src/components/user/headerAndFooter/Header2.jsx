@@ -69,8 +69,7 @@ const Header2 = () => {
                                 onMouseEnter={() => setIsHovered0(true)}
                                 onMouseLeave={() => setIsHovered0(false)}
                                 className="relative group px-2 h-full   flex items-center cursor-pointer text-[16px]
-             after:absolute after:h-[2.5px] after:bg-black after:w-0 after:left-0 
-             after:bottom-[14px] hover:after:w-full after:transition-all after:duration-300"
+             "
                             >
                                 New & Featured
                             </li>
@@ -79,8 +78,7 @@ const Header2 = () => {
                                 onMouseEnter={() => setIsHovered1(true)}
                                 onMouseLeave={() => setIsHovered1(false)}
                                 className="relative px-2 group h-full   flex items-center cursor-pointer text-[16px]
-             after:absolute after:h-[2.5px] after:bg-black after:w-0 after:left-0 
-             after:bottom-[14px] hover:after:w-full after:transition-all after:duration-300"
+             "
                             >
                                 Men
                             </li>
@@ -88,8 +86,7 @@ const Header2 = () => {
                                 onMouseEnter={() => setIsHovered2(true)}
                                 onMouseLeave={() => setIsHovered2(false)}
                                 className="relative px-2 group h-full   flex items-center cursor-pointer text-[16px]
-             after:absolute after:h-[2.5px] after:bg-black after:w-0 after:left-0 
-             after:bottom-[14px] hover:after:w-full after:transition-all after:duration-300"
+             "
                             >
                                 Women
                             </li>
@@ -97,8 +94,7 @@ const Header2 = () => {
                                 onMouseEnter={() => setIsHovered3(true)}
                                 onMouseLeave={() => setIsHovered3(false)}
                                 className="relative px-2 group h-full  flex items-center cursor-pointer text-[16px]
-             after:absolute after:h-[2.5px] after:bg-black after:w-0 after:left-0 
-             after:bottom-[14px] hover:after:w-full after:transition-all after:duration-300"
+             "
                             >
                                 Kids
                             </li>
@@ -106,8 +102,7 @@ const Header2 = () => {
                                 onMouseEnter={() => setIsHovered4(true)}
                                 onMouseLeave={() => setIsHovered4(false)}
                                 className="relative px-2 group h-full  flex items-center cursor-pointer text-[16px]
-             after:absolute after:h-[2.5px] after:bg-black after:w-0 after:left-0 
-             after:bottom-[14px] hover:after:w-full after:transition-all after:duration-300"
+             "
                             >
                                 Sale
                             </li>
@@ -232,7 +227,7 @@ const Header2 = () => {
                                             <p className="font-semibold text-sm inter mb-3 hover:text-gray-700 cursor-pointer">
                                                 {parent.name}
                                             </p>
-                                            <ul className="text-xs inter text-gray-500 space-y-3">
+                                            <ul className="text-[12px] inter text-gray-500 space-y-3">
                                                 {categories
                                                     .filter((child) => child.parentId === parent.id)
                                                     .map((child) => (
@@ -279,7 +274,7 @@ const Header2 = () => {
                                             <p className="font-semibold text-sm inter mb-3 hover:text-gray-700 cursor-pointer">
                                                 {parent.name}
                                             </p>
-                                            <ul className="text-xs inter text-gray-500 space-y-3">
+                                            <ul className="text-[12px] inter text-gray-500 space-y-3">
                                                 {categories
                                                     .filter((child) => child.parentId === parent.id)
                                                     .map((child) => (
@@ -325,7 +320,7 @@ const Header2 = () => {
                                             <p className="font-semibold text-sm inter mb-3 hover:text-gray-700 cursor-pointer">
                                                 {parent.name}
                                             </p>
-                                            <ul className="text-xs inter text-gray-500 space-y-3">
+                                            <ul className="text-[12px] inter text-gray-500 space-y-3">
                                                 {categories
                                                     .filter((child) => child.parentId === parent.id)
                                                     .map((child) => (
@@ -371,7 +366,7 @@ const Header2 = () => {
                                             <p className="font-semibold text-sm inter mb-3 hover:text-gray-700 cursor-pointer">
                                                 {parent.name}
                                             </p>
-                                            <ul className="text-xs inter text-gray-500 space-y-3">
+                                            <ul className="text-[12px] inter text-gray-500 space-y-3">
                                                 {categories
                                                     .filter((child) => child.parentId === parent.id)
                                                     .map((child) => (
@@ -417,7 +412,7 @@ const Header2 = () => {
                                             <p className="font-semibold text-sm inter mb-3 hover:text-gray-700 cursor-pointer">
                                                 {parent.name}
                                             </p>
-                                            <ul className="text-xs inter text-gray-500 space-y-3">
+                                            <ul className="text-[12px] inter text-gray-500 space-y-3">
                                                 {categories
                                                     .filter((child) => child.parentId === parent.id)
                                                     .map((child) => (

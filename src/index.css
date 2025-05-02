@@ -21,3 +21,15 @@
 .hide-scrollbar::-webkit-scrollbar {
   display: none; 
 }
+/* Tùy chỉnh chấm Swiper */
+.swiper-pagination-bullet {
+  background-color: white !important; /* Màu trắng */
+  opacity: 0.6;
+  width: 10px;
+  height: 10px;
+  transition: all 0.3s ease;
+}
+
+.swiper-pagination-bullet-active {
+  opacity: 1;
+}

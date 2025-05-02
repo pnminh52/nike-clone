@@ -17,8 +17,15 @@ const ShoesCard = ({ product }) => {
   const discountPercentage = calculateDiscount(product.price, product.price_sale);
 
   // Tạo danh sách ảnh biến thể, bao gồm cả ảnh chính (position 1)
-  let variantImages = [product.img, ...product.variants?.filter(variant => variant.position !== 1).map(variant => variant.img)];
-
+  let variantImages = [
+    product.img,
+    ...(
+      Array.isArray(product.variants)
+        ? product.variants.filter(variant => variant.position !== 1).map(variant => variant.img)
+        : []
+    )
+  ];
+  
   // Kiểm tra xem sản phẩm có ảnh biến thể hay không
   const hasVariants = variantImages?.length > 1;
 
