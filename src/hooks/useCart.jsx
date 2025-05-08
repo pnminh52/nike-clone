@@ -115,6 +115,16 @@ export const useCart = () => {
       };
   
       const updatedOrders = [...currentOrders, newOrder];
+      const newTotalOrder=(user.totalOrder || 0) + 1
+
+      let newCustomerType= "New";
+      if (newTotalOrder >= 100) {
+        newCustomerType = "vip";
+      } else if (newTotalOrder >= 50) {
+        newCustomerType = "regular";
+      } else if (newTotalOrder >= 1) {
+        newCustomerType = "standard";
+      }
   
       // Cập nhật server
       await fetch(`http://localhost:3000/users/${userId}`, {
@@ -124,7 +134,9 @@ export const useCart = () => {
         },
         body: JSON.stringify({
           cart: [],
-          orders: updatedOrders
+          orders: updatedOrders,
+          totalOrder: newTotalOrder,
+          customerType: newCustomerType
         }),
       });
   
@@ -132,7 +144,9 @@ export const useCart = () => {
       updateUser({
         ...user,
         cart: [],
-        orders: updatedOrders
+        orders: updatedOrders,
+        totalOrder: newTotalOrder,
+        customerType: newCustomerType
       });
   
       setCart([]);

@@ -38,6 +38,8 @@ const ProductDetail = () => {
   const [hasInitializedIndex, setHasInitializedIndex] = useState(false);
   const { comments, fetchComments, addComment } = useComment();
   const [showAddComment, setShowAddComment] = useState(false);
+  const [selectedCoupon, setSelectedCoupon] = useState(null);
+
 
   const formatPrice = (price) => {
     return Number(price)
@@ -109,6 +111,21 @@ const ProductDetail = () => {
   useEffect(() => {
     if (productId) fetchComments(productId);
   }, [productId]);
+  const applicableCoupons = user?.coupons?.filter(coupon =>
+    coupon.idProduct === selectedProduct?.id
+  ) || [];
+  
+  
+
+const getDiscountedPrice = (price) => {
+  if (!selectedCoupon) return price;
+  if (selectedCoupon.discountType === "percent") {
+    return price - (price * selectedCoupon.value) / 100;
+  } else if (selectedCoupon.discountType === "amount") {
+    return price - selectedCoupon.value;
+  }
+  return price;
+};
 
 
   if (isLoading) {
@@ -319,7 +336,49 @@ const ProductDetail = () => {
                 {selectedProduct.gender}'s {selectedProduct.type}
               </p>
             </div>
-            <div className="mt-2">
+            {applicableCoupons.length > 0 && (
+  <div className="flex  items-center gap-2 py-6">
+  
+
+  {applicableCoupons.map((coupon) => (
+  <div key={coupon.id}>
+    <button
+      onClick={() =>
+        setSelectedCoupon(selectedCoupon?.id === coupon.id ? null : coupon)
+      }
+      className={`flex items-center p-2 rounded-md border text-sm 
+        border-gray-800 bg-white 
+        ${selectedCoupon?.id === coupon.id ? 'ring-2 ring-black' : ''}
+        focus:ring-2 focus:ring-black active:ring-2 active:ring-black`}
+    >
+      {coupon.name}
+      {/* ({coupon.discountType === "percent"
+        ? `-${coupon.value}%`
+        : `-${formatPrice(coupon.value)}đ`}) */}
+    </button>
+  </div>
+))}
+
+
+
+
+
+  </div>
+)}
+
+<p className="text-lg font-semibold">
+
+  <span className={`ml-2 ${selectedCoupon ? 'line-through text-gray-400' : ''}`}>
+    {formatPrice(selectedProduct.price)}đ
+  </span>
+  {selectedCoupon && (
+    <span className="ml-2 text-red-600">
+      {formatPrice(getDiscountedPrice(selectedProduct.price))}đ
+    </span>
+  )}
+</p>
+
+            {/* <div className="mt-2">
               <p className="text-black ">
                 <span className="inter text-lg">
                   {" "}
@@ -327,7 +386,7 @@ const ProductDetail = () => {
                 </span>
                 <span className="text-sm font-medium">₫</span>
               </p>
-            </div>
+            </div> */}
             {products.length===1&&(
               <div className="h-10 bg-white"></div>
             )}
