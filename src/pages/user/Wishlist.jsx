@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
+import { useEffect } from 'react';
 import { useWish } from '../../hooks/useWish';
 import { useCart } from '../../hooks/useCart';
 import PopupSize from '../../components/user/wishlist/PopupSize';
+import ProductSkeleton from '../../components/user/etc/ProductSkeleton';
 const Wishlist = () => {
   const { wishlist, removeFromWishlist } = useWish(); // ✅ lấy data từ hook
   const { addToCart } = useCart(); // ✅ lấy data từ hook
+  const [loading, setLoading] = useState(true)
   const formatPrice = (price) => {
     return Number(price)
       .toString()
@@ -24,6 +27,17 @@ const Wishlist = () => {
     }
     setShowPopup(false)
     setSelectedProduct(null)
+  }
+  useEffect(()=>{
+    const timer = setTimeout(() => {
+      setLoading(false)
+
+    },3000)
+return () => clearTimeout(timer)
+  })
+  if (loading) {
+    return (    <ProductSkeleton />
+    )
   }
 
   return (

@@ -7,6 +7,10 @@ const CategoryPage = () => {
   const { name } = useParams();
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [sortType, setSortType] = useState(null);
+ 
+
+
 
   const [genderFilter, setGenderFilter] = useState([]);
   const [isUnder1000000, setIsUnder1000000] = useState(false);
@@ -68,13 +72,23 @@ const CategoryPage = () => {
 
     return true;
   });
-
+  const sortedProducts = [...filteredProducts]; // copy để không mutate state
+  if (sortType === "priceLowHigh") {
+    sortedProducts.sort((a, b) => a.price - b.price);
+  } else if (sortType === "priceHighLow") {
+    sortedProducts.sort((a, b) => b.price - a.price);
+  } else if (sortType === "newest") {
+    sortedProducts.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
+  }
+  
   return (
     <div className=" max-w-screen-2xl px-10 mx-auto">
      <CategoryTopBar 
-        categoryName={decodeURIComponent(name || "")} 
-        filteredProductsLength={filteredProducts.length} 
-      />
+  categoryName={decodeURIComponent(name || "")} 
+  filteredProductsLength={sortedProducts.length}
+  onSortChange={setSortType}
+/>
+
 
       <div className="flex gap-2">
         <div className="w-1/5">
@@ -88,7 +102,7 @@ const CategoryPage = () => {
 
         <div className="w-4/5">
           <div className="grid grid-cols-3 gap-4">
-            {filteredProducts.map((product) => (
+            {sortedProducts.map((product) => (
               <ShoesCard key={product.id} product={product} />
             ))}
           </div>

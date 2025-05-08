@@ -12,7 +12,7 @@ const Video1 = () => {
         <div className="hidden sm:block">
             <video
               ref={videoRef}
-              src={currentVideo === 0 ? "/public/AirMaxDn8Video1.mp4" : "/public/AirMaxDn8Video2.mp4"}
+              src={currentVideo === 0 ? "/AirMaxDn8Video1.mp4" : "/AirMaxDn8Video2.mp4"}
               autoPlay
               muted
               onEnded={handleVideoEnd}

@@ -1,8 +1,11 @@
-import React from "react";
+import React, {useState} from "react";
 import { useCart } from "./../../hooks/useCart";
 import { Link } from "react-router-dom";
-const Cart = ({}) => {
+import { useEffect } from "react";
+import ProductSkeleton from './../../components/user/etc/ProductSkeleton';
+const Cart = ({ }) => {
     const { cart, removeFromCart, clearCart, updateQuantity } = useCart();
+    const [loading, setLoading] = useState(true);
 
     const total = cart.reduce(
         (sum, item) => sum + item.price * (item.quantity ?? 1),
@@ -14,26 +17,39 @@ const Cart = ({}) => {
             .replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     };
 
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setLoading(false);
+        }, 2000);
+
+        return () => clearTimeout(timer);
+    }, []);
+    
+    if (loading) {
+        return <ProductSkeleton />
+    }
+
     return (
         <div className="">
-            {cart.length === 0 ?(
+
+            {cart.length === 0?(
                 <p>Khong co gi het </p>
             ):(
                 <div className="max-w-screen-xl px-14 mx-auto  gap-8  flex h-900 ">
-                     <div className="w-2/3 ">
-                <p className=" text-2xl py-6">Bag</p>
-               
+                <div className="w-2/3 ">
+                    <p className=" text-2xl py-6">Bag</p>
+
                     <div className="space-y-4">
                         {cart.map((item, index) => (
                             <div key={index} className="flex gap-4  rounded border-b border-gray-300 ">
                                 <div>
-                                <Link to={`/details/${item.name}`}>
-                                <img
-                                        src={item.img}
-                                        alt={item.name}
-                                        className="w-45 h-45 cursor-pointer object-cover"
-                                    /></Link>
-                                   
+                                    <Link to={`/details/${item.name}`}>
+                                        <img
+                                            src={item.img}
+                                            alt={item.name}
+                                            className="w-45 h-45 cursor-pointer object-cover"
+                                        /></Link>
+
                                     <div className="flex items-center gap-2 justify-between py-4 ">
                                         <div className="flex items-center ">
                                             {item.quantity > 1 && (
@@ -72,7 +88,7 @@ const Cart = ({}) => {
                                                     type="button" // 👈 CHẶN RELOAD
                                                     className="px-3 h-11 border-l border-gray-300 border-t border-b rounded-l-full cursor-pointer"
                                                     onClick={() => removeFromCart(item.id, item.size)}
-                                                    // disabled={item.quantity <= 1}
+                                                // disabled={item.quantity <= 1}
                                                 >
                                                     <svg
                                                         aria-hidden="true"
@@ -110,8 +126,8 @@ const Cart = ({}) => {
                                             >
                                                 <svg
                                                     className={` ${item.quantity === 10
-                                                            ? "opacity-30 cursor-not-allowed"
-                                                            : ""
+                                                        ? "opacity-30 cursor-not-allowed"
+                                                        : ""
                                                         }`}
                                                     aria-hidden="true"
                                                     focusable="false"
@@ -186,42 +202,46 @@ const Cart = ({}) => {
                             </button>
                         </div> */}
                     </div>
-              
-            </div>
-            <div className="w-1/3">
-                <p className="text-2xl py-6">Summary</p>
-               <div className="mb-6 space-y-2">
-               <div className="flex justify-between items-center ">
-                    <p className="inter text-lg">Subtotal</p>
-                    <p className="inter">
-                        <span className="inter text-lg">{formatPrice(total)}</span>
-                        <span className="text-sm underline">đ</span>
-                    </p>
+
                 </div>
-                <div className="flex justify-between items-center ">
-                    <p className="inter text-lg">Estimated Delivery & Handling</p>
-                    <p className="inter text-lg">Free</p>
-                </div>
-               </div>
-                <div className="flex justify-between items-center py-6 border-t border-b border-gray-300">
-                    <p className="inter text-lg">Total</p>
-                    <p>
-                        <span className="inter">{formatPrice(total)}</span>
-                        <span className="text-sm underline">đ</span>
-                    </p>
-                </div>
-               <Link to={"/checkout"}>
-               <button
-                    className="w-full mt-8 inter text-lg rounded-full h-16 transition 
+                <div className="w-1/3">
+                    <p className="text-2xl py-6">Summary</p>
+                    <div className="mb-6 space-y-2">
+                        <div className="flex justify-between items-center ">
+                            <p className="inter text-lg">Subtotal</p>
+                            <p className="inter">
+                                <span className="inter text-lg">{formatPrice(total)}</span>
+                                <span className="text-sm underline">đ</span>
+                            </p>
+                        </div>
+                        <div className="flex justify-between items-center ">
+                            <p className="inter text-lg">Estimated Delivery & Handling</p>
+                            <p className="inter text-lg">Free</p>
+                        </div>
+                    </div>
+                    <div className="flex justify-between items-center py-6 border-t border-b border-gray-300">
+                        <p className="inter text-lg">Total</p>
+                        <p>
+                            <span className="inter">{formatPrice(total)}</span>
+                            <span className="text-sm underline">đ</span>
+                        </p>
+                    </div>
+                    <Link to={"/checkout"}>
+                        <button
+                            className="w-full mt-8 inter text-lg rounded-full h-16 transition 
    bg-black text-white hover:bg-gray-800 cursor-pointer
               "
-                >
-                    Checkout
-                </button></Link>
-            </div>
+                        >
+                            Checkout
+                        </button></Link>
                 </div>
-            )}
+            </div>
+            )
+
+            }
            
+
+
         </div>
     );
 };
