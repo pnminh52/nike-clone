@@ -963,35 +963,205 @@
       "password": "111111Aa",
       "country": "Vietnam",
       "extraAddresses": [],
-      "cart": [],
+      "cart": [
+        {
+          "id": "12hb",
+          "position": 1,
+          "name": "Nike Zoom Fly 6",
+          "stock": 100,
+          "isDefault": "true",
+          "class": "Shoes",
+          "type": "Road Racing Shoes",
+          "price": 4675000,
+          "price_sale": "4999000",
+          "des": "The Zoom Fly 6 is with you every step of your run. Lighter than the Zoom Fly 5, its responsive ZoomX foam adds energy return to each stride, while a carbon-fibre plate helps propel you to the finishing line.",
+          "img": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/146ef87c-ebf4-4534-835e-2f97e03856f5/W+ZOOM+FLY+6.png",
+          "page": "New & Featured",
+          "category": "New & Upcoming Drops",
+          "status": "Just In",
+          "customer": "Women",
+          "sizes": [
+            "31",
+            "32",
+            "33",
+            "34",
+            "40",
+            "37",
+            "35",
+            "36",
+            "38",
+            "39"
+          ],
+          "gender": "Women",
+          "color": [
+            "Bright Crimson",
+            "Lime Blast",
+            "Mint Foam",
+            "Cave Purple"
+          ],
+          "style": "FN8455-601",
+          "country": "Vietnam",
+          "additionalImages": [
+            "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/b243a08d-3a77-4c58-8b09-86f485ee326f/W+ZOOM+FLY+6.png",
+            "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/dc04119e-ae19-4545-a5aa-e13c4d18b25a/W+ZOOM+FLY+6.png",
+            "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/3d06a0a8-1729-4314-b1e4-442ea074e0d9/W+ZOOM+FLY+6.png",
+            "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/607d35fd-6d8e-4c69-a39a-8dee37762b66/W+ZOOM+FLY+6.png",
+            "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/beb54158-f84a-4402-a5f4-908ed137bb8f/W+ZOOM+FLY+6.png",
+            "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/79b8abb1-2cfe-4f1a-89ab-b97f4f317bb3/W+ZOOM+FLY+6.png",
+            "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/ad60d354-8834-4d7b-9a66-21052cc59d7e/W+ZOOM+FLY+6.png",
+            "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/da0104a3-8cd7-43a8-b74c-70b09179884b/W+ZOOM+FLY+6.png",
+            "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/33bba3f7-0e52-4be5-a2b8-9a122bf08547/W+ZOOM+FLY+6.png",
+            "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/85776744-2566-4c86-93a9-6ef0e70d8f34/W+ZOOM+FLY+6.png"
+          ],
+          "usedVoucher": {
+            "id": "c5",
+            "name": "Voucher 15%",
+            "value": 15,
+            "discountType": "percent"
+          },
+          "size": 36,
+          "quantity": 1
+        },
+        {
+          "id": "dhf4",
+          "name": "Nike Zoom Fly 6",
+          "stock": 100,
+          "class": "Shoes",
+          "type": "Road Racing Shoes",
+          "price": 5380000,
+          "price_sale": "4999000",
+          "des": "The Zoom Fly 6 is with you every step of your run. Lighter than the Zoom Fly 5, its responsive ZoomX foam adds energy return to each stride, while a carbon-fibre plate helps propel you to the finishing line.",
+          "img": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/5409a587-52c1-4c3f-9ab5-19ec844ce37d/W+ZOOM+FLY+6.png",
+          "page": "New & Featured",
+          "category": "New & Upcoming Drops",
+          "status": "Just In",
+          "customer": "Women",
+          "sizes": [
+            "31",
+            "32",
+            "33",
+            "34",
+            "40",
+            "37",
+            "35",
+            "36",
+            "38",
+            "39",
+            "41"
+          ],
+          "gender": "Women",
+          "color": [
+            "Ghost",
+            "Football Grey",
+            "Blue Lightning",
+            "Blue Void"
+          ],
+          "style": "FN8455-004",
+          "country": "Vietnam",
+          "additionalImages": [
+            "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/81da99b9-d9d4-4c81-804a-66592ad68d82/W+ZOOM+FLY+6.png",
+            "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/41957cbd-bfc5-4bd4-b06d-96231e6dfe63/W+ZOOM+FLY+6.png",
+            "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/52df6f74-1ca0-479b-8e3c-478440c5105a/W+ZOOM+FLY+6.png",
+            "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/5be571ea-ed2b-4e70-9cf8-e1583abc5741/W+ZOOM+FLY+6.png",
+            "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/81fd1d66-c725-4c5b-8ffb-5ca75cd970a1/W+ZOOM+FLY+6.png",
+            "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/5e561b49-7128-448f-94ec-f2f61684a535/W+ZOOM+FLY+6.png",
+            "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/96d62b08-316b-4c83-a0fb-2e6e2b4d4ef9/W+ZOOM+FLY+6.png",
+            "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/84486e1d-1ec9-44b5-887c-7c459c6ac803/W+ZOOM+FLY+6.png"
+          ],
+          "usedVoucher": {
+            "id": "c4",
+            "name": "Voucher 120K",
+            "value": 120000,
+            "discountType": "amount"
+          },
+          "size": 40,
+          "quantity": 1
+        }
+      ],
       "orders": [],
       "wishlist": [],
       "totalOrder": 0,
       "customerType": "new",
-    "coupons": [
-  {
-    "id": "c1",
-    "idProduct": "12hb",
-    "category": "user-moi",
-    "name": "Voucher 50K",
-    "discountType": "amount",         
-    "value": 50000,                  
-    "applicableProductNames": 
-      "Nike Zoom Fly 6",
-    "stock": 100
-  },
-  {
-    "id": "c2",
-    "idProduct": "12hb",
-    "category": "su-kien",
-    "name": "Voucher 10% ",
-    "discountType": "percent",         
-    "value": 10,                      
-    "applicableProductNames":"Nike Zoom Fly 6",
-    "stock": 20
-  }
-]
-
+      "coupons": [
+        {
+          "id": "c1",
+          "category": "user-moi",
+          "name": "Voucher 50K",
+          "image": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/b4f20f67-6cd6-4f8e-8e1c-41ccf6d9de08/GiftCard.png",
+          "description": "Giảm 50K cho đơn hàng đầu tiên",
+          "discountType": "amount",
+          "value": 50000,
+          "applicableProductNames": "Nike Zoom Fly 6",
+          "stock": 100,
+          "code": "WELCOME50",
+          "expiryDate": "2025-06-30"
+        },
+        {
+          "id": "c2",
+          "category": "su-kien",
+          "name": "Voucher 10%",
+          "image": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/cee4b3b4-ef04-4348-966b-a857c9a185fc/GiftCard.png",
+          "description": "Giảm 10% cho đơn hàng đầu tiên",
+          "discountType": "percent",
+          "value": 10,
+          "applicableProductNames": "Nike Zoom Fly 6",
+          "stock": 20,
+          "code": "EVENT10",
+          "expiryDate": "2025-07-15"
+        },
+        {
+          "id": "c3",
+          "category": "user-moi",
+          "name": "Voucher 100K",
+          "image": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/2daa05f6-b7bd-4227-81d1-02c7730dbc7c/GiftCard.png",
+          "description": "Giảm 100K cho đơn hàng đầu tiên",
+          "discountType": "amount",
+          "value": 100000,
+          "applicableProductNames": "Nike Zoom Fly 6",
+          "stock": 7,
+          "code": "WELCOME100",
+          "expiryDate": "2025-05-10"
+        },
+        {
+          "id": "c4",
+          "category": "user-moi",
+          "name": "Voucher 120K",
+          "image": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/2c3b1a83-6cd4-4785-aeda-10fd6f856108/GiftCard.png",
+          "description": "Giảm 120K cho đơn hàng đầu tiên",
+          "discountType": "amount",
+          "value": 120000,
+          "applicableProductNames": "Nike Zoom Fly 6",
+          "stock": 40,
+          "code": "WELCOME120",
+          "expiryDate": "2025-05-12"
+        },
+        {
+          "id": "c5",
+          "category": "user-moi",
+          "name": "Voucher 15%",
+          "image": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/daf1717e-dd3b-4855-abfb-96f2bd13e08e/GiftCard.png",
+          "description": "Giảm 15% cho đơn hàng đầu tiên",
+          "discountType": "percent",
+          "value": 15,
+          "applicableProductNames": "Nike Zoom Fly 6",
+          "stock": 12,
+          "code": "WELCOME15",
+          "expiryDate": "2025-08-01"
+        },
+        {
+          "id": "c6",
+          "category": "user-moi",
+          "name": "Voucher 8%",
+          "image": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/05e97ef6-ecd9-416e-ae66-bf2e91256a9c/GiftCard.png",
+          "description": "Giảm 8% cho đơn hàng đầu tiên",
+          "discountType": "percent",
+          "value": 8,
+          "applicableProductNames": "Nike Zoom Fly 6",
+          "stock": 23,
+          "code": "ahahaha",
+          "expiryDate": "2026-02-01"
+        }
+      ]
     }
   ],
   "comments": [
