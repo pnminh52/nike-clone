@@ -111,10 +111,6 @@ const MightAlsoLike = ({ currentProduct }) => {
         {formatPrice(product.price)}
         <span className="underline text-xs">đ</span>
       </p>
-      <p className="font-medium text-gray-500 line-through inter">
-        {formatPrice(product.price_sale)}
-        <span className="underline text-xs">đ</span>
-      </p>
     </div>
   </SwiperSlide>
 ))}

@@ -1,0 +1,4 @@
+Slider list các sản phẩm khác đnag bị lỗi chưa trỏ đúng id biến thể
+Phần comment chưa có rating số sao trung bình
+Trường mô tả của sản phẩm còn quá ít thông tin
+Phần fee devilery and return không được áp cứng dữ liệu

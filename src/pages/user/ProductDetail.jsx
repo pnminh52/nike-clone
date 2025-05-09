@@ -14,6 +14,7 @@ import AddComment from "../../components/user/productDetail/AddComment";
 import useComment from "../../hooks/useComment";
 import CouponsChooseCard from "../../components/user/productDetail/CouponsChooseCard";
 import ProductDetailsCard from "../../components/user/productDetail/ProductDetailsCard";
+import MightAlsoLike from "../../components/user/productDetail/MightAlsoLike";
 
 const ProductDetail = () => {
   const { addToCart } = useCart();
@@ -903,9 +904,9 @@ const ProductDetail = () => {
 
 
       </div>
-      {/* <div className=" mx-auto max-w-screen-2xl px-10">
+      <div className=" mx-auto max-w-screen-2xl px-10">
             <MightAlsoLike currentProduct={selectedProduct}/>
-        </div> */}
+        </div>
       {showAddComment && (
         <>
           {/* {console.log("User cha:", user)} */}

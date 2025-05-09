@@ -7,7 +7,7 @@ const ProductDetailsCard = ({ selectedProduct, onClose }) => {
 
   return (
     <div className="fixed inset-0 z-50 bg-black/40 flex justify-center items-center">
-      <div className="relative bg-white max-h-[90vh] w-full max-w-lg p-4 rounded-3xl overflow-y-auto shadow-xl hide-scrollbar">
+      <div className="relative bg-white max-h-[90vh] w-full max-w-2xl p-8 rounded-3xl overflow-y-auto shadow-xl hide-scrollbar">
         {/* Close button */}
         <div className="absolute top-4 right-4">
           <button
@@ -15,23 +15,68 @@ const ProductDetailsCard = ({ selectedProduct, onClose }) => {
             type="button"
             className="w-8 h-8 cursor-pointer bg-gray-200 rounded-full flex items-center justify-center"
           >
-            <svg viewBox="0 0 24 24" fill="none" className="w-4 h-4">
-              <path d="M7 17L16.8995 7.10051" stroke="#000" strokeLinecap="round" strokeLinejoin="round" />
-              <path d="M7 7.00001L16.8995 16.8995" stroke="#000" strokeLinecap="round" strokeLinejoin="round" />
+           <svg viewBox="0 0 24 24" fill="none">
+              <path d="M7 17L16.8995 7.10051" stroke="#000000" strokeLinecap="round" strokeLinejoin="round" />
+              <path d="M7 7.00001L16.8995 16.8995" stroke="#000000" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
           </button>
         </div>
 
         {/* Product content */}
         <div className="space-y-4 mt-4">
-        <img src={selectedProduct.img} alt={selectedProduct.name} className="w-20 h-20 cursor-pointer object-cover rounded-lg" />
+            <div className='flex gap-2'>
+            <img src={selectedProduct.img} alt={selectedProduct.name} className="w-20 h-20 cursor-pointer object-cover rounded-lg" />
 
-          <h2 className="text-2xl font-bold">{selectedProduct?.name}</h2>
-          <p className="text-gray-600">{selectedProduct?.type}</p>
-          <p className="text-lg font-semibold text-red-500">
+        <div>
+        <h3 className="cursor-pointer">{selectedProduct.name}</h3>
+            <p className="text-sm">
             { `${Number(selectedProduct.price).toLocaleString()} đ`}
           </p>
-          <p className="text-sm text-gray-700">{selectedProduct?.des}</p>
+        </div>
+            </div>
+
+      
+       
+   
+          <p className="">{selectedProduct?.des}</p>
+          {selectedProduct.featured?.length > 0 && (
+            <div className="space-y-3">
+              {selectedProduct.featured.map((item, index) => (
+                <div key={index}>
+                  <h4 className="text-xl">{item.title}</h4>
+                  <p className="text-sm ">{item.content}</p>
+                </div>
+              ))}
+            </div>
+          )}
+
+          {/* More Benefits */}
+          {selectedProduct.moreBenefit?.length > 0 && (
+            <div>
+              <h4 className="text-xl">More Benefits</h4>
+              <ul className="list-disc  pl-5">
+                {selectedProduct.moreBenefit.map((benefit, index) => (
+                  <li key={index}>{benefit}</li>
+                ))}
+              </ul>
+            </div>
+          )}
+
+          {/* Specs */}
+          <div className=" ">
+          <h4 className="text-xl"> Product details</h4>
+          <ul className="list-disc  pl-5">
+            <li>Weight: {selectedProduct.weight}</li>
+            <li> Heel-to-toe drop: {selectedProduct.heeldrop}</li>
+            <li> {selectedProduct.note}</li>
+            <li>Colour Shown: {selectedProduct.color}</li>
+            <li>Style: {selectedProduct.style}</li>
+            <li>Country/Region of Origin: {selectedProduct.country}</li>
+          </ul>
+          
+           
+           
+          </div>
         </div>
       </div>
     </div>

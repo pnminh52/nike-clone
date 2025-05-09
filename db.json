@@ -488,10 +488,34 @@
         "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/dc7b3605-6edc-4713-83c7-e68cd406f19a/W+ZOOM+FLY+6.png",
         "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/68a977f5-50e4-4deb-beae-58ff5b6300a3/W+ZOOM+FLY+6.png",
         "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/969101fc-73a4-4ea9-94da-e56a7f8d104e/W+ZOOM+FLY+6.png",
-        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/0cf36d43-2779-4d58-87ae-0938f265d164/W+ZOOM+FLY+6.png",
-        "",
-        ""
-      ]
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/0cf36d43-2779-4d58-87ae-0938f265d164/W+ZOOM+FLY+6.png"
+      ],
+      "featured":[
+        {
+          "title": "Energy return for your marathon",
+          "content": "Two forefoot Air Zoom units combine with ZoomX foam to store and return the energy back to you, powering every step."
+        },
+        {
+          "title": "Propulsive feeling",
+          "content": "A full-length carbon-fibre plate delivers a propulsive sensation that helps you smoothly transition through every stride and tackle turns with confidence."
+        },
+        {
+          "title": "Cushioned ride",
+          "content": "Fully connected ZoomX foam creates an ultralight and cushioned feel, helping you stay fresh and comfortable from mile 1 to 26.2."
+        },
+        {
+          "title": "What's new about the Alphafly 3?",
+          "content": "The Alphafly 3 is our lightest Alphafly ever, featuring a slightly wider carbon-fibre plate for increased stability, a fully connected ZoomX foam midsole for smoother transitions and an all-new AtomKnit upper designed for improved multi-directional containment and breathability."
+        }
+      ],
+      "moreBenefit":[
+        "Notched laces offer a secure but soft lace-up.",
+"Integrated knit tongue with lofted padding helps alleviate lace pressure."
+      ],
+      "weight": "approx. 218g (men's UK 9)",
+      "heeldrop": "8mm",
+      "note":"Not intended for use as personal protective equipment (PPE)"
+
     },
     {
       "id": "hdf6",
