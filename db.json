@@ -973,134 +973,145 @@
       "page": "Men"
     }
   ],
-
-    "users": [
-      {
-        "id": "631b",
-        "username": "Elyz",
-        "firstname": "Phạm",
-        "lastname": "Minh",
-        "phone": "0934557882",
-        "address": "Hà Nam",
-        "email": "Elyz.thedev@gmail.com",
-        "password": "111111Aa",
-        "country": "Vietnam",
-        "extraAddresses": [],
-        "cart": [],
-        "orders": [],
-        "wishlist": [],
-        "totalOrder": 0,
-        "customerType": "new",
-        "coupons": [
-          {
-            "id": "c6",
-            "category": "new-user",
-            "name": "8% Voucher",
-            "image": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/05e97ef6-ecd9-416e-ae66-bf2e91256a9c/GiftCard.png",
-            "description": "Get 8% off on your first order",
-            "discountType": "percent",
-            "value": 8,
-            "applicableProductNames": "Nike Zoom Fly 6",
-            "stock": 23,
-            "code": "ahahaha",
-            "expiryDate": "2026-02-01",
-            "pointToExchange": 1200
-          }
-        ],
-        "point": 99999999999 
-      }
-    ],
-    "coupons": [
-          {
-            "id": "c1",
-            "category": "new-user",
-            "name": "50K Voucher",
-            "image": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/b4f20f67-6cd6-4f8e-8e1c-41ccf6d9de08/GiftCard.png",
-            "description": "Get 50K off on your first order",
-            "discountType": "amount",
-            "value": 50000,
-            "applicableProductNames": "Nike Zoom Fly 6",
-            "stock": 100,
-            "code": "WELCOME50",
-            "expiryDate": "2025-06-30",
-            "pointToExchange": 1000  
-          },
-          {
-            "id": "c2",
-            "category": "event",
-            "name": "10% Voucher",
-            "image": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/cee4b3b4-ef04-4348-966b-a857c9a185fc/GiftCard.png",
-            "description": "Get 10% off on your first order",
-            "discountType": "percent",
-            "value": 10,
-            "applicableProductNames": "Nike Zoom Fly 6",
-            "stock": 20,
-            "code": "EVENT10",
-            "expiryDate": "2025-07-15",
-            "pointToExchange": 800
-          },
-          {
-            "id": "c3",
-            "category": "new-user",
-            "name": "100K Voucher",
-            "image": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/2daa05f6-b7bd-4227-81d1-02c7730dbc7c/GiftCard.png",
-            "description": "Get 100K off on your first order",
-            "discountType": "amount",
-            "value": 100000,
-            "applicableProductNames": [
-              "Nike Zoom Fly 6",
-              "Nike Air Max",
-              "Nike Downshifter 13"
-            ],
-            "stock": 7,
-            "code": "WELCOME100",
-            "expiryDate": "2025-05-10",
-            "pointToExchange": 2000
-          },
-          {
-            "id": "c4",
-            "category": "new-user",
-            "name": "120K Voucher",
-            "image": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/2c3b1a83-6cd4-4785-aeda-10fd6f856108/GiftCard.png",
-            "description": "Get 120K off on your first order",
-            "discountType": "amount",
-            "value": 120000,
-            "applicableProductNames": "All",
-            "stock": 40,
-            "code": "WELCOME120",
-            "expiryDate": "2025-05-12",
-            "pointToExchange": 2500
-          },
-          {
-            "id": "c5",
-            "category": "new-user",
-            "name": "15% Voucher",
-            "image": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/daf1717e-dd3b-4855-abfb-96f2bd13e08e/GiftCard.png",
-            "description": "Get 15% off on your first order",
-            "discountType": "percent",
-            "value": 15,
-            "applicableProductNames": "Nike Zoom Fly 6",
-            "stock": 12,
-            "code": "WELCOME15",
-            "expiryDate": "2025-08-01",
-            "pointToExchange": 1500
-          },
-          {
-            "id": "c6",
-            "category": "new-user",
-            "name": "8% Voucher",
-            "image": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/05e97ef6-ecd9-416e-ae66-bf2e91256a9c/GiftCard.png",
-            "description": "Get 8% off on your first order",
-            "discountType": "percent",
-            "value": 8,
-            "applicableProductNames": "Nike Zoom Fly 6",
-            "stock": 23,
-            "code": "ahahaha",
-            "expiryDate": "2026-02-01",
-            "pointToExchange": 1200
-          }
-    ],
-  
-  
+  "users": [
+    {
+      "id": "631b",
+      "username": "Elyz",
+      "firstname": "Phạm",
+      "lastname": "Minh",
+      "phone": "0934557882",
+      "address": "Hà Nam",
+      "email": "Elyz.thedev@gmail.com",
+      "password": "111111Aa",
+      "country": "Vietnam",
+      "extraAddresses": [],
+      "cart": [],
+      "orders": [],
+      "wishlist": [],
+      "totalOrder": 0,
+      "customerType": "new",
+      "coupons": [
+        {
+          "id": "c1",
+          "category": "new-user",
+          "name": "50K Voucher",
+          "image": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/b4f20f67-6cd6-4f8e-8e1c-41ccf6d9de08/GiftCard.png",
+          "description": "Get 50K off on your first order",
+          "discountType": "amount",
+          "value": 50000,
+          "applicableProductNames": "Nike Zoom Fly 6",
+          "stock": 4,
+          "code": "WELCOME50",
+          "expiryDate": "2025-06-30",
+          "pointToExchange": 1000
+        },
+        {
+          "id": "c2",
+          "category": "event",
+          "name": "10% Voucher",
+          "image": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/cee4b3b4-ef04-4348-966b-a857c9a185fc/GiftCard.png",
+          "description": "Get 10% off on your first order",
+          "discountType": "percent",
+          "value": 10,
+          "applicableProductNames": "Nike Zoom Fly 6",
+          "stock": 1,
+          "code": "EVENT10",
+          "expiryDate": "2025-07-15",
+          "pointToExchange": 800
+        }
+      ],
+      "point": 6200
+    }
+  ],
+  "coupons": [
+    {
+      "id": "c1",
+      "category": "new-user",
+      "name": "50K Voucher",
+      "image": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/b4f20f67-6cd6-4f8e-8e1c-41ccf6d9de08/GiftCard.png",
+      "description": "Get 50K off on your first order",
+      "discountType": "amount",
+      "value": 50000,
+      "applicableProductNames": "Nike Zoom Fly 6",
+      "stock": 99,
+      "code": "WELCOME50",
+      "expiryDate": "2025-06-30",
+      "pointToExchange": 1000
+    },
+    {
+      "id": "c2",
+      "category": "event",
+      "name": "10% Voucher",
+      "image": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/cee4b3b4-ef04-4348-966b-a857c9a185fc/GiftCard.png",
+      "description": "Get 10% off on your first order",
+      "discountType": "percent",
+      "value": 10,
+      "applicableProductNames": "Nike Zoom Fly 6",
+      "stock": 20,
+      "code": "EVENT10",
+      "expiryDate": "2025-07-15",
+      "pointToExchange": 800
+    },
+    {
+      "id": "c3",
+      "category": "new-user",
+      "name": "100K Voucher",
+      "image": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/2daa05f6-b7bd-4227-81d1-02c7730dbc7c/GiftCard.png",
+      "description": "Get 100K off on your first order",
+      "discountType": "amount",
+      "value": 100000,
+      "applicableProductNames": [
+        "Nike Zoom Fly 6",
+        "Nike Air Max",
+        "Nike Downshifter 13"
+      ],
+      "stock": 7,
+      "code": "WELCOME100",
+      "expiryDate": "2025-05-10",
+      "pointToExchange": 2000
+    },
+    {
+      "id": "c4",
+      "category": "new-user",
+      "name": "120K Voucher",
+      "image": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/2c3b1a83-6cd4-4785-aeda-10fd6f856108/GiftCard.png",
+      "description": "Get 120K off on your first order",
+      "discountType": "amount",
+      "value": 120000,
+      "applicableProductNames": "All",
+      "stock": 39,
+      "code": "WELCOME120",
+      "expiryDate": "2025-05-12",
+      "pointToExchange": 2500
+    },
+    {
+      "id": "c5",
+      "category": "new-user",
+      "name": "15% Voucher",
+      "image": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/daf1717e-dd3b-4855-abfb-96f2bd13e08e/GiftCard.png",
+      "description": "Get 15% off on your first order",
+      "discountType": "percent",
+      "value": 15,
+      "applicableProductNames": "Nike Zoom Fly 6",
+      "stock": 12,
+      "code": "WELCOME15",
+      "expiryDate": "2025-08-01",
+      "pointToExchange": 1500
+    },
+    {
+      "id": "c6",
+      "category": "new-user",
+      "name": "8% Voucher",
+      "image": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/05e97ef6-ecd9-416e-ae66-bf2e91256a9c/GiftCard.png",
+      "description": "Get 8% off on your first order",
+      "discountType": "percent",
+      "value": 8,
+      "applicableProductNames": "Nike Zoom Fly 6",
+      "stock": 23,
+      "code": "ahahaha",
+      "expiryDate": "2026-02-01",
+      "pointToExchange": 1200
+    }
+  ],
   "comments": []
 }

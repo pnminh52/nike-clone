@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ExchangeVoucherCard = ({ voucher }) => {
+const ExchangeVoucherCard = ({ voucher, onExchange }) => {
   return (
     <div className="border rounded-xl p-4 flex gap-4 items-center shadow">
       <img src={voucher.image} alt={voucher.name} className="w-24 h-24 object-cover rounded" />
@@ -9,6 +9,12 @@ const ExchangeVoucherCard = ({ voucher }) => {
         <p className="text-sm text-gray-600">{voucher.description}</p>
         <p className="text-sm text-gray-500">Điểm cần đổi: <strong>{voucher.pointToExchange}</strong></p>
         <p className="text-sm text-gray-500">Hết hạn: {voucher.expiryDate}</p>
+        <button
+          onClick={() => onExchange(voucher)}
+          className="mt-2 px-3 py-1 text-white bg-blue-600 rounded hover:bg-blue-700"
+        >
+          Đổi điểm
+        </button>
       </div>
     </div>
   );

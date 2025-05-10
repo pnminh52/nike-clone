@@ -1,19 +1,41 @@
 import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import VoucherCard from './VoucherCard';
 import ProductSkeleton from '../etc/ProductSkeleton';
-import ExchangeVoucher from './ExchangeVoucher'; // Đảm bảo đúng đường dẫn
+import ExchangeVoucher from './ExchangeVoucher';  // Import ExchangeVoucher
 
 const VoucherChooseTab = ({
-  applicableCoupons,
   selectedProduct,
   selectedCoupon,
   setSelectedCoupon,
   user,
   onClose,
+  setUser
 }) => {
+  const [coupons, setCoupons] = useState([]);
   const [searchText, setSearchText] = useState('');
   const [loading, setLoading] = useState(true);
-  const [showExchangePage, setShowExchangePage] = useState(false); // 👈 Thêm state điều khiển
+  const [showExchangePage, setShowExchangePage] = useState(false);
+
+  useEffect(() => {
+    const fetchUserCoupons = async () => {
+      try {
+        // Lấy thông tin coupons của người dùng từ API
+        const res = await axios.get(`http://localhost:3000/users/${user.id}`);
+        setCoupons(res.data.coupons); // Lấy coupons của người dùng
+      } catch (error) {
+        console.error("Error fetching user coupons:", error);
+      }
+    };
+
+    if (user && user.id) {
+      fetchUserCoupons();
+    }
+  }, [user]);  // Khi user thay đổi thì gọi lại API
+
+  const filteredCoupons = coupons.filter((coupon) =>
+    coupon.code.toLowerCase().includes(searchText.toLowerCase())
+  );
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -35,11 +57,6 @@ const VoucherChooseTab = ({
     setSelectedCoupon(coupon);
     onClose();
   };
-  
-
-  const filteredCoupons = applicableCoupons.filter((coupon) =>
-    coupon.code.toLowerCase().includes(searchText.toLowerCase())
-  );
 
   if (loading) {
     return (
@@ -54,7 +71,6 @@ const VoucherChooseTab = ({
   return (
     <div className="fixed inset-0 z-50 bg-black/40 flex justify-center items-center">
       <div className="relative bg-white max-h-[90vh] w-full max-w-lg p-4 rounded-3xl overflow-y-auto shadow-xl hide-scrollbar">
-        {/* Nút đóng */}
         <div className="absolute top-4 right-4">
           <button
             onClick={handleCancel}
@@ -69,16 +85,12 @@ const VoucherChooseTab = ({
         </div>
 
         {showExchangePage ? (
-         <ExchangeVoucher
-         onBack={() => setShowExchangePage(false)}
-         user={user}
-         setSelectedCoupon={setSelectedCoupon} // Truyền lại để cập nhật coupon đã chọn
-       />
-       
-
+          <ExchangeVoucher
+            userId={user.id}  // Passing dynamic userId
+            onBack={() => setShowExchangePage(false)}  // Set the state to go back
+          />
         ) : (
           <>
-            {/* Thanh tìm kiếm */}
             <div className="mt-12 flex justify-between items-center gap-2">
               <input
                 className="bg-[#F3F4F6] outline-none focus:ring-2 font-semibold focus:ring-black transition duration-200 hover:bg-[#E5E5E5] text-inter w-full border-gray-500 rounded-lg px-2 h-10"
@@ -89,25 +101,22 @@ const VoucherChooseTab = ({
               />
             </div>
 
-            {/* Nội dung */}
             <div className="py-2">
               All offers ({filteredCoupons.length})
               <p className="text-xs text-red-600">
                 Please note: The voucher is non-refundable when you cancel the order
                 <span className="text-red-600">*</span>
               </p>
-              <p className='text-sm'>
-                Bạn hiện có {user.point} điểm.
-                <span
-                  className='text-blue-600 underline cursor-pointer ml-1'
-                  onClick={() => setShowExchangePage(true)}
+            
+                <p
+                  className='text-blue-600 text-sm underline cursor-pointer'
+                  onClick={() => setShowExchangePage(true)}  // Show exchange page
                 >
                   Đổi voucher ngay!
-                </span>
-              </p>
+                </p>
+        
             </div>
 
-            {/* Coupon lựa chọn */}
             <div className="space-y-2">
               {filteredCoupons.length > 0 ? (
                 filteredCoupons.map((coupon) => (
@@ -115,6 +124,7 @@ const VoucherChooseTab = ({
                     key={coupon.id}
                     coupon={coupon}
                     user={user}
+                    setUser={setUser}
                     selectedProduct={selectedProduct}
                     isSelected={selectedCoupon?.id === coupon.id}
                     onSelect={handleSelectCoupon}

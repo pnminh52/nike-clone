@@ -1,5 +1,5 @@
-// src/components/ProductSkeleton.js
 import React, { useState, useEffect } from 'react';
+import './ProductSkeleton.css'; // Import CSS file
 
 const ProductSkeleton = () => {
   const [spinDuration, setSpinDuration] = useState(5000); // Đặt thời gian quay là 5 giây
@@ -25,18 +25,6 @@ const ProductSkeleton = () => {
       >
         <span className="sr-only">Loading...</span>
       </div>
-
-      {/* Định nghĩa keyframe cho spinner */}
-      <style jsx>{`
-        @keyframes spin-slow {
-          0% {
-            transform: rotate(0deg);
-          }
-          100% {
-            transform: rotate(360deg);
-          }
-        }
-      `}</style>
     </div>
   );
 };

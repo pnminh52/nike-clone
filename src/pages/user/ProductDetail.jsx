@@ -21,7 +21,7 @@ const ProductDetail = () => {
   const { addToCart } = useCart();
   const { name } = useParams();
   const { getProductsByName } = useProducts();
-  const { user } = useAuth();
+  const { user, setUser } = useAuth();
   const [searchParams] = useSearchParams();
   const id = searchParams.get("id");
   const products = getProductsByName(name);
@@ -265,11 +265,11 @@ const ProductDetail = () => {
                 >
                   <path
                     fill="currentColor"
-                    fill-rule="evenodd"
+                    fillRule="evenodd"
                     stroke="currentColor"
-                    stroke-width="1.5"
+                    strokeWidth="1.5"
                     d="M2.56 10.346l5.12 3.694-1.955 5.978c-.225.688.568 1.261 1.157.836L12 17.159l5.12 3.695c.587.425 1.381-.148 1.155-.836l-1.954-5.978 5.118-3.694c.589-.425.286-1.352-.442-1.352H14.67l-.166-.507-1.789-5.47c-.225-.69-1.205-.69-1.43 0L9.33 8.993H3.003c-.728 0-1.03.927-.442 1.352z"
-                    clip-rule="evenodd"
+                    clipRule="evenodd"
                   ></path>
                 </svg>
                 <span className="text-xs inter "> Highly Rated</span>
@@ -354,7 +354,7 @@ const ProductDetail = () => {
               {showCoupons && (
                 <div className="">
                   <VoucherChooseTab
-                    
+                     setUser={setUser}
                     applicableCoupons={applicableCoupons}
                     selectedCoupon={selectedCoupon}
                     selectedProduct={selectedProduct}
@@ -382,7 +382,7 @@ const ProductDetail = () => {
               </span>
               {selectedCoupon && (
               <div  className="flex items-center">
-                <span className=""><svg viewBox="0 0 20 20" className="w-7 h-7 rotate-120" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M2 9.5C2 9.22386 2.22386 9 2.5 9H17.5C17.7761 9 18 9.22386 18 9.5C18 9.77614 17.7761 10 17.5 10H2.5C2.22386 10 2 9.77614 2 9.5Z" fill="#212121"></path> </g></svg></span>
+                <span className=""><svg viewBox="0 0 20 20" className="w-7 h-7 rotate-120" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" strokeWidth="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M2 9.5C2 9.22386 2.22386 9 2.5 9H17.5C17.7761 9 18 9.22386 18 9.5C18 9.77614 17.7761 10 17.5 10H2.5C2.22386 10 2 9.77614 2 9.5Z" fill="#212121"></path> </g></svg></span>
                   <span className=" text-black ">
                   {formatPrice(getDiscountedPrice(selectedProduct.price))}đ
                 </span>
@@ -743,7 +743,7 @@ const ProductDetail = () => {
               {open0 ? (
                 <svg
                   aria-hidden="true"
-                  class="nds-summary-control rotate-180"
+                  className="nds-summary-control rotate-180"
                   focusable="false"
                   viewBox="0 0 24 24"
                   role="img"
@@ -753,14 +753,14 @@ const ProductDetail = () => {
                 >
                   <path
                     stroke="currentColor"
-                    stroke-width="1.5"
+                    strokeWidth="1.5"
                     d="M18.966 8.476L12 15.443 5.033 8.476"
                   ></path>
                 </svg>
               ) : (
                 <svg
                   aria-hidden="true"
-                  class="nds-summary-control"
+                  className="nds-summary-control"
                   focusable="false"
                   viewBox="0 0 24 24"
                   role="img"
@@ -770,7 +770,7 @@ const ProductDetail = () => {
                 >
                   <path
                     stroke="currentColor"
-                    stroke-width="1.5"
+                    strokeWidth="1.5"
                     d="M18.966 8.476L12 15.443 5.033 8.476"
                   ></path>
                 </svg>
@@ -878,7 +878,7 @@ const ProductDetail = () => {
                   {open2 ? (
                     <svg
                       aria-hidden="true"
-                      class="nds-summary-control rotate-180"
+                      className="nds-summary-control rotate-180"
                       focusable="false"
                       viewBox="0 0 24 24"
                       role="img"
@@ -888,14 +888,14 @@ const ProductDetail = () => {
                     >
                       <path
                         stroke="currentColor"
-                        stroke-width="1.5"
+                        strokeWidth="1.5"
                         d="M18.966 8.476L12 15.443 5.033 8.476"
                       ></path>
                     </svg>
                   ) : (
                     <svg
                       aria-hidden="true"
-                      class="nds-summary-control"
+                      className="nds-summary-control"
                       focusable="false"
                       viewBox="0 0 24 24"
                       role="img"
@@ -905,7 +905,7 @@ const ProductDetail = () => {
                     >
                       <path
                         stroke="currentColor"
-                        stroke-width="1.5"
+                        strokeWidth="1.5"
                         d="M18.966 8.476L12 15.443 5.033 8.476"
                       ></path>
                     </svg>
