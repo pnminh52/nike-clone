@@ -1,27 +1,25 @@
 import React, { useState, useEffect } from 'react';
 import VoucherCard from './VoucherCard';
 import ProductSkeleton from '../etc/ProductSkeleton';
-import VoucherExchangeCard from './VoucherExchangeCard';
+import ExchangeVoucher from './ExchangeVoucher'; // Đảm bảo đúng đường dẫn
 
-const CouponsChooseTab = ({
+const VoucherChooseTab = ({
   applicableCoupons,
   selectedProduct,
   selectedCoupon,
   setSelectedCoupon,
+  user,
   onClose,
 }) => {
   const [searchText, setSearchText] = useState('');
-  const [isExchangingVoucher, setIsExchangingVoucher] = useState(false);
   const [loading, setLoading] = useState(true);
-  const [isTabChanging, setIsTabChanging] = useState(false); // State để theo dõi việc chuyển tab
-  
+  const [showExchangePage, setShowExchangePage] = useState(false); // 👈 Thêm state điều khiển
 
-  // Loading trong 2 giây
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoading(false);
     }, 1500);
-    return () => clearTimeout(timer); // Clear timeout nếu component bị unmount sớm
+    return () => clearTimeout(timer);
   }, []);
 
   const handleCancel = () => {
@@ -38,15 +36,11 @@ const CouponsChooseTab = ({
     onClose();
   };
 
-  const handleTabChange = (tabType) => {
-    setIsTabChanging(true); // Bắt đầu quá trình chuyển tab
-    setTimeout(() => {
-      setIsExchangingVoucher(tabType === 'exchange');
-      setIsTabChanging(false); // Kết thúc quá trình chuyển tab sau 1 giây
-    }, 1500); // Delay 1 giây
-  };
+  const filteredCoupons = applicableCoupons.filter((coupon) =>
+    coupon.code.toLowerCase().includes(searchText.toLowerCase())
+  );
 
-  if (loading || isTabChanging) {
+  if (loading) {
     return (
       <div className="fixed inset-0 z-50 bg-black/40 flex justify-center items-center">
         <div className="bg-white p-6 rounded-3xl max-w-lg w-full">
@@ -73,72 +67,61 @@ const CouponsChooseTab = ({
           </button>
         </div>
 
-        {/* Thanh tìm kiếm */}
-        <div className="mt-12 flex justify-between items-center gap-2">
-          <input
-            className="bg-[#F3F4F6] outline-none focus:ring-2 font-semibold focus:ring-black transition duration-200 hover:bg-[#E5E5E5] text-inter w-full border-gray-500 rounded-lg px-2 h-10"
-            type="text"
-            value={searchText}
-            onChange={handleSearchChange}
-            placeholder="Search for offer codes"
-          />
-        </div>
-
-        {/* Tab chọn/đổi */}
-        <div className="flex items-center mt-4 h-10">
-          <div
-            className={`w-1/2 flex justify-center border-black border text-center ${
-              !isExchangingVoucher ? 'bg-black hover:bg-gray-800 text-white' : ''
-            } rounded-l-full items-center cursor-pointer h-full`}
-            onClick={() => handleTabChange('select')} // Thay đổi tab chọn
-          >
-            Chọn mã giảm giá
-          </div>
-          <div
-            className={`w-1/2 cursor-pointer flex justify-center rounded-r-full border-black border h-10 items-center text-center ${
-              isExchangingVoucher ? 'bg-black hover:bg-gray-800 text-white' : ''
-            }`}
-            onClick={() => handleTabChange('exchange')} // Thay đổi tab đổi mã
-          >
-            Đổi mã giảm giá
-          </div>
-        </div>
-
-        {!isExchangingVoucher && (
-        <div className="py-2">
-          All offers ({applicableCoupons.length}) {/* Hiển thị số lượng coupon đã lọc */}
-          <p className="text-xs text-red-600">
-            Please note: The voucher is non-refundable when you cancel the order
-            <span className="text-red-600">*</span>
-          </p>
-        </div>
-      )}
-
-        {/* Nội dung */}
-        {isExchangingVoucher ? (
-          <div className="space-y-2">
-            <VoucherExchangeCard />
-          </div>
+        {showExchangePage ? (
+          <ExchangeVoucher onBack={() => setShowExchangePage(false)} user={user} />
         ) : (
-          <div className="space-y-2">
-            {applicableCoupons.length > 0 ? (
-              applicableCoupons.map((coupon) => (
-                <VoucherCard
-                  key={coupon.id}
-                  coupon={coupon}
-                  selectedProduct={selectedProduct}
-                  isSelected={selectedCoupon?.id === coupon.id}
-                  onSelect={handleSelectCoupon}
-                />
-              ))
-            ) : searchText.trim() !== '' ? (
-              <p className="text-center text-black mt-2 mb-2">No matching vouchers found</p>
-            ) : null}
-          </div>
+          <>
+            {/* Thanh tìm kiếm */}
+            <div className="mt-12 flex justify-between items-center gap-2">
+              <input
+                className="bg-[#F3F4F6] outline-none focus:ring-2 font-semibold focus:ring-black transition duration-200 hover:bg-[#E5E5E5] text-inter w-full border-gray-500 rounded-lg px-2 h-10"
+                type="text"
+                value={searchText}
+                onChange={handleSearchChange}
+                placeholder="Search for offer codes"
+              />
+            </div>
+
+            {/* Nội dung */}
+            <div className="py-2">
+              All offers ({filteredCoupons.length})
+              <p className="text-xs text-red-600">
+                Please note: The voucher is non-refundable when you cancel the order
+                <span className="text-red-600">*</span>
+              </p>
+              <p className='text-sm'>
+                Bạn hiện có {user.point} điểm.
+                <span
+                  className='text-blue-600 underline cursor-pointer ml-1'
+                  onClick={() => setShowExchangePage(true)}
+                >
+                  Đổi voucher ngay!
+                </span>
+              </p>
+            </div>
+
+            {/* Coupon lựa chọn */}
+            <div className="space-y-2">
+              {filteredCoupons.length > 0 ? (
+                filteredCoupons.map((coupon) => (
+                  <VoucherCard
+                    key={coupon.id}
+                    coupon={coupon}
+                    user={user}
+                    selectedProduct={selectedProduct}
+                    isSelected={selectedCoupon?.id === coupon.id}
+                    onSelect={handleSelectCoupon}
+                  />
+                ))
+              ) : searchText.trim() !== '' ? (
+                <p className="text-center text-black mt-2 mb-2">No matching vouchers found</p>
+              ) : null}
+            </div>
+          </>
         )}
       </div>
     </div>
   );
 };
 
-export default CouponsChooseTab;
+export default VoucherChooseTab;

@@ -45,6 +45,7 @@ const ProductDetail = () => {
 
 
 
+
   const formatPrice = (price) => {
     return Number(price)
       .toString()
@@ -353,11 +354,13 @@ const ProductDetail = () => {
               {showCoupons && (
                 <div className="">
                   <VoucherChooseTab
+                    
                     applicableCoupons={applicableCoupons}
                     selectedCoupon={selectedCoupon}
                     selectedProduct={selectedProduct}
                     setSelectedCoupon={setSelectedCoupon}
                     onClose={() => setShowCoupons(false)}
+                    user={user}
                   />
                 </div>
               )}

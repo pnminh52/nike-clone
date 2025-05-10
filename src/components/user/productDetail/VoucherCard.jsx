@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import ProductSkeleton from "../etc/ProductSkeleton";
-const VoucherCard = ({ coupon, isSelected, onSelect, selectedProduct }) => {
+const VoucherCard = ({ coupon, isSelected, onSelect, selectedProduct, user, updateUser }) => {
     const isExpiringSoon = (expiryDate) => {
         const today = new Date();
         const expiry = new Date(expiryDate);
