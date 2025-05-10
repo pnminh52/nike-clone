@@ -19,13 +19,28 @@ const MightAlsoLike = ({ currentProduct }) => {
     return Number(price).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   };
 
-  const relatedProducts = allProducts.filter(
-    (product) =>
-      product.category === currentProduct.category &&
-      product.id !== currentProduct.id // bỏ chính biến thể đang xem
-  );
-  
-
+  // Lọc sản phẩm và bỏ qua sản phẩm hiện tại, dựa vào tên sản phẩm
+  const relatedProducts = allProducts
+    .filter(
+      (product) =>
+        product.category === currentProduct.category &&
+        product.name !== currentProduct.name // Bỏ sản phẩm có tên trùng với sản phẩm đang xem
+    )
+    .reduce((acc, product) => {
+      const existingProductIndex = acc.findIndex(
+        (item) => item.name === product.name
+      );
+      if (existingProductIndex === -1) {
+        // Nếu sản phẩm chưa tồn tại trong acc, thêm vào
+        acc.push(product);
+      } else {
+        // Nếu sản phẩm đã tồn tại, kiểm tra và thay thế bằng sản phẩm có "isDefault": true
+        if (product.isDefault) {
+          acc[existingProductIndex] = product;
+        }
+      }
+      return acc;
+    }, []);
 
   const handleSlideChange = (swiper) => {
     setIsBeginning(swiper.isBeginning);
@@ -37,7 +52,6 @@ const MightAlsoLike = ({ currentProduct }) => {
     navigate(`/details/${encodeURIComponent(product.name)}?id=${product.id}`, {
       state: { selectedProduct: product, selectedIndex: index },
     });
-    // window.location.reload();
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
@@ -94,27 +108,26 @@ const MightAlsoLike = ({ currentProduct }) => {
         onSlideChange={handleSlideChange}
         modules={[Navigation]}
       >
-      {relatedProducts.map((product, index) => (
-  <SwiperSlide key={product.id}>
-    <div
-      onClick={() => handleProductSelect(product, index)}
-      className="rounded-md block cursor-pointer"
-    >
-      <img
-        src={product.img}
-        alt={product.name}
-        className="w-[420px] h-[420px] rounded-md object-cover mb-2"
-      />
-      <h3 className="font-medium">{product.name}</h3>
-      <p className="text-gray-500">{product.gender}'s {product.type}</p>
-      <p className="font-medium inter">
-        {formatPrice(product.price)}
-        <span className="underline text-xs">đ</span>
-      </p>
-    </div>
-  </SwiperSlide>
-))}
-
+        {relatedProducts.map((product, index) => (
+          <SwiperSlide key={product.id}>
+            <div
+              onClick={() => handleProductSelect(product, index)}
+              className="rounded-md block cursor-pointer"
+            >
+              <img
+                src={product.img}
+                alt={product.name}
+                className="w-[420px] h-[420px] rounded-md object-cover mb-2"
+              />
+              <h3 className="font-medium">{product.name}</h3>
+              <p className="text-gray-500">{product.gender}'s {product.type}</p>
+              <p className="font-medium inter">
+                {formatPrice(product.price)}
+                <span className="underline text-xs">đ</span>
+              </p>
+            </div>
+          </SwiperSlide>
+        ))}
       </Swiper>
     </div>
   );

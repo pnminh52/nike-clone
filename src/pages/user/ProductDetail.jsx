@@ -12,9 +12,10 @@ import ProductSkeleton from './../../components/user/etc/ProductSkeleton';
 import CommentSection from "../../components/user/productDetail/CommentSection";
 import AddComment from "../../components/user/productDetail/AddComment";
 import useComment from "../../hooks/useComment";
-import CouponsChooseCard from "../../components/user/productDetail/CouponsChooseCard";
+import VoucherChooseTab from "../../components/user/productDetail/VoucherChooseTab";
 import ProductDetailsCard from "../../components/user/productDetail/ProductDetailsCard";
 import MightAlsoLike from "../../components/user/productDetail/MightAlsoLike";
+import VoucherCard from './../../components/user/productDetail/VoucherCard';
 
 const ProductDetail = () => {
   const { addToCart } = useCart();
@@ -115,9 +116,12 @@ const ProductDetail = () => {
     if (productId) fetchComments(productId);
   }, [productId]);
 
-  const applicableCoupons = user?.coupons?.filter(coupon =>
-    coupon.applicableProductNames === selectedProduct?.name
-  ) || [];
+  const applicableCoupons = user?.coupons?.filter(coupon => {
+    const applicableNames = coupon.applicableProductNames;
+        return !applicableNames || applicableNames === "All" || applicableNames.includes(selectedProduct?.name);
+  }) || [];
+  
+  
 
 
 
@@ -348,7 +352,7 @@ const ProductDetail = () => {
 
               {showCoupons && (
                 <div className="">
-                  <CouponsChooseCard
+                  <VoucherChooseTab
                     applicableCoupons={applicableCoupons}
                     selectedCoupon={selectedCoupon}
                     selectedProduct={selectedProduct}
@@ -368,17 +372,26 @@ const ProductDetail = () => {
           </div>
 
           <div className="flex items-center justify-between ">
-            <p className="text-lg font-semibold">
+            <div className="text-lg font-semibold flex  items-center">
 
-              <span className={`ml-2 ${selectedCoupon ? 'line-through text-gray-400' : ''}`}>
+              <span className={` ${selectedCoupon ? 'line-through text-sm text-gray-400' : ''}`}>
                 {formatPrice(selectedProduct.price)}đ
               </span>
               {selectedCoupon && (
-                <span className="ml-2 text-red-600">
+              <div  className="flex items-center">
+                <span className=""><svg viewBox="0 0 20 20" className="w-7 h-7 rotate-120" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M2 9.5C2 9.22386 2.22386 9 2.5 9H17.5C17.7761 9 18 9.22386 18 9.5C18 9.77614 17.7761 10 17.5 10H2.5C2.22386 10 2 9.77614 2 9.5Z" fill="#212121"></path> </g></svg></span>
+                  <span className=" text-black ">
                   {formatPrice(getDiscountedPrice(selectedProduct.price))}đ
                 </span>
+                <span className="text-xs text-green-500 ml-2 cursor-pointer border border-green-500 rounded-full px-2 py-0.5">-
+  {selectedCoupon.discountType === 'amount'
+    ? `${formatPrice(selectedCoupon.value)}đ`
+    : `${selectedCoupon.value}%`}
+</span>
+
+              </div>
               )}
-            </p>
+            </div>
            {
             applicableCoupons.length > 0 && (
               <p
@@ -394,7 +407,9 @@ const ProductDetail = () => {
             <div className="h-10 bg-white"></div>
           )}
           {products.length > 1 && (
-            <div className="grid grid-cols-5 gap-2 py-8">
+           <div className={selectedCoupon?"mt-8":"py-8"}>
+
+             <div className="grid grid-cols-5 gap-2 ">
               {products.map((product, idx) => (
                 <div
                   key={product.id}
@@ -448,6 +463,26 @@ const ProductDetail = () => {
                 </div>
               ))}
             </div>
+           </div>
+          )}
+          {selectedCoupon && (
+            <div className="  py-4">
+             <div className=" py-4">
+               <p className="inter">Apply Coupon</p>
+                            <p className="text-xs text-red-600 ">
+                                Please note: The voucher is non-refundable when you cancel the order
+                                <span className="text-red-600">*</span>
+                              </p>
+             </div>
+              <div>
+              <VoucherCard
+        coupon={selectedCoupon}
+        isSelected={true}
+        onSelect={setSelectedCoupon}  // Hàm xử lý khi chọn coupon
+        selectedProduct={selectedProduct}  // Truyền sản phẩm hiện tại
+      />              </div>
+           
+              </div>
           )}
 
 
@@ -494,6 +529,7 @@ const ProductDetail = () => {
                     width="24px"
                     height="24px"
                     fill="none"
+                    className={`${attemptedAdd && !selectedSize ? "text-[#D30005]" : ""}`}
                   >
                     <path
                       stroke="currentColor"
@@ -506,23 +542,20 @@ const ProductDetail = () => {
                       d="M15.79 5.599l2.652 2.65-2.652 2.653M8.21 5.599l-2.652 2.65 2.652 2.653M17.25 19v-2.5M12 19v-2.5M6.75 19v-2.5"
                     ></path>
                   </svg>
-                  <p>Size Guide</p>
+                  <p className={`${attemptedAdd && !selectedSize ? "text-[#D30005]" : ""}`}>Size Guide</p>
                 </div>
               </div>
 
               <div
-                className={`grid ${selectedProduct.class === "Shoes" || selectedProduct.class === "Slides"
-                    ? "grid-cols-4"
-                    : "grid-cols-5"
-                  } gap-2 py-4 inter ${attemptedAdd && !selectedSize ? "border-[#D30005] border rounded-lg" : ""
-                  }`}
-              >
-                {(selectedProduct.class === "Shoes" || selectedProduct.class === "Slides"
-                  ? [31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45]
-                  : ["XS", "S", "M", "L", "XL"]
-                ).map((size) => {
-                  const isAvailable = selectedProduct.sizes.includes(String(size));
-                  const isSelected = selectedSize === size;
+  className={`grid grid-cols-4 gap-2 py-4 inter ${
+    attemptedAdd && !selectedSize ? "border-[#D30005] border rounded-lg" : ""
+  }`}
+>
+  {[
+    31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45
+  ].map((size) => {
+    const isAvailable = selectedProduct.sizes.includes(String(size));
+    const isSelected = selectedSize === size;
 
                   return (
                     <button

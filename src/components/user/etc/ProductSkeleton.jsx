@@ -14,7 +14,7 @@ const ProductSkeleton = () => {
   }, []);
 
   return (
-    <div className="flex justify-center items-center min-h-screen">
+    <div className="flex justify-center items-center min-h-100">
       {/* Spinner với thời gian quay lâu hơn */}
       <div
         className="w-13 h-13 border-3 border-t-transparent border-black rounded-full"
