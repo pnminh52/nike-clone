@@ -35,6 +35,7 @@ const VoucherChooseTab = ({
     setSelectedCoupon(coupon);
     onClose();
   };
+  
 
   const filteredCoupons = applicableCoupons.filter((coupon) =>
     coupon.code.toLowerCase().includes(searchText.toLowerCase())
@@ -68,7 +69,13 @@ const VoucherChooseTab = ({
         </div>
 
         {showExchangePage ? (
-          <ExchangeVoucher onBack={() => setShowExchangePage(false)} user={user} />
+         <ExchangeVoucher
+         onBack={() => setShowExchangePage(false)}
+         user={user}
+         setSelectedCoupon={setSelectedCoupon} // Truyền lại để cập nhật coupon đã chọn
+       />
+       
+
         ) : (
           <>
             {/* Thanh tìm kiếm */}
