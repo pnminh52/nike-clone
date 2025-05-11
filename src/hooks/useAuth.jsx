@@ -52,7 +52,30 @@ export const AuthProvider = ({ children }) => {
       const res = await axios.post("http://localhost:3000/users", {
         ...formData,
         cart: [],
-        orders: []
+        orders: [],
+        point: 1000,
+        totalOrder: 0,
+        dateOfBirth:"",
+        customerType: "New",
+        role: "User",
+        avatar: "",
+        createdAt: new Date().toISOString(),
+        coupons: [
+          {
+            id: "c1",
+            category: "new-user",
+            name: "50K Voucher",
+            image: "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/b4f20f67-6cd6-4f8e-8e1c-41ccf6d9de08/GiftCard.png",
+            description: "Get 50K off on your first order",
+            discountType: "amount",
+            value: 50000,
+            applicableProductNames: "Nike Zoom Fly 6",
+            stock: 5,
+            code: "WELCOME50",
+            expiryDate: "2025-06-30",
+            pointToExchange: 1000
+          }
+        ]
       });
   
       setUser(res.data);
@@ -65,6 +88,7 @@ export const AuthProvider = ({ children }) => {
       return false;
     }
   };
+  
   
   
 

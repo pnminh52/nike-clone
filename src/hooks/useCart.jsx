@@ -106,56 +106,65 @@ export const useCart = () => {
       const user = await res.json();
   
       const currentOrders = user.orders || [];
-  
       const newOrder = {
         id: Date.now(),
         items: cart,
         date: new Date().toISOString(),
         status: "Pending"
       };
-  
       const updatedOrders = [...currentOrders, newOrder];
-      const newTotalOrder=(user.totalOrder || 0) + 1
-
-      let newCustomerType= "New";
+  
+      // Cập nhật tổng số đơn hàng
+      const newTotalOrder = (user.totalOrder || 0) + 1;
+  
+      // Xác định loại khách hàng
+      let newCustomerType = "New";
       if (newTotalOrder >= 100) {
-        newCustomerType = "vip";
+        newCustomerType = "Vip";
       } else if (newTotalOrder >= 50) {
-        newCustomerType = "regular";
+        newCustomerType = "Regular";
       } else if (newTotalOrder >= 1) {
-        newCustomerType = "standard";
+        newCustomerType = "Standard";
       }
   
-      // Cập nhật server
+      // Tính tổng điểm thưởng dựa trên từng sản phẩm trong giỏ hàng
+      const totalGiftPoint = cart.reduce((total, item) => total + (item.giftPoint || 0), 0);
+  
+      // Cập nhật điểm vào trường 'point' của người dùng
+      const updatedPoint = user.point + totalGiftPoint; // Cộng điểm vào trường 'point'
+      const updatedUser = {
+        ...user,
+        cart: [],
+        orders: updatedOrders,
+        totalOrder: newTotalOrder,
+        customerType: newCustomerType,
+        point: updatedPoint // Cập nhật điểm vào 'point'
+      };
+  
+      // Cập nhật thông tin người dùng trên server
       await fetch(`http://localhost:3000/users/${userId}`, {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({
-          cart: [],
-          orders: updatedOrders,
-          totalOrder: newTotalOrder,
-          customerType: newCustomerType
-        }),
+        body: JSON.stringify(updatedUser),
       });
   
       // Cập nhật context Auth
-      updateUser({
-        ...user,
-        cart: [],
-        orders: updatedOrders,
-        totalOrder: newTotalOrder,
-        customerType: newCustomerType
-      });
+      updateUser(updatedUser);
   
       setCart([]);
       successToast("✅ Thanh toán thành công!");
+  
+      // Thông báo cộng điểm
+      successToast(`🎉 Bạn đã được cộng thêm ${totalGiftPoint} điểm thưởng! Tổng điểm hiện tại: ${updatedPoint}`);
     } catch (error) {
       console.error("Checkout error:", error);
       errorToast("❌ Lỗi khi thanh toán. Vui lòng thử lại.");
     }
   };
+
+  
   
   
   

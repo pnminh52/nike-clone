@@ -144,6 +144,7 @@
       "id": "12hb",
       "position": 1,
       "name": "Nike Zoom Fly 6",
+      "giftPoint": 300,
       "stock": 100,
       "isDefault": "true",
       "class": "Shoes",
@@ -360,6 +361,7 @@
     {
       "id": "dhf4",
       "name": "Nike Zoom Fly 6",
+      "giftPoint": 300,
       "stock": 100,
       "class": "Shoes",
       "type": "Road Racing Shoes",
@@ -451,6 +453,7 @@
       "name": "Nike Zoom Fly 6",
       "stock": 100,
       "class": "Shoes",
+      "giftPoint": 300,
       "type": "Road Racing Shoes",
       "price": "5500000",
       "price_sale": "4999000",
@@ -975,6 +978,7 @@
   ],
   "users": [
     {
+      "avatar": "",
       "id": "631b",
       "username": "Elyz",
       "firstname": "Phạm",
@@ -988,8 +992,8 @@
       "cart": [],
       "orders": [],
       "wishlist": [],
-      "totalOrder": 0,
-      "customerType": "new",
+      "totalOrder": 2,
+      "customerType": "standard",
       "coupons": [
         {
           "id": "c1",
@@ -1000,27 +1004,49 @@
           "discountType": "amount",
           "value": 50000,
           "applicableProductNames": "Nike Zoom Fly 6",
-          "stock": 4,
+          "stock": 5,
           "code": "WELCOME50",
           "expiryDate": "2025-06-30",
           "pointToExchange": 1000
-        },
-        {
-          "id": "c2",
-          "category": "event",
-          "name": "10% Voucher",
-          "image": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/cee4b3b4-ef04-4348-966b-a857c9a185fc/GiftCard.png",
-          "description": "Get 10% off on your first order",
-          "discountType": "percent",
-          "value": 10,
-          "applicableProductNames": "Nike Zoom Fly 6",
-          "stock": 1,
-          "code": "EVENT10",
-          "expiryDate": "2025-07-15",
-          "pointToExchange": 800
         }
       ],
-      "point": 6200
+      "point": 3000
+    },
+    {
+      "id": "25c6",
+      "firstname": "new user",
+      "lastname": "qưqwqwqw",
+      "phone": "0934557882",
+      "address": "Hà Nam",
+      "email": "fgfgfgfgfg@gmail.com",
+      "password": "111111AaAAA",
+      "country": "Vietnam",
+      "extraAddresses": [],
+      "cart": [],
+      "orders": [],
+      "point": 1000,
+      "totalOrder": 0,
+      "dateOfBirth": "2004-12-2",
+      "customerType": "New",
+      "role": "User",
+      "avatar": "",
+      "createdAt": "2025-05-11T17:25:32.190Z",
+      "coupons": [
+        {
+          "id": "c1",
+          "category": "new-user",
+          "name": "50K Voucher",
+          "image": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/b4f20f67-6cd6-4f8e-8e1c-41ccf6d9de08/GiftCard.png",
+          "description": "Get 50K off on your first order",
+          "discountType": "amount",
+          "value": 50000,
+          "applicableProductNames": "Nike Zoom Fly 6",
+          "stock": 5,
+          "code": "WELCOME50",
+          "expiryDate": "2025-06-30",
+          "pointToExchange": 1000
+        }
+      ]
     }
   ],
   "coupons": [

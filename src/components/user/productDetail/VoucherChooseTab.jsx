@@ -112,7 +112,7 @@ const VoucherChooseTab = ({
                   className='text-blue-600 text-sm underline cursor-pointer'
                   onClick={() => setShowExchangePage(true)}  // Show exchange page
                 >
-                  Đổi voucher ngay!
+                  Exchange discount code!
                 </p>
         
             </div>

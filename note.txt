@@ -2,3 +2,6 @@ Slider list các sản phẩm khác đnag bị lỗi chưa trỏ đúng id biế
 Phần comment chưa có rating số sao trung bình
 Trường mô tả của sản phẩm còn quá ít thông tin
 Phần fee devilery and return không được áp cứng dữ liệu
+
+11/5/2025: Bổ sung thêm các trường khi user tạo account, trang setting, account detail, thay đổi email pasword sdt, ngày sinh, xóa accout có confirm 
+

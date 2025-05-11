@@ -21,6 +21,7 @@ import Wishlist from "./pages/user/Wishlist";
 import Profile from "./pages/user/Profile";
 import Order from "./pages/user/Order";
 import SearchPage from "./pages/user/SearchPage";
+import Setting from "./pages/user/Setting";
 const App = () => {
   return (
     <>
@@ -49,6 +50,8 @@ const App = () => {
             <Route path="profile/:id" element={<Profile />} />
             <Route path="orders" element={<Order/>}/>
             <Route path="search/:keyword" element={<SearchPage />} />
+            <Route path="setting/:tab?" element={<Setting/>}/>
+
             </Route>
 
 

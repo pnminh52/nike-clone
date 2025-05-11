@@ -34,7 +34,13 @@ const Header = () => {
           <div className="flex gap-2 items-center text-xs font-thin">
             <p className="cursor-pointer inter">Find a Store</p> |
             <p className="cursor-pointer inter">Help</p> |
-            <p className="cursor-pointer inter">Join Us</p> |{/* User menu */}
+            {!user && (
+              <div className="flex gap-2">
+                  <Link to="/register">
+                <p className="cursor-pointer inter">Join Us</p>
+              </Link>|{/* User menu */}
+              </div>
+            )}
             <div
               className="relative"
               onMouseEnter={() => setHover1(true)}
