@@ -198,7 +198,7 @@ const Login = () => {
       <div className="text-right">
   <button
     type="submit"
-    className="bg-black inter rounded-full text-white px-7 py-3 mt-7 text-lg"
+    className="bg-black cursor-pointer inter rounded-full text-white px-7 py-3 mt-7 text-lg"
   >
     {step === 1 ? 'Continue' : 'Sign in'}
   </button>
