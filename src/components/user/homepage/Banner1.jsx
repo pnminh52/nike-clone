@@ -11,8 +11,8 @@ const Banner1 = () => {
   const paginationRef = useRef(null);
   const [isReady, setIsReady] = useState(false);
   const [currentVideo, setCurrentVideo] = useState(0);
-  const videoRef1 = useRef(null); // video 1
-  const videoRef2 = useRef(null); // video 2
+  const videoRef1 = useRef(null);
+  const videoRef2 = useRef(null);
   const [isPlaying, setIsPlaying] = useState(true);
 
 
@@ -20,27 +20,6 @@ const Banner1 = () => {
     setCurrentVideo((prev) => (prev === 0 ? 1 : 0));
     setIsPlaying(true);
   };
-  
-
-  const handleStopPlayToggle = () => {
-    if (videoRef1.current && !videoRef1.current.paused) {
-      videoRef1.current.pause();
-      setIsPlaying(false);
-    } else if (videoRef1.current && videoRef1.current.paused) {
-      videoRef1.current.play();
-      setIsPlaying(true);
-    }
-  
-    if (videoRef2.current && !videoRef2.current.paused) {
-      videoRef2.current.pause();
-      setIsPlaying(false);
-    } else if (videoRef2.current && videoRef2.current.paused) {
-      videoRef2.current.play();
-      setIsPlaying(true);
-    }
-  };
-  
-
   useEffect(() => {
     setIsReady(true);
   }, []);
@@ -131,46 +110,7 @@ const Banner1 = () => {
           </svg>
         </button>
 
-        {/* Nút dừng/phát lại */}
-        <button
-  onClick={handleStopPlayToggle}
-  className="cursor-pointer bg-none  bg-[#E5E5E5] hover:bg-white  flex rounded-full h-10 w-10 justify-center items-center text-center text-black shadow relative"
->
-  {isPlaying ? (
-    // Icon "Pause" (hai thanh dọc)
-    <svg
-      viewBox="0 0 24 24"
-      width="24px"
-      height="24px"
-      fill="currentColor"
-    >
-      <rect x="6" y="5" width="4" height="14" rx="1" />
-      <rect x="14" y="5" width="4" height="14" rx="1" />
-    </svg>
-  ) : (
-    // Icon "Play" (tam giác ▶️)
-    <svg
-      viewBox="0 0 24 24"
-      width="24px"
-      height="24px"
-      fill="#E5E5E5"
-    >
-      <path
-        fill="currentColor"
-        fillRule="evenodd"
-        d="M19.314 11.35L6.367 3.877a.75.75 0 00-1.125.65v14.949a.75.75 0 001.125.649l12.947-7.474a.75.75 0 000-1.3z"
-        clipRule="evenodd"
-      />
-    </svg>
-  )}
-</button>
-
       </div>
-
-      {/* <div
-        ref={paginationRef}
-        className="swiper-pagination absolute bottom-10 left-1/2 transform -translate-x-1/2 flex gap-2"
-      ></div> */}
     </div>
   );
 };

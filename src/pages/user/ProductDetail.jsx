@@ -75,22 +75,22 @@ const ProductDetail = () => {
     }
   }, [selectedProduct]);
 
-  const [isLoading, setIsLoading] = useState(true); // State để kiểm tra xem sản phẩm đã tải hay chưa
+  const [isLoading, setIsLoading] = useState(true); 
 
   useEffect(() => {
     if (!products || products.length === 0) return;
     setTimeout(() => {
-      setIsLoading(false); // Set trạng thái isLoading = false sau 3 giây
-    }, 2000); // 3 giây để spinner quay
+      setIsLoading(false); 
+    }, 2000); 
   }, [products]);
 
   const handleAddComment = async (commentData) => {
     if (!selectedProduct?.id) return;
 
-    // Kiểm tra xem người dùng đã đăng nhập chưa
+
     if (!user?.id) {
       window.alert("Bạn chưa đăng nhập!");
-      return; // Dừng lại nếu người dùng chưa đăng nhập
+      return; 
     }
 
     const userName =
@@ -139,9 +139,7 @@ const ProductDetail = () => {
 
   if (isLoading) {
     return (
-      <div className="text-center p-4">
         <ProductSkeleton />
-      </div>
     );
   }
 
