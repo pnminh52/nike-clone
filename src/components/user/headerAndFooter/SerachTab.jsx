@@ -4,7 +4,8 @@ import { useState, useEffect } from "react";
 
 const SearchTab = ({ onClose }) => {
   const [keyword, setKeyword] = useState("");
-  const [recentSearches, setRecentSearches] = useState([]); // State để lưu các từ khóa tìm kiếm gần đây
+  const [recentSearches, setRecentSearches] = useState([]); 
+  const [showSearchTab, setShowSearchTab] = useState(true); 
   const navigate = useNavigate();
   const searchKey = [
     "air force 1",
@@ -20,44 +21,38 @@ const SearchTab = ({ onClose }) => {
   ];
 
   useEffect(() => {
-    // Lấy lịch sử tìm kiếm từ localStorage khi modal được mở
     const storedSearches = JSON.parse(localStorage.getItem("recentSearches")) || [];
     setRecentSearches(storedSearches);
   }, []);
 
   const handleKeyDown = (e) => {
     if (e.key === "Enter" && keyword.trim() !== "") {
-      // Cập nhật danh sách tìm kiếm gần đây
       setRecentSearches((prev) => {
         const updatedSearches = [keyword.trim(), ...prev];
         const limitedSearches = updatedSearches.slice(0, 5);
 
-        // Lưu lại lịch sử tìm kiếm vào localStorage
         localStorage.setItem("recentSearches", JSON.stringify(limitedSearches));
         return limitedSearches;
       });
 
-      // Chuyển hướng và chỉ đóng modal sau khi navigate xong
       navigate(`/search/${encodeURIComponent(keyword.trim())}`);
-
-      // Để modal không đóng ngay lập tức, chỉ gọi onClose sau khi navigate xong
       setTimeout(() => {
-        onClose();  // Gọi onClose để đóng modal sau một khoảng thời gian nhỏ
-      }, 500);  // Chờ khoảng thời gian đủ để thực hiện điều hướng (500ms)
+        onClose();  
+      }, 500); 
     }
   };
 
   const handleClearSearch = (searchTerm) => {
-    // Xóa từ khóa khỏi lịch sử và lưu lại vào localStorage
+    
     const updatedSearches = recentSearches.filter((item) => item !== searchTerm);
     setRecentSearches(updatedSearches);
-    localStorage.setItem("recentSearches", JSON.stringify(updatedSearches)); // Lưu lại lịch sử vào localStorage
+    localStorage.setItem("recentSearches", JSON.stringify(updatedSearches)); 
   };
 
   const handleSearchFromKeyword = (searchTerm) => {
-    setKeyword(searchTerm); // Cập nhật keyword để hiển thị trong ô tìm kiếm
-    navigate(`/search/${encodeURIComponent(searchTerm)}`); // Điều hướng đến trang tìm kiếm với từ khóa
-    onClose(); // Đóng modal sau khi thực hiện tìm kiếm
+    setKeyword(searchTerm); 
+    navigate(`/search/${encodeURIComponent(searchTerm)}`); 
+    onClose(); 
   };
 
   return (
@@ -65,8 +60,9 @@ const SearchTab = ({ onClose }) => {
       {/* Overlay mờ */}
       <div className="fixed inset-0 bg-black/40 z-40"></div>
 
-      {/* Nội dung tìm kiếm */}
-      <div className="fixed top-0 left-0 w-full bg-white z-50 px-10 max-w-screen-2xl">
+      <div
+        className={`fixed top-0 left-0 w-full bg-white z-50 px-10 max-w-screen-2xl transform transition duration-300 ease-in-out ${showSearchTab ? "translate-y-0" : "-translate-y-full"}`}
+      >
         <div className="flex items-center justify-between w-full py-0">
           {/* Icon quay lại */}
           <div className="flex justify-start">
@@ -119,7 +115,6 @@ const SearchTab = ({ onClose }) => {
           </div>
         </div>
 
-        {/* Các phần còn lại của nội dung tìm kiếm */}
         <div className="max-w-screen-md justify-center mx-auto">
           <p className="text-medium text-gray-500 py-4">Popular Search Terms</p>
           <div className={`flex gap-4 flex-wrap ${!recentSearches.length?"mb-15":""}`}>
