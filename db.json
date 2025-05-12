@@ -1,11 +1,554 @@
 {
   "products": [
+  
+    {
+      "id": "7ey27e",
+      "position":1,
+      "isDefault":"true",
+      "name": "Nike Air Max Koko",
+      "height":"Low Top",
+      "shoesFor":"Sandal",
+      "stock": 50,
+      "class": "Sandal",
+      "brand":"Nike",
+      "features":"Side vents",
+      "giftPoint": 300,
+      "type": "Women's Sandal",
+      "price": "2929000",
+      "price_sale": "2800000",
+      "des": "Heat up the streets in the Nike Air Max Koko Sandal. Designed for women, this pinnacle platform height sandal adds a splash of colourful Air in the heel. The thick, layered foam midsole provides a smooth and flexible ride. Premium details on the upper add texture and dimension to elevate your look.",
+      "img": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/beedbc3a-9343-4b69-ada4-d42a144bd667/WMNS+AIR+MAX+KOKO+SANDAL.png",
+      "page": "New & Featured",
+      "category": "New & Upcoming Drops",
+      "status": "Just In",
+      "customer": "Women",
+      "sizes": [
+        "31",
+        "32",
+        "33",
+        "34",
+        "37",
+        "35",
+        "36",
+        "38"
+
+      ],
+      "gender": "Women",
+      "color": [
+        "Sail",
+        "Black"
+
+       
+      ],
+      "style": "CI8798-102",
+      "country": "Vietnam",
+      "additionalImages": [
+        "https://shortformvideo.nike.com/a/videos/d1a9fdf0-59cb-4602-9d52-7c1520ed843a/video.mp4",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/7c175861-58fb-4bca-9f41-52038884f17d/WMNS+AIR+MAX+KOKO+SANDAL.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/10a844e6-d0dd-48c2-8b31-a628e8503750/WMNS+AIR+MAX+KOKO+SANDAL.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/360abf08-4bd6-4cb3-8a6a-e7cedc36ff48/WMNS+AIR+MAX+KOKO+SANDAL.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/02564fb7-a98a-4dc2-957e-50782cc38bc7/WMNS+AIR+MAX+KOKO+SANDAL.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/b8fded87-fc17-43ac-be4c-ff24a833aab7/WMNS+AIR+MAX+KOKO+SANDAL.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/eab743a0-d15d-42d5-bfa6-3b4ff356ec4e/WMNS+AIR+MAX+KOKO+SANDAL.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/d0596b4b-3b75-4c48-8a10-ca251866bbdf/WMNS+AIR+MAX+KOKO+SANDAL.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/cab5f997-485c-428a-ad4f-49f0d2cd28fa/WMNS+AIR+MAX+KOKO+SANDAL.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/4338c7cb-a534-4b34-a7bf-a8f4f8db51d9/WMNS+AIR+MAX+KOKO+SANDAL.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/deea3708-04f5-41b7-8a59-e07a2d866d81/WMNS+AIR+MAX+KOKO+SANDAL.png"
+
+      ],
+      "featured": [
+        {
+          "title": "NEXT-LEVEL FASHION AND INNOVATION.",
+          "content": "Heat up the streets in the Nike Air Max Koko Sandal. Designed for women, this pinnacle platform height sandal adds a splash of colourful Air in the heel. The thick, layered foam midsole provides a smooth and flexible ride. Premium details on the upper add texture and dimension to elevate your look."
+        }
+      ],
+      "moreBenefit": [
+        "The Nike Air cushioning in the heel feels comfortable and adds coveted Air Max style.",
+        "The layered midsole feels soft and delivers underfoot cushioning while its raised height adds a sporty, summertime look.",
+        "The speed lacing system adds a playful look while making it easy to put them on and take them off.",
+        "Textile upper feels soft and comfortable with or without socks."
+      ],
+      "notes": [
+      ]
+    },
+    {
+      "id": "t4tgegv",
+      "name": "Nike Air Max Koko",
+      "height":"Low Top",
+      "shoesFor":"Sandal",
+      "stock": 50,
+      "class": "Sandal",
+      "brand":"Nike",
+      "features":"Side vents",
+      "giftPoint": 300,
+      "type": "Women's Sandal",
+      "price": "2929000",
+      "price_sale": "2800000",
+      "des": "Heat up the streets in the Nike Air Max Koko Sandal. Designed for women, this pinnacle platform height sandal adds a splash of colourful Air in the heel. The thick, layered foam midsole provides a smooth and flexible ride. Premium details on the upper add texture and dimension to elevate your look.",
+      "img": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/cb4b240a-e7b4-48a9-bb36-f2bbdf656d17/WMNS+AIR+MAX+KOKO+SANDAL.png",
+      "page": "New & Featured",
+      "category": "New & Upcoming Drops",
+      "status": "Just In",
+      "customer": "Women",
+      "sizes": [
+        "31",
+        "32",
+        "33",
+        "34",
+        "35",
+        "36"
+
+      ],
+      "gender": "Women",
+      "color": [
+        "Barely Grape",
+        "Lilac Bloom"
+
+       
+      ],
+      "style": "CI8798-502",
+      "country": "Vietnam",
+      "additionalImages": [
+        "https://shortformvideo.nike.com/a/videos/12585229-dede-4cd4-8e70-88fe321a0082/video.mp4",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/16945374-09b4-42df-bc14-ac4c13c48e60/WMNS+AIR+MAX+KOKO+SANDAL.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/13699d24-c4ca-40df-9607-0d8155c9475f/WMNS+AIR+MAX+KOKO+SANDAL.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/31b1ce4b-b01a-490e-a3d1-af18e42c55c4/WMNS+AIR+MAX+KOKO+SANDAL.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/2c07efdf-725c-401a-99da-b197ce655232/WMNS+AIR+MAX+KOKO+SANDAL.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/38e6408d-d8f5-4aed-816a-093fbe241c2e/WMNS+AIR+MAX+KOKO+SANDAL.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/c5a2233f-c9bd-4e22-b90c-dee2dae119f9/WMNS+AIR+MAX+KOKO+SANDAL.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/d881c994-08c5-4a92-b91a-77e1cdd085fb/WMNS+AIR+MAX+KOKO+SANDAL.png"
+
+      ],
+      "featured": [
+        {
+          "title": "NEXT-LEVEL FASHION AND INNOVATION.",
+          "content": "Heat up the streets in the Nike Air Max Koko Sandal. Designed for women, this pinnacle platform height sandal adds a splash of colourful Air in the heel. The thick, layered foam midsole provides a smooth and flexible ride. Premium details on the upper add texture and dimension to elevate your look."
+        }
+      ],
+      "moreBenefit": [
+        "The Nike Air cushioning in the heel feels comfortable and adds coveted Air Max style.",
+        "The layered midsole feels soft and delivers underfoot cushioning while its raised height adds a sporty, summertime look.",
+        "The speed lacing system adds a playful look while making it easy to put them on and take them off.",
+        "Textile upper feels soft and comfortable with or without socks."
+      ],
+      "notes": [
+      ]
+    },
+    {
+      "id": "djsi87",
+      "position":1,
+      "isDefault":"true",
+      "name": "Jordan Why Not Zer0.3 PF",
+      "height":"High Top",
+      "shoesFor":"Jordan",
+      "stock": 50,
+      "class": "Shoes",
+      "brand":"Jordan",
+      "features":"Side vents",
+      "giftPoint": 300,
+      "type": "Men's Basketball Shoe",
+      "price": "3829000",
+      "price_sale": "3058000",
+      "des": "One of the game's fiercest competitors, triple-double dynamo Russell Westbrook has the motor, muscle and mentality to match his fearlessness—with the stats to back it up. Built to hold up on outdoor courts, the Jordan 'Why Not?' Zer0.3 PF is fine-tuned for players like Russ, who beat opponents with linear speed and aggressiveness.",
+      "img": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/8d71df27-5fbf-44ac-9019-af8bc8efb773/JORDAN+WHY+NOT+ZER0.3+PF.png",
+      "page": "New & Featured",
+      "category": "New & Upcoming Drops",
+      "status": "Just In",
+      "customer": "Men",
+      "sizes": [
+        "31",
+        "32",
+        "33",
+        "34",
+        "40",
+        "37",
+        "35",
+        "36",
+        "38",
+        "39",
+        "41",
+        "42",
+        "43",
+        "44",
+        "45"
+      ],
+      "gender": "Men",
+      "color": [
+        "Parachute Beige",
+        "Fossil",
+        "Black",
+        "Rage Green"
+
+       
+      ],
+      "style": "CD3002-200",
+      "country": "Vietnam",
+      "additionalImages": [
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/34d007ec-f065-434e-bd51-1d62e6e0d7c1/JORDAN+WHY+NOT+ZER0.3+PF.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/b0a43ba9-13ab-4cca-ae61-c23fb88c5fcf/JORDAN+WHY+NOT+ZER0.3+PF.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/5c00f190-595b-44cd-856d-80745b05ca94/JORDAN+WHY+NOT+ZER0.3+PF.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/56afdfa2-bb23-4ac3-91ef-ae30e2dddf04/JORDAN+WHY+NOT+ZER0.3+PF.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/3b61822b-42fb-4c49-81c6-ff55bfc4a293/JORDAN+WHY+NOT+ZER0.3+PF.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/a6b2ecbf-7be0-4f02-9607-d00cbe4b07c7/JORDAN+WHY+NOT+ZER0.3+PF.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/9f0bc01d-9698-4395-b56a-8fe265590843/JORDAN+WHY+NOT+ZER0.3+PF.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/9757440a-6b66-4824-9edd-78a553267805/JORDAN+WHY+NOT+ZER0.3+PF.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/426500f6-ace1-4ee9-8b57-ebaecda41908/JORDAN+WHY+NOT+ZER0.3+PF.png"
+      ],
+      "featured": [
+        {
+          "title": "Responsive for Russ",
+          "content": "Designed specifically for Russ, the large Air Zoom Turbo unit in the front of the shoe is curved to follow the foot's natural shape. As he charges down the court, the cushioning engages at different points for a continuously responsive sensation."
+        },
+        {
+          "title": "Locked In and Stable",
+          "content": "A clear, adjustable midfoot strap fastens in one fluid motion to help keep you stable and locked in over the footbed."
+        },
+        {
+          "title": "Signature Details",
+          "content": "The split outsole, jagged design lines and clashing mix of materials are distinct to Russ' signature line. Other embellishments include light-shifting accents and an exposed factory size tag visible on the bottom of the shoe."
+        },
+        {
+          "title": "Keep Chaos Under Control",
+          "content": "The rubber outsole is split into 2 sections to help reduce weight. Multi-directional traction helps you stay in control while unleashing chaos on the court."
+        }
+      ],
+      "moreBenefit": [
+        "The dual-layered textile material is lightweight and breathable, with areas of open mesh to expose underlayers.",
+        "Rigid, moulded plastic piece between the 2 outsole sections provides structure and support."
+      ],
+      "notes": [
+        "Reinforced toe",
+        "Plush, padded collar",
+        "Colour-shifting details",
+        "External factory size tag",
+        "Durable rubber outsole"
+      ]
+    },
+    {
+      "id": "k59t",
+      "position":1,
+      "name": "Jordan Heir Series PF Bloodline",
+      "isDefault":"true",
+      "height":"Mid Top",
+      "shoesFor":"Jordan",
+      "stock": 50,
+      "class": "Shoes",
+      "brand":"Jordan",
+      "features":"Side vents",
+      "giftPoint": 300,
+      "type": "Basketball Shoes",
+      "price": "3239000",
+      "price_sale": "3000000",
+      "des": "Looking to ignite your competitive edge? Cue the Jordan Heir. Crafted with insights from women basketball players, these shoes are all about helping you play shifty and stay low to the ground. A drop-in midsole helps give you extra mobility, while a built-in cage provides a fit that contours to your foot for added support as you move from side to side. So run and cut in confidence. You're the game's main character, after all.",
+      "img": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/cd574ae5-e1e7-4695-acbb-46ca9a48ef51/JORDAN+HEIR+SERIES+PF.png",
+      "page": "New & Featured",
+      "category": "New & Upcoming Drops",
+      "status": "Just In",
+      "customer": "Men",
+      "sizes": [
+        "31",
+        "32",
+        "33",
+        "34",
+        "40",
+        "37",
+        "35",
+        "36",
+        "38",
+        "39",
+        "41",
+        "42",
+        "43"
+      ],
+      "gender": "Men",
+      "color": [
+        "Sail",
+        "Volt",
+        "Black"
+      ],
+      "style": "FQ3859-107",
+      "country": "Vietnam",
+      "additionalImages": [
+        "https://shortformvideo.nike.com/a/videos/372e0fa7-3dfb-462d-916b-a339a915054e/video.mp4",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/768a256d-9d54-417b-bf4b-273c57e78fa8/JORDAN+HEIR+SERIES+PF.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/b158c400-113f-406c-a8a9-9c634cb895e1/JORDAN+HEIR+SERIES+PF.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/87e4a86f-627f-49a7-a23e-8ca04c773f99/JORDAN+HEIR+SERIES+PF.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/afeee5ca-6757-4a9c-8f6d-4c0e0974e6d1/JORDAN+HEIR+SERIES+PF.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/cfd9f0c8-3af9-4d95-a6e6-1bfcc13d965a/JORDAN+HEIR+SERIES+PF.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/882ea26d-edc9-47b4-96ee-16cabee65607/JORDAN+HEIR+SERIES+PF.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/68caf950-44e3-4827-85c7-73f7505ebfb9/JORDAN+HEIR+SERIES+PF.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/891fa088-06ad-4b24-bdf6-8536326a2bef/JORDAN+HEIR+SERIES+PF.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/40621ce8-23a9-4bfd-a205-624268a84216/JORDAN+HEIR+SERIES+PF.png"
+      ],
+      "featured": [
+        {
+          "title": "Contouring cage",
+          "content": "A built-in cage system contours to your foot to help give you the supportive fit you need when cutting across the court."
+        },
+        {
+          "title": "Drop in and work",
+          "content": "A drop-in Cushlon 3.0 foam midsole puts lightweight and responsive cushioning directly underfoot, helping with on-court mobility. It's also why the Heir is lower to the ground than any other performance basketball shoe in our collection."
+        },
+        {
+          "title": "Get a grip",
+          "content": "Rubber outsole with herringbone tread pattern helps give you the sticky traction you need to stop in an instant and shift directions."
+        }
+      ],
+      "moreBenefit": [
+        "Lightweight textiles in the upper help keep things breathable and comfortable.",
+        "Synthetic leather in the upper helps add durability."
+      ],
+      "notes":[
+        "Pull tab on heel",
+        "Rubber outsole",
+         "The PF edition is designed with a wider fit and optimised for play on outdoor courts."
+      ]
+     
+    },
+    {
+      "id": "sdsdw",
+      "name": "Jordan Heir Series PF Bloodline",
+      "height":"Mid Top",
+      "shoesFor":"Jordan",
+      "stock": 100,
+      "class": "Shoes",
+      "brand":"Jordan",
+      "features":"Side vents",
+      "giftPoint": 300,
+      "type": "Basketball Shoes",
+      "price": "3239000",
+      "price_sale": "3000000",
+      "des": "Looking to ignite your competitive edge? Cue the Jordan Heir. Crafted with insights from women basketball players, these shoes are all about helping you play shifty and stay low to the ground. A drop-in midsole helps give you extra mobility, while a built-in cage provides a fit that contours to your foot for added support as you move from side to side. So run and cut in confidence. You're the game's main character, after all.",
+      "img": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/3e386002-c907-4e4f-af18-dcc4b7152e48/JORDAN+HEIR+SERIES+PF.png",
+      "page": "New & Featured",
+      "category": "New & Upcoming Drops",
+      "status": "Just In",
+      "customer": "Men",
+      "sizes": [
+        "31",
+        "32",
+        "33",
+        "34",
+        "40",
+        "37",
+        "35",
+        "36",
+        "38",
+        "39",
+        "41",
+        "42",
+        "43"
+      ],
+      "gender": "Men",
+      "color": [
+        "Off-White",
+        "Laser",
+        "Orange",
+        "Ocean Cube",
+        "Miracle Teal"
+       
+      ],
+      "style": "FQ3859-101",
+      "country": "Vietnam",
+      "additionalImages": [
+        "https://shortformvideo.nike.com/a/videos/a7efafb6-2342-466b-b5cc-668e4b5c5ea8/video.mp4",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/da42af1d-0bca-488a-8d89-ea1a153ffa0a/JORDAN+HEIR+SERIES+PF.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/9c4ad395-c8ee-4a4a-b7bc-4b3a80b24554/JORDAN+HEIR+SERIES+PF.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/9e3e2b19-4e40-4667-a687-ae18d4e166e4/JORDAN+HEIR+SERIES+PF.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/726d11c6-641b-4e66-a68a-985f8e7ceee2/JORDAN+HEIR+SERIES+PF.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/39a74aec-7eaf-4fb3-8169-769828b6be73/JORDAN+HEIR+SERIES+PF.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/beeef36b-0316-4680-89b2-5ba4af4387ce/JORDAN+HEIR+SERIES+PF.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/fd6f26d6-ac91-4d8a-8fa5-0d9a07c1baa2/JORDAN+HEIR+SERIES+PF.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/a6bfab91-bf03-4343-98d7-b049657eee6d/JORDAN+HEIR+SERIES+PF.png"
+      ],
+      "featured": [
+        {
+          "title": "Contouring cage",
+          "content": "A built-in cage system contours to your foot to help give you the supportive fit you need when cutting across the court."
+        },
+        {
+          "title": "Drop in and work",
+          "content": "A drop-in Cushlon 3.0 foam midsole puts lightweight and responsive cushioning directly underfoot, helping with on-court mobility. It's also why the Heir is lower to the ground than any other performance basketball shoe in our collection."
+        },
+        {
+          "title": "Get a grip",
+          "content": "Rubber outsole with herringbone tread pattern helps give you the sticky traction you need to stop in an instant and shift directions."
+        }
+      ],
+      "moreBenefit": [
+        "Lightweight textiles in the upper help keep things breathable and comfortable.",
+        "Synthetic leather in the upper helps add durability."
+      ],
+      "notes":[
+        "Pull tab on heel",
+        "Rubber outsole",
+         "The PF edition is designed with a wider fit and optimised for play on outdoor courts."
+      ]
+    },
+    {
+      "id": "gysdg6w",
+      "name": "Jordan Heir Series PF Bloodline",
+      "height":"Mid Top",
+      "shoesFor":"Jordan",
+      "stock": 100,
+      "class": "Shoes",
+      "brand":"Jordan",
+      "features":"Side vents",
+      "giftPoint": 300,
+      "type": "Basketball Shoes",
+      "price": "3239000",
+      "price_sale": "3000000",
+      "des": "We're celebrating Jordan heritage by updating an iconic colourway. You know the colours, but do you know the low-game tech? We're talking about a drop-in midsole for extra mobility, a built-in cage for stability and herringbone traction for grip. Stripped of bells and whistles, the Heir lets your game speak for itself.",
+      "img": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/bcef5761-224f-48d0-bc11-3f379a7254c6/JORDAN+HEIR+SERIES+PF.png",
+      "page": "New & Featured",
+      "category": "New & Upcoming Drops",
+      "status": "Just In",
+      "customer": "Men",
+      "sizes": [
+        "31",
+        "32",
+        "33",
+        "34",
+        "40",
+        "37",
+        "35",
+        "36"
+      ],
+      "gender": "Men",
+      "color": [
+        "White",
+        "Fire Red",
+        "Black"
+       
+      ],
+      "style": "FQ3859-106",
+      "country": "Vietnam",
+      "additionalImages": [
+        "https://shortformvideo.nike.com/a/videos/a7efafb6-2342-466b-b5cc-668e4b5c5ea8/video.mp4",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/6681fda8-ce66-4545-abff-017b29504589/JORDAN+HEIR+SERIES+PF.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/0928f0ae-d03b-4e3f-b94b-16f7d9ae3363/JORDAN+HEIR+SERIES+PF.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/b1aad5d0-a6c3-4c46-802e-9fa8f019e5a0/JORDAN+HEIR+SERIES+PF.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/8c8fe296-13fd-44ea-93fa-e2e538f1a2f1/JORDAN+HEIR+SERIES+PF.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/7cae1c93-7edc-4566-b929-84f1984a70f1/JORDAN+HEIR+SERIES+PF.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/3f9b4221-5a7b-431f-9fe0-0a99711b0ec4/JORDAN+HEIR+SERIES+PF.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/de1df178-dc2d-464e-a156-47caeb400e6b/JORDAN+HEIR+SERIES+PF.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/508dca39-438b-4555-83fa-715d6510fa33/JORDAN+HEIR+SERIES+PF.png"
+      ],
+      "featured": [
+        {
+          "title": "Contouring cage",
+          "content": "A built-in cage system contours to your foot to help give you the supportive fit you need when cutting across the court."
+        },
+        {
+          "title": "Drop in and work",
+          "content": "A drop-in Cushlon 3.0 foam midsole puts lightweight and responsive cushioning directly underfoot, helping with on-court mobility. It's also why the Heir is lower to the ground than any other performance basketball shoe in our collection."
+        },
+        {
+          "title": "Get a grip",
+          "content": "Rubber outsole with herringbone tread pattern helps give you the sticky traction you need to stop in an instant and shift directions."
+        }
+      ],
+      "moreBenefit": [
+        "Lightweight textiles in the upper help keep things breathable and comfortable.",
+        "Synthetic leather in the upper helps add durability."
+      ],
+      "notes":[
+        "Pull tab on heel",
+        "Rubber outsole",
+         "The PF edition is designed with a wider fit and optimised for play on outdoor courts."
+      ]
+    },
+    {
+      "id": "3423d",
+      "name": "Jordan Why Not Zer0.3 PF",
+      "height":"High Top",
+      "shoesFor":"Jordan",
+      "stock": 100,
+      "class": "Shoes",
+      "brand":"Jordan",
+      "features":"Side vents",
+      "giftPoint": 300,
+      "type": "Men's Basketball Shoe",
+      "price": "3829000",
+      "price_sale": "3058000",
+      "des": "One of the game's fiercest competitors, triple-double dynamo Russell Westbrook has the motor, muscle and mentality to match his fearlessness—with the stats to back it up. Built to hold up on outdoor courts, the Jordan 'Why Not?' Zer0.3 PF is fine-tuned for players like Russ, who beat opponents with linear speed and aggressiveness.",
+      "img": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/095f53dd-f81e-4ae0-b20c-fed3874df9b5/JORDAN+WHY+NOT+ZER0.3+PF.png",
+      "page": "New & Featured",
+      "category": "New & Upcoming Drops",
+      "status": "Just In",
+      "customer": "Men",
+      "sizes": [
+        "31",
+        "32",
+        "33",
+        "34",
+        "40",
+        "37",
+        "35",
+        "36",
+        "38",
+        "39",
+        "41",
+        "42"
+      ],
+      "gender": "Men",
+      "color": [
+        "Black",
+        "Cement"
+
+       
+      ],
+      "style": "CD3002-006",
+      "country": "Vietnam",
+      "additionalImages": [
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/61ef304a-df32-4eb8-8835-80d10deae19e/JORDAN+WHY+NOT+ZER0.3+PF.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/2a77e7bd-29e6-480b-827e-7c217bef67c0/JORDAN+WHY+NOT+ZER0.3+PF.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/c10deb4c-2405-49a3-a650-7a661bd2c5b3/JORDAN+WHY+NOT+ZER0.3+PF.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/3680170f-1f50-4d0a-bc40-7db6b00492cc/JORDAN+WHY+NOT+ZER0.3+PF.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/2cfd6049-a75e-467f-90ed-6b230a5eff05/JORDAN+WHY+NOT+ZER0.3+PF.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/e0753c7f-5ffa-488f-8da4-4bcb9741424c/JORDAN+WHY+NOT+ZER0.3+PF.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/3e5ac82c-f7d8-40eb-b211-a0cc21256340/JORDAN+WHY+NOT+ZER0.3+PF.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/0902f68b-d312-4f11-9c6a-6503cae33d4c/JORDAN+WHY+NOT+ZER0.3+PF.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/8923ee3c-c6e9-49bf-84d3-623a56cf0605/JORDAN+WHY+NOT+ZER0.3+PF.png"
+      ],
+      "featured": [
+        {
+          "title": "Responsive for Russ",
+          "content": "Designed specifically for Russ, the large Air Zoom Turbo unit in the front of the shoe is curved to follow the foot's natural shape. As he charges down the court, the cushioning engages at different points for a continuously responsive sensation."
+        },
+        {
+          "title": "Locked In and Stable",
+          "content": "A clear, adjustable midfoot strap fastens in one fluid motion to help keep you stable and locked in over the footbed."
+        },
+        {
+          "title": "Signature Details",
+          "content": "The split outsole, jagged design lines and clashing mix of materials are distinct to Russ' signature line. Other embellishments include light-shifting accents and an exposed factory size tag visible on the bottom of the shoe."
+        },
+        {
+          "title": "Keep Chaos Under Control",
+          "content": "The rubber outsole is split into 2 sections to help reduce weight. Multi-directional traction helps you stay in control while unleashing chaos on the court."
+        }
+      ],
+      "moreBenefit": [
+        "The dual-layered textile material is lightweight and breathable, with areas of open mesh to expose underlayers.",
+        "Rigid, moulded plastic piece between the 2 outsole sections provides structure and support."
+      ],
+      "notes": [
+        "Reinforced toe",
+        "Plush, padded collar",
+        "Colour-shifting details",
+        "External factory size tag",
+        "Durable rubber outsole"
+      ]
+    },
+
     {
       "id": "ryt7",
       "name": "Nike Downshifter 13",
       "material": "Sustainable Materials",
       "position": 1,
       "stock": 100,
+      "brand":"Nike",
       "type": "Road Running Shoes",
       "class": "Shoes",
       "price": "2069000",
@@ -49,7 +592,6 @@
       "id": "ywgs7",
       "name": "Nike Downshifter 13",
       "material": "Sustainable Materials",
-      "position": 1,
       "stock": 100,
       "type": "Road Running Shoes",
       "class": "Shoes",
@@ -143,7 +685,9 @@
     {
       "id": "12hb",
       "position": 1,
+      "brand":"Nike",
       "name": "Nike Zoom Fly 6",
+      "mainColor":"Orange",
       "giftPoint": 300,
       "stock": 100,
       "isDefault": "true",
@@ -218,7 +762,7 @@
       "style": "HV4484-800",
       "page": "New & Featured",
       "category": "New & Upcoming Drops",
-      "status": "Just In",
+      "status": "Coming Soon",
       "customer": "Women",
       "additionalImages": [
         "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/ff28c51b-fb1f-4e2e-871d-5db786d5f615/W+NIKE+REACTX+REJUVEN8+SLIDE.png",
@@ -409,6 +953,7 @@
     {
       "id": "53a9",
       "name": "Nike Air Max Dn8",
+      "features":"2-Way Zip",
       "price": "6000000",
       "stock": 20,
       "class": "Shoes",
@@ -451,8 +996,12 @@
     {
       "id": "gvd5",
       "name": "Nike Zoom Fly 6",
+      "height":"Mid Top",
+      "shoesFor":"Training & Gym",
       "stock": 100,
       "class": "Shoes",
+      "brand":"NikeLab",
+      "features":"Side vents",
       "giftPoint": 300,
       "type": "Road Racing Shoes",
       "price": "5500000",
@@ -514,9 +1063,11 @@
         "Notched laces offer a secure but soft lace-up.",
         "Integrated knit tongue with lofted padding helps alleviate lace pressure."
       ],
-      "weight": "approx. 218g (men's UK 9)",
-      "heeldrop": "8mm",
-      "note": "Not intended for use as personal protective equipment (PPE)"
+      "notes":[
+       "Weight: approx. 218g (men's UK 9)",
+       "Heel-to-toe drop: 8mm",
+       "Not intended for use as personal protective equipment (PPE)"
+      ] 
     },
     {
       "id": "hdf6",
@@ -1016,7 +1567,7 @@
       "id": "25c6",
       "firstname": "new user",
       "lastname": "qưqwqwqw",
-      "phone": "0934557882",
+      "phone": "0888888888",
       "address": "Hà Nam",
       "email": "fgfgfgfgfg@gmail.com",
       "password": "111111AaAAA",
@@ -1026,7 +1577,7 @@
       "orders": [],
       "point": 1000,
       "totalOrder": 0,
-      "dateOfBirth": "2004-12-2",
+      "dateOfBirth": "2016-4-5",
       "customerType": "New",
       "role": "User",
       "avatar": "",

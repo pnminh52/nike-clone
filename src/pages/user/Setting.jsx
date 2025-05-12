@@ -1,5 +1,7 @@
 import { NavLink, useParams } from 'react-router-dom'
 import AccountDetails from './Setting/AccountDetails'
+import ProfileVisibility from './Setting/ProfileVisibility'
+import { useAuth } from '../../hooks/useAuth'
 const tabs = [
   {
     svg: (
@@ -76,6 +78,7 @@ const tabs = [
 ]
 
 const Setting = () => {
+  const {user}=useAuth()
   const { tab } = useParams()
 
   const renderContent = () => {
@@ -93,11 +96,11 @@ const Setting = () => {
       case 'privacy':
         return <div>Privacy</div>
       case 'visibility':
-        return <div>Profile Visibility</div>
+        return <div><ProfileVisibility  /></div>
       case 'linked':
         return <div>Linked Accounts</div>
       default:
-        return <div><AccountDetails /></div>
+        return <div><ProfileVisibility  /></div>
     }
   }
 

@@ -21,7 +21,7 @@ const handleCancel=()=>{
               </svg>
             </button>
           </div>
-        <p className="text-xl font-semibold mb-4">
+        <p className="text-2xl  mb-4">
           Are you sure you want to delete your Nike Member Profile?
         </p>
         <p className="inter">As a Nike Member you currently get:</p>

@@ -8,12 +8,19 @@ const CategoryPage = () => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(false);
   const [sortType, setSortType] = useState(null);
- 
+
 
 
 
   const [genderFilter, setGenderFilter] = useState([]);
+  const [technologyFilter, setTechnologyFilter] = useState([]);
+  const [colorFilter, setColorFilter] = useState([]);
+  const [featuresFilter, setFeaturesFilter] = useState([]);
+  const [brandFilter, setBrandFilter] = useState([])
   const [isUnder1000000, setIsUnder1000000] = useState(false);
+  const [statusFilter, setStatusFilter] = useState([])
+  const [heightFilter, setHeightFilter] = useState([])
+  const [forFilter, setForFilter] = useState(null)
 
   useEffect(() => {
     const fetchData = async () => {
@@ -57,12 +64,33 @@ const CategoryPage = () => {
   }, [name]);
 
   const filteredProducts = products.filter((product) => {
-    // Filter by gender
+
     if (genderFilter.length > 0 && !product.variants.some((variant) => genderFilter.includes(variant.gender))) {
       return false;
     }
+    if (brandFilter.length > 0 && !product.variants.some((variant) => brandFilter.includes(variant.brand))) {
+      return false;
+    }
+    if (technologyFilter.length > 0 && !product.variants.some((variant) => technologyFilter.includes(variant.technology))) {
+      return false;
+    }
+    if (featuresFilter.length > 0 && !product.variants.some((variant) => featuresFilter.includes(variant.features))) {
+      return false;
+    }
+    if (colorFilter.length > 0 && !product.variants.some((variant) => colorFilter.includes(variant.mainColor))) {
+      return false;
+    }
+    if (statusFilter.length > 0 && !product.variants.some((variant) => statusFilter.includes(variant.status))) {
+      return false;
+    }
+    if (heightFilter.length > 0 && !product.variants.some((variant) => heightFilter.includes(variant.height))) {
+      return false;
+    }
+    if (forFilter && !product.variants.some((variant) => variant.shoesFor === forFilter)) {
+      return false;
+    }
+    
 
-    // Filter by "Under 1,000,000 VND" checkbox
     if (isUnder1000000) {
       const minPriceProduct = Math.min(...product.variants.map((variant) => variant.price));
       if (minPriceProduct >= 1000000) {
@@ -80,19 +108,33 @@ const CategoryPage = () => {
   } else if (sortType === "newest") {
     sortedProducts.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
   }
-  
+
   return (
     <div className=" max-w-screen-2xl px-10 mx-auto">
-     <CategoryTopBar 
-  categoryName={decodeURIComponent(name || "")} 
-  filteredProductsLength={sortedProducts.length}
-  onSortChange={setSortType}
-/>
+      <CategoryTopBar
+        categoryName={decodeURIComponent(name || "")}
+        filteredProductsLength={sortedProducts.length}
+        onSortChange={setSortType}
+      />
 
 
-      <div className="flex gap-2">
-        <div className="w-1/5">
+      <div className="flex justify-between ">
+        <div className="w-[18%] h-screen overflow-y-auto hidden sm:block">
           <SidebarFilter
+            forFilter={forFilter}
+            setForFilter={setForFilter}
+            heightFilter={heightFilter}
+            setHeightFilter={setHeightFilter}
+            statusFilter={statusFilter}
+            setStatusFilter={setStatusFilter}
+            colorFilter={colorFilter}
+            setColorFilter={setColorFilter}
+            featuresFilter={featuresFilter}
+            setFeaturesFilter={setFeaturesFilter}
+            technologyFilter={technologyFilter}
+            setTechnologyFilter={setTechnologyFilter}
+            brandFilter={brandFilter}
+            setBrandFilter={setBrandFilter}
             genderFilter={genderFilter}
             setGenderFilter={setGenderFilter}
             isUnder1000000={isUnder1000000}
@@ -100,13 +142,14 @@ const CategoryPage = () => {
           />
         </div>
 
-        <div className="w-4/5">
-          <div className="grid grid-cols-3 gap-4">
-            {sortedProducts.map((product) => (
-              <ShoesCard key={product.id} product={product} />
-            ))}
-          </div>
-        </div>
+        <div className="w-full sm:w-4/5">
+  <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4">
+    {sortedProducts.map((product) => (
+      <ShoesCard key={product.id} product={product} />
+    ))}
+  </div>
+</div>
+
       </div>
     </div>
   );

@@ -2,76 +2,66 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 const ShoesCard = ({ product }) => {
-  const [mainImage, setMainImage] = useState(product.img);  // Lưu trữ ảnh chính
-  const [variantId, setVariantId] = useState(product.id);  // Lưu trữ id của biến thể
+  const [mainImage, setMainImage] = useState(product.img);  
+  const [variantId, setVariantId] = useState(product.id); 
 
   const formatPrice = (price) => {
     return Number(price).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   };
 
-  const calculateDiscount = (price, price_sale) => {
-    if (!price || !price_sale) return 0;
-    return Math.round(((price - price_sale) / price) * 100);
-  };
+  const variantList = Array.isArray(product.variants)
+  ? product.variants.filter(variant => variant.position !== 1)
+  : [];
 
-  const discountPercentage = calculateDiscount(product.price, product.price_sale);
+const variantImages = [ { id: product.id, img: product.img }, ...variantList.map(v => ({ id: v.id, img: v.img })) ];
 
-  // Tạo danh sách ảnh biến thể, bao gồm cả ảnh chính (position 1)
-  let variantImages = [
-    product.img,
-    ...(
-      Array.isArray(product.variants)
-        ? product.variants.filter(variant => variant.position !== 1).map(variant => variant.img)
-        : []
-    )
-  ];
   
-  // Kiểm tra xem sản phẩm có ảnh biến thể hay không
   const hasVariants = variantImages?.length > 1;
 
-  // Giới hạn số lượng ảnh hiển thị (tối đa 4 ảnh)
-  const visibleVariants = variantImages?.slice(0, 4);
+  const visibleVariants = variantImages.slice(0, 4);
+
   const remainingVariantsCount = variantImages?.length - visibleVariants?.length;
 
-  // Hàm thay đổi ảnh và id biến thể khi hover vào ảnh nhỏ
   const handleImageHover = (variantImg, variantProductId) => {
     setMainImage(variantImg);
-    setVariantId(variantProductId);  // Cập nhật id biến thể
+    setVariantId(variantProductId);  
   };
 
   return (
     <div>
       <Link 
-        to={`/details/${product.name}?id=${variantId}`}  // Cập nhật id biến thể vào URL
+        to={`/details/${product.name}?id=${variantId}`}  
         className="block"
       >
-        <div className={`inter mb-14 ${hasVariants ? 'group' : ''}`}>
+        <div className={`inter mb-8 ${hasVariants ? 'group' : ''}`}>
           {/* Main Image */}
           <img
-            src={mainImage}
-            alt={product.name}
-            className={`object-cover cursor-pointer transition-all duration-300 
-           w-[330px] h-[330px]
-            `}
-          />
+  src={mainImage}
+  alt={product.name}
+  className={`object-cover cursor-pointer transition-all duration-300 
+    w-[139.5px] h-[139.5px] 
+    sm:w-[139.5px] sm:h-[139.5px] 
+    md:w-[330px] md:h-[330px] 
+    lg:w-[330px] lg:h-[330px]`}
+/>
+
           
-          {/* Display variant images below the main image only if there are variants */}
           {hasVariants && (
             <div className="hidden group-hover:block">
               <div className="flex mt-2">
                 <div className="flex gap-2">
-                  {visibleVariants?.map((variantImg, index) => (
-                    <img
-                      key={index}
-                      src={variantImg}
-                      alt={`Variant ${index + 1}`}
-                      className="w-[40px] h-[40px] object-cover cursor-pointer"
-                      onMouseEnter={() => handleImageHover(variantImg, product.variants[index]?.id)}  // Thay đổi ảnh và id biến thể
-                    />
-                  ))}
+                {visibleVariants?.map((variant, index) => (
+  <img
+    key={index}
+    src={variant.img}
+    alt={`Variant ${index + 1}`}
+    className="w-[40px] h-[40px] object-cover cursor-pointer"
+    onMouseEnter={() => handleImageHover(variant.img, variant.id)}
+  />
+))}
+
                 </div>
 
-                {/* Display remaining count if there are more variants */}
                 {remainingVariantsCount > 0 && (
                   <div className="w-[40px] h-[40px] flex items-center justify-center cursor-pointer">
                     <p className="text-lg text-gray-600">+{remainingVariantsCount}</p>
@@ -84,7 +74,7 @@ const ShoesCard = ({ product }) => {
           <div className="mt-2 ">
             <p className="text-orange-600 ">{product.status}</p>
 
-            {/* Trượt xuống khi hover vào ảnh biến thể */}
+          
             <p className="block group-hover:hidden transform transition-all duration-500 translate-y-0 group-hover:translate-y-6">
               {product.name}
             </p>
@@ -96,19 +86,12 @@ const ShoesCard = ({ product }) => {
             </p>
 
             <div className="flex gap-3 mt-1">
-              <p className="text-black">
-                <span className="inter"> {formatPrice(product.price_sale)}</span>
+         
+              <p className="">
+                <span className=""> {formatPrice(product.price)}</span>
                 <span className="text-sm font-medium">₫</span>
               </p>
-              <p className="text-gray-500">
-                <span className="inter line-through"> {formatPrice(product.price)}</span>
-                <span className="text-sm font-medium">₫</span>
-              </p>
-              {discountPercentage > 0 && (
-                <p className="text-green-600">
-                  {discountPercentage}%off
-                </p>
-              )}
+             
             </div>
           </div>
         </div>

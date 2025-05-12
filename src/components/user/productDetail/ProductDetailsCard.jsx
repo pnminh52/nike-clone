@@ -66,10 +66,13 @@ const ProductDetailsCard = ({ selectedProduct, onClose }) => {
           <div className=" ">
           <h4 className="text-xl"> Product details</h4>
           <ul className="list-disc  pl-5">
-            <li>Weight: {selectedProduct.weight}</li>
-            <li> Heel-to-toe drop: {selectedProduct.heeldrop}</li>
-            <li> {selectedProduct.note}</li>
-            <li>Colour Shown: {selectedProduct.color}</li>
+          {Object.keys(selectedProduct)
+      .filter(key => key.startsWith("note"))
+      .sort()
+      .map(key => (
+        <li key={key}>{selectedProduct[key]}</li>
+      ))}
+            <li>Colour Shown: {selectedProduct.color.join('/')}</li>
             <li>Style: {selectedProduct.style}</li>
             <li>Country/Region of Origin: {selectedProduct.country}</li>
           </ul>

@@ -1,6 +1,20 @@
 import React, { useState } from 'react';
 
 const SidebarFilter = ({ 
+  forFilter,
+  setForFilter,
+  heightFilter,
+  setHeightFilter,
+  statusFilter,
+  setStatusFilter,
+  colorFilter,
+  setColorFilter,
+  featuresFilter,
+  setFeaturesFilter,
+  technologyFilter,
+  setTechnologyFilter,
+  brandFilter,
+  setBrandFilter,
   genderFilter, 
   setGenderFilter, 
   isUnder1000000, 
@@ -9,31 +23,127 @@ const SidebarFilter = ({
 }) => {
   const [isGenderDropdownOpen, setIsGenderDropdownOpen] = useState(false);
   const [isPriceDropdownOpen, setIsPriceDropdownOpen] = useState(false);
+  const [isBrandDropdownOpen, setIsBrandDropdownOpen] = useState(false);
+  const [isTechnologyDropdownOpen, setIsTechnologyDropdownOpen] = useState(false);
+  const [isFeaturesDropdownOpen, setIsFeaturesDropdownOpen] = useState(false);
+  const [isColorDropdownOpen, setIsColorDropdownOpen] = useState(false);
+  const [isStatusDropdownOpen, setIsStatusDropdownOpen] = useState(false);
+  const [isHeightDropdownOpen, setIsHeightDropdownOpen] = useState(false);
 
   const toggleGenderDropdown = () => setIsGenderDropdownOpen(!isGenderDropdownOpen);
   const togglePriceDropdown = () => setIsPriceDropdownOpen(!isPriceDropdownOpen);
+  const toggleBrandDropdown = () => setIsBrandDropdownOpen(!isBrandDropdownOpen);
+  const toggleTechnologyDropdown = () => setIsTechnologyDropdownOpen(!isTechnologyDropdownOpen);
+  const toggleFeaturesDropdown = () => setIsFeaturesDropdownOpen(!isFeaturesDropdownOpen);
+  const toggleColorDropdown = () => setIsColorDropdownOpen(!isColorDropdownOpen);
+  const toggleStatusDropdown = () => setIsStatusDropdownOpen(!isStatusDropdownOpen);
+  const toggleHeightDropdown = () => setIsHeightDropdownOpen(!isHeightDropdownOpen);
 
   const handleGenderCheckboxChange = (e) => {
     const value = e.target.value;
-    // Nếu giá trị đã được chọn, xóa khỏi mảng (đảm bảo chỉ chọn một giá trị)
     if (e.target.checked) {
-      setGenderFilter([value]); // Thêm vào mảng, chỉ giữ một giá trị duy nhất
+      setGenderFilter([value]); 
     } else {
-      setGenderFilter([]); // Xóa nếu bỏ chọn
+      setGenderFilter([]); 
+    }
+  };
+  const handleBrandCheckboxChange = (e) => {
+    const value = e.target.value;
+    if (e.target.checked) {
+      setBrandFilter([value]);
+    } else {
+      setBrandFilter([]); 
+    }
+  };
+  const handleTechnologyCheckboxChange = (e) => {
+    const value = e.target.value;
+    if (e.target.checked) {
+      setTechnologyFilter([value]);
+    } else {
+      setTechnologyFilter([]);
+    }
+  };
+  const handleFeaturesCheckboxChange = (e) => {
+    const value = e.target.value;
+    if (e.target.checked) {
+      setFeaturesFilter([value]);
+    } else {
+      setFeaturesFilter([]); 
+    }
+  };
+  const handlePriceCheckboxChange = (e) => {
+    setIsUnder1000000(e.target.checked);
+  };
+  const handleStatusCheckboxChange = (e) => {
+    const value = e.target.value;
+    if (e.target.checked) {
+      setStatusFilter([value]);
+    } else {
+      setStatusFilter([]); 
+    }
+  };
+  const handleHeightCheckboxChange = (e) => {
+    const value = e.target.value;
+    if (e.target.checked) {
+      setHeightFilter([value]);
+    } else {
+      setHeightFilter([]); 
     }
   };
 
-  const handlePriceCheckboxChange = (e) => {
-    setIsUnder1000000(e.target.checked); // Chỉ cho phép một lựa chọn
+  const getColorCode = (colorName) => {
+    const colorMap = {
+      Purple: '#8D429F',
+      Black: '#000000',
+      Red: '#E7352B',
+      Orange: '#F36B26',
+      Blue: '#1790C8',
+      White: '#FFFFFF',
+      Brown: '#825D41',
+      Green: '#7BBA3C',
+      Yellow: '#FED533',
+    'Multi-Colour': 'linear-gradient(135deg, #FF6B6B, #FFD93D, #6BCB77, #4D96FF)',
+      Pink: '#F0728F',
+    };
+  
+    return colorMap[colorName] || '#ccc';
   };
+  
 
   return (
-    <div className="mb-4">
+    <div className="">
+      {/* Shoes For Option */}
+      <div className="bg-white w-full pb-4 pt-0">
+  {[
+    'Lifestyle',
+    'Jordan',
+    'Running',
+    'Basketball',
+    'Training & Gym',
+    'Football',
+    'Skateboarding',
+    'Golf',
+    'Boots',
+    'Tennis',
+    'Athletics',
+    'Sandals, Slides & Flip Flops',
+  ].map((category) => (
+    <label
+      key={category}
+      className={`flex items-center gap-2 mb-2 inter cursor-pointer ${forFilter === category ? 'underline' : ''}`}
+      onClick={() => setForFilter(forFilter === category ? null : category)}
+
+    >
+      <span>{category}</span>
+    </label>
+  ))}
+</div>
+
       {/* Gender Dropdown */}
-      <div className="mb-3">
+      <div className="">
         <div className="">
           <button
-            className="w-full p-2 mt-2  border-t flex justify-between items-center"
+            className="cursor-pointer w-full py-4  border-t inter border-gray-300 flex justify-between items-center"
             onClick={toggleGenderDropdown}
           >
           Gender
@@ -48,7 +158,7 @@ const SidebarFilter = ({
             </svg>
           </button>
           {isGenderDropdownOpen && (
-            <div className="bg-white   w-full mt-1 p-2">
+            <div className="bg-white   w-full pb-4 pt-0">
               {['Men', 'Women', 'Unisex'].map((gender) => (
                 <label key={gender} className="flex items-center gap-2 mb-2">
                   <input
@@ -58,19 +168,17 @@ const SidebarFilter = ({
                     onChange={handleGenderCheckboxChange}
                     className="form-checkbox w-4 h-4"
                   />
-                  <span>{gender}</span>
+                 <span className="text-sm">{gender}</span>
                 </label>
               ))}
             </div>
           )}
         </div>
       </div>
-
       {/* Price Dropdown */}
-      <div className="mb-3">
-        <div className="">
+      <div className="">
           <button
-            className="w-full p-2 mt-2  border-t flex justify-between items-center"
+            className="cursor-pointer w-full py-4 inter  border-t border-gray-300 flex justify-between items-center"
             onClick={togglePriceDropdown}
           >
            Price
@@ -85,7 +193,7 @@ const SidebarFilter = ({
             </svg>
           </button>
           {isPriceDropdownOpen && (
-            <div className="bg-white   w-full mt-1 p-2">
+            <div className="bg-white   w-full pb-4 pt-0">
               <label className="flex items-center gap-2 mb-2">
                 <input
                   type="checkbox"
@@ -93,12 +201,233 @@ const SidebarFilter = ({
                   onChange={handlePriceCheckboxChange}
                   className="form-checkbox w-4 h-4"
                 />
-                <span>Under 1,000,000 VND</span>
+               <span className="text-sm">Under 1,000,000 VND</span>
               </label>
             </div>
           )}
-        </div>
       </div>
+      {/* Brand Dropdown */}
+      <div className="">
+          <button
+            className="cursor-pointer w-full py-4  border-t inter border-gray-300 flex justify-between items-center"
+            onClick={toggleBrandDropdown}
+          >
+          Brand
+            <svg
+              className={`w-5 h-5 cursor-pointer transform transition-transform ${isBrandDropdownOpen ? 'rotate-180' : ''}`}
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              viewBox="0 0 24 24"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          {isBrandDropdownOpen && (
+            <div className="bg-white   w-full pb-4 pt-0">
+              {['Nike Sportswear', 'Jordan', 'NikeLab', 'Nike'].map((brand) => (
+                <label key={brand} className="flex items-center gap-2 mb-2">
+                  <input
+                    type="checkbox"
+                    value={brand}
+                    checked={brandFilter.includes(brand)}
+                    onChange={handleBrandCheckboxChange}
+                    className="form-checkbox w-4 h-4"
+                  />
+                 <span className="text-sm">{brand}</span>
+                </label>
+              ))}
+            </div>
+          )}
+      </div>
+       {/* Color Dropdown */}
+       <div className="">
+          <button
+            className="cursor-pointer w-full py-4  border-t inter border-gray-300 flex justify-between items-center"
+            onClick={toggleColorDropdown}
+          >
+          Colour
+            <svg
+              className={`w-5 h-5 cursor-pointer transform transition-transform ${isColorDropdownOpen ? 'rotate-180' : ''}`}
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              viewBox="0 0 24 24"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          {isColorDropdownOpen && (
+  <div className="bg-white w-full pb-4 pt-0 grid grid-cols-3 gap-2">
+    {['Purple', 'Black', 'Red', 'Orange', 'Blue', 'White', 'Brown', 'Green', 'Yellow', 'Multi-Colour', 'Grey', 'Pink'].map((mainColor) => {
+      const isSelected = colorFilter.includes(mainColor);
+      return (
+        <div
+          key={mainColor}
+          className={` cursor-pointer text-center justify-center  transition-all duration-300`}
+          onClick={() => {
+            if (isSelected) {
+              setColorFilter([]);
+            } else {
+              setColorFilter([mainColor]); 
+            }
+          }}
+        >
+          <div
+            className={`w-7 h-7 justify-center mx-auto  rounded-full border-1  transition-all duration-300 ${isSelected ? 'border-black scale-110' : 'border-gray-400'}`}
+            style={{
+              background: getColorCode(mainColor),
+            }}
+          ></div>
+          <span className="text-xs">{mainColor}</span>
+        </div>
+      );
+    })}
+  </div>
+)}
+
+
+      </div>
+      {/* Technology Dropdown */}
+      <div className="">
+          <button
+            className="cursor-pointer w-full py-4  border-t inter border-gray-300 flex justify-between items-center"
+            onClick={toggleTechnologyDropdown}
+          >
+          Technology
+            <svg
+              className={`w-5 h-5 cursor-pointer transform transition-transform ${isTechnologyDropdownOpen ? 'rotate-180' : ''}`}
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              viewBox="0 0 24 24"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          {isTechnologyDropdownOpen && (
+            <div className="bg-white   w-full pb-4 pt-0">
+             {['Nike ReactX', 'Nike EasyOn', 'Dri-FIT', 'Dri-FIT ADV', 'Nike Flyknit', 'Nike Flywire', 'GORE-TEX', 'Nike Lunarlon', 'Nike Max Air', 'Nike Air', 'Nike Free', 'Nike React', 'Nike Shox', 'NikeSkin', 'Nike Zoom Air', 'Nike ZoomX'].map((technology) => (
+                <label key={technology} className="flex items-center gap-2 mb-2">
+                  <input
+                    type="checkbox"
+                    value={technology}
+                    checked={technologyFilter.includes(technology)}
+                    onChange={handleTechnologyCheckboxChange}
+                    className="form-checkbox w-4 h-4"
+                  />
+                 <span className="text-sm">{technology}</span>
+                </label>
+              ))}
+            </div>
+          )}
+      </div>
+      {/* Features Dropdown */}
+      <div className="">
+          <button
+            className="cursor-pointer w-full py-4  border-t inter border-gray-300 flex justify-between items-center"
+            onClick={toggleFeaturesDropdown}
+          >
+          Features
+            <svg
+              className={`w-5 h-5 cursor-pointer transform transition-transform ${isFeaturesDropdownOpen ? 'rotate-180' : ''}`}
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              viewBox="0 0 24 24"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          {isFeaturesDropdownOpen && (
+            <div className="bg-white   w-full pb-4 pt-0">
+           {['Side vents', '2-Way Zip', '4-way stretch', '2-way stretch', 'Drawcord', 'Flat Peak', 'Front Zip', 'Adjustable Hood', 'Breathable', 'Hooded', 'Pockets', 'Spikeless', 'Water-resistant', 'Waterproof', 'Wide Waistband', 'Zip Garage'].map((features) => (
+                <label key={features} className="flex items-center gap-2 mb-2">
+                  <input
+                    type="checkbox"
+                    value={features}
+                    checked={featuresFilter.includes(features)}
+                    onChange={handleFeaturesCheckboxChange}
+                    className="form-checkbox w-4 h-4"
+                  />
+                 <span className="text-sm">{features}</span>
+                </label>
+              ))}
+            </div>
+          )}
+      </div>
+        {/* Status Dropdown */}
+        <div className="">
+          <button
+            className="cursor-pointer w-full py-4  border-t inter border-gray-300 flex justify-between items-center"
+            onClick={toggleStatusDropdown}
+          >
+          Status
+            <svg
+              className={`w-5 h-5 cursor-pointer transform transition-transform ${isStatusDropdownOpen ? 'rotate-180' : ''}`}
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              viewBox="0 0 24 24"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          {isStatusDropdownOpen && (
+            <div className="bg-white   w-full pb-4 pt-0">
+           {['Just In', 'Coming Soon'].map((status) => (
+                <label key={status} className="flex items-center gap-2 mb-2">
+                  <input
+                    type="checkbox"
+                    value={status}
+                    checked={statusFilter.includes(status)}
+                    onChange={handleStatusCheckboxChange}
+                    className="form-checkbox w-4 h-4"
+                  />
+                 <span className="text-sm">{status}</span>
+                </label>
+              ))}
+            </div>
+          )}
+      </div>
+        {/* Height Dropdown */}
+        <div className="">
+          <button
+            className="cursor-pointer w-full py-4  border-t inter border-gray-300 flex justify-between items-center"
+            onClick={toggleHeightDropdown}
+          >
+          Shoe Height
+            <svg
+              className={`w-5 h-5 cursor-pointer transform transition-transform ${isHeightDropdownOpen ? 'rotate-180' : ''}`}
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              viewBox="0 0 24 24"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          {isHeightDropdownOpen && (
+            <div className="bg-white   w-full pb-4 pt-0">
+           {['Low Top', 'High Top', 'Mid Top'].map((height) => (
+                <label key={height} className="flex items-center gap-2 mb-2">
+                  <input
+                    type="checkbox"
+                    value={height}
+                    checked={heightFilter.includes(height)}
+                    onChange={handleHeightCheckboxChange}
+                    className="form-checkbox w-4 h-4"
+                  />
+                 <span className="text-sm">{height}</span>
+                </label>
+              ))}
+            </div>
+          )}
+      </div>
+    
+     
+
+     
     </div>
   );
 };

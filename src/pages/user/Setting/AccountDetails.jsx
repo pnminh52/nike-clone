@@ -4,6 +4,8 @@ import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 import PopUpDelete from "../../../components/user/setting/accountDetails/PopUpDelete";
 import PopUpPasswordChange from "../../../components/user/setting/accountDetails/PopUpPasswordChange";
+import PopUpPhoneChange from "../../../components/user/setting/accountDetails/PopUpPhoneChange"; // Make sure to import PopUpPhoneChange
+
 const AccountDetails = () => {
     const [user, setUser] = useState(null);
     const [email, setEmail] = useState("");
@@ -23,9 +25,9 @@ const AccountDetails = () => {
         month: "",
         year: "",
     });
-    const [isEditingPhone, setIsEditingPhone] = useState(false);
     const [showPopup, setShowPopup] = useState(false);
     const [showPasswordPopup, setShowPasswordPopup] = useState(false);
+    const [showPhonePopup, setShowPhonePopup] = useState(false);
 
     const navigate = useNavigate();
 
@@ -116,28 +118,28 @@ const AccountDetails = () => {
             <p className="text-xl">Account Details</p>
             {user ? (
                 <div className="">
+                    {/* Email Field */}
                     <div className="py-4">
                         <div className="relative z-0 w-full group">
                             <input
-                                className={`block h-15.5 rounded-lg p-3.5 text-lg  w-full text-gray-900 bg-transparent border appearance-none focus:outline-none focus:ring-0 peer 
-    `
-                                }
+                                className={`block h-15.5 rounded-lg p-3.5 text-lg w-full text-gray-900 bg-transparent border appearance-none focus:outline-none focus:ring-0 peer`}
                                 onBlur={() => setTouched(true)}
-                                placeholder="" value={email}
+                                placeholder=""
+                                value={email}
                                 onChange={(e) => setEmail(e.target.value)}
                                 type="text"
                             />
                             <label
                                 htmlFor="text"
                                 className={`absolute text-lg inter rounded-lg duration-300 transform -translate-y-4 scale-75 top-1.5 bg-white px-1 z-10 origin-[0] left-3
-    peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-3 peer-focus:scale-75 peer-focus:-translate-y-4
-  `}
+                                peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-3 peer-focus:scale-75 peer-focus:-translate-y-4`}
                             >
                                 Email*
                             </label>
                         </div>
                     </div>
 
+                    {/* Password Field */}
                     <div className="flex justify-between items-center">
                         <div className="w-full">
                             <label className="block inter">Password</label>
@@ -145,7 +147,7 @@ const AccountDetails = () => {
                                 <p className="text-xs">{"•".repeat(password.length)}</p>
                                 <button
                                     onClick={() => setShowPasswordPopup(true)}
-                                    className="text-sm inter underline ml-4"
+                                    className="text-sm inter underline ml-4 cursor-pointer"
                                 >
                                     Edit
                                 </button>
@@ -153,88 +155,119 @@ const AccountDetails = () => {
                         </div>
                     </div>
 
+                    {/* Phone Field */}
                     <div className="">
-                            <label className="block inter">Phone Number</label>
-
-                  
-                                <div className="flex justify-between items-center py-4">
-                                {isEditingPhone ? (
-                                <input
-                                    className="border"
-                                    value={phone}
-                                    onChange={(e) => setPhone(e.target.value)}
-                                />
-                            ) : (
-                                <p>{phone}</p>
-                            )}
-                                <button
-                                    
-                                    className="text-sm inter underline ml-4"
-                                >
-                                    Edit
-                                </button>
-                            </div>
-                    </div>
-
-                    <div>
-                        <label className="block text-sm">Date of Birth:</label>
-                        <div className="flex gap-2">
-                            <input
-                                type="number"
-                                min={1}
-                                max={31}
-                                placeholder="Day"
-                                value={dateOfBirth.day}
-                                onChange={(e) =>
-                                    setDateOfBirth({ ...dateOfBirth, day: e.target.value })
-                                }
-                                className="border p-2 w-20"
-                            />
-                            <input
-                                type="number"
-                                min={1}
-                                max={12}
-                                placeholder="Month"
-                                value={dateOfBirth.month}
-                                onChange={(e) =>
-                                    setDateOfBirth({ ...dateOfBirth, month: e.target.value })
-                                }
-                                className="border p-2 w-20"
-                            />
-                            <input
-                                type="number"
-                                min={1900}
-                                max={new Date().getFullYear()}
-                                placeholder="Year"
-                                value={dateOfBirth.year}
-                                onChange={(e) =>
-                                    setDateOfBirth({ ...dateOfBirth, year: e.target.value })
-                                }
-                                className="border p-2 w-24"
-                            />
+                        <label className="block inter">Phone Number</label>
+                        <div className="flex justify-between items-center py-4">
+                            <p>
+                                <span>(+84) </span>
+                                {phone}
+                            </p>
+                            <button
+                                onClick={() => setShowPhonePopup(true)}
+                                className="text-sm inter underline ml-4 cursor-pointer"
+                            >
+                                Edit
+                            </button>
                         </div>
                     </div>
-                    <div className="flex justify-between items-center border-t border-b border-gray-400 py-6">
-                        <p className="inter">Delete Account</p>
-                        <button
-                            onClick={() => setShowPopup(true)}
-                            className=" bg-white cursor-pointer border text-black rounded-full border-gray-400 hover:border-black px-4 py-1.5 "
-                        >
-                            Delete
-                        </button>
+
+                    {/* Date of Birth */}
+                    <div>
+                        <div>
+                            <label className="block inter">Date of Birth</label>
+                            <div className="flex gap-2 py-4">
+                                {/* Day */}
+                                <select
+                                    value={dateOfBirth.day}
+                                    onChange={(e) =>
+                                        setDateOfBirth({ ...dateOfBirth, day: e.target.value })
+                                    }
+                                    className="border p-2 w-20"
+                                    disabled={
+                                        dateOfBirth.year && dateOfBirth.month && dateOfBirth.day
+                                    } // Disable if dateOfBirth is not empty
+                                >
+                                    <option value="">Day</option>
+                                    {[...Array(31)].map((_, index) => (
+                                        <option key={index} value={index + 1}>
+                                            {index + 1}
+                                        </option>
+                                    ))}
+                                </select>
+
+                                {/* Month */}
+                                <select
+                                    value={dateOfBirth.month}
+                                    onChange={(e) =>
+                                        setDateOfBirth({ ...dateOfBirth, month: e.target.value })
+                                    }
+                                    className="border p-2 w-20"
+                                    disabled={
+                                        dateOfBirth.year && dateOfBirth.month && dateOfBirth.day
+                                    } // Disable if dateOfBirth is not empty
+                                >
+                                    <option value="">Month</option>
+                                    {[...Array(12)].map((_, index) => (
+                                        <option key={index} value={index + 1}>
+                                            {index + 1}
+                                        </option>
+                                    ))}
+                                </select>
+
+                                {/* Year */}
+                                <select
+                                    value={dateOfBirth.year}
+                                    onChange={(e) =>
+                                        setDateOfBirth({ ...dateOfBirth, year: e.target.value })
+                                    }
+                                    className="border p-2 w-24"
+                                    disabled={
+                                        dateOfBirth.year && dateOfBirth.month && dateOfBirth.day
+                                    } // Disable if dateOfBirth is not empty
+                                >
+                                    <option value="">Year</option>
+                                    {Array.from({ length: 100 }, (_, index) => (
+                                        <option
+                                            key={index}
+                                            value={new Date().getFullYear() - index}
+                                        >
+                                            {new Date().getFullYear() - index}
+                                        </option>
+                                    ))}
+                                </select>
+                            </div>
+                        </div>
                     </div>
 
-                    <div className="mt-8 text-right">
+                    {/* Delete Account */}
+                    <div className="py-6">
+                        <div className="flex justify-between items-center border-t border-b border-gray-400 py-6">
+                            <p className="inter">Delete Account</p>
+                            <button
+                                onClick={() => setShowPopup(true)}
+                                className=" bg-white cursor-pointer border text-black rounded-full border-gray-400 hover:border-black px-4 py-1.5 "
+                            >
+                                Delete
+                            </button>
+                        </div>
+                    </div>
+
+                    {/* Save Button */}
+                    <div className=" text-right">
                         <button
                             onClick={handleUpdate}
-                            className={`rounded-full inter  px-4 py-1.5 ${isChanged ? 'bg-black text-white' : 'text-[#CDCDCE] bg-[#E5E5E5] cursor-not-allowed'}`}
+                            className={`rounded-full inter  px-4 py-1.5 ${isChanged
+                                    ? "bg-black text-white"
+                                    : "text-[#CDCDCE] bg-[#E5E5E5] cursor-not-allowed"
+                                }`}
                             disabled={!isChanged}
                         >
                             Save
                         </button>
-
                     </div>
 
+                    {/* Popups */}
                     <PopUpDelete
                         isOpen={showPopup}
                         onClose={() => setShowPopup(false)}
@@ -246,8 +279,19 @@ const AccountDetails = () => {
                         currentPassword={password}
                         onSave={async (newPassword) => {
                             setPassword(newPassword);
-                            setOriginalPassword(newPassword); // cập nhật gốc luôn để không hiển thị "Save Changes"
+                            setOriginalPassword(newPassword);
                             setShowPasswordPopup(false);
+                            await handleUpdate();
+                        }}
+                    />
+                    <PopUpPhoneChange
+                        isOpen={showPhonePopup}
+                        onClose={() => setShowPhonePopup(false)}
+                        currentPhone={phone}
+                        onSave={async (newPhone) => {
+                            setPhone(newPhone);
+                            setOriginalPhone(newPhone); // Cập nhật gốc luôn để không hiển thị "Save Changes"
+                            setShowPhonePopup(false);
 
                             try {
                                 const userId = localStorage.getItem("userId");
@@ -255,8 +299,8 @@ const AccountDetails = () => {
                                 const updatedUser = {
                                     ...user,
                                     email,
-                                    password: newPassword,
-                                    phone,
+                                    password,
+                                    phone: newPhone,
                                     dateOfBirth: dobStr,
                                 };
                                 const res = await axios.put(
@@ -264,9 +308,9 @@ const AccountDetails = () => {
                                     updatedUser
                                 );
                                 setUser(res.data);
-                                toast.success("Mật khẩu đã được cập nhật");
+                                toast.success("Số điện thoại đã được cập nhật");
                             } catch (error) {
-                                toast.error("Cập nhật mật khẩu thất bại");
+                                toast.error("Cập nhật số điện thoại thất bại");
                             }
                         }}
                     />
