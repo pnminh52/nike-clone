@@ -86,6 +86,7 @@ const VoucherChooseTab = ({
 
         {showExchangePage ? (
           <ExchangeVoucher
+          selectedProduct={selectedProduct}
             userId={user.id}  // Passing dynamic userId
             onBack={() => setShowExchangePage(false)}  // Set the state to go back
           />
@@ -104,8 +105,7 @@ const VoucherChooseTab = ({
             <div className="py-2">
               All offers ({filteredCoupons.length})
               <p className="text-xs text-red-600">
-                Please note: The voucher is non-refundable when you cancel the order
-                <span className="text-red-600">*</span>
+                Please note: The voucher is non-refundable when you cancel the order*
               </p>
             
                 <p

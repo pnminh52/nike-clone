@@ -1,21 +1,82 @@
-import React from 'react';
+import React from "react";
 
-const ExchangeVoucherCard = ({ voucher, onExchange }) => {
+const renderSpecialProductMessage = (applicableProductNames, selectedProduct) => {
+  if (Array.isArray(applicableProductNames)) {
+    return applicableProductNames.map((productName) =>
+      productName === selectedProduct?.name ? (
+        <p className="text-xs text-[#CCD0D7]" key={productName}>
+          Special applied to {productName}
+        </p>
+      ) : null
+    );
+  }
+  return null;
+};
+
+const ExchangeVoucherCard = ({ voucher, onExchange, userPoint, selectedProduct }) => {
+  const remainingPoint = userPoint - voucher.pointToExchange;
+
   return (
-    <div className="border rounded-xl p-4 flex gap-4 items-center shadow">
-      <img src={voucher.image} alt={voucher.name} className="w-24 h-24 object-cover rounded" />
-      <div className="flex-1 space-y-1">
-        <h3 className="text-lg font-semibold">{voucher.name}</h3>
-        <p className="text-sm text-gray-600">{voucher.description}</p>
-        <p className="text-sm text-gray-500">Điểm cần đổi: <strong>{voucher.pointToExchange}</strong></p>
-        <p className="text-sm text-gray-500">Hết hạn: {voucher.expiryDate}</p>
-        <button
-          onClick={() => onExchange(voucher)}
-          className="mt-2 px-3 py-1 text-white bg-blue-600 rounded hover:bg-blue-700"
-        >
-          Đổi điểm
-        </button>
-      </div>
+    <div>
+      {remainingPoint >= 0 ? (
+        <div>
+          <div
+            className={`w-full rounded-xl flex gap-2 items-center border border-gray-300 text-sm bg-white hover:bg-gray-50 transition-all duration-200`}
+          >
+            <div className="flex cursor-pointer px-2 gap-2 py-2 w-full">
+              <img
+                className="w-18 h-18 object-cover rounded-md"
+                src={voucher.image || "https://via.placeholder.com/40"}
+                alt="voucher"
+              />
+              <div className="overflow-hidden">
+                <p className="font-medium">
+                  {voucher.name} - {voucher.pointToExchange} point
+                </p>
+                <p className="text-xs text-gray-500">{voucher.description || "Không có mô tả"}</p>
+                <p className="text-xs">Remaining point {remainingPoint}</p>
+                {renderSpecialProductMessage(voucher.applicableProductNames, selectedProduct)}
+              </div>
+            </div>
+            <div className="relative">
+              <button
+                onClick={() => onExchange(voucher)}
+                className={`w-25 h-23 inter border-dashed border-l border-gray-300 transition-all duration-200 text-blue-600 cursor-pointer`}
+              >
+                Exchange
+              </button>
+            </div>
+          </div>
+        </div>
+      ) : (
+        <div>
+          <div
+            className={`w-full rounded-xl flex gap-2 items-center border border-gray-300 text-sm bg-[#F2F3F5] transition-all duration-200`}
+          >
+            <div className="flex cursor-pointer px-2 gap-2 py-2 w-full">
+              <img
+                className="w-18 h-18 object-cover rounded-md"
+                src={voucher.image || "https://via.placeholder.com/40"}
+                alt="voucher"
+              />
+              <div className="overflow-hidden">
+                <p className="font-medium text-[#CCD0D7]">
+                  {voucher.name} - {voucher.pointToExchange} point
+                </p>
+                <p className="text-xs text-[#CCD0D7]">{voucher.description || "Không có mô tả"}</p>
+                {renderSpecialProductMessage(voucher.applicableProductNames, selectedProduct)}
+              </div>
+            </div>
+            <div className="relative">
+              <button
+                className={`w-25 h-23 inter border-dashed border-l border-gray-300 transition-all duration-200 text-[#CCD0D7] cursor-pointer`}
+              >
+                Exchange
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

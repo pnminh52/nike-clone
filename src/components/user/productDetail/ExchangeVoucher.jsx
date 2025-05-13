@@ -1,80 +1,70 @@
-import React, { useEffect, useState } from 'react';
-import ExchangeVoucherCard from './ExchangeVouchercard';
+import React from 'react';
+import ExchangeVoucherCard from './ExchangeVoucherCard';
+import useCoupons from '../../../hooks/useCoupons';
 
-const ExchangeVoucher = ({ onBack, userId }) => {
-  const [coupons, setCoupons] = useState([]);
-  const [user, setUser] = useState(null);
+const ExchangeVoucher = ({ onBack, userId, selectedProduct }) => {
+  const {
+    coupons,
+    user,
+    loading,
+    error,
+    exchangeVoucher,
+  } = useCoupons(userId);
 
-  useEffect(() => {
-    // Fetch coupons
-    fetch('http://localhost:3000/coupons')
-      .then(res => res.json())
-      .then(data => setCoupons(data))
-      .catch(err => console.error('Failed to fetch coupons:', err));
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p className="text-red-600">Lỗi: {error.message}</p>;
 
-    // Fetch user info using dynamic userId
-    fetch(`http://localhost:3000/users/${userId}`)
-      .then(res => res.json())
-      .then(data => setUser(data))
-      .catch(err => console.error('Failed to fetch user:', err));
-  }, [userId]);
-
-  const handleExchange = async (voucher) => {
-    if (!user || user.point < voucher.pointToExchange) {
-      alert('Không đủ điểm để đổi voucher này.');
-      return;
+  // Hàm kiểm tra xem voucher có áp dụng cho sản phẩm đã chọn không
+  const isVoucherApplicable = (voucher) => {
+    const applicable = voucher.applicableProductNames;
+    if (applicable === "All") {
+      return true;  // Voucher này áp dụng cho tất cả sản phẩm
     }
-
-    const updatedCoupons = [...user.coupons];
-    const existingIndex = updatedCoupons.findIndex(c => c.id === voucher.id);
-
-    if (existingIndex !== -1) {
-      updatedCoupons[existingIndex].stock += 1;
-    } else {
-      updatedCoupons.push({ ...voucher, stock: 1 });
-    }
-
-    const updatedUser = {
-      ...user,
-      point: user.point - voucher.pointToExchange,
-      coupons: updatedCoupons,
-    };
-
-    try {
-      await fetch(`http://localhost:3000/users/${userId}`, {
-        method: 'PATCH',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(updatedUser),
-      });
-
-      setUser(updatedUser);
-      alert('Đổi voucher thành công!');
-    } catch (error) {
-      console.error('Đổi voucher thất bại:', error);
-      alert('Có lỗi xảy ra, vui lòng thử lại.');
-    }
+    if (Array.isArray(applicable)) {
+      // Nếu là mảng, kiểm tra sản phẩm đã chọn có trong mảng không
+      return applicable.includes(selectedProduct?.name);
+    } 
+    // Nếu là chuỗi, so sánh trực tiếp với tên sản phẩm đã chọn
+    return applicable === selectedProduct?.name;
   };
 
+  // Kiểm tra xem có bất kỳ voucher nào phù hợp không
+  const applicableCoupons = coupons.filter(isVoucherApplicable);
+
   return (
-    <div className="space-y-4">
+    <div className="space-y-0">
       <button
         onClick={onBack}
         className="text-sm text-blue-600 underline hover:text-blue-800"
       >
-        ← Quay lại
+        ← Back
       </button>
-<p>Ban hien co: {user?.point}</p>
-      <h2 className="text-xl font-semibold">Đổi điểm lấy voucher</h2>
 
-      {coupons.length > 0 ? (
+      <div className='py-2'>
+        <p>All offers ({coupons.length})</p>
+        <p className='text-sm'>You currently have {user?.point} points</p>
+        <p className="text-xs text-red-600">
+          Please note: The voucher is non-refundable when you cancel the order*
+        </p>
+      </div>
+
+      {applicableCoupons.length > 0 ? (
         <div className="space-y-3">
-          {coupons.map(voucher => (
-            <ExchangeVoucherCard
-              key={voucher.id}
-              voucher={voucher}
-              onExchange={handleExchange}
-            />
-          ))}
+          {[...applicableCoupons]
+            .sort((a, b) => {
+              const canExchangeA = user?.point >= a.pointToExchange;
+              const canExchangeB = user?.point >= b.pointToExchange;
+              return (canExchangeB ? 1 : 0) - (canExchangeA ? 1 : 0);
+            })
+            .map(voucher => (
+              <ExchangeVoucherCard
+                key={voucher.id}
+                selectedProduct={selectedProduct}
+                voucher={voucher}
+                userPoint={user?.point || 0}
+                onExchange={() => exchangeVoucher(voucher)}
+              />
+            ))}
         </div>
       ) : (
         <p className="text-gray-600">Không có voucher nào để hiển thị.</p>

@@ -3,9 +3,11 @@ import { useCart } from "./../../hooks/useCart";
 import { Link } from "react-router-dom";
 import { useEffect } from "react";
 import ProductSkeleton from './../../components/user/etc/ProductSkeleton';
+import { useAuth } from "../../hooks/useAuth";
 const Cart = ({ }) => {
     const { cart, removeFromCart, clearCart, updateQuantity } = useCart();
     const [loading, setLoading] = useState(true);
+    const {user}=useAuth()
 
     const total = cart.reduce(
         (sum, item) => sum + item.price * (item.quantity ?? 1),
@@ -16,7 +18,7 @@ const Cart = ({ }) => {
             .toString()
             .replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     };
-
+const finalPrice=total+user.shippingFeeByAddress
     useEffect(() => {
         const timer = setTimeout(() => {
             setLoading(false);
@@ -218,11 +220,16 @@ const Cart = ({ }) => {
                             <p className="inter text-lg">Estimated Delivery & Handling</p>
                             <p className="inter text-lg">Free</p>
                         </div>
+                        <div className="flex justify-between items-center ">
+                            <p className="inter text-lg">Shipping Fee</p>
+                            <p className="inter text-lg">{formatPrice(user.shippingFeeByAddress)}  <span className="text-sm underline">đ</span></p>
+                            
+                        </div>
                     </div>
                     <div className="flex justify-between items-center py-6 border-t border-b border-gray-300">
                         <p className="inter text-lg">Total</p>
                         <p>
-                            <span className="inter">{formatPrice(total)}</span>
+                            <span className="inter">{formatPrice(finalPrice)}</span>
                             <span className="text-sm underline">đ</span>
                         </p>
                     </div>

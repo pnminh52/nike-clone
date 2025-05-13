@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { useCart } from "./../../hooks/useCart";
 import { Link } from "react-router-dom";
+import { useAuth } from "../../hooks/useAuth";
 
 const Checkout = () => {
     const { cart, checkoutCart } = useCart();
     const [userInfo, setUserInfo] = useState(null);
     const [touched, setTouched] = useState(false);
+    const {user}=useAuth()
 
     useEffect(() => {
         const fetchUser = async () => {
@@ -24,6 +26,9 @@ const Checkout = () => {
         (sum, item) => sum + item.price * (item.quantity ?? 1),
         0
     );
+    const shippingFee = user?.shippingFeeByAddress || 0;
+const finalPrice = total + shippingFee;
+
 
     const formatPrice = (price) => {
         return Number(price)
@@ -38,6 +43,7 @@ const Checkout = () => {
             </div>
         );
     }
+    
 
     if (!userInfo) {
         return <div>Loading user information...</div>;
@@ -173,7 +179,7 @@ const Checkout = () => {
                     </div>
                     <div className="flex justify-between text-gray-400">
                         <p>Delivery/Shipping</p>
-                        <p>Free</p>
+                        <p>{formatPrice(user.shippingFeeByAddress)}</p>
                     </div>
                     <div className="py-4">
                         <p className="text-sm mb-1">You qualify for free shipping!</p>
@@ -181,7 +187,7 @@ const Checkout = () => {
                     </div>
                     <div className="flex justify-between py-4 border-t border-b border-gray-300 ">
                         <p>Total</p>
-                        <p>{formatPrice(total)} <span className="text-sm underline">đ</span></p>
+                        <p>{formatPrice(finalPrice)} <span className="text-sm underline">đ</span></p>
                     </div>
                     <div className="col-span-2 space-y-4 py-4">
   {cart.map((item, index) => {

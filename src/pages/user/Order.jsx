@@ -6,6 +6,8 @@ import Pagination from "../../components/user/etc/Pagination";
 
 const Order = () => {
   const { user, setUser } = useAuth();
+  const [showDropdown, setShowDropdown] = useState(false);
+
   const [selectedOrder, setSelectedOrder] = useState(null);
   const [orders, setOrders] = useState([]);
   const [selectedItems, setSelectedItems] = useState([]);
@@ -42,7 +44,15 @@ const Order = () => {
         : [...prev, itemId]
     );
   };
-
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (!event.target.closest(".relative")) {
+        setShowDropdown(false);
+      }
+    };
+    document.addEventListener("click", handleClickOutside);
+    return () => document.removeEventListener("click", handleClickOutside);
+  }, []);
   const onUpdateStatus = async (orderId, newStatus, cancelReason) => {
     const userId = localStorage.getItem("userId");
     const res = await axios.get(`http://localhost:3000/users/${userId}`);
@@ -77,6 +87,8 @@ const Order = () => {
   if (!orders || orders.length === 0) {
     return <p className="text-center mt-6">Chưa có đơn hàng nào.</p>;
   }
+
+  
 
   return (
     <div className="max-w-screen-2xl mx-auto px-10">
@@ -115,37 +127,57 @@ const Order = () => {
       </div>
 
       {/* Search & Filters */}
-      <div className="flex justify-between mt-10 mb-4">
-        <div className="flex gap-2 items-center">
-          <input
-            type="text"
-            placeholder="Search orders"
-            className="px-2 py-1.5 border border-gray-400 rounded-lg"
-          />
-          <p className="px-2 py-1.5 border rounded-lg border-gray-400">Filters</p>
-        </div>
-        <div className="flex gap-3 items-center">
-          <select
-            value={statusFilter}
-            onChange={(e) => setStatusFilter(e.target.value)}
-            className="px-2 py-1.5 border rounded-lg border-gray-400"
-          >
-            <option value="All">All Status</option>
-            <option value="Pending">Pending</option>
-            <option value="Cancelled">Cancelled</option>
-            <option value="Complete">Complete</option>
-            <option value="Delivered">Delivered</option>
-          </select>
-          <select
-            value={sortOrder}
-            onChange={(e) => setSortOrder(e.target.value)}
-            className="px-2 py-1.5 border rounded-lg border-gray-400"
-          >
-            <option value="newest">Newest First</option>
-            <option value="oldest">Oldest First</option>
-          </select>
-        </div>
+    
+      <div className="relative inline-block text-right ml auto">
+  <div
+    onClick={() => setShowDropdown(!showDropdown)}
+    className="flex gap-2 py-3 justify-end text-right items-center cursor-pointer "
+  >
+    <p>Sort By</p>
+    <svg
+      className={`w-5 h-5 transform transition-transform ${showDropdown ? "rotate-180" : ""}`}
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      viewBox="0 0 24 24"
+    >
+      <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+    </svg>
+  </div>
+
+  {showDropdown && (
+    <div className="absolute right-0 mt-2 w-60 bg-white border rounded-lg shadow-lg z-10 p-3 space-y-4">
+      <div>
+        <label className="block mb-1 text-sm font-medium">Lọc theo trạng thái</label>
+        <select
+          value={statusFilter}
+          onChange={(e) => setStatusFilter(e.target.value)}
+          className="w-full px-2 py-1.5 border rounded-lg border-gray-400"
+        >
+          <option value="All">All Status</option>
+          <option value="Pending">Pending</option>
+          <option value="Cancelled">Cancelled</option>
+          <option value="Complete">Complete</option>
+          <option value="Delivered">Delivered</option>
+        </select>
       </div>
+
+      <div>
+        <label className="block mb-1 text-sm font-medium">Sắp xếp theo ngày</label>
+        <select
+          value={sortOrder}
+          onChange={(e) => setSortOrder(e.target.value)}
+          className="w-full px-2 py-1.5 border rounded-lg border-gray-400"
+        >
+          <option value="newest">Newest First</option>
+          <option value="oldest">Oldest First</option>
+        </select>
+      </div>
+    </div>
+  )}
+</div>
+
+   
 
       {/* Table */}
       <div className="overflow-x-auto mb-10">
@@ -212,11 +244,13 @@ const Order = () => {
         </table>
 
         {/* Pagination */}
-        <Pagination
+      {orders<10&&(
+          <Pagination
           currentPage={currentPage}
           totalPages={totalPages}
           onPageChange={(page) => setCurrentPage(page)}
         />
+      )}
       </div>
 
       {/* Chi tiết đơn hàng */}

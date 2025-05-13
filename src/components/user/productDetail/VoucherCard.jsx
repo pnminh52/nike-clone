@@ -9,17 +9,15 @@ const VoucherCard = ({ coupon, isSelected, onSelect, selectedProduct, user, upda
         return diffDays <= 7 && diffDays >= 0;
       };
       const [loading, setLoading]=useState(true)
-      const isApplicable = (() => {
-        const applicableNames = coupon.applicableProductNames;
-        const productName = selectedProduct?.name;
-    
-        return (
-          !applicableNames || // Nếu không có field này thì áp dụng toàn bộ
-          applicableNames === "All" ||
-          (Array.isArray(applicableNames) && applicableNames.includes(productName)) ||
-          applicableNames === productName
-        );
-      })();
+      const applicableNames = coupon.applicableProductNames;
+      const productName = selectedProduct?.name;
+      
+      const isApplicable =
+        !applicableNames || // không tồn tại
+        applicableNames === "" || // áp dụng tất cả
+        (Array.isArray(applicableNames) && applicableNames.includes(productName)) ||
+        applicableNames === productName;
+      
   return (
     
     <div className="space-y-2">
@@ -39,11 +37,14 @@ const VoucherCard = ({ coupon, isSelected, onSelect, selectedProduct, user, upda
           <p className="text-xs text-gray-500  ">
             {coupon.description || "Không có mô tả"}
           </p>
-          {isApplicable && coupon.applicableProductNames !== "All" && (
-              <p className="text-xs text-green-500">
-                Applied to the {selectedProduct?.name}
-              </p>
-            )}
+          {isApplicable &&
+  Array.isArray(coupon.applicableProductNames) &&
+  coupon.applicableProductNames.length > 0 && (
+    <p className="text-xs text-green-500">
+      Applied to the {selectedProduct?.name}
+    </p>
+)}
+
           {coupon.expiryDate && isExpiringSoon(coupon.expiryDate) && (
   
   
