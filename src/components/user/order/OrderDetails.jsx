@@ -26,14 +26,25 @@ const OrderDetails = ({ order, onClose, onUpdateStatus }) => {
       cancelReasons.includes("Other") && customReason
         ? [...cancelReasons.filter((r) => r !== "Other"), customReason].join(", ")
         : cancelReasons.join(", ");
-
+  
+    // Tính tổng số điểm cần trừ cho tất cả các sản phẩm trong đơn hàng
+    const totalDeduction = order.items.reduce((total, item) => {
+      return total + (item.giftPoint * item.quantity); // Tính tổng điểm của từng sản phẩm
+    }, 0);
+  
+    // Cập nhật trạng thái đơn hàng và trừ điểm của người dùng
     onUpdateStatus(order.id, "Cancelled", finalReason || "Unspecified reason").then(
       (updatedUser) => {
+        // Trừ điểm từ tài khoản người dùng
+        updatedUser.point -= totalDeduction;
+  
+        // Cập nhật lại thông tin người dùng sau khi trừ điểm
         updateUser(updatedUser);
         onClose();
       }
     );
   };
+  
 
   return (
     <div className="fixed inset-0 bg-black/40 flex justify-center items-center">

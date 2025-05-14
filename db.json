@@ -1520,95 +1520,165 @@
       "password": "111111AaAAA",
       "country": "Vietnam",
       "extraAddresses": [],
-      "cart": [
-        {
-          "id": "k59t",
-          "position": 1,
-          "name": "Jordan Heir Series PF Bloodline",
-          "isDefault": "true",
-          "height": "Mid Top",
-          "shoesFor": "Jordan",
-          "stock": 50,
-          "class": "Shoes",
-          "brand": "Jordan",
-          "features": "Side vents",
-          "giftPoint": 300,
-          "type": "Basketball Shoes",
-          "price": "3239000",
-          "price_sale": "3000000",
-          "des": "Looking to ignite your competitive edge? Cue the Jordan Heir. Crafted with insights from women basketball players, these shoes are all about helping you play shifty and stay low to the ground. A drop-in midsole helps give you extra mobility, while a built-in cage provides a fit that contours to your foot for added support as you move from side to side. So run and cut in confidence. You're the game's main character, after all.",
-          "img": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/cd574ae5-e1e7-4695-acbb-46ca9a48ef51/JORDAN+HEIR+SERIES+PF.png",
-          "page": "New & Featured",
-          "category": "New & Upcoming Drops",
-          "status": "Just In",
-          "customer": "Men",
-          "sizes": [
-            "31",
-            "32",
-            "33",
-            "34",
-            "40",
-            "37",
-            "35",
-            "36",
-            "38",
-            "39",
-            "41",
-            "42",
-            "43"
-          ],
-          "gender": "Men",
-          "color": [
-            "Sail",
-            "Volt",
-            "Black"
-          ],
-          "style": "FQ3859-107",
-          "country": "Vietnam",
-          "additionalImages": [
-            "https://shortformvideo.nike.com/a/videos/372e0fa7-3dfb-462d-916b-a339a915054e/video.mp4",
-            "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/768a256d-9d54-417b-bf4b-273c57e78fa8/JORDAN+HEIR+SERIES+PF.png",
-            "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/b158c400-113f-406c-a8a9-9c634cb895e1/JORDAN+HEIR+SERIES+PF.png",
-            "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/87e4a86f-627f-49a7-a23e-8ca04c773f99/JORDAN+HEIR+SERIES+PF.png",
-            "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/afeee5ca-6757-4a9c-8f6d-4c0e0974e6d1/JORDAN+HEIR+SERIES+PF.png",
-            "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/cfd9f0c8-3af9-4d95-a6e6-1bfcc13d965a/JORDAN+HEIR+SERIES+PF.png",
-            "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/882ea26d-edc9-47b4-96ee-16cabee65607/JORDAN+HEIR+SERIES+PF.png",
-            "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/68caf950-44e3-4827-85c7-73f7505ebfb9/JORDAN+HEIR+SERIES+PF.png",
-            "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/891fa088-06ad-4b24-bdf6-8536326a2bef/JORDAN+HEIR+SERIES+PF.png",
-            "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/40621ce8-23a9-4bfd-a205-624268a84216/JORDAN+HEIR+SERIES+PF.png"
-          ],
-          "featured": [
-            {
-              "title": "Contouring cage",
-              "content": "A built-in cage system contours to your foot to help give you the supportive fit you need when cutting across the court."
-            },
-            {
-              "title": "Drop in and work",
-              "content": "A drop-in Cushlon 3.0 foam midsole puts lightweight and responsive cushioning directly underfoot, helping with on-court mobility. It's also why the Heir is lower to the ground than any other performance basketball shoe in our collection."
-            },
-            {
-              "title": "Get a grip",
-              "content": "Rubber outsole with herringbone tread pattern helps give you the sticky traction you need to stop in an instant and shift directions."
-            }
-          ],
-          "moreBenefit": [
-            "Lightweight textiles in the upper help keep things breathable and comfortable.",
-            "Synthetic leather in the upper helps add durability."
-          ],
-          "notes": [
-            "Pull tab on heel",
-            "Rubber outsole",
-            "The PF edition is designed with a wider fit and optimised for play on outdoor courts."
-          ],
-          "usedVoucher": null,
-          "size": 36,
-          "quantity": 1
-        }
-      ],
+      "cart": [],
       "orders": [
         {
-          "id": 1747176291248,
+          "id": 1747185552124,
           "items": [
+            {
+              "id": "12hb",
+              "position": 1,
+              "brand": "Nike",
+              "name": "Nike Zoom Fly 6",
+              "mainColor": "Orange",
+              "giftPoint": 300,
+              "stock": 100,
+              "isDefault": "true",
+              "class": "Shoes",
+              "type": "Road Racing Shoes",
+              "price": 5450000,
+              "price_sale": "4999000",
+              "des": "The Zoom Fly 6 is with you every step of your run. Lighter than the Zoom Fly 5, its responsive ZoomX foam adds energy return to each stride, while a carbon-fibre plate helps propel you to the finishing line.",
+              "img": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/146ef87c-ebf4-4534-835e-2f97e03856f5/W+ZOOM+FLY+6.png",
+              "page": "New & Featured",
+              "category": "New & Upcoming Drops",
+              "status": "Just In",
+              "customer": "Women",
+              "sizes": [
+                "31",
+                "32",
+                "33",
+                "34",
+                "40",
+                "37",
+                "35",
+                "36",
+                "38",
+                "39"
+              ],
+              "gender": "Women",
+              "color": [
+                "Bright Crimson",
+                "Lime Blast",
+                "Mint Foam",
+                "Cave Purple"
+              ],
+              "style": "FN8455-601",
+              "country": "Vietnam",
+              "additionalImages": [
+                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/b243a08d-3a77-4c58-8b09-86f485ee326f/W+ZOOM+FLY+6.png",
+                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/dc04119e-ae19-4545-a5aa-e13c4d18b25a/W+ZOOM+FLY+6.png",
+                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/3d06a0a8-1729-4314-b1e4-442ea074e0d9/W+ZOOM+FLY+6.png",
+                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/607d35fd-6d8e-4c69-a39a-8dee37762b66/W+ZOOM+FLY+6.png",
+                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/beb54158-f84a-4402-a5f4-908ed137bb8f/W+ZOOM+FLY+6.png",
+                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/79b8abb1-2cfe-4f1a-89ab-b97f4f317bb3/W+ZOOM+FLY+6.png",
+                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/ad60d354-8834-4d7b-9a66-21052cc59d7e/W+ZOOM+FLY+6.png",
+                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/da0104a3-8cd7-43a8-b74c-70b09179884b/W+ZOOM+FLY+6.png",
+                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/33bba3f7-0e52-4be5-a2b8-9a122bf08547/W+ZOOM+FLY+6.png",
+                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/85776744-2566-4c86-93a9-6ef0e70d8f34/W+ZOOM+FLY+6.png"
+              ],
+              "usedVoucher": {
+                "id": "c1",
+                "name": "50K Voucher",
+                "value": 50000,
+                "discountType": "amount"
+              },
+              "size": 37,
+              "quantity": 1
+            }
+          ],
+          "date": "2025-05-14T01:19:12.124Z",
+          "status": "Cancelled",
+          "shippingFee": 10000,
+          "totalPrice": 5460000,
+          "cancelReason": "Item not received"
+        },
+        {
+          "id": 1747186227568,
+          "items": [
+            {
+              "id": "k59t",
+              "position": 1,
+              "name": "Jordan Heir Series PF Bloodline",
+              "isDefault": "true",
+              "height": "Mid Top",
+              "shoesFor": "Jordan",
+              "stock": 50,
+              "class": "Shoes",
+              "brand": "Jordan",
+              "features": "Side vents",
+              "giftPoint": 300,
+              "type": "Basketball Shoes",
+              "price": "3239000",
+              "price_sale": "3000000",
+              "des": "Looking to ignite your competitive edge? Cue the Jordan Heir. Crafted with insights from women basketball players, these shoes are all about helping you play shifty and stay low to the ground. A drop-in midsole helps give you extra mobility, while a built-in cage provides a fit that contours to your foot for added support as you move from side to side. So run and cut in confidence. You're the game's main character, after all.",
+              "img": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/cd574ae5-e1e7-4695-acbb-46ca9a48ef51/JORDAN+HEIR+SERIES+PF.png",
+              "page": "New & Featured",
+              "category": "New & Upcoming Drops",
+              "status": "Just In",
+              "customer": "Men",
+              "sizes": [
+                "31",
+                "32",
+                "33",
+                "34",
+                "40",
+                "37",
+                "35",
+                "36",
+                "38",
+                "39",
+                "41",
+                "42",
+                "43"
+              ],
+              "gender": "Men",
+              "color": [
+                "Sail",
+                "Volt",
+                "Black"
+              ],
+              "style": "FQ3859-107",
+              "country": "Vietnam",
+              "additionalImages": [
+                "https://shortformvideo.nike.com/a/videos/372e0fa7-3dfb-462d-916b-a339a915054e/video.mp4",
+                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/768a256d-9d54-417b-bf4b-273c57e78fa8/JORDAN+HEIR+SERIES+PF.png",
+                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/b158c400-113f-406c-a8a9-9c634cb895e1/JORDAN+HEIR+SERIES+PF.png",
+                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/87e4a86f-627f-49a7-a23e-8ca04c773f99/JORDAN+HEIR+SERIES+PF.png",
+                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/afeee5ca-6757-4a9c-8f6d-4c0e0974e6d1/JORDAN+HEIR+SERIES+PF.png",
+                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/cfd9f0c8-3af9-4d95-a6e6-1bfcc13d965a/JORDAN+HEIR+SERIES+PF.png",
+                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/882ea26d-edc9-47b4-96ee-16cabee65607/JORDAN+HEIR+SERIES+PF.png",
+                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/68caf950-44e3-4827-85c7-73f7505ebfb9/JORDAN+HEIR+SERIES+PF.png",
+                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/891fa088-06ad-4b24-bdf6-8536326a2bef/JORDAN+HEIR+SERIES+PF.png",
+                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/40621ce8-23a9-4bfd-a205-624268a84216/JORDAN+HEIR+SERIES+PF.png"
+              ],
+              "featured": [
+                {
+                  "title": "Contouring cage",
+                  "content": "A built-in cage system contours to your foot to help give you the supportive fit you need when cutting across the court."
+                },
+                {
+                  "title": "Drop in and work",
+                  "content": "A drop-in Cushlon 3.0 foam midsole puts lightweight and responsive cushioning directly underfoot, helping with on-court mobility. It's also why the Heir is lower to the ground than any other performance basketball shoe in our collection."
+                },
+                {
+                  "title": "Get a grip",
+                  "content": "Rubber outsole with herringbone tread pattern helps give you the sticky traction you need to stop in an instant and shift directions."
+                }
+              ],
+              "moreBenefit": [
+                "Lightweight textiles in the upper help keep things breathable and comfortable.",
+                "Synthetic leather in the upper helps add durability."
+              ],
+              "notes": [
+                "Pull tab on heel",
+                "Rubber outsole",
+                "The PF edition is designed with a wider fit and optimised for play on outdoor courts."
+              ],
+              "usedVoucher": null,
+              "size": 36,
+              "quantity": 1
+            },
             {
               "id": "7ey27e",
               "position": 1,
@@ -1674,18 +1744,112 @@
               ],
               "notes": [],
               "usedVoucher": null,
-              "size": 32,
+              "size": 36,
               "quantity": 1
             }
           ],
-          "date": "2025-05-13T22:44:51.248Z",
+          "date": "2025-05-14T01:30:27.568Z",
           "status": "Pending",
           "shippingFee": 10000,
-          "totalPrice": 2939000
+          "totalPrice": 6178000
+        },
+        {
+          "id": 1747188498057,
+          "items": [
+            {
+              "id": "k59t",
+              "position": 1,
+              "name": "Jordan Heir Series PF Bloodline",
+              "isDefault": "true",
+              "height": "Mid Top",
+              "shoesFor": "Jordan",
+              "stock": 50,
+              "class": "Shoes",
+              "brand": "Jordan",
+              "features": "Side vents",
+              "giftPoint": 300,
+              "type": "Basketball Shoes",
+              "price": "3239000",
+              "price_sale": "3000000",
+              "des": "Looking to ignite your competitive edge? Cue the Jordan Heir. Crafted with insights from women basketball players, these shoes are all about helping you play shifty and stay low to the ground. A drop-in midsole helps give you extra mobility, while a built-in cage provides a fit that contours to your foot for added support as you move from side to side. So run and cut in confidence. You're the game's main character, after all.",
+              "img": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/cd574ae5-e1e7-4695-acbb-46ca9a48ef51/JORDAN+HEIR+SERIES+PF.png",
+              "page": "New & Featured",
+              "category": "New & Upcoming Drops",
+              "status": "Just In",
+              "customer": "Men",
+              "sizes": [
+                "31",
+                "32",
+                "33",
+                "34",
+                "40",
+                "37",
+                "35",
+                "36",
+                "38",
+                "39",
+                "41",
+                "42",
+                "43"
+              ],
+              "gender": "Men",
+              "color": [
+                "Sail",
+                "Volt",
+                "Black"
+              ],
+              "style": "FQ3859-107",
+              "country": "Vietnam",
+              "additionalImages": [
+                "https://shortformvideo.nike.com/a/videos/372e0fa7-3dfb-462d-916b-a339a915054e/video.mp4",
+                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/768a256d-9d54-417b-bf4b-273c57e78fa8/JORDAN+HEIR+SERIES+PF.png",
+                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/b158c400-113f-406c-a8a9-9c634cb895e1/JORDAN+HEIR+SERIES+PF.png",
+                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/87e4a86f-627f-49a7-a23e-8ca04c773f99/JORDAN+HEIR+SERIES+PF.png",
+                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/afeee5ca-6757-4a9c-8f6d-4c0e0974e6d1/JORDAN+HEIR+SERIES+PF.png",
+                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/cfd9f0c8-3af9-4d95-a6e6-1bfcc13d965a/JORDAN+HEIR+SERIES+PF.png",
+                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/882ea26d-edc9-47b4-96ee-16cabee65607/JORDAN+HEIR+SERIES+PF.png",
+                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/68caf950-44e3-4827-85c7-73f7505ebfb9/JORDAN+HEIR+SERIES+PF.png",
+                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/891fa088-06ad-4b24-bdf6-8536326a2bef/JORDAN+HEIR+SERIES+PF.png",
+                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/40621ce8-23a9-4bfd-a205-624268a84216/JORDAN+HEIR+SERIES+PF.png"
+              ],
+              "featured": [
+                {
+                  "title": "Contouring cage",
+                  "content": "A built-in cage system contours to your foot to help give you the supportive fit you need when cutting across the court."
+                },
+                {
+                  "title": "Drop in and work",
+                  "content": "A drop-in Cushlon 3.0 foam midsole puts lightweight and responsive cushioning directly underfoot, helping with on-court mobility. It's also why the Heir is lower to the ground than any other performance basketball shoe in our collection."
+                },
+                {
+                  "title": "Get a grip",
+                  "content": "Rubber outsole with herringbone tread pattern helps give you the sticky traction you need to stop in an instant and shift directions."
+                }
+              ],
+              "moreBenefit": [
+                "Lightweight textiles in the upper help keep things breathable and comfortable.",
+                "Synthetic leather in the upper helps add durability."
+              ],
+              "notes": [
+                "Pull tab on heel",
+                "Rubber outsole",
+                "The PF edition is designed with a wider fit and optimised for play on outdoor courts."
+              ],
+              "usedVoucher": null,
+              "size": 33,
+              "quantity": 1
+            }
+          ],
+          "date": "2025-05-14T02:08:18.057Z",
+          "status": "Cancelled",
+          "shippingFee": 10000,
+          "totalPrice": 3249000,
+          "cancelReason": "Changed my mind"
         }
       ],
-      "point": 1000,
-      "totalOrder": 8,
+      "point": 7900,
+      "accountStatus": "Active",
+      "totalOrder": 11,
       "dateOfBirth": "2016-4-5",
       "customerType": "Standard",
       "role": "User",
@@ -1706,7 +1870,48 @@
           "numberOfExpiryDate": 60,
           "expiryDate": "2025-07-12",
           "pointToExchange": 2500
+        },
+        {
+          "id": "c1",
+          "category": "new-user",
+          "name": "50K Voucher",
+          "image": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/b4f20f67-6cd6-4f8e-8e1c-41ccf6d9de08/GiftCard.png",
+          "description": "Get 50K off on your first order",
+          "discountType": "amount",
+          "value": 50000,
+          "applicableProductNames": "All",
+          "stock": 1,
+          "code": "WELCOME50",
+          "expiryDate": "2025-06-23",
+          "numberOfExpiryDate": 40,
+          "pointToExchange": 1000
         }
+      ]
+      
+    },
+    {
+      "id": "asasw",
+      "firstname": "Admin test ",
+      "lastname": "qưqwqwqw",
+      "phone": "0888888888",
+      "address": "Hà Nội",
+      "shippingFeeByAddress": 10000,
+      "email": "1@gmail.com",
+      "password": "111111Aa",
+      "country": "Vietnam",
+      "extraAddresses": [],
+      "cart": [],
+      "orders": [
+      ],
+      "point": 7900,
+      "accountStatus": "Active",
+      "totalOrder": 11,
+      "dateOfBirth": "2016-4-5",
+      "customerType": "Standard",
+      "role": "Admin",
+      "avatar": "",
+      "createdAt": "2025-05-11T17:25:32.190Z",
+      "coupons": [
       ]
     }
   ],

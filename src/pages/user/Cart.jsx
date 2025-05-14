@@ -18,7 +18,8 @@ const Cart = ({ }) => {
             .toString()
             .replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     };
-const finalPrice=total+user.shippingFeeByAddress
+ const shippingFee = user?.shippingFeeByAddress ?? 0;
+ const finalPrice = total + shippingFee;
     useEffect(() => {
         const timer = setTimeout(() => {
             setLoading(false);

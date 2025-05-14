@@ -22,21 +22,43 @@ import Profile from "./pages/user/Profile";
 import Order from "./pages/user/Order";
 import SearchPage from "./pages/user/SearchPage";
 import Setting from "./pages/user/Setting";
+import CouponList from "./pages/admin/coupon/CouponList"
+import EditCoupon from "./pages/admin/coupon/EditCoupon";
+import AddCoupon from "./pages/admin/coupon/AddCoupon";
+import AccountList from "./pages/admin/account/AccountList";
+import AdminDashboard from "./pages/admin/AdminDashboard";
+import { Navigate } from "react-router-dom";
+
+
 const App = () => {
   return (
     <>
       <AuthProvider>
         <Routes>
-          <Route path="/admin" element={<AdminLayout />}>
-            <Route path="products/list" element={<ProductList />} />
-            <Route path="products/add" element={<AddProduct />} />
-            <Route path="products/edit/:id" element={<EditProduct />} />
-            <Route path="categories/list" element={<CategoryList />} />
-            <Route path="categories/add" element={<AddCategory />} />
-            <Route path="categories/edit/:id" element={<EditCategory />} />
-            <Route path="categories/view/:id" element={<CategoryDetail />} />
+      
 
-          </Route>
+<Route path="/admin" element={<AdminLayout />}>
+  <Route index element={<Navigate to="dashboard" />} />
+  
+  <Route path="dashboard" element={<AdminDashboard />}>
+    <Route index element={<p>Chào mừng đến trang Dashboard</p>} />
+    <Route path="products/list" element={<ProductList />} />
+    <Route path="products/add" element={<AddProduct />} />
+    <Route path="products/edit/:id" element={<EditProduct />} />
+
+    <Route path="categories/list" element={<CategoryList />} />
+    <Route path="categories/add" element={<AddCategory />} />
+    <Route path="categories/edit/:id" element={<EditCategory />} />
+    <Route path="categories/view/:id" element={<CategoryDetail />} />
+
+    <Route path="coupons/list" element={<CouponList />} />
+    <Route path="coupons/add" element={<AddCoupon />} />
+    <Route path="coupons/edit/:id" element={<EditCoupon />} />
+
+    <Route path="account/list" element={<AccountList />} />
+  </Route>
+</Route>
+
 
           <Route path="/" element={<UserLayout />}>
             <Route index element={<Homepage />} />
@@ -48,11 +70,11 @@ const App = () => {
             <Route path="checkout" element={<Checkout />} />
             <Route path="wishlist" element={<Wishlist />} />
             <Route path="profile/:id" element={<Profile />} />
-            <Route path="orders" element={<Order/>}/>
+            <Route path="orders" element={<Order />} />
             <Route path="search/:keyword" element={<SearchPage />} />
-            <Route path="setting/:tab?" element={<Setting/>}/>
+            <Route path="setting/:tab?" element={<Setting />} />
 
-            </Route>
+          </Route>
 
 
         </Routes>

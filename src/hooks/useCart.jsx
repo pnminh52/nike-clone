@@ -2,7 +2,9 @@ import { useEffect, useState } from 'react';
 import { toast } from 'react-toastify';
 import useToast from './useToast';
 import { useAuth } from './useAuth';
+import { Navigate, useNavigate } from 'react-router-dom';
 export const useCart = () => {
+  const navigate=useNavigate()
   const [cart, setCart] = useState([]);
   const {successToast, errorToast, warningToast} = useToast();
   const {updateUser}=useAuth()
@@ -140,7 +142,7 @@ export const useCart = () => {
   
       const totalGiftPoint = cart.reduce((total, item) => total + (item.giftPoint || 0), 0);
   
-      const updatedPoint = user.point + totalGiftPoint;
+      // const updatedPoint = user.point + totalGiftPoint;
   
       const updatedUser = {
         ...user,
@@ -148,7 +150,7 @@ export const useCart = () => {
         orders: updatedOrders,
         totalOrder: newTotalOrder,
         customerType: newCustomerType,
-        point: updatedPoint
+        // point: updatedPoint
       };
   
       await fetch(`http://localhost:3000/users/${userId}`, {
@@ -162,7 +164,8 @@ export const useCart = () => {
       updateUser(updatedUser);
       setCart([]);
       successToast("✅ Thanh toán thành công!");
-      successToast(`🎉 Bạn đã được cộng thêm ${totalGiftPoint} điểm thưởng! Tổng điểm hiện tại: ${updatedPoint}`);
+      navigate("/")
+      // successToast(`🎉 Bạn đã được cộng thêm ${totalGiftPoint} điểm thưởng! Tổng điểm hiện tại: ${updatedPoint}`);
     } catch (error) {
       console.error("Checkout error:", error);
       errorToast("❌ Lỗi khi thanh toán. Vui lòng thử lại.");

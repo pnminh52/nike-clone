@@ -126,7 +126,7 @@ const SidebarFilter = ({
     'Boots',
     'Tennis',
     'Athletics',
-    'Sandals, Slides & Flip Flops',
+    'Sandals, Slides',
   ].map((category) => (
     <label
       key={category}
@@ -148,7 +148,7 @@ const SidebarFilter = ({
           >
           Gender
             <svg
-              className={`w-5 h-5 cursor-pointer transform transition-transform ${isGenderDropdownOpen ? 'rotate-180' : ''}`}
+              className={`w-5 h-5 mr-2 cursor-pointer transform transition-transform ${isGenderDropdownOpen ? 'rotate-180' : ''}`}
               fill="none"
               stroke="currentColor"
               strokeWidth="2"
@@ -183,7 +183,7 @@ const SidebarFilter = ({
           >
            Price
             <svg
-              className={`w-5 h-5 cursor-pointer transform transition-transform ${isPriceDropdownOpen ? 'rotate-180' : ''}`}
+              className={`w-5 h-5  mr-2 cursor-pointer transform transition-transform ${isPriceDropdownOpen ? 'rotate-180' : ''}`}
               fill="none"
               stroke="currentColor"
               strokeWidth="2"
@@ -214,7 +214,7 @@ const SidebarFilter = ({
           >
           Brand
             <svg
-              className={`w-5 h-5 cursor-pointer transform transition-transform ${isBrandDropdownOpen ? 'rotate-180' : ''}`}
+              className={`w-5 h-5  mr-2 cursor-pointer transform transition-transform ${isBrandDropdownOpen ? 'rotate-180' : ''}`}
               fill="none"
               stroke="currentColor"
               strokeWidth="2"
@@ -248,7 +248,7 @@ const SidebarFilter = ({
           >
           Colour
             <svg
-              className={`w-5 h-5 cursor-pointer transform transition-transform ${isColorDropdownOpen ? 'rotate-180' : ''}`}
+              className={`w-5 h-5  mr-2 cursor-pointer transform transition-transform ${isColorDropdownOpen ? 'rotate-180' : ''}`}
               fill="none"
               stroke="currentColor"
               strokeWidth="2"
@@ -296,7 +296,7 @@ const SidebarFilter = ({
           >
           Technology
             <svg
-              className={`w-5 h-5 cursor-pointer transform transition-transform ${isTechnologyDropdownOpen ? 'rotate-180' : ''}`}
+              className={`w-5 h-5  mr-2 cursor-pointer transform transition-transform ${isTechnologyDropdownOpen ? 'rotate-180' : ''}`}
               fill="none"
               stroke="currentColor"
               strokeWidth="2"
@@ -330,7 +330,7 @@ const SidebarFilter = ({
           >
           Features
             <svg
-              className={`w-5 h-5 cursor-pointer transform transition-transform ${isFeaturesDropdownOpen ? 'rotate-180' : ''}`}
+              className={`w-5 h-5  mr-2 cursor-pointer transform transition-transform ${isFeaturesDropdownOpen ? 'rotate-180' : ''}`}
               fill="none"
               stroke="currentColor"
               strokeWidth="2"
@@ -364,7 +364,7 @@ const SidebarFilter = ({
           >
           Status
             <svg
-              className={`w-5 h-5 cursor-pointer transform transition-transform ${isStatusDropdownOpen ? 'rotate-180' : ''}`}
+              className={`w-5 h-5  mr-2 cursor-pointer transform transition-transform ${isStatusDropdownOpen ? 'rotate-180' : ''}`}
               fill="none"
               stroke="currentColor"
               strokeWidth="2"
@@ -398,7 +398,7 @@ const SidebarFilter = ({
           >
           Shoe Height
             <svg
-              className={`w-5 h-5 cursor-pointer transform transition-transform ${isHeightDropdownOpen ? 'rotate-180' : ''}`}
+              className={`w-5 h-5  mr-2 cursor-pointer transform transition-transform ${isHeightDropdownOpen ? 'rotate-180' : ''}`}
               fill="none"
               stroke="currentColor"
               strokeWidth="2"

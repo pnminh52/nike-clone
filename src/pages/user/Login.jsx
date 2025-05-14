@@ -52,14 +52,16 @@ const Login = () => {
   
 
   const handleSubmit = async () => {
-    const success = await login(email, password);
-    if (success) {
-      // alert('Đăng nhập thành công!');
-      navigate('/');
-    } else {
-      errorToast('Sai email hoặc mật khẩu!');
+    const user = await login(email, password);
+    if (user) {
+      if (user.role === "Admin") {
+        navigate("/admin/dashboard");
+      } else {
+        navigate("/");
+      }
     }
   };
+  
 
   return (
     <form onSubmit={handleContinue} noValidate className="mt-8 max-w-lg px-6 mx-auto">
