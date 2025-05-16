@@ -17,20 +17,36 @@ const ProductList = () => {
         <table className="min-w-full border border-gray-300">
           <thead className="bg-gray-100">
             <tr>
+            <th className="border p-2 text-left">Image</th>
               <th className="border p-2 text-left">Name</th>
-              <th className="border p-2 text-left">Description</th>
-              <th className="border p-2 text-left">Image</th>
+              <th className="border p-2 text-left">Category</th>
+
+              
+              <th className="border p-2 text-left">Status</th>
+              <th className="border p-2 text-left">Style</th>
+              <th className="border p-2 text-left">Price</th>
+
+              <th className="border p-2 text-left">Stock</th>
+              <th className="border p-2 text-left">Brand</th>
+
               <th className="border p-2 text-left">Actions</th>
             </tr>
           </thead>
           <tbody>
             {products.map((product) => (
               <tr key={product.id} className="border-t">
-                <td className="border p-2">{product.name}</td>
-                <td className="border p-2">{product.des}</td>
-                <td className="border p-2">
+                 <td className="border p-2">
                   <img src={product.img} alt={product.name} className="w-20 h-20 object-cover" />
                 </td>
+                <td className="border p-2">{product.name}</td>
+                <td className="border p-2">{product.category}</td>
+               
+                                <td className="border p-2">{product.status}</td>
+                                <td className="border p-2">{product.style}</td>
+                                <td className="border p-2">{product.price}</td>
+                                <td className="border p-2">{product.stock}</td>
+                                <td className="border p-2">{product.brand}</td>
+                
                 <td className="border p-2 space-x-2">
                   <button
                     onClick={() => handleDeleteProduct(product.id)}
@@ -43,6 +59,9 @@ const ProductList = () => {
                       Edit
                     </button>
                   </Link>
+                  <button className="px-3 py-1 bg-green-500 text-white rounded hover:bg-green-600">
+                      Detail
+                    </button>
                 </td>
               </tr>
             ))}
