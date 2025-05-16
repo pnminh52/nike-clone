@@ -51,11 +51,11 @@ const ProductList = () => {
           <tbody>
             {products.map((product) => (
               <tr key={product.id} className="border-t">
-                <td className="border border-gray-200 p-2">
+                <td className="border border-gray-200 p-2 items-center text-center justify-center">
                   <img
                     src={product.img}
                     alt={product.name}
-                    className="w-20 h-20 object-cover"
+                    className="w-20 h-20 rounded-lg object-cover cursor-pointer"
                   />
                 </td>
                 <td className="border border-gray-200 p-2 text-center">{product.name}</td>
