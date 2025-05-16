@@ -67,11 +67,20 @@ const ProductDetailsCard = ({ selectedProduct, onClose }) => {
           <h4 className="text-xl"> Product details</h4>
           <ul className="list-disc  pl-5">
           {Object.keys(selectedProduct)
-      .filter(key => key.startsWith("note"))
-      .sort()
-      .map(key => (
-        <li key={key}>{selectedProduct[key]}</li>
-      ))}
+  .filter(
+    key =>
+      key.startsWith("note") &&
+    selectedProduct[key] &&
+      !(Array.isArray(selectedProduct[key]) && selectedProduct[key].length === 0)
+  )
+  .sort()
+  .flatMap(key => {
+    const value = selectedProduct[key];
+    return Array.isArray(value)
+      ? value.map((item, idx) => <li key={`${key}-${idx}`}>{item}</li>)
+      : <li key={key}>{value}</li>;
+  })
+}
             <li>Colour Shown: {selectedProduct.color.join('/')}</li>
             <li>Style: {selectedProduct.style}</li>
             <li>Country/Region of Origin: {selectedProduct.country}</li>

@@ -35,8 +35,8 @@ const SideBar = () => {
           return (
             <li
               key={index}
-              className={`px-4 py-2 rounded-lg border border-gray-200 ${
-                isActive ? 'bg-blue-200' : ''
+              className={`px-4 py-2 cursor-pointer border border-white rounded-xl  ${
+                isActive ? 'bg-blue-200 border border-blue-300 rounded-xl' : ''
               } text-black`}
             >
               {item.path === '#' ? (
