@@ -63,13 +63,16 @@ const Register = () => {
       country,
       extraAddresses  
     });
-  
+    
     if (success) {
       successToast("Đăng ký thành công!");
-      navigate("/login");
+      localStorage.setItem("user", JSON.stringify(success));
+      localStorage.setItem("userId", success.id);
+      navigate("/");
     } else {
       warningToast("Email đã tồn tại!");
     }
+    
   };
   
 

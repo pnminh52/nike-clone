@@ -28,6 +28,10 @@ import AddCoupon from "./pages/admin/coupon/AddCoupon";
 import AccountList from "./pages/admin/account/AccountList";
 import AdminDashboard from "./pages/admin/AdminDashboard";
 import { Navigate } from "react-router-dom";
+import Content from "./components/admin/dashboard/Content";
+import FeaturedSlideList from "./pages/admin/featured/FeaturedSlideList";
+import FeaturedSlideAdd from "./pages/admin/featured/FeaturedSlideAdd";
+import FeaturedSlideEdit from "./pages/admin/featured/FeaturedSlideEdit";
 
 
 const App = () => {
@@ -41,7 +45,7 @@ const App = () => {
   <Route index element={<Navigate to="dashboard" />} />
   
   <Route path="dashboard" element={<AdminDashboard />}>
-    <Route index element={<p>Chào mừng đến trang Dashboard</p>} />
+    <Route index element={<Content/>} />
     <Route path="products/list" element={<ProductList />} />
     <Route path="products/add" element={<AddProduct />} />
     <Route path="products/edit/:id" element={<EditProduct />} />
@@ -54,6 +58,10 @@ const App = () => {
     <Route path="coupons/list" element={<CouponList />} />
     <Route path="coupons/add" element={<AddCoupon />} />
     <Route path="coupons/edit/:id" element={<EditCoupon />} />
+
+    <Route path="slide/featured/list" element={<FeaturedSlideList />} />
+    <Route path="slide/featured/add" element={<FeaturedSlideAdd />} />
+    <Route path="slide/featured/edit/:id" element={<FeaturedSlideEdit />} />
 
     <Route path="account/list" element={<AccountList />} />
   </Route>

@@ -58,7 +58,7 @@ export const AuthProvider = ({ children }) => {
         orders: [],
         point: 1000,
         totalOrder: 0,
-        dateOfBirth:"",
+        dateOfBirth: "",
         customerType: "New",
         role: "User",
         avatar: "",
@@ -81,16 +81,14 @@ export const AuthProvider = ({ children }) => {
         ]
       });
   
-      setUser(res.data);
-      localStorage.setItem('user', JSON.stringify(res.data));
-      localStorage.setItem('userId', res.data.id);
-  
-      return true;
+      // Trả về dữ liệu user mới tạo để xử lý đăng nhập bên ngoài
+      return res.data;
     } catch (err) {
       console.error("Register failed:", err);
       return false;
     }
   };
+  
   
   
   

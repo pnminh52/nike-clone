@@ -12,6 +12,7 @@ const SideBar = () => {
     { name: 'Comment', path: '#' },
     { name: 'Category', path: '#' },
     { name: 'Order', path: '#' },
+    { name: 'Slide', path: '/admin/dashboard/slide/featured/list' },
   ];
 
   return (

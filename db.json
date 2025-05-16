@@ -1521,164 +1521,64 @@
       "country": "Vietnam",
       "extraAddresses": [],
       "cart": [],
-      "orders": [
+      "orders": [],
+      "point": 7900,
+      "accountStatus": "Active",
+      "totalOrder": 11,
+      "dateOfBirth": "2016-4-5",
+      "customerType": "Standard",
+      "role": "User",
+      "avatar": "https://i.pinimg.com/736x/bd/5e/db/bd5edb18fe5acd9b462f3a704b8596b1.jpg",
+      "createdAt": "2025-05-11T17:25:32.190Z",
+      "coupons": [
         {
-          "id": 1747185552124,
-          "items": [
-            {
-              "id": "12hb",
-              "position": 1,
-              "brand": "Nike",
-              "name": "Nike Zoom Fly 6",
-              "mainColor": "Orange",
-              "giftPoint": 300,
-              "stock": 100,
-              "isDefault": "true",
-              "class": "Shoes",
-              "type": "Road Racing Shoes",
-              "price": 5450000,
-              "price_sale": "4999000",
-              "des": "The Zoom Fly 6 is with you every step of your run. Lighter than the Zoom Fly 5, its responsive ZoomX foam adds energy return to each stride, while a carbon-fibre plate helps propel you to the finishing line.",
-              "img": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/146ef87c-ebf4-4534-835e-2f97e03856f5/W+ZOOM+FLY+6.png",
-              "page": "New & Featured",
-              "category": "New & Upcoming Drops",
-              "status": "Just In",
-              "customer": "Women",
-              "sizes": [
-                "31",
-                "32",
-                "33",
-                "34",
-                "40",
-                "37",
-                "35",
-                "36",
-                "38",
-                "39"
-              ],
-              "gender": "Women",
-              "color": [
-                "Bright Crimson",
-                "Lime Blast",
-                "Mint Foam",
-                "Cave Purple"
-              ],
-              "style": "FN8455-601",
-              "country": "Vietnam",
-              "additionalImages": [
-                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/b243a08d-3a77-4c58-8b09-86f485ee326f/W+ZOOM+FLY+6.png",
-                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/dc04119e-ae19-4545-a5aa-e13c4d18b25a/W+ZOOM+FLY+6.png",
-                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/3d06a0a8-1729-4314-b1e4-442ea074e0d9/W+ZOOM+FLY+6.png",
-                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/607d35fd-6d8e-4c69-a39a-8dee37762b66/W+ZOOM+FLY+6.png",
-                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/beb54158-f84a-4402-a5f4-908ed137bb8f/W+ZOOM+FLY+6.png",
-                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/79b8abb1-2cfe-4f1a-89ab-b97f4f317bb3/W+ZOOM+FLY+6.png",
-                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/ad60d354-8834-4d7b-9a66-21052cc59d7e/W+ZOOM+FLY+6.png",
-                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/da0104a3-8cd7-43a8-b74c-70b09179884b/W+ZOOM+FLY+6.png",
-                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/33bba3f7-0e52-4be5-a2b8-9a122bf08547/W+ZOOM+FLY+6.png",
-                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/85776744-2566-4c86-93a9-6ef0e70d8f34/W+ZOOM+FLY+6.png"
-              ],
-              "usedVoucher": {
-                "id": "c1",
-                "name": "50K Voucher",
-                "value": 50000,
-                "discountType": "amount"
-              },
-              "size": 37,
-              "quantity": 1
-            }
-          ],
-          "date": "2025-05-14T01:19:12.124Z",
-          "status": "Cancelled",
-          "shippingFee": 10000,
-          "totalPrice": 5460000,
-          "cancelReason": "Item not received"
+          "id": "c4",
+          "category": "new-user",
+          "name": "120K Voucher",
+          "image": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/2c3b1a83-6cd4-4785-aeda-10fd6f856108/GiftCard.png",
+          "description": "Get 120K off on your first order",
+          "discountType": "amount",
+          "value": 120000,
+          "applicableProductNames": "",
+          "stock": 1,
+          "code": "WELCOME120",
+          "numberOfExpiryDate": 60,
+          "expiryDate": "2025-07-12",
+          "pointToExchange": 2500
         },
         {
-          "id": 1747186227568,
+          "id": "c1",
+          "category": "new-user",
+          "name": "50K Voucher",
+          "image": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/b4f20f67-6cd6-4f8e-8e1c-41ccf6d9de08/GiftCard.png",
+          "description": "Get 50K off on your first order",
+          "discountType": "amount",
+          "value": 50000,
+          "applicableProductNames": "All",
+          "stock": 1,
+          "code": "WELCOME50",
+          "expiryDate": "2025-06-23",
+          "numberOfExpiryDate": 40,
+          "pointToExchange": 1000
+        }
+      ]
+    },
+    {
+      "id": "asasw",
+      "firstname": "Admin test ",
+      "lastname": "qưqwqwqw",
+      "phone": "0888888888",
+      "address": "Hà Nội",
+      "shippingFeeByAddress": 10000,
+      "email": "1@gmail.com",
+      "password": "111111Aa",
+      "country": "Vietnam",
+      "extraAddresses": [],
+      "cart": [],
+      "orders": [
+        {
+          "id": 1747343764807,
           "items": [
-            {
-              "id": "k59t",
-              "position": 1,
-              "name": "Jordan Heir Series PF Bloodline",
-              "isDefault": "true",
-              "height": "Mid Top",
-              "shoesFor": "Jordan",
-              "stock": 50,
-              "class": "Shoes",
-              "brand": "Jordan",
-              "features": "Side vents",
-              "giftPoint": 300,
-              "type": "Basketball Shoes",
-              "price": "3239000",
-              "price_sale": "3000000",
-              "des": "Looking to ignite your competitive edge? Cue the Jordan Heir. Crafted with insights from women basketball players, these shoes are all about helping you play shifty and stay low to the ground. A drop-in midsole helps give you extra mobility, while a built-in cage provides a fit that contours to your foot for added support as you move from side to side. So run and cut in confidence. You're the game's main character, after all.",
-              "img": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/cd574ae5-e1e7-4695-acbb-46ca9a48ef51/JORDAN+HEIR+SERIES+PF.png",
-              "page": "New & Featured",
-              "category": "New & Upcoming Drops",
-              "status": "Just In",
-              "customer": "Men",
-              "sizes": [
-                "31",
-                "32",
-                "33",
-                "34",
-                "40",
-                "37",
-                "35",
-                "36",
-                "38",
-                "39",
-                "41",
-                "42",
-                "43"
-              ],
-              "gender": "Men",
-              "color": [
-                "Sail",
-                "Volt",
-                "Black"
-              ],
-              "style": "FQ3859-107",
-              "country": "Vietnam",
-              "additionalImages": [
-                "https://shortformvideo.nike.com/a/videos/372e0fa7-3dfb-462d-916b-a339a915054e/video.mp4",
-                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/768a256d-9d54-417b-bf4b-273c57e78fa8/JORDAN+HEIR+SERIES+PF.png",
-                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/b158c400-113f-406c-a8a9-9c634cb895e1/JORDAN+HEIR+SERIES+PF.png",
-                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/87e4a86f-627f-49a7-a23e-8ca04c773f99/JORDAN+HEIR+SERIES+PF.png",
-                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/afeee5ca-6757-4a9c-8f6d-4c0e0974e6d1/JORDAN+HEIR+SERIES+PF.png",
-                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/cfd9f0c8-3af9-4d95-a6e6-1bfcc13d965a/JORDAN+HEIR+SERIES+PF.png",
-                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/882ea26d-edc9-47b4-96ee-16cabee65607/JORDAN+HEIR+SERIES+PF.png",
-                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/68caf950-44e3-4827-85c7-73f7505ebfb9/JORDAN+HEIR+SERIES+PF.png",
-                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/891fa088-06ad-4b24-bdf6-8536326a2bef/JORDAN+HEIR+SERIES+PF.png",
-                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/40621ce8-23a9-4bfd-a205-624268a84216/JORDAN+HEIR+SERIES+PF.png"
-              ],
-              "featured": [
-                {
-                  "title": "Contouring cage",
-                  "content": "A built-in cage system contours to your foot to help give you the supportive fit you need when cutting across the court."
-                },
-                {
-                  "title": "Drop in and work",
-                  "content": "A drop-in Cushlon 3.0 foam midsole puts lightweight and responsive cushioning directly underfoot, helping with on-court mobility. It's also why the Heir is lower to the ground than any other performance basketball shoe in our collection."
-                },
-                {
-                  "title": "Get a grip",
-                  "content": "Rubber outsole with herringbone tread pattern helps give you the sticky traction you need to stop in an instant and shift directions."
-                }
-              ],
-              "moreBenefit": [
-                "Lightweight textiles in the upper help keep things breathable and comfortable.",
-                "Synthetic leather in the upper helps add durability."
-              ],
-              "notes": [
-                "Pull tab on heel",
-                "Rubber outsole",
-                "The PF edition is designed with a wider fit and optimised for play on outdoor courts."
-              ],
-              "usedVoucher": null,
-              "size": 36,
-              "quantity": 1
-            },
             {
               "id": "7ey27e",
               "position": 1,
@@ -1744,17 +1644,247 @@
               ],
               "notes": [],
               "usedVoucher": null,
-              "size": 36,
+              "size": 31,
               "quantity": 1
             }
           ],
-          "date": "2025-05-14T01:30:27.568Z",
+          "date": "2025-05-15T21:16:04.807Z",
           "status": "Pending",
           "shippingFee": 10000,
-          "totalPrice": 6178000
+          "totalPrice": 2939000
+        }
+      ],
+      "point": 7900,
+      "accountStatus": "Active",
+      "totalOrder": 12,
+      "dateOfBirth": "2016-4-5",
+      "customerType": "Standard",
+      "role": "Admin",
+      "avatar": "",
+      "createdAt": "2025-05-11T17:25:32.190Z",
+      "coupons": []
+    },
+    {
+      "id": "19c9",
+      "firstname": "Đoàn",
+      "lastname": "Ân",
+      "phone": "0942882225",
+      "address": "Mỹ Đình",
+      "email": "aaaaaaaaaa@gmail.com",
+      "password": "111111Aa",
+      "country": "Vietnam",
+      "extraAddresses": [],
+      "accountStatus": "Active",
+      "cart": [],
+      "orders": [
+        {
+          "id": 1747333005693,
+          "items": [
+            {
+              "id": "7ey27e",
+              "position": 1,
+              "isDefault": "true",
+              "name": "Nike Air Max Koko",
+              "height": "Low Top",
+              "shoesFor": "Sandals, Slides & Flip Flops",
+              "stock": 50,
+              "class": "Sandal",
+              "brand": "Nike",
+              "features": "Side vents",
+              "giftPoint": 300,
+              "type": "Women's Sandal",
+              "price": "2929000",
+              "price_sale": "2800000",
+              "des": "Heat up the streets in the Nike Air Max Koko Sandal. Designed for women, this pinnacle platform height sandal adds a splash of colourful Air in the heel. The thick, layered foam midsole provides a smooth and flexible ride. Premium details on the upper add texture and dimension to elevate your look.",
+              "img": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/beedbc3a-9343-4b69-ada4-d42a144bd667/WMNS+AIR+MAX+KOKO+SANDAL.png",
+              "page": "New & Featured",
+              "category": "New & Upcoming Drops",
+              "status": "Just In",
+              "customer": "Women",
+              "sizes": [
+                "31",
+                "32",
+                "33",
+                "34",
+                "37",
+                "35",
+                "36",
+                "38"
+              ],
+              "gender": "Women",
+              "color": [
+                "Sail",
+                "Black"
+              ],
+              "style": "CI8798-102",
+              "country": "Vietnam",
+              "additionalImages": [
+                "https://shortformvideo.nike.com/a/videos/d1a9fdf0-59cb-4602-9d52-7c1520ed843a/video.mp4",
+                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/7c175861-58fb-4bca-9f41-52038884f17d/WMNS+AIR+MAX+KOKO+SANDAL.png",
+                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/10a844e6-d0dd-48c2-8b31-a628e8503750/WMNS+AIR+MAX+KOKO+SANDAL.png",
+                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/360abf08-4bd6-4cb3-8a6a-e7cedc36ff48/WMNS+AIR+MAX+KOKO+SANDAL.png",
+                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/02564fb7-a98a-4dc2-957e-50782cc38bc7/WMNS+AIR+MAX+KOKO+SANDAL.png",
+                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/b8fded87-fc17-43ac-be4c-ff24a833aab7/WMNS+AIR+MAX+KOKO+SANDAL.png",
+                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/eab743a0-d15d-42d5-bfa6-3b4ff356ec4e/WMNS+AIR+MAX+KOKO+SANDAL.png",
+                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/d0596b4b-3b75-4c48-8a10-ca251866bbdf/WMNS+AIR+MAX+KOKO+SANDAL.png",
+                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/cab5f997-485c-428a-ad4f-49f0d2cd28fa/WMNS+AIR+MAX+KOKO+SANDAL.png",
+                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/4338c7cb-a534-4b34-a7bf-a8f4f8db51d9/WMNS+AIR+MAX+KOKO+SANDAL.png",
+                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/deea3708-04f5-41b7-8a59-e07a2d866d81/WMNS+AIR+MAX+KOKO+SANDAL.png"
+              ],
+              "featured": [
+                {
+                  "title": "NEXT-LEVEL FASHION AND INNOVATION.",
+                  "content": "Heat up the streets in the Nike Air Max Koko Sandal. Designed for women, this pinnacle platform height sandal adds a splash of colourful Air in the heel. The thick, layered foam midsole provides a smooth and flexible ride. Premium details on the upper add texture and dimension to elevate your look."
+                }
+              ],
+              "moreBenefit": [
+                "The Nike Air cushioning in the heel feels comfortable and adds coveted Air Max style.",
+                "The layered midsole feels soft and delivers underfoot cushioning while its raised height adds a sporty, summertime look.",
+                "The speed lacing system adds a playful look while making it easy to put them on and take them off.",
+                "Textile upper feels soft and comfortable with or without socks."
+              ],
+              "notes": [],
+              "usedVoucher": null,
+              "size": 32,
+              "quantity": 1
+            }
+          ],
+          "date": "2025-05-15T18:16:45.693Z",
+          "status": "Pending",
+          "shippingFee": 0,
+          "totalPrice": 2929000
+        }
+      ],
+      "point": 1000,
+      "totalOrder": 1,
+      "dateOfBirth": "",
+      "customerType": "Standard",
+      "role": "User",
+      "avatar": "https://i.pinimg.com/736x/bd/5e/db/bd5edb18fe5acd9b462f3a704b8596b1.jpg",
+      "createdAt": "2025-05-15T18:15:33.893Z",
+      "coupons": [
+        {
+          "id": "c1",
+          "category": "new-user",
+          "name": "50K Voucher",
+          "image": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/b4f20f67-6cd6-4f8e-8e1c-41ccf6d9de08/GiftCard.png",
+          "description": "Get 50K off on your first order",
+          "discountType": "amount",
+          "value": 50000,
+          "applicableProductNames": "Nike Zoom Fly 6",
+          "stock": 5,
+          "code": "WELCOME50",
+          "expiryDate": "2025-06-30",
+          "pointToExchange": 1000
+        }
+      ]
+    },
+    {
+      "id": "6c69",
+      "firstname": "New",
+      "lastname": "Test Key",
+      "phone": "0934557882",
+      "address": "Hà Nam",
+      "email": "D@gmail.com",
+      "password": "111111Aa",
+      "country": "Vietnam",
+      "extraAddresses": [],
+      "accountStatus": "Active",
+      "cart": [],
+      "orders": [
+        {
+          "id": 1747343915969,
+          "items": [
+            {
+              "id": "sdsdw",
+              "name": "Jordan Heir Series PF Bloodline",
+              "height": "Mid Top",
+              "shoesFor": "Jordan",
+              "stock": 100,
+              "class": "Shoes",
+              "brand": "Jordan",
+              "features": "Side vents",
+              "giftPoint": 300,
+              "type": "Basketball Shoes",
+              "price": "3239000",
+              "price_sale": "3000000",
+              "des": "Looking to ignite your competitive edge? Cue the Jordan Heir. Crafted with insights from women basketball players, these shoes are all about helping you play shifty and stay low to the ground. A drop-in midsole helps give you extra mobility, while a built-in cage provides a fit that contours to your foot for added support as you move from side to side. So run and cut in confidence. You're the game's main character, after all.",
+              "img": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/3e386002-c907-4e4f-af18-dcc4b7152e48/JORDAN+HEIR+SERIES+PF.png",
+              "page": "New & Featured",
+              "category": "New & Upcoming Drops",
+              "status": "Just In",
+              "customer": "Men",
+              "sizes": [
+                "31",
+                "32",
+                "33",
+                "34",
+                "40",
+                "37",
+                "35",
+                "36",
+                "38",
+                "39",
+                "41",
+                "42",
+                "43"
+              ],
+              "gender": "Men",
+              "color": [
+                "Off-White",
+                "Laser",
+                "Orange",
+                "Ocean Cube",
+                "Miracle Teal"
+              ],
+              "style": "FQ3859-101",
+              "country": "Vietnam",
+              "additionalImages": [
+                "https://shortformvideo.nike.com/a/videos/a7efafb6-2342-466b-b5cc-668e4b5c5ea8/video.mp4",
+                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/da42af1d-0bca-488a-8d89-ea1a153ffa0a/JORDAN+HEIR+SERIES+PF.png",
+                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/9c4ad395-c8ee-4a4a-b7bc-4b3a80b24554/JORDAN+HEIR+SERIES+PF.png",
+                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/9e3e2b19-4e40-4667-a687-ae18d4e166e4/JORDAN+HEIR+SERIES+PF.png",
+                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/726d11c6-641b-4e66-a68a-985f8e7ceee2/JORDAN+HEIR+SERIES+PF.png",
+                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/39a74aec-7eaf-4fb3-8169-769828b6be73/JORDAN+HEIR+SERIES+PF.png",
+                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/beeef36b-0316-4680-89b2-5ba4af4387ce/JORDAN+HEIR+SERIES+PF.png",
+                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/fd6f26d6-ac91-4d8a-8fa5-0d9a07c1baa2/JORDAN+HEIR+SERIES+PF.png",
+                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/a6bfab91-bf03-4343-98d7-b049657eee6d/JORDAN+HEIR+SERIES+PF.png"
+              ],
+              "featured": [
+                {
+                  "title": "Contouring cage",
+                  "content": "A built-in cage system contours to your foot to help give you the supportive fit you need when cutting across the court."
+                },
+                {
+                  "title": "Drop in and work",
+                  "content": "A drop-in Cushlon 3.0 foam midsole puts lightweight and responsive cushioning directly underfoot, helping with on-court mobility. It's also why the Heir is lower to the ground than any other performance basketball shoe in our collection."
+                },
+                {
+                  "title": "Get a grip",
+                  "content": "Rubber outsole with herringbone tread pattern helps give you the sticky traction you need to stop in an instant and shift directions."
+                }
+              ],
+              "moreBenefit": [
+                "Lightweight textiles in the upper help keep things breathable and comfortable.",
+                "Synthetic leather in the upper helps add durability."
+              ],
+              "notes": [
+                "Pull tab on heel",
+                "Rubber outsole",
+                "The PF edition is designed with a wider fit and optimised for play on outdoor courts."
+              ],
+              "usedVoucher": null,
+              "size": 33,
+              "quantity": 1
+            }
+          ],
+          "date": "2025-05-15T21:18:35.969Z",
+          "status": "Pending",
+          "shippingFee": 0,
+          "totalPrice": 3239000
         },
         {
-          "id": 1747188498057,
+          "id": 1747347187974,
           "items": [
             {
               "id": "k59t",
@@ -1836,41 +1966,24 @@
                 "The PF edition is designed with a wider fit and optimised for play on outdoor courts."
               ],
               "usedVoucher": null,
-              "size": 33,
+              "size": 41,
               "quantity": 1
             }
           ],
-          "date": "2025-05-14T02:08:18.057Z",
-          "status": "Cancelled",
-          "shippingFee": 10000,
-          "totalPrice": 3249000,
-          "cancelReason": "Changed my mind"
+          "date": "2025-05-15T22:13:07.974Z",
+          "status": "Pending",
+          "shippingFee": 0,
+          "totalPrice": 3239000
         }
       ],
-      "point": 7900,
-      "accountStatus": "Active",
-      "totalOrder": 11,
-      "dateOfBirth": "2016-4-5",
+      "point": 1000,
+      "totalOrder": 2,
+      "dateOfBirth": "",
       "customerType": "Standard",
       "role": "User",
-      "avatar": "",
-      "createdAt": "2025-05-11T17:25:32.190Z",
+      "avatar": "https://i.pinimg.com/736x/bd/5e/db/bd5edb18fe5acd9b462f3a704b8596b1.jpg",
+      "createdAt": "2025-05-15T18:22:29.875Z",
       "coupons": [
-        {
-          "id": "c4",
-          "category": "new-user",
-          "name": "120K Voucher",
-          "image": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/2c3b1a83-6cd4-4785-aeda-10fd6f856108/GiftCard.png",
-          "description": "Get 120K off on your first order",
-          "discountType": "amount",
-          "value": 120000,
-          "applicableProductNames": "",
-          "stock": 1,
-          "code": "WELCOME120",
-          "numberOfExpiryDate": 60,
-          "expiryDate": "2025-07-12",
-          "pointToExchange": 2500
-        },
         {
           "id": "c1",
           "category": "new-user",
@@ -1879,39 +1992,160 @@
           "description": "Get 50K off on your first order",
           "discountType": "amount",
           "value": 50000,
-          "applicableProductNames": "All",
-          "stock": 1,
+          "applicableProductNames": "Nike Zoom Fly 6",
+          "stock": 5,
           "code": "WELCOME50",
-          "expiryDate": "2025-06-23",
-          "numberOfExpiryDate": 40,
+          "expiryDate": "2025-06-30",
           "pointToExchange": 1000
         }
       ]
-      
     },
     {
-      "id": "asasw",
-      "firstname": "Admin test ",
-      "lastname": "qưqwqwqw",
-      "phone": "0888888888",
-      "address": "Hà Nội",
-      "shippingFeeByAddress": 10000,
-      "email": "1@gmail.com",
+      "id": "1e21ewqew",
+      "firstname": "New",
+      "lastname": "Test Key2",
+      "phone": "0934557882",
+      "address": "Hà Nam",
+      "email": "QEQWQW@gmail.com",
       "password": "111111Aa",
       "country": "Vietnam",
       "extraAddresses": [],
-      "cart": [],
-      "orders": [
-      ],
-      "point": 7900,
       "accountStatus": "Active",
-      "totalOrder": 11,
-      "dateOfBirth": "2016-4-5",
-      "customerType": "Standard",
-      "role": "Admin",
-      "avatar": "",
-      "createdAt": "2025-05-11T17:25:32.190Z",
+      "cart": [],
+      "orders": [],
+      "point": 1000,
+      "totalOrder": 0,
+      "dateOfBirth": "",
+      "customerType": "New",
+      "role": "User",
+      "avatar": "https://i.pinimg.com/736x/bd/5e/db/bd5edb18fe5acd9b462f3a704b8596b1.jpg",
+      "createdAt": "2025-05-15T18:23:02.215Z",
       "coupons": [
+        {
+          "id": "c1",
+          "category": "new-user",
+          "name": "50K Voucher",
+          "image": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/b4f20f67-6cd6-4f8e-8e1c-41ccf6d9de08/GiftCard.png",
+          "description": "Get 50K off on your first order",
+          "discountType": "amount",
+          "value": 50000,
+          "applicableProductNames": "Nike Zoom Fly 6",
+          "stock": 5,
+          "code": "WELCOME50",
+          "expiryDate": "2025-06-30",
+          "pointToExchange": 1000
+        }
+      ]
+    },
+    {
+      "id": "34r23r2qe2",
+      "firstname": "New",
+      "lastname": "Test Key2",
+      "phone": "0934557882",
+      "address": "Hà Nam",
+      "email": "QEQWQW@gmail.com",
+      "password": "111111Aa",
+      "country": "Vietnam",
+      "extraAddresses": [],
+      "accountStatus": "Active",
+      "cart": [],
+      "orders": [],
+      "point": 1000,
+      "totalOrder": 0,
+      "dateOfBirth": "",
+      "customerType": "New",
+      "role": "User",
+      "avatar": "https://i.pinimg.com/736x/bd/5e/db/bd5edb18fe5acd9b462f3a704b8596b1.jpg",
+      "createdAt": "2025-05-15T18:23:02.215Z",
+      "coupons": [
+        {
+          "id": "c1",
+          "category": "new-user",
+          "name": "50K Voucher",
+          "image": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/b4f20f67-6cd6-4f8e-8e1c-41ccf6d9de08/GiftCard.png",
+          "description": "Get 50K off on your first order",
+          "discountType": "amount",
+          "value": 50000,
+          "applicableProductNames": "Nike Zoom Fly 6",
+          "stock": 5,
+          "code": "WELCOME50",
+          "expiryDate": "2025-06-30",
+          "pointToExchange": 1000
+        }
+      ]
+    },
+    {
+      "id": "3t3t54y",
+      "firstname": "New",
+      "lastname": "Test Key2",
+      "phone": "0934557882",
+      "address": "Hà Nam",
+      "email": "QEQWQW@gmail.com",
+      "password": "111111Aa",
+      "country": "Vietnam",
+      "extraAddresses": [],
+      "accountStatus": "Active",
+      "cart": [],
+      "orders": [],
+      "point": 1000,
+      "totalOrder": 0,
+      "dateOfBirth": "",
+      "customerType": "New",
+      "role": "User",
+      "avatar": "https://i.pinimg.com/736x/bd/5e/db/bd5edb18fe5acd9b462f3a704b8596b1.jpg",
+      "createdAt": "2025-05-15T18:23:02.215Z",
+      "coupons": [
+        {
+          "id": "c1",
+          "category": "new-user",
+          "name": "50K Voucher",
+          "image": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/b4f20f67-6cd6-4f8e-8e1c-41ccf6d9de08/GiftCard.png",
+          "description": "Get 50K off on your first order",
+          "discountType": "amount",
+          "value": 50000,
+          "applicableProductNames": "Nike Zoom Fly 6",
+          "stock": 5,
+          "code": "WELCOME50",
+          "expiryDate": "2025-06-30",
+          "pointToExchange": 1000
+        }
+      ]
+    },
+    {
+      "id": "23e3reess",
+      "firstname": "New",
+      "lastname": "Test Key2",
+      "phone": "0934557882",
+      "address": "Hà Nam",
+      "email": "QEQWQW@gmail.com",
+      "password": "111111Aa",
+      "country": "Vietnam",
+      "extraAddresses": [],
+      "accountStatus": "Active",
+      "cart": [],
+      "orders": [],
+      "point": 1000,
+      "totalOrder": 0,
+      "dateOfBirth": "",
+      "customerType": "New",
+      "role": "User",
+      "avatar": "https://i.pinimg.com/736x/bd/5e/db/bd5edb18fe5acd9b462f3a704b8596b1.jpg",
+      "createdAt": "2025-05-15T18:23:02.215Z",
+      "coupons": [
+        {
+          "id": "c1",
+          "category": "new-user",
+          "name": "50K Voucher",
+          "image": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/b4f20f67-6cd6-4f8e-8e1c-41ccf6d9de08/GiftCard.png",
+          "description": "Get 50K off on your first order",
+          "discountType": "amount",
+          "value": 50000,
+          "applicableProductNames": "Nike Zoom Fly 6",
+          "stock": 5,
+          "code": "WELCOME50",
+          "expiryDate": "2025-06-30",
+          "pointToExchange": 1000
+        }
       ]
     }
   ],
@@ -2011,5 +2245,70 @@
       "pointToExchange": 1200
     }
   ],
-  "comments": []
+  "comments": [],
+  "banner": [
+    {
+      "id": "b1",
+      "position": "1",
+      "bannerImg": "https://static.nike.com/a/images/f_auto/dpr_1.0,cs_srgb/h_1506,c_limit/b2d50ad5-0c1d-41b6-98d5-7bbea8c290fe/nike-just-do-it.jpg",
+      "title": "PEARLS OF WISDOM",
+      "category": "Nike Basketball",
+      "description": "The A One OG Pearl. Inspired by the pearls Ajas grandmother gifted heras a symbol of strength.",
+      "button": "Shop"
+    }
+  ],
+  "featured": [
+    {
+      "id": "g62s78e2",
+      "combo": [
+        {
+          "id": "c1",
+          "img": "https://static.nike.com/a/images/f_auto/dpr_2.0,cs_srgb/h_627,c_limit/1673823a-e689-4845-8ad7-23ec0996514e/image.jpg",
+          "name": "Air Max 90 LV8"
+        },
+        {
+          "id": "c2",
+          "img": "https://static.nike.com/a/images/f_auto/dpr_2.0,cs_srgb/h_627,c_limit/796c0846-2a7d-4e1b-9430-4fe6401cbe01/nike-just-do-it.jpg",
+          "name": "Air Max Plus"
+        },
+        {
+          "id": "c3",
+          "img": "https://static.nike.com/a/images/f_auto/dpr_2.0,cs_srgb/h_627,c_limit/4c99778b-acd3-4b36-8e24-81037a6349eb/nike-just-do-it.jpg",
+          "name": "Air Max 90"
+        },
+        {
+          "id": "c4",
+          "img": "https://static.nike.com/a/images/f_auto/dpr_2.0,cs_srgb/h_627,c_limit/867f7843-87a2-47fd-99ad-c6aca2774445/nike-just-do-it.jpg",
+          "name": "Air Max Dn"
+        }
+      ],
+      "status": "On"
+    },
+    {
+      "id": "ewr4wt3r",
+      "combo": [
+        {
+          "id": "fwef4tw",
+          "img": "https://static.nike.com/a/images/f_auto/dpr_1.0,cs_srgb/h_832,c_limit/24e6506f-49ac-4780-9486-8bd5204193d2/nike-just-do-it.png",
+          "name": "Jakob Essentials Collection"
+        },
+        {
+          "id": "3r34erfw",
+          "img": "https://static.nike.com/a/images/f_auto/dpr_1.0,cs_srgb/h_832,c_limit/d342012a-a056-42bd-a1b8-8999d1fb7b99/nike-just-do-it.jpg",
+          "name": "Kick It Into Gear"
+        },
+        {
+          "id": "try65u5u5",
+          "img": "https://static.nike.com/a/images/f_auto/dpr_1.0,cs_srgb/h_832,c_limit/9a4b8d89-eb7e-42ec-9c99-3f75a1b47a5c/nike-just-do-it.png",
+          "name": "Zenvy Bra & Leggings"
+        },
+        {
+          "id": "ewf322t",
+          "img": "https://static.nike.com/a/images/f_auto/dpr_1.0,cs_srgb/h_832,c_limit/70c295b5-926a-40eb-9dee-b1edd901d2ed/image.png",
+          "name": "Luka 4 ‘Bloodline’"
+        }
+      ],
+      "status": "Off"
+    }
+  ]
 }

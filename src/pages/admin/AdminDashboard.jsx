@@ -1,6 +1,5 @@
 import React from 'react'
 import SideBar from './../../components/admin/dashboard/SideBar';
-import Content from './../../components/admin/dashboard/Content';
 import AdminTopBar from '../../components/admin/dashboard/AdminTopBar';
 import { Outlet } from 'react-router-dom';
 

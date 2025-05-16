@@ -46,7 +46,9 @@ const AccountList = () => {
     <div className="p-4">
       <h2 className="text-2xl font-bold mb-4">Quản lý tài khoản</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        {users.map((user) => (
+        {users
+        .filter((user)=>user.role!=="Admin")
+        .map((user) => (
           <div key={user.id} className="border rounded p-4 bg-white shadow">
             <p><strong>Email:</strong> {user.email}</p>
             <p><strong>Họ tên:</strong> {user.firstname} {user.lastname}</p>
