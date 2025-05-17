@@ -32,6 +32,7 @@ import Content from "./components/admin/dashboard/Content";
 import FeaturedSlideList from "./pages/admin/featured/FeaturedSlideList";
 import FeaturedSlideAdd from "./pages/admin/featured/FeaturedSlideAdd";
 import FeaturedSlideEdit from "./pages/admin/featured/FeaturedSlideEdit";
+import DecentralizationList from "./pages/admin/decentralization/DecentralizationList";
 
 
 const App = () => {
@@ -64,6 +65,8 @@ const App = () => {
     <Route path="slide/featured/edit/:id" element={<FeaturedSlideEdit />} />
 
     <Route path="account/list" element={<AccountList />} />
+
+    <Route path="decentralization/list" element={<DecentralizationList />} />
   </Route>
 </Route>
 

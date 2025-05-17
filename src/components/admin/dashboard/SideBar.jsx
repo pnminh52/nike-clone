@@ -13,6 +13,7 @@ const SideBar = () => {
     { name: 'Category', path: '#' },
     { name: 'Order', path: '#' },
     { name: 'Slide', path: '/admin/dashboard/slide/featured/list' },
+    { name: 'Decentralization', path: '/admin/dashboard/decentralization/list' },
   ];
 
   return (

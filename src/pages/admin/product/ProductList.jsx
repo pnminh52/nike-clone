@@ -19,7 +19,7 @@ const ProductList = () => {
   };
 
   return (
-    <div className="p-4 bg-gray-100">
+    <div className="p-4 space-y-4 bg-gray-100">
       <h1 className="text-2xl font-semibold mb-4">Product List</h1>
       <div className='grid grid-cols-4 gap-2'>
         <div>
@@ -34,8 +34,14 @@ const ProductList = () => {
           Add Product
         </button>
       </Link>
+      <div className='bg-white flex gap-4 rounded-2xl p-4 justify-between items-center'>
+        <input type="text" placeholder='search here ' className=' bg-gray-100 px-4 py-2  border border-gray-300 ' />
+    
+      <p>Sort By</p>
+    
+      </div>
 
-      <div className="overflow-x-auto p-6 border-gray-200 border bg-white rounded-2xl">
+      <div className="overflow-x-auto p-4 border-gray-200 border bg-white rounded-2xl">
         <table className="min-w-full border bg-white">
           <thead className="bg-white ">
             <tr>

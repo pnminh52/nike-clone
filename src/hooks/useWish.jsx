@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
 import useToast from "./useToast";
+import { useAuth } from "./useAuth";
 
 
 export const useWish = () => {
+  const { user, setUser } = useAuth();
     const [wishlist, setWishlist] = useState([]);
     const { successToast, errorToast, warningToast } = useToast();
   
@@ -32,9 +34,18 @@ export const useWish = () => {
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ wishlist: newWishlist }),
         });
-  
+    
         if (res.ok) {
           setWishlist(newWishlist);
+          
+          // ✅ Cập nhật localStorage
+          const updatedUser = JSON.parse(localStorage.getItem("user"));
+          updatedUser.wishlist = newWishlist;
+          localStorage.setItem("user", JSON.stringify(updatedUser));
+          
+          // ✅ Nếu bạn có setUser trong useAuth, gọi luôn ở đây
+          setUser(updatedUser);
+    
           successToast("✅ Cập nhật wishlist thành công!");
         } else {
           throw new Error("Cập nhật không thành công");
@@ -44,6 +55,7 @@ export const useWish = () => {
         errorToast("❌ Lỗi khi cập nhật wishlist.");
       }
     };
+    
   
     const isInWishlist = (productId) =>
       wishlist.some((item) => item.id === productId);
