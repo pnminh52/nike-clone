@@ -8,6 +8,7 @@ const Register = () => {
   const [password, setPassword] = useState("");
   const [phone, setPhone] = useState("");
   const [address, setAddress] = useState("");
+  const [district, setDistrict]=useState("")
   const [country, setCountry]=useState("Vietnam")
   const navigate = useNavigate();
   const { successToast, errorToast, warningToast } = useToast();
@@ -19,6 +20,22 @@ const Register = () => {
   const isValidContent = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)/.test(password);
   const [showExtra, setShowExtra]=useState(false)
   const [ extraAddresses , setExtraAddresses ]=useState([])
+  const provinces = [
+  "An Giang", "Bà Rịa - Vũng Tàu", "Bắc Giang", "Bắc Kạn", "Bạc Liêu",
+  "Bắc Ninh", "Bến Tre", "Bình Định", "Bình Dương", "Bình Phước",
+  "Bình Thuận", "Cà Mau", "Cần Thơ", "Cao Bằng", "Đà Nẵng",
+  "Đắk Lắk", "Đắk Nông", "Điện Biên", "Đồng Nai", "Đồng Tháp",
+  "Gia Lai", "Hà Giang", "Hà Nam", "Hà Nội", "Hà Tĩnh",
+  "Hải Dương", "Hải Phòng", "Hậu Giang", "Hòa Bình", "Hưng Yên",
+  "Khánh Hòa", "Kiên Giang", "Kon Tum", "Lai Châu", "Lâm Đồng",
+  "Lạng Sơn", "Lào Cai", "Long An", "Nam Định", "Nghệ An",
+  "Ninh Bình", "Ninh Thuận", "Phú Thọ", "Phú Yên", "Quảng Bình",
+  "Quảng Nam", "Quảng Ngãi", "Quảng Ninh", "Quảng Trị", "Sóc Trăng",
+  "Sơn La", "Tây Ninh", "Thái Bình", "Thái Nguyên", "Thanh Hóa",
+  "Thừa Thiên Huế", "Tiền Giang", "TP Hồ Chí Minh", "Trà Vinh", "Tuyên Quang",
+  "Vĩnh Long", "Vĩnh Phúc", "Yên Bái"
+];
+
 
   const addExtraAddress = () => {
     if (extraAddresses.length < 3) {
@@ -58,6 +75,7 @@ const Register = () => {
       lastname,
       phone,
       address,
+      district,
       email,
       password,
       country,
@@ -158,59 +176,92 @@ const Register = () => {
             </label>
           </div>
         </div>
-        <div className="relative z-0 w-full group">
+        <div className="  w-full group">
+        <div className="relative ">
+  <select
+    name="province"
+    value={address}
+    onChange={(e) => setAddress(e.target.value)}
+    required
+    onBlur={() => setTouched(true)}
+    className="block cursor-pointer appearance-none h-15.5 rounded-lg p-3.5 pr-10 inter text-lg w-full text-gray-900 bg-white border border-gray-300 focus:outline-none"
+  >
+    <option value="" disabled>City*</option>
+    {provinces.map((province, idx) => (
+      <option key={idx} value={province}>{province}</option>
+    ))}
+  </select>
+
+  {/* Icon dropdown */}
+  <div className="pointer-events-none absolute inset-y-0 right-3 flex items-center">
+    <svg
+      className="w-4 h-4 text-gray-600"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      viewBox="0 0 24 24"
+    >
+      <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+    </svg>
+  </div>
+</div>
+
+
+
+
+  {extraAddresses.map((extraAddress, index) => (
+    <div className="relative" key={index}>
+      <input
+        type="text"
+        name={`extraAddress-${index}`}
+        placeholder={`Extra address #${index + 1} (e.g. Apt, Floor...)`}
+        value={extraAddress}
+        onChange={(e) => handleExtraAddressChange(index, e.target.value)}
+        required
+        className="mt-4 block h-15.5 rounded-lg p-3.5 text-lg  w-full text-gray-900 bg-white border border-gray-300"
+      />
+      <button
+        type="button"
+        onClick={() => removeExtraAddress(index)}
+        className="absolute right-2 top-4 w-7 h-7 cursor-pointer"
+      >
+        {/* SVG icon */}
+        <svg viewBox="0 0 1024 1024" fill="#D30005" className="icon" xmlns="http://www.w3.org/2000/svg"><path d="..."/></svg>
+      </button>
+    </div>
+  ))}
+
+  {extraAddresses.length < 3 && (
+    <p
+      className="mt-4 text-right text-blue-600 hover:underline cursor-pointer"
+      onClick={addExtraAddress}
+    >
+      Add address
+    </p>
+  )}
+</div>
+<div className="relative z-0 w-full group">
           <input
             type="text"
             name="text"
-            placeholder=""
-            value={address}
-            onChange={(e) => setAddress(e.target.value)}
             required
+              placeholder="District, Ward, Street, House number..."
             onBlur={() => setTouched(true)}
+            value={district}
+            onChange={(e) => setDistrict(e.target.value)}
             className={`block h-15.5 rounded-lg p-3.5 text-lg  w-full text-gray-900 bg-transparent border appearance-none focus:outline-none focus:ring-0 peer 
    `}
           />
-
           <label
             htmlFor="text"
             className={`absolute text-lg inter rounded-lg duration-300 transform -translate-y-4 scale-75 top-1.5 bg-white px-1 z-10 origin-[0] left-3
     peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-3 peer-focus:scale-75 peer-focus:-translate-y-4
   `}
           >
-            Address*
+           District, Ward, Street, House number*
           </label>
-          {extraAddresses.map((extraAddress, index) => (
-  <div className="relative" key={index}>
-    <input
-      type="text"
-      name={`extraAddress-${index}`}
-      placeholder={`Extra address #${index + 1} (e.g. Apt, Floor...)`}
-      value={extraAddress}
-      onChange={(e) => handleExtraAddressChange(index, e.target.value)}
-      required
-      className="mt-4 block h-15.5 rounded-lg p-3.5 text-lg  w-full text-gray-900 bg-white border border-gray-300"
-    />
-    <button
-      type="button"
-      onClick={() => removeExtraAddress(index)} // Function to remove address
-      className="absolute right-2 top-4 w-7 h-7 cursor-pointer"
-    >
-     <svg viewBox="0 0 1024 1024" fill="#D30005" class="icon" version="1.1" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M512 897.6c-108 0-209.6-42.4-285.6-118.4-76-76-118.4-177.6-118.4-285.6 0-108 42.4-209.6 118.4-285.6 76-76 177.6-118.4 285.6-118.4 108 0 209.6 42.4 285.6 118.4 157.6 157.6 157.6 413.6 0 571.2-76 76-177.6 118.4-285.6 118.4z m0-760c-95.2 0-184.8 36.8-252 104-67.2 67.2-104 156.8-104 252s36.8 184.8 104 252c67.2 67.2 156.8 104 252 104 95.2 0 184.8-36.8 252-104 139.2-139.2 139.2-364.8 0-504-67.2-67.2-156.8-104-252-104z" fill=""></path><path d="M707.872 329.392L348.096 689.16l-31.68-31.68 359.776-359.768z" fill=""></path><path d="M328 340.8l32-31.2 348 348-32 32z" fill=""></path></g></svg>
-    </button>
-  </div>
-))}
-
-{extraAddresses.length < 3 && (
-  <p
-    className="mt-4 text-right text-blue-600 hover:underline cursor-pointer"
-    onClick={addExtraAddress}
-  >
-    Add address
-  </p>
-)}
-
-
         </div>
+
         <div className="relative z-0 w-full group">
           <input
             type="text"

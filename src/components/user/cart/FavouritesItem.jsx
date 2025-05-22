@@ -21,7 +21,7 @@ const CheckIcon = () => (
   </svg>
 );
 
-const FavouritesItem = ({ user, cart, formatPrice, removeFromWishlist }) => {
+const FavouritesItem = ({ user, cart, formatPrice, removeFromWishlist, addToCart }) => {
   return (
     <div className="">
       <p className="text-2xl py-5">Favourites</p>
@@ -55,9 +55,16 @@ const FavouritesItem = ({ user, cart, formatPrice, removeFromWishlist }) => {
     Added
   </button>
 ) : (
-  <button className="px-4 py-2 rounded-2xl border border-gray-300 hover:border-black cursor-pointer">
-    Add to Bag
-  </button>
+<button
+  onClick={() => {
+    const plainItem = { ...item, quantity: 1 };
+    addToCart(plainItem);
+  }}
+  className="px-4 py-2 rounded-2xl border border-gray-300 hover:border-black cursor-pointer"
+>
+  Add to Bag
+</button>
+
 )}
 
                       </div>

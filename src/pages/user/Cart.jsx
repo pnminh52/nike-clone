@@ -12,7 +12,7 @@ import { useWish } from "../../hooks/useWish";
 const Cart = ({ }) => {
     const [loading, setLoading] = useState(true);
     const {user}=useAuth()
-    const {cart}=useCart()
+    const {cart, addToCart}=useCart()
     const {removeFromWishlist}=useWish()
 
     const formatPrice = (price) => {
@@ -58,7 +58,7 @@ const Cart = ({ }) => {
                                 </div>
                </div>
               <div className="w-full">
-              <FavouritesItem user={user} cart={cart}  formatPrice={formatPrice} removeFromWishlist={removeFromWishlist} />
+              <FavouritesItem user={user} cart={cart} addToCart={addToCart}   formatPrice={formatPrice} removeFromWishlist={removeFromWishlist} />
               </div>
 
             </div>

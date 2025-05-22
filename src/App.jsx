@@ -33,66 +33,66 @@ import FeaturedSlideList from "./pages/admin/featured/FeaturedSlideList";
 import FeaturedSlideAdd from "./pages/admin/featured/FeaturedSlideAdd";
 import FeaturedSlideEdit from "./pages/admin/featured/FeaturedSlideEdit";
 import DecentralizationList from "./pages/admin/decentralization/DecentralizationList";
+import ProtectedRoute from "./components/admin/etc/ProtectedRoute";
+import { useAuth } from "./hooks/useAuth";
 
+const AppRoutes = () => {
+  const { user, loading } = useAuth();
+  if (loading) return <div>Loading...</div>;
+
+  return (
+    <Routes>
+      {/* <Route
+        path="/admin"
+        element={<ProtectedRoute role={user?.role} allowedRoles={['Admin', 'Staff']} />}
+      > */}
+        <Route path="/admin" element={<AdminLayout />}>
+          <Route index element={<Navigate to="dashboard" />} />
+          <Route path="dashboard" element={<AdminDashboard />}>
+            <Route index element={<Content />} />
+            <Route path="products/list" element={<ProductList />} />
+            <Route path="products/add" element={<AddProduct />} />
+            <Route path="products/edit/:id" element={<EditProduct />} />
+            <Route path="categories/list" element={<CategoryList />} />
+            <Route path="categories/add" element={<AddCategory />} />
+            <Route path="categories/edit/:id" element={<EditCategory />} />
+            <Route path="categories/view/:id" element={<CategoryDetail />} />
+            <Route path="coupons/list" element={<CouponList />} />
+            <Route path="coupons/add" element={<AddCoupon />} />
+            <Route path="coupons/edit/:id" element={<EditCoupon />} />
+            <Route path="slide/featured/list" element={<FeaturedSlideList />} />
+            <Route path="slide/featured/add" element={<FeaturedSlideAdd />} />
+            <Route path="slide/featured/edit/:id" element={<FeaturedSlideEdit />} />
+            <Route path="account/list" element={<AccountList />} />
+            <Route path="decentralization/list" element={<DecentralizationList />} />
+          </Route>
+        </Route>
+      {/* </Route> */}
+
+      <Route path="/" element={<UserLayout />}>
+        <Route index element={<Homepage />} />
+        <Route path="category/:name" element={<CategoryPage />} />
+        <Route path="details/:name" element={<ProductDetail />} />
+        <Route path="cart" element={<Cart />} />
+        <Route path="login" element={<Login />} />
+        <Route path="register" element={<Register />} />
+        <Route path="checkout" element={<Checkout />} />
+        <Route path="wishlist" element={<Wishlist />} />
+        <Route path="profile/:id" element={<Profile />} />
+        <Route path="orders" element={<Order />} />
+        <Route path="search/:keyword" element={<SearchPage />} />
+        <Route path="setting/:tab?" element={<Setting />} />
+      </Route>
+    </Routes>
+  );
+};
 
 const App = () => {
   return (
-    <>
-      <AuthProvider>
-        <Routes>
-      
-
-<Route path="/admin" element={<AdminLayout />}>
-  <Route index element={<Navigate to="dashboard" />} />
-  
-  <Route path="dashboard" element={<AdminDashboard />}>
-    <Route index element={<Content/>} />
-    <Route path="products/list" element={<ProductList />} />
-    <Route path="products/add" element={<AddProduct />} />
-    <Route path="products/edit/:id" element={<EditProduct />} />
-
-    <Route path="categories/list" element={<CategoryList />} />
-    <Route path="categories/add" element={<AddCategory />} />
-    <Route path="categories/edit/:id" element={<EditCategory />} />
-    <Route path="categories/view/:id" element={<CategoryDetail />} />
-
-    <Route path="coupons/list" element={<CouponList />} />
-    <Route path="coupons/add" element={<AddCoupon />} />
-    <Route path="coupons/edit/:id" element={<EditCoupon />} />
-
-    <Route path="slide/featured/list" element={<FeaturedSlideList />} />
-    <Route path="slide/featured/add" element={<FeaturedSlideAdd />} />
-    <Route path="slide/featured/edit/:id" element={<FeaturedSlideEdit />} />
-
-    <Route path="account/list" element={<AccountList />} />
-
-    <Route path="decentralization/list" element={<DecentralizationList />} />
-  </Route>
-</Route>
-
-
-          <Route path="/" element={<UserLayout />}>
-            <Route index element={<Homepage />} />
-            <Route path="category/:name" element={<CategoryPage />} />
-            <Route path="details/:name" element={<ProductDetail />} />
-            <Route path="cart" element={<Cart />} />
-            <Route path="login" element={<Login />} />
-            <Route path="register" element={<Register />} />
-            <Route path="checkout" element={<Checkout />} />
-            <Route path="wishlist" element={<Wishlist />} />
-            <Route path="profile/:id" element={<Profile />} />
-            <Route path="orders" element={<Order />} />
-            <Route path="search/:keyword" element={<SearchPage />} />
-            <Route path="setting/:tab?" element={<Setting />} />
-
-          </Route>
-
-
-        </Routes>
-        <ToastContainer />
-      </AuthProvider>
-
-    </>
+    <AuthProvider>
+      <AppRoutes />
+      <ToastContainer />
+    </AuthProvider>
   );
 };
 
