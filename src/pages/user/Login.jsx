@@ -54,7 +54,7 @@ const Login = () => {
   const handleSubmit = async () => {
     const user = await login(email, password);
     if (user) {
-      if (user.role === "Admin"||user.role === "Staff") {
+      if (user.role === "Admin" || user.role === "Staff") {
         navigate("/admin/dashboard");
       } else {
         navigate("/");

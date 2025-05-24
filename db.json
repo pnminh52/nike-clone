@@ -1520,99 +1520,8 @@
       "password": "111111Aa",
       "country": "Vietnam",
       "extraAddresses": [],
-      "cart": [
-        {
-          "id": "djsi87",
-          "position": 1,
-          "isDefault": "true",
-          "name": "Jordan Why Not Zer0.3 PF",
-          "height": "High Top",
-          "shoesFor": "Jordan",
-          "stock": 50,
-          "class": "Shoes",
-          "brand": "Jordan",
-          "features": "Side vents",
-          "giftPoint": 300,
-          "type": "Men's Basketball Shoe",
-          "price": "3829000",
-          "price_sale": "3058000",
-          "des": "One of the game's fiercest competitors, triple-double dynamo Russell Westbrook has the motor, muscle and mentality to match his fearlessness—with the stats to back it up. Built to hold up on outdoor courts, the Jordan 'Why Not?' Zer0.3 PF is fine-tuned for players like Russ, who beat opponents with linear speed and aggressiveness.",
-          "img": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/8d71df27-5fbf-44ac-9019-af8bc8efb773/JORDAN+WHY+NOT+ZER0.3+PF.png",
-          "page": "New & Featured",
-          "category": "New & Upcoming Drops",
-          "status": "Just In",
-          "customer": "Men",
-          "sizes": [
-            "31",
-            "32",
-            "33",
-            "34",
-            "40",
-            "37",
-            "35",
-            "36",
-            "38",
-            "39",
-            "41",
-            "42",
-            "43",
-            "44",
-            "45"
-          ],
-          "gender": "Men",
-          "color": [
-            "Parachute Beige",
-            "Fossil",
-            "Black",
-            "Rage Green"
-          ],
-          "style": "CD3002-200",
-          "country": "Vietnam",
-          "additionalImages": [
-            "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/34d007ec-f065-434e-bd51-1d62e6e0d7c1/JORDAN+WHY+NOT+ZER0.3+PF.png",
-            "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/b0a43ba9-13ab-4cca-ae61-c23fb88c5fcf/JORDAN+WHY+NOT+ZER0.3+PF.png",
-            "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/5c00f190-595b-44cd-856d-80745b05ca94/JORDAN+WHY+NOT+ZER0.3+PF.png",
-            "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/56afdfa2-bb23-4ac3-91ef-ae30e2dddf04/JORDAN+WHY+NOT+ZER0.3+PF.png",
-            "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/3b61822b-42fb-4c49-81c6-ff55bfc4a293/JORDAN+WHY+NOT+ZER0.3+PF.png",
-            "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/a6b2ecbf-7be0-4f02-9607-d00cbe4b07c7/JORDAN+WHY+NOT+ZER0.3+PF.png",
-            "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/9f0bc01d-9698-4395-b56a-8fe265590843/JORDAN+WHY+NOT+ZER0.3+PF.png",
-            "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/9757440a-6b66-4824-9edd-78a553267805/JORDAN+WHY+NOT+ZER0.3+PF.png",
-            "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/426500f6-ace1-4ee9-8b57-ebaecda41908/JORDAN+WHY+NOT+ZER0.3+PF.png"
-          ],
-          "featured": [
-            {
-              "title": "Responsive for Russ",
-              "content": "Designed specifically for Russ, the large Air Zoom Turbo unit in the front of the shoe is curved to follow the foot's natural shape. As he charges down the court, the cushioning engages at different points for a continuously responsive sensation."
-            },
-            {
-              "title": "Locked In and Stable",
-              "content": "A clear, adjustable midfoot strap fastens in one fluid motion to help keep you stable and locked in over the footbed."
-            },
-            {
-              "title": "Signature Details",
-              "content": "The split outsole, jagged design lines and clashing mix of materials are distinct to Russ' signature line. Other embellishments include light-shifting accents and an exposed factory size tag visible on the bottom of the shoe."
-            },
-            {
-              "title": "Keep Chaos Under Control",
-              "content": "The rubber outsole is split into 2 sections to help reduce weight. Multi-directional traction helps you stay in control while unleashing chaos on the court."
-            }
-          ],
-          "moreBenefit": [
-            "The dual-layered textile material is lightweight and breathable, with areas of open mesh to expose underlayers.",
-            "Rigid, moulded plastic piece between the 2 outsole sections provides structure and support."
-          ],
-          "notes": [
-            "Reinforced toe",
-            "Plush, padded collar",
-            "Colour-shifting details",
-            "External factory size tag",
-            "Durable rubber outsole"
-          ],
-          "usedVoucher": null,
-          "size": 36,
-          "quantity": 1
-        }
-      ],
+      
+      "cart": [],
       "orders": [],
       "point": 7900,
       "accountStatus": "Active",
@@ -1620,6 +1529,7 @@
       "dateOfBirth": "2016-4-5",
       "customerType": "Standard",
       "role": "Admin",
+      "permissions": "All",
       "avatar": "https://i.pinimg.com/736x/bd/5e/db/bd5edb18fe5acd9b462f3a704b8596b1.jpg",
       "createdAt": "2025-05-11T17:25:32.190Z",
       "coupons": []
@@ -2562,13 +2472,13 @@
       ]
     },
     {
-      "id": "33e7",
-      "firstname": "new user",
-      "lastname": "qưqwqwqw",
+      "id": "23273n",
+      "firstname": "new",
+      "lastname": "staff",
       "phone": "111111Aa",
       "address": "Hà Nam",
       "district": "1212",
-      "email": "dfdf@gmail.com",
+      "email": "newstaff@gmail.com",
       "password": "111111Aa",
       "country": "Việt Nam",
       "role": "Staff",
