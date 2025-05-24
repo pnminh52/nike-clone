@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import StarRatingInput from "../productDetail/StarRatingInput";
 import ImageUploadDraggable from "../productDetail/ImageUploadDraggable";
+import { User } from "lucide-react";
 
 const AddComment = ({ productId, user, onClose, onSubmit, product }) => {
   const [content, setContent] = useState("");
@@ -40,7 +41,7 @@ const AddComment = ({ productId, user, onClose, onSubmit, product }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (!realUser || !realUser.id || !realUser.username) {
+    if (!realUser || !realUser.id || !realUser.lastname || !realUser.firstname) {
       alert("Bạn cần đăng nhập để gửi bình luận.");
       onClose();
       return;
@@ -70,7 +71,7 @@ const AddComment = ({ productId, user, onClose, onSubmit, product }) => {
       const newComment = {
         productId,
         userId: realUser.id,
-        userName: realUser.username,
+        userName: `${realUser.firstname} ${realUser.lastname}`,
         rating,
         content,
         title,

@@ -43,7 +43,7 @@ const ProductDetail = () => {
   const [showCoupons, setShowCoupons] = useState(false);
   const [showDetailsCard, setShowDetailsCard] = useState(false);
 
-
+  // {console.log("User cha:", user)}
 
 
   const formatPrice = (price) => {
@@ -185,6 +185,7 @@ const ProductDetail = () => {
                               className="w-18 relative h-18 rounded-[4px] object-cover cursor-pointer hover:border-black transition"
                               muted
                               loop
+                              playsInline
                             />
                             <svg
                               className="absolute left-1 bottom-1"
@@ -216,7 +217,7 @@ const ProductDetail = () => {
                             alt="additional"
                             className="w-18 h-18 rounded-[4px] object-cover cursor-pointer hover:border-black transition"
                             onError={(e) => {
-                              e.target.style.display = 'none'; // ẩn nếu không tải được
+                              e.target.style.display = 'none'; 
                             }}
                           />
                         )}
@@ -852,11 +853,11 @@ const ProductDetail = () => {
               <div className="py-6">
                 <button
                   onClick={() => setShowAddComment(true)} // ❗ chỉ mở popup khi bấm
-                  className="text-black inter border-b-3 "
+                  className="text-black inter border-b-3 cursor-pointer "
                 >
                   Write a review
                 </button>
-                <CommentSection comments={comments} />
+                <CommentSection user={user} comments={comments} />
               </div>
             )}
           </div>
@@ -943,7 +944,7 @@ const ProductDetail = () => {
         </div>
       {showAddComment && (
         <>
-          {/* {console.log("User cha:", user)} */}
+         
           <div >
             <AddComment
               productId={selectedProduct?.id}

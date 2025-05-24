@@ -32,28 +32,33 @@ const SideBar = () => {
 
       <ul className='space-y-2 px-4 py-2'>
         {/* <li className='text-gray-400 text-sm'>Main navigation</li> */}
-
         {menuItems.map((item, index) => {
-          const isActive = location.pathname === item.path;
-          const isDisabled = item.path !== '#' && !permissions.includes(item.path);
+  const isActive = location.pathname === item.path;
 
-          return (
-            <li
-              key={index}
-              className={`px-4 py-2 border rounded-xl text-black ${
-                isActive ? 'bg-blue-200 border-blue-300' : 'border-white'
-              } ${isDisabled ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'}`}
-            >
-              {item.path === '#' || isDisabled ? (
-                <span>{item.name}</span>
-              ) : (
-                <Link to={item.path}>
-                  <button>{item.name}</button>
-                </Link>
-              )}
-            </li>
-          );
-        })}
+  // Nếu permissions là 'All' thì mở hết
+  const isDisabled = 
+    item.path !== '#' && 
+    permissions !== 'All' && 
+    !permissions.includes(item.path);
+
+  return (
+    <li
+      key={index}
+      className={`px-4 py-2 border rounded-xl text-black ${
+        isActive ? 'bg-blue-200 border-blue-300' : 'border-white'
+      } ${isDisabled ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'}`}
+    >
+      {item.path === '#' || isDisabled ? (
+        <span>{item.name}</span>
+      ) : (
+        <Link to={item.path}>
+          <button>{item.name}</button>
+        </Link>
+      )}
+    </li>
+  );
+})}
+
       </ul>
     </div>
   );

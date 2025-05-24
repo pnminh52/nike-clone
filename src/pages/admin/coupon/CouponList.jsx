@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+
 const CouponList = () => {
   const [coupons, setCoupons] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -24,79 +25,93 @@ const CouponList = () => {
 
   if (loading) return <p>Đang tải danh sách coupon...</p>;
   if (error) return <p className="text-red-500">Lỗi: {error}</p>;
+
   const handleRemoveCoupon = async (id) => {
     const confirm = window.confirm("Bạn có chắc chắn muốn xóa coupon này?");
     if (!confirm) return;
-  
+
     try {
       const res = await fetch(`http://localhost:3000/coupons/${id}`, {
         method: "DELETE",
       });
-  
+
       if (!res.ok) throw new Error("Xóa thất bại");
-  
+
       // Xóa khỏi state sau khi xóa thành công trên server
-      const newCouponList = coupons.filter((item) => item.id !== id);
-      setCoupons(newCouponList);
+      setCoupons(coupons.filter((item) => item.id !== id));
     } catch (error) {
       alert("Đã xảy ra lỗi khi xóa coupon.");
       console.error(error);
     }
   };
-  
 
   return (
-   <div>
-   <Link to={"/admin/coupons/add"}> <button>Add Coupon</button></Link>
-     <div className="p-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      {coupons.map((coupon) => (
-        <div
-          key={coupon.id}
-          className="border rounded-xl shadow p-4 flex flex-col bg-white hover:shadow-lg transition"
-        >
-          <img
-            src={coupon.image}
-            alt={coupon.name}
-            className="w-full h-40 object-cover rounded-md mb-4"
-          />
-          <h3 className="text-xl font-bold text-gray-800">{coupon.name}</h3>
-          <p className="text-sm text-gray-500 mt-1">{coupon.description}</p>
+    <div className="py-4 px-4">
+      <Link to={"/admin/coupons/add"}>
+        <button className="mb-4 px-4 py-2 bg-blue-600 text-white rounded">
+          Add Coupon
+        </button>
+      </Link>
 
-          <div className="mt-2 text-sm text-gray-700">
-            <p>
-              <span className="font-semibold">Loại giảm:</span>{" "}
-              {coupon.discountType === "percent"
-                ? `${coupon.value}%`
-                : `${coupon.value.toLocaleString()}₫`}
-            </p>
-            <p>
-              <span className="font-semibold">Áp dụng cho:</span>{" "}
-              {coupon.applicableProductNames}
-            </p>
-            <p>
-              <span className="font-semibold">Số lượng còn:</span> {coupon.stock}
-            </p>
-            <p>
-              <span className="font-semibold">Điểm cần đổi:</span>{" "}
-              {coupon.pointToExchange.toLocaleString()}
-            </p>
-            <p>
-              <span className="font-semibold">HSD:</span>{" "}
-              {coupon.numberOfExpiryDate} ngày kể từ ngày đổi
-            </p>
-            <p>
-              <span className="font-semibold">Mã:</span> {coupon.code}
-            </p>
-            <Link to={`/admin/coupons/edit/${coupon.id}`}>
-  <button>Edit Coupon</button>
-</Link>
-<button onClick={()=>handleRemoveCoupon(coupon.id)}>DELETE</button>
-
-          </div>
-        </div>
-      ))}
+      <table className="w-full border border-gray-300-collapse">
+        <thead>
+          <tr className="bg-gray-100">
+            <th className="border border-gray-300 p-2">Ảnh</th>
+            <th className="border border-gray-300 p-2">Tên</th>
+            <th className="border border-gray-300 p-2">Mô tả</th>
+            <th className="border border-gray-300 p-2">Loại giảm</th>
+            <th className="border border-gray-300 p-2">Số lượng còn</th>
+            <th className="border border-gray-300 p-2">Điểm cần đổi</th>
+            <th className="border border-gray-300 p-2">HSD</th>
+          
+            <th className="border border-gray-300 p-2">Thao tác</th>
+          </tr>
+        </thead>
+        <tbody>
+          {coupons.map((coupon) => (
+            <tr
+              key={coupon.id}
+              className="hover:bg-gray-50 transition"
+            >
+              <td className="border border-gray-300 p-2 text-center">
+                <img
+                  src={coupon.image}
+                  alt={coupon.name}
+                  className="w-24 h-16 object-cover mx-auto rounded"
+                />
+              </td>
+              <td className="border border-gray-300 p-2">{coupon.name}</td>
+              <td className="border border-gray-300 p-2">{coupon.description}</td>
+              <td className="border border-gray-300 p-2">
+                {coupon.discountType === "percent"
+                  ? `${coupon.value}%`
+                  : `${coupon.value.toLocaleString()}₫`}
+              </td>
+              <td className="border border-gray-300 p-2 text-center">{coupon.stock}</td>
+              <td className="border border-gray-300 p-2 text-right">
+                {coupon.pointToExchange.toLocaleString()}
+              </td>
+              <td className="border border-gray-300 p-2 text-center">
+                {coupon.numberOfExpiryDate} ngày
+              </td>
+              <td className="border border-gray-300 p-2 text-center space-x-2">
+                <Link to={`/admin/coupons/edit/${coupon.id}`}>
+                  <button className="px-3 py-1 bg-yellow-400 rounded hover:bg-yellow-500">
+                    Edit
+                  </button>
+                </Link>
+                <button
+                  onClick={() => handleRemoveCoupon(coupon.id)}
+                  className="px-3 py-1 bg-red-500 text-white rounded hover:bg-red-600"
+                >
+                  Delete
+                </button>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </div>
-   </div>
   );
 };
 

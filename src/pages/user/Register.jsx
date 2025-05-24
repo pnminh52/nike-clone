@@ -84,9 +84,7 @@ const Register = () => {
     
     if (success) {
       successToast("Đăng ký thành công!");
-      localStorage.setItem("user", JSON.stringify(success));
-      localStorage.setItem("userId", success.id);
-      navigate("/");
+      navigate("/login") 
     } else {
       warningToast("Email đã tồn tại!");
     }
