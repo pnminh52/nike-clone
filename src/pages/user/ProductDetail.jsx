@@ -16,9 +16,11 @@ import VoucherChooseTab from "../../components/user/productDetail/VoucherChooseT
 import ProductDetailsCard from "../../components/user/productDetail/ProductDetailsCard";
 import MightAlsoLike from "../../components/user/productDetail/MightAlsoLike";
 import VoucherCard from './../../components/user/productDetail/VoucherCard';
+import CommentTab from "../../components/user/productDetail/CommentTab";
 
 const ProductDetail = () => {
   const { addToCart } = useCart();
+  const [showAll, setShowAll] = useState(false)
   const { name } = useParams();
   const { getProductsByName } = useProducts();
   const { user, setUser } = useAuth();
@@ -75,13 +77,13 @@ const ProductDetail = () => {
     }
   }, [selectedProduct]);
 
-  const [isLoading, setIsLoading] = useState(true); 
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     if (!products || products.length === 0) return;
     setTimeout(() => {
-      setIsLoading(false); 
-    }, 2000); 
+      setIsLoading(false);
+    }, 2000);
   }, [products]);
 
   const handleAddComment = async (commentData) => {
@@ -90,7 +92,7 @@ const ProductDetail = () => {
 
     if (!user?.id) {
       window.alert("Bạn chưa đăng nhập!");
-      return; 
+      return;
     }
 
     const userName =
@@ -119,10 +121,10 @@ const ProductDetail = () => {
 
   const applicableCoupons = user?.coupons?.filter(coupon => {
     const applicableNames = coupon.applicableProductNames;
-        return !applicableNames || applicableNames === "All" || applicableNames.includes(selectedProduct?.name);
+    return !applicableNames || applicableNames === "All" || applicableNames.includes(selectedProduct?.name);
   }) || [];
-  
-  
+
+
 
 
 
@@ -139,7 +141,7 @@ const ProductDetail = () => {
 
   if (isLoading) {
     return (
-        <ProductSkeleton />
+      <ProductSkeleton />
     );
   }
 
@@ -217,7 +219,7 @@ const ProductDetail = () => {
                             alt="additional"
                             className="w-18 h-18 rounded-[4px] object-cover cursor-pointer hover:border-black transition"
                             onError={(e) => {
-                              e.target.style.display = 'none'; 
+                              e.target.style.display = 'none';
                             }}
                           />
                         )}
@@ -346,31 +348,31 @@ const ProductDetail = () => {
           </div>
 
           <div className="mt-6">
-          {applicableCoupons.length > 0 && (
-            <div>
+            {applicableCoupons.length > 0 && (
+              <div>
 
 
-              {showCoupons && (
-                <div className="">
-                  <VoucherChooseTab
-                     setUser={setUser}
-                    applicableCoupons={applicableCoupons}
-                    selectedCoupon={selectedCoupon}
-                    selectedProduct={selectedProduct}
-                    setSelectedCoupon={setSelectedCoupon}
-                    onClose={() => setShowCoupons(false)}
-                    user={user}
-                  />
-                </div>
-              )}
-
-
-
+                {showCoupons && (
+                  <div className="">
+                    <VoucherChooseTab
+                      setUser={setUser}
+                      applicableCoupons={applicableCoupons}
+                      selectedCoupon={selectedCoupon}
+                      selectedProduct={selectedProduct}
+                      setSelectedCoupon={setSelectedCoupon}
+                      onClose={() => setShowCoupons(false)}
+                      user={user}
+                    />
+                  </div>
+                )}
 
 
 
-            </div>
-          )}
+
+
+
+              </div>
+            )}
           </div>
 
           <div className="flex items-center justify-between ">
@@ -380,111 +382,111 @@ const ProductDetail = () => {
                 {formatPrice(selectedProduct.price)}đ
               </span>
               {selectedCoupon && (
-              <div  className="flex items-center">
-                <span className=""><svg viewBox="0 0 20 20" className="w-7 h-7 rotate-120" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" strokeWidth="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M2 9.5C2 9.22386 2.22386 9 2.5 9H17.5C17.7761 9 18 9.22386 18 9.5C18 9.77614 17.7761 10 17.5 10H2.5C2.22386 10 2 9.77614 2 9.5Z" fill="#212121"></path> </g></svg></span>
+                <div className="flex items-center">
+                  <span className=""><svg viewBox="0 0 20 20" className="w-7 h-7 rotate-120" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" strokeWidth="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M2 9.5C2 9.22386 2.22386 9 2.5 9H17.5C17.7761 9 18 9.22386 18 9.5C18 9.77614 17.7761 10 17.5 10H2.5C2.22386 10 2 9.77614 2 9.5Z" fill="#212121"></path> </g></svg></span>
                   <span className=" text-black ">
-                  {formatPrice(getDiscountedPrice(selectedProduct.price))}đ
-                </span>
-                <span className="text-xs text-green-500 ml-2 cursor-pointer border border-green-500 rounded-full px-2 py-0.5">-
-  {selectedCoupon.discountType === 'amount'
-    ? `${formatPrice(selectedCoupon.value)}đ`
-    : `${selectedCoupon.value}%`}
-</span>
+                    {formatPrice(getDiscountedPrice(selectedProduct.price))}đ
+                  </span>
+                  <span className="text-xs text-green-500 ml-2 cursor-pointer border border-green-500 rounded-full px-2 py-0.5">-
+                    {selectedCoupon.discountType === 'amount'
+                      ? `${formatPrice(selectedCoupon.value)}đ`
+                      : `${selectedCoupon.value}%`}
+                  </span>
 
-              </div>
+                </div>
               )}
             </div>
-           {
-            applicableCoupons.length > 0 && (
-              <p
-              onClick={() => setShowCoupons(!showCoupons)}
-              className="py-1 px-2 text-xs rounded-full border border-gray-800 cursor-pointer"
-            >
-              Coupons
-            </p>
-            )
-           }
+            {
+              applicableCoupons.length > 0 && (
+                <p
+                  onClick={() => setShowCoupons(!showCoupons)}
+                  className="py-1 px-2 text-xs rounded-full border border-gray-800 cursor-pointer"
+                >
+                  Coupons
+                </p>
+              )
+            }
           </div>
           {products.length === 1 && (
             <div className="h-10 bg-white"></div>
           )}
           {products.length > 1 && (
-           <div className={selectedCoupon?"mt-8":"py-8"}>
+            <div className={selectedCoupon ? "mt-8" : "py-8"}>
 
-             <div className="grid grid-cols-5 gap-2 ">
-              {products.map((product, idx) => (
-                <div
-                  key={product.id}
-                  onClick={() => {
-                    setSelectedIndex(idx);  // Chỉ thay đổi biến thể (index), không thay đổi selectedSize
-                    localStorage.setItem(`selectedIndex-${name}`, idx);
-                  }}
-                  className={`cursor-pointer rounded relative group ${selectedIndex === idx
+              <div className="grid grid-cols-5 gap-2 ">
+                {products.map((product, idx) => (
+                  <div
+                    key={product.id}
+                    onClick={() => {
+                      setSelectedIndex(idx);  // Chỉ thay đổi biến thể (index), không thay đổi selectedSize
+                      localStorage.setItem(`selectedIndex-${name}`, idx);
+                    }}
+                    className={`cursor-pointer rounded relative group ${selectedIndex === idx
                       ? "ring-2 rounded-md transition duration-300 ease-in-out"
                       : ""
-                    }`}
-                >
-                  <img
-                    src={product.img}
-                    alt={product.name}
-                    className="w-20 h-20 rounded-md object-cover"
-                  />
+                      }`}
+                  >
+                    <img
+                      src={product.img}
+                      alt={product.name}
+                      className="w-20 h-20 rounded-md object-cover"
+                    />
 
-                  {/* SVG gạch chéo nếu hết hàng */}
-                  {(product.stock === 0 || (selectedSize && !product.sizes.includes(String(selectedSize)))) && product.status !== "Coming Soon" && (
-                    <div className="absolute inset-0">
-                      <svg
-                        className="w-full h-full p-3 z-10 bg-gray-300/50 rounded-md"
-                        viewBox="0 0 125 125"
-                        preserveAspectRatio="none"
-                      >
-                        <line
-                          x1="125"
-                          y1="125"
-                          x2="0"
-                          y2="0"
-                          stroke="white"
-                          strokeWidth="1.5"
-                        />
-                      </svg>
-                    </div>
-                  )}
-
-                  {/* Tooltip thông báo */}
-                  {(product.stock === 0 || product.status === "Coming Soon") && (
-                    <div className="absolute -top-2 left-1/2 transform -translate-x-1/2 -translate-y-full z-20 group-hover:opacity-100 opacity-0 transition">
-                      <div className="bg-black whitespace-nowrap text-white inter inter px-2 py-2  rounded relative">
-                        {product.stock === 0 ? "Sold Out" : "Coming Soon"}
-
-                        {/* Tam giác hướng xuống */}
-                        <div className="absolute left-1/2 -bottom-1.5 transform -translate-x-1/2 w-0 h-0 border-l-8 border-r-8 border-t-8 border-l-transparent border-r-transparent border-t-black" />
+                    {/* SVG gạch chéo nếu hết hàng */}
+                    {(product.stock === 0 || (selectedSize && !product.sizes.includes(String(selectedSize)))) && product.status !== "Coming Soon" && (
+                      <div className="absolute inset-0">
+                        <svg
+                          className="w-full h-full p-3 z-10 bg-gray-300/50 rounded-md"
+                          viewBox="0 0 125 125"
+                          preserveAspectRatio="none"
+                        >
+                          <line
+                            x1="125"
+                            y1="125"
+                            x2="0"
+                            y2="0"
+                            stroke="white"
+                            strokeWidth="1.5"
+                          />
+                        </svg>
                       </div>
-                    </div>
-                  )}
+                    )}
 
-                </div>
-              ))}
+                    {/* Tooltip thông báo */}
+                    {(product.stock === 0 || product.status === "Coming Soon") && (
+                      <div className="absolute -top-2 left-1/2 transform -translate-x-1/2 -translate-y-full z-20 group-hover:opacity-100 opacity-0 transition">
+                        <div className="bg-black whitespace-nowrap text-white inter inter px-2 py-2  rounded relative">
+                          {product.stock === 0 ? "Sold Out" : "Coming Soon"}
+
+                          {/* Tam giác hướng xuống */}
+                          <div className="absolute left-1/2 -bottom-1.5 transform -translate-x-1/2 w-0 h-0 border-l-8 border-r-8 border-t-8 border-l-transparent border-r-transparent border-t-black" />
+                        </div>
+                      </div>
+                    )}
+
+                  </div>
+                ))}
+              </div>
             </div>
-           </div>
           )}
           {selectedCoupon && (
             <div className="  py-4">
-             <div className=" py-4">
-               <p className="inter">Apply Coupon</p>
-                            <p className="text-xs text-red-600 ">
-                                Please note: The voucher is non-refundable when you cancel the order
-                                <span className="text-red-600">*</span>
-                              </p>
-             </div>
-              <div>
-              <VoucherCard
-        coupon={selectedCoupon}
-        isSelected={true}
-        onSelect={setSelectedCoupon}  // Hàm xử lý khi chọn coupon
-        selectedProduct={selectedProduct}  // Truyền sản phẩm hiện tại
-      />              </div>
-           
+              <div className=" py-4">
+                <p className="inter">Apply Coupon</p>
+                <p className="text-xs text-red-600 ">
+                  Please note: The voucher is non-refundable when you cancel the order
+                  <span className="text-red-600">*</span>
+                </p>
               </div>
+              <div>
+                <VoucherCard
+                  coupon={selectedCoupon}
+                  isSelected={true}
+                  onSelect={setSelectedCoupon}  // Hàm xử lý khi chọn coupon
+                  selectedProduct={selectedProduct}  // Truyền sản phẩm hiện tại
+                />              </div>
+
+            </div>
           )}
 
 
@@ -549,15 +551,14 @@ const ProductDetail = () => {
               </div>
 
               <div
-  className={`grid grid-cols-4 gap-2 py-4 inter ${
-    attemptedAdd && !selectedSize ? "border-[#D30005] border rounded-lg" : ""
-  }`}
->
-  {[
-    31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45
-  ].map((size) => {
-    const isAvailable = selectedProduct.sizes.includes(String(size));
-    const isSelected = selectedSize === size;
+                className={`grid grid-cols-4 gap-2 py-4 inter ${attemptedAdd && !selectedSize ? "border-[#D30005] border rounded-lg" : ""
+                  }`}
+              >
+                {[
+                  31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45
+                ].map((size) => {
+                  const isAvailable = selectedProduct.sizes.includes(String(size));
+                  const isSelected = selectedSize === size;
 
                   return (
                     <button
@@ -721,14 +722,14 @@ const ProductDetail = () => {
 
             </ul>
           </div>
-          <button  onClick={() => setShowDetailsCard(!showDetailsCard)} className="inter border-gray-300 hover:border-black transition ease-in-out duration-300 inline-block px-4 py-2.5 border rounded-full  cursor-pointer text-lg ">
+          <button onClick={() => setShowDetailsCard(!showDetailsCard)} className="inter border-gray-300 hover:border-black transition ease-in-out duration-300 inline-block px-4 py-2.5 border rounded-full  cursor-pointer text-lg ">
             View Product Details
           </button>
           {
             showDetailsCard && (
               <ProductDetailsCard
-              onClose={() => setShowDetailsCard(false)}
-              selectedProduct={selectedProduct}
+                onClose={() => setShowDetailsCard(false)}
+                selectedProduct={selectedProduct}
 
               />
             )
@@ -777,26 +778,15 @@ const ProductDetail = () => {
             </button>
 
             {open0 && (
-              <div className="mt-6   space-y-2 inter">
-                <p className=" text-lg">
+              <div className="mt-6   space-y-2 ">
+                <p className="">
                   Your order of 5.000.000₫ or more gets free standard
-                  delivery.
+                  delivery. Orders are processed and delivered Monday to Friday (excluding
+                    public holidays)
                 </p>
-                <div className="py-6">
-                  <p className="text-lg">
-                    • Standard delivered 4–5 Business Days
-                  </p>
-                  <p className="text-lg">
-                    • Express delivered 2–4 Business Days
-                  </p>
-                </div>
-                <p className="text-lg">
-                  Orders are processed and delivered Monday–Friday (excluding
-                  public holidays)
-                </p>
-                <p className="text-lg mt-4">
+                <p className="text-sm mt-4">
                   Nike Members enjoy{" "}
-                  <span className="underline">free returns.</span>
+                  <span className="underline text-blue-600 cursor-pointer">free returns.</span>
                 </p>
               </div>
             )}
@@ -851,12 +841,22 @@ const ProductDetail = () => {
 
             {open1 && (
               <div className="py-6">
-                <button
-                  onClick={() => setShowAddComment(true)} // ❗ chỉ mở popup khi bấm
-                  className="text-black inter border-b-3 cursor-pointer "
-                >
-                  Write a review
-                </button>
+                <div className="flex justify-between items-center">
+                  <button
+                    onClick={() => setShowAddComment(true)} // ❗ chỉ mở popup khi bấm
+                    className="text-black inter border-b-3 cursor-pointer "
+                  >
+                    Write a review
+                  </button>
+                  {comments.length > 5 && (
+                        <button
+                          onClick={() => setShowAll(true)}
+                          className="text-blue-600 hover:underline text-sm cursor-pointer"
+                        >
+                          Xem tất cả đánh giá ({comments.length})
+                        </button>
+                      )}
+                </div>
                 <CommentSection user={user} comments={comments} />
               </div>
             )}
@@ -940,11 +940,11 @@ const ProductDetail = () => {
 
       </div>
       <div className=" mx-auto max-w-screen-2xl px-10">
-            <MightAlsoLike currentProduct={selectedProduct}/>
-        </div>
+        <MightAlsoLike currentProduct={selectedProduct} />
+      </div>
       {showAddComment && (
         <>
-         
+
           <div >
             <AddComment
               productId={selectedProduct?.id}
@@ -955,6 +955,13 @@ const ProductDetail = () => {
             />
           </div>
         </>
+      )}
+        {showAll && (
+        <CommentTab
+          user={user}
+          comments={comments}
+          onClose={() => setShowAll(false)}
+        />
       )}
     </div>
   );

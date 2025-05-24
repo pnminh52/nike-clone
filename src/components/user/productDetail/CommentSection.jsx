@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import CommentTab from "../productDetail/CommentTab";
 const CommentSection = ({ comments, user }) => {
-  const [showAll, setShowAll] = useState(false);
-
+ 
   const topComments = comments.slice(0, 3);
 
   return (
@@ -14,22 +13,9 @@ const CommentSection = ({ comments, user }) => {
         <CommentItem key={comment.id} comment={comment} />
       ))}
 
-      {comments.length > 5 && (
-        <button
-          onClick={() => setShowAll(true)}
-          className="text-blue-600 hover:underline text-sm"
-        >
-          Xem tất cả đánh giá ({comments.length})
-        </button>
-      )}
+    
 
-      {showAll && (
-        <CommentTab
-          user={user}
-          comments={comments}
-          onClose={() => setShowAll(false)}
-        />
-      )}
+    
     </div>
   );
 };
