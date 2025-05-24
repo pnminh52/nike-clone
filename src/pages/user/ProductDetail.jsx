@@ -171,61 +171,69 @@ const ProductDetail = () => {
                 </div>
 
                 {/* Ảnh phụ: hover để đổi ảnh chính */}
-                {selectedProduct?.additionalImages?.length > 0 &&
-                  selectedProduct.additionalImages
-                    .filter((img) => typeof img === 'string' && img.trim() !== '') // lọc bỏ img rỗng/null
-                    .map((img, idx) => (
-                      <div
-                        key={idx}
-                        className="relative cursor-pointer"
-                        onMouseEnter={() => setMainImage(img)}
-                      >
-                        {img.endsWith(".mp4") ? (
-                          <div>
-                            <video
-                              src={img}
-                              className="w-18 relative h-18 rounded-[4px] object-cover cursor-pointer hover:border-black transition"
-                              muted
-                              loop
-                              playsInline
-                            />
-                            <svg
-                              className="absolute left-1 bottom-1"
-                              aria-hidden="true"
-                              focusable="false"
-                              viewBox="0 0 24 24"
-                              role="img"
-                              width="24px"
-                              height="24px"
-                              fill="white"
-                            >
-                              <path
-                                fill="white"
-                                fillRule="evenodd"
-                                d="M19.314 11.35L6.367 3.877a.75.75 0 00-1.125.65v14.949a.75.75 0 001.125.649l12.947-7.474a.75.75 0 000-1.3z"
-                                clipRule="evenodd"
-                              />
-                              <path
-                                stroke="white"
-                                strokeWidth="1.5"
-                                d="M19.314 11.35L6.367 3.877a.75.75 0 00-1.125.65v14.949a.75.75 0 001.125.649l12.947-7.474a.75.75 0 000-1.3z"
-                                clipRule="evenodd"
-                              />
-                            </svg>
-                          </div>
-                        ) : (
-                          <img
-                            src={img}
-                            alt="additional"
-                            className="w-18 h-18 rounded-[4px] object-cover cursor-pointer hover:border-black transition"
-                            onError={(e) => {
-                              e.target.style.display = 'none';
-                            }}
-                          />
-                        )}
-                        <div className="absolute inset-0 bg-black/15 rounded-[4px] hover:bg-black/30 duration-300 ease-in-out transition" />
-                      </div>
-                    ))}
+                {selectedProduct?.additionalImages
+  ?.filter((img) => typeof img === 'string' && img.trim() !== '')
+  .map((img, idx) => {
+    const isVideo = img.split('?')[0].toLowerCase().endsWith('.mp4');
+    return (
+      <div
+        key={idx}
+        className="relative cursor-pointer"
+        onMouseEnter={() => setMainImage(img)}
+      >
+        {isVideo ? (
+          <div className="relative">
+            <video
+              src={img}
+              className="w-[72px] h-[72px] rounded-[4px] object-cover cursor-pointer hover:border-black transition"
+              muted
+              loop
+              
+              playsInline
+              onError={(e) => {
+                console.error('Video error:', e);
+                e.target.style.display = 'none';
+              }}
+            />
+            <svg
+              className="absolute left-1 bottom-1"
+              aria-hidden="true"
+              focusable="false"
+              viewBox="0 0 24 24"
+              role="img"
+              width="24px"
+              height="24px"
+              fill="white"
+            >
+              <path
+                fill="white"
+                fillRule="evenodd"
+                d="M19.314 11.35L6.367 3.877a.75.75 0 00-1.125.65v14.949a.75.75 0 001.125.649l12.947-7.474a.75.75 0 000-1.3z"
+                clipRule="evenodd"
+              />
+              <path
+                stroke="white"
+                strokeWidth="1.5"
+                d="M19.314 11.35L6.367 3.877a.75.75 0 00-1.125.65v14.949a.75.75 0 001.125.649l12.947-7.474a.75.75 0 000-1.3z"
+                clipRule="evenodd"
+              />
+            </svg>
+          </div>
+        ) : (
+          <img
+            src={img}
+            alt={`additional-${idx}`}
+            className="w-[72px] h-[72px] rounded-[4px] object-cover cursor-pointer hover:border-black transition"
+            onError={(e) => {
+              e.target.style.display = 'none';
+            }}
+          />
+        )}
+        <div className="absolute inset-0 bg-black/15 rounded-[4px] hover:bg-black/30 duration-300 ease-in-out transition" />
+      </div>
+    );
+  })}
+
 
 
               </div>
