@@ -2578,7 +2578,8 @@
       "title": "User comment 2",
       "date": "2025-05-24T05:11:40.086Z",
       "productId": "12hb"
-    },  {
+    },
+    {
       "id": "b32f",
       "userId": "954e",
       "userName": "New  User2",
@@ -2608,7 +2609,8 @@
       "title": "User comment 2",
       "date": "2025-05-24T05:11:40.086Z",
       "productId": "12hb"
-    },  {
+    },
+    {
       "id": "b32f",
       "userId": "954e",
       "userName": "New  User2",
@@ -2638,7 +2640,8 @@
       "title": "User comment 2",
       "date": "2025-05-24T05:11:40.086Z",
       "productId": "12hb"
-    },  {
+    },
+    {
       "id": "b32f",
       "userId": "954e",
       "userName": "New  User2",
@@ -2733,6 +2736,53 @@
         }
       ],
       "status": "Off"
+    }
+  ],
+  "orderStatusList": [
+    {
+      "id": 1,
+      "name": "Pending",
+      "description": "The order is waiting for confirmation from the store."
+    },
+    {
+      "id": 2,
+      "name": "Confirmed",
+      "description": "The order has been confirmed."
+    },
+    {
+      "id": 3,
+      "name": "Processing",
+      "description": "The order is being prepared."
+    },
+    {
+      "id": 4,
+      "name": "Shipping",
+      "description": "The order is on its way to delivery."
+    },
+    {
+      "id": 5,
+      "name": "Delivered",
+      "description": "The order has been successfully delivered."
+    },
+    {
+      "id": 6,
+      "name": "Cancelled",
+      "description": "The order has been cancelled."
+    },
+    {
+      "id": 7,
+      "name": "Returned",
+      "description": "The customer has returned the order."
+    },
+    {
+      "id": 8,
+      "name": "Refunded",
+      "description": "The store has refunded the order."
+    },
+    {
+      "name": "new status2",
+      "description": "âsasas",
+      "id": "6522"
     }
   ]
 }

@@ -35,6 +35,9 @@ import FeaturedSlideEdit from "./pages/admin/featured/FeaturedSlideEdit";
 import DecentralizationList from "./pages/admin/decentralization/DecentralizationList";
 import ProtectedRoute from "./components/admin/etc/ProtectedRoute";
 import { useAuth } from "./hooks/useAuth";
+import OrderStatusList from "./pages/admin/orderStatus/OrderStatusList";
+import OrderStatusAdd from "./pages/admin/orderStatus/OrderStatusAdd";
+import OrderStatusUpdate from "./pages/admin/orderStatus/OrderStatusUpdate";
 
 const AppRoutes = () => {
   const { user, loading } = useAuth();
@@ -65,6 +68,9 @@ const AppRoutes = () => {
             <Route path="slide/featured/edit/:id" element={<FeaturedSlideEdit />} />
             <Route path="account/list" element={<AccountList />} />
             <Route path="decentralization/list" element={<DecentralizationList />} />
+             <Route path="order-status/list" element={<OrderStatusList />} />
+             <Route path="order-status/add" element={<OrderStatusAdd />} />
+             <Route path="order-status/edit/:id" element={<OrderStatusUpdate />} />
           </Route>
         </Route>
       {/* </Route> */}

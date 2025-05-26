@@ -16,6 +16,7 @@ const SideBar = () => {
     { name: 'Order', path: '/admin/dashboard/order/list' },
     { name: 'Slide', path: '/admin/dashboard/slide/featured/list' },
     { name: 'Decentralization', path: '/admin/dashboard/decentralization/list' },
+    { name: 'Order Status', path: '/admin/dashboard/order-status/list' },
   ];
 
   return (
