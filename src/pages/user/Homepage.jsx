@@ -21,19 +21,10 @@ const Homepage = () => {
   }
   return (
     <div className="max-w-screen-2xl mx-auto  justify-center items-center">
-      {/* <Banner1 /> */}
       <Banner0 />
 
       <Slider1 />
-      <div className="mx-auto max-w-screen-2xl px-10 mt-10 mb-4">
-        <Banner2 position="1" />
-      </div>
-
-      <ImageCol1 />
-{/* 
-      <div className="mx-auto max-w-screen-2xl px-10 mt-20 mb-4">
-        <Banner2 position="2" />
-      </div> */}
+  
       <Slider3 />
     </div>
   );

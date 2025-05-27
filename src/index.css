@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
-
+@import url("https://db.onlinewebfonts.com/c/a8d7b985e4eb8c5d34f2302ffe83e917?family=Nike+Futura+ND");
 @import "tailwindcss";
 
 .inter {
@@ -33,4 +33,11 @@
 
 .swiper-pagination-bullet-active {
   opacity: 1;
+}
+.nike-title {
+  font-family: "Nike Futura ND", sans-serif;
+  font-size: 4.75rem;
+  line-height: 0.9;
+  font-weight: 500;
+  text-transform: uppercase;
 }

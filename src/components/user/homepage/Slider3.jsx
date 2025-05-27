@@ -25,7 +25,7 @@ const Slider3 = () => {
         setSwiperReady(true);
     }, []);
     return (
-        <div className="max-w-screen-xl mx-auto px-10 mt-20 mb-20">
+        <div className="max-w-screen-xl mx-auto px-10  ">
             <div className="flex justify-between items-center mb-4">
                 <p className="text-2xl">Shop By Sport</p>
                 <div className="hidden sm:flex gap-2">
