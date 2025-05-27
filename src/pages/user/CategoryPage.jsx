@@ -8,6 +8,7 @@ const CategoryPage = () => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(false);
   const [sortType, setSortType] = useState(null);
+  const API_URL = "https://nikejsonserver-2.onrender.com";
 
 
 
@@ -26,10 +27,10 @@ const CategoryPage = () => {
     const fetchData = async () => {
       setLoading(true);
       try {
-        const categoriesResponse = await fetch(`http://localhost:3000/categories`);
+        const categoriesResponse = await fetch(`${API_URL}/categories`);
         const categoriesData = await categoriesResponse.json();
 
-        const productsResponse = await fetch(`http://localhost:3000/products`);
+        const productsResponse = await fetch(`${API_URL}/products`);
         const productsData = await productsResponse.json();
 
         const category = categoriesData.find(cat => cat.name === decodeURIComponent(name));

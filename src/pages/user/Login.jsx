@@ -12,6 +12,8 @@ const Login = () => {
   const [error, setError]=useState('')
   const [touched, setTouched] = useState(false);
   const { successToast, errorToast, warningToast } = useToast();
+  const API_URL = "https://nikejsonserver-2.onrender.com";
+
 
   const navigate = useNavigate();
 
@@ -26,7 +28,7 @@ const Login = () => {
   
       // Gọi API để kiểm tra email
       try {
-        const res = await fetch(`http://localhost:3000/users?email=${email}`);
+        const res = await fetch(`${API_URL}/users?email=${email}`);
         const data = await res.json();
   
         if (data.length === 0) {
