@@ -64,7 +64,7 @@ const Login = () => {
   
 
   return (
-    <form onSubmit={handleContinue} noValidate className="mt-8 max-w-lg px-6 mx-auto">
+    <form onSubmit={handleContinue} noValidate className="mt-8 max-w-lg px-6 h-200 mx-auto">
       {/* Logo và tiêu đề */}
       <div className="flex items-center gap-2 mb-4">
       <svg
@@ -129,7 +129,7 @@ const Login = () => {
 
 </div>
 <div>
-  <p className='text-gray-500 py-1.5 inter text-sm'>New to Nike? <span className='underline cursor-pointer' onClick={()=>navigate("/register")}>Join us</span> now!</p>
+  <p className=' py-1.5  text-sm'>New to Nike? <span className='underline text-blue-600 cursor-pointer' onClick={()=>navigate("/register")}>Join us</span> now!</p>
 </div>
 {/* {error && <p className="text-[#D30005] text-sm inter ml-4 mt-1.5">{error}</p>} */}
 

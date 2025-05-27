@@ -124,6 +124,7 @@ const Register = () => {
       </div>
       <div className="mb-6">
   <p className="text-3xl ">Now let's make you a Nike Member.</p>
+  <p className="text-sm">Already have an account? <span onClick={()=>navigate('/login')} className="text-blue-600 underline cursor-pointer">Sign In now!</span></p>
       </div>
     
 

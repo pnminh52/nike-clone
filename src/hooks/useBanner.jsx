@@ -4,9 +4,10 @@ const useBanner = (position) => {
   const [banner, setBanner] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const API_URL = "https://nikejsonserver-2.onrender.com";
 
   useEffect(() => {
-    fetch('http://localhost:3000/banner')
+    fetch(`${API_URL}/banner`)
       .then((response) => {
         if (!response.ok) {
           throw new Error('Failed to fetch banners');

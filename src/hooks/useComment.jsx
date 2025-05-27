@@ -4,6 +4,7 @@ const useComment = () => {
   const [comments, setComments] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
+  const API_URL = "https://nikejsonserver-2.onrender.com";
 
   // Lấy bình luận theo productId
   const fetchComments = async (productId) => {
@@ -12,7 +13,7 @@ const useComment = () => {
     setError(null);
 
     try {
-      const res = await fetch(`http://localhost:3000/comments?productId=${productId}`);
+      const res = await  fetch(`${API_URL}/comments?productId=${productId}`);
       if (!res.ok) throw new Error("Không thể lấy bình luận.");
       const data = await res.json();
       setComments(data);
@@ -30,7 +31,7 @@ const useComment = () => {
     setError(null);
 
     try {
-      const res = await fetch(`http://localhost:3000/comments`, {
+      const res = await  fetch(`${API_URL}/comments`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ ...comment, productId }),

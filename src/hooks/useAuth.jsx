@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router-dom';
 const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
+  const API_URL = "https://nikejsonserver-2.onrender.com";
   const [user, setUser] = useState(null);
   const navigate=useNavigate()
   const shippingFeeByAddress = {
@@ -85,17 +86,16 @@ export const AuthProvider = ({ children }) => {
     }
   }, []);
   
-
   const register = async (formData) => {
     try {
       const { email, address } = formData;
   
-      const check = await axios.get(`http://localhost:3000/users?email=${email}`);
+      const check = await axios.get(`${API_URL}/users?email=${email}`);
       if (check.data.length > 0) return false;
   
       const fee = shippingFeeByAddress[address] || 20000;
   
-      const res = await axios.post("http://localhost:3000/users", {
+      const res = await axios.post(`${API_URL}/users`, {
         ...formData,
         shippingFeeByAddress: fee,  
         accountStatus: "Active",
@@ -136,7 +136,7 @@ export const AuthProvider = ({ children }) => {
 
   const login = async (email, password) => {
     try {
-      const res = await axios.get("http://localhost:3000/users");
+      const res = await axios.get(`${API_URL}/users`);
       const foundUser = res.data.find((u) => u.email === email && u.password === password);
 
       if (!foundUser) {

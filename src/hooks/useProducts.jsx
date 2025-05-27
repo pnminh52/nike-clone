@@ -2,12 +2,13 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 const useProducts = () => {
+  const API_URL = "https://nikejsonserver-2.onrender.com";
   const [products, setProducts] = useState([]);
   const [inputValue, setInputValue] = useState({});
   const navigate = useNavigate();
 
   const handleDeleteProduct = (id) => {
-    fetch(`http://localhost:3000/products/${id}`, {
+    fetch(`${API_URL}/products/${id}`, {
       method: "DELETE",
     });
     const newProductList = products.filter((product) => product.id !== id);
@@ -20,7 +21,7 @@ const useProducts = () => {
   
   const handleAddProduct = (e) => {
     e.preventDefault();
-    fetch(`http://localhost:3000/products`, {
+    fetch(`${API_URL}/products`, {
       method: "POST",
       headers: { "Content-type": "application/json" },
       body: JSON.stringify(inputValue),
@@ -31,7 +32,7 @@ const useProducts = () => {
   };
 
   const handleEditProduct = (product) => {
-    fetch(`http://localhost:3000/products/${product.id}`, {
+    fetch(`${API_URL}/products/${product.id}`, {
       method: "PATCH",
       headers: { "Content-type": "application/json" },
       body: JSON.stringify(product),
@@ -63,7 +64,7 @@ const useProducts = () => {
   
   
   useEffect(() => {
-    fetch(`http://localhost:3000/products`)
+    fetch(`${API_URL}/products`)
       .then((response) => response.json())
       .then((data) => setProducts(data));
   }, []);

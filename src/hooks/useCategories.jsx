@@ -5,9 +5,10 @@ const useCategories = () => {
   const [categories, setCategories] = useState([]);
   const [inputValue, setInputValue] = useState({ name: "", imageUrl: "", parentId: null });
   const navigate = useNavigate();
+  const API_URL = "https://nikejsonserver-2.onrender.com";
 
   const handleDeleteCategory = (id) => {
-    fetch(`http://localhost:3000/categories/${id}`, {
+     fetch(`${API_URL}/categories/${id}`, {
       method: "DELETE",
     });
     const newCategoryList = categories.filter((category) => category.id !== id);
@@ -15,7 +16,7 @@ const useCategories = () => {
   };
 
   const handleAddCategory = () => {
-    fetch(`http://localhost:3000/categories`, {
+     fetch(`${API_URL}/categories`, {
       method: "POST",
       headers: { "Content-type": "application/json" },
       body: JSON.stringify(inputValue),
@@ -27,7 +28,7 @@ const useCategories = () => {
   
 
   const handleEditCategory = (category) => {
-    fetch(`http://localhost:3000/categories/${category.id}`, {
+     fetch(`${API_URL}/categories/${category.id}`, {
       method: "PATCH",
       headers: { "Content-type": "application/json" },
       body: JSON.stringify(category),
@@ -47,7 +48,7 @@ const useCategories = () => {
   };
 
   useEffect(() => {
-    fetch(`http://localhost:3000/categories`)
+     fetch(`${API_URL}/categories`)
       .then((response) => response.json())
       .then((data) => setCategories(data));
   }, []);

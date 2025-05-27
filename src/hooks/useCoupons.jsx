@@ -7,14 +7,16 @@ const useCoupons = (userId) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const API_URL = "https://nikejsonserver-2.onrender.com";
+
 
   // Fetch coupons và user
   useEffect(() => {
     const fetchData = async () => {
       try {
         const [couponRes, userRes] = await Promise.all([
-          fetch('http://localhost:3000/coupons'),
-          fetch(`http://localhost:3000/users/${userId}`),
+          fetch(`${API_URL}/coupons`),
+           fetch(`${API_URL}/users/${userId}`),
         ]);
 
         if (!couponRes.ok || !userRes.ok) throw new Error('Fetch failed');
@@ -69,7 +71,7 @@ const useCoupons = (userId) => {
     };
 
     try {
-      const res = await fetch(`http://localhost:3000/users/${userId}`, {
+      const res = await  fetch(`${API_URL}/users/${userId}`, {
         method: 'PATCH',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(updatedUser),

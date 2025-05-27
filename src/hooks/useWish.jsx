@@ -4,6 +4,8 @@ import { useAuth } from "./useAuth";
 
 
 export const useWish = () => {
+  const API_URL = "https://nikejsonserver-2.onrender.com";
+
   const { user, setUser } = useAuth();
     const [wishlist, setWishlist] = useState([]);
     const { successToast, errorToast, warningToast } = useToast();
@@ -15,7 +17,7 @@ export const useWish = () => {
   
       const fetchWishlist = async () => {
         try {
-          const res = await fetch(`http://localhost:3000/users/${userId}`);
+          const res = await  fetch(`${API_URL}/users/${userId}`);
           const user = await res.json();
           setWishlist(user.wishlist || []);
         } catch (error) {
@@ -29,7 +31,7 @@ export const useWish = () => {
   
     const updateWishlist = async (newWishlist) => {
       try {
-        const res = await fetch(`http://localhost:3000/users/${userId}`, {
+        const res = await  fetch(`${API_URL}/users/${userId}`, {
           method: "PATCH",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ wishlist: newWishlist }),

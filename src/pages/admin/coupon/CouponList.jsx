@@ -5,11 +5,12 @@ const CouponList = () => {
   const [coupons, setCoupons] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const API_URL = "https://nikejsonserver-2.onrender.com/coupons";
 
   useEffect(() => {
     const fetchCoupons = async () => {
       try {
-        const res = await fetch("http://localhost:3000/coupons");
+        const res = await  fetch(API_URL);
         if (!res.ok) throw new Error("Lỗi khi lấy dữ liệu coupon");
         const data = await res.json();
         setCoupons(data);
@@ -31,7 +32,7 @@ const CouponList = () => {
     if (!confirm) return;
 
     try {
-      const res = await fetch(`http://localhost:3000/coupons/${id}`, {
+      const res = await fetch(`${API_URL}/coupons/${id}`, {
         method: "DELETE",
       });
 

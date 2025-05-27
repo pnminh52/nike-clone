@@ -4,9 +4,11 @@ import axios from "axios";
 
 const useFeatured = () => {
   const [featured, setFeatured] = useState([]);
+  const API_URL = "https://nikejsonserver-2.onrender.com";
+
 
   useEffect(() => {
-    axios.get("http://localhost:3000/featured").then((res) => {
+     axios.get(`${API_URL}/featured`).then((res) => {
       setFeatured(res.data);
     });
   }, []);

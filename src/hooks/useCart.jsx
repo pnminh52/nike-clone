@@ -8,6 +8,8 @@ export const useCart = () => {
   const [cart, setCart] = useState([]);
   const {successToast, errorToast, warningToast} = useToast();
   const {updateUser}=useAuth()
+  const API_URL = "https://nikejsonserver-2.onrender.com";
+
 
 
   // 👉 Lấy cart từ server khi component mount
@@ -17,7 +19,7 @@ export const useCart = () => {
 
     const fetchCart = async () => {
       try {
-        const res = await fetch(`http://localhost:3000/users/${userId}`);
+        const res = await   fetch(`${API_URL}/users/${userId}`);
         const user = await res.json();
         setCart(user.cart || []);
       } catch (err) {
@@ -37,7 +39,7 @@ export const useCart = () => {
     }
   
     try {
-      const res = await fetch(`http://localhost:3000/users/${userId}`);
+      const res = await fetch(`${API_URL}/users/${userId}`);
       const user = await res.json();
       const currentCart = user.cart || [];
   
@@ -57,7 +59,7 @@ export const useCart = () => {
       }
   
       // Gửi PATCH cập nhật cart
-      await fetch(`http://localhost:3000/users/${userId}`, {
+      await   fetch(`${API_URL}/users/${userId}`, {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",
@@ -75,7 +77,7 @@ export const useCart = () => {
   
   const updateQuantity = async (productId, size, newQuantity) => {
     const userId = localStorage.getItem("userId"); // hoặc cách lấy userId hiện tại
-    const res = await fetch(`http://localhost:3000/users/${userId}`);
+    const res = await   fetch(`${API_URL}/users/${userId}`);
     const user = await res.json();
   
     const updatedCart = user.cart.map(item => {
@@ -86,7 +88,7 @@ export const useCart = () => {
     });
   
     // Update lên server
-    await fetch(`http://localhost:3000/users/${userId}`, {
+    await   fetch(`${API_URL}/users/${userId}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json"
@@ -104,7 +106,7 @@ export const useCart = () => {
     if (!userId) return;
   
     try {
-      const res = await fetch(`http://localhost:3000/users/${userId}`);
+      const res = await   fetch(`${API_URL}/users/${userId}`);
       const user = await res.json();
   
       const currentOrders = user.orders || [];
@@ -153,7 +155,7 @@ export const useCart = () => {
         // point: updatedPoint
       };
   
-      await fetch(`http://localhost:3000/users/${userId}`, {
+      await   fetch(`${API_URL}/users/${userId}`, {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",
@@ -183,14 +185,14 @@ export const useCart = () => {
     const userId = localStorage.getItem("userId");
     if (!userId) return;
 
-    const res = await fetch(`http://localhost:3000/users/${userId}`);
+    const res = await   fetch(`${API_URL}/users/${userId}`);
     const user = await res.json();
 
     const updatedCart = (user.cart || []).filter(
       (item) => !(item.id === productId && item.size === size)
     );
 
-    await fetch(`http://localhost:3000/users/${userId}`, {
+    await   fetch(`${API_URL}/users/${userId}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
@@ -205,7 +207,7 @@ export const useCart = () => {
     const userId = localStorage.getItem("userId");
     if (!userId) return;
 
-    await fetch(`http://localhost:3000/users/${userId}`, {
+    await   fetch(`${API_URL}/users/${userId}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
