@@ -2,6 +2,7 @@ import React from "react";
 import Slider1 from "../../components/user/homepage/Slider1";
 import Slider3 from "../../components/user/homepage/Slider3";
 import Banner1 from "../../components/user/homepage/Banner1";
+import Banner0 from "../../components/user/homepage/Banner0";
 import ImageCol1 from "../../components/user/homepage/ImageCol1";
 import ProductSkeleton from "./../../components/user/etc/ProductSkeleton";
 import { useEffect } from "react";
@@ -20,7 +21,9 @@ const Homepage = () => {
   }
   return (
     <div className="max-w-screen-2xl mx-auto  justify-center items-center">
-      <Banner1 />
+      {/* <Banner1 /> */}
+      <Banner0 />
+
       <Slider1 />
       <div className="mx-auto max-w-screen-2xl px-10 mt-10 mb-4">
         <Banner2 position="1" />

@@ -14,7 +14,7 @@ const Banner2 = ({ position }) => {
             <div className="text-center py-6 space-y-2 max-w-xl">
               <p className="inter">{item.category}</p>
               <p className="title text-5xl">{item.title}</p>
-              <p>{item.description}</p>
+             
               <button className="px-5 py-2 inter bg-black text-white rounded-full cursor-pointer">
                 {item.button}
               </button>
