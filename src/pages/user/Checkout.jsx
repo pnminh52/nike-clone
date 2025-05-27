@@ -3,7 +3,9 @@ import { useCart } from "./../../hooks/useCart";
 import { Link } from "react-router-dom";
 import { useAuth } from "../../hooks/useAuth";
 
+
 const Checkout = () => {
+ const API_URL = "https://nikejsonserver-2.onrender.com";
     const { cart, checkoutCart } = useCart();
     const [userInfo, setUserInfo] = useState(null);
     const [touched, setTouched] = useState(false);
@@ -14,7 +16,7 @@ const Checkout = () => {
             const userId = localStorage.getItem("userId");
             if (!userId) return;
 
-            const res = await fetch(`http://localhost:3000/users/${userId}`);
+            const res = await fetch(`${API_URL}/users/${userId}`);
             const user = await res.json();
             setUserInfo(user);
         };
