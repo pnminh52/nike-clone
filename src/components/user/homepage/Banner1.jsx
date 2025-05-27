@@ -55,7 +55,7 @@ const Banner1 = () => {
             <div className="hidden sm:block">
               <video
                 ref={videoRef1}
-                src={currentVideo === 0 ? "/public/LukaVideo1.mp4" : "/public/LukaVideo2.mp4"}
+                src={currentVideo === 0 ? "/LukaVideo1.mp4" : "/LukaVideo2.mp4"}
                 autoPlay
                 muted
                 onEnded={handleVideoEnd}

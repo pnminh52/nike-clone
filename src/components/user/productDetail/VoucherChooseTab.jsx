@@ -12,6 +12,7 @@ const VoucherChooseTab = ({
   onClose,
   setUser
 }) => {
+  const API_URL = "https://nikejsonserver-2.onrender.com";
   const [coupons, setCoupons] = useState([]);
   const [searchText, setSearchText] = useState('');
   const [loading, setLoading] = useState(true);
@@ -21,7 +22,7 @@ const VoucherChooseTab = ({
     const fetchUserCoupons = async () => {
       try {
         // Lấy thông tin coupons của người dùng từ API
-        const res = await axios.get(`http://localhost:3000/users/${user.id}`);
+        const res = await axios.get(`${API_URL}/users/${user.id}`);
         setCoupons(res.data.coupons); // Lấy coupons của người dùng
       } catch (error) {
         console.error("Error fetching user coupons:", error);
