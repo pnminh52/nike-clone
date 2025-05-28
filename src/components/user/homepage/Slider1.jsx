@@ -29,8 +29,8 @@ const Slider1 = () => {
   }, []);
 
   return (
-    <div className="max-w-screen-xl mx-auto px-10 ">
-      <div className="flex justify-between items-center mb-4">
+    <div className="max-w-screen-xl mx-auto px-20  border border-white hover:border-blue-600  rounded-3xl ">
+      <div className="flex justify-between items-center mb-4 mt-4">
         <p className="text-2xl">Find Your Max</p>
         <div className="hidden sm:flex gap-2">
           <button

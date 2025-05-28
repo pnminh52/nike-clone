@@ -8,6 +8,7 @@ import ProductSkeleton from "./../../components/user/etc/ProductSkeleton";
 import { useEffect } from "react";
 import { useState } from "react";
 import Banner2 from "./../../components/user/homepage/Banner2";
+import Slider2 from "./../../components/user/homepage/Slider2";
 
 const Homepage = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -20,12 +21,17 @@ const Homepage = () => {
     return <ProductSkeleton />;
   }
   return (
-    <div className="max-w-screen-2xl mx-auto  justify-center items-center">
-      <Banner0 />
-
-      <Slider1 />
-  
-      <Slider3 />
+    <div>
+      <div className="max-w-screen-2xl mx-auto  justify-center items-center">
+        <Banner0 />
+      </div>
+      <div className="max-w-screen-2xl mx-auto  justify-center items-center">
+        <Slider1 />
+      </div>
+      <Slider2 />
+      <div className="max-w-screen-2xl mx-auto  justify-center items-center">
+        <Slider3 />
+      </div>
     </div>
   );
 };
