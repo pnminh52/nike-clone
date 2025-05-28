@@ -41,6 +41,14 @@
   font-weight: 500;
   text-transform: uppercase;
 }
+@keyframes scroll-reverse {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
 @keyframes scroll {
   0% {
     transform: translateX(0);
@@ -52,4 +60,7 @@
 
 .animate-scroll {
   animation: scroll 30s linear infinite;
+}
+.animate-scroll-reverse {
+  animation: scroll-reverse 30s linear infinite;
 }

@@ -9,7 +9,7 @@ const Video1 = () => {
     };
   return (
     <div>
-        <div className="hidden sm:block">
+        <div className="hidden sm:block mx-auto  px-10">
             <video
               ref={videoRef}
               src={currentVideo === 0 ? "/AirMaxDn8Video1.mp4" : "/AirMaxDn8Video2.mp4"}

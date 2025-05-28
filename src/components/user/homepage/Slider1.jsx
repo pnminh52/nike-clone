@@ -3,12 +3,35 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
-import useFeatured from "../../../hooks/useFeatured";
-
+// import useFeatured from "../../../hooks/useFeatured"; // comment nếu chưa có hook này
 
 const Slider1 = () => {
-  const { featured } = useFeatured();
-  const [combos, setCombos] = useState([]);
+  // Mảng mẫu dữ liệu combos tĩnh (nếu không dùng hook)
+  const combo = [
+    {
+      id: 1,
+      img: "https://static.nike.com/a/images/f_auto/dpr_2.0,cs_srgb/h_627,c_limit/1673823a-e689-4845-8ad7-23ec0996514e/image.jpg",
+      name: "Air Max 90 LV8",
+    },
+    {
+      id: 2,
+      img: "https://static.nike.com/a/images/f_auto/dpr_2.0,cs_srgb/h_627,c_limit/796c0846-2a7d-4e1b-9430-4fe6401cbe01/nike-just-do-it.jpg",
+      name: "Air Max Plus",
+    },
+    {
+      id: 3,
+      img: "https://static.nike.com/a/images/f_auto/dpr_2.0,cs_srgb/h_627,c_limit/4c99778b-acd3-4b36-8e24-81037a6349eb/nike-just-do-it.jpg",
+      name: "Air Max 90",
+    },
+    {
+      id: 4,
+      img: "https://static.nike.com/a/images/f_auto/dpr_2.0,cs_srgb/h_627,c_limit/867f7843-87a2-47fd-99ad-c6aca2774445/nike-just-do-it.jpg",
+      name: "Air Max Dn",
+    },
+  ];
+
+  // const { featured } = useFeatured();
+  // const [combos, setCombos] = useState([]);
 
   const prevRef = useRef(null);
   const nextRef = useRef(null);
@@ -16,27 +39,29 @@ const Slider1 = () => {
   const [isBeginning, setIsBeginning] = useState(true);
   const [isEnd, setIsEnd] = useState(false);
 
-  useEffect(() => {
-    const onCombos = featured
-      .filter((item) => item.status === "On")
-      .flatMap((item) => item.combo); 
-
-    setCombos(onCombos);
-  }, [featured]);
+  // Nếu bạn dùng hook useFeatured, thay thế dòng dưới bằng useEffect lấy combos từ featured
+  // useEffect(() => {
+  //   const onCombos = featured
+  //     .filter((item) => item.status === "On")
+  //     .flatMap((item) => item.combo);
+  //   setCombos(onCombos);
+  // }, [featured]);
 
   useEffect(() => {
     setSwiperReady(true);
   }, []);
 
   return (
-    <div className="max-w-screen-xl mx-auto px-20  border border-white hover:border-blue-600  rounded-3xl ">
+    <div className="max-w-screen-xl mx-auto px-15">
       <div className="flex justify-between items-center mb-4 mt-4">
-        <p className="text-2xl">Find Your Max</p>
+        <p className="text-2xl ">Find Your Max</p>
         <div className="hidden sm:flex gap-2">
           <button
             ref={prevRef}
-            className={`bg-[#E5E5E5] px-3 py-3 rounded-full cursor-pointer transition-opacity ${isBeginning ? "opacity-60 cursor-default" : ""
-              }`}
+            className={`bg-[#E5E5E5] px-3 py-3 rounded-full cursor-pointer transition-opacity ${
+              isBeginning ? "opacity-60 cursor-default" : ""
+            }`}
+            disabled={isBeginning}
           >
             <svg
               className="rotate-180"
@@ -58,8 +83,10 @@ const Slider1 = () => {
 
           <button
             ref={nextRef}
-            className={`bg-[#E5E5E5] px-3 py-3 rounded-full cursor-pointer transition-opacity ${isEnd ? "opacity-60 cursor-default" : ""
-              }`}
+            className={`bg-[#E5E5E5] px-3 py-3 rounded-full cursor-pointer transition-opacity ${
+              isEnd ? "opacity-60 cursor-default" : ""
+            }`}
+            disabled={isEnd}
           >
             <svg
               aria-hidden="true"
@@ -105,14 +132,10 @@ const Slider1 = () => {
             }}
             className="mySwiper"
           >
-            {combos.map((combo, index) => (
-              <SwiperSlide key={combo.id || index}>
-                <img
-                  src={combo.img}
-                  alt={combo.name}
-                  className="w-full object-cover"
-                />
-                <p className="py-4 text-lg font-medium">{combo.name}</p>
+            {combo.map(({ id, img, name }) => (
+              <SwiperSlide key={id}>
+                <img src={img} alt={name} className="w-full object-cover " />
+                <p className="py-4 text-lg font-medium ">{name}</p>
               </SwiperSlide>
             ))}
           </Swiper>
