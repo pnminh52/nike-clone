@@ -3,31 +3,45 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
-// import useFeatured from "../../../hooks/useFeatured"; // comment nếu chưa có hook này
 
-const Slider1 = () => {
-  // Mảng mẫu dữ liệu combos tĩnh (nếu không dùng hook)
+const Slider4 = () => {
   const combo = [
     {
       id: 1,
-      img: "https://static.nike.com/a/images/f_auto/dpr_2.0,cs_srgb/h_627,c_limit/1673823a-e689-4845-8ad7-23ec0996514e/image.jpg",
+      img: "https://static.nike.com/a/images/f_auto/dpr_2.0,cs_srgb/h_300,c_limit/e2644f62-7d8f-4ede-a7b7-c9a72b5fd63e/nike-just-do-it-nike-com-jp.jpg",
       name: "Air Max 90 LV8",
     },
     {
       id: 2,
-      img: "https://static.nike.com/a/images/f_auto/dpr_2.0,cs_srgb/h_627,c_limit/796c0846-2a7d-4e1b-9430-4fe6401cbe01/nike-just-do-it.jpg",
+      img: "https://static.nike.com/a/images/f_auto,cs_srgb/w_960,c_limit/3bfc6eab-0663-48cf-8882-eb94cf7b1867/nike-just-do-it-nike-com-jp.jpg",
       name: "Air Max Plus",
     },
     {
       id: 3,
-      img: "https://static.nike.com/a/images/f_auto/dpr_2.0,cs_srgb/h_627,c_limit/4c99778b-acd3-4b36-8e24-81037a6349eb/nike-just-do-it.jpg",
+      img: "https://static.nike.com/a/images/f_auto,cs_srgb/w_960,c_limit/6322dc5b-210d-4b35-802a-28ebdc36555d/nike-just-do-it-nike-com-jp.jpg",
       name: "Air Max 90",
     },
     {
       id: 4,
-      img: "https://static.nike.com/a/images/f_auto/dpr_2.0,cs_srgb/h_627,c_limit/867f7843-87a2-47fd-99ad-c6aca2774445/nike-just-do-it.jpg",
+      img: "https://static.nike.com/a/images/f_auto/dpr_2.0,cs_srgb/h_300,c_limit/dbfe95b5-78bd-4aca-b617-f098cd1ef4e2/nike-just-do-it-nike-com-jp.jpg",
       name: "Air Max Dn",
     },
+    {
+        id: 5,
+        img: "https://static.nike.com/a/images/f_auto/dpr_2.0,cs_srgb/h_300,c_limit/e8a17273-8928-465c-a5c2-ad389f9fb073/nike-just-do-it-nike-com-jp.jpg",
+        name: "Air Max Dn",
+      },
+      {
+        id: 6,
+        img: "https://static.nike.com/a/images/f_auto,cs_srgb/w_960,c_limit/9afd1d9d-4768-4408-89bb-08a06886e5ba/nike-just-do-it-nike-com-jp.jpg",
+        name: "Air Max Dn",
+      },
+      {
+        id: 6,
+        img: "https://static.nike.com/a/images/f_auto/dpr_2.0,cs_srgb/h_300,c_limit/b8f5fef5-374a-405a-9dfe-bf5b72e9f27f/nike-just-do-it-nike-com-jp.jpg",
+        name: "Air Max Dn",
+      },
+
   ];
 
   const prevRef = useRef(null);
@@ -42,7 +56,7 @@ const Slider1 = () => {
 
   return (
     <div className="max-w-screen-xl mx-auto px-15  ">
-      <div className="flex justify-between items-center mb-4 mt-4">
+      <div className="flex justify-between items-center mb-4 mt-4 ">
         <p className="text-2xl ">Find Your Max</p>
         <div className="hidden sm:flex gap-2">
           <button
@@ -133,5 +147,5 @@ const Slider1 = () => {
     </div>
   );
 };
-
-export default Slider1;
+4
+export default Slider4;

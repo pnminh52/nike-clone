@@ -20,15 +20,6 @@ const Header3 = () => {
           className="w-full"
         >
           <SwiperSlide>
-            <p className=" text-sm">
-              Move, Shop, Customise & Celebrate With Us
-            </p>
-            <span className='text-sm inter underline'>
-              No matter what you feel like doing today, It’s better as a Member.
-
-            </span>
-          </SwiperSlide>
-          <SwiperSlide>
             <p className="text-sm">
               Free Standard Delivery & 30-Day Free Returns
 
