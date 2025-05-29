@@ -1,8 +1,10 @@
+import { div } from "framer-motion/client";
 import React from "react";
 
 const Footer = () => {
     return (
-        <div className="max-w-sreen-2xl px-10 mx-auto  w-full">
+       <div>
+         <div className="max-w-sreen-2xl px-10 mx-auto  w-full">
             <div className="border-t border-gray-400 justify-between flex py-10">
                 <div className="flex gap-20">
                     <ul className="space-y-4">
@@ -86,14 +88,22 @@ const Footer = () => {
                     </p>
                 </div>
             </div>
-            <div className="flex gap-4 ">
-                <p className="cursor-pointer mb-14 text-sm inter text-gray-500 hover:text-black ease-in-out duration-300 transition">© 2025 Nike, Inc. All rights reserved</p>
-                <p className="cursor-pointer mb-14 text-sm inter text-gray-500 hover:text-black ease-in-out duration-300 transition">Guides</p>
-                <p className="cursor-pointer mb-14 text-sm inter text-gray-500 hover:text-black ease-in-out duration-300 transition">Terms of Sale</p>
-                <p className="cursor-pointer mb-14 text-sm inter text-gray-500 hover:text-black ease-in-out duration-300 transition">Terms of Use</p>
-                <p className="cursor-pointer mb-14 text-sm inter text-gray-500 hover:text-black ease-in-out duration-300 transition">Nike Privacy Policy</p>
+            <div className="flex gap-4 mb-10 ">
+                <p className="cursor-pointer  text-sm inter text-gray-500 hover:text-black ease-in-out duration-300 transition">© 2025 Nike, Inc. All rights reserved</p>
+                <p className="cursor-pointer  text-sm inter text-gray-500 hover:text-black ease-in-out duration-300 transition">Guides</p>
+                <p className="cursor-pointer  text-sm inter text-gray-500 hover:text-black ease-in-out duration-300 transition">Terms of Sale</p>
+                <p className="cursor-pointer  text-sm inter text-gray-500 hover:text-black ease-in-out duration-300 transition">Terms of Use</p>
+                <p className="cursor-pointer  text-sm inter text-gray-500 hover:text-black ease-in-out duration-300 transition">Nike Privacy Policy</p>
             </div>
+          
         </div>
+          <div className="bg-black h-6">
+        <div className="max-w-sreen-2xl justify-between items-center h-6 flex px-10 mx-auto  w-full">
+            <p className="text-white text-xs ">Project written by Pham Nhat Minh</p>
+            <p className="text-white text-xs ">Elyz.thedev@gmail.com</p>
+        </div>
+                    </div>
+       </div>
     );
 };
 
