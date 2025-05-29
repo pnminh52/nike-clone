@@ -43,7 +43,7 @@ const Header2 = () => {
             <div className="bg-white hidden sm:block">
                 {showSearchTab && <SearchTab onClose={() => setShowSearchTab(false)} />}
 
-                <div className="container h-16  mx-auto px-10 max-w-screen-2xl flex justify-between items-center  bg-white  ">
+                <div className="container h-14  mx-auto px-10 max-w-screen-2xl flex justify-between items-center  bg-white  ">
                     <Link to={'/'}>
                         <svg
                             viewBox="0 0 24 24"

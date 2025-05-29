@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-const NavigationBar = () => {
+const NavigationBarLaptop = () => {
   const [isSticky, setIsSticky] = useState(false);
 const scrollToTopForLaptop=()=>{
   window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -8,7 +8,7 @@ const scrollToTopForLaptop=()=>{
   useEffect(() => {
     const handleScroll = () => {
       // Ví dụ: khi scroll quá ..px thì thanh navbar trở thành sticky
-      if (window.scrollY > 150) {
+      if (window.scrollY > 200) {
         setIsSticky(true);
       } else {
         setIsSticky(false);
@@ -64,4 +64,4 @@ const scrollToTopForLaptop=()=>{
   );
 };
 
-export default NavigationBar;
+export default NavigationBarLaptop;

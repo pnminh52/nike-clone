@@ -7,8 +7,9 @@ import { useEffect } from "react";
 import { useState } from "react";
 import Banner4 from './../../components/user/homepage/Banner4';
 import Banner5 from "../../components/user/homepage/Banner5";
-import NavigationBar from "../../components/user/etc/NavigationBar";
+import NavigationBarLaptop from "../../components/user/homepage/NavigationBarLaptop";
 import Slider4 from './../../components/user/homepage/Slider4';
+import NavigationBarMobile from "../../components/user/homepage/NavigationBarMobile";
 
 
 
@@ -37,7 +38,12 @@ const Homepage = () => {
    
         <Slider3 />
       </div>
-      <NavigationBar />
+    <div className="hidden sm:block">
+    <NavigationBarLaptop />
+    </div>
+     <div className="block sm:hidden">
+        <NavigationBarMobile />
+        </div>
     </div>
   );
 };
