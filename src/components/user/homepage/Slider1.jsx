@@ -39,7 +39,8 @@ const Slider1 = () => {
   }, []);
 
   return (
-    <div className="max-w-screen-xl mx-auto px-6 sm:px-6 md:px-10 lg:px-15">
+   <div className=" px-6 sm:px-6 md:px-10 lg:px-15">
+     <div className="max-w-screen-xl mx-auto border border-blue-600 sm:border-white">
       <div className="flex justify-between items-center mb-4 mt-4 ">
         <p className="text-lg sm:text-2xl">Find Your Max</p>
         <div className="hidden sm:block">
@@ -124,7 +125,7 @@ const Slider1 = () => {
         >
           {combo.map(({ id, img, name }) => (
             <SwiperSlide key={id} className="px-1">
-              <div className="bg-white rounded-xl overflow-hidden ">
+              <div className="bg-white  overflow-hidden ">
                 <img
                   src={img}
                   alt={name}
@@ -139,6 +140,7 @@ const Slider1 = () => {
         </Swiper>
       )}
     </div>
+   </div>
   );
 };
 

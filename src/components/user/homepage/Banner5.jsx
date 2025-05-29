@@ -23,7 +23,7 @@ const Banner5 = () => {
         </div>
       </div>
       <div className='block sm:hidden'>
-        <div className='border-l border-r border-b rounded-b-3xl border-blue-600'>
+        <div className=''>
         <img src="https://static.nike.com.cn/a/images/f_auto/dpr_2.0,cs_srgb/h_427,c_limit/c963e3fe-7952-4f6f-b06a-9d99ff326031/hp.jpg" alt="" />
           <div className="">
             <div className=" py-6 space-y-2 max-w-xl">

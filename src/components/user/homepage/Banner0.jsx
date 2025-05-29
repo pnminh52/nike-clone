@@ -24,7 +24,7 @@ const Banner0 = () => {
             </div>
 
             <div className='block sm:hidden'>
-            <div className='border-l border-r border-b rounded-b-3xl border-blue-600'>
+            <div className=''>
 
                 <img src="https://static.nike.com/a/images/f_auto/dpr_2.0,cs_srgb/w_327,c_limit/8037f23f-74e7-4a07-90fc-d233db2205e4/nike-just-do-it.jpg" alt="" />
                 <div className=" ">
