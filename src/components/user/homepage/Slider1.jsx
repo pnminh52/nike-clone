@@ -3,10 +3,8 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
-// import useFeatured from "../../../hooks/useFeatured"; // comment nếu chưa có hook này
 
 const Slider1 = () => {
-  // Mảng mẫu dữ liệu combos tĩnh (nếu không dùng hook)
   const combo = [
     {
       id: 1,
@@ -41,10 +39,11 @@ const Slider1 = () => {
   }, []);
 
   return (
-    <div className="max-w-screen-xl mx-auto px-15  ">
-      <div className="flex justify-between items-center mb-4 mt-4">
-        <p className="text-2xl ">Find Your Max</p>
-        <div className="hidden sm:flex gap-2">
+    <div className="max-w-screen-xl mx-auto px-6 sm:px-6 md:px-10 lg:px-15">
+      <div className="flex justify-between items-center mb-4 mt-4 ">
+        <p className="text-lg sm:text-2xl">Find Your Max</p>
+        <div className="hidden sm:block">
+        <div className="flex gap-2 ">
           <button
             ref={prevRef}
             className={`bg-[#E5E5E5] px-3 py-3 rounded-full cursor-pointer transition-opacity ${
@@ -94,42 +93,51 @@ const Slider1 = () => {
             </svg>
           </button>
         </div>
+        </div>
+       
       </div>
 
-      <div className="hidden sm:block">
-        {swiperReady && (
-          <Swiper
-            modules={[Navigation]}
-            navigation={{
-              prevEl: prevRef.current,
-              nextEl: nextRef.current,
-            }}
-            onBeforeInit={(swiper) => {
-              swiper.params.navigation.prevEl = prevRef.current;
-              swiper.params.navigation.nextEl = nextRef.current;
-            }}
-            onSlideChange={(swiper) => {
-              setIsBeginning(swiper.isBeginning);
-              setIsEnd(swiper.isEnd);
-            }}
-            spaceBetween={15}
-            slidesPerView={3.2}
-            breakpoints={{
-              640: { slidesPerView: 1 },
-              768: { slidesPerView: 2 },
-              1024: { slidesPerView: 3.2 },
-            }}
-            className="mySwiper"
-          >
-            {combo.map(({ id, img, name }) => (
-              <SwiperSlide key={id}>
-                <img src={img} alt={name} className="w-full object-cover " />
-                <p className="py-4 text-lg font-medium ">{name}</p>
-              </SwiperSlide>
-            ))}
-          </Swiper>
-        )}
-      </div>
+      {swiperReady && (
+        <Swiper
+          modules={[Navigation]}
+          navigation={{
+            prevEl: prevRef.current,
+            nextEl: nextRef.current,
+          }}
+          onBeforeInit={(swiper) => {
+            swiper.params.navigation.prevEl = prevRef.current;
+            swiper.params.navigation.nextEl = nextRef.current;
+          }}
+          onSlideChange={(swiper) => {
+            setIsBeginning(swiper.isBeginning);
+            setIsEnd(swiper.isEnd);
+          }}
+          spaceBetween={12}
+          breakpoints={{
+            0: { slidesPerView: 1.1, spaceBetween: 10 },
+            480: { slidesPerView: 1.4, spaceBetween: 12 },
+            640: { slidesPerView: 1.8, spaceBetween: 14 },
+            768: { slidesPerView: 2.4, spaceBetween: 15 },
+            1024: { slidesPerView: 3.2, spaceBetween: 15 },
+          }}
+          className="mySwiper"
+        >
+          {combo.map(({ id, img, name }) => (
+            <SwiperSlide key={id} className="px-1">
+              <div className="bg-white rounded-xl overflow-hidden ">
+                <img
+                  src={img}
+                  alt={name}
+                  className="w-full h-auto object-cover"
+                />
+                <p className="py-2 px-2 text-base sm:text-lg font-medium">
+                  {name}
+                </p>
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      )}
     </div>
   );
 };
