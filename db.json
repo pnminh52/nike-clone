@@ -1287,6 +1287,86 @@
         "Sport Fuchsia",
         "Black"
       ]
+    },
+    {
+      "id": "2000",
+      "name": " Nike Streakfly 2",
+      "position": 1,
+      "isDefault": "true",
+      "stock": "100",
+      "price": "5279000",
+      "price_sale": "5500000",
+      "img": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/6e7323eb-4401-476a-8cb5-e496bdc133bb/ZOOMX+STREAKFLY+2.png",
+      "style": "HF6416-100",
+      "country": "Vietnam",
+      "height": "Low Top",
+      "shoesFor": "Training & Gym",
+      "class": "Shoes",
+      "brand": "Nike",
+      "features": " 2-Way Zip",
+      "giftPoint": "300",
+      "type": "Road Racing Shoes",
+      "des": "The Streakfly 2 can help you out-kick the opposition on race day. This speedster now comes with a carbon-fibre Flyplate, complementing the ultra-responsive ZoomX foam midsole and minimal upper you loved on the original. From the 10K to the mile, it can help you take your distances to the next level.",
+      "page": "New & Featured",
+      "category": "New & Upcoming Drops",
+      "status": "Just In",
+      "customer": "Men",
+      "gender": "Men",
+      "sizes": [
+        "31",
+        "32",
+        "33",
+        "34",
+        "35",
+        "36",
+        "37",
+        "38",
+        "39",
+        "42",
+        "43",
+        "44",
+        "45",
+        "41",
+        "40"
+      ],
+      "additionalImages": [
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/4e583eae-1f7b-4d52-b2e2-f3db6a78d66b/ZOOMX+STREAKFLY+2.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/ca64f8c2-a42c-4c1e-a049-d4b19588d388/ZOOMX+STREAKFLY+2.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/8ca7a63f-5c2b-429e-ae68-6beef75de539/ZOOMX+STREAKFLY+2.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/1a3b812f-71e5-445d-a48c-54ce7554f126/ZOOMX+STREAKFLY+2.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/b072ef1a-2677-451a-83e1-397085c2733e/ZOOMX+STREAKFLY+2.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/d097aedc-d848-45d2-b751-8ec8b2db0c91/ZOOMX+STREAKFLY+2.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/16cd1925-de94-4f82-831c-9c126c3b952c/ZOOMX+STREAKFLY+2.png"
+      ],
+      "color": [
+        "White",
+        "Obsidian Mist",
+        "Pure Platinum",
+        "Gridiron"
+      ],
+      "featured": [
+        {
+          "title": "Full Speed",
+          "content": "We integrated a full-length carbon-fibre Flyplate that delivers a propulsive feel. It helps you smoothly transition through every stride and tackle turns with confidence."
+        },
+        {
+          "title": "Optimal responsiveness",
+          "content": "ZoomX foam, our most responsive foam, provides optimal responsiveness. The result is a shoe so light, it feels like it disappears on your foot while still helping you reach your fastest pace."
+        },
+        {
+          "title": "Sticky outsole",
+          "content": "The outsole is made from a thin, sticky, webbed substance that helps reduce the weight of the shoe while still providing optimal traction."
+        },
+        {
+          "title": "What's new?",
+          "content": "Carbon-fibre Flyplate"
+        }
+      ],
+      "moreBenefit": [],
+      "notes": [
+        "Heel-to-toe drop: 4mm",
+        "Weight: 145g approx. (men's size 9)"
+      ]
     }
   ],
   "categories": [

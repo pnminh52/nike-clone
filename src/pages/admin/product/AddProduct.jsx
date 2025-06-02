@@ -67,14 +67,38 @@ const AddProduct = () => {
   
 
   const handleSizeToggle = (size) => {
-    const updatedSizes = selectedSizes.includes(size)
-      ? selectedSizes.filter((s) => s !== size)
-      : [...selectedSizes, size];
+    const sizeStr = String(size);
+    const updatedSizes = selectedSizes.includes(sizeStr)
+      ? selectedSizes.filter((s) => s !== sizeStr)
+      : [...selectedSizes, sizeStr];
   
     setSelectedSizes(updatedSizes);
     setInputValue((prev) => ({ ...prev, sizes: updatedSizes }));
   };
   
+  // Khi toggle position
+const togglePosition = () => {
+  setPositionChecked(prev => {
+    const newVal = !prev;
+    setInputValue(prevInput => ({
+      ...prevInput,
+      position: newVal ? 1 : undefined
+    }));
+    return newVal;
+  });
+};
+
+// Khi toggle isDefault
+const toggleIsDefault = () => {
+  setIsDefaultChecked(prev => {
+    const newVal = !prev;
+    setInputValue(prevInput => ({
+      ...prevInput,
+      isDefault: newVal ? true : undefined
+    }));
+    return newVal;
+  });
+};
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -82,8 +106,9 @@ const AddProduct = () => {
     const productData = {
       ...inputValue,
       additionalImages,
+      
       color: inputValue.color || [],
-      sizes: selectedSizes,
+      sizes: selectedSizes.map(String),
     };
     
 
@@ -160,7 +185,12 @@ const AddProduct = () => {
         <div className="flex flex-wrap gap-2">
           {Array.from({ length: 15 }, (_, i) => i + 31).map((size) => (
             <label key={size} className="flex items-center gap-1">
-              <input type="checkbox" checked={selectedSizes.includes(size)} onChange={() => handleSizeToggle(size)} />
+            <input
+  type="checkbox"
+  checked={selectedSizes.includes(String(size))}
+  onChange={() => handleSizeToggle(size)}
+/>
+
               <span>{size}</span>
             </label>
           ))}
@@ -266,14 +296,16 @@ const AddProduct = () => {
 
       {/* --- CHECKBOXES --- */}
       <label className="flex items-center gap-2">
-        <input type="checkbox" checked={positionChecked} onChange={() => setPositionChecked(!positionChecked)} />
+              <input type="checkbox" checked={positionChecked} onChange={togglePosition} />
+        
         <span>Position</span>
       </label>
 
       <label className="flex items-center gap-2">
-        <input type="checkbox" checked={isDefaultChecked} onChange={() => setIsDefaultChecked(!isDefaultChecked)} />
+      <input type="checkbox" checked={isDefaultChecked} onChange={toggleIsDefault} />
         <span>Is Default</span>
       </label>
+    
 
       <button type="submit" className="bg-green-600 text-white px-4 py-2 rounded">Add Product</button>
     </form>

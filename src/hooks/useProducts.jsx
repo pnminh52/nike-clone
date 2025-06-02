@@ -2,7 +2,8 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 const useProducts = () => {
-  const API_URL = "https://nikejsonserver-2.onrender.com";
+  // const API_URL = "https://nikejsonserver-2.onrender.com";
+  const API_URL = "http://localhost:3000";
   const [products, setProducts] = useState([]);
   const [inputValue, setInputValue] = useState({});
   const navigate = useNavigate();
