@@ -20,7 +20,6 @@ const useProducts = () => {
   
   
   const handleAddProduct = (e) => {
-    e.preventDefault();
     fetch(`${API_URL}/products`, {
       method: "POST",
       headers: { "Content-type": "application/json" },
@@ -28,7 +27,7 @@ const useProducts = () => {
     })
       .then((response) => response.json())
       .then((data) => setProducts([...products, data]));
-    navigate("/admin/products/list");
+    navigate("/admin/dashboard/products/list");
   };
 
   const handleEditProduct = (product) => {
@@ -43,7 +42,7 @@ const useProducts = () => {
           prev.map((item) => (item.id === data.id ? data : item))
         );
       })
-      .finally(() => navigate("/admin/products/list"));
+      .finally(() => navigate("/admin/dashboard/products/list"));
   };
 
   const handleDataChange = (e) => {

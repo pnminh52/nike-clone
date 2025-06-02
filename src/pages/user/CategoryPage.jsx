@@ -111,11 +111,14 @@ const CategoryPage = () => {
   }
 
   return (
-    <div className=" max-w-screen-2xl px-10 mx-auto">
+    <div className=" container  mx-auto px-0 sm:px-10 max-w-screen-2xl ">
       <CategoryTopBar
+      category={forFilter}
         categoryName={decodeURIComponent(name || "")}
         filteredProductsLength={sortedProducts.length}
         onSortChange={setSortType}
+        forFilter={forFilter}
+        setForFilter={setForFilter}
       />
 
 
@@ -144,9 +147,12 @@ const CategoryPage = () => {
         </div>
 
         <div className="w-full sm:w-4/5">
-  <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4">
+  <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-1.5">
     {sortedProducts.map((product) => (
-      <ShoesCard key={product.id} product={product} />
+      <ShoesCard 
+      key={product.id} 
+      product={product}
+       />
     ))}
   </div>
 </div>

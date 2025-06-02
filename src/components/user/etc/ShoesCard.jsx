@@ -33,17 +33,16 @@ const variantImages = [ { id: product.id, img: product.img }, ...variantList.map
         to={`/details/${product.name}?id=${variantId}`}  
         className="block"
       >
-        <div className={`inter mb-8 ${hasVariants ? 'group' : ''}`}>
+        <div className={` mb-0  sm:mb-8  ${hasVariants ? 'group' : ''}`}>
           {/* Main Image */}
-          <img
-  src={mainImage}
-  alt={product.name}
-  className={`object-cover cursor-pointer transition-all duration-300 
-    w-[139.5px] h-[139.5px] 
-    sm:w-[139.5px] sm:h-[139.5px] 
-    md:w-[330px] md:h-[330px] 
-    lg:w-[330px] lg:h-[330px]`}
-/>
+          <div className="aspect-square w-full">
+  <img
+    src={mainImage}
+    alt={product.name}
+    className="object-cover cursor-pointer transition-all duration-300 w-full h-full"
+  />
+</div>
+
 
           
           {hasVariants && (
@@ -71,28 +70,27 @@ const variantImages = [ { id: product.id, img: product.img }, ...variantList.map
             </div>
           )}
 
-          <div className="mt-2 ">
-            <p className="text-orange-600 ">{product.status}</p>
+          <div className="px-2 py-2  ">
+            <p className="text-[#D33918] text-sm sm:text-lg">{product.status}</p>
 
           
-            <p className="block group-hover:hidden transform transition-all duration-500 translate-y-0 group-hover:translate-y-6">
+            <p className="text-sm sm:text-lg inter truncate block group-hover:hidden transform transition-all duration-500 translate-y-0 group-hover:translate-y-6">
               {product.name}
             </p>
-            <p className="text-gray-500 block group-hover:hidden transform transition-all duration-500 translate-y-0 group-hover:translate-y-6">
+            <p className="text-sm sm:text-lg text-gray-500 block group-hover:hidden transform transition-all duration-500 translate-y-0 group-hover:translate-y-6">
               {product.gender}'s Shoes
             </p>
-            <p className="text-gray-500 block group-hover:hidden transform transition-all duration-500 translate-y-0 group-hover:translate-y-6">
+            <p className="text-sm sm:text-lg text-gray-500 block group-hover:hidden transform transition-all duration-500 translate-y-0 group-hover:translate-y-6">
               {variantImages.length} Colour
             </p>
 
-            <div className="flex gap-3 mt-1">
-         
-              <p className="">
-                <span className=""> {formatPrice(product.price)}</span>
-                <span className="text-sm font-medium">₫</span>
+           
+              <p className=" mt-1">
+                <span className="inter text-sm sm:text-lg"> {formatPrice(product.price)}</span>
+                <span className="text-xs">₫</span>
               </p>
-             
-            </div>
+              
+           
           </div>
         </div>
       </Link>

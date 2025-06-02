@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
+import SortForMobile from './SortForMobile';
 
-const CategoryTopBar = ({ categoryName, filteredProductsLength, onSortChange }) => {
+const CategoryTopBar = ({category, categoryName, filteredProductsLength, onSortChange,  forFilter,
+    setForFilter }) => {
     const [sortByFilter, setSortByFilter] = useState(false);
 
     const toggleSortByFilter = () => {
@@ -11,8 +13,11 @@ const CategoryTopBar = ({ categoryName, filteredProductsLength, onSortChange }) 
         setSortByFilter(false);
     }
     return (
+       <div>
+         <div className='hidden sm:block'>
         <div className="flex justify-between items-center h-18 sticky top-0 bg-white z-10">
-            <p className="text-xl">{categoryName} ({filteredProductsLength})</p>
+          
+          <p className="text-xl">{categoryName} ({filteredProductsLength})</p>
             <div className="cursor-pointer flex items-center gap-2" onClick={toggleSortByFilter}>
                 <p>Sort By</p>
                 <svg
@@ -54,10 +59,52 @@ const CategoryTopBar = ({ categoryName, filteredProductsLength, onSortChange }) 
 
                     </div>
                 )}
-            </div>
+          
+          </div>
 
 
         </div>
+        </div>
+        <div className='block sm:hidden'>
+            <div className='px-6 py-8  inter '>
+                <p className='text-black'>
+                {categoryName} {category ? ` / ${category}` : ''}
+                </p>
+              
+            </div>
+            <div className="bg-white flex px-6  py-4 space-x-4 border-b border-t border-gray-300 hide-scrollbar whitespace-nowrap overflow-auto">
+  {[
+    'Lifestyle',
+    'Jordan',
+    'Running',
+    'Basketball',
+    'Training & Gym',
+    'Football',
+    'Skateboarding',
+    'Golf',
+    'Boots',
+    'Tennis',
+    'Athletics',
+    'Sandals, Slides',
+  ].map((category) => (
+    <label
+      key={category}
+      className={`flex text-[#707072] items-center transition duration-300 ease-in-out  inter cursor-pointer ${forFilter === category ? 'text-black' : ''}`}
+      onClick={() => setForFilter(forFilter === category ? null : category)}
+
+    >
+      <span>{category}</span>
+    </label>
+  ))}
+</div>
+<div className='h-16  rounded-lg items-center flex px-6 justify-between'>
+
+<p className="text-lg text-[#707072]"> {filteredProductsLength} Results</p>
+  <SortForMobile />
+
+</div>
+        </div>
+       </div>
     );
 };
 
