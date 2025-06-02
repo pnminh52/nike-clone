@@ -6,328 +6,277 @@ import WomenCategory from "../../../components/admin/product/WomenCategory";
 
 const AddProduct = () => {
   const { handleAddProduct, handleDataChange, inputValue, setInputValue } = useProducts();
-  const [additionalImages, setAdditionalImages] = useState([""]);
   const [positionChecked, setPositionChecked] = useState(false);
   const [isDefaultChecked, setIsDefaultChecked] = useState(false);
-  // Hàm thêm trường ảnh phụ
-  const handleAddImageField = () => {
-    setAdditionalImages([...additionalImages, ""]);
-  };
+  const [additionalImages, setAdditionalImages] = useState([""]);
+  const [selectedSizes, setSelectedSizes] = useState([]);
 
-  // Hàm thay đổi URL ảnh phụ
-  const handleImageChange = (index, value) => {
-    const newImages = [...additionalImages];
-    newImages[index] = value;
-    setAdditionalImages(newImages);
-  
-    // Cập nhật luôn vào inputValue để hiển thị ngay
+  const handleAddItem = (field, defaultValue) => {
     setInputValue((prev) => ({
       ...prev,
-      additionalImages: newImages,
+      [field]: [...(prev[field] || []), defaultValue],
+    }));
+  };
+
+  const handleRemoveItem = (field, index) => {
+    setInputValue((prev) => ({
+      ...prev,
+      [field]: prev[field].filter((_, i) => i !== index),
+    }));
+  };
+
+  const handleArrayChange = (field, index, value) => {
+    setInputValue((prev) => {
+      const updated = [...(prev[field] || [])];
+      updated[index] = value;
+      return { ...prev, [field]: updated };
+    });
+  };
+
+  const handleImageChange = (index, value) => {
+    const updated = [...additionalImages];
+    updated[index] = value;
+    setAdditionalImages(updated);
+    setInputValue((prev) => ({ ...prev, additionalImages: updated }));
+  };
+
+  const handleAddImageField = () => {
+    setAdditionalImages((prev) => [...prev, ""]);
+  };
+
+  const handleRemoveImageField = (index) => {
+    const updated = [...additionalImages];
+    updated.splice(index, 1);
+    setAdditionalImages(updated);
+    setInputValue((prev) => ({ ...prev, additionalImages: updated }));
+  };
+
+  const handleColorChange = (index, value) => {
+    const updated = [...(inputValue.color || [])];
+    updated[index] = value;
+    setInputValue((prev) => ({ ...prev, color: updated }));
+  };
+  
+
+  const handleAddColorField = () => {
+    setInputValue((prev) => ({
+      ...prev,
+      color: [...(prev.color || []), ""],
     }));
   };
   
-  const handleColorChange = (index, value) => {
-    const updatedColors = [...colorsInput];
-    updatedColors[index] = value;
-    setColorsInput(updatedColors);
-  };
-  const handleAddColorField = () => {
-    setColorsInput([...colorsInput, ""]);
+
+  const handleSizeToggle = (size) => {
+    const updatedSizes = selectedSizes.includes(size)
+      ? selectedSizes.filter((s) => s !== size)
+      : [...selectedSizes, size];
+  
+    setSelectedSizes(updatedSizes);
+    setInputValue((prev) => ({ ...prev, sizes: updatedSizes }));
   };
   
 
   const handleSubmit = (e) => {
     e.preventDefault();
-  
-    const newInputValue = { ...inputValue };
-  
-    newInputValue.additionalImages = additionalImages;
-    newInputValue.color = colorsInput;
-  
+
+    const productData = {
+      ...inputValue,
+      additionalImages,
+      color: inputValue.color || [],
+      sizes: selectedSizes,
+    };
+    
+
     if (positionChecked) {
-      newInputValue.position = 1;
-    } else {
-      delete newInputValue.position;
+      productData.position = 1;
     }
-  
+
     if (isDefaultChecked) {
-      newInputValue.isDefault = "true";
-    } else {
-      delete newInputValue.isDefault;
+      productData.isDefault = "true";
     }
-  
-    // setInputValue(newInputValue); // Không cần thiết nếu handleAddProduct nhận object trực tiếp
-  
-    handleAddProduct(newInputValue); // Truyền luôn dữ liệu mới
+
+    handleAddProduct(productData);
   };
-  
-  
-  const [colorsInput, setColorsInput] = useState([""]);
 
-  
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
-        {/* Product Name */}
-       <div className="w-full">
-       <input
-       className="w-full border"
-          name="name"
-          value={inputValue.name || ""}
-          placeholder="Product Name"
-          onChange={handleDataChange}
-          type="text"
-        />
-       </div>
-      <div>
-          <select
-                  name="page"
-                  className="w-full border"
-                  value={inputValue.page || ""}
-                  onChange={handleDataChange}
-                >
-                  <option value="">Select page</option>
-                  <option value="New & Featured">New & Featured</option>
-                  <option value="Trending">Trending</option>
-                  <option value="Men">Men</option>
-                  <option value="Women">Women</option>
-                  <option value="Kids">Kids</option>
-                  <option value="Sale">Sale</option>
-        
-                </select>
-      </div>
-      <div>
-      {inputValue.page === "New & Featured" && (
-         <NewAndFeatured
-         value={inputValue.category}
-         onChange={handleDataChange}
-       />
-        )}
+    <form onSubmit={handleSubmit} className="space-y-4">
+      {/* --- TEXT INPUTS --- */}
+      <input name="name" value={inputValue.name || ""} onChange={handleDataChange} placeholder="Product Name" className="w-full border" />
+      <input name="stock" type="number" value={inputValue.stock || ""} onChange={handleDataChange} placeholder="Stock" className="w-full border" />
+      <input name="price" type="number" value={inputValue.price || ""} onChange={handleDataChange} placeholder="Price" className="w-full border" />
+      <input name="price_sale" type="number" value={inputValue.price_sale || ""} onChange={handleDataChange} placeholder="Price Sale" className="w-full border" />
+      <input name="img" value={inputValue.img || ""} onChange={handleDataChange} placeholder="Main Image URL" className="w-full border" />
+      <input name="style" value={inputValue.style||""} onChange={handleDataChange} placeholder="Style" className="w-full border" type="text" />
+      <input name="country" value={inputValue.country || ""} onChange={handleDataChange} placeholder="Country" className="w-full border" />
+      <input name="height" value={inputValue.height || ""} onChange={handleDataChange} placeholder="Height" className="w-full border" />
+      <input name="shoesFor" value={inputValue.shoesFor || ""} onChange={handleDataChange} placeholder="Shoes For" className="w-full border" />
+      <input name="class" value={inputValue.class || ""} onChange={handleDataChange} placeholder="Class" className="w-full border" />
+      <input name="brand" value={inputValue.brand || ""} onChange={handleDataChange} placeholder="Brand" className="w-full border" />
+      <input name="features" value={inputValue.features || ""} onChange={handleDataChange} placeholder="Features" className="w-full border" />
+      <input name="giftPoint" type="number" value={inputValue.giftPoint || ""} onChange={handleDataChange} placeholder="Gift Point" className="w-full border" />
+      <input name="type" value={inputValue.type || ""} onChange={handleDataChange} placeholder="Type" className="w-full border" />
+      <input name="des" value={inputValue.des || ""} onChange={handleDataChange} placeholder="Description" className="w-full border" />
 
-        {inputValue.page === "Trending" && (
-         <TrendingCategory 
-         value={inputValue.category}
-         onChange={handleDataChange}
-         />
-        )}
-         {inputValue.page === "Women" && (
-          <WomenCategory 
-          value={inputValue.category}
-          onChange={handleDataChange}
-          />
-        )}
-      </div>
-      <div>
-  <input
-    name="stock"
-    className="w-full border"
-    value={inputValue.stock || ""}
-    placeholder="Stock"
-    onChange={handleDataChange}
-    type="number"
-  />
-</div>
+      {/* --- DROPDOWNS --- */}
+      <select name="page" value={inputValue.page || ""} onChange={handleDataChange} className="w-full border">
+        <option value="">Select Page</option>
+        <option value="New & Featured">New & Featured</option>
+        <option value="Trending">Trending</option>
+        <option value="Men">Men</option>
+        <option value="Women">Women</option>
+        <option value="Kids">Kids</option>
+        <option value="Sale">Sale</option>
+      </select>
 
+      {inputValue.page === "New & Featured" && <NewAndFeatured value={inputValue.category} onChange={handleDataChange} />}
+      {inputValue.page === "Trending" && <TrendingCategory value={inputValue.category} onChange={handleDataChange} />}
+      {inputValue.page === "Women" && <WomenCategory value={inputValue.category} onChange={handleDataChange} />}
 
-      <div>
-          {/* Product Price */}
-                <input
-                  name="price"
-                  className="w-full border"
-                  value={inputValue.price || ""}
-                  placeholder="Product Price"
-                  onChange={handleDataChange}
-                  type="number"
-                />
-      </div>
-      <div>
-          <input
-          name="price_sale"
-           className="w-full border"
-          value={inputValue.price_sale || ""}
-          placeholder="Product Price Sale"
-          onChange={handleDataChange}
-          type="number"
-        />
-      </div>
-       <div>
-       <input
-          name="style"
-           className="w-full border"
-          value={inputValue.style || ""}
-          placeholder="style"
-          onChange={handleDataChange}
-          type="text"
-        />
-       </div>
-     <div>
-     <input
-  name="country"
-   className="w-full border"
-  value={inputValue.country || "Vietnam"}
-  placeholder="Country"
-  onChange={handleDataChange}
-  type="text"
-/>
-     </div>
+      <select name="status" value={inputValue.status || ""} onChange={handleDataChange} className="w-full border">
+        <option value="">Select Status</option>
+        <option value="Just In">Just In</option>
+        <option value="Coming Soon">Coming Soon</option>
+      </select>
 
+      <select name="customer" value={inputValue.customer || ""} onChange={handleDataChange} className="w-full border">
+        <option value="">Select Customer</option>
+        <option value="Men">Men</option>
+        <option value="Women">Women</option>
+        <option value="Unisex">Unisex</option>
+        <option value="Kids">Kids</option>
+      </select>
 
-       <div>
-         {/* Product Status */}
-         <select
-          name="status"
-          className="w-full border"
-          value={inputValue.status || ""}
-          onChange={handleDataChange}
-        >
-          <option value="">Select status</option>
-          <option value="Just In">Just In</option>
-          <option value="Coming Soon">Coming Soon</option>
-        </select>
-       </div>
-
-       <div>
-         {/* Customer Type */}
-         <select
-         className="w-full border"
-          name="customer"
-          value={inputValue.customer || ""}
-          onChange={handleDataChange}
-        >
-          <option value="">Select Customer Type</option>
+      {inputValue.customer !== "Kids" && (
+        <select name="gender" value={inputValue.gender || ""} onChange={handleDataChange} className="w-full border">
+          <option value="">Select Gender</option>
           <option value="Men">Men</option>
           <option value="Women">Women</option>
           <option value="Unisex">Unisex</option>
-          <option value="Kids">Kids</option>
         </select>
-       </div>
-
-    <div>
-          {/* Product Description */}
-          <input
-          className="w-full border"
-          name="des"
-          value={inputValue.des || ""}
-          placeholder="Product Description"
-          onChange={handleDataChange}
-          type="text"
-        />
-    </div>
-
-       <div>
-         {/* Product Main Image URL */}
-         <input
-          name="img"
-          className="w-full border"
-          value={inputValue.img || ""}
-          placeholder="Product Main Image URL"
-          onChange={handleDataChange}
-          type="text"
-        />
-       </div>
-
-        {/* Additional Images */}
-        <div className="w-full  gap-2">
-        {additionalImages.map((image, index) => (
-          <input
-          className="w-full border"
-            key={index}
-            value={image}
-            placeholder={`Additional Image ${index + 1}`}
-            onChange={(e) => handleImageChange(index, e.target.value)}
-            type="text"
-          />
-        ))}
-         <button type="button" className="bg-blue-600 text-white" onClick={handleAddImageField}>
-          Add Image Field
-        </button>
-      </div>
+      )}
+  {/* --- SIZE CHECKBOXES --- */}
       <div>
-      <label className="flex items-center space-x-2 my-2">
-          <input
-            type="checkbox"
-            checked={positionChecked}
-            onChange={() => setPositionChecked(!positionChecked)}
-          />
-          <span>Position</span>
-        </label>
-
-        {/* Checkbox isDefault */}
-        <label className="flex items-center space-x-2 my-2">
-          <input
-            type="checkbox"
-            checked={isDefaultChecked}
-            onChange={() => setIsDefaultChecked(!isDefaultChecked)}
-          />
-          <span>Is Default</span>
-        </label>
+        <label className="font-semibold">Sizes</label>
+        <div className="flex flex-wrap gap-2">
+          {Array.from({ length: 15 }, (_, i) => i + 31).map((size) => (
+            <label key={size} className="flex items-center gap-1">
+              <input type="checkbox" checked={selectedSizes.includes(size)} onChange={() => handleSizeToggle(size)} />
+              <span>{size}</span>
+            </label>
+          ))}
+        </div>
       </div>
-       
+      {/* --- ADDITIONAL IMAGES --- */}
+      <div>
+        <label className="font-semibold">Additional Images</label>
+        {additionalImages.map((img, idx) => (
+          <div key={idx} className="flex items-center gap-2 mb-1">
+            <input value={img} onChange={(e) => handleImageChange(idx, e.target.value)} placeholder={`Image ${idx + 1}`} className="w-full border" />
+            <button type="button" onClick={() => handleRemoveImageField(idx)} className="text-red-500 text-sm">X</button>
+          </div>
+        ))}
+        <button type="button" onClick={handleAddImageField} className="text-blue-600 text-sm">+ Add Image</button>
+      </div>
 
-        {/* Gender Option (only available if Customer is not Kids) */}
-        {inputValue.customer !== "Kids" && (
-          <select
-            name="gender"
-            value={inputValue.gender || ""}
-            onChange={handleDataChange}
-          >
-            <option value="">Select Gender</option>
-            <option value="Men">Men</option>
-            <option value="Women">Women</option>
-            <option value="Unisex">Unisex</option>
-          </select>
-        )}
-
-        {/* If Customer is Kids, show Boys or Girls */}
-        {inputValue.customer === "Kids" && (
-          <select
-            name="kids_gender"
-            value={inputValue.kids_gender || ""}
-            onChange={handleDataChange}
-          >
-            <option value="">Select Gender for Kids</option>
-            <option value="Boys">Boys</option>
-            <option value="Girls">Girls</option>
-          </select>
-        )}
-
-<div>
-  <label>Colors:</label>
-  {colorsInput.map((color, index) => (
+      {/* --- COLORS --- */}
+      <div>
+  <label className="font-semibold">Colors</label>
+  {(inputValue.color || []).map((color, idx) => (
     <input
-      key={index}
-      type="text"
-      placeholder={`Color ${index + 1}`}
+      key={idx}
       value={color}
-      onChange={(e) => handleColorChange(index, e.target.value)}
-      className="border p-2 rounded mb-2 block"
+      onChange={(e) => handleColorChange(idx, e.target.value)}
+      placeholder={`Color ${idx + 1}`}
+      className="w-full border mb-1"
     />
   ))}
-  <button type="button" onClick={handleAddColorField} className="border p-1 rounded bg-blue-500 text-white">
-    Add Color
+  <button type="button" onClick={handleAddColorField} className="text-blue-600 text-sm">
+    + Add Color
+  </button>
+</div>
+{/* --- FEATURED --- */}
+<div>
+  <label className="font-semibold">Featured</label>
+  {(inputValue.featured || []).map((item, idx) => (
+    <div key={idx} className="mb-2 border p-2 rounded">
+      <input
+        value={item.title}
+        onChange={(e) => {
+          const updated = [...inputValue.featured];
+          updated[idx].title = e.target.value;
+          setInputValue(prev => ({ ...prev, featured: updated }));
+        }}
+        placeholder="Title"
+        className="w-full border mb-1"
+      />
+      <textarea
+        value={item.content}
+        onChange={(e) => {
+          const updated = [...inputValue.featured];
+          updated[idx].content = e.target.value;
+          setInputValue(prev => ({ ...prev, featured: updated }));
+        }}
+        placeholder="Content"
+        className="w-full border"
+      />
+      <button
+        type="button"
+        onClick={() => {
+          const updated = [...inputValue.featured];
+          updated.splice(idx, 1);
+          setInputValue(prev => ({ ...prev, featured: updated }));
+        }}
+        className="text-red-500 text-sm mt-1"
+      >
+        X
+      </button>
+    </div>
+  ))}
+  <button
+    type="button"
+    onClick={() => {
+      setInputValue(prev => ({
+        ...prev,
+        featured: [...(prev.featured || []), { title: "", content: "" }],
+      }));
+    }}
+    className="text-blue-600 text-sm"
+  >
+    + Add Featured
   </button>
 </div>
 
 
 
-        {/* Sizes Available (multiple select) */}
-        <select
-          name="sizes"
-          value={inputValue.sizes || []}  // Khởi tạo giá trị là một mảng
-          onChange={handleDataChange}
-          multiple
-        >
-          <option value="31">31</option>
-          <option value="32">32</option>
-          <option value="33">33</option>
-          <option value="34">34</option>
-          <option value="35">35</option>
-        </select>
+    
 
-        <button type="submit">Submit</button>
-      </form>
-    </div>
+      {/* --- BENEFITS / NOTES --- */}
+      {["moreBenefit", "notes"].map((field) => (
+        <div key={field}>
+          <label className="font-semibold">{field}</label>
+          {inputValue[field]?.map((item, idx) => (
+            <div key={idx} className="flex gap-2 mb-1">
+              <input value={item} onChange={(e) => handleArrayChange(field, idx, e.target.value)} placeholder={`${field}...`} className="w-full border" />
+              <button type="button" onClick={() => handleRemoveItem(field, idx)} className="text-red-500 text-sm">X</button>
+            </div>
+          ))}
+          <button type="button" onClick={() => handleAddItem(field, "")} className="text-blue-600 text-sm">+ Add {field}</button>
+        </div>
+      ))}
+
+      {/* --- CHECKBOXES --- */}
+      <label className="flex items-center gap-2">
+        <input type="checkbox" checked={positionChecked} onChange={() => setPositionChecked(!positionChecked)} />
+        <span>Position</span>
+      </label>
+
+      <label className="flex items-center gap-2">
+        <input type="checkbox" checked={isDefaultChecked} onChange={() => setIsDefaultChecked(!isDefaultChecked)} />
+        <span>Is Default</span>
+      </label>
+
+      <button type="submit" className="bg-green-600 text-white px-4 py-2 rounded">Add Product</button>
+    </form>
   );
 };
 

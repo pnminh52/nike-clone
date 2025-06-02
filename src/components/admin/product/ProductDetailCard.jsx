@@ -159,7 +159,7 @@ const ProductDetailCard = ({ product, onClose }) => {
 }
 
 
-                <li>Colour Shown: {product.color.join('/')}</li>
+<li>Colour Shown: {(Array.isArray(product.color) ? product.color.join(" / ") : product.color || "N/A")}</li>
                 <li>Style: {product.style}</li>
                 <li>Status: {product.status}</li>
                 <li>Stock: {product.stock}</li>
@@ -168,8 +168,8 @@ const ProductDetailCard = ({ product, onClose }) => {
                 <li>Gift point: {product.giftPoint} point</li>
                 <li>Type: {product.type}</li>
                 <li>Category: {product.category}</li>
-                <li>Sizes: {product.sizes.join("/")}</li>
-                <li>Features: {product.features}</li>
+                <li>Sizes: {(Array.isArray(product.sizes) ? product.sizes.join(" / ") : product.sizes || "N/A")}</li>
+                <li>Features: {(Array.isArray(product.features) ? product.features.join(", ") : product.features || "N/A")}</li>
 
               </ul>
             </div>
