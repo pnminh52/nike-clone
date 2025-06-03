@@ -117,7 +117,7 @@ export const AuthProvider = ({ children }) => {
             description: "Get 50K off on your first order",
             discountType: "amount",
             value: 50000,
-            applicableProductNames: "Nike Zoom Fly 6",
+            applicableProductNames: "All",
             stock: 5,
             code: "WELCOME50",
             expiryDate: "2025-06-30",

@@ -8,11 +8,10 @@ export const useCart = () => {
   const [cart, setCart] = useState([]);
   const {successToast, errorToast, warningToast} = useToast();
   const {updateUser}=useAuth()
-  const API_URL = "https://nikejsonserver-2.onrender.com";
+  const API_URL = "http://localhost:3000";
 
 
 
-  // 👉 Lấy cart từ server khi component mount
   useEffect(() => {
     const userId = localStorage.getItem("userId");
     if (!userId) return;
@@ -43,22 +42,18 @@ export const useCart = () => {
       const user = await res.json();
       const currentCart = user.cart || [];
   
-      // Kiểm tra xem sản phẩm đã tồn tại chưa
       const existingIndex = currentCart.findIndex(
         (item) => item.id === product.id && item.size === size
       );
   
       let updatedCart;
       if (existingIndex !== -1) {
-        // Nếu đã tồn tại => tăng quantity
         updatedCart = [...currentCart];
         updatedCart[existingIndex].quantity += 1;
       } else {
-        // Nếu chưa tồn tại => thêm mới
         updatedCart = [...currentCart, { ...product, size, quantity: 1 }];
       }
   
-      // Gửi PATCH cập nhật cart
       await   fetch(`${API_URL}/users/${userId}`, {
         method: "PATCH",
         headers: {
@@ -68,9 +63,9 @@ export const useCart = () => {
       });
   
       setCart(updatedCart);
-      successToast("✅ Sản phẩm đã được thêm vào giỏ hàng!");
+      successToast("The product has been successfully added to the shopping cart!");
     } catch (error) {
-      errorToast("❌ Có lỗi xảy ra khi thêm sản phẩm.");
+      errorToast("❌ An error occurred while adding the product to the cart!");
     }
   };
   
@@ -111,13 +106,10 @@ export const useCart = () => {
   
       const currentOrders = user.orders || [];
   
-      // Tổng tiền sản phẩm
       const productTotal = cart.reduce((sum, item) => sum + item.price * (item.quantity ?? 1), 0);
   
-      // Lấy phí ship từ user
       const shippingFee = user.shippingFeeByAddress || 0;
   
-      // Tổng thanh toán
       const totalPrice = productTotal + shippingFee;
   
       const newOrder = {
@@ -142,17 +134,13 @@ export const useCart = () => {
         newCustomerType = "Standard";
       }
   
-      const totalGiftPoint = cart.reduce((total, item) => total + (item.giftPoint || 0), 0);
-  
-      // const updatedPoint = user.point + totalGiftPoint;
-  
+      const totalGiftPoint = cart.reduce((total, item) => total + (item.giftPoint || 0), 0);  
       const updatedUser = {
         ...user,
         cart: [],
         orders: updatedOrders,
         totalOrder: newTotalOrder,
         customerType: newCustomerType,
-        // point: updatedPoint
       };
   
       await   fetch(`${API_URL}/users/${userId}`, {
@@ -164,6 +152,29 @@ export const useCart = () => {
       });
   
       updateUser(updatedUser);
+      // Cập nhật stock cho từng sản phẩm đã mua
+await Promise.all(
+  cart.map(async (item) => {
+    try {
+      const res = await fetch(`${API_URL}/products/${item.id}`);
+      const product = await res.json();
+      const currentStock = parseInt(product.stock || 0, 10);
+      const purchasedQuantity = item.quantity ?? 1;
+      const newStock = Math.max(currentStock - purchasedQuantity, 0); // đảm bảo không âm
+
+      await fetch(`${API_URL}/products/${item.id}`, {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ stock: newStock }),
+      });
+    } catch (err) {
+      console.error(`Lỗi khi cập nhật stock cho sản phẩm ${item.id}:`, err);
+    }
+  })
+);
+
       setCart([]);
       successToast("✅ Thanh toán thành công!");
       navigate("/")

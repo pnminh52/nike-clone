@@ -119,10 +119,8 @@ const ProductDetail = () => {
     if (productId) fetchComments(productId);
   }, [productId]);
 
-  const applicableCoupons = user?.coupons?.filter(coupon => {
-    const applicableNames = coupon.applicableProductNames;
-    return !applicableNames || applicableNames === "All" || applicableNames.includes(selectedProduct?.name);
-  }) || [];
+  const applicableCoupons = user?.coupons || [];
+
 
 
 
@@ -356,31 +354,24 @@ const ProductDetail = () => {
           </div>
 
           <div className="mt-6">
-            {applicableCoupons.length > 0 && (
-              <div>
+          {applicableCoupons.length > 0 && (
+  <div>
+    {showCoupons && (
+      <div className="">
+        <VoucherChooseTab
+          setUser={setUser}
+          applicableCoupons={applicableCoupons} // tất cả coupon
+          selectedCoupon={selectedCoupon}
+          selectedProduct={selectedProduct}
+          setSelectedCoupon={setSelectedCoupon}
+          onClose={() => setShowCoupons(false)}
+          user={user}
+        />
+      </div>
+    )}
+  </div>
+)}
 
-
-                {showCoupons && (
-                  <div className="">
-                    <VoucherChooseTab
-                      setUser={setUser}
-                      applicableCoupons={applicableCoupons}
-                      selectedCoupon={selectedCoupon}
-                      selectedProduct={selectedProduct}
-                      setSelectedCoupon={setSelectedCoupon}
-                      onClose={() => setShowCoupons(false)}
-                      user={user}
-                    />
-                  </div>
-                )}
-
-
-
-
-
-
-              </div>
-            )}
           </div>
 
           <div className="flex items-center justify-between ">

@@ -41,7 +41,7 @@ const ExchangeVoucher = ({ onBack, userId, selectedProduct }) => {
       </button>
 
       <div className='py-2'>
-        <p>All offers ({coupons.length})</p>
+        <p>All offers ({applicableCoupons.length})</p>
         <p className='text-sm'>You currently have {user?.point} points</p>
         <p className="text-xs text-red-600">
           Please note: The voucher is non-refundable when you cancel the order*

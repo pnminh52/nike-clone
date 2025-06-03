@@ -14,6 +14,7 @@ const Cart = ({ }) => {
     const {user}=useAuth()
     const {cart, addToCart}=useCart()
     const {removeFromWishlist}=useWish()
+    const [selectedItems, setSelectedItems]=useState([])
 
     const formatPrice = (price) => {
         return Number(price)

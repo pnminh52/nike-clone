@@ -1289,11 +1289,9 @@
       ]
     },
     {
-      "id": "2000",
-      "name": " Nike Streakfly 2",
-      "position": 1,
-      "isDefault": "true",
-      "stock": "100",
+      "id": "0ae6",
+      "name": "Nike Streakfly 2",
+      "stock": "120",
       "price": "5279000",
       "price_sale": "5500000",
       "img": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/6e7323eb-4401-476a-8cb5-e496bdc133bb/ZOOMX+STREAKFLY+2.png",
@@ -1303,10 +1301,21 @@
       "shoesFor": "Training & Gym",
       "class": "Shoes",
       "brand": "Nike",
-      "features": " 2-Way Zip",
+      "features": "2-Way Zip",
       "giftPoint": "300",
       "type": "Road Racing Shoes",
       "des": "The Streakfly 2 can help you out-kick the opposition on race day. This speedster now comes with a carbon-fibre Flyplate, complementing the ultra-responsive ZoomX foam midsole and minimal upper you loved on the original. From the 10K to the mile, it can help you take your distances to the next level.",
+      "additionalImages": [
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/4e583eae-1f7b-4d52-b2e2-f3db6a78d66b/ZOOMX+STREAKFLY+2.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/ca64f8c2-a42c-4c1e-a049-d4b19588d388/ZOOMX+STREAKFLY+2.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/8ca7a63f-5c2b-429e-ae68-6beef75de539/ZOOMX+STREAKFLY+2.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/1a3b812f-71e5-445d-a48c-54ce7554f126/ZOOMX+STREAKFLY+2.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/b072ef1a-2677-451a-83e1-397085c2733e/ZOOMX+STREAKFLY+2.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/d097aedc-d848-45d2-b751-8ec8b2db0c91/ZOOMX+STREAKFLY+2.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/16cd1925-de94-4f82-831c-9c126c3b952c/ZOOMX+STREAKFLY+2.png"
+      ],
+      "position": 1,
+      "isDefault": true,
       "page": "New & Featured",
       "category": "New & Upcoming Drops",
       "status": "Just In",
@@ -1322,21 +1331,12 @@
         "37",
         "38",
         "39",
+        "40",
+        "41",
         "42",
         "43",
         "44",
-        "45",
-        "41",
-        "40"
-      ],
-      "additionalImages": [
-        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/4e583eae-1f7b-4d52-b2e2-f3db6a78d66b/ZOOMX+STREAKFLY+2.png",
-        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/ca64f8c2-a42c-4c1e-a049-d4b19588d388/ZOOMX+STREAKFLY+2.png",
-        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/8ca7a63f-5c2b-429e-ae68-6beef75de539/ZOOMX+STREAKFLY+2.png",
-        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/1a3b812f-71e5-445d-a48c-54ce7554f126/ZOOMX+STREAKFLY+2.png",
-        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/b072ef1a-2677-451a-83e1-397085c2733e/ZOOMX+STREAKFLY+2.png",
-        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/d097aedc-d848-45d2-b751-8ec8b2db0c91/ZOOMX+STREAKFLY+2.png",
-        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/16cd1925-de94-4f82-831c-9c126c3b952c/ZOOMX+STREAKFLY+2.png"
+        "45"
       ],
       "color": [
         "White",
@@ -1362,10 +1362,80 @@
           "content": "Carbon-fibre Flyplate"
         }
       ],
-      "moreBenefit": [],
       "notes": [
         "Heel-to-toe drop: 4mm",
         "Weight: 145g approx. (men's size 9)"
+      ]
+    },
+    {
+      "id": "e83b",
+      "name": "Nike Streakfly 2",
+      "stock": 118,
+      "price": "5279000",
+      "price_sale": "5500000",
+      "img": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/a2a2993e-3217-4e00-b80f-49cae30b30cc/ZOOMX+STREAKFLY+2.png",
+      "style": "HF6416-100",
+      "country": "Vietnam",
+      "height": "Low Top",
+      "shoesFor": "Training & Gym",
+      "class": "Shoes",
+      "brand": "Nike",
+      "features": "2-Way Zip",
+      "giftPoint": "300",
+      "type": "Road Racing Shoes",
+      "des": "The Streakfly 2 can help you out-kick the opposition on race day. This speedster now comes with a carbon-fibre Flyplate, complementing the ultra-responsive ZoomX foam midsole and minimal upper you loved on the original. From the 10K to the mile, it can help you take your distances to the next level.",
+      "additionalImages": [
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/278e4f74-6aa6-4b20-bbbb-0f6b9c18d79d/ZOOMX+STREAKFLY+2.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/e4b804e6-df9d-42c8-8006-07ef9480e93c/ZOOMX+STREAKFLY+2.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/115a23f3-9e5c-44a1-af68-6750b77b6e7b/ZOOMX+STREAKFLY+2.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/141b57ba-704d-42c4-b411-3a67da0669c6/ZOOMX+STREAKFLY+2.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/02be0732-312a-4083-ad04-54c15ba0a820/ZOOMX+STREAKFLY+2.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/76e31c4b-fe48-431b-ac5d-e461a5063e76/ZOOMX+STREAKFLY+2.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/5d110010-90b3-4884-9419-d0c944bf29ff/ZOOMX+STREAKFLY+2.png"
+      ],
+      "sizes": [
+        "32",
+        "31",
+        "33",
+        "34",
+        "35",
+        "36",
+        "37",
+        "38",
+        "39"
+      ],
+      "page": "New & Featured",
+      "category": "New & Upcoming Drops",
+      "status": "Just In",
+      "customer": "Men",
+      "gender": "Men",
+      "color": [
+        "Ghost",
+        "Persian Violet",
+        "Blue Lightning",
+        "Blue Void"
+      ],
+      "featured": [
+        {
+          "title": "Full Speed",
+          "content": "We integrated a full-length carbon-fibre Flyplate that delivers a propulsive feel. It helps you smoothly transition through every stride and tackle turns with confidence."
+        },
+        {
+          "title": "Optimal responsiveness",
+          "content": "ZoomX foam, our most responsive foam, provides optimal responsiveness. The result is a shoe so light, it feels like it disappears on your foot while still helping you reach your fastest pace."
+        },
+        {
+          "title": "Sticky outsole",
+          "content": "The outsole is made from a thin, sticky, webbed substance that helps reduce the weight of the shoe while still providing optimal traction."
+        },
+        {
+          "title": "What's new?",
+          "content": "Carbon-fibre Flyplate"
+        }
+      ],
+      "notes": [
+        "Weight: 145g approx. (men's size 9)",
+        "Heel-to-toe drop: 4mm"
       ]
     }
   ],
@@ -1625,256 +1695,7 @@
       "country": "Vietnam",
       "extraAddresses": [],
       "accountStatus": "Active",
-      "cart": [
-        {
-          "id": "k59t",
-          "position": 1,
-          "name": "Jordan Heir Series PF Bloodline",
-          "isDefault": "true",
-          "height": "Mid Top",
-          "shoesFor": "Jordan",
-          "stock": 50,
-          "class": "Shoes",
-          "brand": "Jordan",
-          "features": "Side vents",
-          "giftPoint": 300,
-          "type": "Basketball Shoes",
-          "price": "3239000",
-          "price_sale": "3000000",
-          "des": "Looking to ignite your competitive edge? Cue the Jordan Heir. Crafted with insights from women basketball players, these shoes are all about helping you play shifty and stay low to the ground. A drop-in midsole helps give you extra mobility, while a built-in cage provides a fit that contours to your foot for added support as you move from side to side. So run and cut in confidence. You're the game's main character, after all.",
-          "img": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/cd574ae5-e1e7-4695-acbb-46ca9a48ef51/JORDAN+HEIR+SERIES+PF.png",
-          "page": "New & Featured",
-          "category": "New & Upcoming Drops",
-          "status": "Just In",
-          "customer": "Men",
-          "sizes": [
-            "31",
-            "32",
-            "33",
-            "34",
-            "40",
-            "37",
-            "35",
-            "36",
-            "38",
-            "39",
-            "41",
-            "42",
-            "43"
-          ],
-          "gender": "Men",
-          "color": [
-            "Sail",
-            "Volt",
-            "Black"
-          ],
-          "style": "FQ3859-107",
-          "country": "Vietnam",
-          "additionalImages": [
-            "https://shortformvideo.nike.com/a/videos/372e0fa7-3dfb-462d-916b-a339a915054e/video.mp4",
-            "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/768a256d-9d54-417b-bf4b-273c57e78fa8/JORDAN+HEIR+SERIES+PF.png",
-            "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/b158c400-113f-406c-a8a9-9c634cb895e1/JORDAN+HEIR+SERIES+PF.png",
-            "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/87e4a86f-627f-49a7-a23e-8ca04c773f99/JORDAN+HEIR+SERIES+PF.png",
-            "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/afeee5ca-6757-4a9c-8f6d-4c0e0974e6d1/JORDAN+HEIR+SERIES+PF.png",
-            "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/cfd9f0c8-3af9-4d95-a6e6-1bfcc13d965a/JORDAN+HEIR+SERIES+PF.png",
-            "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/882ea26d-edc9-47b4-96ee-16cabee65607/JORDAN+HEIR+SERIES+PF.png",
-            "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/68caf950-44e3-4827-85c7-73f7505ebfb9/JORDAN+HEIR+SERIES+PF.png",
-            "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/891fa088-06ad-4b24-bdf6-8536326a2bef/JORDAN+HEIR+SERIES+PF.png",
-            "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/40621ce8-23a9-4bfd-a205-624268a84216/JORDAN+HEIR+SERIES+PF.png"
-          ],
-          "featured": [
-            {
-              "title": "Contouring cage",
-              "content": "A built-in cage system contours to your foot to help give you the supportive fit you need when cutting across the court."
-            },
-            {
-              "title": "Drop in and work",
-              "content": "A drop-in Cushlon 3.0 foam midsole puts lightweight and responsive cushioning directly underfoot, helping with on-court mobility. It's also why the Heir is lower to the ground than any other performance basketball shoe in our collection."
-            },
-            {
-              "title": "Get a grip",
-              "content": "Rubber outsole with herringbone tread pattern helps give you the sticky traction you need to stop in an instant and shift directions."
-            }
-          ],
-          "moreBenefit": [
-            "Lightweight textiles in the upper help keep things breathable and comfortable.",
-            "Synthetic leather in the upper helps add durability."
-          ],
-          "notes": [
-            "Pull tab on heel",
-            "Rubber outsole",
-            "The PF edition is designed with a wider fit and optimised for play on outdoor courts."
-          ],
-          "usedVoucher": null,
-          "size": 33,
-          "quantity": 1
-        },
-        {
-          "id": "t4tgegv",
-          "name": "Nike Air Max Koko",
-          "height": "Low Top",
-          "shoesFor": "Sandals, Slides & Flip Flops",
-          "stock": 50,
-          "class": "Sandal",
-          "brand": "Nike",
-          "features": "Side vents",
-          "giftPoint": 300,
-          "type": "Women's Sandal",
-          "price": "2929000",
-          "price_sale": "2800000",
-          "des": "Heat up the streets in the Nike Air Max Koko Sandal. Designed for women, this pinnacle platform height sandal adds a splash of colourful Air in the heel. The thick, layered foam midsole provides a smooth and flexible ride. Premium details on the upper add texture and dimension to elevate your look.",
-          "img": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/cb4b240a-e7b4-48a9-bb36-f2bbdf656d17/WMNS+AIR+MAX+KOKO+SANDAL.png",
-          "page": "New & Featured",
-          "category": "New & Upcoming Drops",
-          "status": "Just In",
-          "customer": "Women",
-          "sizes": [
-            "31",
-            "32",
-            "33",
-            "34",
-            "35",
-            "36"
-          ],
-          "gender": "Women",
-          "color": [
-            "Barely Grape",
-            "Lilac Bloom"
-          ],
-          "style": "CI8798-502",
-          "country": "Vietnam",
-          "additionalImages": [
-            "https://shortformvideo.nike.com/a/videos/12585229-dede-4cd4-8e70-88fe321a0082/video.mp4",
-            "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/16945374-09b4-42df-bc14-ac4c13c48e60/WMNS+AIR+MAX+KOKO+SANDAL.png",
-            "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/13699d24-c4ca-40df-9607-0d8155c9475f/WMNS+AIR+MAX+KOKO+SANDAL.png",
-            "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/31b1ce4b-b01a-490e-a3d1-af18e42c55c4/WMNS+AIR+MAX+KOKO+SANDAL.png",
-            "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/2c07efdf-725c-401a-99da-b197ce655232/WMNS+AIR+MAX+KOKO+SANDAL.png",
-            "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/38e6408d-d8f5-4aed-816a-093fbe241c2e/WMNS+AIR+MAX+KOKO+SANDAL.png",
-            "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/c5a2233f-c9bd-4e22-b90c-dee2dae119f9/WMNS+AIR+MAX+KOKO+SANDAL.png",
-            "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/d881c994-08c5-4a92-b91a-77e1cdd085fb/WMNS+AIR+MAX+KOKO+SANDAL.png"
-          ],
-          "featured": [
-            {
-              "title": "Next-level fashion and innovation.",
-              "content": "Heat up the streets in the Nike Air Max Koko Sandal. Designed for women, this pinnacle platform height sandal adds a splash of colourful Air in the heel. The thick, layered foam midsole provides a smooth and flexible ride. Premium details on the upper add texture and dimension to elevate your look."
-            }
-          ],
-          "moreBenefit": [
-            "The Nike Air cushioning in the heel feels comfortable and adds coveted Air Max style.",
-            "The layered midsole feels soft and delivers underfoot cushioning while its raised height adds a sporty, summertime look.",
-            "The speed lacing system adds a playful look while making it easy to put them on and take them off.",
-            "Textile upper feels soft and comfortable with or without socks."
-          ],
-          "notes": [],
-          "usedVoucher": null,
-          "size": 36,
-          "quantity": 1
-        },
-        {
-          "id": "12hb",
-          "position": 1,
-          "brand": "Nike",
-          "name": "Nike Zoom Fly 6",
-          "mainColor": "Orange",
-          "giftPoint": 300,
-          "stock": 100,
-          "isDefault": "true",
-          "class": "Shoes",
-          "type": "Road Racing Shoes",
-          "price": "5500000",
-          "price_sale": "4999000",
-          "des": "The Zoom Fly 6 is with you every step of your run. Lighter than the Zoom Fly 5, its responsive ZoomX foam adds energy return to each stride, while a carbon-fibre plate helps propel you to the finishing line.",
-          "img": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/146ef87c-ebf4-4534-835e-2f97e03856f5/W+ZOOM+FLY+6.png",
-          "page": "New & Featured",
-          "category": "New & Upcoming Drops",
-          "status": "Just In",
-          "customer": "Women",
-          "sizes": [
-            "31",
-            "32",
-            "33",
-            "34",
-            "40",
-            "37",
-            "35",
-            "36",
-            "38",
-            "39"
-          ],
-          "gender": "Women",
-          "color": [
-            "Bright Crimson",
-            "Lime Blast",
-            "Mint Foam",
-            "Cave Purple"
-          ],
-          "style": "FN8455-601",
-          "country": "Vietnam",
-          "additionalImages": [
-            "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/b243a08d-3a77-4c58-8b09-86f485ee326f/W+ZOOM+FLY+6.png",
-            "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/dc04119e-ae19-4545-a5aa-e13c4d18b25a/W+ZOOM+FLY+6.png",
-            "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/3d06a0a8-1729-4314-b1e4-442ea074e0d9/W+ZOOM+FLY+6.png",
-            "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/607d35fd-6d8e-4c69-a39a-8dee37762b66/W+ZOOM+FLY+6.png",
-            "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/beb54158-f84a-4402-a5f4-908ed137bb8f/W+ZOOM+FLY+6.png",
-            "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/79b8abb1-2cfe-4f1a-89ab-b97f4f317bb3/W+ZOOM+FLY+6.png",
-            "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/ad60d354-8834-4d7b-9a66-21052cc59d7e/W+ZOOM+FLY+6.png",
-            "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/da0104a3-8cd7-43a8-b74c-70b09179884b/W+ZOOM+FLY+6.png",
-            "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/33bba3f7-0e52-4be5-a2b8-9a122bf08547/W+ZOOM+FLY+6.png",
-            "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/85776744-2566-4c86-93a9-6ef0e70d8f34/W+ZOOM+FLY+6.png"
-          ],
-          "quantity": 1
-        },
-        {
-          "id": "dhf4",
-          "name": "Nike Zoom Fly 6",
-          "giftPoint": 300,
-          "stock": 100,
-          "class": "Shoes",
-          "type": "Road Racing Shoes",
-          "price": "5500000",
-          "price_sale": "4999000",
-          "des": "The Zoom Fly 6 is with you every step of your run. Lighter than the Zoom Fly 5, its responsive ZoomX foam adds energy return to each stride, while a carbon-fibre plate helps propel you to the finishing line.",
-          "img": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/5409a587-52c1-4c3f-9ab5-19ec844ce37d/W+ZOOM+FLY+6.png",
-          "page": "New & Featured",
-          "category": "New & Upcoming Drops",
-          "status": "Just In",
-          "customer": "Women",
-          "sizes": [
-            "31",
-            "32",
-            "33",
-            "34",
-            "40",
-            "37",
-            "35",
-            "36",
-            "38",
-            "39",
-            "41"
-          ],
-          "gender": "Women",
-          "color": [
-            "Ghost",
-            "Football Grey",
-            "Blue Lightning",
-            "Blue Void"
-          ],
-          "style": "FN8455-004",
-          "country": "Vietnam",
-          "additionalImages": [
-            "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/81da99b9-d9d4-4c81-804a-66592ad68d82/W+ZOOM+FLY+6.png",
-            "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/41957cbd-bfc5-4bd4-b06d-96231e6dfe63/W+ZOOM+FLY+6.png",
-            "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/52df6f74-1ca0-479b-8e3c-478440c5105a/W+ZOOM+FLY+6.png",
-            "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/5be571ea-ed2b-4e70-9cf8-e1583abc5741/W+ZOOM+FLY+6.png",
-            "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/81fd1d66-c725-4c5b-8ffb-5ca75cd970a1/W+ZOOM+FLY+6.png",
-            "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/5e561b49-7128-448f-94ec-f2f61684a535/W+ZOOM+FLY+6.png",
-            "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/96d62b08-316b-4c83-a0fb-2e6e2b4d4ef9/W+ZOOM+FLY+6.png",
-            "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/84486e1d-1ec9-44b5-887c-7c459c6ac803/W+ZOOM+FLY+6.png"
-          ],
-          "usedVoucher": null,
-          "quantity": 1
-        }
-      ],
+      "cart": [],
       "orders": [
         {
           "id": 1747343915969,
@@ -2058,10 +1879,93 @@
           "status": "Pending",
           "shippingFee": 0,
           "totalPrice": 3239000
+        },
+        {
+          "id": 1748964182325,
+          "items": [
+            {
+              "id": "e83b",
+              "name": "Nike Streakfly 2",
+              "stock": "120",
+              "price": "5279000",
+              "price_sale": "5500000",
+              "img": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/a2a2993e-3217-4e00-b80f-49cae30b30cc/ZOOMX+STREAKFLY+2.png",
+              "style": "HF6416-100",
+              "country": "Vietnam",
+              "height": "Low Top",
+              "shoesFor": "Training & Gym",
+              "class": "Shoes",
+              "brand": "Nike",
+              "features": "2-Way Zip",
+              "giftPoint": "300",
+              "type": "Road Racing Shoes",
+              "des": "The Streakfly 2 can help you out-kick the opposition on race day. This speedster now comes with a carbon-fibre Flyplate, complementing the ultra-responsive ZoomX foam midsole and minimal upper you loved on the original. From the 10K to the mile, it can help you take your distances to the next level.",
+              "additionalImages": [
+                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/278e4f74-6aa6-4b20-bbbb-0f6b9c18d79d/ZOOMX+STREAKFLY+2.png",
+                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/e4b804e6-df9d-42c8-8006-07ef9480e93c/ZOOMX+STREAKFLY+2.png",
+                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/115a23f3-9e5c-44a1-af68-6750b77b6e7b/ZOOMX+STREAKFLY+2.png",
+                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/141b57ba-704d-42c4-b411-3a67da0669c6/ZOOMX+STREAKFLY+2.png",
+                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/02be0732-312a-4083-ad04-54c15ba0a820/ZOOMX+STREAKFLY+2.png",
+                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/76e31c4b-fe48-431b-ac5d-e461a5063e76/ZOOMX+STREAKFLY+2.png",
+                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/5d110010-90b3-4884-9419-d0c944bf29ff/ZOOMX+STREAKFLY+2.png"
+              ],
+              "sizes": [
+                "32",
+                "31",
+                "33",
+                "34",
+                "35",
+                "36",
+                "37",
+                "38",
+                "39"
+              ],
+              "page": "New & Featured",
+              "category": "New & Upcoming Drops",
+              "status": "Just In",
+              "customer": "Men",
+              "gender": "Men",
+              "color": [
+                "Ghost",
+                "Persian Violet",
+                "Blue Lightning",
+                "Blue Void"
+              ],
+              "featured": [
+                {
+                  "title": "Full Speed",
+                  "content": "We integrated a full-length carbon-fibre Flyplate that delivers a propulsive feel. It helps you smoothly transition through every stride and tackle turns with confidence."
+                },
+                {
+                  "title": "Optimal responsiveness",
+                  "content": "ZoomX foam, our most responsive foam, provides optimal responsiveness. The result is a shoe so light, it feels like it disappears on your foot while still helping you reach your fastest pace."
+                },
+                {
+                  "title": "Sticky outsole",
+                  "content": "The outsole is made from a thin, sticky, webbed substance that helps reduce the weight of the shoe while still providing optimal traction."
+                },
+                {
+                  "title": "What's new?",
+                  "content": "Carbon-fibre Flyplate"
+                }
+              ],
+              "notes": [
+                "Weight: 145g approx. (men's size 9)",
+                "Heel-to-toe drop: 4mm"
+              ],
+              "usedVoucher": null,
+              "size": 36,
+              "quantity": 2
+            }
+          ],
+          "date": "2025-06-03T15:23:02.325Z",
+          "status": "Pending",
+          "shippingFee": 30000,
+          "totalPrice": 10588000
         }
       ],
       "point": 1000,
-      "totalOrder": 2,
+      "totalOrder": 3,
       "dateOfBirth": "",
       "customerType": "Standard",
       "role": "User",
@@ -2076,7 +1980,7 @@
           "description": "Get 50K off on your first order",
           "discountType": "amount",
           "value": 50000,
-          "applicableProductNames": "Nike Zoom Fly 6",
+          "applicableProductNames": "All",
           "stock": 5,
           "code": "WELCOME50",
           "expiryDate": "2025-06-30",
@@ -2310,7 +2214,7 @@
           "description": "Get 50K off on your first order",
           "discountType": "amount",
           "value": 50000,
-          "applicableProductNames": "Nike Zoom Fly 6",
+          "applicableProductNames": "All",
           "stock": 5,
           "code": "WELCOME50",
           "expiryDate": "2025-06-30",
@@ -2349,7 +2253,7 @@
           "description": "Get 50K off on your first order",
           "discountType": "amount",
           "value": 50000,
-          "applicableProductNames": "Nike Zoom Fly 6",
+          "applicableProductNames": "All",
           "stock": 5,
           "code": "WELCOME50",
           "expiryDate": "2025-06-30",
@@ -2388,7 +2292,7 @@
           "description": "Get 50K off on your first order",
           "discountType": "amount",
           "value": 50000,
-          "applicableProductNames": "Nike Zoom Fly 6",
+          "applicableProductNames": "All",
           "stock": 5,
           "code": "WELCOME50",
           "expiryDate": "2025-06-30",
@@ -2427,7 +2331,7 @@
           "description": "Get 50K off on your first order",
           "discountType": "amount",
           "value": 50000,
-          "applicableProductNames": "Nike Zoom Fly 6",
+          "applicableProductNames": "All",
           "stock": 5,
           "code": "WELCOME50",
           "expiryDate": "2025-06-30",
@@ -2483,7 +2387,7 @@
           "description": "Get 50K off on your first order",
           "discountType": "amount",
           "value": 50000,
-          "applicableProductNames": "Nike Zoom Fly 6",
+          "applicableProductNames": "All",
           "stock": 5,
           "code": "WELCOME50",
           "expiryDate": "2025-06-30",
@@ -2522,7 +2426,7 @@
           "description": "Get 50K off on your first order",
           "discountType": "amount",
           "value": 50000,
-          "applicableProductNames": "Nike Zoom Fly 6",
+          "applicableProductNames": "All",
           "stock": 5,
           "code": "WELCOME50",
           "expiryDate": "2025-06-30",
@@ -2821,42 +2725,42 @@
   ],
   "orderStatusList": [
     {
-      "id": 1,
+      "id": "1",
       "name": "Pending",
       "description": "The order is waiting for confirmation from the store."
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "Confirmed",
       "description": "The order has been confirmed."
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "Processing",
       "description": "The order is being prepared."
     },
     {
-      "id": 4,
+      "id": "4",
       "name": "Shipping",
       "description": "The order is on its way to delivery."
     },
     {
-      "id": 5,
+      "id": "5",
       "name": "Delivered",
       "description": "The order has been successfully delivered."
     },
     {
-      "id": 6,
+      "id": "6",
       "name": "Cancelled",
       "description": "The order has been cancelled."
     },
     {
-      "id": 7,
+      "id": "7",
       "name": "Returned",
       "description": "The customer has returned the order."
     },
     {
-      "id": 8,
+      "id": "8",
       "name": "Refunded",
       "description": "The store has refunded the order."
     },

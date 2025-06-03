@@ -12,7 +12,7 @@ const VoucherChooseTab = ({
   onClose,
   setUser
 }) => {
-  const API_URL = "https://nikejsonserver-2.onrender.com";
+  const API_URL = "http://localhost:3000";
   const [coupons, setCoupons] = useState([]);
   const [searchText, setSearchText] = useState('');
   const [loading, setLoading] = useState(true);
