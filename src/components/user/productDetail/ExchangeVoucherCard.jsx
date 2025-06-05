@@ -23,7 +23,7 @@ const ExchangeVoucherCard = ({ voucher, onExchange, userPoint, selectedProduct }
           <div
             className={`w-full rounded-xl flex gap-2 items-center border border-gray-300 text-sm bg-white hover:bg-gray-50 transition-all duration-200`}
           >
-            <div className="flex cursor-pointer px-2 gap-2 py-2 w-full">
+            <div  className="flex cursor-pointer px-2 gap-2 py-2 w-full">
               <img
                 className="w-18 h-18 object-cover rounded-md"
                 src={voucher.image || "https://via.placeholder.com/40"}
