@@ -38,6 +38,7 @@ import { useAuth } from "./hooks/useAuth";
 import OrderStatusList from "./pages/admin/orderStatus/OrderStatusList";
 import OrderStatusAdd from "./pages/admin/orderStatus/OrderStatusAdd";
 import OrderStatusUpdate from "./pages/admin/orderStatus/OrderStatusUpdate";
+import Coupons from "./pages/user/Coupons";
 
 const AppRoutes = () => {
   const { user, loading } = useAuth();
@@ -83,11 +84,13 @@ const AppRoutes = () => {
         <Route path="login" element={<Login />} />
         <Route path="register" element={<Register />} />
         <Route path="checkout" element={<Checkout />} />
+        <Route path="coupons" element={<Coupons />} />
         <Route path="wishlist" element={<Wishlist />} />
         <Route path="profile/:id" element={<Profile />} />
         <Route path="orders" element={<Order />} />
         <Route path="search/:keyword" element={<SearchPage />} />
         <Route path="setting/:tab?" element={<Setting />} />
+
       </Route>
     </Routes>
   );

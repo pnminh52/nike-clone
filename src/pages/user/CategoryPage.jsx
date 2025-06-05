@@ -9,6 +9,7 @@ const CategoryPage = () => {
   const [loading, setLoading] = useState(false);
   const [sortType, setSortType] = useState(null);
   const API_URL = "http://localhost:3000";
+  const [showPopup, setShowPopup]=useState(false)
 
 
 

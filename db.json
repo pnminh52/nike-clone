@@ -1695,7 +1695,69 @@
       "country": "Vietnam",
       "extraAddresses": [],
       "accountStatus": "Active",
-      "cart": [],
+      "cart": [
+        {
+          "id": "t4tgegv",
+          "name": "Nike Air Max Koko",
+          "height": "Low Top",
+          "shoesFor": "Sandals, Slides & Flip Flops",
+          "stock": 50,
+          "class": "Sandal",
+          "brand": "Nike",
+          "features": "Side vents",
+          "giftPoint": 300,
+          "type": "Women's Sandal",
+          "price": "2929000",
+          "price_sale": "2800000",
+          "des": "Heat up the streets in the Nike Air Max Koko Sandal. Designed for women, this pinnacle platform height sandal adds a splash of colourful Air in the heel. The thick, layered foam midsole provides a smooth and flexible ride. Premium details on the upper add texture and dimension to elevate your look.",
+          "img": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/cb4b240a-e7b4-48a9-bb36-f2bbdf656d17/WMNS+AIR+MAX+KOKO+SANDAL.png",
+          "page": "New & Featured",
+          "category": "New & Upcoming Drops",
+          "status": "Just In",
+          "customer": "Women",
+          "sizes": [
+            "31",
+            "32",
+            "33",
+            "34",
+            "35",
+            "36"
+          ],
+          "gender": "Women",
+          "color": [
+            "Barely Grape",
+            "Lilac Bloom"
+          ],
+          "style": "CI8798-502",
+          "country": "Vietnam",
+          "additionalImages": [
+            "https://shortformvideo.nike.com/a/videos/12585229-dede-4cd4-8e70-88fe321a0082/video.mp4",
+            "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/16945374-09b4-42df-bc14-ac4c13c48e60/WMNS+AIR+MAX+KOKO+SANDAL.png",
+            "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/13699d24-c4ca-40df-9607-0d8155c9475f/WMNS+AIR+MAX+KOKO+SANDAL.png",
+            "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/31b1ce4b-b01a-490e-a3d1-af18e42c55c4/WMNS+AIR+MAX+KOKO+SANDAL.png",
+            "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/2c07efdf-725c-401a-99da-b197ce655232/WMNS+AIR+MAX+KOKO+SANDAL.png",
+            "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/38e6408d-d8f5-4aed-816a-093fbe241c2e/WMNS+AIR+MAX+KOKO+SANDAL.png",
+            "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/c5a2233f-c9bd-4e22-b90c-dee2dae119f9/WMNS+AIR+MAX+KOKO+SANDAL.png",
+            "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/d881c994-08c5-4a92-b91a-77e1cdd085fb/WMNS+AIR+MAX+KOKO+SANDAL.png"
+          ],
+          "featured": [
+            {
+              "title": "Next-level fashion and innovation.",
+              "content": "Heat up the streets in the Nike Air Max Koko Sandal. Designed for women, this pinnacle platform height sandal adds a splash of colourful Air in the heel. The thick, layered foam midsole provides a smooth and flexible ride. Premium details on the upper add texture and dimension to elevate your look."
+            }
+          ],
+          "moreBenefit": [
+            "The Nike Air cushioning in the heel feels comfortable and adds coveted Air Max style.",
+            "The layered midsole feels soft and delivers underfoot cushioning while its raised height adds a sporty, summertime look.",
+            "The speed lacing system adds a playful look while making it easy to put them on and take them off.",
+            "Textile upper feels soft and comfortable with or without socks."
+          ],
+          "notes": [],
+          "usedVoucher": null,
+          "size": "31",
+          "quantity": 1
+        }
+      ],
       "orders": [
         {
           "id": 1747343915969,
@@ -1964,7 +2026,7 @@
           "totalPrice": 10588000
         }
       ],
-      "point": 1000,
+      "point": 900000,
       "totalOrder": 3,
       "dateOfBirth": "",
       "customerType": "Standard",
@@ -1981,7 +2043,7 @@
           "discountType": "amount",
           "value": 50000,
           "applicableProductNames": "All",
-          "stock": 5,
+          "stock": 6,
           "code": "WELCOME50",
           "expiryDate": "2025-06-30",
           "pointToExchange": 1000
