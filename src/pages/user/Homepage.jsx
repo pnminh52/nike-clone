@@ -35,11 +35,13 @@ const Homepage = () => {
     
         <Slider4 />
         
-        <Banner6 />
+       <div className="space-y-8">
+       <Banner6 />
 
-        <Slider6 />
-   
-        <Banner5 />
+{/* <Slider6 /> */}
+
+<Banner5 />
+       </div>
    
         <Slider3 />
       </div>

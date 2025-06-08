@@ -7,7 +7,7 @@ const Banner6 = () => {
         <div className='border-l border-r border-b rounded-b-3xl border-blue-600'>
           <img className='w-full h-full' src="https://static.nike.com.cn/a/images/f_auto/dpr_1.0,cs_srgb/w_1247,c_limit/635f8f87-3b9e-4488-b44e-bb83f64ef523/hp.jpg" alt="" />
           <div className="flex justify-center">
-            <div className="text-center py-6 space-y-2 max-w-xl">
+            <div className="text-center py-6 space-y-2 max-w-3xl">
               <h3 className="nike-title w-full bg-gradient-to-r from-[#EB6814] to-black bg-clip-text text-transparent" data-qa="title">
               Brand collaboration
              

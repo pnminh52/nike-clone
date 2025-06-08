@@ -7,17 +7,21 @@ const Banner0 = () => {
                 <div className='border-l border-r border-b rounded-b-3xl border-blue-600'>
                     <img className='cursor-pointer' src="https://static.nike.com/a/images/f_auto/dpr_1.0,cs_srgb/h_1513,c_limit/56fe1abe-b1e9-4936-b5de-f9906fb609c5/nike-just-do-it.jpg" alt="" />
                     <div className="flex justify-center">
-                        <div className="text-center py-6 space-y-2 max-w-xl">
-                            <h3 className="nike-title w-full whitespace-nowrap" data-qa="title">
-                                Elevate Your Look
-                            </h3>
+                        <div className="text-center py-6 space-y-2 max-w-2xl">
+                        <h3
+  className="nike-title w-full   bg-gradient-to-r from-[#B3CFEB] to-[#4DA5D9] bg-clip-text text-transparent"
+  data-qa="title"
+>
+  Elevate Your Look
+</h3>
 
                             <p className="">Be ready for anything with the season's newest styles.</p>
 
 
-                            <button className="px-5 py-2 mt-2 inter bg-black text-white rounded-full cursor-pointer">
-                                Shop Sandals
-                            </button>
+                            <button className="px-5 py-2 mt-2 inter bg-gradient-to-r from-[#B3CFEB] to-[#4DA5D9] text-white rounded-full cursor-pointer">
+  Shop Sandals
+</button>
+
                         </div>
                     </div>
                 </div>
