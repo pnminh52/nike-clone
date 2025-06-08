@@ -7,7 +7,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { useAuth } from "../../hooks/useAuth";
 import { useWish } from "../../hooks/useWish";
 import { useSearchParams } from "react-router-dom";
-import ComboProduct from './../../components/user/productDetail/ComboProduct';
+// import ComboProduct from './../../components/user/productDetail/ComboProduct';
 import ProductSkeleton from './../../components/user/etc/ProductSkeleton';
 import CommentSection from "../../components/user/productDetail/CommentSection";
 import AddComment from "../../components/user/productDetail/AddComment";
@@ -349,7 +349,7 @@ const ProductDetail = () => {
               {selectedProduct.name}
             </p>
             <p className="text-gray-600 leading-tight">
-              {selectedProduct.gender}'s {selectedProduct.type}
+               {selectedProduct.type}
             </p>
           </div>
 
@@ -931,9 +931,9 @@ const ProductDetail = () => {
       </div>
       <div>
 
-        {selectedProduct.comboId && (
+        {/* {selectedProduct.comboId && (
           <ComboProduct product={selectedProduct} />
-        )}
+        )} */}
 
 
 

@@ -33,7 +33,7 @@ const variantImages = [ { id: product.id, img: product.img }, ...variantList.map
         to={`/details/${product.name}?id=${variantId}`}  
         className="block"
       >
-        <div className={` mb-0  sm:mb-8  ${hasVariants ? 'group' : ''}`}>
+        <div className={` mb-0  sm:mb-2  ${hasVariants ? 'group' : ''}`}>
           {/* Main Image */}
           <div className="aspect-square w-full">
   <img
@@ -46,7 +46,7 @@ const variantImages = [ { id: product.id, img: product.img }, ...variantList.map
 
           
           {hasVariants && (
-            <div className="hidden group-hover:block">
+            <div className="hidden sm:block">
               <div className="flex mt-2">
                 <div className="flex gap-2">
                 {visibleVariants?.map((variant, index) => (
@@ -54,33 +54,34 @@ const variantImages = [ { id: product.id, img: product.img }, ...variantList.map
     key={index}
     src={variant.img}
     alt={`Variant ${index + 1}`}
-    className="w-[40px] h-[40px] object-cover cursor-pointer"
+    className="w-[50px] h-[50px] object-cover cursor-pointer"
     onMouseEnter={() => handleImageHover(variant.img, variant.id)}
   />
 ))}
+  {remainingVariantsCount > 0 && (
+                  <div className="w-[50px] h-[50px] bg-gray-100 flex items-center justify-center cursor-pointer">
+                    <p className=" text-gray-600">+{remainingVariantsCount}</p>
+                  </div>
+                )}
 
                 </div>
 
-                {remainingVariantsCount > 0 && (
-                  <div className="w-[40px] h-[40px] flex items-center justify-center cursor-pointer">
-                    <p className="text-lg text-gray-600">+{remainingVariantsCount}</p>
-                  </div>
-                )}
+              
               </div>
             </div>
           )}
 
-          <div className="px-2 py-2  ">
-            <p className="text-[#D33918] text-sm sm:text-lg">{product.status}</p>
+          <div className="px-2 sm:px-0 py-2  ">
+            <p className="text-[#D33918] text-sm ">{product.status}</p>
 
           
-            <p className="text-sm sm:text-lg inter truncate block group-hover:hidden transform transition-all duration-500 translate-y-0 group-hover:translate-y-6">
+            <p className="text-sm sm:text-lg inter truncate block  ">
               {product.name}
             </p>
-            <p className="text-sm sm:text-lg text-gray-500 block group-hover:hidden transform transition-all duration-500 translate-y-0 group-hover:translate-y-6">
+            <p className="text-sm  text-gray-500 block  ">
               {product.gender}'s Shoes
             </p>
-            <p className="text-sm sm:text-lg text-gray-500 block group-hover:hidden transform transition-all duration-500 translate-y-0 group-hover:translate-y-6">
+            <p className="text-sm  text-gray-500 block  ">
               {variantImages.length} Colour
             </p>
 
