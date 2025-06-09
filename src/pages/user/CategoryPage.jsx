@@ -148,7 +148,7 @@ const CategoryPage = () => {
         </div>
 
         <div className="w-full sm:w-4/5">
-  <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-1.5">
+  <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-1.5 sm:gap-2">
     {sortedProducts.map((product) => (
       <ShoesCard 
       key={product.id} 

@@ -1,66 +1,65 @@
-import React, { useState, useRef } from "react";
-import { useNavigate } from "react-router-dom";
-import useProducts from "../../../hooks/useProducts";
+import React, { useRef, useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
+import { useNavigate } from "react-router-dom";
+import useProducts from "../../../hooks/useProducts";
 
-const MightAlsoLike = ({ currentProduct }) => {
-  const { getAllProducts } = useProducts();
-  const allProducts = getAllProducts();
-  const navigate = useNavigate();
-  const swiperRef = useRef(null);
 
-  const [isBeginning, setIsBeginning] = useState(true);
-  const [isEnd, setIsEnd] = useState(false);
 
-  const formatPrice = (price) => {
-    return Number(price).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-  };
-
-  // Lọc sản phẩm và bỏ qua sản phẩm hiện tại, dựa vào tên sản phẩm
-  const relatedProducts = allProducts
-    .filter(
-      (product) =>
-        product.category === currentProduct.category &&
-        product.name !== currentProduct.name // Bỏ sản phẩm có tên trùng với sản phẩm đang xem
-    )
-    .reduce((acc, product) => {
-      const existingProductIndex = acc.findIndex(
-        (item) => item.name === product.name
-      );
-      if (existingProductIndex === -1) {
-        // Nếu sản phẩm chưa tồn tại trong acc, thêm vào
-        acc.push(product);
-      } else {
-        // Nếu sản phẩm đã tồn tại, kiểm tra và thay thế bằng sản phẩm có "isDefault": true
-        if (product.isDefault) {
-          acc[existingProductIndex] = product;
-        }
-      }
-      return acc;
-    }, []);
-
-  const handleSlideChange = (swiper) => {
-    setIsBeginning(swiper.isBeginning);
-    setIsEnd(swiper.isEnd);
-  };
-
-  const handleProductSelect = (product, index) => {
-    localStorage.setItem("scrollToTop", "true");
-    navigate(`/details/${encodeURIComponent(product.name)}?id=${product.id}`, {
-      state: { selectedProduct: product, selectedIndex: index },
-    });
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
-
+const MightAlsoLike = ({currentProduct}) => {
+   const { getAllProducts } = useProducts();
+   const allProducts = getAllProducts();
+   const navigate = useNavigate();
+   const swiperRef = useRef(null);
+   const [isBeginning, setIsBeginning] = useState(true);
+   const [isEnd, setIsEnd] = useState(false);
+   const formatPrice = (price) => {
+     return Number(price).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+   };
+   const relatedProducts = allProducts
+     .filter(
+       (product) =>
+         product.category === currentProduct.category &&
+         product.name !== currentProduct.name 
+     )
+     .reduce((acc, product) => {
+       const existingProductIndex = acc.findIndex(
+         (item) => item.name === product.name
+       );
+       if (existingProductIndex === -1) {
+         acc.push(product);
+       } else {         
+         if (product.isDefault) {
+           acc[existingProductIndex] = product;
+         }
+       }
+       return acc;
+     }, []);
+   const handleSlideChange = (swiper) => {
+     setIsBeginning(swiper.isBeginning);
+     setIsEnd(swiper.isEnd);
+   };
+   const handleProductSelect = (product, index) => {
+     localStorage.setItem("scrollToTop", "true");
+     navigate(`/details/${encodeURIComponent(product.name)}?id=${product.id}`, {
+       state: { selectedProduct: product, selectedIndex: index },
+     });
+     window.scrollTo({ top: 0, behavior: "smooth" });
+   }
+   const [swiperReady, setSwiperReady] = useState(false);
+ 
+   useEffect(() => {
+     setSwiperReady(true);
+   }, []);
   return (
-    <div className="mb-10">
-      <div className="flex justify-between items-center mt-8 mb-2">
-        <p className="text-2xl">You might also like</p>
-        <div className="flex gap-2 items-center">
-          <button
+ 
+     <div className="max-w-screen-2xl mx-auto  ">
+     <div className="flex justify-between items-center mb-4 mt-4 px-6 sm:px-10">
+     <p className="text-2xl ">You might also like</p>
+        <div className="hidden gap-2 items-center sm:flex">
+           <button
             onClick={() => swiperRef.current.slidePrev()}
             disabled={isBeginning}
             className={`bg-[#E5E5E5] rounded-full px-3 py-3 shadow ${
@@ -98,38 +97,53 @@ const MightAlsoLike = ({ currentProduct }) => {
             </svg>
           </button>
         </div>
-      </div>
-
-      <Swiper
-        spaceBetween={20}
-        slidesPerView={3}
-        slidesPerGroup={1}
-        onSwiper={(swiper) => (swiperRef.current = swiper)}
-        onSlideChange={handleSlideChange}
-        modules={[Navigation]}
-      >
-        {relatedProducts.map((product, index) => (
-          <SwiperSlide key={product.id}>
-            <div
-              onClick={() => handleProductSelect(product, index)}
-              className="rounded-md block cursor-pointer"
-            >
-              <img
-                src={product.img}
-                alt={product.name}
-                className="w-[420px] h-[420px] rounded-md object-cover mb-2"
-              />
-              <h3 className="font-medium">{product.name}</h3>
-              <p className="text-gray-500">{product.gender}'s {product.type}</p>
-              <p className="font-medium inter">
-                {formatPrice(product.price)}
-                <span className="underline text-xs">đ</span>
-              </p>
+            
             </div>
-          </SwiperSlide>
-        ))}
-      </Swiper>
-    </div>
+      
+           <div className="px-0 sm:px-10">
+           {swiperReady && (
+                 <Swiper
+                 spaceBetween={15}
+                breakpoints={{
+                  0: { slidesPerView: 1.2, spaceBetween: 10 },
+                  480: { slidesPerView: 1.5, spaceBetween: 12 },
+                  640: { slidesPerView: 2.2, spaceBetween: 14 },
+                  768: { slidesPerView: 2.5, spaceBetween: 15 },
+                  1024: { slidesPerView: 3.2, spaceBetween: 15 },
+                }}
+         slidesPerGroup={2}
+         onSwiper={(swiper) => (swiperRef.current = swiper)}
+         onSlideChange={handleSlideChange}
+         modules={[Navigation]}
+       >
+         {relatedProducts.map((product, index) => (
+           <SwiperSlide key={product.id}>
+             <div
+               onClick={() => handleProductSelect(product, index)}
+               className="rounded-md  cursor-pointer"
+             >
+               <img
+                 src={product.img}
+                 alt={product.name}
+                 className="w-full aspect-square rounded-md object-cover "
+               />
+              <div className="p-2 sm:p-0 lg:pt-2">
+                 <h3 className="text-lg ">{product.name}</h3>
+                               <p className="text-gray-500">{product.gender}'s {product.type}</p>
+                               <p className=" text-lg inter">
+                                 {formatPrice(product.price)}
+                                 <span className="underline text-xs">đ</span>
+                               </p>
+              </div>
+             </div>
+           </SwiperSlide>
+         ))}
+       </Swiper>
+            )}
+           </div>
+          </div>
+ 
+   
   );
 };
 
