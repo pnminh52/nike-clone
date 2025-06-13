@@ -1,18 +1,37 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import useCategories from "../../../hooks/useCategories";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { useCart } from "../../../hooks/useCart";
 import useToast from "../../../hooks/useToast";
 import SearchTab from "../headerAndFooter/SerachTab";
+import { useAuth } from "../../../hooks/useAuth";
 
 const Header2 = () => {
     const { categories } = useCategories();
+    const { user, logout } = useAuth()
+    // console.log(user);
+
     const [isHovered0, setIsHovered0] = useState(false);
     const [isHovered1, setIsHovered1] = useState(false);
     const [isHovered2, setIsHovered2] = useState(false);
     const [isHovered3, setIsHovered3] = useState(false);
     const [isHovered4, setIsHovered4] = useState(false);
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [isOpen0, setIsOpen0] = useState(false);
+    const [isOpen1, setIsOpen1] = useState(false);
+    const [isOpen2, setIsOpen2] = useState(false);
+    const [isOpen3, setIsOpen3] = useState(false);
+    const [isOpen4, setIsOpen4] = useState(false);
+    const menuItems = [
+        { title: "New & Featured", isOpen: isOpen0, setOpen: setIsOpen0 },
+        { title: "Men", isOpen: isOpen1, setOpen: setIsOpen1 },
+        { title: "Women", isOpen: isOpen2, setOpen: setIsOpen2 },
+        { title: "Kids", isOpen: isOpen3, setOpen: setIsOpen3 },
+        { title: "Sale", isOpen: isOpen4, setOpen: setIsOpen4 },
+    ];
+
+
     const [showSearchTab, setShowSearchTab] = useState(false);
     const { warningToast } = useToast();
     const handleClickCart = () => {
@@ -431,41 +450,25 @@ const Header2 = () => {
                 </div>
             </div>
             <div className="bg-white block sm:hidden">
-               <div className="flex items-center justify-between h-14 mx-auto px-6">
-               <Link to={'/'}>
-                    <svg
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        width="80px"
-                        height="80px"
-                    >
-                        <path
-                            fill="currentColor"
-                            d="M21 8.719L7.836 14.303C6.74 14.768 5.818 15 5.075 15c-.836 0-1.445-.295-1.819-.884-.485-.76-.273-1.982.559-3.272.494-.754 1.122-1.446 1.734-2.108-.144.234-1.415 2.349-.025 3.345.275.2.666.298 1.147.298.386 0 .829-.063 1.316-.19L21 8.719z"
-                            style={{ transform: "scale(1.2)", transformOrigin: "center" }}
-                        />
-                    </svg>
-                </Link>
-                <div>
-                    <div className="flex items-center gap-4 ">
+                <div className="flex items-center justify-between h-14 mx-auto px-6">
+                    <Link to={'/'}>
                         <svg
-                            aria-hidden="true"
-                            focusable="false"
                             viewBox="0 0 24 24"
-                            role="img"
-                            width="24px"
-                            height="24px"
                             fill="none"
-                            className="  block sm:hidden text-black"
+                            width="80px"
+                            height="80px"
                         >
                             <path
-                                stroke="currentColor"
-                                strokeWidth="1.5"
-                                d="M13.962 16.296a6.716 6.716 0 01-3.462.954 6.728 6.728 0 01-4.773-1.977A6.728 6.728 0 013.75 10.5c0-1.864.755-3.551 1.977-4.773A6.728 6.728 0 0110.5 3.75c1.864 0 3.551.755 4.773 1.977A6.728 6.728 0 0117.25 10.5a6.726 6.726 0 01-.921 3.407c-.517.882-.434 1.988.289 2.711l3.853 3.853"
-                            ></path>
+                                fill="currentColor"
+                                d="M21 8.719L7.836 14.303C6.74 14.768 5.818 15 5.075 15c-.836 0-1.445-.295-1.819-.884-.485-.76-.273-1.982.559-3.272.494-.754 1.122-1.446 1.734-2.108-.144.234-1.415 2.349-.025 3.345.275.2.666.298 1.147.298.386 0 .829-.063 1.316-.19L21 8.719z"
+                                style={{ transform: "scale(1.2)", transformOrigin: "center" }}
+                            />
                         </svg>
-                        <div className="relative w-full max-w-45 hidden sm:block">
-                            <svg
+                    </Link>
+                    <div>
+                        <div className="flex items-center gap-4 ">
+                           <div onClick={()=>navigate("/Msearch")}>
+                           <svg
                                 aria-hidden="true"
                                 focusable="false"
                                 viewBox="0 0 24 24"
@@ -473,7 +476,7 @@ const Header2 = () => {
                                 width="24px"
                                 height="24px"
                                 fill="none"
-                                className="absolute left-3 top-1/2 transform -translate-y-1/2 text-black"
+                                className=" cursor-pointer  block sm:hidden text-black"
                             >
                                 <path
                                     stroke="currentColor"
@@ -481,20 +484,40 @@ const Header2 = () => {
                                     d="M13.962 16.296a6.716 6.716 0 01-3.462.954 6.728 6.728 0 01-4.773-1.977A6.728 6.728 0 013.75 10.5c0-1.864.755-3.551 1.977-4.773A6.728 6.728 0 0110.5 3.75c1.864 0 3.551.755 4.773 1.977A6.728 6.728 0 0117.25 10.5a6.726 6.726 0 01-.921 3.407c-.517.882-.434 1.988.289 2.711l3.853 3.853"
                                 ></path>
                             </svg>
-                            <input
-                                type="text"
-                                onFocus={() => setShowSearchTab(true)}
-                                onBlur={() => setTimeout(() => setShowSearchTab(true))}
-                                className="w-full hover:bg-[#E5E5E5] bg-gray-100 rounded-full pl-10 h-9.5  pr-0 py-2 outline-none focus:ring-2 font-semibold focus:ring-black transition duration-200"
-                                placeholder="Search"
-                            />
-                        </div>
+                           </div>
+                           
+{user && (
+                                <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" role="img" width="24px" height="24px" fill="none"><path stroke="currentColor" stroke-width="1.5" d="M3.75 21v-3a3.75 3.75 0 013.75-3.75h9A3.75 3.75 0 0120.25 18v3M12 3.75a3.75 3.75 0 100 7.5 3.75 3.75 0 000-7.5z"></path></svg>
 
-                        <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" role="img" width="24px" height="24px" fill="none"><path stroke="currentColor" stroke-width="1.5" d="M3.75 21v-3a3.75 3.75 0 013.75-3.75h9A3.75 3.75 0 0120.25 18v3M12 3.75a3.75 3.75 0 100 7.5 3.75 3.75 0 000-7.5z"></path></svg>
-                        <div className="cursor-pointer">
-                            <div className="relative  " onClick={() => handleClickCart()} >
+) }
+                            <div className="cursor-pointer">
+                                <div className="relative  " onClick={() => handleClickCart()} >
+                                    <svg
+
+                                        aria-hidden="true"
+                                        focusable="false"
+                                        viewBox="0 0 24 24"
+                                        role="img"
+                                        width="24px"
+                                        height="24px"
+                                        fill="none"
+                                    >
+                                        <path
+                                            stroke="currentColor"
+                                            strokeWidth="1.5"
+                                            d="M8.25 8.25V6a2.25 2.25 0 012.25-2.25h3a2.25 2.25 0 110 4.5H3.75v8.25a3.75 3.75 0 003.75 3.75h9a3.75 3.75 0 003.75-3.75V8.25H17.5"
+                                        ></path>
+                                    </svg>
+                                    <p className="absolute top-3.5 text-[9px] text-xs left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                                        {useCart().cart.length}
+                                    </p>
+                                </div>
+                            </div>
+                            <div className="cursor-pointer" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+
+
+
                                 <svg
-
                                     aria-hidden="true"
                                     focusable="false"
                                     viewBox="0 0 24 24"
@@ -506,41 +529,142 @@ const Header2 = () => {
                                     <path
                                         stroke="currentColor"
                                         strokeWidth="1.5"
-                                        d="M8.25 8.25V6a2.25 2.25 0 012.25-2.25h3a2.25 2.25 0 110 4.5H3.75v8.25a3.75 3.75 0 003.75 3.75h9a3.75 3.75 0 003.75-3.75V8.25H17.5"
+                                        d="M21 5.25H3M21 12H3m18 6.75H3"
                                     ></path>
                                 </svg>
-                                <p className="absolute top-3.5 text-[9px] text-xs left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                                    {useCart().cart.length}
-                                </p>
+
                             </div>
-                        </div>
-                        <div className="cursor-pointer">
-                            <svg
 
-                                className=""
-                                aria-hidden="true"
-                                focusable="false"
-                                viewBox="0 0 24 24"
-                                role="img"
-                                width="24px"
-                                height="24px"
-                                fill="none"
+                            <div
+                                className={`fixed top-0 right-0 w-full max-h-screen bg-white z-50 transform transition-transform duration-300 
+    ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}
+                                style={{
+                                    pointerEvents: isMenuOpen ? 'auto' : 'none',
+                                    overflowY: isMenuOpen ? 'scroll' : 'hidden',
+                                }}
                             >
-                                <path
-                                    stroke="currentColor"
-                                    strokeWidth="1.5"
-                                    d="M21 5.25H3M21 12H3m18 6.75H3"
-                                ></path>
-                            </svg>
+                                <div className="p-6  max-w-screen-sm  min-h-screen ">
+                                    <div className="flex justify-between items-center">
+                                        <div className="flex items-center gap-2">
+                                            {user && (
+                                                <Link onClick={() => setIsMenuOpen(false)} to={`/profile/${user?.id}`}>
+                                                   
+                                                        <img
+                                                            className="w-12 h-12 rounded-xl border-1 p-1 cursor-pointer"
+                                                            src={user?.avatar}
+                                                            alt=""
+                                                        />
+                                                   
+                                                </Link>
+                                            )}
+                                            <div>
+                                                {user ? (
+                                                    <>
+                                                        <p className="inter">{user.firstname} {user.lastname}</p>
+                                                        <p className="text-sm text-gray-400">{user.email}</p>
+                                                    </>
+                                                ) : (
+                                                    <>
+                                                        <p className="inter ">Welcome</p>
+                                                        <p onClick={()=>navigate("/login")} className="cursor-pointer text-sm text-blue-600 underline">Sign in to your account!</p>
+                                                    </>
+                                                )}
+                                            </div>
+
+                                        </div>
+                                        <div className="border p-2 rounded-xl border-gray-300 cursor-pointer" onClick={() => setIsMenuOpen(false)}>
+                                            <svg viewBox="0 0 24 24" fill="none" width="28px" height="28px">
+                                                <path d="M7 17L16.8995 7.10051" stroke="#000000" strokeLinecap="round" strokeLinejoin="round" />
+                                                <path d="M7 7.00001L16.8995 16.8995" stroke="#000000" strokeLinecap="round" strokeLinejoin="round" />
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <div className="space-y-4 py-6">
+                                        {menuItems.map(({ title, isOpen, setOpen }) => (
+                                            <div key={title}>
+                                                <div
+                                                    className="font-semibold nike-title-for-navbar cursor-pointer flex justify-between"
+                                                    onClick={() => setOpen(!isOpen)}
+                                                >
+                                                    {title}
+                                                </div>
+                                                {isOpen && (
+                                                    <div className="ml-3 mt-2 space-y-2">
+                                                        {categories
+                                                            .filter(
+                                                                (cat) =>
+                                                                    (cat.parentId === null || cat.parentId === "") && cat.page === title
+                                                            )
+                                                            .map((parent) => (
+                                                                <div key={parent.id}>
+                                                                    <p className="font-semibold inter text-sm mb-2">{parent.name}</p>
+                                                                    <ul className="pl-2 inter text-sm text-gray-400 space-y-1">
+                                                                        {categories
+                                                                            .filter((child) => child.parentId === parent.id)
+                                                                            .map((child) => (
+                                                                                <li
+                                                                                    key={child.id}
+                                                                                    className="cursor-pointer"
+                                                                                    onClick={() => {
+                                                                                        setIsMenuOpen(false);
+                                                                                        navigate(`/category/${encodeURIComponent(child.name)}`);
+                                                                                    }}
+                                                                                >
+                                                                                    {child.name}
+                                                                                </li>
+                                                                            ))}
+                                                                    </ul>
+                                                                </div>
+                                                            ))}
+                                                    </div>
+                                                )}
+                                            </div>
+                                        ))}
+
+                                        {!user && (
+                                            <>
+
+                                                <p onClick={() => navigate("/login")} className="nike-title-for-navbar cursor-pointer">sign in</p>
+                                                <p onClick={() => navigate("/register")} className="nike-title-for-navbar cursor-pointer">join us</p>
+                                            </>
+                                        )}
+                                        {
+                                            user && (
+                                                <>
+                                                    <p onClick={() => {
+                                                        logout();
+                                                        setIsMenuOpen(false);
+                                                    }}
+                                                        className="cursor-pointer nike-title-for-navbar">Logout</p>
+                                                </>
+                                            )
+                                        }
+
+                                    </div>
+                                    <div>
+
+
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            {isMenuOpen && (
+                                <div
+                                    className="fixed inset-0  bg-black opacity-40 z-40"
+                                    onClick={() => setIsMenuOpen(false)}
+                                />
+                            )}
+
+
+
                         </div>
-
-
-
                     </div>
+
                 </div>
-               </div>
 
             </div>
+
         </div>
     );
 };

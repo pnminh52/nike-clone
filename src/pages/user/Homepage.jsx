@@ -45,12 +45,12 @@ const Homepage = () => {
    
         <Slider3 />
       </div>
-    <div className="hidden sm:block">
+    {/* <div className="hidden sm:block">
     <NavigationBarLaptop />
     </div>
      <div className="block sm:hidden">
         <NavigationBarMobile />
-        </div>
+        </div> */}
     </div>
   );
 };

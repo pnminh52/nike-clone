@@ -57,7 +57,7 @@ const MightAlsoLike = ({currentProduct}) => {
  
      <div className="max-w-screen-2xl mx-auto  ">
      <div className="flex justify-between items-center mb-4 mt-4 px-6 sm:px-10">
-     <p className="text-2xl ">You might also like</p>
+     <p className="text-lg sm:text-2xl ">You might also like</p>
         <div className="hidden gap-2 items-center sm:flex">
            <button
             onClick={() => swiperRef.current.slidePrev()}
@@ -125,7 +125,7 @@ const MightAlsoLike = ({currentProduct}) => {
                <img
                  src={product.img}
                  alt={product.name}
-                 className="w-full aspect-square rounded-md object-cover "
+                 className="w-full aspect-square rounded-none sm:rounded-md object-cover "
                />
               <div className="p-2 sm:p-0 lg:pt-2">
                  <h3 className="text-lg ">{product.name}</h3>

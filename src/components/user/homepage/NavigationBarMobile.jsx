@@ -21,7 +21,18 @@ const NavigationBarMobile = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, [isOpen]);
   
-
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'auto';
+    }
+  
+    return () => {
+      document.body.style.overflow = 'auto';
+    };
+  }, [isOpen]);
+  
   return (
     <div
     className={`block md:hidden  backdrop-blur-sm  transition-all duration-300 ease-in-out

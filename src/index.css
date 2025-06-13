@@ -77,6 +77,13 @@
   font-weight: 500;
   text-transform: uppercase;
 }
+.nike-title-for-navbar {
+  font-family: "Nike Futura ND", sans-serif;
+  font-size: 3rem;
+  line-height: 0.9;
+  font-weight: 500;
+  text-transform: uppercase;
+}
 @keyframes scroll-reverse {
   0% {
     transform: translateX(-50%);

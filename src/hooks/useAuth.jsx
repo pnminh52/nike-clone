@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
-  const API_URL = "https://nikejsonserver-2.onrender.com";
+  const API_URL = "http://localhost:3000";
   const [user, setUser] = useState(null);
   const navigate=useNavigate()
   const shippingFeeByAddress = {

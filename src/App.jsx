@@ -33,12 +33,12 @@ import FeaturedSlideList from "./pages/admin/featured/FeaturedSlideList";
 import FeaturedSlideAdd from "./pages/admin/featured/FeaturedSlideAdd";
 import FeaturedSlideEdit from "./pages/admin/featured/FeaturedSlideEdit";
 import DecentralizationList from "./pages/admin/decentralization/DecentralizationList";
-import ProtectedRoute from "./components/admin/etc/ProtectedRoute";
 import { useAuth } from "./hooks/useAuth";
 import OrderStatusList from "./pages/admin/orderStatus/OrderStatusList";
 import OrderStatusAdd from "./pages/admin/orderStatus/OrderStatusAdd";
 import OrderStatusUpdate from "./pages/admin/orderStatus/OrderStatusUpdate";
 import Coupons from "./pages/user/Coupons";
+import SearchPageMobile from "./pages/user/SearchPageMobile";
 
 const AppRoutes = () => {
   const { user, loading } = useAuth();
@@ -46,10 +46,7 @@ const AppRoutes = () => {
 
   return (
     <Routes>
-      {/* <Route
-        path="/admin"
-        element={<ProtectedRoute role={user?.role} allowedRoles={['Admin', 'Staff']} />}
-      > */}
+    
         <Route path="/admin" element={<AdminLayout />}>
           <Route index element={<Navigate to="dashboard" />} />
           <Route path="dashboard" element={<AdminDashboard />}>
@@ -74,7 +71,7 @@ const AppRoutes = () => {
              <Route path="order-status/edit/:id" element={<OrderStatusUpdate />} />
           </Route>
         </Route>
-      {/* </Route> */}
+   
 
       <Route path="/" element={<UserLayout />}>
         <Route index element={<Homepage />} />
@@ -89,6 +86,7 @@ const AppRoutes = () => {
         <Route path="profile/:id" element={<Profile />} />
         <Route path="orders" element={<Order />} />
         <Route path="search/:keyword" element={<SearchPage />} />
+        <Route path="Msearch/" element={<SearchPageMobile />} />
         <Route path="setting/:tab?" element={<Setting />} />
 
       </Route>
