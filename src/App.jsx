@@ -38,7 +38,6 @@ import OrderStatusList from "./pages/admin/orderStatus/OrderStatusList";
 import OrderStatusAdd from "./pages/admin/orderStatus/OrderStatusAdd";
 import OrderStatusUpdate from "./pages/admin/orderStatus/OrderStatusUpdate";
 import Coupons from "./pages/user/Coupons";
-import SearchPageMobile from "./pages/user/SearchPageMobile";
 
 const AppRoutes = () => {
   const { user, loading } = useAuth();
@@ -86,7 +85,6 @@ const AppRoutes = () => {
         <Route path="profile/:id" element={<Profile />} />
         <Route path="orders" element={<Order />} />
         <Route path="search/:keyword" element={<SearchPage />} />
-        <Route path="Msearch/" element={<SearchPageMobile />} />
         <Route path="setting/:tab?" element={<Setting />} />
 
       </Route>

@@ -495,9 +495,8 @@ const ProductDetail = () => {
                             : "border-gray-200 text-gray-400 opacity-50 line-through bg-gray-200 hover:border-black hover:text-black"
                           }`}
                       >
-                        {selectedProduct.class === "Shoes" || selectedProduct.class === "Slides"
-                          ? `EU ${size}`
-                          : size}
+                         EU {size}
+                       
                       </button>
                     );
                   })}
@@ -1047,9 +1046,8 @@ ${(selectedSize && !selectedProduct.sizes.includes(String(selectedSize)))
                           : "border-gray-200 text-gray-400 opacity-50 line-through bg-gray-200 hover:border-black hover:text-black"
                         }`}
                     >
-                      {selectedProduct.class === "Shoes" || selectedProduct.class === "Slides"
-                        ? `EU ${size}`
-                        : size}
+                     EU {size}
+                      
                     </button>
                   );
                 })}
@@ -1383,16 +1381,8 @@ ${(selectedSize && !selectedProduct.sizes.includes(String(selectedSize)))
               </div>
             )}
       </div>
-      {/* <div className="mx-auto max-w-screen-2xl px-10">
-        <div className="mt-4">
-          <p className=" text-3xl">How Others Are Wearing It</p>
-          <p className="mb-3 mt-1">Upload your photo or mention @Nike on Instagram for a chance to be featured.</p>
-          <button className="px-4 py-2 border border-gray-300 rounded-full hover:border-black transition ease-in-out duration-300 cursor-pointer">Upload Your Photo </button>
-        </div>
-      </div> */}
 
       <MightAlsoLike currentProduct={selectedProduct} />
-
       {showAddComment && (
         <>
 
