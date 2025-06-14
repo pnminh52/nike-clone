@@ -23,7 +23,7 @@ const CheckIcon = () => (
 
 const FavouritesItem = ({ user, cart, formatPrice, removeFromWishlist, addToCart }) => {
   return (
-    <div className="">
+    <div className="hidden sm:block">
       <p className="text-2xl py-5">Favourites</p>
       {user?.wishlist?.length > 0 ? (
         <div className="flex flex-row gap-10 ">
