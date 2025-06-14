@@ -1759,8 +1759,8 @@
     },
     {
       "id": "6c69",
-      "firstname": "New",
-      "lastname": "Test Key",
+      "firstname": "Phạm",
+      "lastname": "Nhật Minh",
       "phone": "0934557882",
       "address": "Hồ Chí Minh",
       "shippingFeeByAddress": 30000,
@@ -1911,7 +1911,7 @@
       "dateOfBirth": "",
       "customerType": "Standard",
       "role": "User",
-      "avatar": "https://i.pinimg.com/736x/bd/5e/db/bd5edb18fe5acd9b462f3a704b8596b1.jpg",
+      "avatar": "",
       "createdAt": "2025-05-15T18:22:29.875Z",
       "coupons": [
         {

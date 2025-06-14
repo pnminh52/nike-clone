@@ -56,7 +56,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="flex flex-col border mt-0 sm:mt-8 mb-8 border-blue-600 sm:border-white sm:flex-row sm:gap-4 gap-2">
+        <div className="flex flex-col border mt-0 sm:mt-6 mb-6 border-blue-600 sm:border-white sm:flex-row sm:gap-4 gap-2">
           <p className="cursor-pointer text-sm inter text-gray-500 hover:text-black transition">
             © 2025 Nike, Inc. All rights reserved
           </p>
