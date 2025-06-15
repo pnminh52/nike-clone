@@ -136,14 +136,14 @@ const Profile = () => {
     </div>
    </div>
    <div className="block sm:hidden">
-    <div className="max-w-screen-2xl px-6 ">
-    <div className="flex gap-4 py-10 overflow-auto hide-scrollbar">
+    <div className="max-w-screen-2xl px-6 pt-8 ">
+    {/* <div className="flex gap-4 py-10 overflow-auto hide-scrollbar">
       <p className="inter ">Profile</p>
       <p className="inter text-gray-400">Inbox</p>
       <p className="inter text-gray-400">Orders</p>
       <p className="inter text-gray-400">Favourites</p>
       <p className="inter text-gray-400">Settings</p>
-      </div>
+      </div> */}
       <div className="flex justify-center">
   <div className="flex flex-col items-center text-center">
     <div
