@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import useInterest from "../../../hooks/useInterest";
-const categories = ["All", "Sports", "Products", "Teams", "Athlete", "Cities"];
+const categories = ["All", "Sports", "Products", "Teams", "Athletes", "Cities"];
 
 const AddInterestPopup = ({ title, onClose }) => {
   const { interests, saveUserInterests } = useInterest();
@@ -57,14 +57,14 @@ const AddInterestPopup = ({ title, onClose }) => {
       </div>
 
       {/* Tabs */}
-      <div className="flex overflow-auto hide-scrollbar px-6 border-b border-gray-400 gap-2">
+      <div className="flex overflow-auto hide-scrollbar border-b border-gray-400 gap-2">
         {categories.map((cat) => {
           const count = getSelectedCount(cat);
           return (
             <p
               key={cat}
               onClick={() => setSelectedCategory(cat)}
-              className={`inter text-lg px-4 py-4 cursor-pointer whitespace-nowrap ${
+              className={`inter  px-4 py-4 cursor-pointer whitespace-nowrap ${
                 selectedCategory === cat ? "border-b-2 border-black" : " text-gray-400"
               }`}
             >
@@ -81,7 +81,7 @@ const AddInterestPopup = ({ title, onClose }) => {
           <div key={item.id} className="border-b p-4 flex justify-between items-center border-gray-400">
             <div className="flex gap-2 items-center">
               <img src={item.img} alt={item.name} className="w-18 h-18 object-cover" />
-              <p className="inter text-sm">{item.name}</p>
+              <p className="inter ">{item.name}</p>
             </div>
             <input
               type="checkbox"
