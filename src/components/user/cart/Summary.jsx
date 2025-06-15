@@ -78,7 +78,7 @@ const Summary = ({ user, formatPrice, total, finalPrice }) => {
                     </Link>
                     <Link
                         to="/category/New%20%26%20Upcoming%20Drops"
-                        className="block w-full inter text-lg rounded-full h-16 transition bg-white text-black border hover:border-gray-800 text-center leading-[4rem]"
+                        className="block w-full inter text-lg rounded-full h-16 transition bg-white text-black border border-gray-400 hover:border-black text-center leading-[4rem]"
                     >
                         Continue Shopping
                     </Link>

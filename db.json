@@ -1761,6 +1761,38 @@
       "id": "6c69",
       "firstname": "Phạm",
       "lastname": "Nhật Minh",
+      "interest": [
+        {
+          "id": 4,
+          "img": "https://static.nike.com/a-test/images/t_default,w_240/0c757798-daee-4f62-bfc6-c67c02a481fc/image.jpg",
+          "name": "Football",
+          "category": "Sports"
+        },
+        {
+          "id": 5,
+          "img": "https://static.nike.com/a-test/images/t_default,w_240/1ec69cf4-4720-4190-ba75-7831102cd616/image.jpg",
+          "name": "Golf",
+          "category": "Sports"
+        },
+        {
+          "id": 7,
+          "img": "https://static.nike.com/a-test/images/t_default,w_240/2082b99e-8cdf-4167-b4ac-dad742e0da28/image.jpg",
+          "name": "Lifestyle",
+          "category": "Sports"
+        },
+        {
+          "id": 8,
+          "img": "https://static.nike.com/a-test/images/t_default,w_240/ffc876a9-e9b8-4306-a76c-0763bf88fd5c/image.jpg",
+          "name": "Basketball",
+          "category": "Sports"
+        },
+        {
+          "id": 12,
+          "img": "https://static.nike.com/a/images/f_auto,q_auto:eco,w_240/2c3ad304-f085-44e6-8359-9661553fb11f/image.jpg",
+          "name": "Swimming",
+          "category": "Sports"
+        }
+      ],
       "phone": "0934557882",
       "address": "Hồ Chí Minh",
       "shippingFeeByAddress": 30000,
@@ -2599,72 +2631,6 @@
       "productId": "12hb"
     }
   ],
-  "banner": [
-    {
-      "id": "b1",
-      "position": "1",
-      "bannerImg": "https://static.nike.com/a/images/f_auto/dpr_1.0,cs_srgb/h_1506,c_limit/b2d50ad5-0c1d-41b6-98d5-7bbea8c290fe/nike-just-do-it.jpg",
-      "title": "PEARLS OF WISDOM",
-      "category": "Nike Basketball",
-      "description": "The A One OG Pearl. Inspired by the pearls Ajas grandmother gifted heras a symbol of strength.",
-      "button": "Shop",
-      "status": "On"
-    }
-  ],
-  "featured": [
-    {
-      "id": "g62s78e2",
-      "combo": [
-        {
-          "id": "c1",
-          "img": "https://static.nike.com/a/images/f_auto/dpr_2.0,cs_srgb/h_627,c_limit/1673823a-e689-4845-8ad7-23ec0996514e/image.jpg",
-          "name": "Air Max 90 LV8"
-        },
-        {
-          "id": "c2",
-          "img": "https://static.nike.com/a/images/f_auto/dpr_2.0,cs_srgb/h_627,c_limit/796c0846-2a7d-4e1b-9430-4fe6401cbe01/nike-just-do-it.jpg",
-          "name": "Air Max Plus"
-        },
-        {
-          "id": "c3",
-          "img": "https://static.nike.com/a/images/f_auto/dpr_2.0,cs_srgb/h_627,c_limit/4c99778b-acd3-4b36-8e24-81037a6349eb/nike-just-do-it.jpg",
-          "name": "Air Max 90"
-        },
-        {
-          "id": "c4",
-          "img": "https://static.nike.com/a/images/f_auto/dpr_2.0,cs_srgb/h_627,c_limit/867f7843-87a2-47fd-99ad-c6aca2774445/nike-just-do-it.jpg",
-          "name": "Air Max Dn"
-        }
-      ],
-      "status": "On"
-    },
-    {
-      "id": "ewr4wt3r",
-      "combo": [
-        {
-          "id": "fwef4tw",
-          "img": "https://static.nike.com/a/images/f_auto/dpr_1.0,cs_srgb/h_832,c_limit/24e6506f-49ac-4780-9486-8bd5204193d2/nike-just-do-it.png",
-          "name": "Jakob Essentials Collection"
-        },
-        {
-          "id": "3r34erfw",
-          "img": "https://static.nike.com/a/images/f_auto/dpr_1.0,cs_srgb/h_832,c_limit/d342012a-a056-42bd-a1b8-8999d1fb7b99/nike-just-do-it.jpg",
-          "name": "Kick It Into Gear"
-        },
-        {
-          "id": "try65u5u5",
-          "img": "https://static.nike.com/a/images/f_auto/dpr_1.0,cs_srgb/h_832,c_limit/9a4b8d89-eb7e-42ec-9c99-3f75a1b47a5c/nike-just-do-it.png",
-          "name": "Zenvy Bra & Leggings"
-        },
-        {
-          "id": "ewf322t",
-          "img": "https://static.nike.com/a/images/f_auto/dpr_1.0,cs_srgb/h_832,c_limit/70c295b5-926a-40eb-9dee-b1edd901d2ed/image.png",
-          "name": "Luka 4 ‘Bloodline’"
-        }
-      ],
-      "status": "Off"
-    }
-  ],
   "orderStatusList": [
     {
       "id": "1",
@@ -2705,11 +2671,104 @@
       "id": "8",
       "name": "Refunded",
       "description": "The store has refunded the order."
+    }
+  ],
+  "interest": [
+    {
+      "id": 1,
+      "img": "https://static.nike.com/a-test/images/t_default,w_240/ffc876a9-e9b8-4306-a76c-0763bf88fd5c/image.jpg",
+      "name": "Basketball",
+      "category": "Sports"
     },
     {
-      "name": "new status2",
-      "description": "âsasas",
-      "id": "6522"
+      "id": 2,
+      "img": "https://static.nike.com/a-test/images/t_default,w_240/d5652cd1-79cb-4b89-9b00-ae8b24608a0a/image.jpg",
+      "name": "Cross Training",
+      "category": "Sports"
+    },
+    {
+      "id": 3,
+      "img": "https://static.nike.com/a/images/f_auto,q_auto:eco,w_240/8b8d5d22-6b2e-4bab-a48b-fd3f1d96181f/image.jpg",
+      "name": "Dance",
+      "category": "Sports"
+    },
+    {
+      "id": 4,
+      "img": "https://static.nike.com/a-test/images/t_default,w_240/0c757798-daee-4f62-bfc6-c67c02a481fc/image.jpg",
+      "name": "Football",
+      "category": "Sports"
+    },
+    {
+      "id": 5,
+      "img": "https://static.nike.com/a-test/images/t_default,w_240/1ec69cf4-4720-4190-ba75-7831102cd616/image.jpg",
+      "name": "Golf",
+      "category": "Sports"
+    },
+    {
+      "id": 6,
+      "img": "https://static.nike.com/a-test/images/t_default,w_240/6bd2a485-899a-4e85-bde1-691731fc3bb1/image.jpg",
+      "name": "Lacrosse",
+      "category": "Sports"
+    },
+    {
+      "id": 7,
+      "img": "https://static.nike.com/a-test/images/t_default,w_240/2082b99e-8cdf-4167-b4ac-dad742e0da28/image.jpg",
+      "name": "Lifestyle",
+      "category": "Sports"
+    },
+    {
+      "id": 8,
+      "img": "https://static.nike.com/a-test/images/t_default,w_240/ffc876a9-e9b8-4306-a76c-0763bf88fd5c/image.jpg",
+      "name": "Basketball",
+      "category": "Sports"
+    },
+    {
+      "id": 9,
+      "img": "https://static.nike.com/a-test/images/t_default,w_240/44eae44f-08c3-43d6-ae5c-f5c85aab0952/image.jpg",
+      "name": "Running",
+      "category": "Sports"
+    },
+    {
+      "id": 10,
+      "img": "https://static.nike.com/a-test/images/t_default,w_240/eb063100-b938-421f-852f-438b3d1ce3fb/image.jpg",
+      "name": "Skateboarding",
+      "category": "Sports"
+    },
+    {
+      "id": 11,
+      "img": "https://static.nike.com/a/images/f_auto,q_auto:eco,w_240/ed96e536-b545-4d69-a6df-a9e867d7ccd1/image.jpg",
+      "name": "Softball",
+      "category": "Sports"
+    },
+    {
+      "id": 12,
+      "img": "https://static.nike.com/a/images/f_auto,q_auto:eco,w_240/2c3ad304-f085-44e6-8359-9661553fb11f/image.jpg",
+      "name": "Swimming",
+      "category": "Sports"
+    },
+    {
+      "id": 13,
+      "img": "https://static.nike.com/a-test/images/t_default,w_240/40fa4e7c-ad90-451e-bbbe-c8a178624f74/image.jpg",
+      "name": "Tennis",
+      "category": "Sports"
+    },
+    {
+      "id": 14,
+      "img": "https://static.nike.com/a-test/images/t_default,w_240/df5cd7d9-71eb-495a-baa2-1e669e86e2a4/image.jpg",
+      "name": "Tranning & Gym",
+      "category": "Sports"
+    },
+    {
+      "id": 15,
+      "img": "https://static.nike.com/a/images/f_auto,q_auto:eco,w_240/26f7b2e5-a938-418f-bbba-386c49cfec24/image.jpg",
+      "name": "Volleyball",
+      "category": "Sports"
+    },
+    {
+      "id": 16,
+      "img": "https://static.nike.com/a-test/images/t_default,w_240/fd9f4a6a-f79c-4256-9f42-85e29b5d61ba/image.jpg",
+      "name": "Yoga",
+      "category": "Sports"
     }
   ]
 }

@@ -100,6 +100,7 @@ export const AuthProvider = ({ children }) => {
         shippingFeeByAddress: fee,  
         accountStatus: "Active",
         cart: [],
+        interest:[],
         orders: [],
         point: 1000,
         totalOrder: 0,

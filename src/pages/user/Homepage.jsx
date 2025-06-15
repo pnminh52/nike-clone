@@ -7,11 +7,8 @@ import { useEffect } from "react";
 import { useState } from "react";
 import Banner4 from './../../components/user/homepage/Banner4';
 import Banner5 from "../../components/user/homepage/Banner5";
-import NavigationBarLaptop from "../../components/user/homepage/NavigationBarLaptop";
 import Slider4 from './../../components/user/homepage/Slider4';
-import NavigationBarMobile from "../../components/user/homepage/NavigationBarMobile";
 import Banner6 from './../../components/user/homepage/Banner6';
-import Slider6 from './../../components/user/homepage/Slider6';
 
 
 const Homepage = () => {

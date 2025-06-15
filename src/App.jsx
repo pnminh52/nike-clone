@@ -29,9 +29,6 @@ import AccountList from "./pages/admin/account/AccountList";
 import AdminDashboard from "./pages/admin/AdminDashboard";
 import { Navigate } from "react-router-dom";
 import Content from "./components/admin/dashboard/Content";
-import FeaturedSlideList from "./pages/admin/featured/FeaturedSlideList";
-import FeaturedSlideAdd from "./pages/admin/featured/FeaturedSlideAdd";
-import FeaturedSlideEdit from "./pages/admin/featured/FeaturedSlideEdit";
 import DecentralizationList from "./pages/admin/decentralization/DecentralizationList";
 import { useAuth } from "./hooks/useAuth";
 import OrderStatusList from "./pages/admin/orderStatus/OrderStatusList";
@@ -60,9 +57,6 @@ const AppRoutes = () => {
             <Route path="coupons/list" element={<CouponList />} />
             <Route path="coupons/add" element={<AddCoupon />} />
             <Route path="coupons/edit/:id" element={<EditCoupon />} />
-            <Route path="slide/featured/list" element={<FeaturedSlideList />} />
-            <Route path="slide/featured/add" element={<FeaturedSlideAdd />} />
-            <Route path="slide/featured/edit/:id" element={<FeaturedSlideEdit />} />
             <Route path="account/list" element={<AccountList />} />
             <Route path="decentralization/list" element={<DecentralizationList />} />
              <Route path="order-status/list" element={<OrderStatusList />} />

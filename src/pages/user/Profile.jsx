@@ -181,6 +181,7 @@ const Profile = () => {
 </div>
 <Interest />
 <div className="space-y-8">
+
 <MemberBenefit />
 <NikeApps />
 </div>

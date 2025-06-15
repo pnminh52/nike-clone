@@ -18,7 +18,6 @@ const Register = () => {
   const [show, setShow] = useState(false);
   const isValidLength = password.length >= 8;
   const isValidContent = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)/.test(password);
-  const [showExtra, setShowExtra]=useState(false)
   const [ extraAddresses , setExtraAddresses ]=useState([])
   const provinces = [
   "An Giang", "Bà Rịa - Vũng Tàu", "Bắc Giang", "Bắc Kạn", "Bạc Liêu",

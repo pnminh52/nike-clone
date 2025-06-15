@@ -158,7 +158,7 @@ ${isMenuOpen ? "translate-x-0" : "translate-x-full"}`}
                             menuItems.map(({ title }) => (
                                 <div
                                     key={title}
-                                    className="text-2xl cursor-pointer flex justify-between"
+                                    className="text-xl items-center cursor-pointer flex justify-between"
                                     onClick={() => setCurrentMenu(title)}
                                 >
                                     <p>{title}</p>
