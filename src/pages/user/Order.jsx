@@ -3,7 +3,7 @@ import { useAuth } from "../../hooks/useAuth";
 import OrderDetails from "../../components/user/order/OrderDetails";
 import axios from "axios";
 import Pagination from "../../components/user/etc/Pagination";
-
+import { Link } from "react-router-dom";
 const Order = () => {
   const { user, setUser } = useAuth();
   const [showDropdown, setShowDropdown] = useState(false);
@@ -85,7 +85,16 @@ const Order = () => {
   const totalPages = Math.ceil(sortedOrders.length / itemsPerPage);
 
   if (!orders || orders.length === 0) {
-    return <p className="text-center mt-6">Chưa có đơn hàng nào.</p>;
+    return  <div className="h-100 flex items-center mx-auto justify-center">
+                        <div className="text-center">
+                        <p>No orders found.</p>
+                        <Link to={"/category/New%20%26%20Upcoming%20Drops"}>
+                         <p className=" text-blue-600 underline">
+                         Start shopping now!
+                          </p></Link>
+                        </div>
+                      </div>
+           ;
   }
 
   

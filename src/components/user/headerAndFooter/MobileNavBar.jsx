@@ -115,13 +115,16 @@ ${isMenuOpen ? "translate-x-0" : "translate-x-full"}`}
                                     )}
                                     <div>
                                         {user ? (
-                                            <div className="">
+                                           <Link
+                                           onClick={() => setIsMenuOpen(false)}
+                                           to={`/profile/${user?.id}`}
+                                       >
                                                 <p className="inter ">
                                                     {" "}
                                                     Hi, {user.firstname}
                                                     {user.lastname}
                                                 </p>
-                                            </div>
+                                            </Link>
                                         ) : (
                                             <>
                                                 <p className="inter ">Welcome</p>
@@ -299,7 +302,7 @@ ${isMenuOpen ? "translate-x-0" : "translate-x-full"}`}
                     </div>
                     {currentMenu === null && (
                         <div>
-                            <div className="flex gap-1 items-center py-10">
+                            <div className="flex gap-2 items-center py-10">
                                 <svg
                                     aria-hidden="true"
                                     focusable="false"
@@ -319,8 +322,10 @@ ${isMenuOpen ? "translate-x-0" : "translate-x-full"}`}
                                 <p className="inter">Jordan </p>
                             </div>
                             <div>
-                                <ul className="space-y-3 ">
-                                    <li className="flex gap-2 items-center">
+                                <ul className="space-y-4 ">
+                                    <li onClick={()=>{navigate("/wishlist"),
+                                        setIsMenuOpen(false)
+                                    }} className="flex gap-3 items-center">
                                         <svg
                                             aria-hidden="true"
                                             class="nav-icon"
@@ -340,7 +345,9 @@ ${isMenuOpen ? "translate-x-0" : "translate-x-full"}`}
                                         </svg>
                                         <p className="inter">Favourites</p>
                                     </li>
-                                    <li className="flex gap-2 items-center">
+                                    <li onClick={()=>{navigate("/cart"),
+                                        setIsMenuOpen(false)
+                                    }} className="flex gap-3 items-center">
                                         <svg
                                             aria-hidden="true"
                                             focusable="false"
@@ -358,7 +365,9 @@ ${isMenuOpen ? "translate-x-0" : "translate-x-full"}`}
                                         </svg>
                                         <p className="inter">Bag</p>
                                     </li>
-                                    <li className="flex gap-2 items-center">
+                                    <li onClick={()=>{navigate("/orders"),
+                                        setIsMenuOpen(false)
+                                    }} className="flex gap-3 items-center">
                                         <svg
                                             aria-hidden="true"
                                             class="nav-icon"
@@ -379,7 +388,7 @@ ${isMenuOpen ? "translate-x-0" : "translate-x-full"}`}
                                         </svg>
                                         <p className="inter">Orders</p>
                                     </li>
-                                    <li className="flex gap-2 items-center">
+                                    <li className="flex gap-3 items-center">
                                         <svg
                                             aria-hidden="true"
                                             class="nav-icon"
@@ -400,7 +409,7 @@ ${isMenuOpen ? "translate-x-0" : "translate-x-full"}`}
                                         </svg>
                                         <p className="inter">Find a Store</p>
                                     </li>
-                                    <li className="flex gap-2 items-center">
+                                    <li className="flex gap-3 items-center">
                                         <svg
                                             aria-hidden="true"
                                             class="nav-icon"

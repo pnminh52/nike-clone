@@ -29,8 +29,9 @@ const Banner0 = () => {
 
             <div className='block sm:hidden'>
                 <div className=''>
-
-                    <img src="https://static.nike.com/a/images/f_auto/dpr_2.0,cs_srgb/w_327,c_limit/8037f23f-74e7-4a07-90fc-d233db2205e4/nike-just-do-it.jpg" alt="" />
+                
+                <img src="https://static.nike.com/a/images/f_auto/dpr_2.0,cs_srgb/h_394,c_limit/a191605d-d46c-4c1e-a6e1-3af583204623/nike-just-do-it-nike-com-jp.jpg" alt="" />
+                    {/* <img src="https://static.nike.com/a/images/f_auto/dpr_2.0,cs_srgb/w_327,c_limit/8037f23f-74e7-4a07-90fc-d233db2205e4/nike-just-do-it.jpg" alt="" /> */}
                     <div className=" ">
                         <div className=" py-6 space-y-2 max-w-xl">
                             <h3 className="nike-title-for-mobile w-full bg-gradient-to-r from-[#B3CFEB] to-[#4DA5D9] bg-clip-text text-transparent whitespace-nowrap" data-qa="title">

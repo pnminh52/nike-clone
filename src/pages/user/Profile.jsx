@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 import Interest from './../../components/user/profile/Interest';
 import MemberBenefit from './../../components/user/profile/MemberBenefit';
 import NikeApps from './../../components/user/profile/NikeApps';
-
+import ProductSkeleton from './../../components/user/etc/ProductSkeleton';
 
 const Profile = () => {
   const { id } = useParams();
@@ -65,7 +65,9 @@ const Profile = () => {
     }
   };
   
-  if (loading) return <div className="text-center py-10">Đang tải thông tin...</div>;
+  if (loading) return <div className="">
+    <ProductSkeleton />
+  </div>;
   if (!user) return <div className="text-center py-10">Không tìm thấy người dùng.</div>;
 
   return (

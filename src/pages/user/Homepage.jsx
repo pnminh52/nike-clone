@@ -9,6 +9,7 @@ import Banner4 from './../../components/user/homepage/Banner4';
 import Banner5 from "../../components/user/homepage/Banner5";
 import Slider4 from './../../components/user/homepage/Slider4';
 import Banner6 from './../../components/user/homepage/Banner6';
+import Banner1 from './../../components/user/homepage/Banner1';
 
 
 const Homepage = () => {
@@ -27,6 +28,7 @@ const Homepage = () => {
         <Banner0 />
     
         <Slider1 />
+        {/* <Banner1 /> */}
     
         <Banner4 />
     

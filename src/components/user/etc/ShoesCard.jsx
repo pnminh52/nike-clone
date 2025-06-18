@@ -72,23 +72,23 @@ const variantImages = [ { id: product.id, img: product.img }, ...variantList.map
           )}
 
           <div className="px-2 sm:px-0 py-2  ">
-            <p className="text-[#D33918] text-sm ">{product.status}</p>
+            <p className="text-[#D33918] ">{product.status}</p>
 
           
-            <p className="text-sm sm:text-lg inter truncate block  ">
+            <p className=" inter truncate block  ">
               {product.name}
             </p>
-            <p className="text-sm  text-gray-500 block  ">
-              {product.gender}'s Shoes
+            <p className="   text-gray-500 block  ">
+              {product.type}
             </p>
-            <p className="text-sm  text-gray-500 block  ">
+            <p className="  text-gray-500 block  ">
               {variantImages.length} Colour
             </p>
 
            
-              <p className=" mt-1">
-                <span className="inter text-sm sm:text-lg"> {formatPrice(product.price)}</span>
-                <span className="text-xs">₫</span>
+              <p className=" ">
+                <span className="inter "> {formatPrice(product.price)}</span>
+                <span className="text-sm">₫</span>
               </p>
               
            
