@@ -134,7 +134,7 @@ const ProductDetail = () => {
   return (
     <div className="">
       <div className="hidden sm:block">
-        <div className="mx-auto mt-6 mb-6 flex max-w-screen-lg px-2 gap-4">
+        <div className="mx-auto mt-6  flex max-w-screen-lg px-2 gap-4">
 
           <div className="w-2/3  h-auto">
             <div className="sticky top-0 bg-white z-10 flex gap-2  pt-4">

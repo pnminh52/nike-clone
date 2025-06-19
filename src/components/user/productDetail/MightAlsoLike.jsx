@@ -55,8 +55,8 @@ const MightAlsoLike = ({currentProduct}) => {
    }, []);
   return (
  
-     <div className="max-w-screen-2xl mx-auto  ">
-     <div className="flex justify-between items-center mb-4 mt-4 px-6 sm:px-10">
+     <div className="max-w-screen-2xl mx-auto mb-20  ">
+     <div className="flex justify-between items-center py-4 px-6 sm:px-10">
      <p className="text-lg sm:text-2xl ">You might also like</p>
         <div className="hidden gap-2 items-center sm:flex">
            <button

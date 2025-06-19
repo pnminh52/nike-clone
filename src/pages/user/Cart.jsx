@@ -6,11 +6,15 @@ import Bag from "./../../components/user/cart/Bag";
 import { useCart } from "../../hooks/useCart";
 import Summary from "../../components/user/cart/Summary";
 import { Link } from "react-router-dom";
+import MightAlsoLike from './../../components/user/cart/MightAlsoLike';
+import useProducts from './../../hooks/useProducts';
 
 const Cart = ({}) => {
   const [loading, setLoading] = useState(true);
   const { user } = useAuth();
   const { cart } = useCart();
+  const {products}=useProducts()
+
 
 
   const formatPrice = (price) => {
@@ -52,7 +56,7 @@ const Cart = ({}) => {
           </div>
         ) : (
           <div>
-            <div className="max-w-screen-xl px-6 sm:px-30 mx-auto   min-h-screen">
+            <div className="max-w-screen-xl px-6 sm:px-30 mx-auto   ">
               <div className="flex flex-col lg:flex-row lg:gap-8">
                 <div className="w-full lg:w-2/3">
                   <Bag />
@@ -68,9 +72,12 @@ const Cart = ({}) => {
                   />
                 </div>
               </div>
+
             </div>
           </div>
         )}
+                      <MightAlsoLike products={products} cart={cart} />
+
       </div>
     </div>
   );
