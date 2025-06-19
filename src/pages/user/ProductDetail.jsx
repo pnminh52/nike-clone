@@ -966,7 +966,7 @@ ${(selectedSize && !selectedProduct.sizes.includes(String(selectedSize)))
       
         <div className="px-6">
         {selectedProduct.stock < 100 && selectedProduct.stock > 1 && (
-            <div className="flex gap-1 mt-3">
+            <div className="flex items-center gap-1 mt-3">
               <svg
                 aria-hidden="true"
                 focusable="false"
@@ -1026,7 +1026,7 @@ ${(selectedSize && !selectedProduct.sizes.includes(String(selectedSize)))
               </div>
         
               <div
-                className={`grid grid-cols-3 gap-2 py-4 inter ${attemptedAdd && !selectedSize ? "border-b border-[#D30005] border-t rounded-lg" : ""
+                className={`grid grid-cols-3 gap-2 py-4 inter ${attemptedAdd && !selectedSize ? "border border-[#D30005] rounded-lg" : ""
                   }`}
               >
                 {[

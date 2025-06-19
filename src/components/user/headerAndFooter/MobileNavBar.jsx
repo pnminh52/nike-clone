@@ -89,7 +89,7 @@ ${isMenuOpen ? "translate-x-0" : "translate-x-full"}`}
                                 </svg>
                             </div>
                             <div className="flex items-center justify-between py-6">
-                                <div className="flex gap-1 items-center ">
+                                <div className="flex gap-2 items-center ">
                                     {user && (
                                         <Link
                                             onClick={() => setIsMenuOpen(false)}
@@ -121,8 +121,7 @@ ${isMenuOpen ? "translate-x-0" : "translate-x-full"}`}
                                        >
                                                 <p className="inter ">
                                                     {" "}
-                                                    Hi, {user.firstname}
-                                                    {user.lastname}
+                                                    Hi, {user.lastname}
                                                 </p>
                                             </Link>
                                         ) : (

@@ -2,6 +2,7 @@
   "products": [
     {
       "id": "7ey27e",
+      "technology": "Nike ReactX",
       "position": 1,
       "isDefault": "true",
       "name": "Nike Air Max Koko",
@@ -67,6 +68,7 @@
     },
     {
       "id": "t4tgegv",
+      "technology": "Nike ReactX",
       "name": "Nike Air Max Koko",
       "height": "Low Top",
       "shoesFor": "Sandals, Slides & Flip Flops",
@@ -128,6 +130,7 @@
       "position": 1,
       "isDefault": "true",
       "name": "Jordan Why Not Zer0.3 PF",
+      "technology": "Dri-FIT",
       "height": "High Top",
       "shoesFor": "Jordan",
       "stock": 50,
@@ -215,6 +218,7 @@
       "id": "k59t",
       "position": 1,
       "name": "Jordan Heir Series PF Bloodline",
+      "technology": "NikeEasyOn",
       "isDefault": "true",
       "height": "Mid Top",
       "shoesFor": "Jordan",
@@ -294,6 +298,7 @@
     {
       "id": "sdsdw",
       "name": "Jordan Heir Series PF Bloodline",
+      "technology": "NikeEasyOn",
       "height": "Mid Top",
       "shoesFor": "Jordan",
       "stock": 100,
@@ -373,6 +378,7 @@
     {
       "id": "gysdg6w",
       "name": "Jordan Heir Series PF Bloodline",
+      "technology": "NikeEasyOn",
       "height": "Mid Top",
       "shoesFor": "Jordan",
       "stock": 100,
@@ -445,6 +451,7 @@
     {
       "id": "3423d",
       "name": "Jordan Why Not Zer0.3 PF",
+      "technology": "Dri-FIT",
       "height": "High Top",
       "shoesFor": "Jordan",
       "stock": 100,
@@ -526,6 +533,7 @@
     {
       "id": "ryt7",
       "name": "Nike Downshifter 13",
+      "technology": "Nike Flyknit",
       "material": "Sustainable Materials",
       "position": 1,
       "stock": 100,
@@ -572,6 +580,7 @@
     {
       "id": "ywgs7",
       "name": "Nike Downshifter 13",
+      "technology": "Nike Flyknit",
       "material": "Sustainable Materials",
       "stock": 100,
       "type": "Road Running Shoes",
@@ -622,6 +631,7 @@
     {
       "id": "dffs",
       "name": "Nike Air Max Dn8",
+      "technology": "Dri-FIT ADV",
       "position": 1,
       "stock": 100,
       "type": "Shoes",
@@ -668,6 +678,7 @@
       "position": 1,
       "brand": "Nike",
       "name": "Nike Zoom Fly 6",
+      "technology": "Nike Flywire",
       "mainColor": "Orange",
       "giftPoint": 300,
       "stock": 100,
@@ -847,6 +858,7 @@
     {
       "id": "8fe9",
       "name": "Nike Air Max Dn8",
+      "technology": "Dri-FIT ADV",
       "price": "6000000",
       "class": "Shoes",
       "stock": 30,
@@ -886,6 +898,7 @@
     {
       "id": "dhf4",
       "name": "Nike Zoom Fly 6",
+      "technology": "Nike Flywire",
       "giftPoint": 300,
       "stock": 100,
       "class": "Shoes",
@@ -934,6 +947,7 @@
     {
       "id": "53a9",
       "name": "Nike Air Max Dn8",
+      "technology": "Dri-FIT ADV",
       "features": "2-Way Zip",
       "price": "6000000",
       "stock": 20,
@@ -977,6 +991,7 @@
     {
       "id": "gvd5",
       "name": "Nike Zoom Fly 6",
+      "technology": "Nike Flywire",
       "height": "Mid Top",
       "shoesFor": "Training & Gym",
       "stock": 100,
@@ -1053,6 +1068,7 @@
     {
       "id": "hdf6",
       "name": "Nike Air Max Dn8",
+      "technology": "Dri-FIT ADV",
       "stock": 100,
       "class": "Shoes",
       "type": "Road Racing Shoes",
@@ -1096,6 +1112,7 @@
     {
       "id": "bda8",
       "name": "Nike Air Max Dn8",
+      "technology": "Dri-FIT ADV",
       "price": "6000000",
       "stock": 30,
       "class": "Shoes",
@@ -1135,6 +1152,7 @@
     {
       "id": "2d27",
       "name": "Nike Air Max Dn8",
+      "technology": "Dri-FIT ADV",
       "price": "6000000",
       "stock": 100,
       "class": "Shoes",
@@ -1174,6 +1192,7 @@
     {
       "id": "1562",
       "name": "Nike Air Max Dn8",
+      "technology": "Dri-FIT ADV",
       "page": "New & Featured",
       "price": "6000000",
       "stock": 0,
@@ -1216,6 +1235,7 @@
     {
       "id": "0ae6",
       "name": "Nike Streakfly 2",
+      "technology": "GORE-TEX",
       "stock": "120",
       "price": "5279000",
       "price_sale": "5500000",
@@ -1295,6 +1315,7 @@
     {
       "id": "e83b",
       "name": "Nike Streakfly 2",
+      "technology": "GORE-TEX",
       "stock": 118,
       "price": "5279000",
       "price_sale": "5500000",
@@ -1366,6 +1387,7 @@
     {
       "id": "aeda",
       "name": "LeBron XXII EP",
+      "technology": "Nike Lunarlon",
       "stock": "100",
       "price": "5279000",
       "price_sale": "5500000",
@@ -1438,6 +1460,7 @@
     {
       "id": "4fde",
       "name": "LeBron XXII EP",
+      "technology": "Nike Lunarlon",
       "stock": "100",
       "price": "5279000",
       "price_sale": "5500000",
@@ -1744,7 +1767,157 @@
       "password": "111111Aa",
       "country": "Vietnam",
       "extraAddresses": [],
-      "cart": [],
+      "cart": [
+        {
+          "id": "7ey27e",
+          "position": 1,
+          "isDefault": "true",
+          "name": "Nike Air Max Koko",
+          "stock": 49,
+          "height": "Low Top",
+          "shoesFor": "Sandals, Slides & Flip Flops",
+          "class": "Sandal",
+          "brand": "Nike",
+          "features": "Side vents",
+          "giftPoint": 300,
+          "type": "Women's Sandal",
+          "price": "2929000",
+          "price_sale": "2800000",
+          "des": "Heat up the streets in the Nike Air Max Koko Sandal. Designed for women, this pinnacle platform height sandal adds a splash of colourful Air in the heel. The thick, layered foam midsole provides a smooth and flexible ride. Premium details on the upper add texture and dimension to elevate your look.",
+          "img": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/beedbc3a-9343-4b69-ada4-d42a144bd667/WMNS+AIR+MAX+KOKO+SANDAL.png",
+          "page": "New & Featured",
+          "category": "New & Upcoming Drops",
+          "status": "Just In",
+          "customer": "Women",
+          "sizes": [
+            "31",
+            "32",
+            "33",
+            "34",
+            "37",
+            "35",
+            "36",
+            "38"
+          ],
+          "gender": "Women",
+          "color": [
+            "Sail",
+            "Black"
+          ],
+          "style": "CI8798-102",
+          "country": "Vietnam",
+          "additionalImages": [
+            "https://shortformvideo.nike.com/a/videos/d1a9fdf0-59cb-4602-9d52-7c1520ed843a/video.mp4",
+            "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/7c175861-58fb-4bca-9f41-52038884f17d/WMNS+AIR+MAX+KOKO+SANDAL.png",
+            "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/10a844e6-d0dd-48c2-8b31-a628e8503750/WMNS+AIR+MAX+KOKO+SANDAL.png",
+            "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/360abf08-4bd6-4cb3-8a6a-e7cedc36ff48/WMNS+AIR+MAX+KOKO+SANDAL.png",
+            "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/02564fb7-a98a-4dc2-957e-50782cc38bc7/WMNS+AIR+MAX+KOKO+SANDAL.png",
+            "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/b8fded87-fc17-43ac-be4c-ff24a833aab7/WMNS+AIR+MAX+KOKO+SANDAL.png",
+            "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/eab743a0-d15d-42d5-bfa6-3b4ff356ec4e/WMNS+AIR+MAX+KOKO+SANDAL.png",
+            "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/d0596b4b-3b75-4c48-8a10-ca251866bbdf/WMNS+AIR+MAX+KOKO+SANDAL.png",
+            "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/cab5f997-485c-428a-ad4f-49f0d2cd28fa/WMNS+AIR+MAX+KOKO+SANDAL.png",
+            "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/4338c7cb-a534-4b34-a7bf-a8f4f8db51d9/WMNS+AIR+MAX+KOKO+SANDAL.png",
+            "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/deea3708-04f5-41b7-8a59-e07a2d866d81/WMNS+AIR+MAX+KOKO+SANDAL.png"
+          ],
+          "featured": [
+            {
+              "title": "Next-level fashion and innovation.",
+              "content": "Heat up the streets in the Nike Air Max Koko Sandal. Designed for women, this pinnacle platform height sandal adds a splash of colourful Air in the heel. The thick, layered foam midsole provides a smooth and flexible ride. Premium details on the upper add texture and dimension to elevate your look."
+            }
+          ],
+          "moreBenefit": [
+            "The Nike Air cushioning in the heel feels comfortable and adds coveted Air Max style.",
+            "The layered midsole feels soft and delivers underfoot cushioning while its raised height adds a sporty, summertime look.",
+            "The speed lacing system adds a playful look while making it easy to put them on and take them off.",
+            "Textile upper feels soft and comfortable with or without socks."
+          ],
+          "notes": [],
+          "size": 32,
+          "quantity": 1
+        },
+        {
+          "id": "0ae6",
+          "name": "Nike Streakfly 2",
+          "technology": "GORE-TEX",
+          "stock": "120",
+          "price": "5279000",
+          "price_sale": "5500000",
+          "img": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/6e7323eb-4401-476a-8cb5-e496bdc133bb/ZOOMX+STREAKFLY+2.png",
+          "style": "HF6416-100",
+          "country": "Vietnam",
+          "height": "Low Top",
+          "shoesFor": "Training & Gym",
+          "class": "Shoes",
+          "brand": "Nike",
+          "features": "2-Way Zip",
+          "giftPoint": "300",
+          "type": "Road Racing Shoes",
+          "des": "The Streakfly 2 can help you out-kick the opposition on race day. This speedster now comes with a carbon-fibre Flyplate, complementing the ultra-responsive ZoomX foam midsole and minimal upper you loved on the original. From the 10K to the mile, it can help you take your distances to the next level.",
+          "additionalImages": [
+            "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/4e583eae-1f7b-4d52-b2e2-f3db6a78d66b/ZOOMX+STREAKFLY+2.png",
+            "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/ca64f8c2-a42c-4c1e-a049-d4b19588d388/ZOOMX+STREAKFLY+2.png",
+            "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/8ca7a63f-5c2b-429e-ae68-6beef75de539/ZOOMX+STREAKFLY+2.png",
+            "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/1a3b812f-71e5-445d-a48c-54ce7554f126/ZOOMX+STREAKFLY+2.png",
+            "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/b072ef1a-2677-451a-83e1-397085c2733e/ZOOMX+STREAKFLY+2.png",
+            "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/d097aedc-d848-45d2-b751-8ec8b2db0c91/ZOOMX+STREAKFLY+2.png",
+            "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/16cd1925-de94-4f82-831c-9c126c3b952c/ZOOMX+STREAKFLY+2.png"
+          ],
+          "position": 1,
+          "isDefault": true,
+          "page": "New & Featured",
+          "category": "New & Upcoming Drops",
+          "status": "Just In",
+          "customer": "Men",
+          "gender": "Men",
+          "sizes": [
+            "31",
+            "32",
+            "33",
+            "34",
+            "35",
+            "36",
+            "37",
+            "38",
+            "39",
+            "40",
+            "41",
+            "42",
+            "43",
+            "44",
+            "45"
+          ],
+          "color": [
+            "White",
+            "Obsidian Mist",
+            "Pure Platinum",
+            "Gridiron"
+          ],
+          "featured": [
+            {
+              "title": "Full Speed",
+              "content": "We integrated a full-length carbon-fibre Flyplate that delivers a propulsive feel. It helps you smoothly transition through every stride and tackle turns with confidence."
+            },
+            {
+              "title": "Optimal responsiveness",
+              "content": "ZoomX foam, our most responsive foam, provides optimal responsiveness. The result is a shoe so light, it feels like it disappears on your foot while still helping you reach your fastest pace."
+            },
+            {
+              "title": "Sticky outsole",
+              "content": "The outsole is made from a thin, sticky, webbed substance that helps reduce the weight of the shoe while still providing optimal traction."
+            },
+            {
+              "title": "What's new?",
+              "content": "Carbon-fibre Flyplate"
+            }
+          ],
+          "notes": [
+            "Heel-to-toe drop: 4mm",
+            "Weight: 145g approx. (men's size 9)"
+          ],
+          "size": 41,
+          "quantity": 1
+        }
+      ],
       "orders": [],
       "point": 7900,
       "accountStatus": "Active",
@@ -1814,6 +1987,7 @@
           "position": 1,
           "brand": "Nike",
           "name": "Nike Zoom Fly 6",
+          "technology": "Nike Flywire",
           "mainColor": "Orange",
           "giftPoint": 300,
           "stock": 100,
@@ -1867,6 +2041,7 @@
         {
           "id": "ryt7",
           "name": "Nike Downshifter 13",
+          "technology": "Nike Flyknit",
           "material": "Sustainable Materials",
           "position": 1,
           "stock": 100,
@@ -1998,7 +2173,7 @@
       "role": "User",
       "avatar": "",
       "createdAt": "2025-05-15T18:22:29.875Z",
-      "coupons": [
+      "vouchers": [
         {
           "id": "c1",
           "category": "new-user",
@@ -2007,17 +2182,95 @@
           "description": "Get 50K off on your first order",
           "discountType": "amount",
           "value": 50000,
-          "applicableProductNames": "All",
-          "stock": 7,
+          "stock": 99,
           "code": "WELCOME50",
-          "expiryDate": "2025-06-30",
+          "expiryDate": "2044-12-12",
+          "numberOfExpiryDate": 40,
+          "minOrderValue":5000000,
           "pointToExchange": 1000
+        },
+        {
+          "id": "c2",
+          "category": "event",
+          "name": "10% Voucher",
+          "image": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/cee4b3b4-ef04-4348-966b-a857c9a185fc/GiftCard.png",
+          "description": "Get 10% off on your first order",
+          "discountType": "percent",
+          "value": 10,
+          "stock": 20,
+          "code": "EVENT10",
+          "expiryDate": "2044-12-12",
+          "numberOfExpiryDate": 40,
+          "minOrderValue":9000000,
+          "pointToExchange": 800
+        },
+        {
+          "id": "c3",
+          "category": "new-user",
+          "name": "100K Voucher",
+          "image": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/2daa05f6-b7bd-4227-81d1-02c7730dbc7c/GiftCard.png",
+          "description": "Get 100K off on your first order",
+          "discountType": "amount",
+          "value": 100000,
+          "stock": 7,
+          "code": "WELCOME100",
+          "numberOfExpiryDate": 10,
+          "expiryDate": "2004-12-12",
+          "minOrderValue":9000000,
+          "pointToExchange": 2000
+        },
+        {
+          "id": "c4",
+          "category": "new-user",
+          "name": "120K Voucher",
+          "image": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/2c3b1a83-6cd4-4785-aeda-10fd6f856108/GiftCard.png",
+          "description": "Get 120K off on your first order",
+          "discountType": "amount",
+          "value": 120000,
+          "stock": 39,
+          "code": "WELCOME120",
+          "numberOfExpiryDate": 60,
+          "expiryDate": "2025-06-20",
+          "minOrderValue":5000000,
+          "pointToExchange": 2500
+        },
+        {
+          "id": "c5",
+          "category": "new-user",
+          "name": "15% Voucher",
+          "image": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/daf1717e-dd3b-4855-abfb-96f2bd13e08e/GiftCard.png",
+          "description": "Get 15% off on your first order",
+          "discountType": "percent",
+          "value": 15,
+          "stock": 12,
+          "code": "WELCOME15",
+          "numberOfExpiryDate": 60,
+          "expiryDate": "2034-12-12",
+          "minOrderValue":7000000,
+          "pointToExchange": 1500
+        },
+        {
+          "id": "c6",
+          "category": "new-user",
+          "name": "8% Voucher",
+          "image": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/05e97ef6-ecd9-416e-ae66-bf2e91256a9c/GiftCard.png",
+          "description": "Get 8% off on your first order",
+          "discountType": "percent",
+          "value": 8,
+          "stock": 23,
+          "code": "ahahaha",
+          "numberOfExpiryDate": 60,
+          "expiryDate": "2034-12-12",
+          "minOrderValue":5000000,
+          "pointToExchange": 1200
         }
+       
       ],
       "wishlist": [
         {
           "id": "dhf4",
           "name": "Nike Zoom Fly 6",
+          "technology": "Nike Flywire",
           "giftPoint": 300,
           "stock": 100,
           "class": "Shoes",
@@ -2070,6 +2323,7 @@
           "id": "k59t",
           "position": 1,
           "name": "Jordan Heir Series PF Bloodline",
+          "technology": "NikeEasyOn",
           "isDefault": "true",
           "height": "Mid Top",
           "shoesFor": "Jordan",
@@ -2235,7 +2489,7 @@
       "role": "User",
       "avatar": "",
       "createdAt": "2025-06-16T00:40:40.896Z",
-      "coupons": [
+      "vouchers": [
         {
           "id": "c1",
           "category": "new-user",
@@ -2244,7 +2498,6 @@
           "description": "Get 50K off on your first order",
           "discountType": "amount",
           "value": 50000,
-          "applicableProductNames": "All",
           "stock": 5,
           "code": "WELCOME50",
           "expiryDate": "2025-06-30",
@@ -2253,7 +2506,7 @@
       ]
     }
   ],
-  "coupons": [
+  "vouchers": [
     {
       "id": "c1",
       "category": "new-user",
@@ -2262,7 +2515,6 @@
       "description": "Get 50K off on your first order",
       "discountType": "amount",
       "value": 50000,
-      "applicableProductNames": "All",
       "stock": 99,
       "code": "WELCOME50",
       "expiryDate": "",
@@ -2277,7 +2529,6 @@
       "description": "Get 10% off on your first order",
       "discountType": "percent",
       "value": 10,
-      "applicableProductNames": "All",
       "stock": 20,
       "code": "EVENT10",
       "expiryDate": "",
@@ -2292,11 +2543,6 @@
       "description": "Get 100K off on your first order",
       "discountType": "amount",
       "value": 100000,
-      "applicableProductNames": [
-        "Nike Zoom Fly 6",
-        "Nike Air Max",
-        "Nike Downshifter 13"
-      ],
       "stock": 7,
       "code": "WELCOME100",
       "numberOfExpiryDate": 10,
@@ -2311,7 +2557,6 @@
       "description": "Get 120K off on your first order",
       "discountType": "amount",
       "value": 120000,
-      "applicableProductNames": "All",
       "stock": 39,
       "code": "WELCOME120",
       "numberOfExpiryDate": 60,
@@ -2326,7 +2571,6 @@
       "description": "Get 15% off on your first order",
       "discountType": "percent",
       "value": 15,
-      "applicableProductNames": "Nike Zoom Fly 6",
       "stock": 12,
       "code": "WELCOME15",
       "numberOfExpiryDate": 60,
@@ -2341,7 +2585,6 @@
       "description": "Get 8% off on your first order",
       "discountType": "percent",
       "value": 8,
-      "applicableProductNames": "Nike Zoom Fly 6",
       "stock": 23,
       "code": "ahahaha",
       "numberOfExpiryDate": 60,

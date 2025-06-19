@@ -1,9 +1,10 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 const CheckoutHeader = () => {
+  const navigate=useNavigate()
   return (
-    <div className='h-14 bg-white'>
-      <div className='h-14 max-w-screen-2xl mx-auto px-6 sm:px-10 flex justify-between items-center bg-white'>
+    <div className='h-14 bg-white '>
+      <div className='h-14 max-w-screen-2xl border-b border-white sm:border-gray-300 mx-auto px-6 sm:px-10 flex justify-between items-center bg-white'>
        <Link to={'/'}>
                      <svg
         viewBox="0 0 24 24"
@@ -22,7 +23,7 @@ const CheckoutHeader = () => {
         {/* <p className='text-sm cursor-pointer'>Viettel 12032484 & VTI 12032487</p>
       
         <img src="https://gs-checkout.nike.com/assets/images/chat.svg?v=09855dbcae24915fd3b45c647fbd0d1c" alt="" /> */}
-      <img src="https://gs-checkout.nike.com/assets/images/cart.svg?v=09855dbcae24915fd3b45c647fbd0d1c" alt="" />
+      <img className='cursor-pointer' onClick={()=>navigate("/cart")} src="https://gs-checkout.nike.com/assets/images/cart.svg?v=09855dbcae24915fd3b45c647fbd0d1c" alt="" />
       </div>
       </div>
     </div>

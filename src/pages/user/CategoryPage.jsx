@@ -22,7 +22,7 @@ const CategoryPage = () => {
   const [isUnder1000000, setIsUnder1000000] = useState(false);
   const [statusFilter, setStatusFilter] = useState([])
   const [heightFilter, setHeightFilter] = useState([])
-  const [forFilter, setForFilter] = useState(null)
+  const [forFilter, setForFilter] = useState([])
 
   useEffect(() => {
     const fetchData = async () => {
@@ -88,9 +88,10 @@ const CategoryPage = () => {
     if (heightFilter.length > 0 && !product.variants.some((variant) => heightFilter.includes(variant.height))) {
       return false;
     }
-    if (forFilter && !product.variants.some((variant) => variant.shoesFor === forFilter)) {
+    if (forFilter.length > 0 && !product.variants.some((variant) => forFilter.includes(variant.shoesFor))) {
       return false;
     }
+    
     
 
     if (isUnder1000000) {
@@ -124,7 +125,7 @@ const CategoryPage = () => {
 
 
       <div className="flex justify-between ">
-        <div className="w-[18%] h-screen overflow-y-auto hidden sm:block">
+        <div className="w-[18%] h-full  hidden sm:block">
           <SidebarFilter
             forFilter={forFilter}
             setForFilter={setForFilter}

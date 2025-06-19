@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
-const CouponList = () => {
+const VoucherList = () => {
   const [coupons, setCoupons] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const API_URL = "https://nikejsonserver-2.onrender.com/coupons";
+  const API_URL = "http://localhost:3000/vouchers";
 
   useEffect(() => {
     const fetchCoupons = async () => {
@@ -48,7 +48,7 @@ const CouponList = () => {
 
   return (
     <div className="py-4 px-4">
-      <Link to={"/admin/coupons/add"}>
+      <Link to={"/admin/vouchers/add"}>
         <button className="mb-4 px-4 py-2 bg-blue-600 text-white rounded">
           Add Coupon
         </button>
@@ -116,4 +116,4 @@ const CouponList = () => {
   );
 };
 
-export default CouponList;
+export default VoucherList;

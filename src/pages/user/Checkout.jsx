@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useCart } from "./../../hooks/useCart";
 import { Link } from "react-router-dom";
 import { useAuth } from "../../hooks/useAuth";
+import { useLocation } from "react-router-dom";
 
 const Checkout = () => {
   const API_URL = "http://localhost:3000";
@@ -10,6 +11,8 @@ const Checkout = () => {
   const [touched, setTouched] = useState(false);
   const [openSummary, setOpenSummary] = useState(false);
   const { user } = useAuth();
+  const location = useLocation();
+  const { discountAmount, selectedVoucher, finalPrice } = location.state || {};
 
   useEffect(() => {
     const fetchUser = async () => {
@@ -29,7 +32,7 @@ const Checkout = () => {
     0
   );
   const shippingFee = user?.shippingFeeByAddress || 0;
-  const finalPrice = total + shippingFee;
+  const calculatedFinalPrice = total + shippingFee;
 
   const orderDate = new Date().toLocaleDateString("en-US", {
     year: "numeric",
@@ -188,10 +191,17 @@ const Checkout = () => {
               <div className="flex justify-between py-4 border-t border-b border-gray-300 ">
                 <p>Total</p>
                 <p>
-                  {formatPrice(finalPrice)}{" "}
+                  {formatPrice(calculatedFinalPrice)}
                   <span className="text-sm underline">đ</span>
                 </p>
               </div>
+              {discountAmount > 0 && (
+  <div className="flex justify-between text-gray-400">
+    <p>Discount ({selectedVoucher?.code})</p>
+    <p>-{formatPrice(discountAmount)} đ</p>
+  </div>
+)}
+
               <div className="col-span-2 space-y-4 py-4">
                 {cart.map((item, index) => {
                   // Lấy ngày đặt đơn hàng
@@ -247,7 +257,7 @@ const Checkout = () => {
           <h2 className="text-2xl ">Summary</h2>
          <div className="flex gap-2 items-center">
          <p className=" ">
-                <span className="inter "> {formatPrice(total)}</span>
+                <span className="inter "> {formatPrice(finalPrice)}</span>
                 <span className="text-sm">₫</span>
               </p>
        ({cart?.length} items)
@@ -313,16 +323,29 @@ const Checkout = () => {
                 <span className=" "> {formatPrice(user.shippingFeeByAddress)}</span>
                 <span className="text-sm">₫</span>
               </p>
+             
                
               </div>
+              {discountAmount > 0 && (
+  <div className="flex justify-between text-green-600 ">
+    <p>Discount</p>
+    <p>-{formatPrice(discountAmount)}<span className="text-sm underline">đ</span></p>
+  </div>
+)}
             </div>
 
             <div className="flex justify-between py-4 mt-2 border-t border-b  border-gray-300">
               <p>Total</p>
+              <div className="flex gap-2 items-center">
+              <p className="text-gray-400 line-through ">
+                <span className=" "> {formatPrice(total)}</span>
+                <span className="text-sm">₫</span>
+              </p>
               <p className=" ">
                 <span className=" "> {formatPrice(finalPrice)}</span>
                 <span className="text-sm">₫</span>
               </p>
+              </div>
             
             </div>
 

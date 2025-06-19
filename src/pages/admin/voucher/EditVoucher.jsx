@@ -1,23 +1,19 @@
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 
-const AddCoupon = () => {
-  const [form, setForm] = useState({
-    name: "",
-    image: "",
-    description: "",
-    discountType: "percent",
-    value: 0,
-    applicableProductNames: "",
-    stock: 1,
-    code: "",
-    numberOfExpiryDate: 30,
-    expiryDate: "",
-    pointToExchange: 0,
-    category: "general",
-  });
-
+const EditVoucher = () => {
+  const { id } = useParams();
+  const [form, setForm] = useState(null);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    const fetchCoupon = async () => {
+      const res = await fetch(`http://localhost:3000/coupons/${id}`);
+      const data = await res.json();
+      setForm(data);
+    };
+    fetchCoupon();
+  }, [id]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -26,24 +22,24 @@ const AddCoupon = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
     try {
-      const res = await fetch("http://localhost:3000/coupons", {
-        method: "POST",
+      const res = await fetch(`http://localhost:3000/coupons/${id}`, {
+        method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form),
       });
-
-      if (!res.ok) throw new Error("Thêm coupon thất bại");
+      if (!res.ok) throw new Error("Cập nhật thất bại");
       navigate("/admin/coupons/list");
     } catch (err) {
       alert(err.message);
     }
   };
 
+  if (!form) return <p>Đang tải dữ liệu...</p>;
+
   return (
     <div className="max-w-xl mx-auto p-6 bg-white rounded shadow">
-      <h2 className="text-2xl font-bold mb-4">Thêm Coupon Mới</h2>
+      <h2 className="text-2xl font-bold mb-4">Cập nhật Coupon</h2>
       <form onSubmit={handleSubmit} className="space-y-4">
         {[
           ["name", "Tên coupon"],
@@ -51,7 +47,7 @@ const AddCoupon = () => {
           ["description", "Mô tả"],
           ["applicableProductNames", "Áp dụng cho sản phẩm"],
           ["code", "Mã giảm giá"],
-          ["category", "Loại coupon (new-user, general...)"],
+          ["category", "Loại coupon"],
         ].map(([field, label]) => (
           <div key={field}>
             <label className="block font-medium">{label}</label>
@@ -99,13 +95,13 @@ const AddCoupon = () => {
 
         <button
           type="submit"
-          className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
+          className="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700"
         >
-          Thêm coupon
+          Cập nhật coupon
         </button>
       </form>
     </div>
   );
 };
 
-export default AddCoupon;
+export default EditVoucher;

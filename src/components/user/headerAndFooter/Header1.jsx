@@ -72,7 +72,7 @@ const Header = () => {
                     <li onClick={()=>   navigate(`/profile/${user.id}`)} className="text-sm hover:text-black cursor-pointer inter text-gray-500 px-6 ">Profile</li>
                     <li onClick={()=> navigate(`/orders`)} className="text-sm hover:text-black cursor-pointer inter text-gray-500 px-6 ">Orders</li>
                     <li onClick={()=> navigate(`/wishlist`)} className="text-sm hover:text-black cursor-pointer inter text-gray-500 px-6 ">Favourites</li>
-                    <li  onClick={()=> navigate(`/coupons`)} className="text-sm hover:text-black cursor-pointer inter text-gray-500 px-6 ">Coupons</li>
+                    <li  onClick={()=> navigate(`/vouchers`)} className="text-sm hover:text-black cursor-pointer inter text-gray-500 px-6 ">Vouchers</li>
                     <li className="text-sm hover:text-black cursor-pointer inter text-gray-500 px-6 ">Experiences</li>
                     <li className="text-sm hover:text-black cursor-pointer inter text-gray-500 px-6 ">Account Settings</li>
                     <li onClick={logout} className="text-sm hover:text-black cursor-pointer inter text-gray-500 px-6 ">Logout</li>

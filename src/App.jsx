@@ -22,9 +22,9 @@ import Profile from "./pages/user/Profile";
 import Order from "./pages/user/Order";
 import SearchPage from "./pages/user/SearchPage";
 import Setting from "./pages/user/Setting";
-import CouponList from "./pages/admin/coupon/CouponList"
-import EditCoupon from "./pages/admin/coupon/EditCoupon";
-import AddCoupon from "./pages/admin/coupon/AddCoupon";
+import VoucherList from "./pages/admin/voucher/VoucherList"
+import EditVoucher from "./pages/admin/voucher/EditVoucher";
+import AddVoucher from "./pages/admin/voucher/AddVoucher";
 import AccountList from "./pages/admin/account/AccountList";
 import AdminDashboard from "./pages/admin/AdminDashboard";
 import { Navigate } from "react-router-dom";
@@ -34,7 +34,8 @@ import { useAuth } from "./hooks/useAuth";
 import OrderStatusList from "./pages/admin/orderStatus/OrderStatusList";
 import OrderStatusAdd from "./pages/admin/orderStatus/OrderStatusAdd";
 import OrderStatusUpdate from "./pages/admin/orderStatus/OrderStatusUpdate";
-import Coupons from "./pages/user/Coupons";
+import Vouchers from "./pages/user/Vouchers";
+import OrderList from "./pages/admin/order/OrderList";
 
 const AppRoutes = () => {
   const { user, loading } = useAuth();
@@ -54,9 +55,14 @@ const AppRoutes = () => {
             <Route path="categories/add" element={<AddCategory />} />
             <Route path="categories/edit/:id" element={<EditCategory />} />
             <Route path="categories/view/:id" element={<CategoryDetail />} />
-            <Route path="coupons/list" element={<CouponList />} />
-            <Route path="coupons/add" element={<AddCoupon />} />
-            <Route path="coupons/edit/:id" element={<EditCoupon />} />
+           
+            <Route path="orders/list" element={<OrderList />} />
+
+
+            <Route path="vouchers/list" element={<VoucherList />} />
+            <Route path="vouchers/add" element={<AddVoucher />} />
+            <Route path="vouchers/edit/:id" element={<EditVoucher />} />
+           
             <Route path="account/list" element={<AccountList />} />
             <Route path="decentralization/list" element={<DecentralizationList />} />
              <Route path="order-status/list" element={<OrderStatusList />} />
@@ -74,7 +80,7 @@ const AppRoutes = () => {
         <Route path="login" element={<Login />} />
         <Route path="register" element={<Register />} />
         <Route path="checkout" element={<Checkout />} />
-        <Route path="coupons" element={<Coupons />} />
+        <Route path="vouchers" element={<Vouchers />} />
         <Route path="wishlist" element={<Wishlist />} />
         <Route path="profile/:id" element={<Profile />} />
         <Route path="orders" element={<Order />} />

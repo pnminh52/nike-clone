@@ -22,7 +22,6 @@ const CommentTab = ({ comments, onClose }) => {
               <div className="flex justify-center text-center  mt-5">
              <div>
              <p className="inter text-lg ">  All comment ({comments.length})</p>
-             <p className="text-gray-300 text-sm">This is the content text</p>
              </div>
               </div>
         <div className="space-y-8 py-4">

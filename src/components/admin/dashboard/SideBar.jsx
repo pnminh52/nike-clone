@@ -9,12 +9,11 @@ const SideBar = () => {
   const menuItems = [
     { name: 'Dashboard', path: '/admin/dashboard/' },
     { name: 'Product', path: '/admin/dashboard/products/list' },
-    { name: 'Voucher', path: '/admin/dashboard/coupons/list' },
+    { name: 'Voucher', path: '/admin/dashboard/vouchers/list' },
     { name: 'Acoount', path: '/admin/dashboard/account/list' },
     { name: 'Comment', path: '/admin/dashboard/comment/list' },
     { name: 'Category', path: '/admin/dashboard/category/list' },
     { name: 'Order', path: '/admin/dashboard/order/list' },
-    { name: 'Slide', path: '/admin/dashboard/slide/featured/list' },
     { name: 'Decentralization', path: '/admin/dashboard/decentralization/list' },
     { name: 'Order Status', path: '/admin/dashboard/order-status/list' },
   ];

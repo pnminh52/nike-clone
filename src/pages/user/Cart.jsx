@@ -5,15 +5,13 @@ import { useAuth } from "../../hooks/useAuth";
 import Bag from "./../../components/user/cart/Bag";
 import { useCart } from "../../hooks/useCart";
 import Summary from "../../components/user/cart/Summary";
-import { useWish } from "../../hooks/useWish";
 import { Link } from "react-router-dom";
 
 const Cart = ({}) => {
   const [loading, setLoading] = useState(true);
   const { user } = useAuth();
-  const { cart, addToCart } = useCart();
-  const { removeFromWishlist } = useWish();
-  const [selectedItems, setSelectedItems] = useState([]);
+  const { cart } = useCart();
+
 
   const formatPrice = (price) => {
     return Number(price)
@@ -70,10 +68,6 @@ const Cart = ({}) => {
                   />
                 </div>
               </div>
-
-              {/* <div className="w-full">
-                                <FavouritesItem user={user} cart={cart} addToCart={addToCart} formatPrice={formatPrice} removeFromWishlist={removeFromWishlist} />
-                            </div> */}
             </div>
           </div>
         )}
