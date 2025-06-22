@@ -121,7 +121,7 @@ ${isMenuOpen ? "translate-x-0" : "translate-x-full"}`}
                                        >
                                                 <p className="inter ">
                                                     {" "}
-                                                    Hi, {user.lastname}
+                                                    Hi, {user.firstname} {user.lastname}
                                                 </p>
                                             </Link>
                                         ) : (

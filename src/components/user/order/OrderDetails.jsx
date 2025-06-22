@@ -47,20 +47,28 @@ const OrderDetails = ({ order, onClose, onUpdateStatus }) => {
   
 
   return (
-    <div className="fixed inset-0 bg-black/40 flex justify-center items-center">
-      <div className="bg-white p-4 w-[700px] rounded-4xl relative">
-        <button
-          onClick={onClose}
-          className="absolute top-2 right-2 text-lg font-bold"
-        >
-          ×
-        </button>
-        <h2 className="text-xl font-bold mb-4">
-          Order Details #{order.id}
-        </h2>
+    <div className="fixed inset-0 bg-black/40 flex justify-center items-center z-50">
+      <div className="bg-white p-4  w-full h-full  relative">
+      <div className="absolute top-4 right-4">
+  <button
+    onClick={onClose}
+    type="button"
+    className="w-8 h-8 cursor-pointer bg-gray-200 rounded-full flex items-center justify-center"
+  >
+    <svg viewBox="0 0 24 24" fill="none">
+      <path d="M7 17L16.8995 7.10051" stroke="#000000" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M7 7.00001L16.8995 16.8995" stroke="#000000" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  </button>
+</div>
+      
+       
+        <div className="flex justify-center text-center mt-5">
+  <p className="text-2xl font-semibold"> Order Details</p>
+</div>
 
         {/* Progress Bar */}
-        <div className="mt-4">
+        {/* <div className="mt-4">
           <p className="font-semibold mb-1">Order Progress:</p>
           <div className="w-full bg-gray-200 h-2 rounded-full overflow-hidden">
             <div
@@ -89,9 +97,9 @@ const OrderDetails = ({ order, onClose, onUpdateStatus }) => {
             <span>Shipping</span>
             <span>{order.status === "Cancelled" ? "Cancelled" : "Completed"}</span>
           </div>
-        </div>
+        </div> */}
 
-        <p className="mb-2">Order Date: {new Date(order.date).toLocaleString()}</p>
+        <p className="px-4 py-2">Order Date: {new Date(order.date).toLocaleString()}</p>
 
         <div className="mb-4">
           <p className="font-semibold">Products:</p>
@@ -115,7 +123,7 @@ const OrderDetails = ({ order, onClose, onUpdateStatus }) => {
         {order.status !== "Cancelled" && !isCancelling && (
           <button
             onClick={() => setIsCancelling(true)}
-            className="mt-4 bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600"
+            className="mt-4 bg-red-500 text-white py-2 w-full rounded-full hover:bg-red-600"
           >
             Cancel Order
           </button>

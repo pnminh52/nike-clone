@@ -12,7 +12,7 @@ const Login = () => {
   const [error, setError]=useState('')
   const [touched, setTouched] = useState(false);
   const { successToast, errorToast, warningToast } = useToast();
-  const API_URL = "https://nikejsonserver-2.onrender.com";
+  const API_URL = "http://localhost:3000";
 
 
   const navigate = useNavigate();

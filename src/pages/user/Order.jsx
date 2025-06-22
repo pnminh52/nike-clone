@@ -4,6 +4,7 @@ import OrderDetails from "../../components/user/order/OrderDetails";
 import axios from "axios";
 import Pagination from "../../components/user/etc/Pagination";
 import { Link } from "react-router-dom";
+import CardOrders from './../../components/user/order/CardOrders';
 
 const Order = () => {
   const { user } = useAuth();
@@ -12,6 +13,7 @@ const Order = () => {
   const [selectedItems, setSelectedItems] = useState([]);
   const [selectedOrder, setSelectedOrder] = useState(null);
   const [refreshFlag, setRefreshFlag] = useState(false);
+
 
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 5;
@@ -27,15 +29,6 @@ const Order = () => {
   const allItems = orders.flatMap((order) => order.items);
   const allChecked = selectedItems.length === allItems.length;
 
-  const handleCheckAll = () => {
-    setSelectedItems(allChecked ? [] : allItems.map((item) => item.id));
-  };
-
-  const handleCheckItem = (id) => {
-    setSelectedItems((prev) =>
-      prev.includes(id) ? prev.filter((i) => i !== id) : [...prev, id]
-    );
-  };
 
   useEffect(() => {
     const handleClickOutside = (e) => {
@@ -81,68 +74,34 @@ const Order = () => {
   }
 
   return (
-    <div className="max-w-screen-2xl mx-auto px-0">
+    <div className="max-w-screen-2xl mx-auto px-0 sm:px-10">
               <h2 className="text-2xl  px-6 sm:px-0 py-5">Orders</h2>
               <div className="h-16   items-center flex px-6 justify-between border-t border-b border-gray-300">
                 <p>{orders.length} Items</p>
-                <button>sdsd</button>
+              <button className='flex gap-1 items-center px-4 py-1 border rounded-full border-gray-300 cursor-pointer'
+      >
+       Filters
+        <svg
+          aria-hidden="true"
+          className="icon-filter-ds"
+          focusable="false"
+          viewBox="0 0 24 24"
+          role="img"
+          width="24px"
+          height="24px"
+          fill="none"
+        >
+          <path stroke="currentColor" strokeWidth="1.5" d="M21 8.25H10m-5.25 0H3"></path>
+          <path stroke="currentColor" strokeWidth="1.5" d="M7.5 6v0a2.25 2.25 0 100 4.5 2.25 2.25 0 000-4.5z" clipRule="evenodd"></path>
+          <path stroke="currentColor" strokeWidth="1.5" d="M3 15.75h10.75m5 0H21"></path>
+          <path stroke="currentColor" strokeWidth="1.5" d="M16.5 13.5v0a2.25 2.25 0 100 4.5 2.25 2.25 0 000-4.5z" clipRule="evenodd"></path>
+        </svg></button>
 
               </div>
-{/* Danh sách đơn hàng */}
-<div className="divide-y border-b">
-  {paginated.map((order) => (
-    <div key={order.id} className="p-6 hover:bg-gray-50">
-      <div className="flex justify-between items-start">
-        <div>
-          <p className="font-semibold">Order ID: #{order.id}</p>
-          <p className="text-sm text-gray-500">Date: {new Date(order.date).toLocaleString()}</p>
-          <p className="text-sm text-gray-500">Status: <span className="font-medium">{order.status}</span></p>
-          <p className="text-sm text-gray-500">Total: {(order.totalPrice + order.shippingFee).toLocaleString()} VND</p>
-        </div>
-        <div className="flex gap-4 items-center">
-          <button
-            onClick={() => setSelectedOrder(order)}
-            className="text-blue-600 underline"
-          >
-            View Details
-          </button>
-          <input
-            type="checkbox"
-            checked={order.items.every((item) => selectedItems.includes(item.id))}
-            onChange={() => {
-              const allIds = order.items.map((item) => item.id);
-              const allSelected = allIds.every((id) => selectedItems.includes(id));
-              if (allSelected) {
-                setSelectedItems((prev) => prev.filter((id) => !allIds.includes(id)));
-              } else {
-                setSelectedItems((prev) => [...new Set([...prev, ...allIds])]);
-              }
-            }}
-          />
-        </div>
-      </div>
-
-      {/* Danh sách sản phẩm trong đơn */}
-      <div className="mt-3 grid gap-2">
-        {order.items.map((item) => (
-          <div key={item.id} className="flex items-center gap-4 p-2 border rounded-md">
-            <img src={item.img} alt={item.name} className="w-16 h-16 object-cover" />
-            <div className="flex-1">
-              <p className="font-medium">{item.name}</p>
-              <p className="text-sm text-gray-500">Size: {item.size} | Qty: {item.quantity}</p>
-              <p className="text-sm text-gray-500">Price: {parseInt(item.price_sale || item.price).toLocaleString()} VND</p>
-            </div>
-            <input
-              type="checkbox"
-              checked={selectedItems.includes(item.id)}
-              onChange={() => handleCheckItem(item.id)}
-            />
-          </div>
-        ))}
-      </div>
-    </div>
-  ))}
-</div>
+<CardOrders  orders={paginated}
+  selectedItems={selectedItems}
+  setSelectedItems={setSelectedItems}
+  setSelectedOrder={setSelectedOrder}/>
 
 
 

@@ -105,32 +105,41 @@ const Setting = () => {
   }
 
   return (
-    <div className='max-w-screen-2xl px-20 py-10 mx-auto'>
-        <p className='text-2xl '>Settings</p>
-      <div className='flex'>
-        <div className='w-1/3  p-6'>
-          <ul className='space-y-4'>
-            {tabs.map((item) => (
-              <li key={item.path}>
-                <NavLink
-                  to={`/setting/${item.path}`}
-                  className={({ isActive }) =>
-                    `flex items-center gap-2 ${isActive ? '' : ''}`
-                  }
-                >
-                  {item.svg}
-                  {item.label}
-                </NavLink>
-              </li>
-            ))}
-          </ul>
-        </div>
+    <div className="max-w-screen-2xl mx-auto px-0 sm:px-10">
+      <div className='border-b border-gray-300'>
+      <h2 className="text-2xl px-6 sm:px-0 py-5 ">Settings</h2>
 
-        <div className='w-[38%]  p-6'>
-          {renderContent()}
-        </div>
+      </div>
+  
+    <div className="flex flex-col sm:flex-row">
+      {/* Tab bar */}
+      <div className="w-full sm:w-1/3 p-4 sm:p-6 border-b sm:border-b-0 sm:border-r border-gray-300">
+        <ul className="flex sm:flex-col overflow-x-auto sm:overflow-visible gap-4 sm:gap-6 whitespace-nowrap">
+          {tabs.map((item) => (
+            <li key={item.path} className="shrink-0">
+              <NavLink
+                to={`/setting/${item.path}`}
+                className={({ isActive }) =>
+                  `flex items-center gap-1 inter px-2 py-1 rounded-md ${
+                    isActive ? ' text-black ' : 'text-gray-400 '
+                  }`
+                }
+              >
+                {item.svg}
+                <span className="text-sm">{item.label}</span>
+              </NavLink>
+            </li>
+          ))}
+        </ul>
+      </div>
+  
+      {/* Content */}
+      <div className="w-full sm:w-[67%] p-4 sm:p-6">
+        {renderContent()}
       </div>
     </div>
+  </div>
+  
   )
 }
 

@@ -42,8 +42,8 @@ const VoucherPopup = ({ setShowPopup, userId, total, onApply }) => {
   </button>
 </div>
 
-<div className="flex justify-center text-center mt-5">
-  <p className="text-2xl font-semibold">Vouchers</p>
+<div className="flex justify-center text-center mt-10">
+  
 </div>
 
 {loading ? (
@@ -170,10 +170,8 @@ const VoucherPopup = ({ setShowPopup, userId, total, onApply }) => {
                 </svg>
               </button>
             </div>
-            <div className="flex justify-center text-center  mt-5">
-              <div>
-                <p className="inter text-xl "> Vouchers </p>
-              </div>
+            <div className="flex justify-center text-center  mt-12">
+             
             </div>
 
             {loading ? (

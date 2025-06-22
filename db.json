@@ -1931,478 +1931,28 @@
       "coupons": []
     },
     {
-      "id": "6c69",
-      "firstname": "Phạm",
-      "lastname": "Nhật Minh",
-      "interest": [
-        {
-          "id": "1",
-          "img": "https://static.nike.com/a-test/images/t_default,w_240/ffc876a9-e9b8-4306-a76c-0763bf88fd5c/image.jpg",
-          "name": "Basketball",
-          "category": "Sports"
-        },
-        {
-          "id": "2",
-          "img": "https://static.nike.com/a-test/images/t_default,w_240/d5652cd1-79cb-4b89-9b00-ae8b24608a0a/image.jpg",
-          "name": "Cross Training",
-          "category": "Sports"
-        },
-        {
-          "id": "3",
-          "img": "https://static.nike.com/a/images/f_auto,q_auto:eco,w_240/8b8d5d22-6b2e-4bab-a48b-fd3f1d96181f/image.jpg",
-          "name": "Dance",
-          "category": "Sports"
-        },
-        {
-          "id": "asabskjasj",
-          "img": "https://static.nike.com/a/images/f_auto,q_auto:eco,w_240/a371b73f-d8b4-4da1-8afb-c61f67b456af/image.jpg",
-          "name": "Air Force 1",
-          "category": "Products"
-        },
-        {
-          "id": "sas1662",
-          "img": "https://static.nike.com/a/images/f_auto,q_auto:eco,w_240/9fb4cb0e-a482-47c1-a0ea-9dd92d3061dc/image.jpg",
-          "name": "Air Max",
-          "category": "Products"
-        },
-        {
-          "id": "4t34",
-          "img": "https://static.nike.com/a-test/images/t_default,w_240/d37379ed-9155-46b8-a71d-5a716ad4b93e/image.jpg",
-          "name": "Big & Tall",
-          "category": "Products"
-        }
-      ],
-      "phone": "0934557882",
-      "district": "Số 1 Đại Cồ Việt, Phường Bách Khoa, Quận Hai Bà Trưng, Hà Nội",
-      "address": "Hồ Chí Minh",
-      "shippingFeeByAddress": 30000,
-      "email": "D@gmail.com",
+      "id": "d56b",
+      "firstname": "Đoàn Tiểu",
+      "lastname": "Ân",
+      "phone": "0942882225",
+      "address": "Bến Tre",
+      "district": "Tầng 6, Tòa nhà Ladeco, 266 Đội Cấn, phường Liễu Giai, quận Ba Đình, Hà Nội.",
+      "email": "DTA@gmail.com",
       "password": "111111Aa",
       "country": "Vietnam",
       "extraAddresses": [],
+      "shippingFeeByAddress": 15000,
       "accountStatus": "Active",
-      "cart": [],
-      "orders": [
+      "cart": [
         {
-          "id": 1750479863125,
-          "items": [
-            {
-              "id": "7ey27e",
-              "technology": "Nike ReactX",
-              "position": 1,
-              "isDefault": "true",
-              "name": "Nike Air Max Koko",
-              "stock": 48,
-              "height": "Low Top",
-              "shoesFor": "Sandals, Slides & Flip Flops",
-              "class": "Sandal",
-              "brand": "Nike",
-              "features": "Side vents",
-              "giftPoint": 300,
-              "type": "Women's Sandal",
-              "price": "2929000",
-              "price_sale": "2800000",
-              "des": "Heat up the streets in the Nike Air Max Koko Sandal. Designed for women, this pinnacle platform height sandal adds a splash of colourful Air in the heel. The thick, layered foam midsole provides a smooth and flexible ride. Premium details on the upper add texture and dimension to elevate your look.",
-              "img": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/beedbc3a-9343-4b69-ada4-d42a144bd667/WMNS+AIR+MAX+KOKO+SANDAL.png",
-              "page": "New & Featured",
-              "category": "New & Upcoming Drops",
-              "status": "Just In",
-              "customer": "Women",
-              "sizes": [
-                "31",
-                "32",
-                "33",
-                "34",
-                "37",
-                "35",
-                "36",
-                "38"
-              ],
-              "gender": "Women",
-              "color": [
-                "Sail",
-                "Black"
-              ],
-              "style": "CI8798-102",
-              "country": "Vietnam",
-              "additionalImages": [
-                "https://shortformvideo.nike.com/a/videos/d1a9fdf0-59cb-4602-9d52-7c1520ed843a/video.mp4",
-                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/7c175861-58fb-4bca-9f41-52038884f17d/WMNS+AIR+MAX+KOKO+SANDAL.png",
-                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/10a844e6-d0dd-48c2-8b31-a628e8503750/WMNS+AIR+MAX+KOKO+SANDAL.png",
-                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/360abf08-4bd6-4cb3-8a6a-e7cedc36ff48/WMNS+AIR+MAX+KOKO+SANDAL.png",
-                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/02564fb7-a98a-4dc2-957e-50782cc38bc7/WMNS+AIR+MAX+KOKO+SANDAL.png",
-                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/b8fded87-fc17-43ac-be4c-ff24a833aab7/WMNS+AIR+MAX+KOKO+SANDAL.png",
-                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/eab743a0-d15d-42d5-bfa6-3b4ff356ec4e/WMNS+AIR+MAX+KOKO+SANDAL.png",
-                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/d0596b4b-3b75-4c48-8a10-ca251866bbdf/WMNS+AIR+MAX+KOKO+SANDAL.png",
-                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/cab5f997-485c-428a-ad4f-49f0d2cd28fa/WMNS+AIR+MAX+KOKO+SANDAL.png",
-                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/4338c7cb-a534-4b34-a7bf-a8f4f8db51d9/WMNS+AIR+MAX+KOKO+SANDAL.png",
-                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/deea3708-04f5-41b7-8a59-e07a2d866d81/WMNS+AIR+MAX+KOKO+SANDAL.png"
-              ],
-              "featured": [
-                {
-                  "title": "Next-level fashion and innovation.",
-                  "content": "Heat up the streets in the Nike Air Max Koko Sandal. Designed for women, this pinnacle platform height sandal adds a splash of colourful Air in the heel. The thick, layered foam midsole provides a smooth and flexible ride. Premium details on the upper add texture and dimension to elevate your look."
-                }
-              ],
-              "moreBenefit": [
-                "The Nike Air cushioning in the heel feels comfortable and adds coveted Air Max style.",
-                "The layered midsole feels soft and delivers underfoot cushioning while its raised height adds a sporty, summertime look.",
-                "The speed lacing system adds a playful look while making it easy to put them on and take them off.",
-                "Textile upper feels soft and comfortable with or without socks."
-              ],
-              "notes": [],
-              "size": 35,
-              "quantity": 1
-            },
-            {
-              "id": "ryt7",
-              "name": "Nike Downshifter 13",
-              "technology": "Nike Flyknit",
-              "material": "Sustainable Materials",
-              "position": 1,
-              "stock": 99,
-              "brand": "Nike",
-              "type": "Road Running Shoes",
-              "class": "Shoes",
-              "price": "2069000",
-              "isDefault": "true",
-              "price_sale": "1655199",
-              "des": "Whether you're starting your running journey or an expert eager to switch up your pace, the Downshifter 13 is down for the ride. With a revamped upper, cushioning and durability, it helps you find that extra gear or take that first stride towards chasing down your goals.",
-              "img": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/a04bbb70-12cb-4ee7-b5b4-277029e6ba53/NIKE+DOWNSHIFTER+13.png",
-              "page": "New & Featured",
-              "category": "New & Upcoming Drops",
-              "status": "Just In",
-              "customer": "Men",
-              "sizes": [
-                "32",
-                "33",
-                "34",
-                "41",
-                "37",
-                "35"
-              ],
-              "gender": "Men",
-              "color": [
-                "Gym Red",
-                "Light Crimson",
-                "Hyper Crimson",
-                "Black"
-              ],
-              "style": "FD6454-600",
-              "country": "Indonesia",
-              "additionalImages": [
-                "https://shortformvideo.nike.com/a/videos/505c17a0-d711-40d9-b854-0380c84d5b6f/video.mp4",
-                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/8d7fb5a6-ba3c-43f9-bf93-354a264a135a/NIKE+DOWNSHIFTER+13.png",
-                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/019378c1-af02-4de6-80d5-2f835a12b8ea/NIKE+DOWNSHIFTER+13.png",
-                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/daeb2b02-42c6-4a05-ba33-c6da184b7507/NIKE+DOWNSHIFTER+13.png",
-                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/68a59a3f-275a-4adc-a71e-77b4bdf34cb2/NIKE+DOWNSHIFTER+13.png",
-                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/b1a2766e-7c52-4838-8853-63707a5cd044/NIKE+DOWNSHIFTER+13.png",
-                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/a2d2b8f1-118f-4764-a3d1-938e487f35cd/NIKE+DOWNSHIFTER+13.png",
-                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/ba58feaa-a228-480a-9279-f2e2ef701fcc/NIKE+DOWNSHIFTER+13.png"
-              ],
-              "size": 32,
-              "quantity": 1
-            },
-            {
-              "id": "dhf4",
-              "name": "Nike Zoom Fly 6",
-              "technology": "Nike Flywire",
-              "giftPoint": 300,
-              "stock": 100,
-              "class": "Shoes",
-              "type": "Road Racing Shoes",
-              "price": "5500000",
-              "price_sale": "4999000",
-              "des": "The Zoom Fly 6 is with you every step of your run. Lighter than the Zoom Fly 5, its responsive ZoomX foam adds energy return to each stride, while a carbon-fibre plate helps propel you to the finishing line.",
-              "img": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/5409a587-52c1-4c3f-9ab5-19ec844ce37d/W+ZOOM+FLY+6.png",
-              "page": "New & Featured",
-              "category": "New & Upcoming Drops",
-              "status": "Just In",
-              "customer": "Women",
-              "sizes": [
-                "31",
-                "32",
-                "33",
-                "34",
-                "40",
-                "37",
-                "35",
-                "36",
-                "38",
-                "39",
-                "41"
-              ],
-              "gender": "Women",
-              "color": [
-                "Ghost",
-                "Football Grey",
-                "Blue Lightning",
-                "Blue Void"
-              ],
-              "style": "FN8455-004",
-              "country": "Vietnam",
-              "additionalImages": [
-                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/81da99b9-d9d4-4c81-804a-66592ad68d82/W+ZOOM+FLY+6.png",
-                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/41957cbd-bfc5-4bd4-b06d-96231e6dfe63/W+ZOOM+FLY+6.png",
-                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/52df6f74-1ca0-479b-8e3c-478440c5105a/W+ZOOM+FLY+6.png",
-                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/5be571ea-ed2b-4e70-9cf8-e1583abc5741/W+ZOOM+FLY+6.png",
-                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/81fd1d66-c725-4c5b-8ffb-5ca75cd970a1/W+ZOOM+FLY+6.png",
-                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/5e561b49-7128-448f-94ec-f2f61684a535/W+ZOOM+FLY+6.png",
-                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/96d62b08-316b-4c83-a0fb-2e6e2b4d4ef9/W+ZOOM+FLY+6.png",
-                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/84486e1d-1ec9-44b5-887c-7c459c6ac803/W+ZOOM+FLY+6.png"
-              ],
-              "size": 41,
-              "quantity": 1
-            }
-          ],
-          "date": "2025-06-21T04:24:23.125Z",
-          "status": "Pending",
-          "shippingFee": 30000,
-          "totalPrice": 10528000
-        }
-      ],
-      "point": 2000,
-      "totalOrder": 11,
-      "dateOfBirth": "",
-      "customerType": "Standard",
-      "role": "User",
-      "avatar": "",
-      "createdAt": "2025-05-15T18:22:29.875Z",
-      "vouchers": [
-        {
-          "id": "c1",
-          "category": "new-user",
-          "name": "50K Voucher",
-          "image": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/b4f20f67-6cd6-4f8e-8e1c-41ccf6d9de08/GiftCard.png",
-          "description": "Get 50K off on your first order",
-          "discountType": "amount",
-          "value": 50000,
-          "stock": 99,
-          "code": "WELCOME50",
-          "expiryDate": "2044-12-12",
-          "numberOfExpiryDate": 40,
-          "minOrderValue": 5000000,
-          "pointToExchange": 1000
-        },
-        {
-          "id": "c2",
-          "category": "event",
-          "name": "10% Voucher",
-          "image": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/cee4b3b4-ef04-4348-966b-a857c9a185fc/GiftCard.png",
-          "description": "Get 10% off on your first order",
-          "discountType": "percent",
-          "value": 10,
-          "stock": 20,
-          "code": "EVENT10",
-          "expiryDate": "2044-12-12",
-          "numberOfExpiryDate": 40,
-          "minOrderValue": 9000000,
-          "pointToExchange": 800
-        },
-        {
-          "id": "c3",
-          "category": "new-user",
-          "name": "100K Voucher",
-          "image": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/2daa05f6-b7bd-4227-81d1-02c7730dbc7c/GiftCard.png",
-          "description": "Get 100K off on your first order",
-          "discountType": "amount",
-          "value": 100000,
-          "stock": 7,
-          "code": "WELCOME100",
-          "numberOfExpiryDate": 10,
-          "expiryDate": "2004-12-12",
-          "minOrderValue": 9000000,
-          "pointToExchange": 2000
-        },
-        {
-          "id": "c4",
-          "category": "new-user",
-          "name": "120K Voucher",
-          "image": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/2c3b1a83-6cd4-4785-aeda-10fd6f856108/GiftCard.png",
-          "description": "Get 120K off on your first order",
-          "discountType": "amount",
-          "value": 120000,
-          "stock": 39,
-          "code": "WELCOME120",
-          "numberOfExpiryDate": 60,
-          "expiryDate": "2025-06-20",
-          "minOrderValue": 5000000,
-          "pointToExchange": 2500
-        },
-        {
-          "id": "c5",
-          "category": "new-user",
-          "name": "15% Voucher",
-          "image": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/daf1717e-dd3b-4855-abfb-96f2bd13e08e/GiftCard.png",
-          "description": "Get 15% off on your first order",
-          "discountType": "percent",
-          "value": 15,
-          "stock": 12,
-          "code": "WELCOME15",
-          "numberOfExpiryDate": 60,
-          "expiryDate": "2034-12-12",
-          "minOrderValue": 7000000,
-          "pointToExchange": 1500
-        },
-        {
-          "id": "c6",
-          "category": "new-user",
-          "name": "8% Voucher",
-          "image": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/05e97ef6-ecd9-416e-ae66-bf2e91256a9c/GiftCard.png",
-          "description": "Get 8% off on your first order",
-          "discountType": "percent",
-          "value": 8,
-          "stock": 23,
-          "code": "ahahaha",
-          "numberOfExpiryDate": 60,
-          "expiryDate": "2034-12-12",
-          "minOrderValue": 5000000,
-          "pointToExchange": 1200
-        }
-      ],
-      "wishlist": [
-        {
-          "id": "dhf4",
-          "name": "Nike Zoom Fly 6",
-          "technology": "Nike Flywire",
-          "giftPoint": 300,
-          "stock": 100,
-          "class": "Shoes",
-          "type": "Road Racing Shoes",
-          "price": "5500000",
-          "price_sale": "4999000",
-          "des": "The Zoom Fly 6 is with you every step of your run. Lighter than the Zoom Fly 5, its responsive ZoomX foam adds energy return to each stride, while a carbon-fibre plate helps propel you to the finishing line.",
-          "img": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/5409a587-52c1-4c3f-9ab5-19ec844ce37d/W+ZOOM+FLY+6.png",
-          "page": "New & Featured",
-          "category": "New & Upcoming Drops",
-          "status": "Just In",
-          "customer": "Women",
-          "sizes": [
-            "31",
-            "32",
-            "33",
-            "34",
-            "40",
-            "37",
-            "35",
-            "36",
-            "38",
-            "39",
-            "41"
-          ],
-          "gender": "Women",
-          "color": [
-            "Ghost",
-            "Football Grey",
-            "Blue Lightning",
-            "Blue Void"
-          ],
-          "style": "FN8455-004",
-          "country": "Vietnam",
-          "additionalImages": [
-            "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/81da99b9-d9d4-4c81-804a-66592ad68d82/W+ZOOM+FLY+6.png",
-            "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/41957cbd-bfc5-4bd4-b06d-96231e6dfe63/W+ZOOM+FLY+6.png",
-            "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/52df6f74-1ca0-479b-8e3c-478440c5105a/W+ZOOM+FLY+6.png",
-            "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/5be571ea-ed2b-4e70-9cf8-e1583abc5741/W+ZOOM+FLY+6.png",
-            "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/81fd1d66-c725-4c5b-8ffb-5ca75cd970a1/W+ZOOM+FLY+6.png",
-            "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/5e561b49-7128-448f-94ec-f2f61684a535/W+ZOOM+FLY+6.png",
-            "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/96d62b08-316b-4c83-a0fb-2e6e2b4d4ef9/W+ZOOM+FLY+6.png",
-            "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/84486e1d-1ec9-44b5-887c-7c459c6ac803/W+ZOOM+FLY+6.png"
-          ],
-          "usedVoucher": null,
-          "size": 36,
-          "quantity": 1
-        },
-        {
-          "id": "k59t",
+          "id": "7ey27e",
+          "technology": "Nike ReactX",
           "position": 1,
-          "name": "Jordan Heir Series PF Bloodline",
-          "technology": "NikeEasyOn",
           "isDefault": "true",
-          "height": "Mid Top",
-          "shoesFor": "Jordan",
-          "stock": 50,
-          "class": "Shoes",
-          "brand": "Jordan",
-          "features": "Side vents",
-          "giftPoint": 300,
-          "type": "Basketball Shoes",
-          "price": "3239000",
-          "price_sale": "3000000",
-          "des": "Looking to ignite your competitive edge? Cue the Jordan Heir. Crafted with insights from women basketball players, these shoes are all about helping you play shifty and stay low to the ground. A drop-in midsole helps give you extra mobility, while a built-in cage provides a fit that contours to your foot for added support as you move from side to side. So run and cut in confidence. You're the game's main character, after all.",
-          "img": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/cd574ae5-e1e7-4695-acbb-46ca9a48ef51/JORDAN+HEIR+SERIES+PF.png",
-          "page": "New & Featured",
-          "category": "New & Upcoming Drops",
-          "status": "Just In",
-          "customer": "Men",
-          "sizes": [
-            "31",
-            "32",
-            "33",
-            "34",
-            "40",
-            "37",
-            "35",
-            "36",
-            "38",
-            "39",
-            "41",
-            "42",
-            "43"
-          ],
-          "gender": "Men",
-          "color": [
-            "Sail",
-            "Volt",
-            "Black"
-          ],
-          "style": "FQ3859-107",
-          "country": "Vietnam",
-          "additionalImages": [
-            "https://shortformvideo.nike.com/a/videos/372e0fa7-3dfb-462d-916b-a339a915054e/video.mp4",
-            "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/768a256d-9d54-417b-bf4b-273c57e78fa8/JORDAN+HEIR+SERIES+PF.png",
-            "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/b158c400-113f-406c-a8a9-9c634cb895e1/JORDAN+HEIR+SERIES+PF.png",
-            "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/87e4a86f-627f-49a7-a23e-8ca04c773f99/JORDAN+HEIR+SERIES+PF.png",
-            "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/afeee5ca-6757-4a9c-8f6d-4c0e0974e6d1/JORDAN+HEIR+SERIES+PF.png",
-            "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/cfd9f0c8-3af9-4d95-a6e6-1bfcc13d965a/JORDAN+HEIR+SERIES+PF.png",
-            "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/882ea26d-edc9-47b4-96ee-16cabee65607/JORDAN+HEIR+SERIES+PF.png",
-            "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/68caf950-44e3-4827-85c7-73f7505ebfb9/JORDAN+HEIR+SERIES+PF.png",
-            "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/891fa088-06ad-4b24-bdf6-8536326a2bef/JORDAN+HEIR+SERIES+PF.png",
-            "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/40621ce8-23a9-4bfd-a205-624268a84216/JORDAN+HEIR+SERIES+PF.png"
-          ],
-          "featured": [
-            {
-              "title": "Contouring cage",
-              "content": "A built-in cage system contours to your foot to help give you the supportive fit you need when cutting across the court."
-            },
-            {
-              "title": "Drop in and work",
-              "content": "A drop-in Cushlon 3.0 foam midsole puts lightweight and responsive cushioning directly underfoot, helping with on-court mobility. It's also why the Heir is lower to the ground than any other performance basketball shoe in our collection."
-            },
-            {
-              "title": "Get a grip",
-              "content": "Rubber outsole with herringbone tread pattern helps give you the sticky traction you need to stop in an instant and shift directions."
-            }
-          ],
-          "moreBenefit": [
-            "Lightweight textiles in the upper help keep things breathable and comfortable.",
-            "Synthetic leather in the upper helps add durability."
-          ],
-          "notes": [
-            "Pull tab on heel",
-            "Rubber outsole",
-            "The PF edition is designed with a wider fit and optimised for play on outdoor courts."
-          ],
-          "usedVoucher": null,
-          "size": 33,
-          "quantity": 1
-        },
-        {
-          "id": "t4tgegv",
           "name": "Nike Air Max Koko",
+          "stock": 48,
           "height": "Low Top",
           "shoesFor": "Sandals, Slides & Flip Flops",
-          "stock": 50,
           "class": "Sandal",
           "brand": "Nike",
           "features": "Side vents",
@@ -2411,7 +1961,7 @@
           "price": "2929000",
           "price_sale": "2800000",
           "des": "Heat up the streets in the Nike Air Max Koko Sandal. Designed for women, this pinnacle platform height sandal adds a splash of colourful Air in the heel. The thick, layered foam midsole provides a smooth and flexible ride. Premium details on the upper add texture and dimension to elevate your look.",
-          "img": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/cb4b240a-e7b4-48a9-bb36-f2bbdf656d17/WMNS+AIR+MAX+KOKO+SANDAL.png",
+          "img": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/beedbc3a-9343-4b69-ada4-d42a144bd667/WMNS+AIR+MAX+KOKO+SANDAL.png",
           "page": "New & Featured",
           "category": "New & Upcoming Drops",
           "status": "Just In",
@@ -2421,25 +1971,30 @@
             "32",
             "33",
             "34",
+            "37",
             "35",
-            "36"
+            "36",
+            "38"
           ],
           "gender": "Women",
           "color": [
-            "Barely Grape",
-            "Lilac Bloom"
+            "Sail",
+            "Black"
           ],
-          "style": "CI8798-502",
+          "style": "CI8798-102",
           "country": "Vietnam",
           "additionalImages": [
-            "https://shortformvideo.nike.com/a/videos/12585229-dede-4cd4-8e70-88fe321a0082/video.mp4",
-            "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/16945374-09b4-42df-bc14-ac4c13c48e60/WMNS+AIR+MAX+KOKO+SANDAL.png",
-            "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/13699d24-c4ca-40df-9607-0d8155c9475f/WMNS+AIR+MAX+KOKO+SANDAL.png",
-            "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/31b1ce4b-b01a-490e-a3d1-af18e42c55c4/WMNS+AIR+MAX+KOKO+SANDAL.png",
-            "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/2c07efdf-725c-401a-99da-b197ce655232/WMNS+AIR+MAX+KOKO+SANDAL.png",
-            "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/38e6408d-d8f5-4aed-816a-093fbe241c2e/WMNS+AIR+MAX+KOKO+SANDAL.png",
-            "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/c5a2233f-c9bd-4e22-b90c-dee2dae119f9/WMNS+AIR+MAX+KOKO+SANDAL.png",
-            "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/d881c994-08c5-4a92-b91a-77e1cdd085fb/WMNS+AIR+MAX+KOKO+SANDAL.png"
+            "https://shortformvideo.nike.com/a/videos/d1a9fdf0-59cb-4602-9d52-7c1520ed843a/video.mp4",
+            "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/7c175861-58fb-4bca-9f41-52038884f17d/WMNS+AIR+MAX+KOKO+SANDAL.png",
+            "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/10a844e6-d0dd-48c2-8b31-a628e8503750/WMNS+AIR+MAX+KOKO+SANDAL.png",
+            "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/360abf08-4bd6-4cb3-8a6a-e7cedc36ff48/WMNS+AIR+MAX+KOKO+SANDAL.png",
+            "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/02564fb7-a98a-4dc2-957e-50782cc38bc7/WMNS+AIR+MAX+KOKO+SANDAL.png",
+            "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/b8fded87-fc17-43ac-be4c-ff24a833aab7/WMNS+AIR+MAX+KOKO+SANDAL.png",
+            "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/eab743a0-d15d-42d5-bfa6-3b4ff356ec4e/WMNS+AIR+MAX+KOKO+SANDAL.png",
+            "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/d0596b4b-3b75-4c48-8a10-ca251866bbdf/WMNS+AIR+MAX+KOKO+SANDAL.png",
+            "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/cab5f997-485c-428a-ad4f-49f0d2cd28fa/WMNS+AIR+MAX+KOKO+SANDAL.png",
+            "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/4338c7cb-a534-4b34-a7bf-a8f4f8db51d9/WMNS+AIR+MAX+KOKO+SANDAL.png",
+            "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/deea3708-04f5-41b7-8a59-e07a2d866d81/WMNS+AIR+MAX+KOKO+SANDAL.png"
           ],
           "featured": [
             {
@@ -2454,26 +2009,10 @@
             "Textile upper feels soft and comfortable with or without socks."
           ],
           "notes": [],
-          "usedVoucher": null,
-          "size": 36,
+          "size": 35,
           "quantity": 1
         }
-      ]
-    },
-    {
-      "id": "aa67",
-      "firstname": "new user",
-      "lastname": "qưqwqwqw",
-      "phone": "0934557882",
-      "address": "Hà Nội",
-      "district": "Số 1 Đại Cồ Việt, Phường Bách Khoa, Quận Hai Bà Trưng, Hà Nội",
-      "email": "newuser2@gmail.com",
-      "password": "111111Aa",
-      "country": "Vietnam",
-      "extraAddresses": [],
-      "shippingFeeByAddress": 10000,
-      "accountStatus": "Active",
-      "cart": [],
+      ],
       "interest": [],
       "orders": [],
       "point": 1000,
@@ -2482,7 +2021,7 @@
       "customerType": "New",
       "role": "User",
       "avatar": "",
-      "createdAt": "2025-06-16T00:40:40.896Z",
+      "createdAt": "2025-06-22T09:52:46.511Z",
       "vouchers": [
         {
           "id": "c1",
@@ -2492,9 +2031,10 @@
           "description": "Get 50K off on your first order",
           "discountType": "amount",
           "value": 50000,
-          "stock": 5,
+          "stock": 99,
           "code": "WELCOME50",
-          "expiryDate": "2025-06-30",
+          "expiryDate": "",
+          "numberOfExpiryDate": 40,
           "pointToExchange": 1000
         }
       ]

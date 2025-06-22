@@ -109,20 +109,20 @@ export const AuthProvider = ({ children }) => {
         role: "User",
         avatar: "",
         createdAt: new Date().toISOString(),
-        coupons: [
+        vouchers: [
           {
-            id: "c1",
-            category: "new-user",
-            name: "50K Voucher",
-            image: "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/b4f20f67-6cd6-4f8e-8e1c-41ccf6d9de08/GiftCard.png",
-            description: "Get 50K off on your first order",
-            discountType: "amount",
-            value: 50000,
-            applicableProductNames: "All",
-            stock: 5,
-            code: "WELCOME50",
-            expiryDate: "2025-06-30",
-            pointToExchange: 1000
+            "id": "c1",
+            "category": "new-user",
+            "name": "50K Voucher",
+            "image": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/b4f20f67-6cd6-4f8e-8e1c-41ccf6d9de08/GiftCard.png",
+            "description": "Get 50K off on your first order",
+            "discountType": "amount",
+            "value": 50000,
+            "stock": 99,
+            "code": "WELCOME50",
+            "expiryDate": "",
+            "numberOfExpiryDate": 40,
+            "pointToExchange": 1000
           }
         ]
       });

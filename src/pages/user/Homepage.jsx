@@ -8,8 +8,7 @@ import { useState } from "react";
 import Banner4 from './../../components/user/homepage/Banner4';
 import Banner5 from "../../components/user/homepage/Banner5";
 import Slider4 from './../../components/user/homepage/Slider4';
-import Banner6 from './../../components/user/homepage/Banner6';
-import Banner1 from './../../components/user/homepage/Banner1';
+
 
 
 const Homepage = () => {
@@ -34,8 +33,8 @@ const Homepage = () => {
     
         <Slider4 />
         
-       <div className="space-y-8">
-       <Banner6 />
+       <div className="">
+       {/* <Banner6 /> */}
 
 {/* <Slider6 /> */}
 

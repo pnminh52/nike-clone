@@ -1,8 +1,30 @@
 import React, { useState } from 'react';
 import SortForMobile from './SortForMobile';
 
-const CategoryTopBar = ({category, categoryName, filteredProductsLength, onSortChange,  forFilter,
-    setForFilter }) => {
+const CategoryTopBar = ({
+  forFilter,
+  setForFilter,
+  heightFilter,
+  setHeightFilter,
+  statusFilter,
+  setStatusFilter,
+  colorFilter,
+  setColorFilter,
+  featuresFilter,
+  setFeaturesFilter,
+  technologyFilter,
+  setTechnologyFilter,
+  brandFilter,
+  setBrandFilter,
+  genderFilter,
+  setGenderFilter,
+  isUnder1000000,
+  setIsUnder1000000,
+  category,
+  categoryName,
+  filteredProductsLength,
+  onSortChange
+}) => {
     const [sortByFilter, setSortByFilter] = useState(false);
 
     const toggleSortByFilter = () => {
@@ -111,7 +133,32 @@ const CategoryTopBar = ({category, categoryName, filteredProductsLength, onSortC
 <div className='h-16  rounded-lg items-center flex px-6 justify-between'>
 
 <p className="text-lg text-[#707072]"> {filteredProductsLength} Results</p>
-  <SortForMobile />
+<SortForMobile
+  forFilter={forFilter}
+  setForFilter={setForFilter}
+  heightFilter={heightFilter}
+  setHeightFilter={setHeightFilter}
+  statusFilter={statusFilter}
+  setStatusFilter={setStatusFilter}
+  colorFilter={colorFilter}
+  setColorFilter={setColorFilter}
+  featuresFilter={featuresFilter}
+  setFeaturesFilter={setFeaturesFilter}
+  technologyFilter={technologyFilter}
+  setTechnologyFilter={setTechnologyFilter}
+  brandFilter={brandFilter}
+  setBrandFilter={setBrandFilter}
+  genderFilter={genderFilter}
+  setGenderFilter={setGenderFilter}
+  isUnder1000000={isUnder1000000}
+  setIsUnder1000000={setIsUnder1000000}
+  category={category}
+  categoryName={categoryName}
+  filteredProductsLength={filteredProductsLength}
+  onSortChange={onSortChange}
+/>
+
+
 
 </div>
         </div>
