@@ -103,13 +103,12 @@ export const useCart = () => {
       const totalPrice = productTotal + shippingFee;
       const newOrder = {
         id: Date.now(),
-        items: cart.map((item) => ({ ...item, status: "Pending" })), 
+        items: cart,
         date: new Date().toISOString(),
-        status: "Pending", 
+        status: "Pending",
         shippingFee,
         totalPrice,
       };
-      
       const updatedOrders = [...currentOrders, newOrder];
       const newTotalOrder = (user.totalOrder || 0) + 1;
       let newCustomerType = "New";

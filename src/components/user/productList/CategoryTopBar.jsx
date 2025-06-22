@@ -67,9 +67,13 @@ const CategoryTopBar = ({category, categoryName, filteredProductsLength, onSortC
         </div>
         <div className='block sm:hidden'>
             <div className='px-6 py-8  inter '>
-                <p className='text-black'>
-                {categoryName} {category ? ` / ${category}` : ''}
-                </p>
+            <p className="text-black">
+  {categoryName}{forFilter.length > 0 ? ` / ${forFilter[0]}` : ''}
+</p>
+
+
+
+
               
             </div>
             <div className="bg-white flex px-6  py-4 space-x-4 border-b border-t border-gray-300 hide-scrollbar whitespace-nowrap overflow-auto">
@@ -89,8 +93,15 @@ const CategoryTopBar = ({category, categoryName, filteredProductsLength, onSortC
   ].map((category) => (
     <label
       key={category}
-      className={`flex text-[#707072] items-center transition duration-300 ease-in-out  inter cursor-pointer ${forFilter === category ? 'text-black' : ''}`}
-      onClick={() => setForFilter(forFilter === category ? null : category)}
+      className={`flex text-[#707072] items-center transition duration-300 ease-in-out  inter cursor-pointer ${forFilter.includes(category) ? 'text-black' : ''}`}
+      onClick={() => {
+        if (forFilter.includes(category)) {
+          setForFilter([]);
+        } else {
+          setForFilter([category]); 
+        }
+      }}
+      
 
     >
       <span>{category}</span>

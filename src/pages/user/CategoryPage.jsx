@@ -40,18 +40,26 @@ const CategoryPage = () => {
             (product) => product.category === category.name
           );
 
-          // Group products by name, price, gender (but no status)
           const groupedProducts = filteredProducts.reduce((acc, product) => {
             const key = `${product.name}-${product.price}-${product.price_sale}-${product.gender}`;
+          
             if (!acc[key]) {
-              acc[key] = { ...product, variants: [] };
+              acc[key] = {
+                ...product,
+                variants: [],
+              };
             }
+          
             if (product.position === 1) {
               acc[key].mainImage = product.img;
             }
+          
+            acc[key].variants = acc[key].variants || [];
             acc[key].variants.push(product);
+          
             return acc;
           }, {});
+          
 
           setProducts(Object.values(groupedProducts));
         }
@@ -66,44 +74,45 @@ const CategoryPage = () => {
   }, [name]);
 
   const filteredProducts = products.filter((product) => {
-
-    if (genderFilter.length > 0 && !product.variants.some((variant) => genderFilter.includes(variant.gender))) {
+    const variants = Array.isArray(product.variants) ? product.variants : [];
+  
+    if (genderFilter.length > 0 && !variants.some((variant) => genderFilter.includes(variant.gender))) {
       return false;
     }
-    if (brandFilter.length > 0 && !product.variants.some((variant) => brandFilter.includes(variant.brand))) {
+    if (brandFilter.length > 0 && !variants.some((variant) => brandFilter.includes(variant.brand))) {
       return false;
     }
-    if (technologyFilter.length > 0 && !product.variants.some((variant) => technologyFilter.includes(variant.technology))) {
+    if (technologyFilter.length > 0 && !variants.some((variant) => technologyFilter.includes(variant.technology))) {
       return false;
     }
-    if (featuresFilter.length > 0 && !product.variants.some((variant) => featuresFilter.includes(variant.features))) {
+    if (featuresFilter.length > 0 && !variants.some((variant) => featuresFilter.includes(variant.features))) {
       return false;
     }
-    if (colorFilter.length > 0 && !product.variants.some((variant) => colorFilter.includes(variant.mainColor))) {
+    if (colorFilter.length > 0 && !variants.some((variant) => colorFilter.includes(variant.mainColor))) {
       return false;
     }
-    if (statusFilter.length > 0 && !product.variants.some((variant) => statusFilter.includes(variant.status))) {
+    if (statusFilter.length > 0 && !variants.some((variant) => statusFilter.includes(variant.status))) {
       return false;
     }
-    if (heightFilter.length > 0 && !product.variants.some((variant) => heightFilter.includes(variant.height))) {
+    if (heightFilter.length > 0 && !variants.some((variant) => heightFilter.includes(variant.height))) {
       return false;
     }
-    if (forFilter.length > 0 && !product.variants.some((variant) => forFilter.includes(variant.shoesFor))) {
+    if (forFilter.length > 0 && !variants.some((variant) => forFilter.includes(variant.shoesFor))) {
       return false;
     }
-    
-    
-
+  
     if (isUnder1000000) {
-      const minPriceProduct = Math.min(...product.variants.map((variant) => variant.price));
-      if (minPriceProduct >= 1000000) {
+      const prices = variants.map((variant) => variant.price).filter(price => typeof price === 'number');
+      const minPriceProduct = Math.min(...prices);
+      if (minPriceProduct >= 1000000 || !prices.length) {
         return false;
       }
     }
-
+  
     return true;
   });
-  const sortedProducts = [...filteredProducts]; // copy để không mutate state
+  
+  const sortedProducts = [...filteredProducts]; 
   if (sortType === "priceLowHigh") {
     sortedProducts.sort((a, b) => a.price - b.price);
   } else if (sortType === "priceHighLow") {
@@ -117,7 +126,7 @@ const CategoryPage = () => {
       <CategoryTopBar
       category={forFilter}
         categoryName={decodeURIComponent(name || "")}
-        filteredProductsLength={sortedProducts.length}
+        filteredProductsLength={Array.isArray(sortedProducts) ? sortedProducts.length : 0}
         onSortChange={setSortType}
         forFilter={forFilter}
         setForFilter={setForFilter}

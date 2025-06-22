@@ -21,7 +21,7 @@ const SortForMobile = () => {
   return (
     <>
       <div
-        className='flex gap-2 items-center px-4 py-1 border rounded-full border-gray-300 cursor-pointer'
+        className='flex gap-1 items-center px-4 py-1 border rounded-full border-gray-300 cursor-pointer'
         onClick={() => setIsOpen(true)}
       >
         <p>Sort By</p>

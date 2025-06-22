@@ -81,94 +81,72 @@ const Order = () => {
   }
 
   return (
-    <div className="max-w-screen-2xl mx-auto px-10">
-      {/* <h2 className="text-2xl py-8">Orders List</h2>
+    <div className="max-w-screen-2xl mx-auto px-0">
+              <h2 className="text-2xl  px-6 sm:px-0 py-5">Orders</h2>
+              <div className="h-16   items-center flex px-6 justify-between border-t border-b border-gray-300">
+                <p>{orders.length} Items</p>
+                <button>sdsd</button>
 
-      <div className="bg-white grid grid-cols-5 border border-gray-300 rounded-2xl py-4 text-center">
-        {[
-          { label: "Total Orders", count: orders.length },
-          { label: "Orders Complete", count: orders.filter(o => o.status === "Complete").length },
-          { label: "Orders Cancelled", count: orders.filter(o => o.status === "Cancelled").length },
-          { label: "Pending Orders", count: orders.filter(o => o.status === "Pending").length },
-          { label: "Delivered", count: orders.filter(o => o.status === "Delivered").length },
-        ].map(({ label, count }, idx) => (
-          <div key={label} className={idx < 4 ? "border-r border-gray-300" : ""}>
-            <p className="text-lg text-gray-500">{label}</p>
-            <p className="text-xl">{count}</p>
+              </div>
+{/* Danh sách đơn hàng */}
+<div className="divide-y border-b">
+  {paginated.map((order) => (
+    <div key={order.id} className="p-6 hover:bg-gray-50">
+      <div className="flex justify-between items-start">
+        <div>
+          <p className="font-semibold">Order ID: #{order.id}</p>
+          <p className="text-sm text-gray-500">Date: {new Date(order.date).toLocaleString()}</p>
+          <p className="text-sm text-gray-500">Status: <span className="font-medium">{order.status}</span></p>
+          <p className="text-sm text-gray-500">Total: {(order.totalPrice + order.shippingFee).toLocaleString()} VND</p>
+        </div>
+        <div className="flex gap-4 items-center">
+          <button
+            onClick={() => setSelectedOrder(order)}
+            className="text-blue-600 underline"
+          >
+            View Details
+          </button>
+          <input
+            type="checkbox"
+            checked={order.items.every((item) => selectedItems.includes(item.id))}
+            onChange={() => {
+              const allIds = order.items.map((item) => item.id);
+              const allSelected = allIds.every((id) => selectedItems.includes(id));
+              if (allSelected) {
+                setSelectedItems((prev) => prev.filter((id) => !allIds.includes(id)));
+              } else {
+                setSelectedItems((prev) => [...new Set([...prev, ...allIds])]);
+              }
+            }}
+          />
+        </div>
+      </div>
+
+      {/* Danh sách sản phẩm trong đơn */}
+      <div className="mt-3 grid gap-2">
+        {order.items.map((item) => (
+          <div key={item.id} className="flex items-center gap-4 p-2 border rounded-md">
+            <img src={item.img} alt={item.name} className="w-16 h-16 object-cover" />
+            <div className="flex-1">
+              <p className="font-medium">{item.name}</p>
+              <p className="text-sm text-gray-500">Size: {item.size} | Qty: {item.quantity}</p>
+              <p className="text-sm text-gray-500">Price: {parseInt(item.price_sale || item.price).toLocaleString()} VND</p>
+            </div>
+            <input
+              type="checkbox"
+              checked={selectedItems.includes(item.id)}
+              onChange={() => handleCheckItem(item.id)}
+            />
           </div>
         ))}
       </div>
+    </div>
+  ))}
+</div>
 
-      <div className="relative inline-block text-right ml-auto">
-        <div onClick={() => setShowDropdown(!showDropdown)} className="flex gap-2 py-3 justify-end items-center cursor-pointer">
-          <p>Sort By</p>
-          <svg className={`w-5 h-5 transition-transform ${showDropdown ? "rotate-180" : ""}`} fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-          </svg>
-        </div>
 
-        {showDropdown && (
-          <div className="absolute right-0 mt-2 w-60 bg-white border rounded-lg shadow-lg z-10 p-3 space-y-4">
-            <div>
-              <label className="block mb-1 text-sm font-medium">Lọc theo trạng thái</label>
-              <select value={statusFilter} onChange={(e) => setStatusFilter(e.target.value)} className="w-full px-2 py-1.5 border rounded-lg">
-                {["All", "Pending", "Cancelled", "Complete", "Delivered"].map((s) => (
-                  <option key={s} value={s}>{s === "All" ? "All Status" : s}</option>
-                ))}
-              </select>
-            </div>
 
-            <div>
-              <label className="block mb-1 text-sm font-medium">Sắp xếp theo ngày</label>
-              <select value={sortOrder} onChange={(e) => setSortOrder(e.target.value)} className="w-full px-2 py-1.5 border rounded-lg">
-                <option value="newest">Newest First</option>
-                <option value="oldest">Oldest First</option>
-              </select>
-            </div>
-          </div>
-        )}
-      </div>
-
-      <div className="overflow-x-auto mb-10">
-        <table className="table-auto w-full border border-gray-300">
-          <thead className="bg-[#F3F4F6]">
-            <tr>
-              <th className="border px-2"><input type="checkbox" checked={allChecked} onChange={handleCheckAll} /></th>
-              {["Order ID", "Date", "Status", "Payment", "Items", "Total", "Action"].map((h) => (
-                <th key={h} className="border px-2 py-2">{h}</th>
-              ))}
-            </tr>
-          </thead>
-          <tbody>
-            {paginated.map((order) =>
-              order.items.map((item, idx) => (
-                <tr key={`${order.id}-${item.id}-${idx}`}>
-                  <td className="border text-center px-2">
-                    <input type="checkbox" checked={selectedItems.includes(item.id)} onChange={() => handleCheckItem(item.id)} />
-                  </td>
-                  <td className="border text-center px-2 py-3">#{order.id}</td>
-                  <td className="border text-center px-2 py-3">{new Date(order.date).toLocaleString()}</td>
-                  <td className="border text-center px-2 py-3">
-                    <span className={`text-sm px-2 py-1 rounded-full border ${order.status === "Cancelled" ? "text-red-600 border-red-600" : "text-green-600 border-green-600"}`}>
-                      {order.status}
-                    </span>
-                  </td>
-                  <td className="border text-center px-2 py-3">Cash On Delivery</td>
-                  <td className="border text-center px-2 py-3">{item.quantity} items</td>
-                  <td className="border text-center px-2 py-3">{item.quantity * item.price}</td>
-                  <td className="border text-center px-2 py-3">
-                    <button onClick={() => setSelectedOrder(order)} className="text-blue-500 hover:underline">Chi tiết</button>
-                  </td>
-                </tr>
-              ))
-            )}
-          </tbody>
-        </table>
-
-        {sorted.length > itemsPerPage && (
-          <Pagination currentPage={currentPage} totalPages={totalPages} onPageChange={setCurrentPage} />
-        )}
-      </div>
+     
 
       {selectedOrder && (
         <OrderDetails
@@ -176,8 +154,7 @@ const Order = () => {
           onClose={() => setSelectedOrder(null)}
           onUpdateStatus={onUpdateStatus}
         />
-      )} */}
-    <p>ahahahah</p>
+      )}
     </div>
   );
 };
