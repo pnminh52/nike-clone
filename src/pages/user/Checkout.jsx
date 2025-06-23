@@ -102,7 +102,7 @@ const Checkout = () => {
                     </p>
                    <div className="flex justify-between items-center">
                   
-                    <p className="text-gray-400 text-sm">Size EU {item.size}</p>
+                    <p className="text-gray-400 text-sm">EU {item.size}</p>
                     <p className=" text-sm ">
                 <span className=" ">  {formatPrice(item.price * (item.quantity ?? 1))}</span>
                 <span className="text-sm">₫</span>

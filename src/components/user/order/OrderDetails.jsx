@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { useAuth } from "../../../hooks/useAuth";
 
-const OrderDetails = ({ order, onClose, onUpdateStatus }) => {
+const OrderDetails = ({ users,order, onClose, onUpdateStatus }) => {
+  // console.log(users);
+  
   const [cancelReasons, setCancelReasons] = useState([]);
   const [customReason, setCustomReason] = useState("");
   const [isCancelling, setIsCancelling] = useState(false);
   const { updateUser } = useAuth();
+  const [dropdownInfo, setDropdownInfo]=useState(false)
 
   useEffect(() => {
     setCancelReasons([]);
@@ -20,7 +23,11 @@ const OrderDetails = ({ order, onClose, onUpdateStatus }) => {
       setCancelReasons([...cancelReasons, reason]);
     }
   };
-
+  const formatPrice = (price) => {
+    return Number(price)
+      .toString()
+      .replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  };
   const handleConfirmCancel = () => {
     const finalReason =
       cancelReasons.includes("Other") && customReason
@@ -47,8 +54,10 @@ const OrderDetails = ({ order, onClose, onUpdateStatus }) => {
   
 
   return (
-    <div className="fixed inset-0 bg-black/40 flex justify-center items-center z-50">
-      <div className="bg-white p-4  w-full h-full  relative">
+<div className="fixed inset-0 bg-black/40 z-50 overflow-y-auto">
+<div className="bg-white py-4 min-h-screen w-full max-w-lg mx-auto relative">
+  
+  
       <div className="absolute top-4 right-4">
   <button
     onClick={onClose}
@@ -63,114 +72,139 @@ const OrderDetails = ({ order, onClose, onUpdateStatus }) => {
 </div>
       
        
-        <div className="flex justify-center text-center mt-5">
+        <div className=" justify-center text-center mt-5 mb-5">
   <p className="text-2xl font-semibold"> Order Details</p>
+  <p className="w-full flex justify-center text-gray-400 ">{new Date(order.date).toLocaleString()}</p>
+
 </div>
 
-        {/* Progress Bar */}
-        {/* <div className="mt-4">
-          <p className="font-semibold mb-1">Order Progress:</p>
-          <div className="w-full bg-gray-200 h-2 rounded-full overflow-hidden">
-            <div
-              className="h-2 transition-all duration-500"
-              style={{
-                width:
-                  order.status === "Delivered"
-                    ? "100%"
-                    : order.status === "Shipping"
-                    ? "75%"
-                    : order.status === "Pending"
-                    ? "50%"
-                    : order.status === "Ordered"
-                    ? "25%"
-                    : order.status === "Cancelled"
-                    ? "100%"
-                    : "0%",
-                backgroundColor:
-                  order.status === "Cancelled" ? "#F87171" : "#10B981",
-              }}
-            ></div>
+       <div onClick={()=>setDropdownInfo(!dropdownInfo)} className="border-b cursor-pointer flex justify-between px-6 items-center border-t  py-4 border-gray-300">
+        <p className="text-2xl">User Info</p>
+        <div className="flex gap-2 items-center">
+        <p className="px-3 py-0.5  rounded-full bg-green-200 inter text-green-500 ">
+           {order.status}
+           </p>
+        <svg  className={`w-5 h-5 cursor-pointer transform transition-transform ${
+    dropdownInfo ? "rotate-180" : ""
+  }`} fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path></svg>
+        </div>
+       </div>
+       {
+        dropdownInfo&&(
+          <div>
+            <div className="mt-5 space-y-1">
+          <p className="">Username: {users.firstname} {users.lastname}</p>
+          <p className="">Phone: {users.phone}</p>
+          <p className="">Email: {users.email}</p>
+          <p className="">City: {users.address}</p>
+          <p className="">District: {users.district}</p>
           </div>
-          <div className="flex justify-between text-xs text-gray-600 mt-1">
-            <span>Ordered</span>
-            <span>Processing</span>
-            <span>Shipping</span>
-            <span>{order.status === "Cancelled" ? "Cancelled" : "Completed"}</span>
+         
           </div>
-        </div> */}
+        )
+       }
 
-        <p className="px-4 py-2">Order Date: {new Date(order.date).toLocaleString()}</p>
-
-        <div className="mb-4">
-          <p className="font-semibold">Products:</p>
-          {order.items.map((item) => (
-            <div key={item.id} className="flex items-center gap-4 mt-2">
-              <img src={item.img} className="w-16 h-16" alt={item.name} />
-              <div>
-                <p>{item.name}</p>
-                <p>
-                  {item.quantity} x {item.price}₫
+      
+       <div className="">
+     
+      
+        <div className="space-y-4 px-6 py-4">
+         
+          {order.items.map((item, index) => (
+          <div
+          key={item.id}
+          className={`flex w-full py-0 gap-4 ${
+            index !== order.items.length - 1 ? "" : ""
+          }`}
+        >
+        
+              <img src={item.img} className="aspect-square w-40 h-auto object-cover" alt={item.name} />
+              <div className="">
+                <p className="">{item.name}</p>
+                <p className=" text-gray-400 ">
+                  Quantity {item.quantity}  
                 </p>
+               <p className="text-gray-400">EU{item.size}  </p>
+               
+             
+               <p className="  ">
+                <span className=" ">  {formatPrice(item.price * (item.quantity ?? 1))}</span>
+                <span className="text-sm">₫</span>
+              </p>
               </div>
             </div>
           ))}
         </div>
+       </div>
 
-        <p className="mb-2">
-          <span className="font-semibold">Status:</span> {order.status}
-        </p>
+      
 
         {order.status !== "Cancelled" && !isCancelling && (
-          <button
-            onClick={() => setIsCancelling(true)}
-            className="mt-4 bg-red-500 text-white py-2 w-full rounded-full hover:bg-red-600"
-          >
-            Cancel Order
-          </button>
+<div className="px-6">
+<button
+  onClick={() => setIsCancelling(true)}
+  className="w-full mt-0 inter cursor-pointer bg-white border border-red-600 text-red-600 py-4 rounded-full hover:bg-gray-800 transition"
+>
+ Cancel Order
+</button>
+</div>
         )}
+        
+       
+        
 
         {isCancelling && (
-          <div className="mt-4">
-            <p className="text-red-600 font-semibold mb-2">
+          <div className="px-6">
+            <p className="text-red-600 inter ">
               Select cancellation reasons:
             </p>
+            <div className="py-2 space-y-1">
             {[
               "Changed my mind",
               "Item not received",
               "Shipping is too slow",
               "Other",
             ].map((reason) => (
-              <label key={reason} className="block">
+              <label key={reason} className="flex items-center space-x-2 py-1">
+
                 <input
                   type="checkbox"
                   checked={cancelReasons.includes(reason)}
                   onChange={() => handleCheckboxChange(reason)}
-                  className="mr-2"
+                  className="mr-2 appearance-none form-checkbox w-5 h-5 transition duration-300 ease-in-out cursor-pointer  bg-white border border-gray-400 rounded-md checked:bg-black checked:border-black focus:outline-none"
+
                 />
                 {reason}
               </label>
             ))}
+            </div>
+           
 
             {cancelReasons.includes("Other") && (
               <input
                 type="text"
-                placeholder="Enter your custom reason"
+                placeholder="Enter your custom reason..."
                 value={customReason}
                 onChange={(e) => setCustomReason(e.target.value)}
-                className="mt-2 w-full border px-2 py-1 rounded"
+                className=" w-full border px-4 py-8 rounded-lg mb-4"
               />
             )}
-
-            <button
+<div className="space-y-2">
+  
+<button
               onClick={handleConfirmCancel}
               disabled={
                 cancelReasons.length === 0 ||
                 (cancelReasons.includes("Other") && !customReason)
               }
-              className="mt-4 bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700"
-            >
+              className="w-full mt-0 inter cursor-pointer bg-white border border-red-600 text-red-600 py-4 rounded-full hover:bg-gray-800 transition"
+              >
               Confirm Cancellation
             </button>
+            <button onClick={() => setIsCancelling(false)} className="w-full inter mt-0 cursor-pointer bg-black text-white py-4 rounded-full hover:bg-gray-800 transition">
+              Back
+            </button>
+</div>
           </div>
         )}
 

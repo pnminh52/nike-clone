@@ -109,6 +109,7 @@ const Order = () => {
 
       {selectedOrder && (
         <OrderDetails
+        users={user}
           order={selectedOrder}
           onClose={() => setSelectedOrder(null)}
           onUpdateStatus={onUpdateStatus}
