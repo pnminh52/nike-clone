@@ -2244,7 +2244,7 @@
           "value": 50000,
           "stock": 99,
           "code": "WELCOME50",
-          "expiryDate": "",
+          "expiryDate": "2025-12-12", "minOrderValue":"2000000",
           "numberOfExpiryDate": 40,
           "pointToExchange": 1000
         }
@@ -2262,7 +2262,7 @@
       "value": 50000,
       "stock": 99,
       "code": "WELCOME50",
-      "expiryDate": "",
+      "expiryDate": "", "minOrderValue":"2000000",
       "numberOfExpiryDate": 40,
       "pointToExchange": 1000
     },
@@ -2276,7 +2276,7 @@
       "value": 10,
       "stock": 20,
       "code": "EVENT10",
-      "expiryDate": "",
+      "expiryDate": "", "minOrderValue":"2000000",
       "numberOfExpiryDate": 40,
       "pointToExchange": 800
     },
@@ -2291,7 +2291,7 @@
       "stock": 7,
       "code": "WELCOME100",
       "numberOfExpiryDate": 10,
-      "expiryDate": "",
+      "expiryDate": "", "minOrderValue":"2000000",
       "pointToExchange": 2000
     },
     {
@@ -2305,7 +2305,7 @@
       "stock": 39,
       "code": "WELCOME120",
       "numberOfExpiryDate": 60,
-      "expiryDate": "",
+      "expiryDate": "", "minOrderValue":"2000000",
       "pointToExchange": 2500
     },
     {
@@ -2319,7 +2319,7 @@
       "stock": 12,
       "code": "WELCOME15",
       "numberOfExpiryDate": 60,
-      "expiryDate": "",
+      "expiryDate": "", "minOrderValue":"2000000",
       "pointToExchange": 1500
     },
     {
@@ -2333,7 +2333,7 @@
       "stock": 23,
       "code": "ahahaha",
       "numberOfExpiryDate": 60,
-      "expiryDate": "",
+      "expiryDate": "", "minOrderValue":"2000000",
       "pointToExchange": 1200
     }
   ],

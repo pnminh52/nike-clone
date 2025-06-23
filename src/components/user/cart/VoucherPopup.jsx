@@ -31,7 +31,7 @@ const VoucherPopup = ({ setShowPopup, userId, total, onApply }) => {
      <div className="bg-white relative min-h-[90vh] w-full max-w-xl p-6 rounded-3xl overflow-y-auto shadow-xl hide-scrollbar">
      <div className="absolute top-4 right-4">
   <button
-    onClick={closeWithAnimation}
+    onClick={()=>setShowPopup(false)}
     type="button"
     className="w-8 h-8 cursor-pointer bg-gray-200 rounded-full flex items-center justify-center"
   >
