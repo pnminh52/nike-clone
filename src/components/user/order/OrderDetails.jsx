@@ -81,7 +81,7 @@ const OrderDetails = ({ users,order, onClose, onUpdateStatus }) => {
        <div onClick={()=>setDropdownInfo(!dropdownInfo)} className="border-b cursor-pointer flex justify-between px-6 items-center border-t  py-4 border-gray-300">
         <p className="text-2xl">User Info</p>
         <div className="flex gap-2 items-center">
-        <p className="px-3 py-0.5  rounded-full bg-green-200 inter text-green-500 ">
+        <p className="px-3 py-0.5  rounded-full bg-green-100 inter text-green-400 ">
            {order.status}
            </p>
         <svg  className={`w-5 h-5 cursor-pointer transform transition-transform ${
@@ -92,12 +92,13 @@ const OrderDetails = ({ users,order, onClose, onUpdateStatus }) => {
        {
         dropdownInfo&&(
           <div>
-            <div className="mt-5 space-y-1">
-          <p className="">Username: {users.firstname} {users.lastname}</p>
-          <p className="">Phone: {users.phone}</p>
-          <p className="">Email: {users.email}</p>
-          <p className="">City: {users.address}</p>
-          <p className="">District: {users.district}</p>
+            <div className="mt-3 space-y-1 px-6 ">
+            <p><span className="inter">Username:</span> {users.firstname} {users.lastname}</p>
+<p><span className="inter">Phone:</span> {users.phone}</p>
+<p><span className="inter">Email:</span> {users.email}</p>
+<p><span className="inter">City:</span> {users.address}</p>
+<p><span className="inter">District:</span> {users.district}</p>
+
           </div>
          
           </div>
