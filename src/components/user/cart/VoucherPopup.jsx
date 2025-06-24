@@ -5,13 +5,6 @@ const VoucherPopup = ({ setShowPopup, userId, total, onApply }) => {
   const { user, loading, applyVoucher } = useVouchers(userId);
   const [selectedVoucherId, setSelectedVoucherId] = useState(null);
   const [isClosing, setIsClosing] = useState(false);
-  const closeWithAnimation = () => {
-    setIsClosing(true);
-    setTimeout(() => {
-      setShowPopup(false);
-      setIsClosing(false);
-    }, 300);
-  };
 
   const handleApply = () => {
     const selected = user?.vouchers.find((v) => v.id === selectedVoucherId);
@@ -145,12 +138,12 @@ const VoucherPopup = ({ setShowPopup, userId, total, onApply }) => {
         <div className=" fixed inset-0 bg-black/40 flex items-end sm:items-center justify-center z-50">
           <div
             className={`bg-white w-full h-full sm:h-auto sm:w-96  overflow-y-auto sm:overflow-visible  
-  ${isClosing ? "voucher-exit" : "voucher-enter"}
+ 
 `}
           >
             <div className="absolute top-4 right-4">
               <button
-                onClick={closeWithAnimation}
+                onClick={()=>setShowPopup(false)}
                 type="button"
                 className="w-8 h-8 cursor-pointer bg-gray-200 rounded-full flex items-center justify-center"
               >

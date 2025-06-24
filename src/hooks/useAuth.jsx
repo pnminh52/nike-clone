@@ -6,6 +6,36 @@ import { useNavigate } from 'react-router-dom';
 const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
+  const vouchersToGift = [
+    {
+      id: "c1",
+      category: "new-user",
+      name: "50K Voucher",
+      image: "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/b4f20f67-6cd6-4f8e-8e1c-41ccf6d9de08/GiftCard.png",
+      description: "Get 50K off on your first order",
+      discountType: "amount",
+      value: 50000,
+      stock: 5,
+      minOrderValue: "2000000",
+      code: "WELCOME50",
+      numberOfExpiryDate: 40,
+      pointToExchange: 1000
+    },
+    {
+      id: "c3",
+      category: "new-user",
+      name: "100K Voucher",
+      image: "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/2daa05f6-b7bd-4227-81d1-02c7730dbc7c/GiftCard.png",
+      description: "Get 100K off on your first order",
+      discountType: "amount",
+      value: 100000,
+      stock: 7,
+      code: "WELCOME100",
+      numberOfExpiryDate: 10,
+      minOrderValue: "2000000",
+      pointToExchange: 2000
+    }
+  ];  
   const API_URL = "http://localhost:3000";
   const [user, setUser] = useState(null);
   const navigate=useNavigate()
@@ -95,12 +125,26 @@ export const AuthProvider = ({ children }) => {
   
       const fee = shippingFeeByAddress[address] || 20000;
   
+      // ✅ Lấy voucher từ server
+      // const voucherRes = await axios.get(`${API_URL}/vouchers?category=new-user`);
+      const now = new Date();
+      const vouchersWithExpiry = vouchersToGift.map(voucher => {
+        const expiry = new Date(now);
+        expiry.setDate(expiry.getDate() + voucher.numberOfExpiryDate);
+        return {
+          ...voucher,
+          expiryDate: expiry.toISOString()
+        };
+      });
+      
+  
+      // ✅ Gửi dữ liệu lên server
       const res = await axios.post(`${API_URL}/users`, {
         ...formData,
-        shippingFeeByAddress: fee,  
+        shippingFeeByAddress: fee,
         accountStatus: "Active",
         cart: [],
-        interest:[],
+        interest: [],
         orders: [],
         point: 1000,
         totalOrder: 0,
@@ -109,22 +153,7 @@ export const AuthProvider = ({ children }) => {
         role: "User",
         avatar: "",
         createdAt: new Date().toISOString(),
-        vouchers: [
-          {
-            "id": "c1",
-            "category": "new-user",
-            "name": "50K Voucher",
-            "image": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/b4f20f67-6cd6-4f8e-8e1c-41ccf6d9de08/GiftCard.png",
-            "description": "Get 50K off on your first order",
-            "discountType": "amount",
-            "value": 50000,
-            "stock": 99,
-            "code": "WELCOME50",
-            "expiryDate": "",
-            "numberOfExpiryDate": 40,
-            "pointToExchange": 1000
-          }
-        ]
+        vouchers: vouchersWithExpiry
       });
   
       return res.data;
@@ -133,6 +162,7 @@ export const AuthProvider = ({ children }) => {
       return false;
     }
   };
+  
   
 
   const login = async (email, password) => {

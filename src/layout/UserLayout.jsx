@@ -16,15 +16,13 @@ const UserLayout = () => {
     <div className="flex flex-col min-h-screen">
       {!isAuthPage && (
         <>
-          {isCheckoutPage ? (
-            <CheckoutHeader />
-          ) : (
+         
             <>
               <Header1 />
               <Header2 />
               <Header3 />
             </>
-          )}
+        
         </>
       )}
 
@@ -34,13 +32,11 @@ const UserLayout = () => {
 
       {!isAuthPage && (
         <>
-          {isCheckoutPage ? (
-            <CheckoutFooter />
-          ) : (
+         
            <div className='mt-10'>
              <Footer />
            </div>
-          )}
+         
         </>
       )}
     </div>
