@@ -74,10 +74,15 @@ const Order = () => {
   }
 
   return (
+   <div>
+    <div className="hidden sm:block">
+
+    </div>
+    <div className="block sm:hidden">
     <div className="max-w-screen-2xl mx-auto px-0 sm:px-10">
               <h2 className="text-2xl  px-6 sm:px-0 py-5">Orders</h2>
               <div className="h-16   items-center flex px-6 justify-between border-t border-b border-gray-300">
-                <p>{orders.length} Items</p>
+                <p className="text-lg text-[#707072]">{orders.length} Items</p>
               <button className='flex gap-1 items-center px-4 py-1 border rounded-full border-gray-300 cursor-pointer'
       >
        Filters
@@ -116,6 +121,8 @@ const Order = () => {
         />
       )}
     </div>
+    </div>
+   </div>
   );
 };
 

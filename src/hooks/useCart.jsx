@@ -153,10 +153,10 @@ export const useCart = () => {
           }
         })
       );
-
+      navigate("/");
       setCart([]);
       successToast("Payment successful");
-      navigate("/");
+      
     } catch (error) {
       errorToast("❌ Lỗi khi thanh toán. Vui lòng thử lại.");
     }
