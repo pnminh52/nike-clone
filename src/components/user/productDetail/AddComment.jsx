@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import axios from "axios";
 import StarRatingInput from "../productDetail/StarRatingInput";
 import ImageUploadDraggable from "../productDetail/ImageUploadDraggable";
-import { User } from "lucide-react";
+import AddCommentMobilePopup from './../mobilePopup/AddCommentMobilePopUp';
 
-const AddComment = ({ productId, user, onClose, onSubmit, product }) => {
+const AddComment = ({ productId, user, onClose, onSubmit, product, animateOut }) => {
   const [content, setContent] = useState("");
   const [rating, setRating] = useState(0);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -42,18 +42,18 @@ const AddComment = ({ productId, user, onClose, onSubmit, product }) => {
     e.preventDefault();
 
     if (!realUser || !realUser.id || !realUser.lastname || !realUser.firstname) {
-      alert("Bạn cần đăng nhập để gửi bình luận.");
+      alert("You must be logged in to post a comment!");
       onClose();
       return;
     }
 
     if (!content.trim()) {
-      alert("Vui lòng viết bình luận trước khi gửi.");
+      alert("Please write a comment before submitting!");
       return;
     }
 
     if (!isChecked) {
-      alert("Vui lòng đồng ý với các điều khoản trước khi gửi bình luận.");
+      alert("Please agree to the terms before submitting a comment!");
       return;
     }
 
@@ -81,7 +81,6 @@ const AddComment = ({ productId, user, onClose, onSubmit, product }) => {
 
       await onSubmit(newComment);
     } catch (error) {
-      console.error("Error while submitting comment:", error);
       alert("Đã xảy ra lỗi khi gửi bình luận. Vui lòng thử lại.");
     } finally {
       setIsSubmitting(false);
@@ -90,6 +89,8 @@ const AddComment = ({ productId, user, onClose, onSubmit, product }) => {
   };
 
   return (
+   <div>
+    <div className="hidden sm:block">
     <div className="fixed inset-0 z-50 bg-black/40 overflow-y-auto hide-scrollbar">
       <div className="flex justify-center items-start min-h-screen py-10">
         <form
@@ -175,6 +176,26 @@ const AddComment = ({ productId, user, onClose, onSubmit, product }) => {
         </form>
       </div>
     </div>
+    </div>
+    <div className="block sm:hidden">
+     <AddCommentMobilePopup 
+     animateOut={animateOut}
+      product={product}
+      rating={rating}
+      setRating={setRating}
+      title={title}
+      setTitle={setTitle}
+      content={content}
+      setContent={setContent}
+      images={images}
+      setImages={setImages}
+      isChecked={isChecked}
+      setIsChecked={setIsChecked}
+      handleSubmit={handleSubmit}
+      handleCancel={handleCancel}
+      isSubmitting={isSubmitting} />
+    </div>
+   </div>
   );
 };
 

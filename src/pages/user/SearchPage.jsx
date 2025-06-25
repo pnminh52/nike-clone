@@ -1,8 +1,7 @@
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import ShoesCard from "../../components/user/etc/ShoesCard";
-import { Link } from "react-router-dom";
-import { useWish } from "../../hooks/useWish";
+import ResultNotfound from "../../components/user/etc/ResultNotfound";
 const SearchPage = () => {
   
   const { keyword } = useParams();
@@ -32,12 +31,14 @@ const SearchPage = () => {
 
   return (
     <div className="max-w-screen-2xl mx-auto ">
-     
+       <div className="px-6 sm:px-0 py-5">
+  <h2 className="text-lg ">Search keywords: {keyword}</h2>
+  <p className="text-sm text-blue-600 underline">There are {filteredProducts.length} results for this keyword.</p>
+</div>
 <div className="flex items-center justify-between px-0 sm:px-10 ">
     
       { filteredProducts.length > 0 ? (
                <div>
-                 <h2 className="text-2xl py-5 px-6 sm:px-0"> <span>{filteredProducts.length}</span> Results found</h2>
                 
                         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-1.5 sm:gap-2 ">
                           {filteredProducts.map((product) => (
@@ -46,15 +47,7 @@ const SearchPage = () => {
                         </div>
                </div>
       ) : (
-        <div className="h-100 flex items-center mx-auto justify-center">
-                    <div className="text-center">
-                    <p>No products found.</p>
-                     <Link >
-                     <p className=" text-blue-600 underline">
-                     Try searching with a different keyword.
-                      </p></Link>
-                    </div>
-                  </div>
+       <ResultNotfound />
        
       )}
      

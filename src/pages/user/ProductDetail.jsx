@@ -338,8 +338,9 @@ const ProductDetail = () => {
                 {selectedProduct.name}
               </p>
               <p className="text-gray-600 leading-tight">
-                {selectedProduct.type}
+                {selectedProduct.type} / {selectedProduct.stock} in stock
               </p>
+            
             </div>
 
 
@@ -414,7 +415,7 @@ const ProductDetail = () => {
             )}
 
 
-            {selectedProduct.stock < 100 && selectedProduct.stock > 1 && (
+            {selectedProduct.stock < 30 && selectedProduct.stock > 1 && (
               <div className="flex gap-1 mb-6">
                 <svg
                   aria-hidden="true"
@@ -759,9 +760,9 @@ ${(selectedSize && !selectedProduct.sizes.includes(String(selectedSize)))
                     {comments.length > 5 && (
                       <button
                         onClick={() => setShowAll(true)}
-                        className="text-blue-600 hover:underline text-sm cursor-pointer"
+                        className="text-blue-600 underline hover:underline  cursor-pointer"
                       >
-                        Xem tất cả đánh giá ({comments.length})
+                       View all reviews ({comments.length})
                       </button>
                     )}
                   </div>
@@ -838,8 +839,8 @@ ${(selectedSize && !selectedProduct.sizes.includes(String(selectedSize)))
             {selectedProduct.name}
           </p>
           <p className="text-gray-600 leading-tight">
-            {selectedProduct.type}
-          </p>
+                {selectedProduct.type} / {selectedProduct.stock} in stock
+              </p>
           <div className=" mt-3 mb-0 ">
 
               <p >
@@ -965,7 +966,7 @@ ${(selectedSize && !selectedProduct.sizes.includes(String(selectedSize)))
 
       
         <div className="px-6">
-        {selectedProduct.stock < 100 && selectedProduct.stock > 1 && (
+        {selectedProduct.stock < 30 && selectedProduct.stock > 1 && (
             <div className="flex items-center gap-1 mt-3">
               <svg
                 aria-hidden="true"
@@ -1300,9 +1301,9 @@ ${(selectedSize && !selectedProduct.sizes.includes(String(selectedSize)))
                     {comments.length > 5 && (
                       <button
                         onClick={() => setShowAll(true)}
-                        className="text-blue-600 hover:underline text-sm cursor-pointer"
+                        className="text-blue-600 hover:underline underline cursor-pointer"
                       >
-                        Xem tất cả đánh giá ({comments.length})
+                      View all reviews ({comments.length})
                       </button>
                     )}
                   </div>

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import SortForMobile from './SortForMobile';
+import ResultNotfound from '../etc/ResultNotfound';
 
 const CategoryTopBar = ({
   forFilter,
@@ -89,7 +90,7 @@ const CategoryTopBar = ({
         </div>
         <div className='block sm:hidden'>
         <div className="px-6 sm:px-0 py-5">
-  <h2 className="text-lg leading-[25px]">{categoryName}{forFilter.length > 0 ? ` / ${forFilter[0]}` : ''}</h2>
+  <h2 className="text-lg ">{categoryName}{forFilter.length > 0 ? ` / ${forFilter[0]}` : ''}</h2>
   <p className="text-sm text-blue-600 underline">The list of products is shown below</p>
 </div>
            
@@ -128,6 +129,8 @@ const CategoryTopBar = ({
 <div className='h-16  rounded-lg items-center flex px-6 justify-between'>
 
 <p className="text-lg text-[#707072]"> {filteredProductsLength} Results</p>
+
+
 <SortForMobile
   forFilter={forFilter}
   setForFilter={setForFilter}
@@ -157,6 +160,11 @@ const CategoryTopBar = ({
 
 </div>
         </div>
+        {filteredProductsLength === 0 && (
+  <div className="px-6 py-10">
+    <ResultNotfound />
+  </div>
+)}
        </div>
     );
 };

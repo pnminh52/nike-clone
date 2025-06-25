@@ -5,6 +5,7 @@ import axios from "axios";
 import Pagination from "../../components/user/etc/Pagination";
 import { Link } from "react-router-dom";
 import CardOrders from "./../../components/user/order/CardOrders";
+import ResultNotfound from './../../components/user/etc/ResultNotfound';
 
 const Order = () => {
   const { user } = useAuth();
@@ -99,7 +100,7 @@ const Order = () => {
       <div className="block sm:hidden">
         <div className="max-w-screen-2xl mx-auto px-0 sm:px-10">
         <div className="px-6 sm:px-0 py-5">
-  <h2 className="text-lg leading-[25px]">Orders</h2>
+  <h2 className="text-lg ">Orders</h2>
   <p className="text-sm text-blue-600 underline">All your orders will be displayed here</p>
 </div>
 
@@ -228,16 +229,22 @@ const Order = () => {
   </div>
 </div>
 
+
               
               </div>
             )}
           </div>
-          <CardOrders
-            orders={paginated}
-            selectedItems={selectedItems}
-            setSelectedItems={setSelectedItems}
-            setSelectedOrder={setSelectedOrder}
-          />
+          {paginated.length === 0 ? (
+  <ResultNotfound />
+) : (
+  <CardOrders
+    orders={paginated}
+    selectedItems={selectedItems}
+    setSelectedItems={setSelectedItems}
+    setSelectedOrder={setSelectedOrder}
+  />
+)}
+
 
           {selectedOrder && (
             <OrderDetails

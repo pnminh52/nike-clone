@@ -6,6 +6,7 @@ import { useCart } from '../../hooks/useCart';
 import { useNavigate } from 'react-router-dom';
 import PopupSize from '../../components/user/wishlist/PopupSize';
 import ProductSkeleton from '../../components/user/etc/ProductSkeleton';
+import ResultNotfound from '../../components/user/etc/ResultNotfound';
 const Wishlist = () => {
   const { wishlist, removeFromWishlist } = useWish(); 
   const { addToCart } = useCart(); 
@@ -48,15 +49,7 @@ return () => clearTimeout(timer)
      
 
       {wishlist.length === 0 ? (
-       <div className="h-100 flex items-center justify-center">
-                  <div className="text-center">
-                    <p>Your wishlist is empty.</p>
-                   <Link to={"/category/New%20%26%20Upcoming%20Drops"}>
-                   <p className=" text-blue-600 underline">
-                   Start exploring now!
-                    </p></Link>
-                  </div>
-                </div>
+      <ResultNotfound />
       ) : (
        <div>
          <h2 className="text-2xl  px-6 sm:px-0 py-5">Favourites</h2>

@@ -7,7 +7,7 @@ const CommentSection = ({ comments, user }) => {
   return (
     <div className="mt-6 space-y-4 ">
       {topComments.length === 0 && (
-        <p className="text-gray-500">Chưa có đánh giá nào.</p>
+        <p className="text-gray-500">There are no reviews yet.</p>
       )}
       {topComments.map((comment) => (
         <CommentItem key={comment.id} comment={comment} />
@@ -57,7 +57,7 @@ const CommentItem = ({ comment }) => (
     </div>
 
     <p
-  className="text-black cursor-pointer mt-2"
+  className="text-black text-sm cursor-pointer mt-2"
   content={comment.content}
 >
   {comment.content.split(" ").slice(0, 50).join(" ")}
@@ -66,13 +66,13 @@ const CommentItem = ({ comment }) => (
 
 
     {Array.isArray(comment.images) && comment.images.length > 0 && (
-      <div className="grid grid-cols-5 gap-2 mt-3">
-        {comment.images.map((img, idx) => (
+      <div className="flex overflow-auto  w-full gap-2 mt-3">
+        {comment.images.slice(0,4).map((img, idx) => (
           <img
             key={idx}
             src={img}
             alt={`comment-img-${idx}`}
-            className="w-20 h-20 object-cover rounded-lg border border-gray-300 cursor-pointer"
+            className="w-24 h-24 object-cover rounded-lg border border-gray-300 cursor-pointer"
           />
         ))}
       </div>

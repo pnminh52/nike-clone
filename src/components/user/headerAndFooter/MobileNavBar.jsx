@@ -73,7 +73,9 @@ ${isMenuOpen ? "translate-x-0" : "translate-x-full"}`}
                                 className="flex justify-end cursor-pointer"
                                 onClick={() => setIsMenuOpen(false)}
                             >
-                                <svg viewBox="0 0 24 24" fill="none" width="35px" height="35px">
+                                <button     className="w-8 h-8 cursor-pointer bg-gray-200 rounded-full flex items-center justify-center"
+                                >
+  <svg viewBox="0 0 24 24" fill="none" width="35px" height="35px">
                                     <path
                                         d="M7 17L16.8995 7.10051"
                                         stroke="#000000"
@@ -87,6 +89,8 @@ ${isMenuOpen ? "translate-x-0" : "translate-x-full"}`}
                                         strokeLinejoin="round"
                                     />
                                 </svg>
+                                </button>
+                              
                             </div>
                             <div className="flex items-center justify-between py-6">
                                 <div className="flex gap-2 items-center ">

@@ -8,6 +8,7 @@ import Summary from "../../components/user/cart/Summary";
 import { Link } from "react-router-dom";
 import MightAlsoLike from './../../components/user/cart/MightAlsoLike';
 import useProducts from './../../hooks/useProducts';
+import ResultNotfound from "../../components/user/etc/ResultNotfound";
 
 const Cart = ({}) => {
   const [loading, setLoading] = useState(true);
@@ -45,15 +46,7 @@ const Cart = ({}) => {
     <div>
       <div className="">
         {cart.length === 0 ? (
-          <div className="h-100 flex items-center justify-center">
-            <div className="text-center">
-              <p>Your cart is empty.</p>
-             <Link to={"/category/New%20%26%20Upcoming%20Drops"}>
-             <p className=" text-blue-600 underline">
-                Start shopping now!
-              </p></Link>
-            </div>
-          </div>
+         <ResultNotfound />
         ) : (
           <div>
             <div className="max-w-screen-xl px-6 sm:px-30 mx-auto   ">
