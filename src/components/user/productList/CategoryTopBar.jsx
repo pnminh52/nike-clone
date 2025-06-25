@@ -88,16 +88,11 @@ const CategoryTopBar = ({
         </div>
         </div>
         <div className='block sm:hidden'>
-            <div className='px-6 py-8  inter '>
-            <p className="text-black">
-  {categoryName}{forFilter.length > 0 ? ` / ${forFilter[0]}` : ''}
-</p>
-
-
-
-
-              
-            </div>
+        <div className="px-6 sm:px-0 py-5">
+  <h2 className="text-lg leading-[25px]">{categoryName}{forFilter.length > 0 ? ` / ${forFilter[0]}` : ''}</h2>
+  <p className="text-sm text-blue-600 underline">The list of products is shown below</p>
+</div>
+           
             <div className="bg-white flex px-6  py-4 space-x-4 border-b border-t border-gray-300 hide-scrollbar whitespace-nowrap overflow-auto">
   {[
     'Lifestyle',
@@ -111,7 +106,7 @@ const CategoryTopBar = ({
     'Boots',
     'Tennis',
     'Athletics',
-    'Sandals, Slides',
+    'Sandals',
   ].map((category) => (
     <label
       key={category}
