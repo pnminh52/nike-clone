@@ -2,8 +2,11 @@ import React, { useState } from 'react';
 import useProducts from '../../../hooks/useProducts';
 import { Link } from 'react-router-dom';
 import ProductDetailCard from '../../../components/admin/product/ProductDetailCard';
+import FilterProduct from './../../../components/admin/product/FilterProduct';
 
 const ProductList = () => {
+  const [statusFilter, setStatusFilter] = useState('');
+  const [stockFilter, setStockFilter] = useState('');
   const { products, handleDeleteProduct } = useProducts();
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [showDetail, setShowDetail] = useState(false);
@@ -12,7 +15,29 @@ const ProductList = () => {
     setSelectedProduct(product);
     setShowDetail(true);
   };
-
+  const filteredProducts = products.filter((p) => {
+    const matchStatus = statusFilter ? p.status === statusFilter : true;
+  
+    const matchStock =
+    stockFilter === ''
+      ? true
+      : stockFilter === 'under25'
+      ? p.stock < 25
+      : stockFilter === '25to49'
+      ? p.stock >= 25 && p.stock < 50
+      : stockFilter === '50to74'
+      ? p.stock >= 50 && p.stock < 75
+      : stockFilter === '75to99'
+      ? p.stock >= 75 && p.stock < 100
+      : stockFilter === 'over100'
+      ? p.stock > 100
+      : true;
+  
+  
+    return matchStatus && matchStock;
+  });
+  
+  
   const handleCloseDetail = () => {
     setSelectedProduct(null);
     setShowDetail(false);
@@ -34,6 +59,13 @@ const ProductList = () => {
           Add Product
         </button>
       </Link>
+      <FilterProduct
+  selectedStatus={statusFilter}
+  onStatusChange={setStatusFilter}
+  stockFilter={stockFilter}
+  onStockChange={setStockFilter}
+/>
+
       <div className='bg-white flex gap-4 rounded-2xl p-4 justify-between items-center'>
         <input type="text" placeholder='search here ' className=' bg-gray-100 px-4 py-2  border border-gray-300 ' />
     
@@ -55,7 +87,7 @@ const ProductList = () => {
             </tr>
           </thead>
           <tbody>
-            {products.map((product) => (
+            {filteredProducts.map((product) => (
               <tr key={product.id} className="border-t">
                 <td className="border border-gray-200 p-2 items-center text-center justify-center">
                   <img
