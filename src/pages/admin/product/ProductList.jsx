@@ -6,6 +6,7 @@ import FilterProduct from './../../../components/admin/product/FilterProduct';
 
 const ProductList = () => {
   const [statusFilter, setStatusFilter] = useState('');
+  const [priceFilter, setPriceFilter] = useState('');
   const [stockFilter, setStockFilter] = useState('');
   const { products, handleDeleteProduct } = useProducts();
   const [selectedProduct, setSelectedProduct] = useState(null);
@@ -15,27 +16,32 @@ const ProductList = () => {
     setSelectedProduct(product);
     setShowDetail(true);
   };
-  const filteredProducts = products.filter((p) => {
+  const filteredProducts = products
+  .filter((p) => {
     const matchStatus = statusFilter ? p.status === statusFilter : true;
-  
     const matchStock =
-    stockFilter === ''
-      ? true
-      : stockFilter === 'under25'
-      ? p.stock < 25
-      : stockFilter === '25to49'
-      ? p.stock >= 25 && p.stock < 50
-      : stockFilter === '50to74'
-      ? p.stock >= 50 && p.stock < 75
-      : stockFilter === '75to99'
-      ? p.stock >= 75 && p.stock < 100
-      : stockFilter === 'over100'
-      ? p.stock > 100
-      : true;
-  
-  
+      stockFilter === ''
+        ? true
+        : stockFilter === 'under25'
+        ? p.stock < 25
+        : stockFilter === '25to49'
+        ? p.stock >= 25 && p.stock < 50
+        : stockFilter === '50to74'
+        ? p.stock >= 50 && p.stock < 75
+        : stockFilter === '75to99'
+        ? p.stock >= 75 && p.stock < 100
+        : stockFilter === 'over100'
+        ? p.stock > 100
+        : true;
+
     return matchStatus && matchStock;
+  })
+  .sort((a, b) => {
+    if (priceFilter === 'asc') return a.price - b.price;
+    if (priceFilter === 'desc') return b.price - a.price;
+    return 0;
   });
+
   
   
   const handleCloseDetail = () => {
@@ -60,10 +66,13 @@ const ProductList = () => {
         </button>
       </Link>
       <FilterProduct
-  selectedStatus={statusFilter}
+  onStockChange={setStockFilter}
+  onPriceChange={setPriceFilter}
   onStatusChange={setStatusFilter}
   stockFilter={stockFilter}
-  onStockChange={setStockFilter}
+  priceFilter={priceFilter}
+  statusFilter={statusFilter}
+
 />
 
       <div className='bg-white flex gap-4 rounded-2xl p-4 justify-between items-center'>

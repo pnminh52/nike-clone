@@ -1,12 +1,12 @@
 import React from 'react';
 
-const FilterProduct = ({ selectedStatus, stockFilter, onStockChange, onStatusChange }) => {
+const FilterProduct = ({ statusFilter, stockFilter, onStockChange, onStatusChange, onPriceChange, priceFilter }) => {
   return (
     <div className="flex flex-col gap-4">
       <div>
         <label className="text-sm font-medium mr-2">Filter Status:</label>
         <select
-          value={selectedStatus}
+          value={statusFilter}
           onChange={(e) => onStatusChange(e.target.value)}
           className="border px-3 py-2 rounded"
         >
@@ -30,6 +30,20 @@ const FilterProduct = ({ selectedStatus, stockFilter, onStockChange, onStatusCha
           <option value="75to99">75 - 99</option>
           <option value="over100">Over 100</option>
         </select>
+      </div>
+
+      <div>
+      <label className="text-sm font-medium">Filter Price:</label>
+      <select
+  value={priceFilter}
+  onChange={(e) => onPriceChange(e.target.value)}
+  className="border px-2 py-1 rounded"
+>
+  <option value="">All</option>
+  <option value="asc">Price: Low to High</option>
+  <option value="desc">Price: High to Low</option>
+</select>
+
       </div>
     </div>
   );
