@@ -135,7 +135,7 @@ const SidebarFilter = ({
       <div className="">
         <div className="">
           <button
-            className="cursor-pointer w-full py-4 border-t inter border-gray-300 flex justify-between items-center"
+            className="cursor-pointer w-full py-4  inter  flex justify-between items-center"
             onClick={() => setIsCategoryDropdownOpen(!isCategoryDropdownOpen)}
           >
             Category

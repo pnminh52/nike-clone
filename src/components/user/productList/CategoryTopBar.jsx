@@ -3,6 +3,8 @@ import SortForMobile from './SortForMobile';
 import ResultNotfound from '../etc/ResultNotfound';
 
 const CategoryTopBar = ({
+  sortType,
+  setSortType,
   forFilter,
   setForFilter,
   heightFilter,
@@ -100,7 +102,7 @@ const CategoryTopBar = ({
     'Jordan',
     'Running',
     'Basketball',
-    'Training & Gym',
+    'Training',
     'Football',
     'Skateboarding',
     'Golf',
@@ -132,6 +134,8 @@ const CategoryTopBar = ({
 
 
 <SortForMobile
+ sortType={sortType}
+ setSortType={setSortType}
   forFilter={forFilter}
   setForFilter={setForFilter}
   heightFilter={heightFilter}

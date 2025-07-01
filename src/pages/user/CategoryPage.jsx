@@ -150,6 +150,8 @@ const CategoryPage = () => {
   return (
     <div className=" container  mx-auto px-0 sm:px-10 max-w-screen-2xl ">
       <CategoryTopBar
+       sortType={sortType}
+       setSortType={setSortType}
         forFilter={forFilter}
         setForFilter={setForFilter}
         heightFilter={heightFilter}
@@ -177,7 +179,7 @@ const CategoryPage = () => {
       />
 
       <div className="flex justify-between ">
-        <div className="w-[18%] h-full  hidden sm:block">
+      <div className="w-[18%] h-full hidden sm:block sticky top-0">
           <SidebarFilter
             forFilter={forFilter}
             setForFilter={setForFilter}

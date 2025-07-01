@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 
 const SortForMobile = ({
+  sortType,
+  setSortType,
   forFilter,
   setForFilter,
   heightFilter,
@@ -21,10 +23,9 @@ const SortForMobile = ({
   setIsUnder1000000,
 }) => {
   const [isOpen, setIsOpen] = useState(false);
-  const [animateOut, setAnimateOut] = useState(false);
 
   const closeMenu = () => {
-    setAnimateOut(true);
+    setIsOpen(false);
   };
   const handleGenderCheckboxChange = (e) => {
     const value = e.target.value;
@@ -127,15 +128,6 @@ const SortForMobile = ({
 
     return colorMap[colorName] || "#ccc";
   };
-  useEffect(() => {
-    if (animateOut) {
-      const timer = setTimeout(() => {
-        setIsOpen(false);
-        setAnimateOut(false);
-      }, 300); // thời gian animation
-      return () => clearTimeout(timer);
-    }
-  }, [animateOut]);
 
   return (
     <>
@@ -181,9 +173,7 @@ const SortForMobile = ({
 
       {isOpen && (
         <div
-          className={`fixed inset-0 bg-white z-50  ${
-            animateOut ? "slide-down" : "slide-up"
-          }`}
+          className={`fixed inset-0 bg-white z-50 `}
         >
           <div className="absolute top-4 right-4">
             <button
@@ -239,14 +229,14 @@ const SortForMobile = ({
                   "Jordan",
                   "Running",
                   "Basketball",
-                  "Training & Gym",
+                  "Training",
                   "Football",
                   "Skateboarding",
                   "Golf",
                   "Boots",
                   "Tennis",
                   "Athletics",
-                  "Sandals, Slides",
+                  "Sandals",
                 ].map((category) => (
                   <label
                     key={category}
@@ -264,20 +254,58 @@ const SortForMobile = ({
                 ))}
               </div>
             </div>
-            <div className="bg-white   w-full ">
-              <p className="text-lg py-2">Price</p>
-              <label className="flex items-center py-1 gap-2 border border-blue-600">
-                <input
-                  type="checkbox"
-                  checked={isUnder1000000}
-                  onChange={handlePriceCheckboxChange}
-                  className="appearance-none form-checkbox w-5 h-5 transition duration-300 ease-in-out cursor-pointer  bg-white border border-gray-400 rounded-md checked:bg-black checked:border-black focus:outline-none"
-                />
-                <span className="text-sm">
-                  Under 1,000,000<span className="text-sm underline">đ</span>
-                </span>
-              </label>
-            </div>
+            <div className="bg-white w-full">
+  <p className="text-lg py-2">Price</p>
+
+  {/* Checkbox: Under 1,000,000đ */}
+  <label className="flex items-center py-1 gap-2 border border-blue-600 mb-2">
+    <input
+      type="checkbox"
+      checked={isUnder1000000}
+      onChange={handlePriceCheckboxChange}
+      className="appearance-none form-checkbox w-5 h-5 transition duration-300 ease-in-out cursor-pointer bg-white border border-gray-400 rounded-md checked:bg-black checked:border-black focus:outline-none"
+    />
+    <span className="text-sm">
+      Under 1,000,000<span className="text-sm underline">đ</span>
+    </span>
+  </label>
+
+  {/* Radio: Sort by price */}
+    <label className="flex items-center py-1 gap-2 border border-blue-600 mb-2">
+    <input
+      type="checkbox"
+        name="priceSort"
+        value="priceLowHigh"
+      checked={sortType === "priceLowHigh"}
+        onChange={() => {
+          setSortType("priceLowHigh");
+          closeMenu();
+        }}
+      className="appearance-none form-checkbox w-5 h-5 transition duration-300 ease-in-out cursor-pointer bg-white border border-gray-400 rounded-md checked:bg-black checked:border-black focus:outline-none"
+    />
+     
+     <span className="text-sm"> Price: Low to High</span>
+    </label>
+
+    <label className="flex items-center py-1 gap-2 border border-blue-600 mb-2">
+    <input
+      type="checkbox"
+       name="priceSort"
+        value="priceHighLow"
+        checked={sortType === "priceHighLow"}
+        onChange={() => {
+          setSortType("priceHighLow");
+          closeMenu(); 
+        }}
+      className="appearance-none form-checkbox w-5 h-5 transition duration-300 ease-in-out cursor-pointer bg-white border border-gray-400 rounded-md checked:bg-black checked:border-black focus:outline-none"
+    />
+    <span className="text-sm">
+    Price: High to Low
+    </span>
+     
+    </label>
+</div>
+
             <div className="bg-white   w-full">
               <p className="text-lg py-2">Brand</p>
 
