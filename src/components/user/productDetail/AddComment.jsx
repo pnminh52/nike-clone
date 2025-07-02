@@ -110,10 +110,7 @@ const AddComment = ({ productId, user, onClose, onSubmit, product, animateOut })
             </button>
           </div>
 
-          <div className="justify-center text-center mt-8 items-center gap-2 mb-4">
-            <h2 className="text-lg">Write a Review</h2>
-            <p className="text-gray-500">Share your thoughts with the community.</p>
-          </div>
+        
 
           {product && (
             <div className="flex gap-2 py-4">

@@ -4,7 +4,7 @@ const useComment = () => {
   const [comments, setComments] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
-  const API_URL = "https://nikejsonserver-2.onrender.com";
+  const API_URL = "http://localhost:3000";
 
   // Lấy bình luận theo productId
   const fetchComments = async (productId) => {

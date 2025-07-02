@@ -4,7 +4,7 @@ import { useAuth } from "./useAuth";
 
 
 export const useWish = () => {
-  const API_URL = "https://nikejsonserver-2.onrender.com";
+  const API_URL = "http://localhost:3000";
 
   const { user, setUser } = useAuth();
     const [wishlist, setWishlist] = useState([]);

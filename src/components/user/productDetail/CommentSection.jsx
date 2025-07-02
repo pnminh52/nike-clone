@@ -1,13 +1,22 @@
 import React, { useState } from "react";
 import CommentTab from "../productDetail/CommentTab";
+
 const CommentSection = ({ comments, user }) => {
- 
+  const [showCommentTab, setShowCommentTab] = useState(false);
   const topComments = comments.slice(0, 3);
 
   return (
-    <div className="mt-6 space-y-4 ">
+    <div className="mt-6 space-y-4">
       {topComments.length === 0 && (
         <p className="text-gray-500">There are no reviews yet.</p>
+      )}
+  {comments.length > 3 && (
+        <button
+          onClick={() => setShowCommentTab(true)}
+          className="text-sm text-blue-600 underline hover:text-gray-800"
+        >
+          View all comments
+        </button>
       )}
       {topComments.map((comment) => (
         <CommentItem key={comment.id} comment={comment} />
@@ -15,16 +24,21 @@ const CommentSection = ({ comments, user }) => {
 
     
 
-    
+      {showCommentTab && (
+        <CommentTab
+          comments={comments}
+          user={user}
+          onClose={() => setShowCommentTab(false)}
+        />
+      )}
     </div>
   );
 };
 
 const CommentItem = ({ comment }) => (
   <div>
-
     <div className="flex items-center justify-between">
-      <div className="flex items-center ">
+      <div className="flex items-center">
         {Array.from({ length: 5 }).map((_, index) => (
           <svg
             key={index}
@@ -45,7 +59,7 @@ const CommentItem = ({ comment }) => (
         ))}
       </div>
       <div>
-        <p className=" text-gray-500 text-sm">
+        <p className="text-gray-500 text-sm">
           {comment.userName} -{" "}
           {new Date(comment.date).toLocaleDateString("en-GB", {
             day: "2-digit",
@@ -56,18 +70,14 @@ const CommentItem = ({ comment }) => (
       </div>
     </div>
 
-    <p
-  className="text-black text-sm cursor-pointer mt-2"
-  content={comment.content}
->
-  {comment.content.split(" ").slice(0, 50).join(" ")}
-  {comment.content.split(" ").length > 50 && "..."}
-</p>
-
+    <p className="text-black text-sm cursor-pointer mt-2">
+      {comment.content.split(" ").slice(0, 50).join(" ")}
+      {comment.content.split(" ").length > 50 && "..."}
+    </p>
 
     {Array.isArray(comment.images) && comment.images.length > 0 && (
-      <div className="flex overflow-auto  w-full gap-2 mt-3">
-        {comment.images.slice(0,4).map((img, idx) => (
+      <div className="flex overflow-auto w-full gap-2 mt-3">
+        {comment.images.slice(0, 4).map((img, idx) => (
           <img
             key={idx}
             src={img}

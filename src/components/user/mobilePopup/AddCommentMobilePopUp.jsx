@@ -38,10 +38,7 @@ const AddCommentMobilePopup = ({
             </button>
           </div>
 
-          <div className="justify-center text-center mt-0 items-center gap-2 mb-4">
-            <h2 className="text-lg">Write a Review</h2>
-            <p className="text-gray-500">Share your thoughts with the community.</p>
-          </div>
+        
 
           {product && (
             <div className="flex gap-2 py-4">
@@ -94,10 +91,16 @@ const AddCommentMobilePopup = ({
           <div className="flex items-center gap-2 mb-4">
             <input
               type="checkbox"
-              className="appearance-none transition duration-300 ease-in-out cursor-pointer w-8 h-8 bg-white border-2 border-gray-400 rounded-md checked:bg-black checked:border-black focus:outline-none"
+              className="appearance-none hidden sm:block transition duration-300 ease-in-out cursor-pointer w-10 h-8 sm:w-8 sm:h-8 bg-white border-2 border-gray-400 rounded-md checked:bg-black checked:border-black focus:outline-none"
               checked={isChecked}
               onChange={(e) => setIsChecked(e.target.checked)}
             />
+            <input
+  type="checkbox"
+  className="w-7 h-7 rounded-xl block sm:hidden  accent-black cursor-pointer"
+/>
+
+            
             <p className="text-sm">
               By ticking the tick box, I agree to the Privacy Policy, Terms of
               Use and Terms of Service.<span className="text-red-600">*</span>

@@ -41,6 +41,7 @@ const ImageUploadDraggable = ({ images, setImages }) => {
           <h2>Share your photos</h2>
           <p className="text-gray-500">Add up to 5 photos that show how you wear and style this product.</p>
         </div>
+        <div className="hidden sm:block">
         <div className="grid grid-cols-5 gap-4">
           {images.map((img, index) => (
             <div
@@ -69,6 +70,43 @@ const ImageUploadDraggable = ({ images, setImages }) => {
             </label>
           )}
         </div>
+        </div>
+       
+       <div className="block sm:hidden">
+         <div className="flex gap-3 overflow-x-auto py-2">
+          {images.map((img, index) => (
+            <div
+              key={img.id}
+              className="relative w-27 h-27 rounded-lg overflow-hidden border border-gray-300 shrink-0"
+              draggable
+              onDragStart={(e) => handleDragStart(e, index)}
+              onDragOver={(e) => e.preventDefault()}
+              onDrop={(e) => handleDrop(e, index)}
+            >
+              <img
+                src={img.preview}
+                alt="preview"
+                className="w-27 h-27 object-cover cursor-pointer"
+              />
+              <button
+                type="button"
+                onClick={() => handleDelete(img.id)}
+                className="absolute top-1 right-1 bg-black bg-opacity-50 text-white rounded-full w-5 h-5 text-xs flex items-center justify-center"
+              >
+                ✕
+              </button>
+            </div>
+          ))}
+        
+          {images.length < 5 && (
+            <label className="w-27 h-27 border-dashed border border-gray-400 flex items-center justify-center rounded-lg cursor-pointer hover:border-black shrink-0">
+              <span className="text-4xl text-gray-400">+</span>
+              <input type="file" accept="image/*" multiple onChange={handleFiles} className="hidden" />
+            </label>
+          )}
+        </div>
+       </div>
+
       </div>
     );
   };
