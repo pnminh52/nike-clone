@@ -2459,7 +2459,7 @@
           "totalPrice": 2944000
         }
       ],
-      "point": 1000,
+      "point": 2200,
       "totalOrder": 5,
       "dateOfBirth": "",
       "customerType": "Standard",
@@ -2481,6 +2481,22 @@
           "minOrderValue": "2000000",
           "numberOfExpiryDate": 40,
           "pointToExchange": 1000
+        },
+        {
+          "id": "c2",
+          "category": "event",
+          "name": "10% Voucher",
+          "image": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/cee4b3b4-ef04-4348-966b-a857c9a185fc/GiftCard.png",
+          "description": "Get 10% off on your first order",
+          "discountType": "percent",
+          "value": 10,
+          "stock": 1,
+          "code": "EVENT10",
+          "expiryDate": "2025-08-11",
+          "minOrderValue": "2000000",
+          "numberOfExpiryDate": 40,
+          "pointToExchange": 800,
+          "applyTo": "order"
         }
       ]
     },

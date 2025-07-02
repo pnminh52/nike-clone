@@ -1,275 +1,181 @@
 import React, { useState } from "react";
 import useVouchers from "../../../hooks/useVouchers";
 import ProductSkeleton from "../etc/ProductSkeleton";
+
 const VoucherPopup = ({ setShowPopup, userId, total, onApply }) => {
-  const { user, loading, applyVoucher } = useVouchers(userId);
+  const { user, loading, applyVoucher, vouchers, exchangeVoucher } = useVouchers(userId);
   const [selectedVoucherId, setSelectedVoucherId] = useState(null);
-  const [isClosing, setIsClosing] = useState(false);
 
-  const handleApply = () => {
-    const selected = user?.vouchers.find((v) => v.id === selectedVoucherId);
-    if (!selected) return;
+  const now = new Date();
 
-    const discount = applyVoucher(selected, total);
+  const handleClickVoucher = (voucher) => {
+    if (total < voucher.minOrderValue) return;
+
+    setSelectedVoucherId(voucher.id);
+    const discount = applyVoucher(voucher, total);
     if (discount !== null) {
-      onApply(discount, selected);
+      onApply(discount, voucher);
       setShowPopup(false);
     }
   };
 
-  return (
-    <div>
-      <div className="hidden sm:block">
-      <div className="fixed   inset-0 z-50 bg-black/40 flex justify-center items-center">
-     <div className="bg-white relative min-h-[90vh] w-full max-w-xl p-6 rounded-3xl overflow-y-auto shadow-xl hide-scrollbar">
-     <div className="absolute top-4 right-4">
-  <button
-    onClick={()=>setShowPopup(false)}
-    type="button"
-    className="w-8 h-8 cursor-pointer bg-gray-200 rounded-full flex items-center justify-center"
-  >
-    <svg viewBox="0 0 24 24" fill="none">
-      <path d="M7 17L16.8995 7.10051" stroke="#000000" strokeLinecap="round" strokeLinejoin="round" />
-      <path d="M7 7.00001L16.8995 16.8995" stroke="#000000" strokeLinecap="round" strokeLinejoin="round" />
-    </svg>
-  </button>
-</div>
-
-<div className="flex justify-center text-center mt-10">
-  
-</div>
-
-{loading ? (
-  <div className="flex justify-center items-center h-full">
-    <ProductSkeleton />
-  </div>
-) : user?.vouchers?.length > 0 ? (
-  <ul className="space-y-4 px-4 py-2 overflow-y-auto max-h-[calc(90vh-120px)] hide-scrollbar">
-
-    {[...user.vouchers]
-      .sort((a, b) => {
-        const now = new Date();
-        const isAExpiring =
-          new Date(a.expiryDate) - now <= 3 * 24 * 60 * 60 * 1000 &&
-          new Date(a.expiryDate) - now >= 0;
-        const isBExpiring =
-          new Date(b.expiryDate) - now <= 3 * 24 * 60 * 60 * 1000 &&
-          new Date(b.expiryDate) - now >= 0;
-        const canAApply = total >= a.minOrderValue;
-        const canBApply = total >= b.minOrderValue;
-
-        if (canAApply && isAExpiring && !(canBApply && isBExpiring)) return -1;
-        if (canBApply && isBExpiring && !(canAApply && isAExpiring)) return 1;
-        if (canAApply && !canBApply) return -1;
-        if (canBApply && !canAApply) return 1;
-        return 0;
-      })
-      .map((v) => {
-        const canApply = total >= v.minOrderValue;
-        const expiry = new Date(v.expiryDate);
-        const today = new Date();
-        const diffDays = Math.ceil((expiry - today) / (1000 * 60 * 60 * 24));
-
-        return (
-          <li
-            key={v.id}
-            onClick={() => {
-              if (!canApply) return;
-              setSelectedVoucherId(v.id);
-              const selected = user?.vouchers.find((voucher) => voucher.id === v.id);
-              if (!selected) return;
-              const discount = applyVoucher(selected, total);
-              if (discount !== null) {
-                onApply(discount, selected);
-                setShowPopup(false);
-              }
-            }}
-            className={`p-2 border border-gray-300 rounded-lg flex gap-2 cursor-pointer
-              ${!canApply ? "bg-gray-100 text-gray-400 cursor-not-allowed" : ""}
-              ${
-                selectedVoucherId === v.id && canApply
-                  ? "border-green-600 bg-green-50"
-                  : ""
-              }
-            `}
-          >
-            <img
-              src={v.image}
-              className="w-20 h-20 rounded-lg object-cover"
-              alt=""
-            />
-            <div>
-              <p className="text-sm">{v.name}</p>
-              <p className="text-sm">
-                Discount {(v.value ?? 0).toLocaleString()}
-                {v.discountType === "amount" ? (
-                  <span className="underline text-sm">đ</span>
-                ) : (
-                  "%"
-                )}
-              </p>
-              <p className="text-sm">
-                Applies to orders from {(v.minOrderValue ?? 0).toLocaleString()}
-                <span className="underline text-sm">đ</span>
-              </p>
-              {!canApply && (
-                <p className="text-sm text-red-400">Not eligible to apply</p>
-              )}
-              {diffDays <= 3 && diffDays >= 0 && (
-                <p className="text-sm text-red-600">This voucher is about to expire.</p>
-              )}
-            </div>
-          </li>
-        );
-      })}
-  </ul>
-) : (
-<div className="min-h-[80vh] flex flex-col items-center justify-center text-center  text-black">
-  <p className=" ">No vouchers available.</p>
-  <p className=" text-blue-600 underline">Check back later for new promotions!</p>
-</div>
-
-)}
-
-              </div>
-              </div>
-      </div>
-      <div className="block sm:hidden">
-        <div className=" fixed inset-0 bg-black/40 flex items-end sm:items-center justify-center z-50">
-          <div
-            className={`bg-white w-full h-full sm:h-auto sm:w-96  overflow-y-auto sm:overflow-visible  
- 
-`}
-          >
-            <div className="absolute top-4 right-4">
-              <button
-                onClick={()=>setShowPopup(false)}
-                type="button"
-                className="w-8 h-8 cursor-pointer bg-gray-200 rounded-full flex items-center justify-center"
-              >
-                <svg viewBox="0 0 24 24" fill="none">
-                  <path
-                    d="M7 17L16.8995 7.10051"
-                    stroke="#000000"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                  <path
-                    d="M7 7.00001L16.8995 16.8995"
-                    stroke="#000000"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-              </button>
-            </div>
-            <div className="flex justify-center text-center  mt-12">
-             
-            </div>
-
-            {loading ? (
-                 <div className="flex justify-center items-center h-screen">
-             <ProductSkeleton />
-             </div>
-            ) : user?.vouchers?.length > 0 ? (
-              <ul className="space-y-4 py-4  px-4 min-h-screen">
-                {[...user.vouchers]
-  .sort((a, b) => {
-    const now = new Date();
-
-    const isAExpiring =
-      new Date(a.expiryDate) - now <= 3 * 24 * 60 * 60 * 1000 &&
-      new Date(a.expiryDate) - now >= 0;
-    const isBExpiring =
-      new Date(b.expiryDate) - now <= 3 * 24 * 60 * 60 * 1000 &&
-      new Date(b.expiryDate) - now >= 0;
-
+  const sortVouchers = (a, b) => {
+    const isAExpiring = new Date(a.expiryDate) - now <= 3 * 86400000 && new Date(a.expiryDate) >= now;
+    const isBExpiring = new Date(b.expiryDate) - now <= 3 * 86400000 && new Date(b.expiryDate) >= now;
     const canAApply = total >= a.minOrderValue;
     const canBApply = total >= b.minOrderValue;
 
-    // Ưu tiên: dùng được + sắp hết hạn → dùng được → còn lại
     if (canAApply && isAExpiring && !(canBApply && isBExpiring)) return -1;
     if (canBApply && isBExpiring && !(canAApply && isAExpiring)) return 1;
     if (canAApply && !canBApply) return -1;
     if (canBApply && !canAApply) return 1;
-
     return 0;
-  })
-  .map((v) => {
+  };
+
+  const renderVoucher = (v, owned = true) => {
     const canApply = total >= v.minOrderValue;
     const expiry = new Date(v.expiryDate);
-    const today = new Date();
-    const diffTime = expiry.getTime() - today.getTime();
-    const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+    const diffDays = Math.ceil((expiry - now) / (1000 * 60 * 60 * 24));
 
     return (
-      <li
-        key={v.id}
-        onClick={() => {
-            if (!canApply) return;
-            setSelectedVoucherId(v.id);
-            const selected = user?.vouchers.find((voucher) => voucher.id === v.id);
-            if (!selected) return;
-          
-            const discount = applyVoucher(selected, total);
-            if (discount !== null) {
-              onApply(discount, selected);
-              setShowPopup(false);
-            }
-          }}
-          
-        className={`p-2 border border-gray-300 rounded-lg flex gap-2 cursor-pointer
-          ${!canApply ? "bg-gray-100 text-gray-400 cursor-not-allowed" : ""}
-          ${
-            selectedVoucherId === v.id && canApply
-              ? "border-green-600 bg-green-50"
-              : ""
-          }
-        `}
-      >
-        <img
-          src={v.image}
-          className="w-20 h-20 rounded-lg object-cover"
-          alt=""
-        />
-        <div>
-          <p className="text-sm">{v.name}</p>
-          <p className="text-sm">
-            Discount {(v.value ?? 0).toLocaleString()}
-            {v.discountType === "amount" ? (
-              <span className="underline text-sm">đ</span>
-            ) : (
-              "%"
-            )}
-          </p>
-          <p className="text-sm">
-            Applies to orders from {(v.minOrderValue ?? 0).toLocaleString()}
-            <span className="underline text-sm">đ</span>
-          </p>
-          {!canApply && (
-            <p className="text-sm text-red-400">Not eligible to apply</p>
+    <ul className="">
+        <li
+              key={`${owned ? "own" : "other"}-${v.id}`}
+              onClick={() => owned && handleClickVoucher(v)}
+              className={`p-2 border border-gray-300 rounded-lg flex gap-2 ${
+                owned
+                  ? canApply
+                    ? `cursor-pointer ${selectedVoucherId === v.id ? "border-green-600 bg-green-50" : ""}`
+                    : "bg-gray-100 text-gray-400 cursor-not-allowed"
+                  : "bg-gray-100 text-gray-400"
+              }`}
+            >
+              <img src={v.image} className="w-20 h-20 rounded-lg object-cover" alt="" />
+              <div>
+                <p className="text-sm">{v.name}</p>
+                <p className="text-sm">
+                  Discount {(v.value ?? 0).toLocaleString()}
+                  {v.discountType === "amount" ? <span className="underline">đ</span> : "%"}
+                </p>
+                <p className="text-sm">
+                  Applies to orders from {(v.minOrderValue ?? 0).toLocaleString()}
+                  <span className="underline">đ</span>
+                </p>
+                {!canApply && owned && <p className="text-sm text-red-400">Not eligible to apply</p>}
+                {diffDays <= 3 && diffDays >= 0 && (
+                  <p className="text-sm text-red-600">This voucher is about to expire.</p>
+                )}
+      {!owned && (
+        <>
+          {user?.point >= v.pointToExchange ? (
+            <button
+              className=" text-sm  text-blue-600 underline rounded "
+              onClick={(e) => {
+                e.stopPropagation();
+                exchangeVoucher(v);
+              }}
+            >
+             Redeem this coupon code
+            </button>
+          ) : (
+            <p className="text-sm text-red-400 mt-1">
+              {v.pointToExchange} points are required 
+            </p>
           )}
-          {diffDays <= 3 && diffDays >= 0 && (
-            <p className="text-sm text-red-600">This voucher is about to expire.</p>
-          )}
-        </div>
-      </li>
+        </>
+      )}
+              </div>
+            </li>
+    </ul>
     );
-  })}
+  };
 
-              </ul>
-            ) : (
-              <div className="min-h-[80vh] flex flex-col items-center justify-center text-center  text-black">
-              <p className=" ">No vouchers available.</p>
-              <p className=" text-blue-600 underline">Check back later for new promotions!</p>
-            </div>
-            )}
+  const popupContent = (
+    <div className="bg-white relative min-h-[90vh] w-full max-w-xl p-6 rounded-3xl overflow-y-auto shadow-xl hide-scrollbar">
+      <button
+        onClick={() => setShowPopup(false)}
+        className="absolute top-4 right-4 w-8 h-8 bg-gray-200 rounded-full flex items-center justify-center"
+      >
+        <svg viewBox="0 0 24 24" fill="none">
+          <path d="M7 17L16.8995 7.10051" stroke="#000" strokeLinecap="round" />
+          <path d="M7 7L16.8995 16.8995" stroke="#000" strokeLinecap="round" />
+        </svg>
+      </button>
 
-           
+       {loading ? (
+                <div className="flex justify-center items-center h-screen">
+                  <ProductSkeleton />
+                </div>
+              ) : (
+                <>
+                  <div className=" mt-12">
+                    <p className="text-blue-600 underline text-sm">You have: {user?.point} point</p>
+                  </div>
+                <div className="max-h-[70vh] overflow-y-auto">
+                <ul className="space-y-2 py-2  ">
+                    {[...user.vouchers].sort(sortVouchers).map((v) => renderVoucher(v))}
+                  </ul>
+                 <div className="space-y-2">
+                 {vouchers?.map((v) => {
+                    const owned = user.vouchers?.some((uv) => uv.id === v.id);
+                    if (!owned) return renderVoucher(v, false);
+                    return null;
+                  })}
+                 </div>
+                </div>
+                </>
+              )}
+    </div>
+  );
+
+  const popupMobile = (
+    <div className="fixed inset-0 bg-black/40 flex items-end justify-center z-50 sm:hidden">
+      <div className="bg-white w-full h-full overflow-y-auto relative p-4">
+        <button
+          onClick={() => setShowPopup(false)}
+          className="absolute top-4 right-4 w-8 h-8 bg-gray-200 rounded-full flex items-center justify-center"
+        >
+          <svg viewBox="0 0 24 24" fill="none">
+            <path d="M7 17L16.8995 7.10051" stroke="#000" strokeLinecap="round" />
+            <path d="M7 7L16.8995 16.8995" stroke="#000" strokeLinecap="round" />
+          </svg>
+        </button>
+
+        {loading ? (
+          <div className="flex justify-center items-center h-screen">
+            <ProductSkeleton />
           </div>
-        </div>
+        ) : (
+          <>
+            <div className=" mt-12">
+              <p className="text-blue-600 underline text-sm">You have: {user?.point} point</p>
+            </div>
+            <ul className="space-y-2 py-2  ">
+              {[...user.vouchers].sort(sortVouchers).map((v) => renderVoucher(v))}
+            </ul>
+           <div className="space-y-2">
+           {vouchers?.map((v) => {
+              const owned = user.vouchers?.some((uv) => uv.id === v.id);
+              if (!owned) return renderVoucher(v, false);
+              return null;
+            })}
+           </div>
+          </>
+        )}
       </div>
     </div>
+  );
+
+  return (
+    <>
+      {/* Desktop */}
+      <div className="hidden sm:flex fixed inset-0 z-50 bg-black/40 justify-center items-center">
+        {popupContent}
+      </div>
+
+      {/* Mobile */}
+      {popupMobile}
+    </>
   );
 };
 
