@@ -54,8 +54,8 @@ const OrderDetails = ({ users,order, onClose, onUpdateStatus }) => {
   
 
   return (
-<div className="fixed inset-0 bg-black/40 z-50 overflow-y-auto">
-<div className="bg-white py-4 min-h-screen w-full max-w-lg mx-auto relative">
+<div className="fixed inset-0 bg-black/40 z-50 flex items-center justify-center px-2">
+<div className="bg-white relative min-h-[90vh] w-full max-w-xl p-6 rounded-3xl overflow-y-auto shadow-xl hide-scrollbar">
   
   
       <div className="absolute top-4 right-4">

@@ -45,7 +45,7 @@ return () => clearTimeout(timer)
   }
 
   return (
-    <div className=" max-w-screen-2xl max-auto px-0 sm:px-10">
+    <div className=" max-w-screen-2xl mx-auto px-0 sm:px-10">
      
 
       {wishlist.length === 0 ? (

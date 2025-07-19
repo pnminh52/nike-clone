@@ -6,6 +6,7 @@ import Pagination from "../../components/user/etc/Pagination";
 import { Link } from "react-router-dom";
 import CardOrders from "./../../components/user/order/CardOrders";
 import ResultNotfound from './../../components/user/etc/ResultNotfound';
+import OrderTable from './../../components/user/order/OrderTable';
 
 const Order = () => {
   const { user } = useAuth();
@@ -95,168 +96,141 @@ const Order = () => {
   }
 
   return (
-    <div>
-      <div className="hidden sm:block"></div>
-      <div className="block sm:hidden">
-        <div className="max-w-screen-2xl mx-auto px-0 sm:px-10">
-        <div className="px-6 sm:px-0 py-5">
-  <h2 className="text-lg ">Orders</h2>
-  <p className="text-sm text-blue-600 underline">All your orders will be displayed here</p>
-</div>
-
-          <div className="h-16   items-center flex px-6 justify-between border-t border-b border-gray-300">
-          <p className="text-lg text-[#707072]">
-  {filtered.length} {statusFilter === "All" ? "Orders" : `${statusFilter} Orders`}
-</p>
-            <button
-              onClick={() => setIsOpen(true)}
-              className="flex gap-1 items-center px-4 py-1 border rounded-full border-gray-300 cursor-pointer"
-            >
-              Filters
-              <svg
-                aria-hidden="true"
-                className="icon-filter-ds"
-                focusable="false"
-                viewBox="0 0 24 24"
-                role="img"
-                width="24px"
-                height="24px"
-                fill="none"
-              >
-                <path
-                  stroke="currentColor"
-                  strokeWidth="1.5"
-                  d="M21 8.25H10m-5.25 0H3"
-                ></path>
-                <path
-                  stroke="currentColor"
-                  strokeWidth="1.5"
-                  d="M7.5 6v0a2.25 2.25 0 100 4.5 2.25 2.25 0 000-4.5z"
-                  clipRule="evenodd"
-                ></path>
-                <path
-                  stroke="currentColor"
-                  strokeWidth="1.5"
-                  d="M3 15.75h10.75m5 0H21"
-                ></path>
-                <path
-                  stroke="currentColor"
-                  strokeWidth="1.5"
-                  d="M16.5 13.5v0a2.25 2.25 0 100 4.5 2.25 2.25 0 000-4.5z"
-                  clipRule="evenodd"
-                ></path>
-              </svg>
-            </button>
-            {isOpen && (
-              <div
-                className={`fixed inset-0 bg-white z-50  ${
-                  animateOut ? "slide-down" : "slide-up"
-                }`}
-              >
-                <div className="absolute top-4 right-4">
-                  <button
-                    onClick={closeMenu}
-                    type="button"
-                    className="w-8 h-8 cursor-pointer bg-gray-200 rounded-full flex items-center justify-center"
-                  >
-                    <svg viewBox="0 0 24 24" fill="none">
-                      <path
-                        d="M7 17L16.8995 7.10051"
-                        stroke="#000000"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                      <path
-                        d="M7 7.00001L16.8995 16.8995"
-                        stroke="#000000"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                    </svg>
-                  </button>
-                </div>
-                <div className="px-6 py-4" >
-  <div>
-    <p className="text-lg py-2 ">Sort by Status</p>
-
-    <div className="border border-blue-600">
-    {["All", ...orderStatusList.map(s => s.name)].map((status) => (   
-           <label key={status}  className=" flex items-center gap-2 py-1 space-y-0">
-          <input
-            type="checkbox"
-            checked={statusFilter === status}
-            onChange={() => {
-              setStatusFilter(status);
-              setCurrentPage(1);
-              closeMenu(); 
-            }}
-            className="appearance-none form-checkbox w-5 h-5 transition duration-300 ease-in-out cursor-pointer  bg-white border border-gray-400 rounded-md checked:bg-black checked:border-black focus:outline-none"
-
-          />
-          <span>{status}</span>
-        </label>
-      ))}
+    <div className="max-w-screen-2xl mx-auto px-4 sm:px-10 min-h-150">
+    {/* Tiêu đề */}
+    <div className="px-0 sm:px-0 py-5">
+      <h2 className="text-lg sm:text-xl font-semibold">Orders</h2>
+      <p className="text-sm block sm:hidden text-blue-600 underline">All your orders will be displayed here</p>
     </div>
-  </div>
-
-  {/* Sắp xếp theo ngày */}
-  <div>
-    <p className="text-lg py-2 ">Sort by Date</p>
-
-    <div className="border border-blue-600">
-      {[
-        { label: "Newest First", value: "newest" },
-        { label: "Oldest First", value: "oldest" },
-      ].map((option) => (
-                  <label key={option.value}  className=" flex items-center gap-2 py-1 space-y-0">
-
-          <input
-            type="checkbox"
-            checked={sortOrder === option.value}
-            onChange={() => {
-              setSortOrder(option.value);
-              setCurrentPage(1);
-              closeMenu(); 
-              
-            }}
-            className="appearance-none form-checkbox w-5 h-5 transition duration-300 ease-in-out cursor-pointer  bg-white border border-gray-400 rounded-md checked:bg-black checked:border-black focus:outline-none"
-
-          />
-          <span>{option.label}</span>
-        </label>
-      ))}
+  
+    {/* Bộ lọc + Filter button */}
+    <div className="block sm:hidden">
+    <div className="h-16 items-center  flex px-0 sm:px-6 justify-between border-t border-b border-gray-300">
+      <p className="text-base sm:text-lg text-[#707072]">
+        {filtered.length} {statusFilter === "All" ? "Orders" : `${statusFilter} Orders`}
+      </p>
+  
+      <button
+        onClick={() => setIsOpen(true)}
+        className="flex gap-1 items-center px-4 py-1 border rounded-full border-gray-300 cursor-pointer text-sm sm:text-base"
+      >
+        Filters
+        <svg
+          aria-hidden="true"
+          className="icon-filter-ds"
+          viewBox="0 0 24 24"
+          width="20"
+          height="20"
+          fill="none"
+        >
+          <path stroke="currentColor" strokeWidth="1.5" d="M21 8.25H10m-5.25 0H3"></path>
+          <path stroke="currentColor" strokeWidth="1.5" d="M7.5 6v0a2.25 2.25 0 100 4.5 2.25 2.25 0 000-4.5z" clipRule="evenodd"></path>
+          <path stroke="currentColor" strokeWidth="1.5" d="M3 15.75h10.75m5 0H21"></path>
+          <path stroke="currentColor" strokeWidth="1.5" d="M16.5 13.5v0a2.25 2.25 0 100 4.5 2.25 2.25 0 000-4.5z" clipRule="evenodd"></path>
+        </svg>
+      </button>
     </div>
-  </div>
-</div>
+    </div>
 
-
-              
-              </div>
-            )}
+  
+    {/* Bộ lọc popup (hiện tại đang giữ nguyên) */}
+    {isOpen && (
+      <div className={`fixed inset-0 bg-white z-50`}>
+        <div className="absolute top-4 right-4">
+          <button
+            onClick={closeMenu}
+            type="button"
+            className="w-8 h-8 bg-gray-200 rounded-full flex items-center justify-center"
+          >
+            <svg viewBox="0 0 24 24" fill="none">
+              <path d="M7 17L16.8995 7.10051" stroke="#000" strokeLinecap="round" strokeLinejoin="round" />
+              <path d="M7 7.00001L16.8995 16.8995" stroke="#000" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+          </button>
+        </div>
+  
+        <div className="px-6 py-4">
+          {/* Bộ lọc trạng thái */}
+          <div>
+            <p className="text-lg py-2">Sort by Status</p>
+            <div className="border border-blue-600">
+              {["All", ...orderStatusList.map((s) => s.name)].map((status) => (
+                <label key={status} className="flex items-center gap-2 py-1">
+                  <input
+                    type="checkbox"
+                    checked={statusFilter === status}
+                    onChange={() => {
+                      setStatusFilter(status);
+                      setCurrentPage(1);
+                      closeMenu();
+                    }}
+                    className="appearance-none form-checkbox w-5 h-5 transition cursor-pointer bg-white border border-gray-400 rounded-md checked:bg-black checked:border-black"
+                  />
+                  <span>{status}</span>
+                </label>
+              ))}
+            </div>
           </div>
-          {paginated.length === 0 ? (
-  <ResultNotfound />
-) : (
-  <CardOrders
-    orders={paginated}
-    selectedItems={selectedItems}
-    setSelectedItems={setSelectedItems}
-    setSelectedOrder={setSelectedOrder}
-  />
-)}
-
-
-          {selectedOrder && (
-            <OrderDetails
-              users={user}
-              order={selectedOrder}
-              onClose={() => setSelectedOrder(null)}
-              onUpdateStatus={onUpdateStatus}
-            />
-          )}
+  
+          {/* Bộ lọc theo ngày */}
+          <div>
+            <p className="text-lg py-2">Sort by Date</p>
+            <div className="border border-blue-600">
+              {[
+                { label: "Newest First", value: "newest" },
+                { label: "Oldest First", value: "oldest" },
+              ].map((option) => (
+                <label key={option.value} className="flex items-center gap-2 py-1">
+                  <input
+                    type="checkbox"
+                    checked={sortOrder === option.value}
+                    onChange={() => {
+                      setSortOrder(option.value);
+                      setCurrentPage(1);
+                      closeMenu();
+                    }}
+                    className="appearance-none form-checkbox w-5 h-5 transition cursor-pointer bg-white border border-gray-400 rounded-md checked:bg-black checked:border-black"
+                  />
+                  <span>{option.label}</span>
+                </label>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
-    </div>
+    )}
+  
+<div className="block sm:hidden">
+      {/* Danh sách đơn hàng */}
+      {paginated.length === 0 ? (
+      <ResultNotfound />
+    ) : (
+      <CardOrders
+        orders={paginated}
+        selectedItems={selectedItems}
+        setSelectedItems={setSelectedItems}
+        setSelectedOrder={setSelectedOrder}
+      />
+    )}
+</div>
+<div className="hidden sm:block">
+<OrderTable orders={paginated}
+        selectedItems={selectedItems}
+        setSelectedItems={setSelectedItems}
+        setSelectedOrder={setSelectedOrder}/>
+</div>
+  
+    {/* Chi tiết đơn hàng */}
+    {selectedOrder && (
+      <OrderDetails
+        users={user}
+        order={selectedOrder}
+        onClose={() => setSelectedOrder(null)}
+        onUpdateStatus={onUpdateStatus}
+      />
+    )}
+  </div>
+  
   );
 };
 
