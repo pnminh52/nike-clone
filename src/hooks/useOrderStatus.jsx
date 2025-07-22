@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-const API_URL = 'https://nikejsonserver-2.onrender.com/orderStatusList';
+const API_URL = 'http://localhost:3000/orderStatusList';
 
 const useOrderStatus = () => {
   const [orderStatusList, setOrderStatusList] = useState([]);

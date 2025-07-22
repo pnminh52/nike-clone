@@ -103,7 +103,13 @@ const OrderTable = ({ orders, setSelectedOrder }) => {
                 {(order.totalPrice + order.shippingFee).toLocaleString()}
                 <span className="underline text-xs">đ</span>
               </td>
-              <td className="p-3 text-green-600 underline">{order.status}</td>
+              <td
+  className={`p-3 underline ${
+    order.status === 'Cancelled' ? 'text-red-600' : 'text-green-600'
+  }`}
+>
+  {order.status}
+</td>
               <td className="p-3">
                 <button className="bg-black text-white px-4 py-1 rounded-full text-xs cursor-pointer">
                   View

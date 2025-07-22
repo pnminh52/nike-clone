@@ -142,12 +142,85 @@ const toggleDdDateRange = () => setDdDateRange(!ddDateRange);
           className="appearance-none form-checkbox w-5 h-5 transition duration-300 ease-in-out cursor-pointer  bg-white border border-gray-400 rounded-md checked:bg-black checked:border-black focus:outline-none"
 
           name="statusFilter"
+          value="Confirmed"
+          checked={statusFilters[0] === "Confirmed"}
+          onChange={() => setStatusFilters(["Confirmed"])}
+        />
+        Confirmed
+      </label>
+      <label className="flex items-center gap-2 cursor-pointer">
+        <input
+          type="radio"          
+          className="appearance-none form-checkbox w-5 h-5 transition duration-300 ease-in-out cursor-pointer  bg-white border border-gray-400 rounded-md checked:bg-black checked:border-black focus:outline-none"
+
+          name="statusFilter"
+          value="Processing"
+          checked={statusFilters[0] === "Processing"}
+          onChange={() => setStatusFilters(["Processing"])}
+        />
+        Processing
+      </label>
+      <label className="flex items-center gap-2 cursor-pointer">
+        <input
+          type="radio"          
+          className="appearance-none form-checkbox w-5 h-5 transition duration-300 ease-in-out cursor-pointer  bg-white border border-gray-400 rounded-md checked:bg-black checked:border-black focus:outline-none"
+
+          name="statusFilter"
+          value="Shipping"
+          checked={statusFilters[0] === "Shipping"}
+          onChange={() => setStatusFilters(["Shipping"])}
+        />
+        Shipping
+      </label>
+      <label className="flex items-center gap-2 cursor-pointer">
+        <input
+          type="radio"          
+          className="appearance-none form-checkbox w-5 h-5 transition duration-300 ease-in-out cursor-pointer  bg-white border border-gray-400 rounded-md checked:bg-black checked:border-black focus:outline-none"
+
+          name="statusFilter"
+          value="Delivered"
+          checked={statusFilters[0] === "Delivered"}
+          onChange={() => setStatusFilters(["Delivered"])}
+        />
+        Delivered
+      </label>
+      <label className="flex items-center gap-2 cursor-pointer">
+        <input
+          type="radio"          
+          className="appearance-none form-checkbox w-5 h-5 transition duration-300 ease-in-out cursor-pointer  bg-white border border-gray-400 rounded-md checked:bg-black checked:border-black focus:outline-none"
+
+          name="statusFilter"
           value="Cancelled"
           checked={statusFilters[0] === "Cancelled"}
           onChange={() => setStatusFilters(["Cancelled"])}
         />
         Cancelled
       </label>
+      <label className="flex items-center gap-2 cursor-pointer">
+        <input
+          type="radio"          
+          className="appearance-none form-checkbox w-5 h-5 transition duration-300 ease-in-out cursor-pointer  bg-white border border-gray-400 rounded-md checked:bg-black checked:border-black focus:outline-none"
+
+          name="statusFilter"
+          value="Returned"
+          checked={statusFilters[0] === "Returned"}
+          onChange={() => setStatusFilters(["Returned"])}
+        />
+        Returned
+      </label>
+      <label className="flex items-center gap-2 cursor-pointer">
+        <input
+          type="radio"          
+          className="appearance-none form-checkbox w-5 h-5 transition duration-300 ease-in-out cursor-pointer  bg-white border border-gray-400 rounded-md checked:bg-black checked:border-black focus:outline-none"
+
+          name="statusFilter"
+          value="Refunded"
+          checked={statusFilters[0] === "Refunded"}
+          onChange={() => setStatusFilters(["Refunded"])}
+        />
+        Refunded
+      </label>
+
     </div>
   )}
 </div>

@@ -1,40 +1,39 @@
-import { useEffect, useState } from 'react';
-
-const API_URL = 'http://localhost:3000/users';
+import { useState, useEffect } from 'react';
 
 const useOrders = () => {
   const [orders, setOrders] = useState([]);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState('');
 
-  const fetchOrdersFromAllUsers = async () => {
-    setLoading(true);
+  const fetchOrders = async () => {
     try {
-      const res = await fetch(API_URL);
+      setLoading(true);
+      const res = await fetch('http://localhost:3000/users');
       const users = await res.json();
 
-      const combinedOrders = users.flatMap(user =>
-        (user.orders || []).map(order => ({
+      // Gộp tất cả đơn hàng từ mọi user + thêm userId để sau này xử lý
+      const allOrders = users.flatMap(user =>
+        user.orders.map(order => ({
           ...order,
           userId: user.id,
-          userName: `${user.firstname} ${user.lastname}`,
-          userEmail: user.email,
+          userName: user.name,
+          userEmail: user.email
         }))
       );
 
-      setOrders(combinedOrders);
+      setOrders(allOrders);
     } catch (err) {
-      setError(err.message || 'Failed to fetch orders');
+      setError('Lỗi khi tải đơn hàng');
     } finally {
       setLoading(false);
     }
   };
 
   useEffect(() => {
-    fetchOrdersFromAllUsers();
+    fetchOrders();
   }, []);
 
-  return { orders, loading, error };
+  return { orders, loading, error, fetchOrders };
 };
 
 export default useOrders;
