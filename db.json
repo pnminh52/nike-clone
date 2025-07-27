@@ -1946,7 +1946,7 @@
         "789 Nguyễn Huệ, Quận 1, TP.HCM"
       ],
       "shippingFeeByAddress": 15000,
-      "accountStatus": "Active",
+      "accountStatus": "Blocked",
       "cart": [],
       "interest": [],
       "orders": [
@@ -2500,7 +2500,8 @@
           "size": 32,
           "quantity": 1
         }
-      ]
+      ],
+      "blockReason": "sds"
     },
     {
       "id": "5b65",
@@ -2556,7 +2557,8 @@
           "pointToExchange": 2000,
           "expiryDate": "2025-07-03T16:18:15.648Z"
         }
-      ]
+      ],
+      "blockReason": ""
     }
   ],
   "vouchers": [

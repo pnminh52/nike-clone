@@ -7,7 +7,6 @@ const SideBar = () => {
   const permissions = user?.permissions || [];
 
   const menuItems = [
-    { name: 'Dashboard', path: '/admin/dashboard/' },
     { name: 'Product', path: '/admin/dashboard/products/list' },
     { name: 'Voucher', path: '/admin/dashboard/vouchers/list' },
     { name: 'Acoount', path: '/admin/dashboard/account/list' },
@@ -19,7 +18,7 @@ const SideBar = () => {
   ];
 
   return (
-    <div className='text-white min-h-screen bg-white border-r border-gray-200'>
+    <div className='text-white h-full bg-white border-r border-gray-200'>
       <div className='text-black flex justify-center border-b border-gray-200 h-[80px]'>
         <svg viewBox="0 0 24 24" fill="none" width="80px" height="80px">
           <path
@@ -30,7 +29,7 @@ const SideBar = () => {
         </svg>
       </div>
 
-      <ul className='space-y-2 px-4 py-2'>
+      <ul className='space-y-2 px-4 py-6'>
         {/* <li className='text-gray-400 text-sm'>Main navigation</li> */}
         {menuItems.map((item, index) => {
   const isActive = location.pathname === item.path;
@@ -44,15 +43,15 @@ const SideBar = () => {
   return (
     <li
       key={index}
-      className={`px-4 py-2 border rounded-xl text-black ${
-        isActive ? 'bg-blue-200 border-blue-300' : 'border-white'
+      className={`px-4 py-2 border text-sm cursor-pointer rounded-lg text-black ${
+        isActive ? 'bg-gray-200 border-gray-300' : 'border-white'
       } ${isDisabled ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'}`}
     >
       {item.path === '#' || isDisabled ? (
         <span>{item.name}</span>
       ) : (
         <Link to={item.path}>
-          <button>{item.name}</button>
+          <button className='cursor-pointer'>{item.name}</button>
         </Link>
       )}
     </li>
