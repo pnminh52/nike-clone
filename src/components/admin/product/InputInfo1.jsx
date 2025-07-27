@@ -1,6 +1,9 @@
 import React from 'react'
+import NewAndFeatured from "./NewAndFeatured";
+import TrendingCategory from "./TrendingCategory";
+import WomenCategory from './WomenCategory';
 
-const InputInfo = ({inputValue, handleDataChange}) => {
+const InputInfo1 = ({inputValue, handleDataChange}) => {
   return (
     <div className="space-y-4">
                 <div className="flex items-start justify-between gap-2">
@@ -263,4 +266,4 @@ const InputInfo = ({inputValue, handleDataChange}) => {
   )
 }
 
-export default InputInfo
+export default InputInfo1
