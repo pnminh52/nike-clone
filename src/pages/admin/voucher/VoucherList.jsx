@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import ProductSkeleton from './../../../components/user/etc/ProductSkeleton';
 
 const VoucherList = () => {
   const [coupons, setCoupons] = useState([]);
@@ -24,7 +25,7 @@ const VoucherList = () => {
     fetchCoupons();
   }, []);
 
-  if (loading) return <p>Đang tải danh sách coupon...</p>;
+  if (loading) return <p><ProductSkeleton /></p>;
   if (error) return <p className="text-red-500">Lỗi: {error}</p>;
 
   const handleRemoveCoupon = async (id) => {
@@ -47,7 +48,9 @@ const VoucherList = () => {
   };
 
   return (
-    <div className="py-4 px-4">
+    <div className="p-4 h-full">
+      <h1 className="nike-title-for-mobile">Manage Vouchers</h1>
+      <p>Here you can manage all vouchers</p>
       <Link to={"/admin/vouchers/add"}>
         <button className="mb-4 px-4 py-2 bg-blue-600 text-white rounded">
           Add Coupon

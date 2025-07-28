@@ -4,7 +4,7 @@
       "id": "7ey27e",
       "technology": "Nike ReactX",
       "position": 1,
-      "isDefault": "true",
+      "isDefault": true,
       "name": "Nike Air Max Koko",
       "stock": 46,
       "height": "Low Top",
@@ -30,7 +30,8 @@
         "37",
         "35",
         "36",
-        "38"
+        "38",
+        "39"
       ],
       "gender": "Women",
       "color": [
@@ -64,7 +65,8 @@
         "The speed lacing system adds a playful look while making it easy to put them on and take them off.",
         "Textile upper feels soft and comfortable with or without socks."
       ],
-      "notes": []
+      "notes": [],
+      "Notes": []
     },
     {
       "id": "t4tgegv",
