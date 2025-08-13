@@ -102,17 +102,21 @@ const ProductList = () => {
         searchKeyword={searchKeyword}
       />
 
-      <ProductTable
+      
+      
+ {
+      filteredProducts.length > 0 ? (
+        <ProductTable
         products={filteredProducts}
         handleDeleteProduct={handleDeleteProduct}
         handleShowDetail={handleShowDetail}
       />
-      {filteredProducts.length === 0 && (
-  <div className="text-center h-100 text-gray-500 mt-4">
+      ):(
+        <p className="text-gray-500 flex w-full justify-center text-sm italic mt-8">
     No products found matching your filters or search keyword.
-  </div>
-)}
-
+    </p>
+      )
+     }
 
       {showDetail && selectedProduct && (
         <div className="mt-4">

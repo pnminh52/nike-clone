@@ -1,7 +1,17 @@
 import React from "react";
 import {format} from "date-fns";
+import { useState } from "react";
 
 const AccountTable = ({ users, onViewDetails, onToggleStatus }) => {
+     const [currentPage, setCurrentPage] = useState(1);
+      const itemsPerPage = 10;
+    
+      // Tính toán danh sách hiển thị
+      const indexOfLastItem = currentPage * itemsPerPage;
+      const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+      const currentUsers = users.slice(indexOfFirstItem, indexOfLastItem);
+    
+      const totalPages = Math.ceil(users.length / itemsPerPage);
     const formatDateTime = (dateString) => {
         return format(new Date(dateString), "dd/MM/yyyy HH:mm");
       };
@@ -23,7 +33,7 @@ const AccountTable = ({ users, onViewDetails, onToggleStatus }) => {
           </tr>
         </thead>
         <tbody>
-          {users.map((user, index) => (
+          {currentUsers.map((user, index) => (
             <tr key={user.id} className="hover:bg-gray-50 text-center">
               <td className="border border-gray-200 p-2">{index + 1}</td>
               <td className="border border-gray-200 p-2">{user.email}</td>
@@ -117,6 +127,36 @@ const AccountTable = ({ users, onViewDetails, onToggleStatus }) => {
           )}
         </tbody>
       </table>
+       {/* Pagination */}
+       <div className="flex justify-center items-center mt-4 space-x-2">
+        <button
+            className="px-3 py-1 cursor-pointer border border-gray-300 rounded disabled:opacity-50"
+            onClick={() => setCurrentPage((prev) => prev - 1)}
+          disabled={currentPage === 1}
+        >
+          Prev
+        </button>
+
+        {Array.from({ length: totalPages }, (_, i) => (
+          <button
+            key={i}
+            onClick={() => setCurrentPage(i + 1)}
+            className={`px-3 py-1 cursor-pointer border border-gray-300 rounded ${
+                currentPage === i + 1 ? "bg-gray-200 text-black" : ""
+            }`}
+          >
+            {i + 1}
+          </button>
+        ))}
+
+        <button
+            className="px-3 py-1 cursor-pointer border border-gray-300 rounded disabled:opacity-50"
+            onClick={() => setCurrentPage((prev) => prev + 1)}
+          disabled={currentPage === totalPages}
+        >
+          Next
+        </button>
+      </div>
     </div>
   );
 };

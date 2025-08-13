@@ -1,15 +1,19 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+
 import UserDetailModal from "../../../components/admin/account/UserDetailModal";
 import BlockReasonModal from "../../../components/admin/account/BlockUserModal";
 import AccountTable from "../../../components/admin/account/AccountTable";
 import AccountFilter from "../../../components/admin/account/AccountFilter";
 const AccountList = () => {
+  const [sortOrder, setSortOrder] = useState("newest");
   const [users, setUsers] = useState([]);
   const [loading, setLoading] = useState(true);
   const [filterStatus, setFilterStatus] = useState("All");
   const [selectedUser, setSelectedUser] = useState(null);
   const [userToBlock, setUserToBlock] = useState(null);
+  const [searchKeyword, setSearchKeyword] = useState("");
+  
 
   const fetchUsers = async () => {
     try {
@@ -25,6 +29,26 @@ const AccountList = () => {
   useEffect(() => {
     fetchUsers();
   }, []);
+  const filteredUsers = users
+  .filter((user) => user.role !== "Admin" && user.role !== "Staff")
+  .filter((user) => {
+    if (filterStatus === "All") return true;
+    return (user.accountStatus || "Active") === filterStatus;
+  })
+  .filter((user) => {
+    if (!searchKeyword.trim()) return true;
+  
+    const fullName = `${user.email || ""} `.toLowerCase();
+    return fullName.includes(searchKeyword.toLowerCase());
+  })
+  
+  .sort((a, b) => {
+    const dateA = new Date(a.createdAt);
+    const dateB = new Date(b.createdAt);
+    return sortOrder === "newest"
+      ? dateB - dateA 
+      : dateA - dateB; 
+  });
 
   const toggleAccountStatus = async (user, reason = "") => {
     const updatedStatus =
@@ -57,12 +81,7 @@ const AccountList = () => {
 
   if (loading) return <p>Loading user list...</p>;
 
-  const filteredUsers = users
-    .filter((user) => user.role !== "Admin" && user.role !== "Staff")
-    .filter((user) => {
-      if (filterStatus === "All") return true;
-      return (user.accountStatus || "Active") === filterStatus;
-    });
+ 
 
   return (
     <div className="p-4">
@@ -74,15 +93,29 @@ const AccountList = () => {
       </div>
 
       <AccountFilter
-        filterStatus={filterStatus}
-        onChange={setFilterStatus}
-      />
+  filterStatus={filterStatus}
+  onChange={setFilterStatus}
+  sortOrder={sortOrder}
+  onSortChange={setSortOrder}
+  searchKeyword={searchKeyword}
+  onSearchChange={setSearchKeyword}
+/>
 
-      <AccountTable
+
+
+     {
+      filteredUsers.length > 0 ? (
+        <AccountTable
         users={filteredUsers}
         onViewDetails={setSelectedUser}
         onToggleStatus={toggleAccountStatus}
       />
+      ):(
+        <p className="text-gray-500 flex w-full justify-center text-sm italic mt-4">
+        No account found matching your filters.
+      </p>
+      )
+     }
 
       {selectedUser && (
         <UserDetailModal
