@@ -9,7 +9,7 @@ const SideBar = () => {
   const menuItems = [
     { name: 'Product', path: '/admin/dashboard/products/list' },
     { name: 'Voucher', path: '/admin/dashboard/vouchers/list' },
-    { name: 'Acoount', path: '/admin/dashboard/account/list' },
+    { name: 'Account', path: '/admin/dashboard/account/list' },
     { name: 'Comment', path: '/admin/dashboard/comment/list' },
     { name: 'Category', path: '/admin/dashboard/category/list' },
     { name: 'Order', path: '/admin/dashboard/order/list' },
