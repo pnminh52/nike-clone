@@ -3,7 +3,9 @@ import CommentTab from "../productDetail/CommentTab";
 
 const CommentSection = ({ comments, user }) => {
   const [showCommentTab, setShowCommentTab] = useState(false);
-  const topComments = comments.slice(0, 3);
+  const visibleComments = comments.filter((comment) => comment.status === false);
+
+  const topComments = visibleComments.slice(0, 3);
 
   return (
     <div className="mt-6 space-y-4">
@@ -26,7 +28,7 @@ const CommentSection = ({ comments, user }) => {
 
       {showCommentTab && (
         <CommentTab
-          comments={comments}
+          comments={visibleComments}
           user={user}
           onClose={() => setShowCommentTab(false)}
         />

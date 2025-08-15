@@ -10,42 +10,42 @@ const AccountTable = ({ users, onViewDetails, onToggleStatus }) => {
       const indexOfLastItem = currentPage * itemsPerPage;
       const indexOfFirstItem = indexOfLastItem - itemsPerPage;
       const currentUsers = users.slice(indexOfFirstItem, indexOfLastItem);
-    
       const totalPages = Math.ceil(users.length / itemsPerPage);
+      
     const formatDateTime = (dateString) => {
         return format(new Date(dateString), "dd/MM/yyyy HH:mm");
       };
   return (
-    <div className="overflow-x-auto p-4 border-gray-200 border bg-white rounded-2xl">
-      <table className="w-full border border-gray-200-collapse">
+    <div className="overflow-x-auto p-4 border-gray-300 border bg-white rounded-2xl">
+      <table className="w-full border border-gray-300-collapse">
       <thead>
           <tr className=" text-center">
-            <th className="border border-gray-200 p-2">#</th>
-            <th className="border border-gray-200 p-2">Email</th>
-            <th className="border border-gray-200 p-2">Username</th>
-            <th className="border border-gray-200 p-2">Point</th>
-            <th className="border border-gray-200 p-2">Total Order</th>
-            <th className="border border-gray-200 p-2">Created At</th>
+            <th className="border border-gray-300 p-2">#</th>
+            <th className="border border-gray-300 p-2">Email</th>
+            <th className="border border-gray-300 p-2">Username</th>
+            <th className="border border-gray-300 p-2">Point</th>
+            <th className="border border-gray-300 p-2">Total Order</th>
+            <th className="border border-gray-300 p-2">Created At</th>
 
-            <th className="border border-gray-200 p-2">Type</th>
-            <th className="border border-gray-200 p-2">Status</th>
-            <th className="border border-gray-200 p-2">Action</th>
+            <th className="border border-gray-300 p-2">Type</th>
+            <th className="border border-gray-300 p-2">Status</th>
+            <th className="border border-gray-300 p-2">Action</th>
           </tr>
         </thead>
         <tbody>
           {currentUsers.map((user, index) => (
             <tr key={user.id} className="hover:bg-gray-50 text-center">
-              <td className="border border-gray-200 p-2">{index + 1}</td>
-              <td className="border border-gray-200 p-2">{user.email}</td>
-              <td className="border border-gray-200 p-2">
+              <td className="border border-gray-300 p-2">{index + 1}</td>
+              <td className="border border-gray-300 p-2">{user.email}</td>
+              <td className="border border-gray-300 p-2">
                 {user.firstname} {user.lastname}
               </td>
-              <td className="border border-gray-200 p-2">{user.point}</td>
-              <td className="border border-gray-200 p-2">{user.totalOrder}</td>
-              <td className="border border-gray-200 p-2">{formatDateTime(user.createdAt)}</td>
+              <td className="border border-gray-300 p-2">{user.point}</td>
+              <td className="border border-gray-300 p-2">{user.totalOrder}</td>
+              <td className="border border-gray-300 p-2">{formatDateTime(user.createdAt)}</td>
 
-              <td className="border border-gray-200 p-2">{user.role}</td>
-              <td className="border border-gray-200 p-2 text-sm">
+              <td className="border border-gray-300 p-2">{user.role}</td>
+              <td className="border border-gray-300 p-2 text-sm">
                 <span
                   className={` ${
                     user.accountStatus === "Blocked"
@@ -56,7 +56,7 @@ const AccountTable = ({ users, onViewDetails, onToggleStatus }) => {
                   {user.accountStatus || "Active"}
                 </span>
               </td>
-              <td className="border border-gray-200 p-2 text-center space-x-2">
+              <td className="border border-gray-300 p-2 text-center space-x-2">
                 <div className="flex justify-center items-center gap-2">
                   <button
                     onClick={() => onViewDetails(user)}

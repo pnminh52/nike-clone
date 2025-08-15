@@ -38,6 +38,7 @@ import Vouchers from "./pages/user/Vouchers";
 import OrderList from "./pages/admin/order/OrderList";
 import OrderDetails from "./components/user/order/OrderDetails";
 import OrderDetail from "./pages/admin/order/OrderDetail";
+import CommentList from "./pages/admin/comment/CommentList";
 
 const AppRoutes = () => {
   const { user, loading } = useAuth();
@@ -72,6 +73,9 @@ const AppRoutes = () => {
              <Route path="order-status/list" element={<OrderStatusList />} />
              <Route path="order-status/add" element={<OrderStatusAdd />} />
              <Route path="order-status/edit/:id" element={<OrderStatusUpdate />} />
+        
+              <Route path="comment/list" element={<CommentList />} />
+        
           </Route>
         </Route>
    

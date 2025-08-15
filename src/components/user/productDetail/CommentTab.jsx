@@ -1,6 +1,7 @@
 import React from "react";
 
 const CommentTab = ({ comments, onClose }) => {
+  
   const handleCancel=()=>{
     onClose()
   }

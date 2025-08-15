@@ -705,8 +705,8 @@ ${(selectedSize && !selectedProduct.sizes.includes(String(selectedSize)))
                 onClick={() => setopen1(!open1)}
                 className="flex items-center inter cursor-pointer justify-between w-full text-left text-xl"
               >
-                <span>Reviews ({comments.length})</span>
-                <div className="flex items-center gap-2">
+<span>Reviews ({comments.filter(c => c.status === false).length})</span>
+<div className="flex items-center gap-2">
                   <div className="gap-0 flex items-center">
                     {Array.from({ length: 5 }).map((_, index) => (
                       <svg

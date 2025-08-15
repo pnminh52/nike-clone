@@ -5,14 +5,19 @@ const useCategories = () => {
   const [categories, setCategories] = useState([]);
   const [inputValue, setInputValue] = useState({ name: "", imageUrl: "", parentId: null });
   const navigate = useNavigate();
-  const API_URL = "https://nikejsonserver-2.onrender.com";
+  const API_URL = "http://localhost:3000";
 
   const handleDeleteCategory = (id) => {
-     fetch(`${API_URL}/categories/${id}`, {
+    const confirmDelete = window.confirm("Are you sure to delete this category?");
+    if (!confirmDelete) return;
+  
+    fetch(`${API_URL}/categories/${id}`, {
       method: "DELETE",
-    });
-    const newCategoryList = categories.filter((category) => category.id !== id);
-    setCategories(newCategoryList);
+    })
+      .then(() => {
+        const newCategoryList = categories.filter((category) => category.id !== id);
+        setCategories(newCategoryList);
+      });
   };
 
   const handleAddCategory = () => {
@@ -23,7 +28,7 @@ const useCategories = () => {
     })
       .then((response) => response.json())
       .then((data) => setCategories([...categories, data]));
-    navigate("/admin/categories/list");
+    navigate("/admin/dashboard/categories/list");
   };
   
 
@@ -39,7 +44,7 @@ const useCategories = () => {
           prev.map((item) => (item.id === data.id ? data : item))
         );
       })
-      .finally(() => navigate("/admin/categories/list"));
+      .finally(() => navigate("/admin/dashboard/categories/list"));
   };
 
   const handleDataChange = (e) => {

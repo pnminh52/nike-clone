@@ -16,77 +16,94 @@ const AddCategory = () => {
   }, [setInputValue]);
 
   return (
-    <div className="max-w-2xl mx-auto p-4">
-      <h2 className="text-xl font-semibold mb-4">Add New Category</h2>
-      <form onSubmit={handleAddCategory}>
-        <div className="mb-4">
-          <label className="block text-sm font-medium text-gray-700">Name</label>
-          <input
+    <div className="h-full p-4"> 
+    <h1 className="nike-title-for-mobile">Add new category</h1>
+    <p>Here you can add new category</p>
+      <form onSubmit={handleAddCategory} className="py-4 space-y-4">
+        <div className="flex gap-2 w-full items-center">
+        <div className="w-full">
+        <p className="mb-1 text-sm font-medium">Category Name</p>
+        <input
             type="text"
             name="name"
+            placeholder="Category Name"
             value={inputValue.name}
             onChange={handleDataChange}
             className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md"
             required
           />
         </div>
-<div>
-<select
-  name="page"
-  value={inputValue.page || ""}
-  onChange={handleDataChange}
-  className="border border-gray-300 p-2 rounded-md"
->
-  <option value="">Select page</option>
-
-  {/* 5 lựa chọn mặc định */}
-  <option value="new-featured">New & Featured</option>
-  <option value="men">Men</option>
-  <option value="women">Women</option>
-  <option value="kids">Kids</option>
-  <option value="sale">Sale</option>
-
- 
-</select>
-
-</div>
-        <div className="mb-4">
-          <label className="block text-sm font-medium text-gray-700">Image URL</label>
+        <div className="w-full">
+        <p className="mb-1 text-sm font-medium">Category Image</p>
           <input
             type="url"
             name="imageUrl"
+            placeholder="Category Image"
+
             value={inputValue.imageUrl}
             onChange={handleDataChange}
             className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md"
             required
           />
         </div>
-
-        <div className="mb-4">
-          <label className="block text-sm font-medium text-gray-700">Parent Category</label>
-          <select
-  name="parentId"
-  value={inputValue.parentId || ""}
-  onChange={handleDataChange}
-  className="border border-gray-300 p-2 rounded-md"
->
-  <option value="">Select Parent Category</option>
-  {categories
-    .filter((category) => !category.parentId) // Lọc các category không phải con (root categories)
-    .map((category) => (
-      <option key={category.id} value={category.id}>
-        {category.name}
-      </option>
-    ))}
-</select>
-
         </div>
+        <div className="flex items-center gap-2">
+  <div className="flex-1">
+    <p className="mb-1 text-sm font-medium">Select Page</p>
+    <select
+      name="page"
+      value={inputValue.page || ""}
+      onChange={handleDataChange}
+      className="w-full border border-gray-300 p-2 rounded-md"
+    >
+      <option value="">Select page</option>
+      <option value="new-featured">New & Featured</option>
+      <option value="men">Men</option>
+      <option value="women">Women</option>
+      <option value="kids">Kids</option>
+      <option value="sale">Sale</option>
+    </select>
+  </div>
+
+  {inputValue.page && (
+    <div className="flex-1">
+      <p className="mb-1 text-sm font-medium">Select Parent Category</p>
+      <select
+        name="parentId"
+        value={inputValue.parentId || ""}
+        onChange={handleDataChange}
+        className="w-full border border-gray-300 p-2 rounded-md"
+      >
+        <option value="">Select Parent Category</option>
+        {categories
+          .filter(
+            (category) =>
+              !category.parentId &&
+              category.page?.toLowerCase().replace(/&/g, "").replace(/\s+/g, "-") ===
+                inputValue.page
+          )
+          .map((category) => (
+            <option key={category.id} value={category.id}>
+              {category.name}
+            </option>
+          ))}
+      </select>
+    </div>
+  )}
+</div>
+
+
+      
+
+       
+
+
 
         <button
           type="submit"
-          className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600"
+          className="cursor-pointer bg-black text-white rounded-full px-4 py-2"
         >
-          Add Category
+          Add this Category
         </button>
       </form>
     </div>

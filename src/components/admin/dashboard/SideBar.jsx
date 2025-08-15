@@ -11,7 +11,7 @@ const SideBar = () => {
     { name: 'Voucher', path: '/admin/dashboard/vouchers/list' },
     { name: 'Account', path: '/admin/dashboard/account/list' },
     { name: 'Comment', path: '/admin/dashboard/comment/list' },
-    { name: 'Category', path: '/admin/dashboard/category/list' },
+    { name: 'Category', path: '/admin/dashboard/categories/list' },
     { name: 'Order', path: '/admin/dashboard/order/list' },
     { name: 'Decentralization', path: '/admin/dashboard/decentralization/list' },
     { name: 'Order Status', path: '/admin/dashboard/order-status/list' },
