@@ -33,60 +33,58 @@ const VoucherPopup = ({ setShowPopup, userId, total, onApply }) => {
   };
 
   const renderVoucher = (v, owned = true) => {
-    const canApply = total >= v.minOrderValue;
     const expiry = new Date(v.expiryDate);
+    if (expiry < now) return null; // Ẩn voucher hết hạn
+
+    const canApply = total >= v.minOrderValue;
     const diffDays = Math.ceil((expiry - now) / (1000 * 60 * 60 * 24));
 
     return (
-    <ul className="">
-        <li
-              key={`${owned ? "own" : "other"}-${v.id}`}
-              onClick={() => owned && handleClickVoucher(v)}
-              className={`p-2 border border-gray-300 rounded-lg flex gap-2 ${
-                owned
-                  ? canApply
-                    ? `cursor-pointer ${selectedVoucherId === v.id ? "border-green-600 bg-green-50" : ""}`
-                    : "bg-gray-100 text-gray-400 cursor-not-allowed"
-                  : "bg-gray-100 text-gray-400"
-              }`}
-            >
-              <img src={v.image} className="w-20 h-20 rounded-lg object-cover" alt="" />
-              <div>
-                <p className="text-sm">{v.name}</p>
-                <p className="text-sm">
-                  Discount {(v.value ?? 0).toLocaleString()}
-                  {v.discountType === "amount" ? <span className="underline">đ</span> : "%"}
-                </p>
-                <p className="text-sm">
-                  Applies to orders from {(v.minOrderValue ?? 0).toLocaleString()}
-                  <span className="underline">đ</span>
-                </p>
-                {!canApply && owned && <p className="text-sm text-red-400">Not eligible to apply</p>}
-                {diffDays <= 3 && diffDays >= 0 && (
-                  <p className="text-sm text-red-600">This voucher is about to expire.</p>
-                )}
-      {!owned && (
-        <>
-          {user?.point >= v.pointToExchange ? (
-            <button
-              className=" text-sm  text-blue-600 underline rounded "
-              onClick={(e) => {
-                e.stopPropagation();
-                exchangeVoucher(v);
-              }}
-            >
-             Redeem this coupon code
-            </button>
-          ) : (
-            <p className="text-sm text-red-400 mt-1">
-              {v.pointToExchange} points are required 
-            </p>
+      <li
+        key={`${owned ? "own" : "other"}-${v.id}`}
+        onClick={() => owned && handleClickVoucher(v)}
+        className={`p-2 border border-gray-300 rounded-lg flex gap-2 ${
+          owned
+            ? canApply
+              ? `cursor-pointer ${selectedVoucherId === v.id ? "border-green-600 bg-green-50" : ""}`
+              : "bg-gray-100 text-gray-400 cursor-not-allowed"
+            : "bg-gray-100 text-gray-400"
+        }`}
+      >
+        <img src={v.image} className="w-20 h-20 rounded-lg object-cover" alt="" />
+        <div>
+          <p className="text-sm">{v.name}</p>
+          <p className="text-sm">
+            Discount {(v.value ?? 0).toLocaleString()}
+            {v.discountType === "amount" ? <span className="underline">đ</span> : "%"}
+          </p>
+          <p className="text-sm">
+            Applies to orders from {(v.minOrderValue ?? 0).toLocaleString()}
+            <span className="underline">đ</span>
+          </p>
+          {!canApply && owned && <p className="text-sm text-red-400">Not eligible to apply</p>}
+          {diffDays <= 3 && diffDays >= 0 && (
+            <p className="text-sm text-red-600">This voucher is about to expire.</p>
           )}
-        </>
-      )}
-              </div>
-            </li>
-    </ul>
+          {!owned && (
+            <>
+              {user?.point >= v.pointToExchange ? (
+                <button
+                  className=" text-sm  text-blue-600 underline rounded "
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    exchangeVoucher(v);
+                  }}
+                >
+                  Redeem this coupon code
+                </button>
+              ) : (
+                <p className="text-sm text-red-400 mt-1">{v.pointToExchange} points are required</p>
+              )}
+            </>
+          )}
+        </div>
+      </li>
     );
   };
 
@@ -102,29 +100,29 @@ const VoucherPopup = ({ setShowPopup, userId, total, onApply }) => {
         </svg>
       </button>
 
-       {loading ? (
-                <div className="flex justify-center items-center h-screen">
-                  <ProductSkeleton />
-                </div>
-              ) : (
-                <>
-                  <div className=" mt-12">
-                    <p className="text-blue-600 underline text-sm">You have: {user?.point} point</p>
-                  </div>
-                <div className="max-h-[70vh] overflow-y-auto">
-                <ul className="space-y-2 py-2  ">
-                    {[...user.vouchers].sort(sortVouchers).map((v) => renderVoucher(v))}
-                  </ul>
-                 <div className="space-y-2">
-                 {vouchers?.map((v) => {
-                    const owned = user.vouchers?.some((uv) => uv.id === v.id);
-                    if (!owned) return renderVoucher(v, false);
-                    return null;
-                  })}
-                 </div>
-                </div>
-                </>
-              )}
+      {loading ? (
+        <div className="flex justify-center items-center h-screen">
+          <ProductSkeleton />
+        </div>
+      ) : (
+        <>
+          <div className=" mt-12">
+            <p className="text-blue-600 underline text-sm">You have: {user?.point} point</p>
+          </div>
+          <div className="max-h-[70vh] overflow-y-auto">
+            <ul className="space-y-2 py-2">
+              {[...user.vouchers].sort(sortVouchers).map((v) => renderVoucher(v))}
+            </ul>
+            <div className="space-y-2">
+              {vouchers?.map((v) => {
+                const owned = user.vouchers?.some((uv) => uv.id === v.id);
+                if (!owned) return renderVoucher(v, false);
+                return null;
+              })}
+            </div>
+          </div>
+        </>
+      )}
     </div>
   );
 
@@ -150,16 +148,16 @@ const VoucherPopup = ({ setShowPopup, userId, total, onApply }) => {
             <div className=" mt-12">
               <p className="text-blue-600 underline text-sm">You have: {user?.point} point</p>
             </div>
-            <ul className="space-y-2 py-2  ">
+            <ul className="space-y-2 py-2">
               {[...user.vouchers].sort(sortVouchers).map((v) => renderVoucher(v))}
             </ul>
-           <div className="space-y-2">
-           {vouchers?.map((v) => {
-              const owned = user.vouchers?.some((uv) => uv.id === v.id);
-              if (!owned) return renderVoucher(v, false);
-              return null;
-            })}
-           </div>
+            <div className="space-y-2">
+              {vouchers?.map((v) => {
+                const owned = user.vouchers?.some((uv) => uv.id === v.id);
+                if (!owned) return renderVoucher(v, false);
+                return null;
+              })}
+            </div>
           </>
         )}
       </div>

@@ -155,7 +155,7 @@ export const useCart = () => {
       );
       navigate("/");
       setCart([]);
-      successToast("Payment successful");
+      successToast("Payment successful!");
       
     } catch (error) {
       errorToast("❌ Lỗi khi thanh toán. Vui lòng thử lại.");

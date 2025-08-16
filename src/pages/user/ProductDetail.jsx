@@ -18,8 +18,10 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import { Pagination } from 'swiper/modules';
+import useToast from "../../hooks/useToast";
 
 const ProductDetail = () => {
+  const {errorToast}= useToast();
   const { addToCart } = useCart();
   const [showAll, setShowAll] = useState(false)
   const { name } = useParams();
@@ -535,7 +537,7 @@ bg-black text-white hover:bg-gray-800 cursor-pointer
                   onClick={() => {
                     setAttemptedAdd(true);
                     if (!user) {
-                      toast.warning("🛑 Vui lòng đăng nhập để thêm vào giỏ hàng!");
+                      errorToast("You must login to use this featured!");
                       return;
                     }
 
