@@ -70,7 +70,7 @@ const VoucherPopup = ({ setShowPopup, userId, total, onApply }) => {
             <>
               {user?.point >= v.pointToExchange ? (
                 <button
-                  className=" text-sm  text-blue-600 underline rounded "
+                  className=" text-sm cursor-pointer  text-blue-600 underline rounded "
                   onClick={(e) => {
                     e.stopPropagation();
                     exchangeVoucher(v);
