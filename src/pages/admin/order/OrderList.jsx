@@ -1,46 +1,52 @@
-import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useState, useMemo } from 'react';
 import useOrders from '../../../hooks/useOrders';
+import OrderTable from '../../../components/admin/order/OrderTable';
+import OrderFilter from '../../../components/admin/order/OrderFilter';
 
 const OrderList = () => {
   const { orders, loading, error } = useOrders();
-  const navigate = useNavigate();
+  const [filter, setFilter] = useState({ searchTerm: '', status: '' });
+
+  const filteredOrders = useMemo(() => {
+    return orders.filter((order) => {
+      const search = filter.searchTerm.toLowerCase();
+
+      const matchSearch =
+      order.id.toString().includes(search) ||
+      (order.firstname && order.firstname.toLowerCase().includes(search)) ||
+      (order.lastname && order.lastname.toLowerCase().includes(search)) ||
+      (order.email && order.email.toLowerCase().includes(search));
+    
+
+      const matchStatus = !filter.status || order.status === filter.status;
+
+      return matchSearch && matchStatus;
+    });
+  }, [orders, filter]);
 
   if (loading) return <p>Đang tải đơn hàng...</p>;
   if (error) return <p>Lỗi: {error}</p>;
   if (orders.length === 0) return <p>Không có đơn hàng nào.</p>;
 
   return (
-    <div className="overflow-x-auto">
-      <table className="min-w-full border-collapse border">
-        <thead>
-          <tr className="bg-gray-100">
-            <th className="border p-2">ID</th>
-            <th className="border p-2">Người đặt</th>
-            <th className="border p-2">Email</th>
-            <th className="border p-2">Trạng thái</th>
-            <th className="border p-2">Hành động</th>
-          </tr>
-        </thead>
-        <tbody>
-          {orders.map(order => (
-            <tr key={order.id} className="hover:bg-gray-50">
-              <td className="border p-2">{order.id}</td>
-              <td className="border p-2">{order.userName}</td>
-              <td className="border p-2">{order.userEmail}</td>
-              <td className="border p-2">{order.status}</td>
-              <td className="border p-2">
-                <button
-                  onClick={() => navigate(`/admin/dashboard/orders/${order.id}`)}
-                  className="bg-blue-500 text-white px-3 py-1 rounded hover:bg-blue-600"
-                >
-                  Xem chi tiết
-                </button>
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+    <div className="p-4">
+      <div>
+        <h2 className="text-2xl nike-title-for-mobile">
+          Orders management
+        </h2>
+        <p>You can see the detailed list of orders here</p>
+      </div>
+      <OrderFilter onFilter={setFilter} />
+      {
+        filteredOrders.length === 0 ? (
+          <p className="text-gray-500 flex w-full justify-center text-sm italic mt-4">
+            No orders matching your filters.
+          </p>
+        ) : (
+          <OrderTable orders={filteredOrders} />
+        )
+      }
+     
     </div>
   );
 };

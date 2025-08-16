@@ -4,7 +4,6 @@ import CommentDetailPopup from "./CommentDetailPopup";
 const CommentTable = ({ comments, formatDateTime, onHide }) => {
   const [expandedRows, setExpandedRows] = useState([]);
   const [selectedComment, setSelectedComment] = useState(null);
-  // Pagination state
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 10;
 
@@ -14,10 +13,6 @@ const CommentTable = ({ comments, formatDateTime, onHide }) => {
     );
   };
 
- 
-
-
-  // Pagination logic
   const totalPages = Math.ceil(comments.length / itemsPerPage);
   const startIndex = (currentPage - 1) * itemsPerPage;
   const currentComments = comments.slice(startIndex, startIndex + itemsPerPage);
@@ -30,7 +25,6 @@ const CommentTable = ({ comments, formatDateTime, onHide }) => {
             <th className="border border-gray-300 p-2">#</th>
             <th className="border border-gray-300 p-2">Username</th>
             <th className="border border-gray-300 p-2">Content</th>
-           
             <th className="border border-gray-300 p-2">Date</th>
             <th className="border border-gray-300 p-2">Status</th>
             <th className="border border-gray-300 p-2">Action</th>
@@ -131,8 +125,7 @@ const CommentTable = ({ comments, formatDateTime, onHide }) => {
       </table>
 
       {/* Pagination controls */}
-     {
-        totalPages > 1 && (
+    
             <div className="flex justify-center items-center mt-4 space-x-2">
             <button
                 className="px-3 py-1 cursor-pointer border border-gray-300 rounded disabled:opacity-50"
@@ -162,8 +155,7 @@ const CommentTable = ({ comments, formatDateTime, onHide }) => {
               Next
             </button>
           </div>
-        )
-     }
+       
        <CommentDetailPopup
         comment={selectedComment}
         formatDateTime={formatDateTime}

@@ -3,10 +3,8 @@ import {format} from "date-fns";
 import { useState } from "react";
 
 const AccountTable = ({ users, onViewDetails, onToggleStatus }) => {
-     const [currentPage, setCurrentPage] = useState(1);
+      const [currentPage, setCurrentPage] = useState(1);
       const itemsPerPage = 10;
-    
-      // Tính toán danh sách hiển thị
       const indexOfLastItem = currentPage * itemsPerPage;
       const indexOfFirstItem = indexOfLastItem - itemsPerPage;
       const currentUsers = users.slice(indexOfFirstItem, indexOfLastItem);

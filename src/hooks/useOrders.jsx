@@ -13,13 +13,15 @@ const useOrders = () => {
 
       // Gộp tất cả đơn hàng từ mọi user + thêm userId để sau này xử lý
       const allOrders = users.flatMap(user =>
-        user.orders.map(order => ({
+        (user.orders || []).map(order => ({
           ...order,
           userId: user.id,
-          userName: user.name,
-          userEmail: user.email
+          firstname: user.firstname,
+          lastname: user.lastname,
+          userEmail: user.email,
         }))
       );
+      
 
       setOrders(allOrders);
     } catch (err) {

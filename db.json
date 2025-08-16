@@ -6,7 +6,7 @@
       "position": 1,
       "isDefault": true,
       "name": "Nike Air Max Koko",
-      "stock": 46,
+      "stock": 45,
       "height": "Low Top",
       "shoesFor": "Sandals, Slides & Flip Flops",
       "class": "Sandal",
@@ -74,7 +74,7 @@
       "name": "Nike Air Max Koko",
       "height": "Low Top",
       "shoesFor": "Sandals, Slides & Flip Flops",
-      "stock": 49,
+      "stock": 48,
       "class": "Sandal",
       "brand": "Nike",
       "features": "Side vents",
@@ -303,7 +303,7 @@
       "technology": "NikeEasyOn",
       "height": "Mid Top",
       "shoesFor": "Jordan",
-      "stock": 100,
+      "stock": 99,
       "class": "Shoes",
       "brand": "Jordan",
       "features": "Side vents",
@@ -1801,9 +1801,383 @@
       "accountStatus": "Active",
       "cart": [],
       "interest": [],
-      "orders": [],
+      "orders": [
+        {
+          "id": 1755357108555,
+          "items": [
+            {
+              "id": "7ey27e",
+              "technology": "Nike ReactX",
+              "position": 1,
+              "isDefault": true,
+              "name": "Nike Air Max Koko",
+              "stock": 46,
+              "height": "Low Top",
+              "shoesFor": "Sandals, Slides & Flip Flops",
+              "class": "Sandal",
+              "brand": "Nike",
+              "features": "Side vents",
+              "giftPoint": 300,
+              "type": "Women's Sandal",
+              "price": "2929000",
+              "price_sale": "2800000",
+              "des": "Heat up the streets in the Nike Air Max Koko Sandal. Designed for women, this pinnacle platform height sandal adds a splash of colourful Air in the heel. The thick, layered foam midsole provides a smooth and flexible ride. Premium details on the upper add texture and dimension to elevate your look.",
+              "img": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/beedbc3a-9343-4b69-ada4-d42a144bd667/WMNS+AIR+MAX+KOKO+SANDAL.png",
+              "page": "New & Featured",
+              "category": "New & Upcoming Drops",
+              "status": "Just In",
+              "customer": "Women",
+              "sizes": [
+                "31",
+                "32",
+                "33",
+                "34",
+                "37",
+                "35",
+                "36",
+                "38",
+                "39"
+              ],
+              "gender": "Women",
+              "color": [
+                "Sail",
+                "Black"
+              ],
+              "style": "CI8798-102",
+              "country": "Vietnam",
+              "additionalImages": [
+                "https://shortformvideo.nike.com/a/videos/d1a9fdf0-59cb-4602-9d52-7c1520ed843a/video.mp4",
+                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/7c175861-58fb-4bca-9f41-52038884f17d/WMNS+AIR+MAX+KOKO+SANDAL.png",
+                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/10a844e6-d0dd-48c2-8b31-a628e8503750/WMNS+AIR+MAX+KOKO+SANDAL.png",
+                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/360abf08-4bd6-4cb3-8a6a-e7cedc36ff48/WMNS+AIR+MAX+KOKO+SANDAL.png",
+                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/02564fb7-a98a-4dc2-957e-50782cc38bc7/WMNS+AIR+MAX+KOKO+SANDAL.png",
+                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/b8fded87-fc17-43ac-be4c-ff24a833aab7/WMNS+AIR+MAX+KOKO+SANDAL.png",
+                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/eab743a0-d15d-42d5-bfa6-3b4ff356ec4e/WMNS+AIR+MAX+KOKO+SANDAL.png",
+                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/d0596b4b-3b75-4c48-8a10-ca251866bbdf/WMNS+AIR+MAX+KOKO+SANDAL.png",
+                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/cab5f997-485c-428a-ad4f-49f0d2cd28fa/WMNS+AIR+MAX+KOKO+SANDAL.png",
+                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/4338c7cb-a534-4b34-a7bf-a8f4f8db51d9/WMNS+AIR+MAX+KOKO+SANDAL.png",
+                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/deea3708-04f5-41b7-8a59-e07a2d866d81/WMNS+AIR+MAX+KOKO+SANDAL.png"
+              ],
+              "featured": [
+                {
+                  "title": "Next-level fashion and innovation.",
+                  "content": "Heat up the streets in the Nike Air Max Koko Sandal. Designed for women, this pinnacle platform height sandal adds a splash of colourful Air in the heel. The thick, layered foam midsole provides a smooth and flexible ride. Premium details on the upper add texture and dimension to elevate your look."
+                }
+              ],
+              "moreBenefit": [
+                "The Nike Air cushioning in the heel feels comfortable and adds coveted Air Max style.",
+                "The layered midsole feels soft and delivers underfoot cushioning while its raised height adds a sporty, summertime look.",
+                "The speed lacing system adds a playful look while making it easy to put them on and take them off.",
+                "Textile upper feels soft and comfortable with or without socks."
+              ],
+              "notes": [],
+              "Notes": [],
+              "size": 31,
+              "quantity": 1
+            }
+          ],
+          "date": "2025-08-16T15:11:48.555Z",
+          "status": "Pending",
+          "shippingFee": 15000,
+          "totalPrice": 2944000
+        },
+        {
+          "id": 1755357279728,
+          "items": [
+            {
+              "id": "t4tgegv",
+              "technology": "Nike ReactX",
+              "name": "Nike Air Max Koko",
+              "height": "Low Top",
+              "shoesFor": "Sandals, Slides & Flip Flops",
+              "stock": 49,
+              "class": "Sandal",
+              "brand": "Nike",
+              "features": "Side vents",
+              "giftPoint": 300,
+              "type": "Women's Sandal",
+              "price": "2929000",
+              "price_sale": "2800000",
+              "des": "Heat up the streets in the Nike Air Max Koko Sandal. Designed for women, this pinnacle platform height sandal adds a splash of colourful Air in the heel. The thick, layered foam midsole provides a smooth and flexible ride. Premium details on the upper add texture and dimension to elevate your look.",
+              "img": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/cb4b240a-e7b4-48a9-bb36-f2bbdf656d17/WMNS+AIR+MAX+KOKO+SANDAL.png",
+              "page": "New & Featured",
+              "category": "New & Upcoming Drops",
+              "status": "Just In",
+              "customer": "Women",
+              "sizes": [
+                "31",
+                "32",
+                "33",
+                "34",
+                "35",
+                "36"
+              ],
+              "gender": "Women",
+              "color": [
+                "Barely Grape",
+                "Lilac Bloom"
+              ],
+              "style": "CI8798-502",
+              "country": "Vietnam",
+              "additionalImages": [
+                "https://shortformvideo.nike.com/a/videos/12585229-dede-4cd4-8e70-88fe321a0082/video.mp4",
+                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/16945374-09b4-42df-bc14-ac4c13c48e60/WMNS+AIR+MAX+KOKO+SANDAL.png",
+                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/13699d24-c4ca-40df-9607-0d8155c9475f/WMNS+AIR+MAX+KOKO+SANDAL.png",
+                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/31b1ce4b-b01a-490e-a3d1-af18e42c55c4/WMNS+AIR+MAX+KOKO+SANDAL.png",
+                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/2c07efdf-725c-401a-99da-b197ce655232/WMNS+AIR+MAX+KOKO+SANDAL.png",
+                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/38e6408d-d8f5-4aed-816a-093fbe241c2e/WMNS+AIR+MAX+KOKO+SANDAL.png",
+                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/c5a2233f-c9bd-4e22-b90c-dee2dae119f9/WMNS+AIR+MAX+KOKO+SANDAL.png",
+                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/d881c994-08c5-4a92-b91a-77e1cdd085fb/WMNS+AIR+MAX+KOKO+SANDAL.png"
+              ],
+              "featured": [
+                {
+                  "title": "Next-level fashion and innovation.",
+                  "content": "Heat up the streets in the Nike Air Max Koko Sandal. Designed for women, this pinnacle platform height sandal adds a splash of colourful Air in the heel. The thick, layered foam midsole provides a smooth and flexible ride. Premium details on the upper add texture and dimension to elevate your look."
+                }
+              ],
+              "moreBenefit": [
+                "The Nike Air cushioning in the heel feels comfortable and adds coveted Air Max style.",
+                "The layered midsole feels soft and delivers underfoot cushioning while its raised height adds a sporty, summertime look.",
+                "The speed lacing system adds a playful look while making it easy to put them on and take them off.",
+                "Textile upper feels soft and comfortable with or without socks."
+              ],
+              "notes": [],
+              "size": 32,
+              "quantity": 1
+            }
+          ],
+          "date": "2025-08-16T15:14:39.728Z",
+          "status": "Pending",
+          "shippingFee": 15000,
+          "totalPrice": 2944000
+        },
+        {
+          "id": 1755357347513,
+          "items": [
+            {
+              "id": "sdsdw",
+              "name": "Jordan Heir Series PF Bloodline",
+              "technology": "NikeEasyOn",
+              "height": "Mid Top",
+              "shoesFor": "Jordan",
+              "stock": 100,
+              "class": "Shoes",
+              "brand": "Jordan",
+              "features": "Side vents",
+              "giftPoint": 300,
+              "type": "Basketball Shoes",
+              "price": "3239000",
+              "price_sale": "3000000",
+              "des": "Looking to ignite your competitive edge? Cue the Jordan Heir. Crafted with insights from women basketball players, these shoes are all about helping you play shifty and stay low to the ground. A drop-in midsole helps give you extra mobility, while a built-in cage provides a fit that contours to your foot for added support as you move from side to side. So run and cut in confidence. You're the game's main character, after all.",
+              "img": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/3e386002-c907-4e4f-af18-dcc4b7152e48/JORDAN+HEIR+SERIES+PF.png",
+              "page": "New & Featured",
+              "category": "New & Upcoming Drops",
+              "status": "Just In",
+              "customer": "Men",
+              "sizes": [
+                "31",
+                "32",
+                "33",
+                "34",
+                "40",
+                "37",
+                "35",
+                "36",
+                "38",
+                "39",
+                "41",
+                "42",
+                "43"
+              ],
+              "gender": "Men",
+              "color": [
+                "Off-White",
+                "Laser",
+                "Orange",
+                "Ocean Cube",
+                "Miracle Teal"
+              ],
+              "style": "FQ3859-101",
+              "country": "Vietnam",
+              "additionalImages": [
+                "https://shortformvideo.nike.com/a/videos/a7efafb6-2342-466b-b5cc-668e4b5c5ea8/video.mp4",
+                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/da42af1d-0bca-488a-8d89-ea1a153ffa0a/JORDAN+HEIR+SERIES+PF.png",
+                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/9c4ad395-c8ee-4a4a-b7bc-4b3a80b24554/JORDAN+HEIR+SERIES+PF.png",
+                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/9e3e2b19-4e40-4667-a687-ae18d4e166e4/JORDAN+HEIR+SERIES+PF.png",
+                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/726d11c6-641b-4e66-a68a-985f8e7ceee2/JORDAN+HEIR+SERIES+PF.png",
+                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/39a74aec-7eaf-4fb3-8169-769828b6be73/JORDAN+HEIR+SERIES+PF.png",
+                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/beeef36b-0316-4680-89b2-5ba4af4387ce/JORDAN+HEIR+SERIES+PF.png",
+                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/fd6f26d6-ac91-4d8a-8fa5-0d9a07c1baa2/JORDAN+HEIR+SERIES+PF.png",
+                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/a6bfab91-bf03-4343-98d7-b049657eee6d/JORDAN+HEIR+SERIES+PF.png"
+              ],
+              "featured": [
+                {
+                  "title": "Contouring cage",
+                  "content": "A built-in cage system contours to your foot to help give you the supportive fit you need when cutting across the court."
+                },
+                {
+                  "title": "Drop in and work",
+                  "content": "A drop-in Cushlon 3.0 foam midsole puts lightweight and responsive cushioning directly underfoot, helping with on-court mobility. It's also why the Heir is lower to the ground than any other performance basketball shoe in our collection."
+                },
+                {
+                  "title": "Get a grip",
+                  "content": "Rubber outsole with herringbone tread pattern helps give you the sticky traction you need to stop in an instant and shift directions."
+                }
+              ],
+              "moreBenefit": [
+                "Lightweight textiles in the upper help keep things breathable and comfortable.",
+                "Synthetic leather in the upper helps add durability."
+              ],
+              "notes": [
+                "Pull tab on heel",
+                "Rubber outsole",
+                "The PF edition is designed with a wider fit and optimised for play on outdoor courts."
+              ],
+              "size": 36,
+              "quantity": 1
+            }
+          ],
+          "date": "2025-08-16T15:15:47.513Z",
+          "status": "Confirmed",
+          "shippingFee": 15000,
+          "totalPrice": 3254000
+        },
+        {
+          "id": 1755363306980,
+          "items": [
+            {
+              "id": "gysdg6w",
+              "name": "Jordan Heir Series PF Bloodline",
+              "technology": "NikeEasyOn",
+              "height": "Mid Top",
+              "shoesFor": "Jordan",
+              "stock": 100,
+              "class": "Shoes",
+              "brand": "Jordan",
+              "features": "Side vents",
+              "giftPoint": 300,
+              "type": "Basketball Shoes",
+              "price": "3239000",
+              "price_sale": "3000000",
+              "des": "We're celebrating Jordan heritage by updating an iconic colourway. You know the colours, but do you know the low-game tech? We're talking about a drop-in midsole for extra mobility, a built-in cage for stability and herringbone traction for grip. Stripped of bells and whistles, the Heir lets your game speak for itself.",
+              "img": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/bcef5761-224f-48d0-bc11-3f379a7254c6/JORDAN+HEIR+SERIES+PF.png",
+              "page": "New & Featured",
+              "category": "New & Upcoming Drops",
+              "status": "Just In",
+              "customer": "Men",
+              "sizes": [
+                "31",
+                "32",
+                "33",
+                "34",
+                "40",
+                "37",
+                "35",
+                "36"
+              ],
+              "gender": "Men",
+              "color": [
+                "White",
+                "Fire Red",
+                "Black"
+              ],
+              "style": "FQ3859-106",
+              "country": "Vietnam",
+              "additionalImages": [
+                "https://shortformvideo.nike.com/a/videos/a7efafb6-2342-466b-b5cc-668e4b5c5ea8/video.mp4",
+                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/6681fda8-ce66-4545-abff-017b29504589/JORDAN+HEIR+SERIES+PF.png",
+                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/0928f0ae-d03b-4e3f-b94b-16f7d9ae3363/JORDAN+HEIR+SERIES+PF.png",
+                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/b1aad5d0-a6c3-4c46-802e-9fa8f019e5a0/JORDAN+HEIR+SERIES+PF.png",
+                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/8c8fe296-13fd-44ea-93fa-e2e538f1a2f1/JORDAN+HEIR+SERIES+PF.png",
+                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/7cae1c93-7edc-4566-b929-84f1984a70f1/JORDAN+HEIR+SERIES+PF.png",
+                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/3f9b4221-5a7b-431f-9fe0-0a99711b0ec4/JORDAN+HEIR+SERIES+PF.png",
+                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/de1df178-dc2d-464e-a156-47caeb400e6b/JORDAN+HEIR+SERIES+PF.png",
+                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/508dca39-438b-4555-83fa-715d6510fa33/JORDAN+HEIR+SERIES+PF.png"
+              ],
+              "featured": [
+                {
+                  "title": "Contouring cage",
+                  "content": "A built-in cage system contours to your foot to help give you the supportive fit you need when cutting across the court."
+                },
+                {
+                  "title": "Drop in and work",
+                  "content": "A drop-in Cushlon 3.0 foam midsole puts lightweight and responsive cushioning directly underfoot, helping with on-court mobility. It's also why the Heir is lower to the ground than any other performance basketball shoe in our collection."
+                },
+                {
+                  "title": "Get a grip",
+                  "content": "Rubber outsole with herringbone tread pattern helps give you the sticky traction you need to stop in an instant and shift directions."
+                }
+              ],
+              "moreBenefit": [
+                "Lightweight textiles in the upper help keep things breathable and comfortable.",
+                "Synthetic leather in the upper helps add durability."
+              ],
+              "notes": [
+                "Pull tab on heel",
+                "Rubber outsole",
+                "The PF edition is designed with a wider fit and optimised for play on outdoor courts."
+              ],
+              "size": 32,
+              "quantity": 1
+            },
+            {
+              "id": "ryt7",
+              "name": "Nike Downshifter 13",
+              "technology": "Nike Flyknit",
+              "material": "Sustainable Materials",
+              "position": 1,
+              "stock": 99,
+              "brand": "Nike",
+              "type": "Road Running Shoes",
+              "class": "Shoes",
+              "price": "2069000",
+              "isDefault": "true",
+              "price_sale": "1655199",
+              "des": "Whether you're starting your running journey or an expert eager to switch up your pace, the Downshifter 13 is down for the ride. With a revamped upper, cushioning and durability, it helps you find that extra gear or take that first stride towards chasing down your goals.",
+              "img": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/a04bbb70-12cb-4ee7-b5b4-277029e6ba53/NIKE+DOWNSHIFTER+13.png",
+              "page": "New & Featured",
+              "category": "New & Upcoming Drops",
+              "status": "Just In",
+              "customer": "Men",
+              "sizes": [
+                "32",
+                "33",
+                "34",
+                "41",
+                "37",
+                "35"
+              ],
+              "gender": "Men",
+              "color": [
+                "Gym Red",
+                "Light Crimson",
+                "Hyper Crimson",
+                "Black"
+              ],
+              "style": "FD6454-600",
+              "country": "Indonesia",
+              "additionalImages": [
+                "https://shortformvideo.nike.com/a/videos/505c17a0-d711-40d9-b854-0380c84d5b6f/video.mp4",
+                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/8d7fb5a6-ba3c-43f9-bf93-354a264a135a/NIKE+DOWNSHIFTER+13.png",
+                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/019378c1-af02-4de6-80d5-2f835a12b8ea/NIKE+DOWNSHIFTER+13.png",
+                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/daeb2b02-42c6-4a05-ba33-c6da184b7507/NIKE+DOWNSHIFTER+13.png",
+                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/68a59a3f-275a-4adc-a71e-77b4bdf34cb2/NIKE+DOWNSHIFTER+13.png",
+                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/b1a2766e-7c52-4838-8853-63707a5cd044/NIKE+DOWNSHIFTER+13.png",
+                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/a2d2b8f1-118f-4764-a3d1-938e487f35cd/NIKE+DOWNSHIFTER+13.png",
+                "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/ba58feaa-a228-480a-9279-f2e2ef701fcc/NIKE+DOWNSHIFTER+13.png"
+              ],
+              "size": 33,
+              "quantity": 1
+            }
+          ],
+          "date": "2025-08-16T16:55:06.980Z",
+          "status": "Pending",
+          "shippingFee": 15000,
+          "totalPrice": 5323000
+        }
+      ],
       "point": 2200,
-      "totalOrder": 5,
+      "totalOrder": 10,
       "dateOfBirth": "",
       "customerType": "Standard",
       "role": "User",

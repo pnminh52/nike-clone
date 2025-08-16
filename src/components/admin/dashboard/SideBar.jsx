@@ -12,13 +12,13 @@ const SideBar = () => {
     { name: 'Account', path: '/admin/dashboard/account/list' },
     { name: 'Comment', path: '/admin/dashboard/comment/list' },
     { name: 'Category', path: '/admin/dashboard/categories/list' },
-    { name: 'Order', path: '/admin/dashboard/order/list' },
+    { name: 'Order', path: '/admin/dashboard/orders/list' },
     { name: 'Decentralization', path: '/admin/dashboard/decentralization/list' },
     { name: 'Order Status', path: '/admin/dashboard/order-status/list' },
   ];
 
   return (
-    <div className='text-white h-full bg-white border-r border-gray-200'>
+    <div className='text-white h-full bg-white '>
       <div className='text-black flex justify-center border-b border-gray-200 h-[80px]'>
         <svg viewBox="0 0 24 24" fill="none" width="80px" height="80px">
           <path

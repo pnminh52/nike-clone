@@ -334,11 +334,12 @@ const ProductDetail = () => {
 
           <div className=" w-[50%] pl-2 mt-6">
             <div>
-              <p className="text-xl leading-[1.5]">
-                {selectedProduct.name}
-              </p>
+            <p className="text-xl leading-[1.5]">
+  {selectedProduct?.name}
+</p>
+
               <p className="text-gray-600 leading-tight">
-                {selectedProduct.type} / {selectedProduct.stock} in stock
+                {selectedProduct?.type} / {selectedProduct?.stock} in stock
               </p>
             
             </div>
