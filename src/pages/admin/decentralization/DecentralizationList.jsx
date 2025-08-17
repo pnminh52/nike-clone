@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-
+import StaffTable from './../../../components/admin/staff/StaffTable';
+import StaffFilters from '../../../components/admin/staff/StaffFilters.jsx';
+import StaffAdd from './../../../components/admin/staff/StaffAdd';
 const availablePermissions = [
-  { label: 'Quản lý sản phẩm', value: '/admin/dashboard/products/list' },
-  { label: 'Quản lý coupon', value: '/admin/dashboard/coupons/list' },
+  { label: 'Products', value: '/admin/dashboard/products/list' },
+  { label: 'Vouchers ', value: '/admin/dashboard/vouchers/list' },
   // Thêm quyền khác nếu cần
 ];
 
@@ -41,6 +43,38 @@ const DecentralizationList = () => {
       console.error('Lỗi khi cập nhật trạng thái tài khoản:', err);
     }
   };
+  // Xóa quyền của 1 staff
+const handleDeletePermission = async (staffId, permission) => {
+  const staff = staffUsers.find(s => s.id === staffId);
+  if (!staff) return;
+
+  const updatedPermissions = staff.permissions.filter(p => p !== permission);
+  try {
+    await axios.patch(`http://localhost:3000/users/${staffId}`, { permissions: updatedPermissions });
+    setStaffUsers(prev =>
+      prev.map(u => u.id === staffId ? { ...u, permissions: updatedPermissions } : u)
+    );
+  } catch (err) {
+    console.error('Lỗi khi xóa quyền:', err);
+  }
+};
+
+// Sửa quyền của 1 staff
+const handleEditPermission = async (staffId, oldPermission, newPermission) => {
+  const staff = staffUsers.find(s => s.id === staffId);
+  if (!staff) return;
+
+  const updatedPermissions = staff.permissions.map(p => p === oldPermission ? newPermission : p);
+  try {
+    await axios.patch(`http://localhost:3000/users/${staffId}`, { permissions: updatedPermissions });
+    setStaffUsers(prev =>
+      prev.map(u => u.id === staffId ? { ...u, permissions: updatedPermissions } : u)
+    );
+  } catch (err) {
+    console.error('Lỗi khi sửa quyền:', err);
+  }
+};
+
   
   // Lấy danh sách Staff hiện có
   useEffect(() => {
@@ -63,16 +97,34 @@ const DecentralizationList = () => {
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
-  // Xử lý thay đổi permissions (checkbox)
   const handlePermissionChange = (e) => {
     const { checked, value } = e.target;
+  
     setFormData(prev => {
-      const newPerms = checked
-        ? [...prev.permissions, value]
-        : prev.permissions.filter(p => p !== value);
-      return { ...prev, permissions: newPerms };
+      let updatedPermissions;
+      if (checked) {
+        // nếu đã có thì không thêm trùng
+        updatedPermissions = [...new Set([...prev.permissions, value])];
+      } else {
+        updatedPermissions = prev.permissions.filter(p => p !== value);
+      }
+      return { ...prev, permissions: updatedPermissions };
     });
   };
+  // Hàm xóa staff
+const onDelete = async (id) => {
+  const confirmDelete = window.confirm("Bạn có chắc chắn muốn xóa nhân viên này?");
+  if (!confirmDelete) return;
+
+  try {
+    await axios.delete(`http://localhost:3000/users/${id}`);
+    // Cập nhật lại state sau khi xóa
+    setStaffUsers((prev) => prev.filter((user) => user.id !== id));
+  } catch (error) {
+    console.error("Lỗi khi xóa Staff:", error);
+  }
+};
+
 
   // Gửi form thêm Staff mới
   const handleSubmit = async (e) => {
@@ -122,138 +174,17 @@ const DecentralizationList = () => {
 
   return (
     <div className="p-4">
-      <h2 className="text-xl font-bold mb-4">Danh sách nhân viên (Staff)</h2>
-
-      <ul className="space-y-3 mb-6">
-  {staffUsers.map(user => (
-    <li key={user.id} className="p-4 bg-gray-100 rounded shadow">
-      <p><strong>Tên:</strong> {user.firstname} {user.lastname}</p>
-      <p><strong>Email:</strong> {user.email}</p>
-      <p><strong>Vai trò:</strong> {user.role}</p>
-      <p>
-        <strong>Trạng thái:</strong>{' '}
-        <span className={`font-semibold ${user.accountStatus === 'Blocked' ? 'text-red-500' : 'text-green-600'}`}>
-          {user.accountStatus || 'Active'}
-        </span>
-      </p>
-      <p>
-        <strong>Quyền:</strong>{' '}
-        {user.permissions && user.permissions.length > 0 ? (
-          <ul className="list-disc list-inside ml-5">
-            {user.permissions.map((perm, i) => <li key={i}>{perm}</li>)}
-          </ul>
-        ) : 'Chưa phân quyền'}
-      </p>
-      <button
-        onClick={() => toggleAccountStatus(user)}
-        className={`mt-2 px-4 py-1 rounded text-white ${
-          user.accountStatus === 'Blocked'
-            ? 'bg-green-600 hover:bg-green-700'
-            : 'bg-red-600 hover:bg-red-700'
-        }`}
-      >
-        {user.accountStatus === 'Blocked' ? 'Mở khóa' : 'Khóa tài khoản'}
-      </button>
-    </li>
-  ))}
-</ul>
-
-
-      <h3 className="text-lg font-semibold mb-2">Thêm nhân viên mới</h3>
-      <form onSubmit={handleSubmit} className="space-y-3 max-w-md">
-        <input
-          type="text"
-          name="firstname"
-          placeholder="Họ"
-          value={formData.firstname}
-          onChange={handleChange}
-          required
-          className="w-full p-2 border rounded"
-        />
-        <input
-          type="text"
-          name="lastname"
-          placeholder="Tên"
-          value={formData.lastname}
-          onChange={handleChange}
-          required
-          className="w-full p-2 border rounded"
-        />
-        <input
-          type="email"
-          name="email"
-          placeholder="Email"
-          value={formData.email}
-          onChange={handleChange}
-          required
-          className="w-full p-2 border rounded"
-        />
-        <input
-          type="text"
-          name="phone"
-          placeholder="Số điện thoại"
-          value={formData.phone}
-          onChange={handleChange}
-          className="w-full p-2 border rounded"
-        />
-        <input
-          type="text"
-          name="address"
-          placeholder="Địa chỉ"
-          value={formData.address}
-          onChange={handleChange}
-          className="w-full p-2 border rounded"
-        />
-        <input
-          type="text"
-          name="district"
-          placeholder="Quận/Huyện"
-          value={formData.district}
-          onChange={handleChange}
-          className="w-full p-2 border rounded"
-        />
-        <input
-          type="text"
-          name="country"
-          placeholder="Quốc gia"
-          value={formData.country}
-          onChange={handleChange}
-          className="w-full p-2 border rounded"
-        />
-        <input
-          type="text"
-          name="avatar"
-          placeholder="URL Avatar"
-          value={formData.avatar}
-          onChange={handleChange}
-          className="w-full p-2 border rounded"
-        />
-
-        {/* Phần chọn quyền */}
-        <div>
-          <label className="font-semibold mb-1 block">Chọn quyền truy cập:</label>
-          {availablePermissions.map((perm) => (
-            <label key={perm.value} className="inline-flex items-center mr-4">
-              <input
-                type="checkbox"
-                value={perm.value}
-                checked={formData.permissions.includes(perm.value)}
-                onChange={handlePermissionChange}
-                className="mr-1"
-              />
-              {perm.label}
-            </label>
-          ))}
-        </div>
-
-        <button
-          type="submit"
-          disabled={loading}
-          className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 disabled:opacity-50"
-        >
-          {loading ? 'Đang thêm...' : 'Thêm nhân viên'}
-        </button>
-      </form>
+      <h1 className="nike-title-for-mobile">Manage staff list</h1>
+      <p>You can view details and edit staff information.</p>
+    <StaffFilters />
+    <StaffTable
+  staffUsers={staffUsers}
+  onDelete={onDelete}
+  onDeletePermission={handleDeletePermission}
+  onEditPermission={handleEditPermission}
+  availablePermissions={availablePermissions}
+/>
+     <StaffAdd handleSubmit={handleSubmit} handleChange={handleChange} formData={formData} availablePermissions={availablePermissions} handlePermissionChange={handlePermissionChange} loading={loading}  />
     </div>
   );
 };

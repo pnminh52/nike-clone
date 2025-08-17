@@ -2664,6 +2664,59 @@
       "createdAt": "2025-06-10T10:00:00.000Z",
       "vouchers": [],
       "blockReason": ""
+    },
+    {
+      "id": "d095",
+      "firstname": "Phạm",
+      "lastname": "Minh",
+      "phone": "0934557882",
+      "address": "Hà Nam",
+      "district": "Thanh Xuân",
+      "email": "13444@gmail.com",
+      "password": "111111Aa",
+      "country": "Việt Nam",
+      "role": "Staff",
+      "accountStatus": "Active",
+      "avatar": "https://picsum.dev/300/200 ",
+      "permissions": [
+        "/admin/dashboard/vouchers/list"
+      ]
+    },
+    {
+      "id": "91bc",
+      "firstname": "Xuân",
+      "lastname": "Bắc",
+      "phone": "0934557882",
+      "address": "Hà Nam",
+      "district": "Thanh Xuân",
+      "email": "13444@gmail.com",
+      "password": "111111Aa",
+      "country": "Việt Nam",
+      "role": "Staff",
+      "accountStatus": "Active",
+      "avatar": "https://picsum.dev/300/200 ",
+      "permissions": [
+        "/admin/dashboard/products/list",
+        "/admin/dashboard/vouchers/list"
+      ]
+    },
+    {
+      "id": "6ba5",
+      "firstname": "Hải ",
+      "lastname": "Long",
+      "phone": "0934557882",
+      "address": "Hà Nam",
+      "district": "Thanh Xuân",
+      "email": "13444@gmail.com",
+      "password": "111111Aa",
+      "country": "Việt Nam",
+      "role": "Staff",
+      "accountStatus": "Active",
+      "avatar": "https://picsum.dev/300/200 ",
+      "permissions": [
+        "/admin/dashboard/products/list",
+        "/admin/dashboard/vouchers/list"
+      ]
     }
   ],
   "vouchers": [
