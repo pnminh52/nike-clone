@@ -6,7 +6,11 @@ import StaffAdd from './../../../components/admin/staff/StaffAdd';
 const availablePermissions = [
   { label: 'Products', value: '/admin/dashboard/products/list' },
   { label: 'Vouchers ', value: '/admin/dashboard/vouchers/list' },
-  // Thêm quyền khác nếu cần
+  { label: 'Orders', value: '/admin/dashboard/orders/list' },
+  { label: 'Categories', value: '/admin/dashboard/categories/list' },
+  { label: 'Accounts', value: '/admin/dashboard/account/list' },
+  { label: 'Order Status', value: '/admin/dashboard/order-status/list' },
+  { label: 'Comments', value: '/admin/dashboard/comment/list' },
 ];
 
 const DecentralizationList = () => {

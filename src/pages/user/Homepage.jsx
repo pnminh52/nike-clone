@@ -8,6 +8,8 @@ import { useState } from "react";
 import Banner4 from './../../components/user/homepage/Banner4';
 import Banner5 from "../../components/user/homepage/Banner5";
 import Slider4 from './../../components/user/homepage/Slider4';
+import ImageTable from './../../components/user/homepage/ImageTable';
+import SlideGerne from './../../components/user/homepage/SlideGerne';
 
 
 
@@ -28,6 +30,8 @@ const Homepage = () => {
     
         <Slider1 />
         {/* <Banner1 /> */}
+        <ImageTable />
+        <SlideGerne />
     
         <Banner4 />
     
