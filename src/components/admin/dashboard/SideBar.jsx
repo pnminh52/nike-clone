@@ -18,8 +18,8 @@ const SideBar = () => {
   ];
 
   return (
-    <div className='text-white h-full bg-white '>
-      <div className='text-black flex justify-center border-b border-gray-200 h-[80px]'>
+    <div className='text-white h-full border-r border-gray-300 bg-white '>
+      <div className='text-black flex justify-center border-b border-gray-300 h-[80px]'>
         <svg viewBox="0 0 24 24" fill="none" width="80px" height="80px">
           <path
             fill="currentColor"

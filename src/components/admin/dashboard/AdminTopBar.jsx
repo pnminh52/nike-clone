@@ -5,7 +5,7 @@ const AdminTopBar = ({ user, logout }) => {
   };
 
   return (
-    <div className='p-4 h-[80px] border-b border-gray-200'>
+    <div className='p-4 h-[80px] border-b border-gray-300'>
       <div className='flex items-center justify-between h-full w-full'>
        
        

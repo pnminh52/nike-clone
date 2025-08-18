@@ -40,8 +40,8 @@ const StaffAdd = ({
 
 
       {/* Quyền truy cập */}
-      <div className="mt-4">
-        <h4 className="font-semibold mb-2">Permissions</h4>
+      <div className="">
+        <h4 className="font-semibold py-4">Permissions</h4>
         <div className="grid grid-cols-2 gap-2">
         <div className="grid grid-cols-2 gap-3">
   {availablePermissions?.map((permission, idx) => {
@@ -53,8 +53,8 @@ const StaffAdd = ({
       <label
         key={idx}
         className={`flex items-center justify-between px-3 py-2 rounded-lg border cursor-pointer transition
-          ${isChecked ? "bg-blue-50 border-blue-500 text-blue-600" : "bg-white border-gray-300"}
-          ${isDisabled ? "opacity-50 cursor-not-allowed" : "hover:border-blue-400"}`}
+          ${isChecked ? "bg-gray-100 border-gray-300 text-black" : "bg-white border-gray-300"}
+          ${isDisabled ? "opacity-60 cursor-not-allowed" : ""}`}
       >
         <span className="text-sm font-medium">{permission.label}</span>
         <input
@@ -63,7 +63,7 @@ const StaffAdd = ({
           checked={isChecked}
           onChange={handlePermissionChange}
           disabled={isDisabled}
-          className="w-4 h-4 accent-blue-500 cursor-pointer"
+          className="w-4 h-4 accent-black cursor-pointer"
         />
       </label>
     );
