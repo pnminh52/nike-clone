@@ -8,6 +8,7 @@ import MemberBenefit from './../../components/user/profile/MemberBenefit';
 import NikeApps from './../../components/user/profile/NikeApps';
 import ProductSkeleton from './../../components/user/etc/ProductSkeleton';
 import NavigationBarProfile from './../../components/user/etc/NavigationBarProfile';
+import AccountDetails from './Setting/AccountDetails';
 
 const Profile = () => {
   const { id } = useParams();
@@ -75,17 +76,10 @@ const Profile = () => {
   <div>
      <div className="hidden sm:block">
      <div className="max-w-screen-2xl px-6 sm:px-10 py-10  mx-auto  ">
-      <div className="flex gap-4 mb-10">
-      <p className="inter text-gray-400">Profile</p>
-      <p className="inter">Inbox</p>
-      <p className="inter">Orders</p>
-      <p className="inter">Favourites</p>
-      <p className="inter">Settings</p>
-      </div>
+     
     <div className="flex gap-6 items-center mb-6">
     <div
   className="relative w-20 h-20 sm:w-24 sm:h-24 border border-dashed border-gray-400 rounded-full overflow-hidden group cursor-pointer"
-  onClick={() => navigate("/setting")}
 >
   {user.avatar ? (
     <img
@@ -128,14 +122,8 @@ const Profile = () => {
     
      
        
-     <div className="flex justify-between">
-      <p className="text-2xl py-8">Interests</p>
-      <p className="inter cursor-pointer">Edit</p>
-     </div>
-     <div>
-      <p>Add your interests to shop a collection of products that are based on what you're into.</p>
-     </div>
-     
+    
+     <AccountDetails />
     </div>
    </div>
    <div className="block sm:hidden">
