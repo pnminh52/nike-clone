@@ -19,8 +19,8 @@ const ProductDetailTable = ({ order, orderStatusList, currentIndex, isFinalStatu
             <tr key={idx} className="text-center hover:bg-gray-50">
               <td className="border border-gray-300 p-2">{idx + 1}</td>
               <td className="border border-gray-300 p-2 text-left">{item.name}</td>
-              <td>
-                <img className="w-20 h-20 mx-auto" src={item.img} alt={item.name} />
+              <td className="border border-gray-300 p-2">
+                <img className="w-22 h-22 rounded-lg mx-auto object-cover" src={item.img} alt={item.name} />
               </td>
               <td className="border border-gray-300 p-2">{item.size} / {item.quantity} / {Number(item.price).toLocaleString("vi-VN", {
                   style: "currency",

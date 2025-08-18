@@ -14,7 +14,7 @@ const InputInfo1 = ({inputValue, handleDataChange}) => {
       value={inputValue.name || ""}
       onChange={handleDataChange}
       placeholder="Product Name"
-      className="w-full border px-4 py-2 rounded-lg"
+      className="w-full border border-gray-300 px-4 py-2 rounded-lg"
     />
   </div>
 
@@ -26,7 +26,7 @@ const InputInfo1 = ({inputValue, handleDataChange}) => {
       value={inputValue.stock || ""}
       onChange={handleDataChange}
       placeholder="Stock"
-      className="w-full border px-4 py-2 rounded-lg"
+      className="w-full border border-gray-300 px-4 py-2 rounded-lg"
     />
   </div>
 
@@ -38,7 +38,7 @@ const InputInfo1 = ({inputValue, handleDataChange}) => {
       value={inputValue.price || ""}
       onChange={handleDataChange}
       placeholder="Price"
-      className="w-full border px-4 py-2 rounded-lg"
+      className="w-full border border-gray-300 px-4 py-2 rounded-lg"
     />
   </div>
 </div>
@@ -52,7 +52,7 @@ const InputInfo1 = ({inputValue, handleDataChange}) => {
       value={inputValue.price_sale || ""}
       onChange={handleDataChange}
       placeholder="Price Sale"
-      className="w-full border px-4 py-2 rounded-lg"
+      className="w-full border border-gray-300 px-4 py-2 rounded-lg"
     />
   </div>
 
@@ -64,7 +64,7 @@ const InputInfo1 = ({inputValue, handleDataChange}) => {
       value={inputValue.style || ""}
       onChange={handleDataChange}
       placeholder="Style"
-      className="w-full border px-4 py-2 rounded-lg"
+      className="w-full border border-gray-300 px-4 py-2 rounded-lg"
     />
   </div>
 
@@ -75,7 +75,7 @@ const InputInfo1 = ({inputValue, handleDataChange}) => {
       value={inputValue.country || ""}
       onChange={handleDataChange}
       placeholder="Country"
-      className="w-full border px-4 py-2 rounded-lg"
+      className="w-full border border-gray-300 px-4 py-2 rounded-lg"
     />
   </div>
 </div>
@@ -88,7 +88,7 @@ const InputInfo1 = ({inputValue, handleDataChange}) => {
       value={inputValue.height || ""}
       onChange={handleDataChange}
       placeholder="Height"
-      className="w-full border px-4 py-2 rounded-lg"
+      className="w-full border border-gray-300 px-4 py-2 rounded-lg"
     />
   </div>
 
@@ -99,7 +99,7 @@ const InputInfo1 = ({inputValue, handleDataChange}) => {
       value={inputValue.shoesFor || ""}
       onChange={handleDataChange}
       placeholder="Shoes For"
-      className="w-full border px-4 py-2 rounded-lg"
+      className="w-full border border-gray-300 px-4 py-2 rounded-lg"
     />
   </div>
 
@@ -110,7 +110,7 @@ const InputInfo1 = ({inputValue, handleDataChange}) => {
       value={inputValue.class || ""}
       onChange={handleDataChange}
       placeholder="Class"
-      className="w-full border px-4 py-2 rounded-lg"
+      className="w-full border border-gray-300 px-4 py-2 rounded-lg"
     />
   </div>
 </div>
@@ -123,7 +123,7 @@ const InputInfo1 = ({inputValue, handleDataChange}) => {
       value={inputValue.brand || ""}
       onChange={handleDataChange}
       placeholder="Brand"
-      className="w-full border px-4 py-2 rounded-lg"
+      className="w-full border border-gray-300 px-4 py-2 rounded-lg"
     />
   </div>
 
@@ -134,7 +134,7 @@ const InputInfo1 = ({inputValue, handleDataChange}) => {
       value={inputValue.features || ""}
       onChange={handleDataChange}
       placeholder="Features"
-      className="w-full border px-4 py-2 rounded-lg"
+      className="w-full border border-gray-300 px-4 py-2 rounded-lg"
     />
   </div>
 
@@ -146,7 +146,7 @@ const InputInfo1 = ({inputValue, handleDataChange}) => {
       value={inputValue.giftPoint || ""}
       onChange={handleDataChange}
       placeholder="Gift Point"
-      className="w-full border px-4 py-2 rounded-lg"
+      className="w-full border border-gray-300 px-4 py-2 rounded-lg"
     />
   </div>
 </div>
@@ -160,7 +160,7 @@ const InputInfo1 = ({inputValue, handleDataChange}) => {
       value={inputValue.type || ""}
       onChange={handleDataChange}
       placeholder="Type"
-      className="w-full border px-4 py-2 rounded-lg"
+      className="w-full border border-gray-300 px-4 py-2 rounded-lg"
     />
   </div>
 
@@ -170,7 +170,7 @@ const InputInfo1 = ({inputValue, handleDataChange}) => {
       name="customer"
       value={inputValue.customer || ""}
       onChange={handleDataChange}
-      className="w-full border px-4 py-2 rounded-lg"
+      className="w-full border border-gray-300 px-4 py-2 rounded-lg"
     >
       <option value="">Select Customer</option>
       <option value="Men">Men</option>
@@ -183,7 +183,7 @@ const InputInfo1 = ({inputValue, handleDataChange}) => {
 
          <div className="w-full">
          <p className="mb-1 text-sm font-medium">Description</p>
-         <input name="des" value={inputValue.des || ""} onChange={handleDataChange} placeholder="Description" className="w-full border px-4 py-10 rounded-lg" />
+         <input name="des" value={inputValue.des || ""} onChange={handleDataChange} placeholder="Description" className="w-full border border-gray-300 px-4 py-10 rounded-lg" />
          </div>
     
           {/* --- DROPDOWNS --- */}
@@ -195,7 +195,7 @@ const InputInfo1 = ({inputValue, handleDataChange}) => {
       name="page"
       value={inputValue.page || ""}
       onChange={handleDataChange}
-      className="w-full border px-4 py-2 rounded-lg"
+      className="w-full border border-gray-300 px-4 py-2 rounded-lg"
     >
       <option value="">Select Page</option>
       <option value="New & Featured">New & Featured</option>
@@ -235,7 +235,7 @@ const InputInfo1 = ({inputValue, handleDataChange}) => {
       name="status"
       value={inputValue.status || ""}
       onChange={handleDataChange}
-      className="w-full border px-4 py-2 rounded-lg"
+      className="w-full border border-gray-300 px-4 py-2 rounded-lg"
     >
       <option value="">Select Status</option>
       <option value="Just In">Just In</option>
@@ -251,7 +251,7 @@ const InputInfo1 = ({inputValue, handleDataChange}) => {
         name="gender"
         value={inputValue.gender || ""}
         onChange={handleDataChange}
-        className="w-full border px-4 py-2 rounded-lg"
+        className="w-full border border-gray-300 px-4 py-2 rounded-lg"
       >
         <option value="">Select Gender</option>
         <option value="Men">Men</option>

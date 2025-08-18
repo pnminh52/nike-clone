@@ -32,7 +32,7 @@ const InputInfo2 = ({
           {Array.from({ length: 15 }, (_, i) => i + 31).map((size) => (
             <label
               key={size}
-              className={`cursor-pointer px-4 py-2 rounded-lg border transition-all duration-200 text-sm font-medium ${
+              className={`cursor-pointer px-4 py-2 rounded-lg border border-gray-300 transition-all duration-200 text-sm font-medium ${
                 selectedSizes.includes(String(size))
                   ? "bg-black text-white border-black"
                   : "bg-white text-gray-700 border-gray-300 hover:border-black"
@@ -58,7 +58,7 @@ const InputInfo2 = ({
           value={inputValue.img || ""}
           onChange={handleDataChange}
           placeholder="Main Image URL"
-          className="w-full border px-4 py-2 rounded-lg"
+          className="w-full border border-gray-300 px-4 py-2 rounded-lg"
         />
       </div>
 
@@ -70,7 +70,7 @@ const InputInfo2 = ({
               value={img}
               onChange={(e) => handleImageChange(idx, e.target.value)}
               placeholder={`Image ${idx + 1}`}
-              className="w-full border px-4 py-2 rounded-lg"
+              className="w-full border border-gray-300 px-4 py-2 rounded-lg"
             />
             <button
               type="button"
@@ -112,7 +112,7 @@ const InputInfo2 = ({
               value={color}
               onChange={(e) => handleColorChange(idx, e.target.value)}
               placeholder={`Color ${idx + 1}`}
-              className="w-full border px-4 py-2 rounded-lg"
+              className="w-full border border-gray-300 px-4 py-2 rounded-lg"
             />
             <button
               type="button"
@@ -153,7 +153,7 @@ const InputInfo2 = ({
       <div>
       <p className="mb-1 text-sm font-medium">Featured</p>
         {(inputValue.featured || []).map((item, idx) => (
-        <div key={idx} className="mb-2 border p-4 rounded flex flex-col gap-2">
+        <div key={idx} className="mb-2 border border-gray-300 p-4 rounded flex flex-col gap-2">
         {/* Hàng đầu: nút X nằm bên phải */}
         <div className="flex justify-end">
           <button
@@ -191,7 +191,7 @@ const InputInfo2 = ({
             setInputValue((prev) => ({ ...prev, featured: updated }));
           }}
           placeholder="Title"
-          className="w-full border px-4 py-2 rounded-lg"
+          className="w-full border border-gray-300 px-4 py-2 rounded-lg"
         />
         <textarea
           value={item.content}
@@ -201,7 +201,7 @@ const InputInfo2 = ({
             setInputValue((prev) => ({ ...prev, featured: updated }));
           }}
           placeholder="Content"
-          className="w-full border px-4 py-2 rounded-lg"
+          className="w-full border border-gray-300 px-4 py-2 rounded-lg"
         />
       </div>
       
@@ -230,7 +230,7 @@ const InputInfo2 = ({
                 value={item}
                 onChange={(e) => handleArrayChange(field, idx, e.target.value)}
                 placeholder={`${field}...`}
-                className="w-full border rounded-lg px-4 py-2"
+                className="w-full border border-gray-300 rounded-lg px-4 py-2"
               />
               <button
                 type="button"
@@ -274,7 +274,7 @@ const InputInfo2 = ({
       onChange={togglePosition}
       className="peer hidden"
     />
-    <div className="px-4 py-2 rounded-lg border border-gray-300 cursor-pointer transition-all 
+    <div className="px-4 py-2 rounded-lg border border-gray-300 border-gray-300 cursor-pointer transition-all 
                     peer-checked:border-black peer-checked:text-black ">
       The product is in first place
     </div>
@@ -288,7 +288,7 @@ const InputInfo2 = ({
       onChange={toggleIsDefault}
       className="peer hidden"
     />
-    <div className="px-4 py-2 rounded-lg border border-gray-300 cursor-pointer transition-all 
+    <div className="px-4 py-2 rounded-lg border border-gray-300 border-gray-300 cursor-pointer transition-all 
                     peer-checked:border-black peer-checked:text-black ">
       The product represents this line.
     </div>

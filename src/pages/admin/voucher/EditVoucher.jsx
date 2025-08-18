@@ -88,7 +88,7 @@ const EditVoucher = () => {
                   name={field}
                   value={form[field]}
                   onChange={handleChange}
-                  className="w-full border px-4 py-2 rounded-lg"
+                  className="w-full border border-gray-300 px-4 py-2 rounded-lg"
                 >
                   <option value="percent">Percentage (%)</option>
                   <option value="amount">Amount (VND)</option>
@@ -108,7 +108,7 @@ const EditVoucher = () => {
                       ? 0
                       : undefined
                   }
-                  className="w-full border px-4 py-2 rounded-lg"
+                  className="w-full border border-gray-300 px-4 py-2 rounded-lg"
                 />
               )}
             </div>
@@ -131,7 +131,7 @@ const EditVoucher = () => {
                 required
                 min={form.discountType === "percent" ? 10 : 100000}
                 max={form.discountType === "percent" ? 50 : undefined}
-                className="w-full border px-4 py-2 rounded-lg"
+                className="w-full border border-gray-300 px-4 py-2 rounded-lg"
               />
             </div>
           )}

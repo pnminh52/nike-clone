@@ -43,11 +43,17 @@ const StaffTable = ({
     setEditing({ staffId, permission });
   };
 
-  const handleChangePermission = (e, staffId, oldPermission) => {
-    const newPermission = e.target.value;
-    onEditPermission?.(staffId, oldPermission, newPermission);
-    setEditing({ staffId: null, permission: null });
-  };
+// Khi sửa quyền cũ
+const handleChangePermission = (e, staffId, oldPermission) => {
+  const newPermission = e.target.value;
+  if (!newPermission) return;
+
+  // gọi callback update quyền
+  onEditPermission?.(staffId, oldPermission, newPermission);
+
+  setEditing({ staffId: null, permission: null });
+};
+
 
   const handleCancelEdit = () => {
     setEditing({ staffId: null, permission: null });
@@ -74,56 +80,115 @@ const StaffTable = ({
                 <td className="border border-gray-300 p-2 text-center">{staff.accountStatus}</td>
                 <td className="border border-gray-300 p-2 text-center">
   {staff.permissions?.length > 0 ? (
-    staff.permissions.map((p, idx) => (
-      <span
-        key={idx}
-        className="inline-block bg-gray-200 px-2 py-1 m-1 rounded"
-      >
-        {editing.staffId === staff.id && editing.permission === p ? (
-          <>
-            <select
-              value={p}
-              onChange={(e) => handleChangePermission(e, staff.id, p)}
-              onBlur={handleCancelEdit}
-            >
-              {availablePermissions.map((ap) => (
-                <option key={ap.value} value={ap.value}>
-                  {ap.label}
-                </option>
-              ))}
-            </select>
-            <button
-              onClick={handleCancelEdit}
-              className="text-gray-600 hover:text-gray-800 text-sm"
-            >
-              ✕
-            </button>
-          </>
-        ) : (
-          <>
-            {getPermissionLabel(p)}
-            {staff.permissions.length > 1 && (
-              <button
-                onClick={() => handlePermissionDelete(staff.id, p)}
-                className="text-red-500 hover:text-red-700 text-sm"
+    <>
+      {staff.permissions.map((p, idx) => (
+        <span
+          key={idx}
+          className="inline-block bg-gray-200 px-2 py-1 m-1 rounded"
+        >
+          {editing.staffId === staff.id && editing.permission === p ? (
+            <>
+              <select
+                value={p}
+                onChange={(e) => handleChangePermission(e, staff.id, p)}
+                onBlur={handleCancelEdit}
               >
-                ×
+                {availablePermissions
+                  .filter(
+                    (ap) =>
+                      ap.value === p || !staff.permissions.includes(ap.value)
+                  )
+                  .map((ap) => (
+                    <option key={ap.value} value={ap.value}>
+                      {ap.label}
+                    </option>
+                  ))}
+              </select>
+              <button
+                onClick={handleCancelEdit}
+                className="text-gray-600 hover:text-gray-800 text-sm"
+              >
+                ✕
               </button>
-            )}
-            <button
-              onClick={() => handleStartEdit(staff.id, p)}
-              className="text-blue-500 hover:text-blue-700 text-sm"
-            >
-              ✎
-            </button>
-          </>
-        )}
-      </span>
-    ))
+            </>
+          ) : (
+            <>
+              {getPermissionLabel(p)}
+              {staff.permissions.length > 1 && (
+                <button
+                  onClick={() => handlePermissionDelete(staff.id, p)}
+                  className="text-red-500 hover:text-red-700 text-sm"
+                >
+                  ×
+                </button>
+              )}
+              <button
+                onClick={() => handleStartEdit(staff.id, p)}
+                className="text-blue-500 hover:text-blue-700 text-sm"
+              >
+                ✎
+              </button>
+            </>
+          )}
+        </span>
+      ))}
+
+      {/* Nếu chưa đủ 3 quyền thì hiện nút thêm */}
+      {staff.permissions.length < 3 && (
+  <span className="inline-block bg-green-100 px-2 py-1 m-1 rounded">
+    <select
+      defaultValue=""
+      onChange={(e) => {
+        const newPermission = e.target.value;
+        if (newPermission) {
+          // gọi callback để thêm quyền mới
+          onEditPermission?.(staff.id, null, newPermission); 
+          e.target.value = ""; // reset lại dropdown
+        }
+      }}
+    >
+      <option value="" disabled>
+        ➕ Add
+      </option>
+      {availablePermissions
+        .filter((ap) => !staff.permissions.includes(ap.value))
+        .map((ap) => (
+          <option key={ap.value} value={ap.value}>
+            {ap.label}
+          </option>
+        ))}
+    </select>
+  </span>
+)}
+
+    </>
   ) : (
-    "Không có"
+    <>
+      Không có{" "}
+      {/* Nếu chưa có quyền nào thì cho thêm mới ngay */}
+      <select
+        defaultValue=""
+        onChange={(e) => {
+          if (e.target.value) {
+            onEditPermission?.(staff.id, null, e.target.value);
+            e.target.value = "";
+          }
+        }}
+        className="ml-2"
+      >
+        <option value="" disabled>
+          ➕ Add
+        </option>
+        {availablePermissions.map((ap) => (
+          <option key={ap.value} value={ap.value}>
+            {ap.label}
+          </option>
+        ))}
+      </select>
+    </>
   )}
 </td>
+
 
 
                 <td className="border border-gray-300 p-2 text-center">

@@ -8,96 +8,71 @@ const StaffAdd = ({
   handlePermissionChange,
   loading,
 }) => {
+  const fields = [
+    { name: "firstname", label: "Firstname", type: "text", placeholder: "Firstname" },
+    { name: "lastname", label: "Lastname", type: "text", placeholder: "Lastname" },
+    { name: "phone", label: "Phone", type: "text", placeholder: "Phone" },
+    { name: "address", label: "Address", type: "text", placeholder: "Address" },
+    { name: "district", label: "District", type: "text", placeholder: "District" },
+    { name: "email", label: "Email", type: "email", placeholder: "Email" },
+    { name: "country", label: "Country", type: "text", placeholder: "Country" },
+    { name: "avatar", label: "Avatar", type: "text", placeholder: "Avatar URL" },
+  ];
+  
   return (
-    <form onSubmit={handleSubmit} className="bg-white p-4 rounded-lg shadow-md mt-4">
+    <form onSubmit={handleSubmit} className="bg-white  ">
       {/* Grid thông tin cá nhân */}
       <div className="grid grid-cols-2 gap-3">
-        <input
-          type="text"
-          name="firstname"
-          placeholder="First Name"
-          value={formData.firstname}
-          onChange={handleChange}
-          className="border p-2 rounded w-full"
-        />
-        <input
-          type="text"
-          name="lastname"
-          placeholder="Last Name"
-          value={formData.lastname}
-          onChange={handleChange}
-          className="border p-2 rounded w-full"
-        />
-        <input
-          type="text"
-          name="phone"
-          placeholder="Phone"
-          value={formData.phone}
-          onChange={handleChange}
-          className="border p-2 rounded w-full"
-        />
-        <input
-          type="text"
-          name="address"
-          placeholder="Address"
-          value={formData.address}
-          onChange={handleChange}
-          className="border p-2 rounded w-full"
-        />
-        <input
-          type="text"
-          name="district"
-          placeholder="District"
-          value={formData.district}
-          onChange={handleChange}
-          className="border p-2 rounded w-full"
-        />
-        <input
-          type="email"
-          name="email"
-          placeholder="Email"
-          value={formData.email}
-          onChange={handleChange}
-          className="border p-2 rounded w-full"
-        />
-        <input
-          type="text"
-          name="country"
-          placeholder="Country"
-          value={formData.country}
-          onChange={handleChange}
-          className="border p-2 rounded w-full"
-        />
-        <input
-          type="text"
-          name="avatar"
-          placeholder="Avatar URL"
-          value={formData.avatar}
-          onChange={handleChange}
-          className="border p-2 rounded w-full"
-        />
-      </div>
+  {fields.map((field) => (
+    <div key={field.name} className="w-full">
+      <p className="mb-1 text-sm font-medium">{field.label}</p>
+      <input
+        type={field.type}
+        name={field.name}
+        placeholder={field.placeholder}
+        value={formData[field.name]}
+        onChange={handleChange}
+        className="w-full border border-gray-300 px-4 py-2 rounded-lg"
+      />
+    </div>
+  ))}
+</div>
+
 
       {/* Quyền truy cập */}
       <div className="mt-4">
         <h4 className="font-semibold mb-2">Permissions</h4>
         <div className="grid grid-cols-2 gap-2">
-          {availablePermissions?.map((permission, idx) => {
-            const isChecked = formData.permissions?.includes(permission.value);
+        <div className="grid grid-cols-2 gap-3">
+  {availablePermissions?.map((permission, idx) => {
+    const isChecked = formData.permissions?.includes(permission.value);
+    const isDisabled =
+      !isChecked && formData.permissions?.length >= 3;
 
-            return (
-              <label key={idx} className="flex items-center space-x-2">
-                <input
-                  type="checkbox"
-                  value={permission.value}
-                  checked={isChecked}
-                  onChange={handlePermissionChange}
-                />
-                <span>{permission.label}</span>
-              </label>
-            );
-          })}
+    return (
+      <label
+        key={idx}
+        className={`flex items-center justify-between px-3 py-2 rounded-lg border cursor-pointer transition
+          ${isChecked ? "bg-blue-50 border-blue-500 text-blue-600" : "bg-white border-gray-300"}
+          ${isDisabled ? "opacity-50 cursor-not-allowed" : "hover:border-blue-400"}`}
+      >
+        <span className="text-sm font-medium">{permission.label}</span>
+        <input
+          type="checkbox"
+          value={permission.value}
+          checked={isChecked}
+          onChange={handlePermissionChange}
+          disabled={isDisabled}
+          className="w-4 h-4 accent-blue-500 cursor-pointer"
+        />
+      </label>
+    );
+  })}
+</div>
+
+
         </div>
+
       </div>
 
       <div className="mt-4">
@@ -106,7 +81,7 @@ const StaffAdd = ({
           disabled={loading}
           className="bg-black text-white px-4 py-2 rounded-full hover:opacity-80"
         >
-          {loading ? "Adding..." : "Add Staff"}
+          {loading ? "Adding..." : "Add new staff"}
         </button>
       </div>
     </form>
