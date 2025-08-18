@@ -23,7 +23,6 @@ const navigate=useNavigate()
     }
 
     await createOrderStatus(formData);
-    alert('Order status created successfully!');
     setFormData({ name: '', description: '' });
     navigate('/admin/dashboard/order-status/list')
   };
