@@ -155,7 +155,7 @@ const toggleIsDefault = () => {
      
         
     
-          <button type="submit" className="bg-black text-white px-4 py-2 rounded-full">Add this Product</button>
+          <button type="submit" className="bg-black text-white px-4 py-2 rounded-full">Add Product</button>
         </form>
    </div>
   );

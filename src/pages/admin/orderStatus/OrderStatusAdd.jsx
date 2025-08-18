@@ -3,7 +3,7 @@ import useOrderStatus from '../../../hooks/useOrderStatus';
 import { useNavigate } from 'react-router-dom';
 const OrderStatusAdd = () => {
   const { createOrderStatus } = useOrderStatus();
-const navigate=useNavigate()
+  const navigate = useNavigate()
   const [formData, setFormData] = useState({
     name: '',
     description: '',
@@ -28,29 +28,40 @@ const navigate=useNavigate()
   };
 
   return (
-    <div>
-      <h2>Add New Order Status</h2>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label>Name:</label> <br />
-          <input
+    <div className='h-full p-4'>
+      <h1 className="nike-title-for-mobile">Add New Order Status</h1>
+      <p className=''>Fill in the details for the new order status below:</p>
+      <form onSubmit={handleSubmit} >
+       <div className='flex items-center justify-between py-4 gap-2'>
+       <div className='w-full'>
+        <p className="mb-1 text-sm font-medium">Status Name</p>
+        <input
             type="text"
             name="name"
+            placeholder=" Status Name"
             value={formData.name}
             onChange={handleChange}
+            className="w-full border border-gray-300 px-4 py-2 rounded-lg"
+
           />
         </div>
 
-        <div>
-          <label>Description:</label> <br />
-          <textarea
+        <div className='w-full'>
+        <p className="mb-1 text-sm font-medium">Status Description</p>
+        <input
             name="description"
+            placeholder=" Status Description"
+            type="text"
+
             value={formData.description}
             onChange={handleChange}
+            className="w-full border border-gray-300 px-4 py-2 rounded-lg"
+
           />
         </div>
+       </div>
 
-        <button type="submit">Add Status</button>
+        <button type="submit" className="bg-black text-white px-4 py-2 rounded-full">Add Status</button>
       </form>
     </div>
   );

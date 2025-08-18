@@ -42,12 +42,13 @@ const ProductTable = ({
           {currentProducts.map((product) => (
             <tr key={product.id} className="border-t">
               <td className="border border-gray-300 p-2 text-center">
-                <img
-                  src={product.img}
-                  alt={product.name}
-                  className="w-20 h-20 rounded-lg object-cover cursor-pointer"
-                />
-              </td>
+  <img
+    src={product.img}
+    alt={product.name}
+    className="w-20 h-20 rounded-lg object-cover cursor-pointer mx-auto block"
+  />
+</td>
+
               <td className="border border-gray-300 p-2 text-center">{product.name}</td>
               <td className="border border-gray-300 p-2 text-center">{product.category}</td>
               <td className="border border-gray-300 p-2 text-center">{product.status}</td>

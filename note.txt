@@ -7,3 +7,5 @@ Phần fee devilery and return không được áp cứng dữ liệu
 
 16/6: Order mobile 
 10/8: Hoàn thiện phần coupon và account phía admin
+
+các page, component cần fix: profile, order, voucher 

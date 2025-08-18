@@ -54,7 +54,7 @@ if (filters.sort === "newest") {
     <div className="p-4 h-full">
       <div>
         <h2 className="text-2xl nike-title-for-mobile">Manage comment list</h2>
-        You can see the detailed list and status of comments here
+        <p>You can see the detailed list and status of comments here</p>
       </div>
 
       <CommentFilter filters={filters} onChange={setFilters} />

@@ -55,6 +55,9 @@ const useOrderStatus = () => {
 
   // Delete
   const deleteOrderStatus = async (id) => {
+    const confirmDelete = window.confirm("Bạn có chắc chắn muốn xoá order status này?");
+    if (!confirmDelete) return;
+  
     try {
       await fetch(`${API_URL}/${id}`, { method: 'DELETE' });
       setOrderStatusList((prev) => prev.filter((status) => status.id !== id));
