@@ -4,9 +4,11 @@ import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 import PopUpDelete from "../../../components/user/setting/accountDetails/PopUpDelete";
 import PopUpPasswordChange from "../../../components/user/setting/accountDetails/PopUpPasswordChange";
-import PopUpPhoneChange from "../../../components/user/setting/accountDetails/PopUpPhoneChange"; // Make sure to import PopUpPhoneChange
+import PopUpPhoneChange from "../../../components/user/setting/accountDetails/PopUpPhoneChange";
+import useToast from "../../../hooks/useToast";
 
 const AccountDetails = () => {
+    const { successToast, errorToast } = useToast();
     const [user, setUser] = useState(null);
     const [email, setEmail] = useState("");
     const [originalEmail, setOriginalEmail] = useState("");
@@ -57,10 +59,10 @@ const AccountDetails = () => {
                         year: dob[0] || "",
                     });
                 } else {
-                    toast.error("Không tìm thấy thông tin người dùng");
+                 
                 }
             } catch (error) {
-                toast.error("Không thể tải thông tin người dùng");
+              
             }
         };
 
@@ -89,9 +91,9 @@ const AccountDetails = () => {
             setOriginalPassword(password);
             setOriginalPhone(phone);
             setOriginalDob(dateOfBirth);
-            toast.success("Thông tin đã được cập nhật");
+            successToast("The information has been updated.");
         } catch (error) {
-            toast.error("Cập nhật thông tin thất bại");
+           errorToast("Failed to update information");
         }
     };
 
@@ -100,10 +102,10 @@ const AccountDetails = () => {
             const userId = localStorage.getItem("userId");
             await axios.delete(`http://localhost:3000/users/${userId}`);
             localStorage.clear();
-            toast.success("Tài khoản đã được xóa");
+            successToast("The account has been deleted.");
             navigate("/");
         } catch (error) {
-            toast.error("Xóa tài khoản thất bại");
+            errorToast("Account deletion failed");
         }
     };
 
@@ -290,7 +292,7 @@ const AccountDetails = () => {
                         currentPhone={phone}
                         onSave={async (newPhone) => {
                             setPhone(newPhone);
-                            setOriginalPhone(newPhone); // Cập nhật gốc luôn để không hiển thị "Save Changes"
+                            setOriginalPhone(newPhone); 
                             setShowPhonePopup(false);
 
                             try {
@@ -308,9 +310,9 @@ const AccountDetails = () => {
                                     updatedUser
                                 );
                                 setUser(res.data);
-                                toast.success("Số điện thoại đã được cập nhật");
+                                successToast("The phone number has been updated.");
                             } catch (error) {
-                                toast.error("Cập nhật số điện thoại thất bại");
+                                errorToast("Failed to update phone number");
                             }
                         }}
                     />

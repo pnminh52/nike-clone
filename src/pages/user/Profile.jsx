@@ -9,8 +9,10 @@ import NikeApps from './../../components/user/profile/NikeApps';
 import ProductSkeleton from './../../components/user/etc/ProductSkeleton';
 import NavigationBarProfile from './../../components/user/etc/NavigationBarProfile';
 import AccountDetails from './Setting/AccountDetails';
+import useToast from "../../hooks/useToast";
 
 const Profile = () => {
+  const { successToast, errorToast } = useToast();
   const { id } = useParams();
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -61,9 +63,9 @@ const Profile = () => {
     const imageUrl = await addAvatarToUser(file, user.id);
     if (imageUrl) {
       setUser((prev) => ({ ...prev, avatar: imageUrl }));
-      toast.success("Cập nhật avatar thành công");
+      successToast("Avatar updated successfully");
     } else {
-      toast.error("Không thể cập nhật avatar");
+      errorToast("Cannot update avatar");
     }
   };
   
@@ -75,24 +77,35 @@ const Profile = () => {
   return (
   <div>
      <div className="hidden sm:block">
-     <div className="max-w-screen-2xl px-6 sm:px-10 py-10  mx-auto  ">
+     <div className="max-w-screen-sm py-6  mx-auto  ">
      
     <div className="flex gap-6 items-center mb-6">
     <div
-  className="relative w-20 h-20 sm:w-24 sm:h-24 border border-dashed border-gray-400 rounded-full overflow-hidden group cursor-pointer"
+  className={`relative w-20 h-20 sm:w-24 sm:h-24 rounded-full overflow-hidden group
+    ${user.avatar ? "ring-2 p-1 ring-black" : "border border-dashed border-gray-300"}`}
 >
-  {user.avatar ? (
-    <img
-      src={user.avatar}
-      alt="avatar"
-      className="w-full h-full object-cover"
-    />
-  ) : (
-    <div className="w-full h-full flex items-center justify-center bg-gray-100 text-4xl text-gray-400">
-      +
-    </div>
-  )}
+  <input
+    type="file"
+    id="avatarInput"
+    hidden
+    onChange={handleAvatarChange}
+  />
+  <label htmlFor="avatarInput" className="cursor-pointer w-full h-full block">
+    {user.avatar ? (
+      <img
+        src={user.avatar}
+        alt="avatar"
+        className="w-full h-full rounded-full object-cover"
+      />
+    ) : (
+      <div className="w-full h-full flex items-center justify-center bg-gray-100 text-4xl text-gray-400">
+        +
+      </div>
+    )}
+  </label>
 </div>
+
+
 
 
   <div className="leading-tight">
@@ -110,12 +123,7 @@ const Profile = () => {
   </div>
 </div>
 
-      {user.avatar && (
-          <label className="absolute bottom-0 right-0 bg-white px-2 py-1 text-xs rounded cursor-pointer shadow">
-            Đổi
-            <input type="file" hidden onChange={handleAvatarChange} />
-          </label>
-        )}
+      
 
       
      

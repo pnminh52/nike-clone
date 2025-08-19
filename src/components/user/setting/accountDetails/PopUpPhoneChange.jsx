@@ -18,11 +18,11 @@ const handleCancel=()=>{
 
   const handleSave = () => {
     if (!newPhone || !validatePhone(newPhone)) {
-      errorToast("Số điện thoại không hợp lệ!");
+      errorToast("The phone number is not valid!");
       return;
     }
     onSave(newPhone);
-    successToast("Số điện thoại đã được cập nhật thành công!");
+    successToast("The phone number has been successfully updated!");
   };
 
   if (!isOpen) return null;
@@ -51,12 +51,12 @@ const handleCancel=()=>{
             className={`block h-14 rounded-lg p-3.5 text-lg w-full text-gray-900 bg-transparent border appearance-none focus:outline-none focus:ring-0 peer`}
             placeholder="Enter new phone number"
           />
-          <p className="text-sm text-red-600">Bạn không thể thực hiện tác vụ này sau 30 ngày*</p>
+          <p className="text-sm text-red-600">You cannot perform this task after 30 days*</p>
         </div>
         <div className="flex justify-end gap-4">
         <button
   onClick={handleSave}
-  className={`rounded-full inter px-4 py-1.5 ${isChanged ? 'bg-black text-white' : 'text-[#CDCDCE] bg-[#E5E5E5] cursor-not-allowed'}`}
+  className={`rounded-full inter cursor-pointer px-4 py-1.5 ${isChanged ? 'bg-black text-white' : 'text-[#CDCDCE] bg-[#E5E5E5] cursor-not-allowed'}`}
   disabled={!isChanged}
 >
 Save

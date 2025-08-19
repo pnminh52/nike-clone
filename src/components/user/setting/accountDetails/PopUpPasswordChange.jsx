@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react"
 import { toast } from "react-toastify"
+import useToast from "../../../../hooks/useToast"
 
 const PopUpPasswordChange = ({ isOpen, onClose, currentPassword, onSave }) => {
+    const { successToast, errorToast } = useToast()
   const [oldPasswordInput, setOldPasswordInput] = useState("")
   const [newPassword, setNewPassword] = useState("")
   const [confirmPassword, setConfirmPassword] = useState("")
@@ -16,27 +18,27 @@ const handleCancel=()=>{
 }
   const handleSubmit = () => {
     if (!oldPasswordInput || !newPassword || !confirmPassword) {
-      toast.error("Vui lòng điền đầy đủ thông tin")
+      errorToast("Please fill out all the information.")
       return
     }
 
     if (oldPasswordInput !== currentPassword) {
-      toast.error("Mật khẩu hiện tại không đúng")
+      errorToast("The current password is incorrect.")
       return
     }
 
     if (!validatePassword(newPassword)) {
-      toast.error("Mật khẩu mới phải có ít nhất 8 ký tự, gồm chữ hoa, chữ thường và số")
+      errorToast("The new password must be at least 8 characters long, including uppercase letters, lowercase letters, and numbers.")
       return
     }
 
     if (newPassword !== confirmPassword) {
-      toast.error("Mật khẩu xác nhận không khớp")
+      errorToast("The confirmation password does not match.")
       return
     }
 
     onSave(newPassword)
-    toast.success("Đổi mật khẩu thành công")
+    successToast("Password changed successfully")
   }
   useEffect(() => {
     if (isOpen) {
@@ -70,12 +72,12 @@ const handleCancel=()=>{
 <div className="space-y-4">
 <input
   type="password"
-  name="current-password-hidden" // tránh dùng "current-password"
-  autoComplete="new-password"    // ép trình duyệt không điền
+  name="current-password-hidden" 
+  autoComplete="new-password"  
   className={`block h-14 rounded-lg p-3.5 text-lg w-full text-gray-900 bg-transparent border appearance-none focus:outline-none focus:ring-0 peer`}
   value={oldPasswordInput}
   onChange={(e) => setOldPasswordInput(e.target.value)}
-  placeholder="Mật khẩu hiện tại"
+  placeholder="Current password"
 />
 
         <input
@@ -83,14 +85,14 @@ const handleCancel=()=>{
           className={`block h-14 rounded-lg p-3.5 text-lg w-full text-gray-900 bg-transparent border appearance-none focus:outline-none focus:ring-0 peer`}
           value={newPassword}
           onChange={(e) => setNewPassword(e.target.value)}
-          placeholder='Mật khẩu mới'
+          placeholder='New password'
         />
         <input
           type='password'
           className={`block h-14 rounded-lg p-3.5 text-lg w-full text-gray-900 bg-transparent border appearance-none focus:outline-none focus:ring-0 peer`}
           value={confirmPassword}
           onChange={(e) => setConfirmPassword(e.target.value)}
-          placeholder='Xác nhận mật khẩu mới'
+          placeholder='Confirm new password'
         />
 </div>
 <div className="py-8">
