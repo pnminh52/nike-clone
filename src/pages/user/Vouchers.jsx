@@ -3,6 +3,8 @@ import useVouchers from "../../hooks/useVouchers";
 import { useAuth } from "../../hooks/useAuth";
 import ProductSkeleton from "../../components/user/etc/ProductSkeleton";
 import VoucherCard from "../../components/user/voucher/VoucherCard";
+import Slider6 from './../../components/user/homepage/Slider6';
+import Slider3 from './../../components/user/homepage/Slider3';
 const Vouchers = () => {
   const { user } = useAuth();
   const { vouchers, user: userData, loading, error, exchangeVoucher } =
@@ -43,11 +45,10 @@ const Vouchers = () => {
   if (error) return <div>Lỗi: {error.message}</div>;
 
   return (
-    <div className="max-w-screen-2xl mx-auto px-10">
-      <h2 className="text-2xl py-5">Vouchers</h2>
-      <p className="text-blue-600 underline mb-4">
-        You have {userData?.point} point! Exchange the discount code now!
-      </p>
+   <div>
+     <div className="max-w-screen-2xl mx-auto px-10">
+      <h2 className="text-2xl py-5">Vouchers / <span className="text-lg">You have {userData?.point} point!</span></h2>
+     
 
       {/* Slider container */}
       <div
@@ -75,7 +76,10 @@ const Vouchers = () => {
             />
           ))}
       </div>
+     
     </div>
+     <Slider3 />
+   </div>
   );
 };
 

@@ -30,7 +30,7 @@ const VoucherCard = ({ voucher, user, exchangeVoucher }) => {
           src={voucher.image || "https://via.placeholder.com/280x160"}
           alt="voucher"
         />
-        <span className="absolute top-2 left-2 bg-black text-white text-sm px-2 py-1 rounded-full ">
+        <span className="absolute top-2 left-2 bg-black text-white text-xs px-2 py-1 rounded-full ">
           {voucher.pointToExchange} points
         </span>
         {
