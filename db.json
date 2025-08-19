@@ -1961,9 +1961,10 @@
             }
           ],
           "date": "2025-08-16T15:11:48.555Z",
-          "status": "Pending",
+          "status": "Cancelled",
           "shippingFee": 15000,
-          "totalPrice": 2944000
+          "totalPrice": 2944000,
+          "cancelReason": "Changed my mind, Item not received"
         },
         {
           "id": 1755357279728,
@@ -2031,9 +2032,12 @@
             }
           ],
           "date": "2025-08-16T15:14:39.728Z",
-          "status": "Pending",
+          "status": "Cancelled",
           "shippingFee": 15000,
-          "totalPrice": 2944000
+          "totalPrice": 2944000,
+          "cancelReasons": [
+            "Invalid customer information"
+          ]
         },
         {
           "id": 1755357347513,
@@ -2392,7 +2396,7 @@
       "id": "5b65",
       "firstname": "âsasas",
       "lastname": "âsasa",
-      "phone": "09",
+      "phone": "0942882225",
       "address": "Bắc Kạn",
       "district": "fgfgfgfg",
       "email": "uânsnajsnj@gmail.com",

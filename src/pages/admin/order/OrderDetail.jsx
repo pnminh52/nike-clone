@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import useOrderStatus from "../../../hooks/useOrderStatus";
 import UserDetailTable from './../../../components/admin/order/UserDetailTable';
 import ProductDetailTable from './../../../components/admin/order/ProductDetailTable';
+import ProductSkeleton from './../../../components/user/etc/ProductSkeleton';
 
 const OrderDetail = () => {
   const { id } = useParams();
@@ -28,24 +29,27 @@ const OrderDetail = () => {
     fetchOrder();
   }, [id]);
 
-  const handleChangeStatus = async (newStatus) => {
+  const handleChangeStatus = async (newStatus, cancelReasons = []) => {
     const res = await fetch(`http://localhost:3000/users/${userId}`);
     const user = await res.json();
-
+  
     const updatedOrders = user.orders.map((o) =>
-      o.id === order.id ? { ...o, status: newStatus } : o
+      o.id === order.id
+        ? { ...o, status: newStatus, cancelReasons } 
+        : o
     );
-
+  
     await fetch(`http://localhost:3000/users/${userId}`, {
       method: "PATCH",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ orders: updatedOrders }),
     });
-
-    setOrder({ ...order, status: newStatus });
+  
+    setOrder({ ...order, status: newStatus, cancelReasons });
   };
+  
 
-  if (!order || !user) return <p className="p-6">Đang tải chi tiết đơn hàng...</p>;
+  if (!order || !user) return <><ProductSkeleton /></>
 
   const currentIndex = orderStatusList.findIndex((s) => s.name === order.status);
   const isFinalStatus = ["delivered", "cancelled", "returned", "refunded"].includes(
@@ -70,12 +74,13 @@ const OrderDetail = () => {
    
      
   <ProductDetailTable
-        order={order}
-        orderStatusList={orderStatusList}
-        currentIndex={currentIndex}
-        isFinalStatus={isFinalStatus}
-        handleChangeStatus={handleChangeStatus}
-      />
+  order={order}
+  orderStatusList={orderStatusList}
+  currentIndex={currentIndex}
+  isFinalStatus={isFinalStatus}
+  handleChangeStatus={handleChangeStatus}
+/>
+
     </div>
   );
 };

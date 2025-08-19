@@ -6,6 +6,7 @@ import PopUpDelete from "../../../components/user/setting/accountDetails/PopUpDe
 import PopUpPasswordChange from "../../../components/user/setting/accountDetails/PopUpPasswordChange";
 import PopUpPhoneChange from "../../../components/user/setting/accountDetails/PopUpPhoneChange";
 import useToast from "../../../hooks/useToast";
+import ProductSkeleton from "../../../components/user/etc/ProductSkeleton";
 
 const AccountDetails = () => {
     const { successToast, errorToast } = useToast();
@@ -118,7 +119,7 @@ const AccountDetails = () => {
     return (
         <div>
             <p className="text-xl">Account Details</p>
-            {user ? (
+           
                 <div className="">
                     {/* Email Field */}
                     <div className="py-4">
@@ -185,7 +186,7 @@ const AccountDetails = () => {
                                     onChange={(e) =>
                                         setDateOfBirth({ ...dateOfBirth, day: e.target.value })
                                     }
-                                    className="border p-2 w-20"
+                                    className="border rounded-lg p-2 w-25"
                                     disabled={
                                         dateOfBirth.year && dateOfBirth.month && dateOfBirth.day
                                     } // Disable if dateOfBirth is not empty
@@ -204,7 +205,7 @@ const AccountDetails = () => {
                                     onChange={(e) =>
                                         setDateOfBirth({ ...dateOfBirth, month: e.target.value })
                                     }
-                                    className="border p-2 w-20"
+                                    className="border rounded-lg p-2 w-25"
                                     disabled={
                                         dateOfBirth.year && dateOfBirth.month && dateOfBirth.day
                                     } // Disable if dateOfBirth is not empty
@@ -223,7 +224,7 @@ const AccountDetails = () => {
                                     onChange={(e) =>
                                         setDateOfBirth({ ...dateOfBirth, year: e.target.value })
                                     }
-                                    className="border p-2 w-24"
+                                    className="border p-2 rounded-lg w-25"
                                     disabled={
                                         dateOfBirth.year && dateOfBirth.month && dateOfBirth.day
                                     } // Disable if dateOfBirth is not empty
@@ -317,9 +318,7 @@ const AccountDetails = () => {
                         }}
                     />
                 </div>
-            ) : (
-                <p>Đang tải thông tin...</p>
-            )}
+         
         </div>
     );
 };
