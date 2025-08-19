@@ -2264,7 +2264,7 @@
           "totalPrice": 5323000
         }
       ],
-      "point": 200,
+      "point": 1000,
       "totalOrder": 10,
       "dateOfBirth": "",
       "customerType": "Standard",
@@ -2280,12 +2280,13 @@
           "description": "Get 50K off on your first order",
           "discountType": "amount",
           "value": 50000,
-          "stock": 99,
+          "stock": 4,
           "code": "WELCOME50",
-          "expiryDate": "2025-12-12",
+          "expiryDate": "2025-09-28",
           "minOrderValue": "2000000",
           "numberOfExpiryDate": 40,
-          "pointToExchange": 1000
+          "pointToExchange": 1000,
+          "applyTo": "order"
         },
         {
           "id": "c2",
@@ -2295,9 +2296,9 @@
           "description": "Get 10% off on your first order",
           "discountType": "percent",
           "value": 10,
-          "stock": 1,
+          "stock": 2,
           "code": "EVENT10",
-          "expiryDate": "2025-08-11",
+          "expiryDate": "2025-09-28",
           "minOrderValue": "2000000",
           "numberOfExpiryDate": 40,
           "pointToExchange": 800,
@@ -2314,9 +2315,25 @@
           "stock": 1,
           "code": "WELCOME100",
           "numberOfExpiryDate": 10,
-          "expiryDate": "2025-08-26",
+          "expiryDate": "2025-08-29",
           "minOrderValue": "2000000",
           "pointToExchange": 2000,
+          "applyTo": "order"
+        },
+        {
+          "id": "c4",
+          "category": "new-user",
+          "name": "120K Voucher",
+          "image": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/2c3b1a83-6cd4-4785-aeda-10fd6f856108/GiftCard.png",
+          "description": "Get 120K off on your first order",
+          "discountType": "amount",
+          "value": 120000,
+          "stock": 1,
+          "code": "WELCOME120",
+          "numberOfExpiryDate": 60,
+          "expiryDate": "2025-10-18",
+          "minOrderValue": "2000000",
+          "pointToExchange": 2500,
           "applyTo": "order"
         }
       ],

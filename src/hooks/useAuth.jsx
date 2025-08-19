@@ -191,17 +191,6 @@ export const AuthProvider = ({ children }) => {
       return null;
     }
   };
-  
-  
-  
-  
-  
-
-  
-  
-  
-  
-
   const logout = () => {
     setUser(null);
     localStorage.removeItem('user');

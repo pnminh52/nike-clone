@@ -72,36 +72,44 @@ const OrderDetails = ({ users, order, onClose, onUpdateStatus }) => {
           </button>
         </div>
         <div>
-          <div className="mt-3 space-y-1 px-6 ">
+          <div className="mt-4 space-y-1  ">
+              
             <p><span className="inter">Username:</span> {users.firstname} {users.lastname}</p>
             <p><span className="inter">Phone:</span> {users.phone}</p>
             <p><span className="inter">Email:</span> {users.email}</p>
             <p><span className="inter">City:</span> {users.address}</p>
             <p><span className="inter">District:</span> {users.district}</p>
+{
+              order.status === "Cancelled" && (
+                <p><span className="inter">Cancelled reason:</span> {
+                  order.cancelReasons?.length > 0
+                    ? order.cancelReasons.join(", ")
+                    : "No reason provided"
+                }</p>
 
+              )
+}
           </div>
 
         </div>
         <div className="">
 
 
-          <div className="space-y-4 px-6 py-4">
+          <div className="space-y-4  py-4">
 
             {order.items.map((item, index) => (
               <div
                 key={item.id}
-                className={`flex w-full py-0 gap-4 ${index !== order.items.length - 1 ? "" : ""
+                className={`flex w-full py-0 gap-2 ${index !== order.items.length - 1 ? "" : ""
                   }`}
               >
 
-                <img src={item.img} className="aspect-square w-40 h-auto object-cover" alt={item.name} />
+                <img src={item.img} className="aspect-square w-30 rounded-lg h-auto object-cover" alt={item.name} />
                 <div className="">
                   <p className="">{item.name}</p>
                   <p className=" text-gray-400 ">
-                    Quantity {item.quantity}
+                    Quantity {item.quantity} / EU{item.size}
                   </p>
-                  <p className="text-gray-400">EU{item.size}  </p>
-
 
                   <p className="  ">
                     <span className=" ">  {formatPrice(item.price * (item.quantity ?? 1))}</span>
@@ -116,12 +124,12 @@ const OrderDetails = ({ users, order, onClose, onUpdateStatus }) => {
 
 
         {order.status !== "Cancelled" && !isCancelling && (
-          <div className="px-6">
+          <div className="">
             <button
               onClick={() => setIsCancelling(true)}
               className="w-full mt-0 inter cursor-pointer bg-white border border-red-600 text-red-600 py-4 rounded-full "
             >
-              Cancel Order
+              Cancelled this Order
             </button>
           </div>
         )}
@@ -130,11 +138,11 @@ const OrderDetails = ({ users, order, onClose, onUpdateStatus }) => {
 
 
         {isCancelling && (
-          <div className="px-6">
-            <p className="text-red-600 inter ">
-              Select cancellation reasons:
+          <div className="">
+            <p className="text-red-600  ">
+              Why you want to cancellation this order?
             </p>
-            <div className="py-2 space-y-1">
+            <div className="py-2 space-y-1 text-sm">
               {[
                 "Changed my mind",
                 "Item not received",
@@ -159,10 +167,10 @@ const OrderDetails = ({ users, order, onClose, onUpdateStatus }) => {
             {cancelReasons.includes("Other") && (
               <input
                 type="text"
-                placeholder="Enter your custom reason..."
+                placeholder="Enter your cancelled reason..."
                 value={customReason}
                 onChange={(e) => setCustomReason(e.target.value)}
-                className=" w-full border px-4 py-8 rounded-lg mb-4"
+                className=" w-full border border-gray-300 px-4 py-6 rounded-lg mb-4"
               />
             )}
             <div className="space-y-2">

@@ -1,8 +1,10 @@
 import { useEffect, useState } from 'react';
 import useToast from './useToast';
+import { useAuth } from './useAuth';
 
 const useVouchers = (userId) => {
   const { successToast, errorToast, warningToast } = useToast();
+  
   const [vouchers, setVouchers] = useState([]);
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -16,16 +18,34 @@ const useVouchers = (userId) => {
           fetch(`${API_URL}/vouchers`),
           fetch(`${API_URL}/users/${userId}`),
         ]);
-
+  
         if (!voucherRes.ok || !userRes.ok) throw new Error('Fetch failed');
-
+  
         const [voucherData, userData] = await Promise.all([
           voucherRes.json(),
           userRes.json(),
         ]);
-
+  
+        // ✅ Lọc bỏ voucher hết hạn
+        const today = new Date().toISOString().split("T")[0];
+        const validVouchers = (userData.vouchers || []).filter(
+          (v) => !v.expiryDate || v.expiryDate >= today
+        );
+  
+        // Nếu có sự khác biệt thì cập nhật lại db
+        if (validVouchers.length !== (userData.vouchers || []).length) {
+          const updatedUser = { ...userData, vouchers: validVouchers };
+          await fetch(`${API_URL}/users/${userId}`, {
+            method: "PATCH",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(updatedUser),
+          });
+          setUser(updatedUser);
+        } else {
+          setUser(userData);
+        }
+  
         setVouchers(voucherData);
-        setUser(userData);
       } catch (err) {
         console.error(err);
         setError(err);
@@ -33,9 +53,10 @@ const useVouchers = (userId) => {
         setLoading(false);
       }
     };
-
+  
     if (userId) fetchData();
   }, [userId]);
+  
 
   const applyVoucher = (voucher, total) => {
     const today = new Date().toISOString().split('T')[0];
@@ -69,16 +90,16 @@ const useVouchers = (userId) => {
       errorToast('Not enough points to redeem this voucher!');
       return;
     }
-
+  
     const updatedVouchers = [...(user.vouchers || [])];
     const existingIndex = updatedVouchers.findIndex(v => v.id === voucher.id);
-
+  
     if (existingIndex !== -1) {
       updatedVouchers[existingIndex].stock += 1;
     } else {
       const expiryDate = new Date();
       expiryDate.setDate(expiryDate.getDate() + (voucher.numberOfExpiryDate ?? 30));
-
+  
       updatedVouchers.push({
         ...voucher,
         stock: 1,
@@ -89,28 +110,35 @@ const useVouchers = (userId) => {
         discountType: voucher.discountType ?? 'amount',
       });
     }
-
+  
     const updatedUser = {
       ...user,
       point: user.point - voucher.pointToExchange,
       vouchers: updatedVouchers,
     };
-
+  
     try {
       const res = await fetch(`${API_URL}/users/${userId}`, {
         method: 'PATCH',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(updatedUser),
       });
-
+  
       if (!res.ok) throw new Error('Cập nhật người dùng thất bại');
-
-      setUser(updatedUser);
+  
+      // ✅ Cập nhật state user ngay lập tức
+      setUser({ ...updatedUser });
+  
+      // ✅ Đồng thời cập nhật vouchers trong hook nếu muốn
+      setVouchers((prev) => prev.map(v => v.id === voucher.id ? { ...v } : v));
+  
       successToast('Voucher redeemed successfully!');
     } catch (error) {
       errorToast('Có lỗi xảy ra, vui lòng thử lại.');
     }
   };
+  
+  
 
   return {
     vouchers,
