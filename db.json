@@ -2313,22 +2313,6 @@
           "applyTo": "order"
         },
         {
-          "id": "c3",
-          "category": "new-user",
-          "name": "100K Voucher",
-          "image": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/2daa05f6-b7bd-4227-81d1-02c7730dbc7c/GiftCard.png",
-          "description": "Get 100K off on your first order",
-          "discountType": "amount",
-          "value": 100000,
-          "stock": 1,
-          "code": "WELCOME100",
-          "numberOfExpiryDate": 10,
-          "expiryDate": "2025-08-29",
-          "minOrderValue": "2000000",
-          "pointToExchange": 2000,
-          "applyTo": "order"
-        },
-        {
           "id": "c4",
           "category": "new-user",
           "name": "120K Voucher",

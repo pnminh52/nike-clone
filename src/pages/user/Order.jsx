@@ -214,10 +214,15 @@ const Order = () => {
     )}
 </div>
 <div className="hidden sm:block">
+{paginated.length === 0 ? (
+      <ResultNotfound />
+    ) : (
 <OrderTable orders={paginated}
         selectedItems={selectedItems}
         setSelectedItems={setSelectedItems}
         setSelectedOrder={setSelectedOrder}/>
+    )}
+
 </div>
   
     {/* Chi tiết đơn hàng */}
