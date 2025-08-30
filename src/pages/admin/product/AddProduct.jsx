@@ -4,7 +4,7 @@ import InputInfo1 from './../../../components/admin/product/InputInfo1';
 import InputInfo2 from "../../../components/admin/product/InputInfo2";
 
 const AddProduct = () => {
-  const { handleAddProduct, handleDataChange, inputValue, setInputValue } = useProducts();
+  const {products, handleAddProduct, handleDataChange, inputValue, setInputValue } = useProducts();
   const [positionChecked, setPositionChecked] = useState(false);
   const [isDefaultChecked, setIsDefaultChecked] = useState(false);
   const [additionalImages, setAdditionalImages] = useState([""]);
@@ -130,6 +130,7 @@ const toggleIsDefault = () => {
           {/* --- TEXT INPUTS --- */}
           <InputInfo1 inputValue={inputValue} handleDataChange={handleDataChange} />
           <InputInfo2
+          products={products}
   inputValue={inputValue}
   setInputValue={setInputValue}
   handleDataChange={handleDataChange}
@@ -155,7 +156,7 @@ const toggleIsDefault = () => {
      
         
     
-          <button type="submit" className="bg-black text-white px-4 py-2 rounded-full">Add Product</button>
+          <button type="submit" className="bg-black text-white px-4 py-2 cursor-pointer hover:bg-gray-800 transition duration-300 ease-in-out rounded-full">Add Product</button>
         </form>
    </div>
   );

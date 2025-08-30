@@ -220,12 +220,12 @@ const InputInfo2 = ({
         </button>
       </div>
 
-      {/* --- BENEFITS / NOTES --- */}
-      {["Benefit", "Notes"].map((field) => (
+      {/* --- BENEFITS  --- */}
+      {["moreBenefit"].map((field) => (
         <div key={field}>
           <p className="mb-1 text-sm font-medium">{field}</p>
           {inputValue[field]?.map((item, idx) => (
-            <div key={idx} className="flex gap-2 mb-1">
+            <div key={idx} className="flex  gap-2 mb-2">
               <input
                 value={item}
                 onChange={(e) => handleArrayChange(field, idx, e.target.value)}
@@ -274,7 +274,7 @@ const InputInfo2 = ({
       onChange={togglePosition}
       className="peer hidden"
     />
-    <div className="px-4 py-2 rounded-lg border border-gray-300 border-gray-300 cursor-pointer transition-all 
+    <div className="px-4 py-2 rounded-lg border border-gray-300  cursor-pointer transition-all 
                     peer-checked:border-black peer-checked:text-black ">
       The product is in first place
     </div>
@@ -288,7 +288,7 @@ const InputInfo2 = ({
       onChange={toggleIsDefault}
       className="peer hidden"
     />
-    <div className="px-4 py-2 rounded-lg border border-gray-300 border-gray-300 cursor-pointer transition-all 
+    <div className="px-4 py-2 rounded-lg border border-gray-300 cursor-pointer transition-all 
                     peer-checked:border-black peer-checked:text-black ">
       The product represents this line.
     </div>

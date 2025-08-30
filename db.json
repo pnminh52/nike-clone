@@ -64,9 +64,7 @@
         "The layered midsole feels soft and delivers underfoot cushioning while its raised height adds a sporty, summertime look.",
         "The speed lacing system adds a playful look while making it easy to put them on and take them off.",
         "Textile upper feels soft and comfortable with or without socks."
-      ],
-      "notes": [],
-      "Notes": []
+      ]
     },
     {
       "id": "t4tgegv",
@@ -124,8 +122,7 @@
         "The layered midsole feels soft and delivers underfoot cushioning while its raised height adds a sporty, summertime look.",
         "The speed lacing system adds a playful look while making it easy to put them on and take them off.",
         "Textile upper feels soft and comfortable with or without socks."
-      ],
-      "notes": []
+      ]
     },
     {
       "id": "djsi87",
@@ -206,9 +203,7 @@
       ],
       "moreBenefit": [
         "The dual-layered textile material is lightweight and breathable, with areas of open mesh to expose underlayers.",
-        "Rigid, moulded plastic piece between the 2 outsole sections provides structure and support."
-      ],
-      "notes": [
+        "Rigid, moulded plastic piece between the 2 outsole sections provides structure and support.",
         "Reinforced toe",
         "Plush, padded collar",
         "Colour-shifting details",
@@ -289,9 +284,7 @@
       ],
       "moreBenefit": [
         "Lightweight textiles in the upper help keep things breathable and comfortable.",
-        "Synthetic leather in the upper helps add durability."
-      ],
-      "notes": [
+        "Synthetic leather in the upper helps add durability.",
         "Pull tab on heel",
         "Rubber outsole",
         "The PF edition is designed with a wider fit and optimised for play on outdoor courts."
@@ -369,9 +362,7 @@
       ],
       "moreBenefit": [
         "Lightweight textiles in the upper help keep things breathable and comfortable.",
-        "Synthetic leather in the upper helps add durability."
-      ],
-      "notes": [
+        "Synthetic leather in the upper helps add durability.",
         "Pull tab on heel",
         "Rubber outsole",
         "The PF edition is designed with a wider fit and optimised for play on outdoor courts."
@@ -442,9 +433,7 @@
       ],
       "moreBenefit": [
         "Lightweight textiles in the upper help keep things breathable and comfortable.",
-        "Synthetic leather in the upper helps add durability."
-      ],
-      "notes": [
+        "Synthetic leather in the upper helps add durability.",
         "Pull tab on heel",
         "Rubber outsole",
         "The PF edition is designed with a wider fit and optimised for play on outdoor courts."
@@ -522,9 +511,7 @@
       ],
       "moreBenefit": [
         "The dual-layered textile material is lightweight and breathable, with areas of open mesh to expose underlayers.",
-        "Rigid, moulded plastic piece between the 2 outsole sections provides structure and support."
-      ],
-      "notes": [
+        "Rigid, moulded plastic piece between the 2 outsole sections provides structure and support.",
         "Reinforced toe",
         "Plush, padded collar",
         "Colour-shifting details",
@@ -1059,9 +1046,7 @@
       ],
       "moreBenefit": [
         "Notched laces offer a secure but soft lace-up.",
-        "Integrated knit tongue with lofted padding helps alleviate lace pressure."
-      ],
-      "notes": [
+        "Integrated knit tongue with lofted padding helps alleviate lace pressure.",
         "Weight: approx. 218g (men's UK 9)",
         "Heel-to-toe drop: 8mm",
         "Not intended for use as personal protective equipment (PPE)"
@@ -1309,7 +1294,7 @@
           "content": "Carbon-fibre Flyplate"
         }
       ],
-      "notes": [
+      "moreBenefit": [
         "Heel-to-toe drop: 4mm",
         "Weight: 145g approx. (men's size 9)"
       ]
@@ -1381,7 +1366,7 @@
           "content": "Carbon-fibre Flyplate"
         }
       ],
-      "notes": [
+      "moreBenefit": [
         "Weight: 145g approx. (men's size 9)",
         "Heel-to-toe drop: 4mm"
       ]
@@ -1454,7 +1439,7 @@
       ],
       "position": 1,
       "isDefault": true,
-      "notes": [
+      "moreBenefit": [
         "Synthetic leather upper",
         "Multi-directional traction pattern"
       ]
@@ -1531,11 +1516,163 @@
           "content": "The responsive foam in the midsole feels soft and smooth while keeping you low to the ground and enhancing the sensation of court feel."
         }
       ],
-      "notes": [
+      "moreBenefit": [
         "Synthetic leather upper",
         "Multi-directional traction pattern"
+      ]
+    },
+    {
+      "id": "bfe9",
+      "name": "Nike Vomero Plus",
+      "stock": "100",
+      "price": "4849000",
+      "price_sale": "4700000",
+      "style": "HV8150-801",
+      "country": "Vietnam",
+      "height": "Low Top",
+      "shoesFor": "Training & Gym",
+      "class": "Shoes",
+      "brand": "Nike",
+      "features": "2-Way Zip",
+      "giftPoint": "300",
+      "type": "Road Racing Shoes",
+      "customer": "Men",
+      "des": "Take maximum cushioning to the next level with the Vomero Plus. It provides an ultra-comfortable ride for everyday runs thanks to a mountainous stack of full-length ZoomX foam, the most responsive foam in the industry. Plus, the engineered mesh upper is made from soft, breathable yarn for a comfortable fit.",
+      "page": "New & Featured",
+      "category": "New & Upcoming Drops",
+      "status": "Just In",
+      "gender": "Men",
+      "sizes": [
+        "31",
+        "32",
+        "33",
+        "34",
+        "35",
+        "36",
+        "37",
+        "38",
+        "39",
+        "40",
+        "41",
+        "42",
+        "43"
       ],
-      "moreBenefit": []
+      "img": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/c174f890-8fbb-4ee4-bb61-dec2f02f301d/NIKE+VOMERO+PLUS.png",
+      "additionalImages": [
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/696e1013-1452-4538-9460-15a012ffc748/NIKE+VOMERO+PLUS.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/afe8b4c4-c63b-48bf-b2bc-2c48deed0ae5/NIKE+VOMERO+PLUS.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/5feff2ba-4abd-44f0-bca5-a6a28d9a6bdc/NIKE+VOMERO+PLUS.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/30e84f7c-b834-4425-a679-db0062a3a500/NIKE+VOMERO+PLUS.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/69d5de0a-af48-4324-90a9-915285aa5bbd/NIKE+VOMERO+PLUS.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/92157896-f9c6-4896-8b36-0b28300e08a6/NIKE+VOMERO+PLUS.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/f5814d75-8b67-4309-bf32-0d3cc8d3ffb4/NIKE+VOMERO+PLUS.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/99ee99af-cdb3-456b-9875-124c8d29685a/NIKE+VOMERO+PLUS.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/82f1f957-f8b9-4fab-a758-fbe35416e602/NIKE+VOMERO+PLUS.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/13d18877-35bd-41c0-a86f-440b4fa12a0d/NIKE+VOMERO+PLUS.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/1a9b1ae4-dfcd-44d2-a517-6ddf52c5d2f2/NIKE+VOMERO+PLUS.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/fb2f9c01-4c72-43ce-940a-fe01ff52eb3a/NIKE+VOMERO+PLUS.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/c2c4a419-e463-49bf-9144-0fc8e825c6f5/NIKE+VOMERO+PLUS.png"
+      ],
+      "color": [
+        "Orange Pulse",
+        "Hot Lava",
+        "Total Orange",
+        "Black"
+      ],
+      "featured": [
+        {
+          "title": "ZoomX foam midsole",
+          "content": "The ultra-responsive ZoomX foam midsole delivers Nike's highest energy return."
+        },
+        {
+          "title": "Soft upper",
+          "content": "An engineered mesh upper provides soft breathability."
+        },
+        {
+          "title": "Durable traction",
+          "content": "The high-abrasion rubber outsole offers durable traction."
+        }
+      ],
+      "moreBenefit": [
+        "Weight: approx. 273g (Men's size 9)",
+        "Heel-to-toe drop: 10mm",
+        "Reflective design details",
+        "Webbed lace loops for an adjustable fit"
+      ],
+      "position": 1,
+      "isDefault": true
+    },
+    {
+      "id": "f6f9",
+      "name": "Nike Vomero Plus",
+      "stock": "100",
+      "price": "4849000",
+      "price_sale": "4700000",
+      "style": "HV8150-100",
+      "country": "Vietnam",
+      "height": "Low Top",
+      "shoesFor": "Training & Gym",
+      "class": "Shoes",
+      "brand": "Nike",
+      "features": "2-Way Zip",
+      "giftPoint": "300",
+      "type": "Road Racing Shoes",
+      "des": "Take maximum cushioning to the next level with the Vomero Plus. It provides an ultra-comfortable ride for everyday runs thanks to a mountainous stack of full-length ZoomX foam, the most responsive foam in the industry. Plus, the engineered mesh upper is made from soft, breathable yarn for a comfortable fit.",
+      "img": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/2441629b-8611-4551-94e4-b67e0e964d80/NIKE+VOMERO+PLUS.png",
+      "additionalImages": [
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/48507e06-6772-4e66-b028-700ce902a18f/NIKE+VOMERO+PLUS.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/5b596de7-c7a0-4840-88ed-e1b4121216f2/NIKE+VOMERO+PLUS.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/69dbaa00-1455-454a-b3da-52cc1afa64bb/NIKE+VOMERO+PLUS.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/f6e83fad-cb71-4b6c-8900-f295b2203c5c/NIKE+VOMERO+PLUS.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/80077630-9d4f-43af-a990-2150043a2c86/NIKE+VOMERO+PLUS.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/912d1481-1a2a-4b15-9ba5-3bfcdda18b1e/NIKE+VOMERO+PLUS.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/29261a7d-6d88-41f8-af25-a7a8a208259f/NIKE+VOMERO+PLUS.png"
+      ],
+      "page": "New & Featured",
+      "category": "New & Upcoming Drops",
+      "status": "Just In",
+      "gender": "Men",
+      "sizes": [
+        "44",
+        "34",
+        "35",
+        "36",
+        "37",
+        "38",
+        "39",
+        "40",
+        "41",
+        "42",
+        "43"
+      ],
+      "color": [
+        "White",
+        "Bright Crimson",
+        "Metallic Silver",
+        "Black"
+      ],
+      "featured": [
+        {
+          "title": "ZoomX foam midsole",
+          "content": "The ultra-responsive ZoomX foam midsole delivers Nike's highest energy return."
+        },
+        {
+          "title": "Soft upper",
+          "content": "An engineered mesh upper provides soft breathability."
+        },
+        {
+          "title": "Durable traction",
+          "content": "The high-abrasion rubber outsole offers durable traction."
+        }
+      ],
+      "moreBenefit": [
+        "Weight: approx. 273g (Men's size 9)",
+        "Heel-to-toe drop: 10mm",
+        "Webbed lace loops for an adjustable fit",
+        "Reflective design details",
+        "Not intended for use as personal protective equipment (PPE)"
+      ],
+      "customer": "Men"
     }
   ],
   "categories": [
@@ -1870,8 +2007,6 @@
                 "The speed lacing system adds a playful look while making it easy to put them on and take them off.",
                 "Textile upper feels soft and comfortable with or without socks."
               ],
-              "notes": [],
-              "Notes": [],
               "size": 31,
               "quantity": 1
             }
