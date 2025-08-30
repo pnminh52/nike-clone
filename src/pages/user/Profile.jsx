@@ -8,7 +8,7 @@ import MemberBenefit from './../../components/user/profile/MemberBenefit';
 import NikeApps from './../../components/user/profile/NikeApps';
 import ProductSkeleton from './../../components/user/etc/ProductSkeleton';
 import NavigationBarProfile from './../../components/user/etc/NavigationBarProfile';
-import AccountDetails from './Setting/AccountDetails';
+import AccountDetails from "./AccountDetails";
 import useToast from "../../hooks/useToast";
 
 const Profile = () => {
@@ -82,7 +82,7 @@ const Profile = () => {
     <div className="flex gap-6 items-center mb-6">
     <div
   className={`relative w-20 h-20 sm:w-24 sm:h-24 rounded-full overflow-hidden group
-    ${user.avatar ? "ring-2 p-1 ring-black" : "border border-dashed border-gray-300"}`}
+    ${user.avatar ? "ring-1 p-1 ring-black" : "border border-dashed border-gray-300"}`}
 >
   <input
     type="file"

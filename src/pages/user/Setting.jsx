@@ -1,5 +1,5 @@
 import { NavLink, useParams } from 'react-router-dom'
-import AccountDetails from './Setting/AccountDetails'
+import AccountDetails from './AccountDetails'
 import ProfileVisibility from './Setting/ProfileVisibility'
 import { useAuth } from '../../hooks/useAuth'
 const tabs = [

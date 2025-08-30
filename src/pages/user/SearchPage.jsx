@@ -31,10 +31,14 @@ const SearchPage = () => {
 
   return (
     <div className="max-w-screen-2xl mx-auto ">
-       <div className="px-6 sm:px-0 py-5">
-  <h2 className="text-lg ">Search keywords: {keyword}</h2>
-  <p className="text-sm text-blue-600 underline">There are {filteredProducts.length} results for this keyword.</p>
-</div>
+      {
+        filteredProducts.length > 0 &&(
+          <div className="px-6 sm:px-10 py-5">
+          <h2 className="text-lg ">Search keywords: {keyword}</h2>
+          <p className="text-sm text-blue-600 underline">There are {filteredProducts.length} results for this keyword.</p>
+        </div>
+        )
+      }
 <div className="flex items-center justify-between px-0 sm:px-10 ">
     
       { filteredProducts.length > 0 ? (
