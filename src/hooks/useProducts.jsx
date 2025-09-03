@@ -2,9 +2,8 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 const useProducts = () => {
-  // const API_URL = import.meta.env.VITE_API_URL;
-
-  const API_URL = "http://localhost:3000";
+  const API_URL = import.meta.env.VITE_API_URL;
+  // const API_URL = "http://localhost:3000";
   const [products, setProducts] = useState([]);
   const [inputValue, setInputValue] = useState({});
   const navigate = useNavigate();
