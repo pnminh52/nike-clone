@@ -81,16 +81,21 @@ const InputInfo1 = ({inputValue, handleDataChange}) => {
 </div>
 
 <div className="flex items-start justify-between gap-2">
-  <div className="w-full">
-    <p className="mb-1 text-sm font-medium">Height</p>
-    <input
-      name="height"
-      value={inputValue.height || ""}
-      onChange={handleDataChange}
-      placeholder="Height"
-      className="w-full border border-gray-300 px-4 py-2 rounded-lg"
-    />
-  </div>
+<div className="w-full">
+  <p className="mb-1 text-sm font-medium">Height</p>
+  <select
+    name="height"
+    value={inputValue.height || ""}
+    onChange={handleDataChange}
+    className="w-full border border-gray-300 px-4 py-2 rounded-lg"
+  >
+    <option value="">-- Select Height --</option>
+    <option value="Low Top">Low Top</option>
+    <option value="High Top">High Top</option>
+    <option value="Mid Top">Mid Top</option>
+  </select>
+</div>
+
 
   <div className="w-full">
     <p className="mb-1 text-sm font-medium">Shoes For</p>
@@ -116,34 +121,86 @@ const InputInfo1 = ({inputValue, handleDataChange}) => {
 </div>
 
 <div className="flex items-start justify-between gap-2">
-  <div className="w-full">
-    <p className="mb-1 text-sm font-medium">Brand</p>
-    <input
-      name="brand"
-      value={inputValue.brand || ""}
-      onChange={handleDataChange}
-      placeholder="Brand"
-      className="w-full border border-gray-300 px-4 py-2 rounded-lg"
-    />
-  </div>
+<div className="w-full">
+  <p className="mb-1 text-sm font-medium">Brand</p>
+  <select
+    name="brand"
+    value={inputValue.brand || ""}
+    onChange={handleDataChange}
+    className="w-full border border-gray-300 px-4 py-2 rounded-lg"
+  >
+    <option value="">-- Select Brand --</option>
+    <option value="Nike Sportswear">Nike Sportswear</option>
+    <option value="Jordan">Jordan</option>
+    <option value="NikeLab">NikeLab</option>
+    <option value="Nike">Nike</option>
+  </select>
+</div>
+<div className="w-full">
+  <p className="mb-1 text-sm font-medium">Technology</p>
+  <select
+    name="technology"
+    value={inputValue.technology || ""}
+    onChange={handleDataChange}
+    className="w-full border border-gray-300 px-4 py-2 rounded-lg"
+  >
+    <option value="">-- Select Technology --</option>
+    <option value="Nike ReactX">Nike ReactX</option>
+    <option value="Nike EasyOn">Nike EasyOn</option>
+    <option value="Dri-FIT">Dri-FIT</option>
+    <option value="Dri-FIT ADV">Dri-FIT ADV</option>
+    <option value="Nike Flyknit">Nike Flyknit</option>
+    <option value="Nike Flywire">Nike Flywire</option>
+    <option value="GORE-TEX">GORE-TEX</option>
+    <option value="Nike Lunarlon">Nike Lunarlon</option>
+    <option value="Nike Max Air">Nike Max Air</option>
+    <option value="Nike Air">Nike Air</option>
+    <option value="Nike Free">Nike Free</option>
+    <option value="Nike React">Nike React</option>
+    <option value="Nike Shox">Nike Shox</option>
+    <option value="NikeSkin">NikeSkin</option>
+    <option value="Nike Zoom Air">Nike Zoom Air</option>
+    <option value="Nike ZoomX">Nike ZoomX</option>
+  </select>
+</div>
 
-  <div className="w-full">
-    <p className="mb-1 text-sm font-medium">Features</p>
-    <input
-      name="features"
-      value={inputValue.features || ""}
-      onChange={handleDataChange}
-      placeholder="Features"
-      className="w-full border border-gray-300 px-4 py-2 rounded-lg"
-    />
-  </div>
+
+
+<div className="w-full">
+  <p className="mb-1 text-sm font-medium">Features</p>
+  <select
+    name="features"
+    value={inputValue.features || ""}
+    onChange={handleDataChange}
+    className="w-full border border-gray-300 px-4 py-2 rounded-lg"
+  >
+    <option value="">-- Select Feature --</option>
+    <option value="Side vents">Side vents</option>
+    <option value="2-Way Zip">2-Way Zip</option>
+    <option value="4-way stretch">4-way stretch</option>
+    <option value="2-way stretch">2-way stretch</option>
+    <option value="Drawcord">Drawcord</option>
+    <option value="Flat Peak">Flat Peak</option>
+    <option value="Front Zip">Front Zip</option>
+    <option value="Adjustable Hood">Adjustable Hood</option>
+    <option value="Breathable">Breathable</option>
+    <option value="Hooded">Hooded</option>
+    <option value="Pockets">Pockets</option>
+    <option value="Spikeless">Spikeless</option>
+    <option value="Water-resistant">Water-resistant</option>
+    <option value="Waterproof">Waterproof</option>
+    <option value="Wide Waistband">Wide Waistband</option>
+    <option value="Zip Garage">Zip Garage</option>
+  </select>
+</div>
+
 
   <div className="w-full">
     <p className="mb-1 text-sm font-medium">Gift Point</p>
     <input
       name="giftPoint"
       type="number"
-      value={inputValue.giftPoint || ""}
+      value={inputValue.giftPoint || "300"}
       onChange={handleDataChange}
       placeholder="Gift Point"
       className="w-full border border-gray-300 px-4 py-2 rounded-lg"
@@ -197,7 +254,7 @@ const InputInfo1 = ({inputValue, handleDataChange}) => {
       onChange={handleDataChange}
       className="w-full border border-gray-300 px-4 py-2 rounded-lg"
     >
-      <option value="">Select Page</option>
+      <option value="">-- Select Page --</option>
       <option value="New & Featured">New & Featured</option>
       <option value="Trending">Trending</option>
       <option value="Men">Men</option>
@@ -230,7 +287,7 @@ const InputInfo1 = ({inputValue, handleDataChange}) => {
 
   {/* Status */}
   <div className="w-full">
-    <p className="mb-1 text-sm font-medium">Status</p>
+    <p className="mb-1 text-sm font-medium">-- Status --</p>
     <select
       name="status"
       value={inputValue.status || ""}
@@ -253,7 +310,7 @@ const InputInfo1 = ({inputValue, handleDataChange}) => {
         onChange={handleDataChange}
         className="w-full border border-gray-300 px-4 py-2 rounded-lg"
       >
-        <option value="">Select Gender</option>
+        <option value="">-- Select Gender --</option>
         <option value="Men">Men</option>
         <option value="Women">Women</option>
         <option value="Unisex">Unisex</option>

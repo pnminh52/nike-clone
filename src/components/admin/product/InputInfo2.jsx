@@ -104,50 +104,78 @@ const InputInfo2 = ({
       </div>
 
       {/* --- COLORS --- */}
-      <div>
-      <p className="mb-1 text-sm font-medium">Colors</p>
-        {(inputValue.color || []).map((color, idx) => (
-          <div key={idx} className="flex items-center gap-2 mb-2">
-            <input
-              value={color}
-              onChange={(e) => handleColorChange(idx, e.target.value)}
-              placeholder={`Color ${idx + 1}`}
-              className="w-full border border-gray-300 px-4 py-2 rounded-lg"
-            />
-            <button
-              type="button"
-              onClick={() => {
-                const updated = [...inputValue.color];
-                updated.splice(idx, 1);
-                setInputValue((prev) => ({ ...prev, color: updated }));
-              }}
-              className="w-8 h-8 cursor-pointer bg-gray-200 rounded-full flex items-center justify-center"
-            >
-              <svg viewBox="0 0 24 24" fill="none">
-                <path
-                  d="M7 17L16.8995 7.10051"
-                  stroke="#000"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-                <path
-                  d="M7 7L16.8995 16.8995"
-                  stroke="#000"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-            </button>
-          </div>
-        ))}
-        <button
-          type="button"
-          onClick={handleAddColorField}
-          className="px-4 py-2 bg-black text-white rounded-full cursor-pointer"
-        >
-          + Add Color
-        </button>
-      </div>
+    <div>
+  <p className="mb-1 text-sm font-medium">Colors</p>
+
+  {/* Select mainColor */}
+
+
+  {/* List input color fields */}
+  {(inputValue.color || []).map((color, idx) => (
+    <div key={idx} className="flex items-center gap-2 mb-2">
+      <input
+        value={color}
+        onChange={(e) => handleColorChange(idx, e.target.value)}
+        placeholder={`Color ${idx + 1}`}
+        className="w-full border border-gray-300 px-4 py-2 rounded-lg"
+      />
+      <button
+        type="button"
+        onClick={() => {
+          const updated = [...inputValue.color];
+          updated.splice(idx, 1);
+          setInputValue((prev) => ({ ...prev, color: updated }));
+        }}
+        className="w-8 h-8 cursor-pointer bg-gray-200 rounded-full flex items-center justify-center"
+      >
+        <svg viewBox="0 0 24 24" fill="none">
+          <path
+            d="M7 17L16.8995 7.10051"
+            stroke="#000"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+          <path
+            d="M7 7L16.8995 16.8995"
+            stroke="#000"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        </svg>
+      </button>
+    </div>
+  ))}
+
+  <button
+    type="button"
+    onClick={handleAddColorField}
+    className="px-4 py-2 bg-black text-white rounded-full cursor-pointer"
+  >
+    + Add Color
+  </button>
+</div>
+<div className="">
+<p className="mb-1 text-sm font-medium">Main Colors</p>
+    <select
+      value={inputValue.mainColor || ""}
+      onChange={(e) =>
+        setInputValue((prev) => ({ ...prev, mainColor: e.target.value }))
+      }
+      className="w-full border border-gray-300 px-4 py-2 rounded-lg"
+    >
+      <option value="">-- Select main color --</option>
+      {[
+        "Red","Blue","Green","Yellow","Black","White","Gray","Purple","Pink","Orange",
+        "Brown","Beige","Navy","Teal","Cyan","Magenta","Olive","Maroon","Gold","Silver",
+        "Lime","Indigo","Turquoise","Coral","Lavender","Khaki"
+      ].map((color) => (
+        <option key={color} value={color}>
+          {color}
+        </option>
+      ))}
+    </select>
+  </div>
+
 
       {/* --- FEATURED --- */}
       <div>
