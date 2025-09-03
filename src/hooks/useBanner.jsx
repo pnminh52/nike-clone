@@ -4,7 +4,7 @@ const useBanner = (position) => {
   const [banner, setBanner] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const API_URL = "https://nikejsonserver-2.onrender.com";
+  const API_URL = import.meta.env.VITE_API_URL;
 
   useEffect(() => {
     fetch(`${API_URL}/banner`)

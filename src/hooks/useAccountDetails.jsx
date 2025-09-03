@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import useToast from './useToast';
 
 const useAccountDetails = () => {
+  const API_URL = import.meta.env.VITE_API_URL;
   const { successToast, errorToast } = useToast();
   const [user, setUser] = useState(null);
 
@@ -41,7 +42,7 @@ const useAccountDetails = () => {
       try {
         const userId = localStorage.getItem("userId");
         if (userId) {
-          const res = await axios.get(`http://localhost:3000/users/${userId}`);
+          const res = await axios.get(`${API_URL}/users/${userId}`);
           const dob = res.data.dateOfBirth?.split("-") || ["", "", ""];
 
           setUser(res.data);
@@ -95,7 +96,7 @@ const useAccountDetails = () => {
       };
 
       const res = await axios.put(
-        `http://localhost:3000/users/${userId}`,
+        `${API_URL}/users/${userId}`,
         updatedUser
       );
 
@@ -117,7 +118,7 @@ const useAccountDetails = () => {
   const handleDelete = async () => {
     try {
       const userId = localStorage.getItem("userId");
-      await axios.delete(`http://localhost:3000/users/${userId}`);
+      await axios.delete(`${API_URL}/users/${userId}`);
       localStorage.clear();
       successToast("The account has been deleted.");
       navigate("/");

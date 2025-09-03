@@ -4,11 +4,11 @@ import axios from "axios";
 export const useStaff = () => {
   const [staffUsers, setStaffUsers] = useState([]);
   const [loading, setLoading] = useState(false);
-
+  const API_URL = import.meta.env.VITE_API_URL;
   // Lấy danh sách Staff hiện có
   const fetchStaffUsers = async () => {
     try {
-      const res = await axios.get("http://localhost:3000/users");
+      const res = await axios.get(`${API_URL}/users`);
       const staff = res.data.filter((user) => user.role === "Staff");
       setStaffUsers(staff);
     } catch (error) {
@@ -26,7 +26,7 @@ export const useStaff = () => {
       user.accountStatus === "Active" ? "Blocked" : "Active";
 
     try {
-      await axios.patch(`http://localhost:3000/users/${user.id}`, {
+      await axios.patch(`${API_URL}/users/${user.id}`, {
         accountStatus: updatedStatus,
       });
 
@@ -48,7 +48,7 @@ export const useStaff = () => {
     if (!confirmDelete) return;
 
     try {
-      await axios.delete(`http://localhost:3000/users/${id}`);
+      await axios.delete(`${API_URL}/users/${id}`);
       setStaffUsers((prev) => prev.filter((user) => user.id !== id));
     } catch (error) {
       console.error("Lỗi khi xóa Staff:", error);
@@ -62,7 +62,7 @@ export const useStaff = () => {
 
     const updatedPermissions = staff.permissions.filter((p) => p !== permission);
     try {
-      await axios.patch(`http://localhost:3000/users/${staffId}`, {
+      await axios.patch(`${API_URL}/users/${staffId}`, {
         permissions: updatedPermissions,
       });
       setStaffUsers((prev) =>
@@ -101,7 +101,7 @@ const handleEditPermission = async (staffId, oldPermission, newPermission) => {
   }
 
   try {
-    await axios.patch(`http://localhost:3000/users/${staffId}`, {
+    await axios.patch(`${API_URL}/users/${staffId}`, {
       permissions: updatedPermissions,
     });
     setStaffUsers((prev) =>
@@ -119,7 +119,7 @@ const handleEditPermission = async (staffId, oldPermission, newPermission) => {
   const addStaff = async (newStaff) => {
     setLoading(true);
     try {
-      await axios.post("http://localhost:3000/users", newStaff);
+      await axios.post(`${API_URL}/users`, newStaff);
       fetchStaffUsers();
     } catch (error) {
       console.error("Lỗi khi thêm Staff:", error);

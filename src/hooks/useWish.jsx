@@ -4,7 +4,8 @@ import { useAuth } from "./useAuth";
 
 
 export const useWish = () => {
-  const API_URL = "http://localhost:3000";
+  // const API_URL = "http://localhost:3000";
+  const API_URL = import.meta.env.VITE_API_URL;
 
   const { user, setUser } = useAuth();
     const [wishlist, setWishlist] = useState([]);

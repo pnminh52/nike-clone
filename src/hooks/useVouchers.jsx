@@ -9,8 +9,8 @@ const useVouchers = (userId) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const API_URL = "http://localhost:3000";
-
+  // const API_URL = "http://localhost:3000";
+  const API_URL = import.meta.env.VITE_API_URL;
   useEffect(() => {
     const fetchData = async () => {
       try {

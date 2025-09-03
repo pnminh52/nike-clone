@@ -8,7 +8,7 @@ export const useCart = () => {
   const [cart, setCart] = useState([]);
   const { successToast, errorToast, warningToast } = useToast();
   const { updateUser } = useAuth();
-  const API_URL = "http://localhost:3000";
+  const API_URL = import.meta.env.VITE_API_URL;
 
   useEffect(() => {
     const userId = localStorage.getItem("userId");

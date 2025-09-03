@@ -4,8 +4,8 @@ const useComment = () => {
   const [comments, setComments] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
-  const API_URL = "http://localhost:3000";
-
+  // const API_URL = "http://localhost:3000";
+  const API_URL = import.meta.env.VITE_API_URL;
   // Lấy bình luận theo productId hoặc toàn bộ nếu không truyền
   const fetchComments = async (productId) => {
     setLoading(true);

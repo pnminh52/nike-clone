@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
 
-const API_URL = 'http://localhost:3000/orderStatusList';
+// const API_URL = 'http://localhost:3000/orderStatusList';
+const API_URL = import.meta.env.VITE_API_URL;
+
 
 const useOrderStatus = () => {
   const [orderStatusList, setOrderStatusList] = useState([]);
@@ -24,7 +26,7 @@ const useOrderStatus = () => {
   // Create
   const createOrderStatus = async (newStatus) => {
     try {
-      const response = await fetch(API_URL, {
+      const response = await fetch(`${API_URL}/orderStatusList`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(newStatus),
@@ -39,7 +41,7 @@ const useOrderStatus = () => {
   // Update
   const updateOrderStatus = async (id, updatedStatus) => {
     try {
-      const response = await fetch(`${API_URL}/${id}`, {
+      const response = await fetch(`${API_URL}/orderStatusList/${id}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(updatedStatus),

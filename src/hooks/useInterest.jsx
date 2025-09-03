@@ -9,11 +9,12 @@ const useInterest = () => {
   const [loading, setLoading] = useState(true);
   const { user, updateUser } = useAuth();
   const navigate=useNavigate()
+  const API_URL = import.meta.env.VITE_API_URL;
 
   useEffect(() => {
     const fetchInterests = async () => {
       try {
-        const res = await axios.get("http://localhost:3000/interest");
+        const res = await axios.get(`${API_URL}/interest`);
         setInterests(res.data);
       } catch (err) {
         console.error("Failed to fetch interests", err);
@@ -30,7 +31,7 @@ const useInterest = () => {
       const selectedItems = interests.filter((i) => selectedIds.has(i.id));
       const updatedUser = { ...user, interest: selectedItems };
 
-      await axios.patch(`http://localhost:3000/users/${user.id}`, {
+      await axios.patch(`${API_URL}/users/${user.id}`, {
         interest: selectedItems,
       });
 

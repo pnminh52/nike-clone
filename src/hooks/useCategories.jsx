@@ -5,7 +5,7 @@ const useCategories = () => {
   const [categories, setCategories] = useState([]);
   const [inputValue, setInputValue] = useState({ name: "", imageUrl: "", parentId: null });
   const navigate = useNavigate();
-  const API_URL = "http://localhost:3000";
+  const API_URL = import.meta.env.VITE_API_URL;
 
   const handleDeleteCategory = (id) => {
     const confirmDelete = window.confirm("Are you sure to delete this category?");
