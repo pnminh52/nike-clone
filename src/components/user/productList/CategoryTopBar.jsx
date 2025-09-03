@@ -164,11 +164,11 @@ const CategoryTopBar = ({
 
 </div>
         </div>
-        {filteredProductsLength === 0 && (
+        {/* {filteredProductsLength === 0 && (
   <div className="px-6 py-10">
     <ResultNotfound />
   </div>
-)}
+)} */}
        </div>
     );
 };
